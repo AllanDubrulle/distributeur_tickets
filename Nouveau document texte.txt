@@ -1,0 +1,4 @@
+(rembourser si paiement liquide )
+griser les cases plus utilisables
+retour accueil 
+afficher message d'erreur
