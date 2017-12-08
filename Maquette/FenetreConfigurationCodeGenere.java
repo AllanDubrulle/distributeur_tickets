@@ -115,7 +115,7 @@ public class FenetreConfigurationCodeGenere extends BorderPane {
         vBox.getChildren().add(checkBox);
 
     }
-	public static void main(String[] args){
-            new FenetreConfigurationCodeGenere();
+    public static void main(String[] args){
+           FenetreConfigurationCodeGenere test = new FenetreConfigurationCodeGenere();
         }
 }
