@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.paint.*?>
@@ -112,35 +113,19 @@
    <left>
       <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b9d8eb" height="400.0" layoutX="250.0" layoutY="50.0" stroke="BLACK" strokeType="INSIDE" width="800.0" />
-            <VBox layoutX="304.0" layoutY="149.0" prefHeight="202.0" prefWidth="244.0">
-               <children>
-                  <Button alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="31.0" prefWidth="250.0" text="1 - Acheter un billet">
-                     <VBox.margin>
-                        <Insets bottom="5.0" />
-                     </VBox.margin>
-                  </Button>
-                  <Button alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="31.0" prefWidth="283.0" text="2 - Acheter un abonnement">
-                     <VBox.margin>
-                        <Insets bottom="5.0" />
-                     </VBox.margin>
-                  </Button>
-                  <Button alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="31.0" prefWidth="288.0" text="3 - Renouveler un abonnement">
-                     <VBox.margin>
-                        <Insets bottom="5.0" />
-                     </VBox.margin>
-                  </Button>
-                  <Button alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="31.0" prefWidth="300.0" text="4 - Acheter un pass">
-                     <VBox.margin>
-                        <Insets bottom="5.0" />
-                     </VBox.margin>
-                  </Button>
-                  <Button alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="31.0" prefWidth="392.0" text="5 - Vérifier l'horaire d'un train" />
-               </children>
-            </VBox>
-            <Text fontSmoothingType="LCD" layoutX="294.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Que voulez-vous faire ?">
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="400.0" layoutX="250.0" layoutY="50.0" stroke="BLACK" strokeType="INSIDE" width="800.0">
+               <fill>
+                  <LinearGradient endX="1.0" endY="0.5533980582524272">
+                     <stops>
+                        <Stop color="#6a98cc" />
+                        <Stop color="#6a98cc" offset="0.007246376811594203" />
+                        <Stop color="#ffcab000" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </fill></Rectangle>
+            <Text fill="#003ed6" layoutX="311.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Simulateur d'un distributeur de billets de train" underline="true">
                <font>
-                  <Font size="22.0" />
+                  <Font name="System Bold" size="31.0" />
                </font>
             </Text>
             <Circle fill="#48556198" layoutX="110.0" layoutY="295.0" radius="37.0" stroke="BLACK" strokeType="INSIDE" />
@@ -158,6 +143,11 @@
             <Button layoutX="62.0" layoutY="134.0" mnemonicParsing="false" text="10 €" />
             <Button layoutX="117.0" layoutY="134.0" mnemonicParsing="false" text="20 €" />
             <Button layoutX="171.0" layoutY="134.0" mnemonicParsing="false" text="50 €" />
+            <Button layoutX="592.0" layoutY="310.0" mnemonicParsing="false" text="Démarrer">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Button>
          </children>
       </Pane>
    </left>
@@ -176,43 +166,43 @@
                <children>
                   <HBox prefHeight="0.0" prefWidth="973.0">
                      <children>
-                        <Button minWidth="-Infinity" mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="A">
+                        <Button minWidth="-Infinity" mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="A" textAlignment="CENTER">
                            <HBox.margin>
                               <Insets />
                            </HBox.margin>
                         </Button>
-                        <Button minWidth="-Infinity" mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="Z">
+                        <Button minWidth="-Infinity" mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="Z" textAlignment="CENTER">
                            <HBox.margin>
                               <Insets left="8.0" right="8.0" />
                            </HBox.margin>
                         </Button>
-                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="E" />
-                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="R">
+                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="E" textAlignment="CENTER" />
+                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="R" textAlignment="CENTER">
                            <HBox.margin>
                               <Insets left="8.0" right="8.0" />
                            </HBox.margin>
                         </Button>
-                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="T" />
-                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="Y">
+                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="T" textAlignment="CENTER" />
+                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="Y" textAlignment="CENTER">
                            <HBox.margin>
                               <Insets left="8.0" right="8.0" />
                            </HBox.margin>
                         </Button>
-                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="U">
+                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="U" textAlignment="CENTER">
                            <HBox.margin>
                               <Insets right="8.0" />
                            </HBox.margin>
                         </Button>
-                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="I">
+                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="I" textAlignment="CENTER">
                            <HBox.margin>
                               <Insets />
                            </HBox.margin></Button>
-                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="O">
+                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="O" textAlignment="CENTER">
                            <HBox.margin>
                               <Insets left="8.0" right="8.0" />
                            </HBox.margin>
                         </Button>
-                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="P" />
+                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="P" textAlignment="CENTER" />
                      </children>
                      <VBox.margin>
                         <Insets left="4.0" top="10.0" />
@@ -220,62 +210,62 @@
                   </HBox>
                   <HBox prefHeight="0.0" prefWidth="973.0">
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="Q" />
-                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="S">
+                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="Q" textAlignment="CENTER" />
+                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="S" textAlignment="CENTER">
                            <HBox.margin>
                               <Insets left="8.0" right="8.0" />
                            </HBox.margin>
                         </Button>
-                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="D" />
-                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="F">
+                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="D" textAlignment="CENTER" />
+                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="F" textAlignment="CENTER">
                            <HBox.margin>
                               <Insets left="8.0" right="8.0" />
                            </HBox.margin>
                         </Button>
-                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="G" />
-                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="H">
-                           <HBox.margin>
-                              <Insets left="16.0" right="8.0" />
-                           </HBox.margin>
-                        </Button>
-                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="J" />
-                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="K">
+                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="G" textAlignment="CENTER" />
+                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="H" textAlignment="CENTER">
                            <HBox.margin>
                               <Insets left="8.0" right="8.0" />
                            </HBox.margin>
                         </Button>
-                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="L" />
-                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="M">
+                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="J" textAlignment="CENTER" />
+                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="K" textAlignment="CENTER">
+                           <HBox.margin>
+                              <Insets left="8.0" right="8.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="L" textAlignment="CENTER" />
+                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="M" textAlignment="CENTER">
                            <HBox.margin>
                               <Insets left="8.0" />
                            </HBox.margin>
                         </Button>
                      </children>
                      <VBox.margin>
-                        <Insets top="5.0" />
+                        <Insets left="4.0" top="5.0" />
                      </VBox.margin>
                   </HBox>
                   <HBox prefHeight="0.0" prefWidth="973.0">
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="W" />
-                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="X">
+                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="W" textAlignment="CENTER" />
+                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="X" textAlignment="CENTER">
                            <HBox.margin>
                               <Insets left="8.0" right="8.0" />
                            </HBox.margin>
                         </Button>
-                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="C" />
-                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="V">
+                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="C" textAlignment="CENTER" />
+                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="V" textAlignment="CENTER">
                            <HBox.margin>
                               <Insets left="8.0" right="8.0" />
                            </HBox.margin>
                         </Button>
-                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="B" />
-                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="N">
+                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="B" textAlignment="CENTER" />
+                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="N" textAlignment="CENTER">
                            <HBox.margin>
                               <Insets left="8.0" right="8.0" />
                            </HBox.margin>
                         </Button>
-                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="200.0" text="EFFACER" />
+                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="200.0" text="EFFACER" textAlignment="CENTER" />
                      </children>
                      <VBox.margin>
                         <Insets left="20.0" top="5.0" />
@@ -283,7 +273,7 @@
                   </HBox>
                   <HBox prefHeight="1.0" prefWidth="973.0">
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="500.0" text="ESPACE">
+                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="500.0" text="ESPACE" textAlignment="CENTER">
                            <HBox.margin>
                               <Insets left="45.0" />
                            </HBox.margin>
@@ -307,7 +297,7 @@
    <top>
       <Pane prefHeight="39.0" prefWidth="1300.0" BorderPane.alignment="CENTER">
          <children>
-            <MenuBar prefHeight="1.0" prefWidth="88.0">
+            <MenuBar prefHeight="32.0" prefWidth="88.0">
               <menus>
                 <Menu mnemonicParsing="false" text="Pannes">
                   <items>
@@ -317,6 +307,18 @@
                         <CheckMenuItem mnemonicParsing="false" text="Scanneur de codes" />
                         <CheckMenuItem mnemonicParsing="false" text="Bloquer la carte" />
                         <CheckMenuItem mnemonicParsing="false" text="Imprimante" />
+                        <Menu mnemonicParsing="false" text="Caisse">
+                           <items>
+                              <MenuItem mnemonicParsing="false" text="Recharger caisse" />
+                              <MenuItem mnemonicParsing="false" text="Vider caisse" />
+                           </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Impression">
+                          <items>
+                              <MenuItem mnemonicParsing="false" text="Recharger encre et papier" />
+                              <MenuItem mnemonicParsing="false" text="Vider encre et papier" />
+                          </items>
+                        </Menu>
                   </items>
                 </Menu>
               </menus>
