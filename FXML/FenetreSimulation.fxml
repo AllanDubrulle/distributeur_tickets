@@ -169,11 +169,48 @@
       </Rectangle>
    </bottom>
    <center>
-      <Pane prefHeight="86.0" prefWidth="875.0" BorderPane.alignment="CENTER">
+      <Pane prefHeight="227.0" prefWidth="875.0" BorderPane.alignment="CENTER">
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0000007d" height="175.0" layoutX="135.0" stroke="BLACK" strokeType="INSIDE" width="625.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0000007d" height="197.0" layoutX="135.0" layoutY="-4.0" stroke="BLACK" strokeType="INSIDE" width="625.0" />
             <VBox layoutY="6.0" prefHeight="107.0" prefWidth="973.0">
                <children>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="1" />
+                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="2">
+                           <HBox.margin>
+                              <Insets left="8.0" right="8.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="3" />
+                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="4">
+                           <HBox.margin>
+                              <Insets left="8.0" right="8.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="5" />
+                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="6">
+                           <HBox.margin>
+                              <Insets left="8.0" right="8.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="7" />
+                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="8">
+                           <HBox.margin>
+                              <Insets left="8.0" right="8.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="9" />
+                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="0">
+                           <HBox.margin>
+                              <Insets left="8.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="4.0" />
+                     </VBox.margin>
+                  </HBox>
                   <HBox prefHeight="0.0" prefWidth="973.0">
                      <children>
                         <Button minWidth="-Infinity" mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="A" textAlignment="CENTER">
@@ -215,7 +252,7 @@
                         <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="50.0" text="P" textAlignment="CENTER" />
                      </children>
                      <VBox.margin>
-                        <Insets left="4.0" top="10.0" />
+                        <Insets left="4.0" top="5.0" />
                      </VBox.margin>
                   </HBox>
                   <HBox prefHeight="0.0" prefWidth="973.0">
@@ -300,17 +337,17 @@
             </VBox>
          </children>
          <BorderPane.margin>
-            <Insets bottom="25.0" top="490.0" />
+            <Insets bottom="25.0" top="470.0" />
          </BorderPane.margin>
       </Pane>
    </center>
    <top>
       <Pane prefHeight="39.0" prefWidth="1300.0" BorderPane.alignment="CENTER">
          <children>
-            <MenuBar prefHeight="32.0" prefWidth="91.0">
-              <menus>
-                <Menu mnemonicParsing="false" text="Pannes">
-                  <items>
+            <MenuBar prefHeight="32.0" prefWidth="270.0">
+               <menus>
+                  <Menu mnemonicParsing="false" text="Pannes">
+                     <items>
                         <CheckMenuItem mnemonicParsing="false" text="Lecteur de cartes" />
                         <CheckMenuItem mnemonicParsing="false" text="Fente à billets" />
                         <CheckMenuItem mnemonicParsing="false" text="Fente à pièces" />
@@ -324,14 +361,33 @@
                            </items>
                         </Menu>
                         <Menu mnemonicParsing="false" text="Impression">
-                          <items>
+                           <items>
                               <MenuItem mnemonicParsing="false" text="Recharger encre et papier" />
                               <MenuItem mnemonicParsing="false" text="Vider encre et papier" />
-                          </items>
+                           </items>
                         </Menu>
-                  </items>
-                </Menu>
-              </menus>
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Composants optionnels">
+                     <items>
+                        <CheckMenuItem mnemonicParsing="false" text="Scanneur de codes" />
+                        <Menu mnemonicParsing="false" text="Fentes">
+                           <items>
+                              <CheckMenuItem mnemonicParsing="false" text="Fentes à pièces et à billets" />
+                              <CheckMenuItem mnemonicParsing="false" text="Fente à pièces uniquement" />
+                              <CheckMenuItem mnemonicParsing="false" text="Aucune fente" />
+                           </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Clavier">
+                           <items>
+                              <CheckMenuItem mnemonicParsing="false" text="Clavier et écran tacitile" />
+                              <CheckMenuItem mnemonicParsing="false" text="Clavier et écran non tactile" />
+                              <CheckMenuItem mnemonicParsing="false" text="Ecran tacile sans clavier" />
+                           </items>
+                        </Menu>
+                     </items>
+                  </Menu>
+               </menus>
             </MenuBar>
          </children>
       </Pane>
