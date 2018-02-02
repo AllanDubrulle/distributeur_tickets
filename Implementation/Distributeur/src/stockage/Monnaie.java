@@ -1,0 +1,5 @@
+package stockage;
+
+enum Monnaie {
+
+}

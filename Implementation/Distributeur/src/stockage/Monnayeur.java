@@ -1,0 +1,5 @@
+package stockage;
+
+class Monnayeur {
+
+}
