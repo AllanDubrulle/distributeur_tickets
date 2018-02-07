@@ -1,5 +1,7 @@
 package stockage;
 
-enum Monnaie {
+ abstract class  Monnaie implements Comparable<Integer>{
+	 
+	 
 
 }

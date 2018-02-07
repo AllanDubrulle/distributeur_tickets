@@ -1,20 +1,20 @@
 package stockage;
 
-import java.util.Map;
+import java.util.HashMap;
 
 class Monnayeur {
-	private Map<Pieces.Piece, Integer > StockPiece; 
-	private Map<Billet,Integer> StockBillet;
-	private int[] ordre = {200,100,50,20,10,5,2,1};
+	private HashMap<Pieces, Integer > StockPiece; 
+	private HashMap<Billet,Integer> StockBillet;
+	private Pieces[] ordrePieces= {Pieces.P100,Pieces.P50,Pieces.P20,Pieces.P10,Pieces.P5,Pieces.P2,Pieces.P1};;  
 	
 	
 	public Rendu retournerArgent(int montant)throws PasAssezDeMonnaie{
-		/*Map<Piece,Integer> renduPiece = new Map<Piece,Integer>();
-		Map<Billet,Integer>renduBillet = new Map;*/
-		for (int i =0;i< ordre.length ;i++) {
-			while(montant%ordre[i]!=0)
+		HashMap<Pieces,Integer> renduPiece = new HashMap<Pieces,Integer>();
+		HashMap<Billet,Integer> renduBillet = new HashMap<Billet,Integer>();
+		for (int i =0;i< ordrePieces.length ;i++) {
+			while(montant%ordrePieces[i].valeur()!=0)
 			{
-				
+					
 			}
 		}
 		return null;
