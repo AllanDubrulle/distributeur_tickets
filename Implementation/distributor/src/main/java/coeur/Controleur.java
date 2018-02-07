@@ -5,4 +5,5 @@ class Controleur {
 	public void modifEtat(ControleurEtat etat) {
 		etatActuel = etat;
 	}
+	
 }
