@@ -6,7 +6,7 @@ class EtatMenu extends ControleurEtat {
 			instance = new EtatMenu();
 		return (EtatMenu) instance;
 	}
-	public void choixBillet(Controleur controleur) {
+	public void choixBillet() {
 		controleur.modifEtat(EtatChoixBillet.getInstance());
 	}
 }

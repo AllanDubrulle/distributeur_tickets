@@ -6,7 +6,7 @@ class EtatPaiement extends ControleurEtat {
 			instance = new EtatPaiement();
 		return (EtatPaiement) instance;
 	}
-	public void choixParCarte(Controleur controleur) {
+	public void choixParCarte() {
 		controleur.modifEtat(EtatParCarte.getInstance());
 	}
 }

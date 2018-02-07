@@ -6,7 +6,7 @@ class EtatChoixBillet extends ControleurEtat {
 				instance = new EtatChoixBillet();
 		return (EtatChoixBillet) instance;
 	}
-	public void valideBillet(Controleur controleur) {
+	public void valideBillet() {
 		controleur.modifEtat(EtatCreationBillet.getInstance());
 	}
 }

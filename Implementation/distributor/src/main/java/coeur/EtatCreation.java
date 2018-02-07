@@ -6,7 +6,7 @@ public class EtatCreation extends ControleurEtat {
 			instance = new EtatCreation();
 		return (EtatCreation) instance;
 	}
-	public void confirme(Controleur controleur) {
+	public void confirme() {
 		controleur.modifEtat(EtatPaiement.getInstance());
 	}
 }
