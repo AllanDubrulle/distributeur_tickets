@@ -1,8 +1,10 @@
 package interfaceGraphique;
 
-public class CoeurAGraphiqueImpl implements CoeurAGraphique {
+public class CoeurAGraphiqueImpl implements CoeurAGraphique
+{
 
-	public void afficherBillet() {
+	public void afficherBillet()
+	{
 		// TODO Auto-generated method stub
 		
 	}
