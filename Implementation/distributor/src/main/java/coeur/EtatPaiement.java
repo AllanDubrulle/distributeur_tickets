@@ -1,6 +1,6 @@
 package coeur;
 
-class EtatPaiement extends ControleurEtat {
+class EtatPaiement extends EtatAnnulable {
 	public static EtatPaiement getInstance() {
 		if (instance == null)
 			instance = new EtatPaiement();
@@ -8,5 +8,9 @@ class EtatPaiement extends ControleurEtat {
 	}
 	public void choixParCarte() {
 		controleur.modifEtat(EtatParCarte.getInstance());
+		EtatParCarte.entree();
+	}
+	public static void entree() {
+		controleur.getCoeurAGraphique().afficherPaiement();
 	}
 }

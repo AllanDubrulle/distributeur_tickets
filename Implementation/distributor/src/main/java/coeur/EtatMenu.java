@@ -8,5 +8,6 @@ class EtatMenu extends ControleurEtat {
 	}
 	public void choixBillet() {
 		controleur.modifEtat(EtatChoixBillet.getInstance());
+		EtatChoixBillet.entree();
 	}
 }
