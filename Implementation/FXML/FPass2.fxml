@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d3d3d3" height="400.0" stroke="BLACK" strokeType="INSIDE" width="800.0" />
+      <Text fontSmoothingType="LCD" layoutX="54.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Achat d'un pass dix trajets sans gares prédéfinies" underline="true">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Text>
+      <VBox layoutX="78.0" layoutY="129.0" prefHeight="150.0" prefWidth="711.0">
+         <children>
+            <HBox prefHeight="0.0" prefWidth="711.0" />
+            <HBox prefHeight="12.0" prefWidth="711.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nom : ">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Text>
+                  <TextField prefHeight="31.0" prefWidth="248.0">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="129.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="17.0" prefWidth="244.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Classe :">
+                     <HBox.margin>
+                        <Insets right="127.0" />
+                     </HBox.margin>
+                  </Text>
+                  <CheckBox mnemonicParsing="false" text="1e classe" />
+                  <CheckBox mnemonicParsing="false" text="2e classe">
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin>
+                  </CheckBox>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="17.0" prefWidth="244.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Réduction :">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Text>
+                  <ChoiceBox prefWidth="150.0">
+                     <HBox.margin>
+                        <Insets left="100.0" />
+                     </HBox.margin>
+                  </ChoiceBox>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+      <Button layoutX="22.5" layoutY="354.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0" text="Annuler" />
+      <Button layoutX="702.5" layoutY="354.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0" text="Valider" />
+   </children>
+</Pane>

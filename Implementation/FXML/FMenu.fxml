@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<?import javafx.scene.shape.*?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b9d8eb" height="400.0" stroke="BLACK" strokeType="INSIDE" width="800.0" />
+      <VBox layoutX="74.0" layoutY="119.0" prefHeight="202.0" prefWidth="244.0">
+         <children>
+            <Button alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="31.0" prefWidth="250.0" text="1 - Acheter un billet">
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </Button>
+            <Button alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="31.0" prefWidth="283.0" text="2 - Acheter un abonnement">
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </Button>
+            <Button alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="31.0" prefWidth="288.0" text="3 - Renouveler un abonnement">
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </Button>
+            <Button alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="31.0" prefWidth="300.0" text="4 - Acheter un pass">
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </Button>
+            <Button alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="31.0" prefWidth="392.0" text="5 - Vérifier l'horaire d'un train" />
+         </children>
+      </VBox>
+      <Text fontSmoothingType="LCD" layoutX="44.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Que voulez-vous faire ?">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+   </children>
+</Pane>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d3d3d3" height="400.0" stroke="BLACK" strokeType="INSIDE" width="800.0" />
+      <Text fontSmoothingType="LCD" layoutX="54.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Renouveler un abonnement" underline="true">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Text>
+      <Button layoutX="318.0" layoutY="185.0" mnemonicParsing="false" text="Scanner le code barre" />
+      <Button layoutX="22.5" layoutY="354.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0" text="Annuler" />
+      <Button layoutX="702.5" layoutY="354.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0" text="Valider" />
+   </children>
+</Pane>

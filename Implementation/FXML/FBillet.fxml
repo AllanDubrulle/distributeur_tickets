@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<Pane prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d3d3d3" height="400.0" stroke="BLACK" strokeType="INSIDE" width="800.0" />
+      <VBox layoutX="47.0" layoutY="83.5" prefHeight="258.0" prefWidth="711.0">
+         <children>
+            <HBox prefHeight="17.0" prefWidth="244.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Gare de départ :">
+                     <HBox.margin>
+                        <Insets right="70.0" />
+                     </HBox.margin>
+                  </Text>
+                  <ChoiceBox prefWidth="150.0" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="17.0" prefWidth="244.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Gare d'arrivée :">
+                     <HBox.margin>
+                        <Insets right="77.0" />
+                     </HBox.margin>
+                  </Text>
+                  <ChoiceBox prefWidth="150.0" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="0.0" prefWidth="711.0">
+               <children>
+                  <HBox prefHeight="41.0" prefWidth="725.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Aller/ Aller-retour :">
+                           <HBox.margin>
+                              <Insets right="52.0" />
+                           </HBox.margin>
+                        </Text>
+                        <RadioButton mnemonicParsing="false" text="Aller" />
+                        <RadioButton mnemonicParsing="false" text="Aller-retour">
+                           <HBox.margin>
+                              <Insets left="53.0" />
+                           </HBox.margin>
+                        </RadioButton>
+                     </children>
+                     <HBox.margin>
+                        <Insets bottom="10.0" />
+                     </HBox.margin>
+                  </HBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="17.0" prefWidth="244.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Classe :">
+                     <HBox.margin>
+                        <Insets right="127.0" />
+                     </HBox.margin>
+                  </Text>
+                  <RadioButton mnemonicParsing="false" text="1e classe" />
+                  <RadioButton mnemonicParsing="false" text="2e classe">
+                     <HBox.margin>
+                        <Insets left="25.0" />
+                     </HBox.margin>
+                  </RadioButton>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="17.0" prefWidth="244.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Type de billet :">
+                     <HBox.margin>
+                        <Insets right="77.0" />
+                     </HBox.margin>
+                  </Text>
+                  <ChoiceBox prefWidth="150.0" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Réduction :">
+                     <HBox.margin>
+                        <Insets left="70.0" />
+                     </HBox.margin>
+                  </Text>
+                  <ChoiceBox prefWidth="150.0">
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin>
+                  </ChoiceBox>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="12.0" prefWidth="711.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre de billet(s) : ">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Text>
+                  <TextField prefHeight="31.0" prefWidth="40.0">
+                     <HBox.margin>
+                        <Insets left="32.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox layoutX="82.0" prefHeight="33.0" prefWidth="711.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Jour de départ :">
+                     <HBox.margin>
+                        <Insets right="70.0" />
+                     </HBox.margin>
+                  </Text>
+                  <TextField prefHeight="31.0" prefWidth="35.0" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text=" / ">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </Text>
+                  <TextField prefHeight="31.0" prefWidth="35.0" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text=" / ">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </Text>
+                  <TextField prefHeight="31.0" prefWidth="55.0">
+                     <HBox.margin>
+                        <Insets right="50.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <Button layoutX="22.5" layoutY="354.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0" text="Annuler" />
+      <Button layoutX="702.5" layoutY="354.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0" text="Valider" />
+      <Text fontSmoothingType="LCD" layoutX="31.0" layoutY="58.5" strokeType="OUTSIDE" strokeWidth="0.0" text="Achat d'un billet de train" underline="true">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Text>
+   </children>
+</Pane>

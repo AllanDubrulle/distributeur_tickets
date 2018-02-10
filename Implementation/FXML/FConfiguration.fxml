@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <bottom>
+      <Button alignment="BOTTOM_RIGHT" mnemonicParsing="false" text="Valider" BorderPane.alignment="BOTTOM_RIGHT">
+         <BorderPane.margin>
+            <Insets bottom="10.0" right="10.0" />
+         </BorderPane.margin>
+      </Button>
+   </bottom>
+   <center>
+      <VBox prefHeight="328.0" prefWidth="516.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Choisissez vos composants optionnels :">
+               <VBox.margin>
+                  <Insets bottom="25.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Clavier et écran :">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="25.0" />
+               </VBox.margin>
+            </Text>
+            <RadioButton mnemonicParsing="false" selected="true" text="Clavier et écran tactile">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="40.0" />
+               </VBox.margin>
+            </RadioButton>
+            <RadioButton mnemonicParsing="false" text="Clavier et écran non tactile">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="40.0" />
+               </VBox.margin>
+            </RadioButton>
+            <RadioButton mnemonicParsing="false" text="Ecran tactile uniquement">
+               <VBox.margin>
+                  <Insets bottom="15.0" left="40.0" />
+               </VBox.margin>
+            </RadioButton>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Fentes à monnaie :">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="25.0" />
+               </VBox.margin>
+            </Text>
+            <RadioButton mnemonicParsing="false" selected="true" text="Fentes à pièces et à billets">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="40.0" />
+               </VBox.margin>
+            </RadioButton>
+            <RadioButton mnemonicParsing="false" text="Fente à pièce uniquement">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="40.0" />
+               </VBox.margin>
+            </RadioButton>
+            <RadioButton mnemonicParsing="false" text="Aucune fente">
+               <VBox.margin>
+                  <Insets bottom="15.0" left="40.0" />
+               </VBox.margin>
+            </RadioButton>
+            <CheckBox mnemonicParsing="false" text="Scanneur de codes">
+               <VBox.margin>
+                  <Insets left="25.0" />
+               </VBox.margin>
+            </CheckBox>
+         </children>
+         <BorderPane.margin>
+            <Insets left="50.0" right="50.0" top="30.0" />
+         </BorderPane.margin>
+      </VBox>
+   </center>
+</BorderPane>
