@@ -1,3 +1,5 @@
+package interfaceGraphique;
+
 import javafx.scene.text.*;
 import javafx.geometry.*;
 import javafx.scene.control.*;

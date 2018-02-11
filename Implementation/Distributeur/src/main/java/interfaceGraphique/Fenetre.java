@@ -1,3 +1,5 @@
+package interfaceGraphique;
+
 import javafx.scene.layout.Pane;
 
 public abstract class Fenetre extends Pane {

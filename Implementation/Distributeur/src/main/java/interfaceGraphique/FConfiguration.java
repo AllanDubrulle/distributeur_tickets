@@ -1,3 +1,5 @@
+package interfaceGraphique;
+
 import javafx.scene.text.*;
 import javafx.geometry.*;
 import javafx.scene.layout.*;
@@ -54,7 +56,7 @@ public class FConfiguration extends BorderPane {
         button.setOnAction(new EventHandler<ActionEvent>(){
             @Override
             public void handle(ActionEvent event){
-                FSimulation fen1 = new FSimulation();
+                Base fen1 = new Base();
                 StackPane root = new StackPane();
                 root.getChildren().add(fen1);
                 Scene scene1 = new Scene(root, 1300, 800);

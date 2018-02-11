@@ -1,3 +1,5 @@
+package interfaceGraphique;
+
 import interfaceGraphique.Clavier;
 import interfaceGraphique.FenteBillet;
 import interfaceGraphique.FentePiece;
