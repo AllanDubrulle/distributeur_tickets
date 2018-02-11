@@ -1,5 +1,6 @@
 package coeur;
 
-public interface StockageACoeur {
+public interface StockageACoeur 
+{
 
 }

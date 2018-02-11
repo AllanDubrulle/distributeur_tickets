@@ -1,5 +1,6 @@
 package coeur;
 
-public class StockageACoeurImpl implements StockageACoeur {
+public class StockageACoeurImpl implements StockageACoeur 
+{
 
 }
