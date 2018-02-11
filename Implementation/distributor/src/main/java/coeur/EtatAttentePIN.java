@@ -10,12 +10,11 @@ class EtatAttentePIN extends EtatAnnulable {
 				instance = new EtatAttentePIN();
 		return (EtatAttentePIN) instance;
 	}
-	public static void entree() {
+	public void entree() {
 		controleur.getCoeurAGraphique().afficherAttentePIN();
 	}
 	public void validePIN(int codePIN) {
 		((EtatValidationPaiement) EtatValidationPaiement.getInstance()).setCodePIN(codePIN);
 		controleur.modifEtat(EtatValidationPaiement.getInstance());
-		EtatValidationPaiement.entree();
 	}
 }

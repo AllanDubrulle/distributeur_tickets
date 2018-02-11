@@ -2,7 +2,7 @@ package coeur;
 
 class EtatCreationBillet extends EtatCreationTitre {
 
-	public static void entree() {
+	public void entree() {
 		controleur.getCoeurAGraphique().afficherCreationBillet();
 	}
 }

@@ -8,9 +8,8 @@ class EtatChoixBillet extends EtatAnnulable {
 	}
 	public void valideBillet() {
 		controleur.modifEtat(EtatCreationBillet.getInstance());
-		EtatCreationBillet.entree();
 	}
-	public static void entree() {
+	public void entree() {
 		
 		controleur.getCoeurAGraphique().afficherChoixBillet();
 	}

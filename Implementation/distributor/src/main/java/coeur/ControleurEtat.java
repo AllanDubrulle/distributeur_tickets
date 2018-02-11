@@ -5,4 +5,6 @@ abstract class ControleurEtat {
 	protected static Controleur controleur;
 	protected ControleurEtat() {
 	}
+	public void entree() {};
+	public void annule() {};
 }

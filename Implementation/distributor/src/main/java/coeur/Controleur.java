@@ -10,6 +10,7 @@ class Controleur {
 	public void modifEtat(ControleurEtat etat) {
 		etatPrecedent = etatActuel;
 		etatActuel = etat;
+		etat.entree();
 	}
 	public ControleurEtat getEtatPrecedent() {
 		return etatPrecedent;

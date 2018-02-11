@@ -5,7 +5,7 @@ class EtatValidationPaiement extends EtatAnnulable {
 	public void setCodePIN(int codePIN) {
 		this.codePIN = codePIN;
 	}
-	public static void entree() {
+	public void entree() {
 		controleur.getCoeurAGraphique().afficherValidationPaiement();
 	}
 }

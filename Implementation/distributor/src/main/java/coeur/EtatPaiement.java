@@ -8,9 +8,8 @@ class EtatPaiement extends EtatAnnulable {
 	}
 	public void choixParCarte() {
 		controleur.modifEtat(EtatParCarte.getInstance());
-		EtatParCarte.entree();
 	}
-	public static void entree() {
+	public void entree() {
 		controleur.getCoeurAGraphique().afficherPaiement();
 	}
 }

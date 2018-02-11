@@ -6,8 +6,8 @@ class EtatAnnulable extends ControleurEtat {
 			instance = new EtatAnnulable();
 		return (EtatAnnulable) instance;
 	}
+	@Override
 	public void annule() {
 		controleur.modifEtat(controleur.getEtatPrecedent());
-		
 	}
 }
