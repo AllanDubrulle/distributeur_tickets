@@ -1,6 +1,9 @@
 package interfaceGraphique;
 
-public abstract class ComposantVisible
+import javafx.scene.layout.*;
+import javafx.scene.shape.*;
+
+public abstract class ComposantVisible extends Pane
 {
 	private boolean enMarche;
 	
@@ -18,5 +21,6 @@ public abstract class ComposantVisible
 	{
 		this.enMarche = enMarche;
 	}
+	public ComposantVisible() {};
 	
 }

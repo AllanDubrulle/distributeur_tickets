@@ -1,5 +1,5 @@
 package stockage.imprimable;
 
-class Recu {
+public class Recu {
 
 }

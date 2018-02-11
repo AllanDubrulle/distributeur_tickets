@@ -1,0 +1,106 @@
+package interfaceGraphique;
+
+import javafx.scene.control.*;
+import javafx.scene.shape.*;
+
+public class FentePiece extends ComposantVisible{
+
+	public FentePiece(boolean enMarche) {
+		super(enMarche);
+	}
+	
+	public FentePiece() {
+        Circle circle = new Circle();
+        Rectangle rectangle = new Rectangle();
+        Button button = new Button();
+        Button button0 = new Button();
+        Button button1 = new Button();
+        Button button2 = new Button();
+        Button button3 = new Button();
+        Button button4 = new Button();
+        Button button5 = new Button();
+        Button button6 = new Button();
+
+        setMaxHeight(USE_PREF_SIZE);
+        setMaxWidth(USE_PREF_SIZE);
+        setMinHeight(USE_PREF_SIZE);
+        setMinWidth(USE_PREF_SIZE);
+        setPrefHeight(170.0);
+        setPrefWidth(230.0);
+
+        circle.setFill(javafx.scene.paint.Color.valueOf("#48556199"));
+        circle.setLayoutX(115.0);
+        circle.setLayoutY(85.0);
+        circle.setRadius(37.0);
+        circle.setStroke(javafx.scene.paint.Color.BLACK);
+        circle.setStrokeType(javafx.scene.shape.StrokeType.INSIDE);
+
+        rectangle.setArcHeight(5.0);
+        rectangle.setArcWidth(5.0);
+        rectangle.setHeight(50.0);
+        rectangle.setLayoutX(111.0);
+        rectangle.setLayoutY(60.0);
+        rectangle.setStroke(javafx.scene.paint.Color.BLACK);
+        rectangle.setStrokeType(javafx.scene.shape.StrokeType.INSIDE);
+        rectangle.setWidth(9.0);
+
+        button.setLayoutX(15.0);
+        button.setLayoutY(25.0);
+        button.setMnemonicParsing(false);
+        button.setPrefHeight(31.0);
+        button.setPrefWidth(60.0);
+        button.setText("1 ct ");
+
+        button0.setLayoutX(85.0);
+        button0.setLayoutY(5.0);
+        button0.setMnemonicParsing(false);
+        button0.setPrefHeight(31.0);
+        button0.setPrefWidth(60.0);
+        button0.setText("2 cts");
+
+        button1.setLayoutX(155.0);
+        button1.setLayoutY(25.0);
+        button1.setMnemonicParsing(false);
+        button1.setPrefHeight(31.0);
+        button1.setPrefWidth(60.0);
+        button1.setText("5 cts");
+
+        button2.setLayoutX(5.0);
+        button2.setLayoutY(69.5);
+        button2.setMnemonicParsing(false);
+        button2.setPrefHeight(31.0);
+        button2.setPrefWidth(60.0);
+        button2.setText("2 €");
+
+        button3.setLayoutX(165.0);
+        button3.setLayoutY(69.5);
+        button3.setMnemonicParsing(false);
+        button3.setPrefHeight(31.0);
+        button3.setPrefWidth(60.0);
+        button3.setText("10 cts");
+
+        button4.setLayoutX(15.0);
+        button4.setLayoutY(114.0);
+        button4.setMnemonicParsing(false);
+        button4.setPrefHeight(31.0);
+        button4.setPrefWidth(60.0);
+        button4.setText("1 €");
+
+        button5.setLayoutX(85.0);
+        button5.setLayoutY(134.0);
+        button5.setMnemonicParsing(false);
+        button5.setPrefHeight(31.0);
+        button5.setPrefWidth(60.0);
+        button5.setText("50 cts");
+
+        button6.setLayoutX(155.0);
+        button6.setLayoutY(114.0);
+        button6.setMnemonicParsing(false);
+        button6.setPrefHeight(31.0);
+        button6.setPrefWidth(60.0);
+        button6.setText("20 cts");
+
+        getChildren().addAll(circle, rectangle, button, button0, button1, button2, button3, button4, button5, button6);
+
+    }
+}
