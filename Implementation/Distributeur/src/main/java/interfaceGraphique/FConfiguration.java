@@ -56,15 +56,7 @@ public class FConfiguration extends BorderPane {
         button.setOnAction(new EventHandler<ActionEvent>(){
             @Override
             public void handle(ActionEvent event){
-                Base fen1 = new Base();
-                StackPane root = new StackPane();
-                root.getChildren().add(fen1);
-                Scene scene1 = new Scene(root, 1300, 800);
-                stage.setResizable(false);
-                stage.setTitle("Fenêtre de simulation");
-                stage.setScene(scene1);
-                stage.show();
-                DistributeurTest.primaryStage.close();
+                CoeurAGraphiqueImpl.afficherSimulation();
             }
         });
 
