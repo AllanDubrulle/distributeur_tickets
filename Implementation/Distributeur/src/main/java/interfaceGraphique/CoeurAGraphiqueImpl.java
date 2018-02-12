@@ -8,10 +8,12 @@ import interfaceGraphique.*;
 
 public class CoeurAGraphiqueImpl implements CoeurAGraphique
 {
+	private Base fenetre;
+	private FConfiguration fenetreConfig;
 	public static Stage primaryStage = new Stage();
 	public static Fenetre fen;
 	public void afficherChoixBillet() {
-        FBillet fen = new FBillet();
+        fen = new FBillet();
         FSimulation.fenetre = fen;
 	}
 	
@@ -42,10 +44,10 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	public void afficherMenuPrincipal() {
 		
 	}
-	public static void afficherConfiguration() {
-        FConfiguration fen = new FConfiguration();
+	public void afficherConfiguration() {
+        fenetreConfig = new FConfiguration();
         StackPane root = new StackPane();
-        root.getChildren().add(fen);
+        root.getChildren().add(fenetreConfig);
         Scene scene = new Scene(root, 600, 400);
         primaryStage.setResizable(false);
         primaryStage.setScene(scene);
@@ -53,15 +55,20 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
         primaryStage.show();
 	}
 
-	public static void afficherSimulation() {
-		Base fen = new Base();
+	public void afficherSimulation() {
+		fenetre = new Base();
         StackPane root = new StackPane();
-        root.getChildren().add(fen);
+        root.getChildren().add(fenetre);
         Scene scene = new Scene(root, 1300, 800);
         primaryStage.setResizable(false);
         primaryStage.setScene(scene);
         primaryStage.setTitle("Fenêtre de simulation");
         primaryStage.show();
+	}
+	public void afficherAcceuil() {
+		 fen = new FSimulationAcceuil();
+         FSimulation.fenetre = fen;
+         fenetre.getChildren().setAll(fen);
 	}
 	
 }

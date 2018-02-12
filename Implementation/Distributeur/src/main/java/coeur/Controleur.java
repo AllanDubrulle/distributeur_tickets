@@ -1,26 +1,33 @@
 package coeur;
 
+import java.util.Stack;
+
 import interfaceGraphique.CoeurAGraphique;
 import interfaceGraphique.CoeurAGraphiqueImpl;
+import stockage.CoeurAStockageImpl;
 
 class Controleur 
 {
-	private ControleurEtat etatPrecedent;
+	private Stack<ControleurEtat> etatsPrecedents;
 	private ControleurEtat etatActuel;
-	private CoeurAGraphique coeurAGraphique = new CoeurAGraphiqueImpl();
+	private CoeurAGraphiqueImpl coeurAGraphique = new CoeurAGraphiqueImpl();
+	private CoeurAStockageImpl coeurAStockage = new CoeurAStockageImpl();
 	public void modifEtat(ControleurEtat etat) 
 	{
-		etatPrecedent = etatActuel;
+		etatsPrecedents.push(etatActuel);
 		etatActuel = etat;
-		etat.entree();
+		etatActuel.entree();
 	}
-	public ControleurEtat getEtatPrecedent() 
+	public Stack<ControleurEtat> getEtatsPrecedents() 
 	{
-		return etatPrecedent;
+		return etatsPrecedents;
 	}
 	public CoeurAGraphique getCoeurAGraphique() 
 	{
 		return coeurAGraphique;
 	}
-	
+	public CoeurAStockageImpl getCoeurAStockage() {
+		return coeurAStockage;
+	}
 }
+

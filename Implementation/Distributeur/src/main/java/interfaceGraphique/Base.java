@@ -73,7 +73,6 @@ public class Base extends BorderPane {
         checkMenuItem9 = new CheckMenuItem();
         checkMenuItem10 = new CheckMenuItem();
         checkMenuItem11 = new CheckMenuItem();
-        fenetre = new FSimulationAcceuil();
         
         BorderPane.setAlignment(fenetre, Pos.CENTER);
         BorderPane.setMargin(fenetre, new Insets(0.0, 0.0, 0.0, 0.0));

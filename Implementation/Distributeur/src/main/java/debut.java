@@ -2,10 +2,11 @@ import javafx.application.Application;
 import javafx.stage.Stage;
 import interfaceGraphique.*;
 
-public class main extends Application {
-    @Override
+public class debut extends Application {
+	
     public void start(Stage primaryStage) {
-        CoeurAGraphiqueImpl.afficherConfiguration();
+    	CoeurAGraphiqueImpl coeurAGraph = new CoeurAGraphiqueImpl();
+    	coeurAGraph.afficherConfiguration();
     }
     public static void main(String[] args) {
         launch(args);

@@ -11,6 +11,6 @@ class EtatAnnulable extends ControleurEtat
 	@Override
 	public void annule() 
 	{
-		controleur.modifEtat(controleur.getEtatPrecedent());
+		controleur.modifEtat(controleur.getEtatsPrecedents().pop());
 	}
 }
