@@ -44,7 +44,7 @@ public class Base extends BorderPane {
     public FentePiece fenteP = new FentePiece();
     public VBox claRe = new VBox();
     public VBox fentes = new VBox();
-    public Fenetre fenetre;
+    public static Fenetre fenetre = new FMenu();
 
     public Base() {
 

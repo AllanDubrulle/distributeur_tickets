@@ -3,9 +3,7 @@ package interfaceGraphique;
 import javafx.scene.layout.Pane;
 
 public abstract class Fenetre extends Pane {
-    public Fenetre fenetre;
     public int pos;
-    public abstract void afficher();
     public abstract void retour();
     public abstract void valider();
     public abstract void touche0();

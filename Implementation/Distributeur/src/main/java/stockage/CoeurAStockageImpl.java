@@ -11,4 +11,19 @@ public class CoeurAStockageImpl implements CoeurAStockage {
 	{
 		return carte;
 	}
+	@Override
+	public void creerBillet() {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void creerAbonnement() {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void creerPass() {
+		// TODO Auto-generated method stub
+		
+	}
 }

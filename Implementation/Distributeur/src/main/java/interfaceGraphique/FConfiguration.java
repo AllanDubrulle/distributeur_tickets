@@ -3,6 +3,7 @@ package interfaceGraphique;
 import javafx.scene.text.*;
 import javafx.geometry.*;
 import javafx.scene.layout.*;
+import coeur.*;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -24,6 +25,7 @@ public class FConfiguration extends BorderPane {
     public RadioButton radioButton3;
     public RadioButton radioButton4;
     public CheckBox checkBox;
+    public GraphiqueACoeurImpl graphAC = new GraphiqueACoeurImpl();
 
     public FConfiguration() {
 
@@ -56,7 +58,7 @@ public class FConfiguration extends BorderPane {
         button.setOnAction(new EventHandler<ActionEvent>(){
             @Override
             public void handle(ActionEvent event){
-                CoeurAGraphiqueImpl.afficherSimulation();
+                graphAC.choixValidConfig();
             }
         });
 
