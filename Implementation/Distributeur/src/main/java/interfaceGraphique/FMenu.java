@@ -59,9 +59,7 @@ public class FMenu extends Fenetre {
         button.setOnAction(new EventHandler<ActionEvent>(){
             @Override
             public void handle(ActionEvent event){
-                FBillet fen = new FBillet();
-                FSimulation.fenetre = fen;
-                getChildren().setAll(fen);
+            	graphAC.choixBillet();
             }});
 
         button0.setAlignment(javafx.geometry.Pos.TOP_LEFT);
