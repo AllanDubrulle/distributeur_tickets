@@ -237,9 +237,7 @@ public class FBillet extends Fenetre {
         button.setOnAction(new EventHandler<ActionEvent>(){
             @Override
             public void handle(ActionEvent event){
-                FMenu fen = new FMenu();
-                FSimulation.fenetre = fen;
-                getChildren().setAll(fen);
+            	
             }});
 
         button0.setLayoutX(702.5);

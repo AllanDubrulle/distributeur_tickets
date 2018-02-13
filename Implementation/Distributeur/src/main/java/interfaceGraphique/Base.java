@@ -44,7 +44,7 @@ public class Base extends BorderPane {
     public FentePiece fenteP = new FentePiece();
     public VBox claRe = new VBox();
     public VBox fentes = new VBox();
-    public static Fenetre fenetre = new FMenu();
+    public Fenetre fenetre = new FSimulationAcceuil();
 
     public Base() {
 
@@ -184,4 +184,10 @@ public class Base extends BorderPane {
         pane.getChildren().add(menuBar);
 
     }
+	public void afficher(Fenetre fen) {
+		this.fenetre = fen; 
+        fenetre.setLayoutX(259.0);
+        fenetre.setLayoutY(75.0);
+		getChildren().setAll(fenetre, claRe, fentes, scanneur, menuBar);
+	}
 }

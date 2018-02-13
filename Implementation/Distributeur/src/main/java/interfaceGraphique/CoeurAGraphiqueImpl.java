@@ -1,6 +1,7 @@
 package interfaceGraphique;
 
 import javafx.application.Application;
+
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
@@ -9,17 +10,16 @@ import interfaceGraphique.*;
 
 public class CoeurAGraphiqueImpl implements CoeurAGraphique
 {
-	private Base fenetreSim = new Base();
-	private FConfiguration fenetreConfig;
+	public Base fenetreSim = new Base();
+	private FConfiguration fenetreConfig = new FConfiguration();
 	public static Stage primaryStage = new Stage();
+	public StackPane root = new StackPane();
 	public static Fenetre fen;
 	public void afficherChoixBillet() {
-        fen = new FBillet();
-        FSimulation.fenetre = fen;
+		fenetreSim.afficher(new FBillet());
 	}
 	
 	public void afficherCreationBillet() {
-		// TODO Auto-generated method stub
 		
 	}
 
@@ -42,12 +42,7 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 		// TODO Auto-generated method stub
 		
 	}
-	public void afficherMenuPrincipal() {
-		
-	}
 	public void afficherConfiguration() {
-        fenetreConfig = new FConfiguration();
-        StackPane root = new StackPane();
         root.getChildren().add(fenetreConfig);
         Scene scene = new Scene(root, 600, 400);
         primaryStage.setResizable(false);
@@ -57,9 +52,6 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	}
 	public void afficherSimulation() {
 		Stage stage = new Stage();
-		Base.fenetre = new FSimulationAcceuil();
-        fenetreSim.getChildren().setAll(fenetreSim.fenetre);
-        StackPane root = new StackPane();
         root.getChildren().add(fenetreSim);
         Scene scene = new Scene(root, 1300, 800);
         stage.setResizable(false);
@@ -69,8 +61,7 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
         primaryStage.close();
 	}
 	public void afficherAcceuil() {
-		 Base.fenetre = new FSimulationAcceuil();
-         fenetreSim.getChildren().setAll(Base.fenetre);
+		fenetreSim.afficher(new FMenu());
 	}
 	
 }

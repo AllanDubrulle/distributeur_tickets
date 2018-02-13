@@ -1,5 +1,6 @@
 package interfaceGraphique;
 
+import coeur.GraphiqueACoeurImpl;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.*;
@@ -12,12 +13,14 @@ public class FSimulationAcceuil extends Fenetre {
     public Rectangle rectangle;
     public Button button;
     public Pane pane;
-
+    GraphiqueACoeurImpl graphAC = new GraphiqueACoeurImpl();
+    
     public FSimulationAcceuil() {
 
         rectangle = new Rectangle();
         button = new Button();
         pane = new Pane();
+        
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -42,9 +45,7 @@ public class FSimulationAcceuil extends Fenetre {
         button.setOnAction(new EventHandler<ActionEvent>(){
             @Override
             public void handle(ActionEvent event){
-                FMenu fen = new FMenu();
-                FSimulation.fenetre = fen;
-                getChildren().setAll(fen);
+            	graphAC.choixDemarrerSimul();
             }
         });
 
