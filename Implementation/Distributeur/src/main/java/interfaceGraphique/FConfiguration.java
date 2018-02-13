@@ -6,7 +6,6 @@ import javafx.scene.layout.*;
 import coeur.*;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 

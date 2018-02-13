@@ -1,7 +1,6 @@
 package interfaceGraphique;
 
 import javafx.scene.layout.*;
-import javafx.scene.shape.*;
 
 public abstract class ComposantVisible extends Pane
 {

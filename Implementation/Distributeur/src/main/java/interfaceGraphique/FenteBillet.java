@@ -2,7 +2,6 @@ package interfaceGraphique;
 
 import javafx.scene.control.*;
 import javafx.scene.shape.*;
-import javafx.scene.layout.*;
 
 public class FenteBillet extends ComposantVisible {
 

@@ -5,7 +5,7 @@ import interfaceGraphique.*;
 public class GraphiqueACoeurImpl implements GraphiqueACoeur 
 {
 	private Controleur controleur;
-	private static CoeurAGraphiqueImpl coeurAGraph = new CoeurAGraphiqueImpl();
+	private CoeurAGraphiqueImpl coeurAGraph = new CoeurAGraphiqueImpl();
 	public void choixBillet() 
 	{
 		//controleur.modifEtat(EtatChoixBillet.getInstance());
@@ -15,7 +15,7 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 		coeurAGraph.afficherSimulation();
 		//à implémenter par Victor;
 	}
-	public static void choixDemarrerSimul() {
+	public void choixDemarrerSimul() {
 		coeurAGraph.afficherAcceuil();
 		//à implementer par Victor aussi;
 	}
