@@ -4,11 +4,13 @@ import javafx.scene.shape.*;
 
 public class Reception extends ComposantVisible {
 
+	public static Reception instance;
+	
 	public Reception(boolean enMarche) {
 		super(enMarche);
 	}
 	
-	public Reception(){
+	private Reception(){
         Rectangle rectangle = new Rectangle();
         
         setMaxHeight(USE_PREF_SIZE);
@@ -29,4 +31,10 @@ public class Reception extends ComposantVisible {
         
         getChildren().add(rectangle);
     }
+
+	public static Reception getInstance() {
+		if (instance == null)
+			instance = new Reception();
+		return instance;
+	}
 }

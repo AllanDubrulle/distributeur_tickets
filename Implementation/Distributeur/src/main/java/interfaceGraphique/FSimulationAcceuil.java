@@ -12,8 +12,9 @@ public class FSimulationAcceuil extends Fenetre {
     public Rectangle rectangle;
     public Button button;
     public Pane pane;
+    public static FSimulationAcceuil instance;
     
-    public FSimulationAcceuil() {
+    private FSimulationAcceuil() {
 
         rectangle = new Rectangle();
         button = new Button();
@@ -47,5 +48,11 @@ public class FSimulationAcceuil extends Fenetre {
             }
         });
         getChildren().addAll(rectangle, button);
+    }
+    
+    public static FSimulationAcceuil getInstance() {
+    	if (instance == null)
+    		instance = new FSimulationAcceuil();
+    	return instance;
     }
 }

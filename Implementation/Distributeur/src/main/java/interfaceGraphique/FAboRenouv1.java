@@ -13,7 +13,9 @@ public class FAboRenouv1 extends Fenetre {
     public Button button;
     public Button button0;
 
-    public FAboRenouv1() {
+    public static FAboRenouv1 instance;
+    
+    private FAboRenouv1() {
 
         rectangle = new Rectangle();
         text = new Text();
@@ -48,6 +50,7 @@ public class FAboRenouv1 extends Fenetre {
         button.setLayoutY(185.0);
         button.setMnemonicParsing(false);
         button.setText("Scanner le code barre");
+        button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button.setOnAction(new EventHandler<ActionEvent>(){
             @Override
             public void handle(ActionEvent event){
@@ -60,6 +63,7 @@ public class FAboRenouv1 extends Fenetre {
         button0.setPrefHeight(31.0);
         button0.setPrefWidth(75.0);
         button0.setText("Annuler");
+        button0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button0.setOnAction(new EventHandler<ActionEvent>(){
             @Override
             public void handle(ActionEvent event){
@@ -67,5 +71,11 @@ public class FAboRenouv1 extends Fenetre {
             }});
 
         getChildren().addAll(rectangle, text, button, button0);
+    }
+
+    public static FAboRenouv1 getInstance() {
+    	if (instance == null)
+    		instance = new FAboRenouv1();
+    	return instance;
     }
 }

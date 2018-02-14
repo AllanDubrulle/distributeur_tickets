@@ -331,4 +331,12 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 	public void choixScanneurInserer() {
 			
 	}
+
+	public void choixRetour() {
+		
+	}
+
+	public void choixPaiement() {
+		
+	}
 }

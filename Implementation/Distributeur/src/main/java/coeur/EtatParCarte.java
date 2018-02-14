@@ -16,6 +16,6 @@ class EtatParCarte extends EtatAnnulable
 	@Override
 	public void entree() 
 	{
-		controleur.getCoeurAGraphique().afficherParCarte();
+		controleur.getCoeurAGraphique().afficherChoixParCarte();
 	}
 }

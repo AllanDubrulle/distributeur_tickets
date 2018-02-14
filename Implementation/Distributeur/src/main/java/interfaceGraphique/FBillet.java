@@ -44,8 +44,10 @@ public class FBillet extends Fenetre {
     public Button button;
     public Button button0;
     public Text text9;
+    
+    public static FBillet instance;
 
-    public FBillet() {
+    private FBillet() {
 
         rectangle = new Rectangle();
         vBox = new VBox();
@@ -233,6 +235,7 @@ public class FBillet extends Fenetre {
         button.setPrefHeight(31.0);
         button.setPrefWidth(75.0);
         button.setText("Annuler");
+        button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button.setOnAction(new EventHandler<ActionEvent>(){
             @Override
             public void handle(ActionEvent event){
@@ -245,6 +248,7 @@ public class FBillet extends Fenetre {
         button0.setPrefHeight(31.0);
         button0.setPrefWidth(75.0);
         button0.setText("Valider");
+        button0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button0.setOnAction(new EventHandler<ActionEvent>(){
             @Override
             public void handle(ActionEvent event){
@@ -270,5 +274,11 @@ public class FBillet extends Fenetre {
         hBox6.getChildren().addAll(text6, textField0, text7, textField1, text8, textField2);
         vBox.getChildren().addAll(hBox, hBox0, hBox1, hBox3, hBox4, hBox5, hBox6);
         getChildren().addAll(rectangle, vBox, button, button0, text9);
+    }
+
+    public static FBillet getInstance() {
+    	if (instance == null)
+    		instance = new FBillet();
+    	return instance;
     }
 }

@@ -44,8 +44,10 @@ public class FHoraire extends Fenetre {
     public Button button0;
     public Button button1;
     public Button button2;
+    
+    public static FHoraire instance;
 
-    public FHoraire() {
+    private FHoraire() {
 
         rectangle = new Rectangle();
         text = new Text();
@@ -248,6 +250,7 @@ public class FHoraire extends Fenetre {
         button.setPrefHeight(31.0);
         button.setPrefWidth(185.0);
         button.setText("Rechercher");
+        button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         VBox.setMargin(button, new Insets(20.0, 0.0, 0.0, 0.0));
         button.setOnAction(new EventHandler<ActionEvent>() {
         	@Override
@@ -260,6 +263,7 @@ public class FHoraire extends Fenetre {
         button0.setPrefHeight(31.0);
         button0.setPrefWidth(237.0);
         button0.setText("Rechercher");
+        button0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         VBox.setMargin(button0, new Insets(50.0, 0.0, 0.0, 0.0));
         button0.setOnAction(new EventHandler<ActionEvent>() {
         	@Override
@@ -272,6 +276,7 @@ public class FHoraire extends Fenetre {
         button1.setPrefHeight(31.0);
         button1.setPrefWidth(192.0);
         button1.setText("Rechercher");
+        button1.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         VBox.setMargin(button1, new Insets(50.0, 0.0, 0.0, 0.0));
         HBox.setMargin(vBox1, new Insets(0.0, 0.0, 0.0, 10.0));
         button.setOnAction(new EventHandler<ActionEvent>() {
@@ -285,6 +290,7 @@ public class FHoraire extends Fenetre {
         button2.setLayoutY(349.0);
         button2.setMnemonicParsing(false);
         button2.setText("Annuler");
+        button2.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button2.setOnAction(new EventHandler<ActionEvent>(){
             @Override
             public void handle(ActionEvent event){
@@ -300,5 +306,11 @@ public class FHoraire extends Fenetre {
         vBox1.getChildren().addAll(button, button0, button1);
         hBox.getChildren().addAll(vBox, vBox0, vBox1);
         getChildren().addAll(rectangle, text, hBox, button2);
+    }
+
+    public static FHoraire getInstance() {
+    	if (instance == null)
+    		instance = new FHoraire();
+    	return instance;
     }
 }

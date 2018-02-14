@@ -5,6 +5,6 @@ class EtatCreationBillet extends EtatCreationTitre
 	@Override
 	public void entree() 
 	{
-		controleur.getCoeurAGraphique().afficherCreationBillet();
+		controleur.getCoeurAGraphique().afficherRecapBillet();
 	}
 }
