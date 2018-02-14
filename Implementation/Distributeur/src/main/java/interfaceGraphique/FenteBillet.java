@@ -1,5 +1,7 @@
 package interfaceGraphique;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.control.*;
 import javafx.scene.shape.*;
 
@@ -38,6 +40,11 @@ public class FenteBillet extends ComposantVisible {
         button.setPrefHeight(31.0);
         button.setPrefWidth(50.0);
         button.setText("5 €");
+        button.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent event){
+            	graphAC.choix5eur();
+            }});
 
         button0.setLayoutX(62.5);
         button0.setLayoutY(24.0);
@@ -45,6 +52,11 @@ public class FenteBillet extends ComposantVisible {
         button0.setPrefHeight(31.0);
         button0.setPrefWidth(50.0);
         button0.setText("10 €");
+        button0.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent event){
+            	graphAC.choix10eur();
+            }});
 
         button1.setLayoutX(177.5);
         button1.setLayoutY(24.0);
@@ -52,6 +64,11 @@ public class FenteBillet extends ComposantVisible {
         button1.setPrefHeight(31.0);
         button1.setPrefWidth(50.0);
         button1.setText("50 €");
+        button1.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent event){
+            	graphAC.choix50eur();
+            }});
 
         button2.setLayoutX(120.0);
         button2.setLayoutY(24.0);
@@ -59,6 +76,11 @@ public class FenteBillet extends ComposantVisible {
         button2.setPrefHeight(31.0);
         button2.setPrefWidth(50.0);
         button2.setText("20 €");
+        button1.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent event){
+            	graphAC.choix20eur();
+            }});
 
         getChildren().addAll(rectangle, button, button0, button1, button2);
     }

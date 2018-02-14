@@ -130,9 +130,7 @@ public class FAboRenouv2 extends Fenetre {
         button.setOnAction(new EventHandler<ActionEvent>(){
             @Override
             public void handle(ActionEvent event){
-                FMenu fen = new FMenu();
-                FSimulation.fenetre = fen;
-                getChildren().setAll(fen);
+            	graphAC.choixAnnuler();
             }});
 
         button0.setLayoutX(703.0);
@@ -141,177 +139,15 @@ public class FAboRenouv2 extends Fenetre {
         button0.setPrefHeight(31.0);
         button0.setPrefWidth(75.0);
         button0.setText("Valider");
+        button0.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent event){
+            	graphAC.choixValider();
+            }});
 
         hBox0.getChildren().addAll(text, textField);
         hBox1.getChildren().addAll(text0, radioButton, radioButton0, radioButton1, radioButton2);
         vBox.getChildren().addAll(hBox, hBox0, hBox1);
         getChildren().addAll(rectangle, vBox, text1, button, button0);
-
     }
-    @Override
-    public void retour(){
-        FMenu fen = new FMenu();
-        FSimulation.fenetre = fen;
-        getChildren().setAll(fen);
-    }
-    @Override
-    public void valider(){}
-    @Override
-    public void touche0(){
-        String s = textField.getText();
-        textField.setText(s + "0");
-    }
-    @Override
-    public void touche1(){
-    	String s = textField.getText();
-        textField.setText(s + "1");
-    }
-    @Override
-    public void touche2(){
-    	String s = textField.getText();
-        textField.setText(s + "2");
-    }
-    @Override
-    public void touche3(){
-    	String s = textField.getText();
-        textField.setText(s + "3");
-    }
-    @Override
-    public void touche4(){
-    	String s = textField.getText();
-        textField.setText(s + "4");
-    }
-    @Override
-    public void touche5(){
-    	String s = textField.getText();
-        textField.setText(s + "5");
-    }
-    @Override
-    public void touche6(){
-    	String s = textField.getText();
-        textField.setText(s + "6");
-    }
-    @Override
-    public void touche7(){
-    	String s = textField.getText();
-        textField.setText(s + "7");
-    }
-    @Override
-    public void touche8(){
-    	String s = textField.getText();
-        textField.setText(s + "8");
-    }
-    @Override
-    public void touche9(){
-    	String s = textField.getText();
-        textField.setText(s + "9");
-    }
-    @Override
-    public void toucheA(){}
-    @Override
-    public void toucheB(){}
-    @Override
-    public void toucheC(){}
-    @Override
-    public void toucheD(){}
-    @Override
-    public void toucheE(){}
-    @Override
-    public void toucheF(){}
-    @Override
-    public void toucheG(){}
-    @Override
-    public void toucheH(){}
-    @Override
-    public void toucheI(){}
-    @Override
-    public void toucheJ(){}
-    @Override
-    public void toucheK(){}
-    @Override
-    public void toucheL(){}
-    @Override
-    public void toucheM(){}
-    @Override
-    public void toucheN(){}
-    @Override
-    public void toucheO(){}
-    @Override
-    public void toucheP(){}
-    @Override
-    public void toucheQ(){}
-    @Override
-    public void toucheR(){}
-    @Override
-    public void toucheS(){}
-    @Override
-    public void toucheT(){}
-    @Override
-    public void toucheU(){}
-    @Override
-    public void toucheV(){}
-    @Override
-    public void toucheW(){}
-    @Override
-    public void toucheX(){}
-    @Override
-    public void toucheY(){}
-    @Override
-    public void toucheZ(){}
-    @Override
-    public void toucheEff(){}
-    @Override
-    public void toucheEsp(){}
-    @Override
-    public void toucheSuiv(){}
-    @Override
-    public void touche0_1(){}
-    @Override
-    public void touche1_1(){}
-    @Override
-    public void touche2_1(){}
-    @Override
-    public void touche3_1(){}
-    @Override
-    public void touche4_1(){}
-    @Override
-    public void touche5_1(){}
-    @Override
-    public void touche6_1(){}
-    @Override
-    public void touche7_1(){}
-    @Override
-    public void touche8_1(){}
-    @Override
-    public void touche9_1(){}
-    @Override
-    public void toucheInserer(){}
-    @Override
-    public void toucheOk(){}
-    @Override
-    public void toucheEff_1(){}
-    @Override
-    public void touche1ct(){}
-    @Override
-    public void touche2ct(){}
-    @Override
-    public void touche5ct(){}
-    @Override
-    public void touche10ct(){}
-    @Override
-    public void touche20ct(){}
-    @Override
-    public void touche50ct(){}
-    @Override
-    public void touche1e(){}
-    @Override
-    public void touche2e(){}
-    @Override
-    public void touche5e(){}
-    @Override
-    public void touche10e(){}
-    @Override
-    public void touche20e(){}
-    @Override
-    public void touche50e(){}
 }

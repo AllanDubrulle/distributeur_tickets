@@ -1,5 +1,7 @@
 package interfaceGraphique;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.*;
 import javafx.scene.control.*;
 import javafx.scene.shape.*;
@@ -55,15 +57,30 @@ public class LecteurCarte extends ComposantVisible {
         button.setMnemonicParsing(false);
         button.setText("1");
         HBox.setMargin(button, new Insets(0.0));
+        button.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent event){
+            	graphAC.choixScanneur1();
+            }});
 
         button0.setMnemonicParsing(false);
         button0.setText("2");
         HBox.setMargin(button0, new Insets(0.0, 10.0, 0.0, 10.0));
+        button0.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent event){
+            	graphAC.choixScanneur2();
+            }});
 
         button1.setMnemonicParsing(false);
         button1.setText("3");
         HBox.setMargin(button1, new Insets(0.0));
         VBox.setMargin(hBox, new Insets(0.0, 0.0, 0.0, 45.0));
+        button1.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent event){
+            	graphAC.choixScanneur3();
+            }});
 
         hBox0.setPrefHeight(39.0);
         hBox0.setPrefWidth(205.0);
@@ -71,14 +88,29 @@ public class LecteurCarte extends ComposantVisible {
         button2.setMnemonicParsing(false);
         button2.setText("4");
         HBox.setMargin(button2, new Insets(0.0, 0.0, 0.0, 17.0));
+        button2.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent event){
+            	graphAC.choixScanneur4();
+            }});
 
         button3.setMnemonicParsing(false);
         button3.setText("5");
         HBox.setMargin(button3, new Insets(0.0, 10.0, 0.0, 10.0));
+        button3.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent event){
+            	graphAC.choixScanneur5();
+            }});
 
         button4.setMnemonicParsing(false);
         button4.setText("6");
         VBox.setMargin(hBox0, new Insets(0.0, 0.0, 0.0, 28.0));
+        button4.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent event){
+            	graphAC.choixScanneur6();
+            }});
 
         hBox1.setPrefHeight(40.0);
         hBox1.setPrefWidth(205.0);
@@ -86,33 +118,68 @@ public class LecteurCarte extends ComposantVisible {
         button5.setMnemonicParsing(false);
         button5.setText("7");
         HBox.setMargin(button5, new Insets(0.0, 0.0, 0.0, 17.0));
+        button5.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent event){
+            	graphAC.choixScanneur7();
+            }});
 
         button6.setMnemonicParsing(false);
         button6.setText("8");
         HBox.setMargin(button6, new Insets(0.0, 10.0, 0.0, 10.0));
+        button6.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent event){
+            	graphAC.choixScanneur8();
+            }});
 
         button7.setMnemonicParsing(false);
         button7.setText("9");
         VBox.setMargin(hBox1, new Insets(0.0, 0.0, 0.0, 28.0));
+        button7.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent event){
+            	graphAC.choixScanneur9();
+            }});
 
         hBox2.setPrefHeight(40.0);
         hBox2.setPrefWidth(205.0);
 
         button8.setMnemonicParsing(false);
         button8.setText("EFF.");
+        button8.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent event){
+            	graphAC.choixScanneurEff();
+            }});
 
         button9.setMnemonicParsing(false);
         button9.setText("0");
         HBox.setMargin(button9, new Insets(0.0, 10.0, 0.0, 10.0));
+        button9.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent event){
+            	graphAC.choixScanneur0();
+            }});
 
         button10.setMnemonicParsing(false);
         button10.setText("OK");
         HBox.setMargin(button10, new Insets(0.0));
         VBox.setMargin(hBox2, new Insets(0.0, 0.0, 0.0, 28.0));
+        button10.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent event){
+            	graphAC.choixScanneurOK();
+            }});
 
         button11.setMnemonicParsing(false);
         button11.setText("Insérer carte");
         VBox.setMargin(button11, new Insets(0.0, 0.0, 0.0, 47.0));
+        button.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent event){
+            	graphAC.choixScanneurInserer();
+            }});
 
         hBox.getChildren().addAll(button, button0, button1);
         hBox0.getChildren().addAll(button2, button3, button4);

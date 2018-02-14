@@ -6,5 +6,4 @@ class Ecran extends ComposantVisible {
 		super(enMarche);
 		// TODO Auto-generated constructor stub
 	}
-
 }

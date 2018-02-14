@@ -71,9 +71,7 @@ public class FMenu extends Fenetre {
         button0.setOnAction(new EventHandler<ActionEvent>(){
             @Override
             public void handle(ActionEvent event){
-                FAboAchat fen = new FAboAchat();
-                FSimulation.fenetre = fen;
-                getChildren().setAll(fen);
+            	graphAC.choixAchatAbo();
             }});
 
         button1.setAlignment(javafx.geometry.Pos.TOP_LEFT);
@@ -85,9 +83,7 @@ public class FMenu extends Fenetre {
         button1.setOnAction(new EventHandler<ActionEvent>(){
             @Override
             public void handle(ActionEvent event){
-                FAboRenouv1 fen = new FAboRenouv1();
-                FSimulation.fenetre = fen;
-                getChildren().setAll(fen);
+            	graphAC.choixRenouvAbo();
             }});
 
         button2.setAlignment(javafx.geometry.Pos.TOP_LEFT);
@@ -99,9 +95,7 @@ public class FMenu extends Fenetre {
         button2.setOnAction(new EventHandler<ActionEvent>(){
             @Override
             public void handle(ActionEvent event){
-                FPassMenu fen = new FPassMenu();
-                FSimulation.fenetre = fen;
-                getChildren().setAll(fen);
+            	graphAC.choixPass();
             }});
 
         button3.setAlignment(javafx.geometry.Pos.TOP_LEFT);
@@ -112,9 +106,7 @@ public class FMenu extends Fenetre {
         button3.setOnAction(new EventHandler<ActionEvent>(){
             @Override
             public void handle(ActionEvent event){
-                FHoraire fen = new FHoraire();
-                FSimulation.fenetre = fen;
-                getChildren().setAll(fen);
+            	graphAC.choixHoraire();
             }});
 
         text.setFontSmoothingType(javafx.scene.text.FontSmoothingType.LCD);
@@ -127,158 +119,5 @@ public class FMenu extends Fenetre {
 
         vBox.getChildren().addAll(button, button0, button1, button2, button3);
         getChildren().addAll(rectangle, vBox, text);
-
     }
-    @Override
-    public void retour(){}
-    @Override
-    public void valider(){}
-    @Override
-    public void touche0(){}
-    @Override
-    public void touche1(){
-        FBillet fen = new FBillet();
-        FSimulation.fenetre = fen;
-        getChildren().setAll(fen);
-    }
-    @Override
-    public void touche2(){
-        FAboAchat fen = new FAboAchat();
-        FSimulation.fenetre = fen;
-        getChildren().setAll(fen);
-    }
-    @Override
-    public void touche3(){
-        FAboRenouv1 fen = new FAboRenouv1();
-        FSimulation.fenetre = fen;
-        getChildren().setAll(fen);
-    }
-    @Override
-    public void touche4(){
-        FPassMenu fen = new FPassMenu();
-        FSimulation.fenetre = fen;
-        getChildren().setAll(fen);
-    }
-    @Override
-    public void touche5(){
-        FHoraire fen = new FHoraire();
-        FSimulation.fenetre = fen;
-        getChildren().setAll(fen);
-    }
-    @Override
-    public void touche6(){}
-    @Override
-    public void touche7(){}
-    @Override
-    public void touche8(){}
-    @Override
-    public void touche9(){}
-    @Override
-    public void toucheA(){}
-    @Override
-    public void toucheB(){}
-    @Override
-    public void toucheC(){}
-    @Override
-    public void toucheD(){}
-    @Override
-    public void toucheE(){}
-    @Override
-    public void toucheF(){}
-    @Override
-    public void toucheG(){}
-    @Override
-    public void toucheH(){}
-    @Override
-    public void toucheI(){}
-    @Override
-    public void toucheJ(){}
-    @Override
-    public void toucheK(){}
-    @Override
-    public void toucheL(){}
-    @Override
-    public void toucheM(){}
-    @Override
-    public void toucheN(){}
-    @Override
-    public void toucheO(){}
-    @Override
-    public void toucheP(){}
-    @Override
-    public void toucheQ(){}
-    @Override
-    public void toucheR(){}
-    @Override
-    public void toucheS(){}
-    @Override
-    public void toucheT(){}
-    @Override
-    public void toucheU(){}
-    @Override
-    public void toucheV(){}
-    @Override
-    public void toucheW(){}
-    @Override
-    public void toucheX(){}
-    @Override
-    public void toucheY(){}
-    @Override
-    public void toucheZ(){}
-    @Override
-    public void toucheEff(){}
-    @Override
-    public void toucheEsp(){}
-    @Override
-    public void toucheSuiv(){}
-    @Override
-    public void touche0_1(){}
-    @Override
-    public void touche1_1(){}
-    @Override
-    public void touche2_1(){}
-    @Override
-    public void touche3_1(){}
-    @Override
-    public void touche4_1(){}
-    @Override
-    public void touche5_1(){}
-    @Override
-    public void touche6_1(){}
-    @Override
-    public void touche7_1(){}
-    @Override
-    public void touche8_1(){}
-    @Override
-    public void touche9_1(){}
-    @Override
-    public void toucheInserer(){}
-    @Override
-    public void toucheOk(){}
-    @Override
-    public void toucheEff_1(){}
-    @Override
-    public void touche1ct(){}
-    @Override
-    public void touche2ct(){}
-    @Override
-    public void touche5ct(){}
-    @Override
-    public void touche10ct(){}
-    @Override
-    public void touche20ct(){}
-    @Override
-    public void touche50ct(){}
-    @Override
-    public void touche1e(){}
-    @Override
-    public void touche2e(){}
-    @Override
-    public void touche5e(){}
-    @Override
-    public void touche10e(){}
-    @Override
-    public void touche20e(){}
-    @Override
-    public void touche50e(){}
 }

@@ -15,6 +15,34 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 		fenetreSim.afficher(new FBillet());
 	}
 	
+	public void afficherChoixAchatAbo() {
+		fenetreSim.afficher(new FAboAchat());
+	}
+	
+	public void afficherChoixRenouvAbo() {
+		fenetreSim.afficher(new FAboRenouv1());
+	}
+	
+	public void afficherChoixPass() {
+		fenetreSim.afficher(new FPassMenu());
+	}
+	
+	public void afficherChoixPassIllimite() {
+		fenetreSim.afficher(new FPass1());
+	}
+	
+	public void afficherChoixPass10Trajets() {
+		fenetreSim.afficher(new FPass2());
+	}
+	
+	public void afficherChoixPass10Trajets2Gares() {
+		fenetreSim.afficher(new FPass3());
+	}
+	
+	public void afficherChoixHoraire() {
+		fenetreSim.afficher(new FHoraire());
+	}
+	
 	public void afficherCreationBillet() {
 		
 	}
@@ -58,6 +86,5 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	}
 	public void afficherAcceuil() {
 		fenetreSim.afficher(new FMenu());
-	}
-	
+	}	
 }

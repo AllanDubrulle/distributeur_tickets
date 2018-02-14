@@ -88,9 +88,7 @@ public class FPassMenu extends Fenetre {
         button.setOnAction(new EventHandler<ActionEvent>(){
             @Override
             public void handle(ActionEvent event){
-                FPass1 fen = new FPass1();
-                FSimulation.fenetre = fen;
-                getChildren().setAll(fen);
+            	graphAC.choixPassIllimite();
             }});
 
         button0.setMnemonicParsing(false);
@@ -100,9 +98,7 @@ public class FPassMenu extends Fenetre {
         button0.setOnAction(new EventHandler<ActionEvent>(){
             @Override
             public void handle(ActionEvent event){
-                FPass2 fen = new FPass2();
-                FSimulation.fenetre = fen;
-                getChildren().setAll(fen);
+            	graphAC.choixPass10Trajets();
             }});
 
         button1.setMnemonicParsing(false);
@@ -113,9 +109,7 @@ public class FPassMenu extends Fenetre {
         button1.setOnAction(new EventHandler<ActionEvent>(){
             @Override
             public void handle(ActionEvent event){
-                FPass3 fen = new FPass3();
-                FSimulation.fenetre = fen;
-                getChildren().setAll(fen);
+            	graphAC.choixPass10Tajets2Gares();
             }});
         
         vBox0.setPrefHeight(125.0);
@@ -143,164 +137,13 @@ public class FPassMenu extends Fenetre {
         button2.setText("Annuler");
         button2.setOnAction(new EventHandler<ActionEvent>(){
             @Override
-            public void handle(ActionEvent event){
-                FMenu fen = new FMenu();
-                FSimulation.fenetre = fen;
-                getChildren().setAll(fen);
+            public void handle(ActionEvent event){	
+            	graphAC.choixAnnuler();
             }});
 
         vBox.getChildren().addAll(button, button0, button1);
         vBox0.getChildren().addAll(text1, text2, text3);
         hBox.getChildren().addAll(vBox, vBox0);
         getChildren().addAll(rectangle, text, text0, hBox, button2);
-
     }
-    @Override
-    public void retour(){
-        FMenu fen = new FMenu();
-        FSimulation.fenetre = fen;
-        getChildren().setAll(fen);
-    }
-    @Override
-    public void valider(){}
-    @Override
-    public void touche0(){}
-    @Override
-    public void touche1(){
-        FPass1 fen = new FPass1();
-        FSimulation.fenetre = fen;
-        getChildren().setAll(fen);
-    }
-    @Override
-    public void touche2(){
-        FPass2 fen = new FPass2();
-        FSimulation.fenetre = fen;
-        getChildren().setAll(fen);
-    }
-    @Override
-    public void touche3(){
-        FPass3 fen = new FPass3();
-        FSimulation.fenetre = fen;
-        getChildren().setAll(fen);
-    }
-    @Override
-    public void touche4(){}
-    @Override
-    public void touche5(){}
-    @Override
-    public void touche6(){}
-    @Override
-    public void touche7(){}
-    @Override
-    public void touche8(){}
-    @Override
-    public void touche9(){}
-    @Override
-    public void toucheA(){}
-    @Override
-    public void toucheB(){}
-    @Override
-    public void toucheC(){}
-    @Override
-    public void toucheD(){}
-    @Override
-    public void toucheE(){}
-    @Override
-    public void toucheF(){}
-    @Override
-    public void toucheG(){}
-    @Override
-    public void toucheH(){}
-    @Override
-    public void toucheI(){}
-    @Override
-    public void toucheJ(){}
-    @Override
-    public void toucheK(){}
-    @Override
-    public void toucheL(){}
-    @Override
-    public void toucheM(){}
-    @Override
-    public void toucheN(){}
-    @Override
-    public void toucheO(){}
-    @Override
-    public void toucheP(){}
-    @Override
-    public void toucheQ(){}
-    @Override
-    public void toucheR(){}
-    @Override
-    public void toucheS(){}
-    @Override
-    public void toucheT(){}
-    @Override
-    public void toucheU(){}
-    @Override
-    public void toucheV(){}
-    @Override
-    public void toucheW(){}
-    @Override
-    public void toucheX(){}
-    @Override
-    public void toucheY(){}
-    @Override
-    public void toucheZ(){}
-    @Override
-    public void toucheEff(){}
-    @Override
-    public void toucheEsp(){}
-    @Override
-    public void toucheSuiv(){}
-    @Override
-    public void touche0_1(){}
-    @Override
-    public void touche1_1(){}
-    @Override
-    public void touche2_1(){}
-    @Override
-    public void touche3_1(){}
-    @Override
-    public void touche4_1(){}
-    @Override
-    public void touche5_1(){}
-    @Override
-    public void touche6_1(){}
-    @Override
-    public void touche7_1(){}
-    @Override
-    public void touche8_1(){}
-    @Override
-    public void touche9_1(){}
-    @Override
-    public void toucheInserer(){}
-    @Override
-    public void toucheOk(){}
-    @Override
-    public void toucheEff_1(){}
-    @Override
-    public void touche1ct(){}
-    @Override
-    public void touche2ct(){}
-    @Override
-    public void touche5ct(){}
-    @Override
-    public void touche10ct(){}
-    @Override
-    public void touche20ct(){}
-    @Override
-    public void touche50ct(){}
-    @Override
-    public void touche1e(){}
-    @Override
-    public void touche2e(){}
-    @Override
-    public void touche5e(){}
-    @Override
-    public void touche10e(){}
-    @Override
-    public void touche20e(){}
-    @Override
-    public void touche50e(){}
 }

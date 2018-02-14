@@ -81,7 +81,6 @@ public class FHoraire extends Fenetre {
         button0 = new Button();
         button1 = new Button();
         button2 = new Button();
-        pos = 0;
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -250,12 +249,24 @@ public class FHoraire extends Fenetre {
         button.setPrefWidth(185.0);
         button.setText("Rechercher");
         VBox.setMargin(button, new Insets(20.0, 0.0, 0.0, 0.0));
+        button.setOnAction(new EventHandler<ActionEvent>() {
+        	@Override
+        	public void handle(ActionEvent event) {
+        		graphAC.choixRechercheGD();
+        	}
+        });
 
         button0.setMnemonicParsing(false);
         button0.setPrefHeight(31.0);
         button0.setPrefWidth(237.0);
         button0.setText("Rechercher");
         VBox.setMargin(button0, new Insets(50.0, 0.0, 0.0, 0.0));
+        button0.setOnAction(new EventHandler<ActionEvent>() {
+        	@Override
+        	public void handle(ActionEvent event) {
+        		graphAC.choixRechercheGA();
+        	}
+        });
 
         button1.setMnemonicParsing(false);
         button1.setPrefHeight(31.0);
@@ -263,6 +274,12 @@ public class FHoraire extends Fenetre {
         button1.setText("Rechercher");
         VBox.setMargin(button1, new Insets(50.0, 0.0, 0.0, 0.0));
         HBox.setMargin(vBox1, new Insets(0.0, 0.0, 0.0, 10.0));
+        button.setOnAction(new EventHandler<ActionEvent>() {
+        	@Override
+        	public void handle(ActionEvent event) {
+        		graphAC.choixRechercheGDEtGA();
+        	}
+        });
 
         button2.setLayoutX(359.0);
         button2.setLayoutY(349.0);
@@ -271,9 +288,7 @@ public class FHoraire extends Fenetre {
         button2.setOnAction(new EventHandler<ActionEvent>(){
             @Override
             public void handle(ActionEvent event){
-                FMenu fen = new FMenu();
-                FSimulation.fenetre = fen;
-                getChildren().setAll(fen);
+            	graphAC.choixAnnuler();
             }});
 
         vBox.getChildren().addAll(text0, text1, text2, text3, text4, text5);
@@ -285,196 +300,5 @@ public class FHoraire extends Fenetre {
         vBox1.getChildren().addAll(button, button0, button1);
         hBox.getChildren().addAll(vBox, vBox0, vBox1);
         getChildren().addAll(rectangle, text, hBox, button2);
-
     }
-    @Override
-    public void retour(){
-        FMenu fen = new FMenu();
-        FSimulation.fenetre = fen;
-        getChildren().setAll(fen);
-    }
-    @Override
-    public void valider(){}
-    @Override
-    public void touche0(){}
-    @Override
-    public void touche1(){}
-    @Override
-    public void touche2(){}
-    @Override
-    public void touche3(){}
-    @Override
-    public void touche4(){}
-    @Override
-    public void touche5(){}
-    @Override
-    public void touche6(){}
-    @Override
-    public void touche7(){}
-    @Override
-    public void touche8(){}
-    @Override
-    public void touche9(){}
-    @Override
-    public void toucheA(){}
-    @Override
-    public void toucheB(){}
-    @Override
-    public void toucheC(){}
-    @Override
-    public void toucheD(){}
-    @Override
-    public void toucheE(){}
-    @Override
-    public void toucheF(){}
-    @Override
-    public void toucheG(){}
-    @Override
-    public void toucheH(){}
-    @Override
-    public void toucheI(){}
-    @Override
-    public void toucheJ(){}
-    @Override
-    public void toucheK(){}
-    @Override
-    public void toucheL(){}
-    @Override
-    public void toucheM(){}
-    @Override
-    public void toucheN(){}
-    @Override
-    public void toucheO(){}
-    @Override
-    public void toucheP(){}
-    @Override
-    public void toucheQ(){}
-    @Override
-    public void toucheR(){}
-    @Override
-    public void toucheS(){}
-    @Override
-    public void toucheT(){}
-    @Override
-    public void toucheU(){}
-    @Override
-    public void toucheV(){}
-    @Override
-    public void toucheW(){}
-    @Override
-    public void toucheX(){}
-    @Override
-    public void toucheY(){}
-    @Override
-    public void toucheZ(){}
-    @Override
-    public void toucheEff(){
-        if (pos == 0){
-            String s = textField5.getText();
-            if (s.length()!=0)
-                textField5.setText(s.substring(0, s.length()-1));
-        }
-        else if(pos == 1){
-            String s = textField.getText();
-            if (s.length()!=0)
-                textField.setText(s.substring(0, s.length()-1));
-        }
-        else if(pos == 2){
-            String s = textField0.getText();
-            if (s.length()!=0)
-                textField0.setText(s.substring(0, s.length()-1));
-        }
-        else if(pos == 3){
-            String s = textField6.getText();
-            if (s.length()!=0)
-                textField6.setText(s.substring(0, s.length()-1));
-        }
-        else if(pos == 4){
-            String s = textField1.getText();
-            if (s.length()!=0)
-                textField1.setText(s.substring(0, s.length()-1));
-        }
-        else if(pos == 5){
-            String s = textField2.getText();
-            if (s.length()!=0)
-                textField2.setText(s.substring(0, s.length()-1));
-        }else if(pos == 6){
-            String s = textField7.getText();
-            if (s.length()!=0)
-                textField7.setText(s.substring(0, s.length()-1));
-        }
-        else if(pos == 7){
-            String s = textField8.getText();
-            if (s.length()!=0)
-                textField8.setText(s.substring(0, s.length()-1));
-        }
-        else if(pos == 8){
-            String s = textField3.getText();
-            if (s.length()!=0)
-                textField3.setText(s.substring(0, s.length()-1));
-        }
-        else if(pos == 9){
-            String s = textField4.getText();
-            if (s.length()!=0)
-                textField4.setText(s.substring(0, s.length()-1));
-        }
-    }
-    @Override
-    public void toucheEsp(){}
-    @Override
-    public void toucheSuiv(){
-    	if (pos ==9)
-    		pos = 0;
-    	pos++;
-    }
-    @Override
-    public void touche0_1(){}
-    @Override
-    public void touche1_1(){}
-    @Override
-    public void touche2_1(){}
-    @Override
-    public void touche3_1(){}
-    @Override
-    public void touche4_1(){}
-    @Override
-    public void touche5_1(){}
-    @Override
-    public void touche6_1(){}
-    @Override
-    public void touche7_1(){}
-    @Override
-    public void touche8_1(){}
-    @Override
-    public void touche9_1(){}
-    @Override
-    public void toucheInserer(){}
-    @Override
-    public void toucheOk(){}
-    @Override
-    public void toucheEff_1(){}
-    @Override
-    public void touche1ct(){}
-    @Override
-    public void touche2ct(){}
-    @Override
-    public void touche5ct(){}
-    @Override
-    public void touche10ct(){}
-    @Override
-    public void touche20ct(){}
-    @Override
-    public void touche50ct(){}
-    @Override
-    public void touche1e(){}
-    @Override
-    public void touche2e(){}
-    @Override
-    public void touche5e(){}
-    @Override
-    public void touche10e(){}
-    @Override
-    public void touche20e(){}
-    @Override
-    public void touche50e(){}
 }

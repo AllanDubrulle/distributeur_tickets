@@ -133,9 +133,7 @@ public class FPass2 extends Fenetre {
         button.setOnAction(new EventHandler<ActionEvent>(){
             @Override
             public void handle(ActionEvent event){
-                FPassMenu fen = new FPassMenu();
-                FSimulation.fenetre = fen;
-                getChildren().setAll(fen);
+            	graphAC.choixAnnuler();
             }});
 
         button0.setLayoutX(702.5);
@@ -144,148 +142,16 @@ public class FPass2 extends Fenetre {
         button0.setPrefHeight(31.0);
         button0.setPrefWidth(75.0);
         button0.setText("Valider");
+        button0.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent event){
+            	graphAC.choixValider();
+            }});
 
         hBox0.getChildren().addAll(text0, textField);
         hBox1.getChildren().addAll(text1, radioButton, radioButton0);
         hBox2.getChildren().addAll(text2, textField1);
         vBox.getChildren().addAll(hBox, hBox0, hBox1, hBox2);
         getChildren().addAll(rectangle, text, vBox, button, button0);
-
     }
-    @Override
-    public void retour(){
-        FPassMenu fen = new FPassMenu();
-        FSimulation.fenetre = fen;
-        getChildren().setAll(fen);
-    }
-    @Override
-    public void valider(){}
-    @Override
-    public void touche0(){}
-    @Override
-    public void touche1(){}
-    @Override
-    public void touche2(){}
-    @Override
-    public void touche3(){}
-    @Override
-    public void touche4(){}
-    @Override
-    public void touche5(){}
-    @Override
-    public void touche6(){}
-    @Override
-    public void touche7(){}
-    @Override
-    public void touche8(){}
-    @Override
-    public void touche9(){}
-    @Override
-    public void toucheA(){}
-    @Override
-    public void toucheB(){}
-    @Override
-    public void toucheC(){}
-    @Override
-    public void toucheD(){}
-    @Override
-    public void toucheE(){}
-    @Override
-    public void toucheF(){}
-    @Override
-    public void toucheG(){}
-    @Override
-    public void toucheH(){}
-    @Override
-    public void toucheI(){}
-    @Override
-    public void toucheJ(){}
-    @Override
-    public void toucheK(){}
-    @Override
-    public void toucheL(){}
-    @Override
-    public void toucheM(){}
-    @Override
-    public void toucheN(){}
-    @Override
-    public void toucheO(){}
-    @Override
-    public void toucheP(){}
-    @Override
-    public void toucheQ(){}
-    @Override
-    public void toucheR(){}
-    @Override
-    public void toucheS(){}
-    @Override
-    public void toucheT(){}
-    @Override
-    public void toucheU(){}
-    @Override
-    public void toucheV(){}
-    @Override
-    public void toucheW(){}
-    @Override
-    public void toucheX(){}
-    @Override
-    public void toucheY(){}
-    @Override
-    public void toucheZ(){}
-    @Override
-    public void toucheEff(){}
-    @Override
-    public void toucheEsp(){}
-    @Override
-    public void toucheSuiv(){}
-    @Override
-    public void touche0_1(){}
-    @Override
-    public void touche1_1(){}
-    @Override
-    public void touche2_1(){}
-    @Override
-    public void touche3_1(){}
-    @Override
-    public void touche4_1(){}
-    @Override
-    public void touche5_1(){}
-    @Override
-    public void touche6_1(){}
-    @Override
-    public void touche7_1(){}
-    @Override
-    public void touche8_1(){}
-    @Override
-    public void touche9_1(){}
-    @Override
-    public void toucheInserer(){}
-    @Override
-    public void toucheOk(){}
-    @Override
-    public void toucheEff_1(){}
-    @Override
-    public void touche1ct(){}
-    @Override
-    public void touche2ct(){}
-    @Override
-    public void touche5ct(){}
-    @Override
-    public void touche10ct(){}
-    @Override
-    public void touche20ct(){}
-    @Override
-    public void touche50ct(){}
-    @Override
-    public void touche1e(){}
-    @Override
-    public void touche2e(){}
-    @Override
-    public void touche5e(){}
-    @Override
-    public void touche10e(){}
-    @Override
-    public void touche20e(){}
-    @Override
-    public void touche50e(){}
 }

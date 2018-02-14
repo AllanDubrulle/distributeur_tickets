@@ -125,6 +125,5 @@ public class FConfiguration extends BorderPane {
         setCenter(vBox);
 
         vBox.getChildren().addAll(text, text0, radioButton, radioButton0, radioButton1, text1, radioButton2, radioButton3, radioButton4, checkBox);
-
     }
 }
