@@ -92,10 +92,10 @@ public class Base extends BorderPane {
         checkMenuItem.setText("Lecteur de cartes");
 
         checkMenuItem0.setMnemonicParsing(false);
-        checkMenuItem0.setText("Fente Ã  billets");
+        checkMenuItem0.setText("Fente à  billets");
 
         checkMenuItem1.setMnemonicParsing(false);
-        checkMenuItem1.setText("Fente Ã  piÃ¨ces");
+        checkMenuItem1.setText("Fente à  pièces");
 
         checkMenuItem2.setMnemonicParsing(false);
         checkMenuItem2.setText("Scanneur de codes");
@@ -134,10 +134,10 @@ public class Base extends BorderPane {
         menu3.setText("Fentes");
 
         checkMenuItem6.setMnemonicParsing(false);
-        checkMenuItem6.setText("Fentes Ã  piÃ¨ces et Ã  billets");
+        checkMenuItem6.setText("Fentes à  pièces et à  billets");
 
         checkMenuItem7.setMnemonicParsing(false);
-        checkMenuItem7.setText("Fente Ã  piÃ¨ces uniquement");
+        checkMenuItem7.setText("Fente à  pièces uniquement");
 
         checkMenuItem8.setMnemonicParsing(false);
         checkMenuItem8.setText("Aucune fente");
@@ -146,10 +146,10 @@ public class Base extends BorderPane {
         menu4.setText("Clavier");
 
         checkMenuItem9.setMnemonicParsing(false);
-        checkMenuItem9.setText("Clavier et Ã©cran tacitile");
+        checkMenuItem9.setText("Clavier et écran tacitile");
 
         checkMenuItem10.setMnemonicParsing(false);
-        checkMenuItem10.setText("Clavier et Ã©cran non tactile");
+        checkMenuItem10.setText("Clavier et écran non tactile");
 
         checkMenuItem11.setMnemonicParsing(false);
         checkMenuItem11.setText("Ecran tacile sans clavier");

@@ -64,7 +64,19 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	}
 	
 	public void afficherChoixHoraire() {
-		fenetreSim.afficher(FHoraire.getInstance());
+		fenetreSim.afficher(FHoraireMenu.getInstance());
+	}
+	
+	public void afficherChoixItineraire() {
+		fenetreSim.afficher(FHoraireArEtDep.getInstance());
+	}
+	
+	public void afficherChoixArrivee() {
+		fenetreSim.afficher(FHoraireArrivee.getInstance());
+	}
+	
+	public void afficherChoixDepart() {
+		fenetreSim.afficher(FHoraireDepart.getInstance());
 	}
 	
 	public void afficherRecapBillet() {

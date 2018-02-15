@@ -13,6 +13,9 @@ public interface CoeurAGraphique
 	public void afficherChoixPass10Trajets();
 	public void afficherChoixPass10Trajets2Gares();
 	public void afficherChoixHoraire();
+	public void afficherChoixItineraire();
+	public void afficherChoixDepart();
+	public void afficherChoixArrivee();
 	public void afficherRecapBillet();
 	public void afficherRecapAchatAbo();
 	public void afficherRecapRenouvAbo();
