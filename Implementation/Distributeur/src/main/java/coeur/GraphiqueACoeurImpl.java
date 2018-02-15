@@ -9,7 +9,7 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur {
 	private CoeurAGraphiqueImpl cAG = new CoeurAGraphiqueImpl();
 	
 	public void choixBillet() {
-		//controleur.modifEtat(EtatChoixBillet.getInstance());
+		controleur.modifEtat(EtatChoixBillet.getInstance());
 		cAG.afficherChoixBillet();
 	}
 	
