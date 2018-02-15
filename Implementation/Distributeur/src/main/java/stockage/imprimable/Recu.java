@@ -1,5 +1,7 @@
 package stockage.imprimable;
 
-public class Recu {
+public class Recu
+{
+	private TitreDeTransport titre;
 
 }

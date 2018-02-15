@@ -1,5 +1,11 @@
 package stockage.imprimable;
 
-enum TypeTitre {
-
+enum TypeTitre
+{
+	STANDARD,
+	SENIOR,
+	JUNIOR,
+	ENFANT,
+	EXCURSION,
+	VELO;
 }

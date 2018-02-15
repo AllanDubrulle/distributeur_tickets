@@ -1,5 +1,10 @@
 package stockage.imprimable;
 
-enum Reduction {
+enum Reduction
+{
+	AUCUNE,
+	FAMILLENOMBREUSE,
+	PMR, // PERSONNE A MOBILITE REDUITE
+	PARENTEMPLOYE; 
 
 }
