@@ -19,6 +19,7 @@ public class FConfiguration extends Fenetre {
     public RadioButton radioButton4;
     public CheckBox checkBox;
     public Button button;
+    //public ProgressBar test = new ProgressBar(0.1);
     
     public static FConfiguration instance;
 
@@ -114,8 +115,11 @@ public class FConfiguration extends Fenetre {
         button.setPrefHeight(31.0);
         button.setPrefWidth(75.0);
         button.setText("Valider");
+        
+        //test.setProgress(0.9);
 
         vBox.getChildren().addAll(text, text0, radioButton, radioButton0, radioButton1, text1, radioButton2, radioButton3, radioButton4, checkBox);
+        //vBox.getChildren().add(test);
         getChildren().addAll(vBox, button);
     }
     

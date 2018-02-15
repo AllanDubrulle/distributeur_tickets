@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text layoutX="90.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Veuillez récuperer l'argent dans le bac de réception." textAlignment="CENTER" wrappingWidth="220.841796875">
+         <font>
+            <Font name="System Italic" size="18.0" />
+         </font>
+      </Text>
+      <Button layoutX="163.0" layoutY="147.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0" text="Ok" textAlignment="CENTER" />
+   </children>
+</Pane>

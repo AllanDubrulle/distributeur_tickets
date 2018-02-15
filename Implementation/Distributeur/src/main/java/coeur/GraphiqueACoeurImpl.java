@@ -339,4 +339,28 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 	public void choixPaiement() {
 		
 	}
+
+	public void choixOk() {
+		
+	}
+
+	public void choixOui() {
+		
+	}
+
+	public void choixNon() {
+		
+	}
+
+	public void choixRetourEcranPrinc() {
+		
+	}
+
+	public void choixPaiementParCarte() {
+		
+	}
+
+	public void choixPaiementLiquide() {
+		
+	}
 }

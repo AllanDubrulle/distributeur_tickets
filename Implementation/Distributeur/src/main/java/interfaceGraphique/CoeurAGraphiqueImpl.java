@@ -31,7 +31,7 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
         primaryStage.close();
 	}
 	
-	public void afficherAcceuil() {
+	public void afficherAccueil() {
 		fenetreSim.afficher(FMenu.getInstance());
 	}
 
@@ -77,7 +77,19 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 
 	public void afficherRecapRenouvAbo() {
 		fenetreSim.afficher(FRecapAboRenouv.getInstance());
-	}	
+	}
+	
+	public void afficherNumAbo() {
+		StackPane root2 = new StackPane();
+		FChoixAbo fen = FChoixAbo.getInstance();
+		Stage pStage = new Stage();
+		Scene sc = new Scene(root2, 400,200);
+		root2.getChildren().add(fen);
+		pStage.setResizable(false);
+		pStage.setScene(sc);
+		pStage.setTitle("Choix du numéro d'abonnement");
+		pStage.show();
+	}
 
 	public void afficherRecapPassIllimite() {
 		fenetreSim.afficher(FRecapPass1.getInstance());
@@ -92,9 +104,13 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	}
 	
 	public void afficherPaiement() {
-		
+		fenetreSim.afficher(FChoixPaiement.getInstance());
 	}
 
+	public void afficherChoixParLiquide() {
+		fenetreSim.afficher(FChoixParCarte.getInstance());
+	}
+	
 	public void afficherChoixParCarte() {
 		StackPane root2 = new StackPane();
 		FChoixParCarte fen = FChoixParCarte.getInstance();
@@ -108,22 +124,38 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	}
 
 	public void afficherAttentePIN() {
-		
+		fenetreSim.afficher(FAttenteCodePIN.getInstance());
+	}
+	
+	public void afficherCodePINIncor() {
+		fenetreSim.afficher(FCodePINIncor.getInstance());
 	}
 
 	public void afficherValidationPaiement() {
-		
+		fenetreSim.afficher(FPaiementOk.getInstance());
 	}
 	
-	public void afficherNumAbo() {
+	public void afficherRendreMonnaie() {
+		fenetreSim.afficher(FRendreMonnaie.getInstance());
+	}
+
+	public void afficherImpression() {
+		fenetreSim.afficher(FImpression.getInstance());
+	}
+	
+	public void afficherViderBacRecep() {
 		StackPane root2 = new StackPane();
-		FChoixAbo fen = FChoixAbo.getInstance();
+		FBacReception fen = FBacReception.getInstance();
 		Stage pStage = new Stage();
 		Scene sc = new Scene(root2, 400,200);
 		root2.getChildren().add(fen);
 		pStage.setResizable(false);
 		pStage.setScene(sc);
-		pStage.setTitle("Choix du numéro d'abonnement");
+		pStage.setTitle("Vider le bac de réception");
 		pStage.show();
+	}
+	
+	public void afficherFin() {
+		fenetreSim.afficher(FFin.getInstance());
 	}
 }
