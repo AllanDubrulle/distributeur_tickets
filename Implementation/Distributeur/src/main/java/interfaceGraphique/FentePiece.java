@@ -13,7 +13,7 @@ public class FentePiece extends ComposantVisible{
 		super(enMarche);
 	}
 	
-	public FentePiece() {
+	private FentePiece() {
         Circle circle = new Circle();
         Rectangle rectangle = new Rectangle();
         Button button = new Button();
@@ -57,7 +57,7 @@ public class FentePiece extends ComposantVisible{
         button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button.setOnAction(new EventHandler<ActionEvent>(){
             public void handle(ActionEvent event){
-            	//graphAC.choix1ct();
+            	graphAC.choix1ct();
             }});
 
         button0.setLayoutX(85.0);
@@ -69,7 +69,7 @@ public class FentePiece extends ComposantVisible{
         button0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button0.setOnAction(new EventHandler<ActionEvent>(){
             public void handle(ActionEvent event){
-            	//graphAC.choix2cts();
+            	graphAC.choix2cts();
             }});
 
         button1.setLayoutX(155.0);
@@ -81,7 +81,7 @@ public class FentePiece extends ComposantVisible{
         button1.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button1.setOnAction(new EventHandler<ActionEvent>(){
             public void handle(ActionEvent event){
-            	//graphAC.choix5cts();
+            	graphAC.choix5cts();
             }});
         
         button2.setLayoutX(5.0);
@@ -93,7 +93,7 @@ public class FentePiece extends ComposantVisible{
         button2.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button2.setOnAction(new EventHandler<ActionEvent>(){
             public void handle(ActionEvent event){
-            	//graphAC.choix2eur();
+            	graphAC.choix2eur();
             }});
 
         button3.setLayoutX(165.0);
@@ -105,7 +105,7 @@ public class FentePiece extends ComposantVisible{
         button3.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button3.setOnAction(new EventHandler<ActionEvent>(){
             public void handle(ActionEvent event){
-            	//graphAC.choix10cts();
+            	graphAC.choix10cts();
             }});
 
         button4.setLayoutX(15.0);
@@ -117,7 +117,7 @@ public class FentePiece extends ComposantVisible{
         button4.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button4.setOnAction(new EventHandler<ActionEvent>(){
             public void handle(ActionEvent event){
-            	//graphAC.choix1eur();
+            	graphAC.choix1eur();
             }});
 
         button5.setLayoutX(85.0);
@@ -129,7 +129,7 @@ public class FentePiece extends ComposantVisible{
         button5.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button5.setOnAction(new EventHandler<ActionEvent>(){
             public void handle(ActionEvent event){
-            	//graphAC.choix50cts();
+            	graphAC.choix50cts();
             }});
 
         button6.setLayoutX(155.0);
@@ -141,7 +141,7 @@ public class FentePiece extends ComposantVisible{
         button6.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button6.setOnAction(new EventHandler<ActionEvent>(){
             public void handle(ActionEvent event){
-            	//graphAC.choix20cts();
+            	graphAC.choix20cts();
             }});
 
         getChildren().addAll(circle, rectangle, button, button0, button1, button2, button3, button4, button5, button6);
