@@ -29,5 +29,6 @@ public interface CoeurAGraphique
 	public void afficherRendreMonnaie();
 	public void afficherImpression();
 	public void afficherViderBacRecep();
+	public void afficherResultatsHoraires();
 	public void afficherFin();
 }

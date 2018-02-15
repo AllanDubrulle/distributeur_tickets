@@ -155,6 +155,10 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 		pStage.show();
 	}
 	
+	public void afficherResultatsHoraires() {
+		fenetreSim.afficher(FResultatsHoraires.getInstance());
+	}
+	
 	public void afficherFin() {
 		fenetreSim.afficher(FFin.getInstance());
 	}

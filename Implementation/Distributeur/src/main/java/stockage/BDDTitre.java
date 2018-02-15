@@ -1,5 +1,5 @@
 package stockage;
 
-class BDDTitre {
+public class BDDTitre {
 
 }
