@@ -7,11 +7,13 @@ import javafx.scene.shape.*;
 
 public class FenteBillet extends ComposantVisible {
 
+	public static FenteBillet instance;
+	
 	public FenteBillet(boolean enMarche) {
 		super(enMarche);
 	}
 	
-	public FenteBillet() {
+	private FenteBillet() {
         Rectangle rectangle = new Rectangle();
         Button button = new Button();
         Button button0 = new Button();
@@ -40,6 +42,7 @@ public class FenteBillet extends ComposantVisible {
         button.setPrefHeight(31.0);
         button.setPrefWidth(50.0);
         button.setText("5 €");
+        button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button.setOnAction(new EventHandler<ActionEvent>(){
             @Override
             public void handle(ActionEvent event){
@@ -52,6 +55,7 @@ public class FenteBillet extends ComposantVisible {
         button0.setPrefHeight(31.0);
         button0.setPrefWidth(50.0);
         button0.setText("10 €");
+        button0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button0.setOnAction(new EventHandler<ActionEvent>(){
             @Override
             public void handle(ActionEvent event){
@@ -64,6 +68,7 @@ public class FenteBillet extends ComposantVisible {
         button1.setPrefHeight(31.0);
         button1.setPrefWidth(50.0);
         button1.setText("50 €");
+        button1.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button1.setOnAction(new EventHandler<ActionEvent>(){
             @Override
             public void handle(ActionEvent event){
@@ -76,12 +81,19 @@ public class FenteBillet extends ComposantVisible {
         button2.setPrefHeight(31.0);
         button2.setPrefWidth(50.0);
         button2.setText("20 €");
-        button1.setOnAction(new EventHandler<ActionEvent>(){
+        button2.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        button2.setOnAction(new EventHandler<ActionEvent>(){
             @Override
             public void handle(ActionEvent event){
             	graphAC.choix20eur();
             }});
 
         getChildren().addAll(rectangle, button, button0, button1, button2);
+    }
+
+	public static FenteBillet getInstance() {
+    	if (instance == null)
+    		instance = new FenteBillet();
+    	return instance;
     }
 }

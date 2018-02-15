@@ -1,5 +1,5 @@
 package stockage;
 
-class Imprimante {
+public class Imprimante {
 
 }

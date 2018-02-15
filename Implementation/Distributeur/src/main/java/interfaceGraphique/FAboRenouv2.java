@@ -26,7 +26,9 @@ public class FAboRenouv2 extends Fenetre {
     public Button button;
     public Button button0;
 
-    public FAboRenouv2() {
+    public static FAboRenouv2 instance;
+    
+    private FAboRenouv2() {
 
         rectangle = new Rectangle();
         vBox = new VBox();
@@ -127,6 +129,7 @@ public class FAboRenouv2 extends Fenetre {
         button.setPrefHeight(31.0);
         button.setPrefWidth(75.0);
         button.setText("Annuler");
+        button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button.setOnAction(new EventHandler<ActionEvent>(){
             @Override
             public void handle(ActionEvent event){
@@ -139,6 +142,7 @@ public class FAboRenouv2 extends Fenetre {
         button0.setPrefHeight(31.0);
         button0.setPrefWidth(75.0);
         button0.setText("Valider");
+        button0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button0.setOnAction(new EventHandler<ActionEvent>(){
             @Override
             public void handle(ActionEvent event){
@@ -149,5 +153,11 @@ public class FAboRenouv2 extends Fenetre {
         hBox1.getChildren().addAll(text0, radioButton, radioButton0, radioButton1, radioButton2);
         vBox.getChildren().addAll(hBox, hBox0, hBox1);
         getChildren().addAll(rectangle, vBox, text1, button, button0);
+    }
+
+    public static FAboRenouv2 getInstance() {
+    	if (instance == null)
+    		instance = new FAboRenouv2();
+    	return instance;
     }
 }

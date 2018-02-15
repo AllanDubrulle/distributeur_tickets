@@ -42,7 +42,9 @@ public class FAboAchat extends Fenetre {
     public Button button;
     public Button button0;
     
-    public FAboAchat() {
+    public static FAboAchat instance;
+    
+    private FAboAchat() {
 
         rectangle = new Rectangle();
         text = new Text();
@@ -241,6 +243,7 @@ public class FAboAchat extends Fenetre {
         button.setPrefHeight(31.0);
         button.setPrefWidth(75.0);
         button.setText("Annuler");
+        button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button.setOnAction(new EventHandler<ActionEvent>(){
             @Override
             public void handle(ActionEvent event){
@@ -253,6 +256,7 @@ public class FAboAchat extends Fenetre {
         button0.setPrefHeight(31.0);
         button0.setPrefWidth(75.0);
         button0.setText("Valider");
+        button0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button0.setOnAction(new EventHandler<ActionEvent>(){
             @Override
             public void handle(ActionEvent event){
@@ -268,5 +272,11 @@ public class FAboAchat extends Fenetre {
         hBox6.getChildren().addAll(text6, textField3);
         vBox.getChildren().addAll(hBox, hBox0, hBox1, hBox2, hBox3, hBox4, hBox5, hBox6);
         getChildren().addAll(rectangle, text, vBox, button, button0);
+    }
+
+    public static FAboAchat getInstance() {
+    	if (instance == null)
+    		instance = new FAboAchat();
+    	return instance;
     }
 }

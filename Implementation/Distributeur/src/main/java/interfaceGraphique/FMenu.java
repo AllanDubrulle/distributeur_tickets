@@ -19,7 +19,9 @@ public class FMenu extends Fenetre {
     public Button button3;
     public Text text;
 
-    public FMenu() {
+    public static FMenu instance;
+    
+    private FMenu() {
 
         rectangle = new Rectangle();
         vBox = new VBox();
@@ -54,7 +56,7 @@ public class FMenu extends Fenetre {
         button.setMnemonicParsing(false);
         button.setPrefHeight(31.0);
         button.setPrefWidth(250.0);
-        button.setText("1 - Acheter un billet");
+        button.setText("Acheter un billet");
         VBox.setMargin(button, new Insets(0.0, 0.0, 5.0, 0.0));
         button.setOnAction(new EventHandler<ActionEvent>(){
             @Override
@@ -66,7 +68,7 @@ public class FMenu extends Fenetre {
         button0.setMnemonicParsing(false);
         button0.setPrefHeight(31.0);
         button0.setPrefWidth(283.0);
-        button0.setText("2 - Acheter un abonnement");
+        button0.setText("Acheter un abonnement");
         VBox.setMargin(button0, new Insets(0.0, 0.0, 5.0, 0.0));
         button0.setOnAction(new EventHandler<ActionEvent>(){
             @Override
@@ -78,7 +80,7 @@ public class FMenu extends Fenetre {
         button1.setMnemonicParsing(false);
         button1.setPrefHeight(31.0);
         button1.setPrefWidth(288.0);
-        button1.setText("3 - Renouveler un abonnement");
+        button1.setText("Renouveler un abonnement");
         VBox.setMargin(button1, new Insets(0.0, 0.0, 5.0, 0.0));
         button1.setOnAction(new EventHandler<ActionEvent>(){
             @Override
@@ -90,7 +92,7 @@ public class FMenu extends Fenetre {
         button2.setMnemonicParsing(false);
         button2.setPrefHeight(31.0);
         button2.setPrefWidth(300.0);
-        button2.setText("4 - Acheter un pass");
+        button2.setText("Acheter un pass");
         VBox.setMargin(button2, new Insets(0.0, 0.0, 5.0, 0.0));
         button2.setOnAction(new EventHandler<ActionEvent>(){
             @Override
@@ -102,7 +104,7 @@ public class FMenu extends Fenetre {
         button3.setMnemonicParsing(false);
         button3.setPrefHeight(31.0);
         button3.setPrefWidth(392.0);
-        button3.setText("5 - Vérifier l'horaire d'un train");
+        button3.setText("Vérifier l'horaire d'un train");
         button3.setOnAction(new EventHandler<ActionEvent>(){
             @Override
             public void handle(ActionEvent event){
@@ -119,5 +121,11 @@ public class FMenu extends Fenetre {
 
         vBox.getChildren().addAll(button, button0, button1, button2, button3);
         getChildren().addAll(rectangle, vBox, text);
+    }
+
+    public static FMenu getInstance() {
+    	if (instance == null)
+    		instance = new FMenu();
+    	return instance;
     }
 }

@@ -9,11 +9,13 @@ import javafx.scene.layout.*;
 
 public class Clavier extends ComposantVisible {
 	
+	public static Clavier instance;
+	
 	public Clavier(boolean enMarche) {
 		super(enMarche);
 	}
 	
-	public Clavier() {
+	private Clavier() {
         Rectangle rectangle = new Rectangle();
         VBox vBox = new VBox();
         HBox hBox = new HBox();
@@ -90,6 +92,7 @@ public class Clavier extends ComposantVisible {
         button.setPrefHeight(31.0);
         button.setPrefWidth(50.0);
         button.setText("1");
+        button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button.setOnAction(new EventHandler<ActionEvent>(){
             @Override
             public void handle(ActionEvent event){
@@ -100,6 +103,7 @@ public class Clavier extends ComposantVisible {
         button0.setPrefHeight(31.0);
         button0.setPrefWidth(50.0);
         button0.setText("2");
+        button0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         HBox.setMargin(button0, new Insets(0.0, 8.0, 0.0, 8.0));
         button0.setOnAction(new EventHandler<ActionEvent>(){
             @Override
@@ -111,6 +115,7 @@ public class Clavier extends ComposantVisible {
         button1.setPrefHeight(31.0);
         button1.setPrefWidth(50.0);
         button1.setText("3");
+        button1.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button1.setOnAction(new EventHandler<ActionEvent>(){
             @Override
             public void handle(ActionEvent event){
@@ -121,6 +126,7 @@ public class Clavier extends ComposantVisible {
         button2.setPrefHeight(31.0);
         button2.setPrefWidth(50.0);
         button2.setText("4");
+        button2.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         HBox.setMargin(button2, new Insets(0.0, 8.0, 0.0, 8.0));
         button2.setOnAction(new EventHandler<ActionEvent>(){
             @Override
@@ -132,6 +138,7 @@ public class Clavier extends ComposantVisible {
         button3.setPrefHeight(31.0);
         button3.setPrefWidth(50.0);
         button3.setText("5");
+        button3.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button3.setOnAction(new EventHandler<ActionEvent>(){
             @Override
             public void handle(ActionEvent event){
@@ -142,6 +149,7 @@ public class Clavier extends ComposantVisible {
         button4.setPrefHeight(31.0);
         button4.setPrefWidth(50.0);
         button4.setText("6");
+        button4.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         HBox.setMargin(button4, new Insets(0.0, 8.0, 0.0, 8.0));
         button4.setOnAction(new EventHandler<ActionEvent>(){
             @Override
@@ -153,6 +161,7 @@ public class Clavier extends ComposantVisible {
         button5.setPrefHeight(31.0);
         button5.setPrefWidth(50.0);
         button5.setText("7");
+        button5.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button5.setOnAction(new EventHandler<ActionEvent>(){
             @Override
             public void handle(ActionEvent event){
@@ -163,6 +172,7 @@ public class Clavier extends ComposantVisible {
         button6.setPrefHeight(31.0);
         button6.setPrefWidth(50.0);
         button6.setText("8");
+        button6.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         HBox.setMargin(button6, new Insets(0.0, 8.0, 0.0, 8.0));
         button6.setOnAction(new EventHandler<ActionEvent>(){
             @Override
@@ -174,6 +184,7 @@ public class Clavier extends ComposantVisible {
         button7.setPrefHeight(31.0);
         button7.setPrefWidth(50.0);
         button7.setText("9");
+        button7.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button7.setOnAction(new EventHandler<ActionEvent>(){
             @Override
             public void handle(ActionEvent event){
@@ -184,6 +195,7 @@ public class Clavier extends ComposantVisible {
         button8.setPrefHeight(31.0);
         button8.setPrefWidth(50.0);
         button8.setText("0");
+        button8.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         HBox.setMargin(button8, new Insets(0.0, 0.0, 0.0, 8.0));
         VBox.setMargin(hBox, new Insets(0.0));
         button8.setOnAction(new EventHandler<ActionEvent>(){
@@ -511,6 +523,7 @@ public class Clavier extends ComposantVisible {
         button1115.setPrefWidth(96.0);
         button1115.setText("EFFACER");
         button1115.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        button1115.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         HBox.setMargin(button1115, new Insets(0.0, 8.0, 0.0, 0.0));
         button1115.setOnAction(new EventHandler<ActionEvent>(){
             @Override
@@ -522,6 +535,7 @@ public class Clavier extends ComposantVisible {
         button1116.setPrefHeight(31.0);
         button1116.setPrefWidth(96.0);
         button1116.setText("SUIVANT");
+        button1116.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         VBox.setMargin(hBox2, new Insets(5.0, 0.0, 0.0, 15.0));
         button1116.setOnAction(new EventHandler<ActionEvent>(){
             @Override
@@ -537,6 +551,7 @@ public class Clavier extends ComposantVisible {
         button1117.setPrefHeight(31.0);
         button1117.setPrefWidth(80.0);
         button1117.setText("RETOUR");
+        button1117.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button1117.setOnAction(new EventHandler<ActionEvent>(){
             @Override
             public void handle(ActionEvent event){
@@ -559,6 +574,7 @@ public class Clavier extends ComposantVisible {
         button1119.setPrefHeight(31.0);
         button1119.setPrefWidth(80.0);
         button1119.setText("ENTRER");
+        button1119.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         VBox.setMargin(hBox3, new Insets(5.0, 0.0, 0.0, 0.0));
         button1119.setOnAction(new EventHandler<ActionEvent>(){
             @Override
@@ -573,5 +589,11 @@ public class Clavier extends ComposantVisible {
         hBox3.getChildren().addAll(button1117, button1118, button1119);
         vBox.getChildren().addAll(hBox, hBox0, hBox1, hBox2, hBox3);
         getChildren().addAll(rectangle, vBox);
+    }
+
+	public static Clavier getInstance() {
+    	if (instance == null)
+    		instance = new Clavier();
+    	return instance;
     }
 }

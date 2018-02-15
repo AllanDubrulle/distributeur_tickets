@@ -3,16 +3,10 @@ package interfaceGraphique;
 import javafx.scene.text.*;
 import javafx.geometry.*;
 import javafx.scene.layout.*;
-import coeur.*;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.scene.control.*;
-import javafx.stage.Stage;
 
-public class FConfiguration extends BorderPane {
-    
-    public static Stage stage = new Stage();
-    public Button button;
+public class FConfiguration extends Fenetre {
+
     public VBox vBox;
     public Text text;
     public Text text0;
@@ -24,11 +18,13 @@ public class FConfiguration extends BorderPane {
     public RadioButton radioButton3;
     public RadioButton radioButton4;
     public CheckBox checkBox;
-    public GraphiqueACoeurImpl graphAC = new GraphiqueACoeurImpl();
+    public Button button;
+    //public ProgressBar test = new ProgressBar(0.1);
+    
+    public static FConfiguration instance;
 
-    public FConfiguration() {
+    private FConfiguration() {
 
-        button = new Button();
         vBox = new VBox();
         text = new Text();
         text0 = new Text();
@@ -40,6 +36,7 @@ public class FConfiguration extends BorderPane {
         radioButton3 = new RadioButton();
         radioButton4 = new RadioButton();
         checkBox = new CheckBox();
+        button = new Button();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -48,20 +45,8 @@ public class FConfiguration extends BorderPane {
         setPrefHeight(400.0);
         setPrefWidth(600.0);
 
-        BorderPane.setAlignment(button, javafx.geometry.Pos.BOTTOM_RIGHT);
-        button.setAlignment(javafx.geometry.Pos.BOTTOM_RIGHT);
-        button.setMnemonicParsing(false);
-        button.setText("Valider");
-        BorderPane.setMargin(button, new Insets(0.0, 10.0, 10.0, 0.0));
-        setBottom(button);
-        button.setOnAction(new EventHandler<ActionEvent>(){
-            @Override
-            public void handle(ActionEvent event){
-                graphAC.choixValidConfig();
-            }
-        });
-
-        BorderPane.setAlignment(vBox, javafx.geometry.Pos.CENTER);
+        vBox.setLayoutX(50.0);
+        vBox.setLayoutY(30.0);
         vBox.setPrefHeight(328.0);
         vBox.setPrefWidth(516.0);
 
@@ -69,8 +54,8 @@ public class FConfiguration extends BorderPane {
         text.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text.setStrokeWidth(0.0);
         text.setText("Choisissez vos composants optionnels :");
-        VBox.setMargin(text, new Insets(0.0, 0.0, 25.0, 0.0));
         text.setFont(new Font("System Bold", 18.0));
+        VBox.setMargin(text, new Insets(0.0, 0.0, 25.0, 0.0));
 
         text0.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text0.setStrokeWidth(0.0);
@@ -80,6 +65,7 @@ public class FConfiguration extends BorderPane {
         radioButton.setMnemonicParsing(false);
         radioButton.setSelected(true);
         radioButton.setText("Clavier et écran tactile");
+        radioButton.setSelected(true);
         VBox.setMargin(radioButton, new Insets(0.0, 0.0, 5.0, 40.0));
 
         radioButton0.setMnemonicParsing(false);
@@ -89,41 +75,57 @@ public class FConfiguration extends BorderPane {
         radioButton1.setMnemonicParsing(false);
         radioButton1.setText("Ecran tactile uniquement");
         VBox.setMargin(radioButton1, new Insets(0.0, 0.0, 15.0, 40.0));
-
+        
         ToggleGroup t1 = new ToggleGroup();
         radioButton.setToggleGroup(t1);
         radioButton0.setToggleGroup(t1);
         radioButton1.setToggleGroup(t1);
-        
+
         text1.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1.setStrokeWidth(0.0);
-        text1.setText("Fentes à  monnaie :");
+        text1.setText("Fentes à monnaie :");
         VBox.setMargin(text1, new Insets(0.0, 0.0, 5.0, 25.0));
 
-        radioButton2.setMnemonicParsing(true);
+        radioButton2.setMnemonicParsing(false);
         radioButton2.setSelected(true);
-        radioButton2.setText("Fentes à  pièces et à  billets");
+        radioButton2.setText("Fentes à pièces et à billets");
+        radioButton2.setSelected(true);
         VBox.setMargin(radioButton2, new Insets(0.0, 0.0, 5.0, 40.0));
 
-        radioButton3.setMnemonicParsing(true);
-        radioButton3.setText("Fente à  pièce uniquement");
+        radioButton3.setMnemonicParsing(false);
+        radioButton3.setText("Fente à pièce uniquement");
         VBox.setMargin(radioButton3, new Insets(0.0, 0.0, 5.0, 40.0));
 
-        radioButton4.setMnemonicParsing(true);
+        radioButton4.setMnemonicParsing(false);
         radioButton4.setText("Aucune fente");
         VBox.setMargin(radioButton4, new Insets(0.0, 0.0, 15.0, 40.0));
-
+        
         ToggleGroup t2 = new ToggleGroup();
         radioButton2.setToggleGroup(t2);
         radioButton3.setToggleGroup(t2);
         radioButton4.setToggleGroup(t2);
-        
+
         checkBox.setMnemonicParsing(false);
         checkBox.setText("Scanneur de codes");
         VBox.setMargin(checkBox, new Insets(0.0, 0.0, 0.0, 25.0));
-        BorderPane.setMargin(vBox, new Insets(30.0, 50.0, 0.0, 50.0));
-        setCenter(vBox);
+
+        button.setLayoutX(515.0);
+        button.setLayoutY(359.0);
+        button.setMnemonicParsing(false);
+        button.setPrefHeight(31.0);
+        button.setPrefWidth(75.0);
+        button.setText("Valider");
+        
+        //test.setProgress(0.9);
 
         vBox.getChildren().addAll(text, text0, radioButton, radioButton0, radioButton1, text1, radioButton2, radioButton3, radioButton4, checkBox);
+        //vBox.getChildren().add(test);
+        getChildren().addAll(vBox, button);
+    }
+    
+    public static FConfiguration getInstance() {
+    	if (instance == null)
+    		instance = new FConfiguration();
+    	return instance;
     }
 }

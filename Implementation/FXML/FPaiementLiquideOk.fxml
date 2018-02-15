@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d3d3d3" height="400.0" stroke="BLACK" strokeType="INSIDE" width="800.0" />
+      <Text layoutX="60.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Souhaitez-vous un tickets ?">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Text>
+      <Button layoutX="575.0" layoutY="200.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0" text="Non" textAlignment="CENTER" />
+      <Button layoutX="150.0" layoutY="200.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0" text="Oui" textAlignment="CENTER" />
+   </children>
+</Pane>

@@ -37,16 +37,19 @@ public class Base extends BorderPane {
     public CheckMenuItem checkMenuItem9;
     public CheckMenuItem checkMenuItem10;
     public CheckMenuItem checkMenuItem11;
-    public Clavier clavier = new Clavier();
-    public LecteurCarte scanneur = new LecteurCarte();
-    public Reception reception = new Reception();
-    public FenteBillet fenteB = new FenteBillet();
-    public FentePiece fenteP = new FentePiece();
+    public Clavier clavier = Clavier.getInstance();
+    public LecteurCarte scanneur = LecteurCarte.getInstance();
+    public Reception reception = Reception.getInstance();
+    public FenteBillet fenteB = FenteBillet.getInstance();
+    public FentePiece fenteP = FentePiece.getInstance();
     public VBox claRe = new VBox();
     public VBox fentes = new VBox();
-    public Fenetre fenetre = new FSimulationAcceuil();
-
-    public Base() {
+    
+    public Fenetre fenetre = FSimulationAcceuil.getInstance();
+    
+    public static Base instance;
+    
+    private Base() {
 
         pane = new Pane();
         menuBar = new MenuBar();
@@ -184,7 +187,14 @@ public class Base extends BorderPane {
         pane.getChildren().add(menuBar);
 
     }
-	public void afficher(Fenetre fen) {
+	
+    public static Base getInstance() {
+    	if (instance == null)
+    		instance = new Base();
+    	return instance;
+    }
+    
+    public void afficher(Fenetre fen) {
 		this.fenetre = fen; 
         fenetre.setLayoutX(259.0);
         fenetre.setLayoutY(75.0);

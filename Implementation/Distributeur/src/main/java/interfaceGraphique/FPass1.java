@@ -36,7 +36,9 @@ public class FPass1 extends Fenetre {
     public Button button;
     public Button button0;
 
-    public FPass1() {
+    public static FPass1 instance;
+    
+    private FPass1() {
 
         rectangle = new Rectangle();
         text = new Text();
@@ -207,5 +209,11 @@ public class FPass1 extends Fenetre {
         hBox5.getChildren().addAll(text5, textField0);
         vBox.getChildren().addAll(hBox, hBox1, hBox2, hBox3, hBox4, hBox5);
         getChildren().addAll(rectangle, text, vBox, button, button0);
+    }
+
+    public static FPass1 getInstance() {
+    	if (instance == null)
+    		instance = new FPass1();
+    	return instance;
     }
 }

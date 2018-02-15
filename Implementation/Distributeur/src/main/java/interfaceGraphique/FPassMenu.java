@@ -24,7 +24,9 @@ public class FPassMenu extends Fenetre {
     public Text text3;
     public Button button2;
 
-    public FPassMenu() {
+    public static FPassMenu instance;
+    
+    private FPassMenu() {
 
         rectangle = new Rectangle();
         text = new Text();
@@ -145,5 +147,11 @@ public class FPassMenu extends Fenetre {
         vBox0.getChildren().addAll(text1, text2, text3);
         hBox.getChildren().addAll(vBox, vBox0);
         getChildren().addAll(rectangle, text, text0, hBox, button2);
+    }
+
+    public static FPassMenu getInstance() {
+    	if (instance == null)
+    		instance = new FPassMenu();
+    	return instance;
     }
 }

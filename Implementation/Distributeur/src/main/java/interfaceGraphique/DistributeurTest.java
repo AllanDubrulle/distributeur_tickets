@@ -11,7 +11,7 @@ public class DistributeurTest extends Application {
     @Override
     public void start(Stage primaryStage) {
         primaryStage = DistributeurTest.primaryStage;
-        FConfiguration fen = new FConfiguration();
+        FConfiguration fen = FConfiguration.getInstance();
         StackPane root = new StackPane();
         root.getChildren().add(fen);
         Scene scene = new Scene(root, 600, 400);

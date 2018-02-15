@@ -1,7 +1,7 @@
 package coeur;
 
-public class GraphiqueACoeurImpl implements GraphiqueACoeur 
-{
+public class GraphiqueACoeurImpl implements GraphiqueACoeur {
+	
 	private Controleur controleur;
 	
 	public void choixBillet() {
@@ -330,5 +330,41 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 
 	public void choixScanneurInserer() {
 			
+	}
+
+	public void choixRetour() {
+		
+	}
+
+	public void choixPaiement() {
+		
+	}
+
+	public void choixOk() {
+		
+	}
+
+	public void choixOui() {
+		
+	}
+
+	public void choixNon() {
+		
+	}
+
+	public void choixRetourEcranPrinc() {
+		
+	}
+
+	public void choixPaiementParCarte() {
+		
+	}
+
+	public void choixPaiementLiquide() {
+		
+	}
+
+	public void choixChangerHeure() {
+		
 	}
 }
