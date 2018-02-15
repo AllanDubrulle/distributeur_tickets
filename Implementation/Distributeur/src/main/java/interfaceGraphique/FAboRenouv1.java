@@ -8,19 +8,14 @@ import javafx.event.EventHandler;
 
 public class FAboRenouv1 extends Fenetre {
 
-    public Rectangle rectangle;
-    public Text text;
-    public Button button;
-    public Button button0;
-
-    public static FAboRenouv1 instance;
+    private static FAboRenouv1 instance;
     
     private FAboRenouv1() {
 
-        rectangle = new Rectangle();
-        text = new Text();
-        button = new Button();
-        button0 = new Button();
+        Rectangle rectangle = new Rectangle();
+        Text text = new Text();
+        Button button = new Button();
+        Button button0 = new Button();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -52,7 +47,6 @@ public class FAboRenouv1 extends Fenetre {
         button.setText("Scanner le code barre");
         button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button.setOnAction(new EventHandler<ActionEvent>(){
-            @Override
             public void handle(ActionEvent event){
             	graphAC.choixScannerCode();
             }});
@@ -65,7 +59,6 @@ public class FAboRenouv1 extends Fenetre {
         button0.setText("Annuler");
         button0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button0.setOnAction(new EventHandler<ActionEvent>(){
-            @Override
             public void handle(ActionEvent event){
             	graphAC.choixAnnuler();
             }});
@@ -78,4 +71,18 @@ public class FAboRenouv1 extends Fenetre {
     		instance = new FAboRenouv1();
     	return instance;
     }
+    
+    public void actionClavier(String a) {}
+
+	public void actionClavier(int a) {}
+
+	public void actionRetour() {}
+
+	public void actionSuivant() {}
+
+	public void actionEspace() {}
+
+	public void actionEffacer() {}
+	
+	public void actionEntrer() {}
 }

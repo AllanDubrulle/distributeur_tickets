@@ -30,21 +30,21 @@ public class FRecapAboRenouv extends Fenetre {
 
     private FRecapAboRenouv() {
 
-        rectangle = new Rectangle();
-        vBox = new VBox();
-        hBox = new HBox();
-        hBox0 = new HBox();
-        text = new Text();
-        text0 = new Text();
-        hBox1 = new HBox();
-        text1 = new Text();
-        text2 = new Text();
-        hBox2 = new HBox();
-        text3 = new Text();
-        text4 = new Text();
-        text5 = new Text();
-        button = new Button();
-        button0 = new Button();
+        Rectangle rectangle = new Rectangle();
+        VBox vBox = new VBox();
+        HBox hBox = new HBox();
+        HBox hBox0 = new HBox();
+        Text text = new Text();
+        Text text0 = new Text();
+        HBox hBox1 = new HBox();
+        Text text1 = new Text();
+        Text text2 = new Text();
+        HBox hBox2 = new HBox();
+        Text text3 = new Text();
+        Text text4 = new Text();
+        Text text5 = new Text();
+        Button button = new Button();
+        Button button0 = new Button();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -133,7 +133,6 @@ public class FRecapAboRenouv extends Fenetre {
         button.setText("Retour");
         button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button.setOnAction(new EventHandler<ActionEvent>() {
-        	@Override
         	public void handle(ActionEvent event) {
         		graphAC.choixRetour();
         	}
@@ -147,7 +146,6 @@ public class FRecapAboRenouv extends Fenetre {
         button0.setText("Paiement");
         button0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button0.setOnAction(new EventHandler<ActionEvent>() {
-        	@Override
         	public void handle(ActionEvent event) {
         		graphAC.choixPaiement();
         	}
@@ -165,4 +163,18 @@ public class FRecapAboRenouv extends Fenetre {
     		instance = new FRecapAboRenouv();
     	return instance;
     }
+    
+    public void actionClavier(String a) {}
+
+	public void actionClavier(int a) {}
+
+	public void actionRetour() {}
+
+	public void actionSuivant() {}
+
+	public void actionEspace() {}
+
+	public void actionEffacer() {}
+	
+	public void actionEntrer() {}
 }

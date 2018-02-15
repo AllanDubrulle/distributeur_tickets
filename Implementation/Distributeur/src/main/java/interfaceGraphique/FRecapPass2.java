@@ -9,46 +9,28 @@ import javafx.scene.shape.*;
 import javafx.scene.layout.*;
 
 public class FRecapPass2 extends Fenetre {
-
-    public Rectangle rectangle;
-    public Text text;
-    public VBox vBox;
-    public HBox hBox0;
-    public Text text0;
-    public Text text1;
-    public HBox hBox1;
-    public Text text2;
-    public Text text3;
-    public HBox hBox2;
-    public Text text4;
-    public Text text5;
-    public HBox hBox3;
-    public Text text6;
-    public Text text7;
-    public Button button;
-    public Button button0;
     
-    public static FRecapPass2 instance;
+    private static FRecapPass2 instance;
 
     private FRecapPass2() {
 
-        rectangle = new Rectangle();
-        text = new Text();
-        vBox = new VBox();
-        hBox0 = new HBox();
-        text0 = new Text();
-        text1 = new Text();
-        hBox1 = new HBox();
-        text2 = new Text();
-        text3 = new Text();
-        hBox2 = new HBox();
-        text4 = new Text();
-        text5 = new Text();
-        hBox3 = new HBox();
-        text6 = new Text();
-        text7 = new Text();
-        button = new Button();
-        button0 = new Button();
+        Rectangle rectangle = new Rectangle();
+        Text text = new Text();
+        VBox vBox = new VBox();
+        HBox hBox0 = new HBox();
+        Text text0 = new Text();
+        Text text1 = new Text();
+        HBox hBox1 = new HBox();
+        Text text2 = new Text();
+        Text text3 = new Text();
+        HBox hBox2 = new HBox();
+        Text text4 = new Text();
+        Text text5 = new Text();
+        HBox hBox3 = new HBox();
+        Text text6 = new Text();
+        Text text7 = new Text();
+        Button button = new Button();
+        Button button0 = new Button();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -151,7 +133,6 @@ public class FRecapPass2 extends Fenetre {
         button.setText("Retour");
         button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button.setOnAction(new EventHandler<ActionEvent>() {
-        	@Override
         	public void handle(ActionEvent event) {
         		graphAC.choixRetour();
         	}
@@ -165,7 +146,6 @@ public class FRecapPass2 extends Fenetre {
         button0.setText("Paiement");
         button0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button0.setOnAction(new EventHandler<ActionEvent>() {
-        	@Override
         	public void handle(ActionEvent event) {
         		graphAC.choixPaiement();
         	}
@@ -184,4 +164,17 @@ public class FRecapPass2 extends Fenetre {
     		instance = new FRecapPass2();
     	return instance;
     }
+    public void actionClavier(String a) {}
+
+	public void actionClavier(int a) {}
+
+	public void actionRetour() {}
+
+	public void actionSuivant() {}
+
+	public void actionEspace() {}
+
+	public void actionEffacer() {}
+	
+	public void actionEntrer() {}
 }

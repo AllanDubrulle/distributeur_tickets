@@ -7,16 +7,13 @@ import javafx.scene.shape.*;
 import javafx.scene.text.*;
 
 public class FFin extends Fenetre {
-
-    public Rectangle rectangle;
-    public Button button;
     
-    public static FFin instance;
+    private static FFin instance;
 
     private FFin() {
 
-        rectangle = new Rectangle();
-        button = new Button();
+        Rectangle rectangle = new Rectangle();
+        Button button = new Button();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -39,7 +36,6 @@ public class FFin extends Fenetre {
         button.setText("Revenir à l'écran principal");
         button.setFont(new Font(18.0));
         button.setOnAction(new EventHandler<ActionEvent>(){
-            @Override
             public void handle(ActionEvent event){
             	graphAC.choixRetourEcranPrinc();
             }});
@@ -52,4 +48,18 @@ public class FFin extends Fenetre {
     		instance = new FFin();
     	return instance;
     }
+    
+	public void actionClavier(String a) {}
+
+	public void actionClavier(int a) {}
+
+	public void actionRetour() {}
+
+	public void actionSuivant() {}
+
+	public void actionEspace() {}
+
+	public void actionEffacer() {}
+	
+	public void actionEntrer() {}
 }

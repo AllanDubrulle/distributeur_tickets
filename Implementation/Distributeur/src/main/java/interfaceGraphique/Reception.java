@@ -4,7 +4,7 @@ import javafx.scene.shape.*;
 
 public class Reception extends ComposantVisible {
 
-	public static Reception instance;
+	private static Reception instance;
 	
 	public Reception(boolean enMarche) {
 		super(enMarche);

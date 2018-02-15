@@ -7,20 +7,15 @@ import javafx.scene.shape.*;
 import javafx.scene.text.*;
 
 public class FPaiementOk extends Fenetre {
-
-    public Rectangle rectangle;
-    public Text text;
-    public Button button;
-    public Button button0;
     
     public static FPaiementOk instance;
 
     private FPaiementOk() {
 
-        rectangle = new Rectangle();
-        text = new Text();
-        button = new Button();
-        button0 = new Button();
+        Rectangle rectangle = new Rectangle();
+        Text text = new Text();
+        Button button = new Button();
+        Button button0 = new Button();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -41,7 +36,7 @@ public class FPaiementOk extends Fenetre {
         text.setLayoutY(100.0);
         text.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text.setStrokeWidth(0.0);
-        text.setText("Souhaitez-vous un tickets ?");
+        text.setText("Souhaitez-vous un ticket ?");
         text.setFont(new Font("System Bold", 22.0));
 
         button.setLayoutX(575.0);
@@ -52,7 +47,6 @@ public class FPaiementOk extends Fenetre {
         button.setText("Non");
         button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button.setOnAction(new EventHandler<ActionEvent>(){
-            @Override
             public void handle(ActionEvent event){
             	graphAC.choixNon();
             }});
@@ -65,7 +59,6 @@ public class FPaiementOk extends Fenetre {
         button0.setText("Oui");
         button0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button0.setOnAction(new EventHandler<ActionEvent>(){
-            @Override
             public void handle(ActionEvent event){
             	graphAC.choixOui();
             }});
@@ -77,5 +70,19 @@ public class FPaiementOk extends Fenetre {
     	if(instance == null)
     		instance = new FPaiementOk();
     	return instance;
-    }
+    }	
+    
+    public void actionClavier(String a) {}
+
+	public void actionClavier(int a) {}
+
+	public void actionRetour() {}
+
+	public void actionSuivant() {}
+
+	public void actionEspace() {}
+
+	public void actionEffacer() {}
+	
+	public void actionEntrer() {}
 }

@@ -10,61 +10,35 @@ import javafx.scene.layout.*;
 
 public class FPass1 extends Fenetre {
 
-    public Rectangle rectangle;
-    public Text text;
-    public VBox vBox;
-    public HBox hBox;
-    public HBox hBox0;
-    public Text text0;
-    public TextField textField;
-    public HBox hBox1;
-    public Text text1;
-    public TextField textField1;
-    public HBox hBox2;
-    public Text text2;
-    public TextField textField2;
-    public HBox hBox3;
-    public Text text3;
-    public RadioButton radioButton;
-    public RadioButton radioButton1;
-    public HBox hBox4;
-    public Text text4;
-    public TextField textField3;
-    public HBox hBox5;
-    public Text text5;
-    public TextField textField0;
-    public Button button;
-    public Button button0;
-
-    public static FPass1 instance;
+    private static FPass1 instance;
     
     private FPass1() {
 
-        rectangle = new Rectangle();
-        text = new Text();
-        vBox = new VBox();
-        hBox = new HBox();
-        hBox0 = new HBox();
-        text0 = new Text();
-        textField = new TextField();
-        hBox1 = new HBox();
-        text1 = new Text();
-        textField1 = new TextField();
-        hBox2 = new HBox();
-        text2 = new Text();
-        textField2 = new TextField();
-        hBox3 = new HBox();
-        text3 = new Text();
-        radioButton = new RadioButton();
-        radioButton1 = new RadioButton();
-        hBox4 = new HBox();
-        text4 = new Text();
-        textField3 = new TextField();
-        hBox5 = new HBox();
-        text5 = new Text();
-        textField0 = new TextField();
-        button = new Button();
-        button0 = new Button();
+        Rectangle rectangle = new Rectangle();
+        Text text = new Text();
+        VBox vBox = new VBox();
+        HBox hBox = new HBox();
+        HBox hBox0 = new HBox();
+        Text text0 = new Text();
+        TextField textField = new TextField();
+        HBox hBox1 = new HBox();
+        Text text1 = new Text();
+        TextField textField1 = new TextField();
+        HBox hBox2 = new HBox();
+        Text text2 = new Text();
+        TextField textField2 = new TextField();
+        HBox hBox3 = new HBox();
+        Text text3 = new Text();
+        RadioButton radioButton = new RadioButton();
+        RadioButton radioButton1 = new RadioButton();
+        HBox hBox4 = new HBox();
+        Text text4 = new Text();
+        TextField textField3 = new TextField();
+        HBox hBox5 = new HBox();
+        Text text5 = new Text();
+        TextField textField0 = new TextField();
+        Button button = new Button();
+        Button button0 = new Button();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -184,7 +158,6 @@ public class FPass1 extends Fenetre {
         button.setPrefWidth(75.0);
         button.setText("Annuler");
         button.setOnAction(new EventHandler<ActionEvent>(){
-            @Override
             public void handle(ActionEvent event){
             	graphAC.choixAnnuler();
             }});
@@ -196,7 +169,6 @@ public class FPass1 extends Fenetre {
         button0.setPrefWidth(75.0);
         button0.setText("Valider");
         button0.setOnAction(new EventHandler<ActionEvent>(){
-            @Override
             public void handle(ActionEvent event){
             	graphAC.choixValider();
             }});
@@ -216,4 +188,18 @@ public class FPass1 extends Fenetre {
     		instance = new FPass1();
     	return instance;
     }
+    
+    public void actionClavier(String a) {}
+
+	public void actionClavier(int a) {}
+
+	public void actionRetour() {}
+
+	public void actionSuivant() {}
+
+	public void actionEspace() {}
+
+	public void actionEffacer() {}
+	
+	public void actionEntrer() {}
 }

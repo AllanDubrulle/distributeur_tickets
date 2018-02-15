@@ -5,20 +5,15 @@ import javafx.event.EventHandler;
 import javafx.scene.control.*;
 import javafx.scene.shape.*;
 import javafx.scene.text.*;
-import javafx.scene.layout.*;
 
 public class FSimulationAcceuil extends Fenetre {
 
-    public Rectangle rectangle;
-    public Button button;
-    public Pane pane;
-    public static FSimulationAcceuil instance;
+    private static FSimulationAcceuil instance;
     
     private FSimulationAcceuil() {
 
-        rectangle = new Rectangle();
-        button = new Button();
-        pane = new Pane();
+        Rectangle rectangle = new Rectangle();
+        Button button = new Button();
         
 
         setMaxHeight(USE_PREF_SIZE);
@@ -55,4 +50,18 @@ public class FSimulationAcceuil extends Fenetre {
     		instance = new FSimulationAcceuil();
     	return instance;
     }
+    
+    public void actionClavier(String a) {}
+
+	public void actionClavier(int a) {}
+
+	public void actionRetour() {}
+
+	public void actionSuivant() {}
+
+	public void actionEspace() {}
+
+	public void actionEffacer() {}
+	
+	public void actionEntrer() {}
 }

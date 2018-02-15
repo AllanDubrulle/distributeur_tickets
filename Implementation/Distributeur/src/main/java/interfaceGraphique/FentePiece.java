@@ -7,7 +7,7 @@ import javafx.scene.shape.*;
 
 public class FentePiece extends ComposantVisible{
 
-	public static FentePiece instance;
+	private static FentePiece instance;
 	
 	public FentePiece(boolean enMarche) {
 		super(enMarche);
@@ -56,7 +56,6 @@ public class FentePiece extends ComposantVisible{
         button.setText("1 ct ");
         button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button.setOnAction(new EventHandler<ActionEvent>(){
-            @Override
             public void handle(ActionEvent event){
             	graphAC.choix1ct();
             }});
@@ -69,7 +68,6 @@ public class FentePiece extends ComposantVisible{
         button0.setText("2 cts");
         button0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button0.setOnAction(new EventHandler<ActionEvent>(){
-            @Override
             public void handle(ActionEvent event){
             	graphAC.choix2cts();
             }});
@@ -82,7 +80,6 @@ public class FentePiece extends ComposantVisible{
         button1.setText("5 cts");
         button1.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button1.setOnAction(new EventHandler<ActionEvent>(){
-            @Override
             public void handle(ActionEvent event){
             	graphAC.choix5cts();
             }});
@@ -95,7 +92,6 @@ public class FentePiece extends ComposantVisible{
         button2.setText("2 €");
         button2.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button2.setOnAction(new EventHandler<ActionEvent>(){
-            @Override
             public void handle(ActionEvent event){
             	graphAC.choix2eur();
             }});
@@ -108,7 +104,6 @@ public class FentePiece extends ComposantVisible{
         button3.setText("10 cts");
         button3.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button3.setOnAction(new EventHandler<ActionEvent>(){
-            @Override
             public void handle(ActionEvent event){
             	graphAC.choix10cts();
             }});
@@ -121,7 +116,6 @@ public class FentePiece extends ComposantVisible{
         button4.setText("1 €");
         button4.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button4.setOnAction(new EventHandler<ActionEvent>(){
-            @Override
             public void handle(ActionEvent event){
             	graphAC.choix1eur();
             }});
@@ -134,7 +128,6 @@ public class FentePiece extends ComposantVisible{
         button5.setText("50 cts");
         button5.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button5.setOnAction(new EventHandler<ActionEvent>(){
-            @Override
             public void handle(ActionEvent event){
             	graphAC.choix50cts();
             }});
@@ -147,7 +140,6 @@ public class FentePiece extends ComposantVisible{
         button6.setText("20 cts");
         button6.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button6.setOnAction(new EventHandler<ActionEvent>(){
-            @Override
             public void handle(ActionEvent event){
             	graphAC.choix20cts();
             }});

@@ -45,20 +45,20 @@ public class FHoraire extends Fenetre {
     public Button button1;
     public Button button2;
     
-    public static FHoraire instance;
+    private static FHoraire instance;
 
     private FHoraire() {
 
-        rectangle = new Rectangle();
-        text = new Text();
-        hBox = new HBox();
-        vBox = new VBox();
-        text0 = new Text();
-        text1 = new Text();
-        text2 = new Text();
-        text3 = new Text();
-        text4 = new Text();
-        text5 = new Text();
+        Rectangle rectangle = new Rectangle();
+        Text text = new Text();
+        HBox hBox = new HBox();
+        VBox vBox = new VBox();
+        Text text0 = new Text();
+        Text text1 = new Text();
+        Text text2 = new Text();
+        Text text3 = new Text();
+        Text text4 = new Text();
+        Text text5 = new Text();
         vBox0 = new VBox();
         textField5 = new TextField();
         hBox0 = new HBox();
@@ -313,4 +313,18 @@ public class FHoraire extends Fenetre {
     		instance = new FHoraire();
     	return instance;
     }
+    
+	public void actionClavier(String a) {}
+
+	public void actionClavier(int a) {}
+
+	public void actionRetour() {}
+
+	public void actionSuivant() {}
+
+	public void actionEspace() {}
+
+	public void actionEffacer() {}
+	
+	public void actionEntrer() {}
 }

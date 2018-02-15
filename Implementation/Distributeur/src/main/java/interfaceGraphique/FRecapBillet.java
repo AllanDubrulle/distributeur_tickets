@@ -9,78 +9,44 @@ import javafx.scene.shape.*;
 import javafx.scene.text.*;
 
 public class FRecapBillet extends Fenetre {
-
-    public Rectangle rectangle;
-    public VBox vBox;
-    public HBox hBox;
-    public Text text;
-    public Text text0;
-    public HBox hBox0;
-    public Text text1;
-    public Text text2;
-    public HBox hBox1;
-    public HBox hBox2;
-    public Text text3;
-    public Text text4;
-    public HBox hBox3;
-    public Text text5;
-    public Text text6;
-    public HBox hBox4;
-    public Text text7;
-    public Text text8;
-    public HBox hBox5;
-    public Text text9;
-    public Text text10;
-    public HBox hBox6;
-    public Text text11;
-    public Text text12;
-    public HBox hBox7;
-    public Text text13;
-    public Text text14;
-    public HBox hBox8;
-    public Text text15;
-    public Text text16;
-    public Button button;
-    public Button button0;
-    public Text text17;
     
-    public static FRecapBillet instance;
+    private static FRecapBillet instance;
 
     private FRecapBillet() {
 
-        rectangle = new Rectangle();
-        vBox = new VBox();
-        hBox = new HBox();
-        text = new Text();
-        text0 = new Text();
-        hBox0 = new HBox();
-        text1 = new Text();
-        text2 = new Text();
-        hBox1 = new HBox();
-        hBox2 = new HBox();
-        text3 = new Text();
-        text4 = new Text();
-        hBox3 = new HBox();
-        text5 = new Text();
-        text6 = new Text();
-        hBox4 = new HBox();
-        text7 = new Text();
-        text8 = new Text();
-        hBox5 = new HBox();
-        text9 = new Text();
-        text10 = new Text();
-        hBox6 = new HBox();
-        text11 = new Text();
-        text12 = new Text();
-        hBox7 = new HBox();
-        text13 = new Text();
-        text14 = new Text();
-        hBox8 = new HBox();
-        text15 = new Text();
-        text16 = new Text();
-        button = new Button();
-        button0 = new Button();
-        text17 = new Text();
+        Rectangle rectangle = new Rectangle();
+        VBox vBox = new VBox();
+        HBox hBox = new HBox();
+        Text text = new Text();
+        Text text0 = new Text();
+        HBox hBox0 = new HBox();
+        Text text1 = new Text();
+        Text text2 = new Text();
+        HBox hBox1 = new HBox();
+        HBox hBox2 = new HBox();
+        Text text3 = new Text();
+        Text text4 = new Text();
+        HBox hBox3 = new HBox();
+        Text text5 = new Text();
+        Text text6 = new Text();
+        HBox hBox4 = new HBox();
+        Text text7 = new Text();
+        Text text8 = new Text();
+        HBox hBox5 = new HBox();
+        Text text9 = new Text();
+        Text text10 = new Text();
+        HBox hBox6 = new HBox();
+        Text text11 = new Text();
+        Text text12 = new Text();
+        HBox hBox7 = new HBox();
+        Text text13 = new Text();
+        Text text14 = new Text();
+        HBox hBox8 = new HBox();
+        Text text15 = new Text();
+        Text text16 = new Text();
+        Button button = new Button();
+        Button button0 = new Button();
+        Text text17 = new Text();
 
         setPrefHeight(400.0);
         setPrefWidth(800.0);
@@ -244,7 +210,6 @@ public class FRecapBillet extends Fenetre {
         button.setText("Retour");
         button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button.setOnAction(new EventHandler<ActionEvent>() {
-        	@Override
         	public void handle(ActionEvent event) {
         		graphAC.choixRetour();
         	}
@@ -258,7 +223,6 @@ public class FRecapBillet extends Fenetre {
         button0.setText("Paiement");
         button0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button0.setOnAction(new EventHandler<ActionEvent>() {
-        	@Override
         	public void handle(ActionEvent event) {
         		graphAC.choixPaiement();
         	}
@@ -292,4 +256,18 @@ public class FRecapBillet extends Fenetre {
     		instance = new FRecapBillet();
     	return instance;
     }
+    
+    public void actionClavier(String a) {}
+
+	public void actionClavier(int a) {}
+
+	public void actionRetour() {}
+
+	public void actionSuivant() {}
+
+	public void actionEspace() {}
+
+	public void actionEffacer() {}
+	
+	public void actionEntrer() {}
 }

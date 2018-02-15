@@ -6,10 +6,10 @@ import javafx.stage.Stage;
 
 public class CoeurAGraphiqueImpl implements CoeurAGraphique
 {
-	public Base fenetreSim = Base.getInstance();
+	private Base fenetreSim = Base.getInstance();
 	private FConfiguration fenetreConfig = FConfiguration.getInstance();
-	public Stage primaryStage = new Stage();
-	public StackPane root = new StackPane();
+	private Stage primaryStage = new Stage();
+	private StackPane root = new StackPane();
 	
 	public void afficherConfiguration() {
         root.getChildren().add(fenetreConfig);

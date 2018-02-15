@@ -10,27 +10,18 @@ import javafx.scene.shape.*;
 
 public class FMenu extends Fenetre {
 
-    public Rectangle rectangle;
-    public VBox vBox;
-    public Button button;
-    public Button button0;
-    public Button button1;
-    public Button button2;
-    public Button button3;
-    public Text text;
-
-    public static FMenu instance;
+    private static FMenu instance;
     
     private FMenu() {
 
-        rectangle = new Rectangle();
-        vBox = new VBox();
-        button = new Button();
-        button0 = new Button();
-        button1 = new Button();
-        button2 = new Button();
-        button3 = new Button();
-        text = new Text();
+        Rectangle rectangle = new Rectangle();
+        VBox vBox = new VBox();
+        Button button = new Button();
+        Button button0 = new Button();
+        Button button1 = new Button();
+        Button button2 = new Button();
+        Button button3 = new Button();
+        Text text = new Text();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -59,7 +50,6 @@ public class FMenu extends Fenetre {
         button.setText("Acheter un billet");
         VBox.setMargin(button, new Insets(0.0, 0.0, 5.0, 0.0));
         button.setOnAction(new EventHandler<ActionEvent>(){
-            @Override
             public void handle(ActionEvent event){
             	graphAC.choixBillet();
             }});
@@ -71,7 +61,6 @@ public class FMenu extends Fenetre {
         button0.setText("Acheter un abonnement");
         VBox.setMargin(button0, new Insets(0.0, 0.0, 5.0, 0.0));
         button0.setOnAction(new EventHandler<ActionEvent>(){
-            @Override
             public void handle(ActionEvent event){
             	graphAC.choixAchatAbo();
             }});
@@ -83,7 +72,6 @@ public class FMenu extends Fenetre {
         button1.setText("Renouveler un abonnement");
         VBox.setMargin(button1, new Insets(0.0, 0.0, 5.0, 0.0));
         button1.setOnAction(new EventHandler<ActionEvent>(){
-            @Override
             public void handle(ActionEvent event){
             	graphAC.choixRenouvAbo();
             }});
@@ -95,7 +83,6 @@ public class FMenu extends Fenetre {
         button2.setText("Acheter un pass");
         VBox.setMargin(button2, new Insets(0.0, 0.0, 5.0, 0.0));
         button2.setOnAction(new EventHandler<ActionEvent>(){
-            @Override
             public void handle(ActionEvent event){
             	graphAC.choixPass();
             }});
@@ -106,7 +93,6 @@ public class FMenu extends Fenetre {
         button3.setPrefWidth(392.0);
         button3.setText("Vérifier l'horaire d'un train");
         button3.setOnAction(new EventHandler<ActionEvent>(){
-            @Override
             public void handle(ActionEvent event){
             	graphAC.choixHoraire();
             }});
@@ -128,4 +114,18 @@ public class FMenu extends Fenetre {
     		instance = new FMenu();
     	return instance;
     }
+
+	public void actionClavier(String a) {}
+
+	public void actionClavier(int a) {}
+
+	public void actionRetour() {}
+
+	public void actionSuivant() {}
+
+	public void actionEspace() {}
+
+	public void actionEffacer() {}
+	
+	public void actionEntrer() {}
 }

@@ -1,18 +1,18 @@
 package interfaceGraphique;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.*;
 import javafx.scene.control.*;
 import javafx.scene.text.*;
 import javafx.scene.shape.*;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.scene.layout.*;
 
-public class FPassMenu extends Fenetre {
-
-    private static FPassMenu instance;
-    
-    private FPassMenu() {
+public class FHoraireMenu extends Fenetre {
+	
+	private static FHoraireMenu instance;
+	
+    private FHoraireMenu() {
 
         Rectangle rectangle = new Rectangle();
         Text text = new Text();
@@ -48,7 +48,7 @@ public class FPassMenu extends Fenetre {
         text.setLayoutY(55.0);
         text.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text.setStrokeWidth(0.0);
-        text.setText("Achat d'un pass");
+        text.setText("Vérifier un horaire de train");
         text.setUnderline(true);
         text.setFont(new Font("System Bold", 22.0));
 
@@ -57,7 +57,7 @@ public class FPassMenu extends Fenetre {
         text0.setLayoutY(133.0);
         text0.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text0.setStrokeWidth(0.0);
-        text0.setText("Sélectionner un type de pass :");
+        text0.setText("Sélectionner une option :");
         text0.setFont(new Font(18.0));
 
         hBox.setLayoutX(56.0);
@@ -71,48 +71,51 @@ public class FPassMenu extends Fenetre {
         button.setMnemonicParsing(false);
         button.setPrefHeight(31.0);
         button.setPrefWidth(185.0);
-        button.setText("Pass illimité");
+        button.setText("Départs");
         VBox.setMargin(button, new Insets(0.0, 0.0, 20.0, 0.0));
-        button.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
-            	graphAC.choixPassIllimite();
-            }});
+        button.setOnAction(new EventHandler<ActionEvent>() {
+        	public void handle(ActionEvent event) {
+        		graphAC.choixHoraireDepart();
+        	}
+        });
 
         button0.setMnemonicParsing(false);
         button0.setPrefHeight(31.0);
         button0.setPrefWidth(237.0);
-        button0.setText("Pass 10 trajets");
-        button0.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
-            	graphAC.choixPass10Trajets();
-            }});
+        button0.setText("Arrivées");
+        button0.setOnAction(new EventHandler<ActionEvent>() {
+        	public void handle(ActionEvent event) {
+        		graphAC.choixHoraireArrivee();
+        	}
+        });
 
         button1.setMnemonicParsing(false);
         button1.setPrefHeight(31.0);
         button1.setPrefWidth(192.0);
-        button1.setText("Pass 10 trajets 2 gares");
+        button1.setText("Itinéraire");
         VBox.setMargin(button1, new Insets(20.0, 0.0, 0.0, 0.0));
-        button1.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
-            	graphAC.choixPass10Tajets2Gares();
-            }});
-        
+        button1.setOnAction(new EventHandler<ActionEvent>() {
+        	public void handle(ActionEvent event) {
+        		graphAC.choixHoraireItineraire();
+        	}
+        });
+
         vBox0.setPrefHeight(125.0);
         vBox0.setPrefWidth(531.0);
 
         text1.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1.setStrokeWidth(0.0);
-        text1.setText(":      Permet de voyager librement pendant un certain nombre de jours");
+        text1.setText(":      Permet de consulter les départs à partir d'une gare");
         VBox.setMargin(text1, new Insets(5.0, 0.0, 10.0, 0.0));
 
         text2.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text2.setStrokeWidth(0.0);
-        text2.setText(":     Permet d'effectuer 10 trajets sans gares prédéfinies");
+        text2.setText(":     Permet de consulter les arrivées dans une gare");
         VBox.setMargin(text2, new Insets(20.0, 0.0, 20.0, 0.0));
 
         text3.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text3.setStrokeWidth(0.0);
-        text3.setText(":      Permet d'effectuer 10 trajets entre les gares d'arrivée et de départ prédéfinies");
+        text3.setText(":      Permet de consulter l'horaire d'un itinéraire entre deux gares");
         VBox.setMargin(text3, new Insets(12.0, 0.0, 0.0, 0.0));
         HBox.setMargin(vBox0, new Insets(0.0, 0.0, 0.0, 20.0));
 
@@ -120,22 +123,18 @@ public class FPassMenu extends Fenetre {
         button2.setLayoutY(344.0);
         button2.setMnemonicParsing(false);
         button2.setText("Annuler");
-        button2.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){	
-            	graphAC.choixAnnuler();
-            }});
 
         vBox.getChildren().addAll(button, button0, button1);
         vBox0.getChildren().addAll(text1, text2, text3);
         hBox.getChildren().addAll(vBox, vBox0);
         getChildren().addAll(rectangle, text, text0, hBox, button2);
     }
-
-    public static FPassMenu getInstance() {
-    	if (instance == null)
-    		instance = new FPassMenu();
-    	return instance;
-    }
+    
+    public static FHoraireMenu getInstance() {
+    	if (instance == null) 
+    		instance = new FHoraireMenu();
+		return instance;
+    }	
     
     public void actionClavier(String a) {}
 

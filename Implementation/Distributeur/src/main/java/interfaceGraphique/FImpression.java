@@ -6,17 +6,13 @@ import javafx.scene.shape.*;
 
 public class FImpression extends Fenetre {
 
-    public Rectangle rectangle;
-    public Text text;
-    public ProgressBar progressBar;
-
-    public static FImpression instance;
+    private static FImpression instance;
     
     private FImpression() {
 
-        rectangle = new Rectangle();
-        text = new Text();
-        progressBar = new ProgressBar();
+        Rectangle rectangle = new Rectangle();
+        Text text = new Text();
+        ProgressBar progressBar = new ProgressBar();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -56,4 +52,18 @@ public class FImpression extends Fenetre {
     		instance = new FImpression();
     	return instance;
     }
+    
+	public void actionClavier(String a) {}
+
+	public void actionClavier(int a) {}
+
+	public void actionRetour() {}
+
+	public void actionSuivant() {}
+
+	public void actionEspace() {}
+
+	public void actionEffacer() {}
+	
+	public void actionEntrer() {}
 }

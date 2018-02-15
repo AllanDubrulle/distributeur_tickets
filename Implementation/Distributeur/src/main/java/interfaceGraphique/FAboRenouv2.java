@@ -10,41 +10,25 @@ import javafx.scene.layout.*;
 
 public class FAboRenouv2 extends Fenetre {
 
-    public Rectangle rectangle;
-    public VBox vBox;
-    public HBox hBox;
-    public HBox hBox0;
-    public Text text;
-    public TextField textField;
-    public HBox hBox1;
-    public Text text0;
-    public RadioButton radioButton;
-    public RadioButton radioButton0;
-    public RadioButton radioButton1;
-    public RadioButton radioButton2;
-    public Text text1;
-    public Button button;
-    public Button button0;
-
-    public static FAboRenouv2 instance;
+    private static FAboRenouv2 instance;
     
     private FAboRenouv2() {
 
-        rectangle = new Rectangle();
-        vBox = new VBox();
-        hBox = new HBox();
-        hBox0 = new HBox();
-        text = new Text();
-        textField = new TextField();
-        hBox1 = new HBox();
-        text0 = new Text();
-        radioButton = new RadioButton();
-        radioButton0 = new RadioButton();
-        radioButton1 = new RadioButton();
-        radioButton2 = new RadioButton();
-        text1 = new Text();
-        button = new Button();
-        button0 = new Button();
+        Rectangle rectangle = new Rectangle();
+        VBox vBox = new VBox();
+        HBox hBox = new HBox();
+        HBox hBox0 = new HBox();
+        Text text = new Text();
+        TextField textField = new TextField();
+        HBox hBox1 = new HBox();
+        Text text0 = new Text();
+        RadioButton radioButton = new RadioButton();
+        RadioButton radioButton0 = new RadioButton();
+        RadioButton radioButton1 = new RadioButton();
+        RadioButton radioButton2 = new RadioButton();
+        Text text1 = new Text();
+        Button button = new Button();
+        Button button0 = new Button();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -131,7 +115,6 @@ public class FAboRenouv2 extends Fenetre {
         button.setText("Annuler");
         button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button.setOnAction(new EventHandler<ActionEvent>(){
-            @Override
             public void handle(ActionEvent event){
             	graphAC.choixAnnuler();
             }});
@@ -144,7 +127,6 @@ public class FAboRenouv2 extends Fenetre {
         button0.setText("Valider");
         button0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button0.setOnAction(new EventHandler<ActionEvent>(){
-            @Override
             public void handle(ActionEvent event){
             	graphAC.choixValider();
             }});
@@ -160,4 +142,18 @@ public class FAboRenouv2 extends Fenetre {
     		instance = new FAboRenouv2();
     	return instance;
     }
+    
+    public void actionClavier(String a) {}
+
+	public void actionClavier(int a) {}
+
+	public void actionRetour() {}
+
+	public void actionSuivant() {}
+
+	public void actionEspace() {}
+
+	public void actionEffacer() {}
+	
+	public void actionEntrer() {}
 }

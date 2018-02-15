@@ -9,38 +9,24 @@ import javafx.scene.shape.*;
 import javafx.scene.text.*;
 
 public class FChoixParLiquide extends Fenetre {
-
-    public Rectangle rectangle;
-    public Text text;
-    public Button button;
-    public VBox vBox;
-    public HBox hBox;
-    public Text text0;
-    public Text text1;
-    public HBox hBox0;
-    public Text text2;
-    public Text text3;
-    public HBox hBox1;
-    public Text text4;
-    public Text text5;
     
-    public static FChoixParLiquide instance;
+    private static FChoixParLiquide instance;
 
     private FChoixParLiquide() {
 
-        rectangle = new Rectangle();
-        text = new Text();
-        button = new Button();
-        vBox = new VBox();
-        hBox = new HBox();
-        text0 = new Text();
-        text1 = new Text();
-        hBox0 = new HBox();
-        text2 = new Text();
-        text3 = new Text();
-        hBox1 = new HBox();
-        text4 = new Text();
-        text5 = new Text();
+        Rectangle rectangle = new Rectangle();
+        Text text = new Text();
+        Button button = new Button();
+        VBox vBox = new VBox();
+        HBox hBox = new HBox();
+        Text text0 = new Text();
+        Text text1 = new Text();
+        HBox hBox0 = new HBox();
+        Text text2 = new Text();
+        Text text3 = new Text();
+        HBox hBox1 = new HBox();
+        Text text4 = new Text();
+        Text text5 = new Text();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -72,7 +58,6 @@ public class FChoixParLiquide extends Fenetre {
         button.setText("Annuler");
         button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button.setOnAction(new EventHandler<ActionEvent>(){
-            @Override
             public void handle(ActionEvent event){
             	graphAC.choixAnnuler();
             }});
@@ -132,4 +117,18 @@ public class FChoixParLiquide extends Fenetre {
     		instance = new FChoixParLiquide();
     	return instance;
     }
+    
+	public void actionClavier(String a) {}
+
+	public void actionClavier(int a) {}
+
+	public void actionRetour() {}
+
+	public void actionSuivant() {}
+
+	public void actionEspace() {}
+
+	public void actionEffacer() {}
+	
+	public void actionEntrer() {}
 }

@@ -1,23 +1,20 @@
 package interfaceGraphique;
 
 import javafx.scene.text.*;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.control.*;
 
 public class FChoixAbo extends Fenetre {
-
-    protected final Button button;
-    protected final Button button0;
-    protected final ChoiceBox<String> choiceBox;
-    protected final Text text;
     
-    public static FChoixAbo instance;
+    private static FChoixAbo instance;
 
     private FChoixAbo() {
 
-        button = new Button();
-        button0 = new Button();
-        choiceBox = new ChoiceBox<String>();
-        text = new Text();
+        Button button = new Button();
+        Button button0 = new Button();
+        ChoiceBox<String> choiceBox = new ChoiceBox<String>();
+        Text text = new Text();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -34,6 +31,10 @@ public class FChoixAbo extends Fenetre {
         button.setPrefWidth(75.0);
         button.setText("Valider");
         button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        button.setOnAction(new EventHandler<ActionEvent>(){
+            public void handle(ActionEvent event){
+            	graphAC.choixValider();
+            }});
 
         button0.setAlignment(javafx.geometry.Pos.BOTTOM_RIGHT);
         button0.setLayoutX(10.0);
@@ -43,6 +44,10 @@ public class FChoixAbo extends Fenetre {
         button0.setPrefWidth(75.0);
         button0.setText("Retour");
         button0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        button0.setOnAction(new EventHandler<ActionEvent>(){
+            public void handle(ActionEvent event){
+            	graphAC.choixRetour();
+            }});
 
         choiceBox.setLayoutX(100.0);
         choiceBox.setLayoutY(85.0);
@@ -64,4 +69,18 @@ public class FChoixAbo extends Fenetre {
     		instance = new FChoixAbo();
     	return instance;
     }
+    
+    public void actionClavier(String a) {}
+
+	public void actionClavier(int a) {}
+
+	public void actionRetour() {}
+
+	public void actionSuivant() {}
+
+	public void actionEspace() {}
+
+	public void actionEffacer() {}
+	
+	public void actionEntrer() {}
 }

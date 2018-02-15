@@ -1,42 +1,31 @@
 package interfaceGraphique;
 
 import javafx.scene.text.*;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.*;
 import javafx.scene.layout.*;
 import javafx.scene.control.*;
 
 public class FConfiguration extends Fenetre {
-
-    public VBox vBox;
-    public Text text;
-    public Text text0;
-    public RadioButton radioButton;
-    public RadioButton radioButton0;
-    public RadioButton radioButton1;
-    public Text text1;
-    public RadioButton radioButton2;
-    public RadioButton radioButton3;
-    public RadioButton radioButton4;
-    public CheckBox checkBox;
-    public Button button;
     //public ProgressBar test = new ProgressBar(0.1);
     
-    public static FConfiguration instance;
+    private static FConfiguration instance;
 
     private FConfiguration() {
 
-        vBox = new VBox();
-        text = new Text();
-        text0 = new Text();
-        radioButton = new RadioButton();
-        radioButton0 = new RadioButton();
-        radioButton1 = new RadioButton();
-        text1 = new Text();
-        radioButton2 = new RadioButton();
-        radioButton3 = new RadioButton();
-        radioButton4 = new RadioButton();
-        checkBox = new CheckBox();
-        button = new Button();
+        VBox vBox = new VBox();
+        Text text = new Text();
+        Text text0 = new Text();
+        RadioButton radioButton = new RadioButton();
+        RadioButton radioButton0 = new RadioButton();
+        RadioButton radioButton1 = new RadioButton();
+        Text text1 = new Text();
+        RadioButton radioButton2 = new RadioButton();
+        RadioButton radioButton3 = new RadioButton();
+        RadioButton radioButton4 = new RadioButton();
+        CheckBox checkBox = new CheckBox();
+        Button button = new Button();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -115,6 +104,11 @@ public class FConfiguration extends Fenetre {
         button.setPrefHeight(31.0);
         button.setPrefWidth(75.0);
         button.setText("Valider");
+        button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        button.setOnAction(new EventHandler<ActionEvent>(){
+            public void handle(ActionEvent event){
+            	graphAC.choixValider();
+            }});
         
         //test.setProgress(0.9);
 
@@ -128,4 +122,18 @@ public class FConfiguration extends Fenetre {
     		instance = new FConfiguration();
     	return instance;
     }
+    
+	public void actionClavier(String a) {}
+
+	public void actionClavier(int a) {}
+
+	public void actionRetour() {}
+
+	public void actionSuivant() {}
+
+	public void actionEspace() {}
+
+	public void actionEffacer() {}
+	
+	public void actionEntrer() {}
 }

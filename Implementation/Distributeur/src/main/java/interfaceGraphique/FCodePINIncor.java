@@ -1,19 +1,20 @@
 package interfaceGraphique;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.scene.control.*;
 import javafx.scene.shape.*;
 import javafx.scene.text.*;
 
 public class FCodePINIncor extends Fenetre {
 
-    public Rectangle rectangle;
-    public Text text;
-
-    public static FCodePINIncor instance;
+    private static FCodePINIncor instance;
     
     private FCodePINIncor() {
 
-        rectangle = new Rectangle();
-        text = new Text();
+        Rectangle rectangle = new Rectangle();
+        Text text = new Text();
+        Button button = new Button();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -38,6 +39,18 @@ public class FCodePINIncor extends Fenetre {
         text.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         text.setWrappingWidth(205.841796875);
         text.setFont(new Font("System Italic", 18.0));
+        
+        button.setLayoutX(515.0);
+        button.setLayoutY(359.0);
+        button.setMnemonicParsing(false);
+        button.setPrefHeight(31.0);
+        button.setPrefWidth(75.0);
+        button.setText("Annuler");
+        button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        button.setOnAction(new EventHandler<ActionEvent>(){
+            public void handle(ActionEvent event){
+            	graphAC.choixAnnuler();
+            }});
 
         getChildren().addAll(rectangle, text);
     }
@@ -47,4 +60,18 @@ public class FCodePINIncor extends Fenetre {
     		instance = new FCodePINIncor();
     	return instance;
     }
+    
+	public void actionClavier(String a) {}
+
+	public void actionClavier(int a) {}
+
+	public void actionRetour() {}
+
+	public void actionSuivant() {}
+
+	public void actionEspace() {}
+
+	public void actionEffacer() {}
+	
+	public void actionEntrer() {}
 }

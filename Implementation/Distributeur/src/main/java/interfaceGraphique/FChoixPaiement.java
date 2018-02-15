@@ -7,22 +7,16 @@ import javafx.scene.text.*;
 import javafx.scene.shape.*;
 
 public class FChoixPaiement extends Fenetre {
-
-    public Rectangle rectangle;
-    public Text text;
-    public Button button;
-    public Button button0;
-    public Button button1;
     
-    public static FChoixPaiement instance;
+    private static FChoixPaiement instance;
 
     private FChoixPaiement() {
 
-        rectangle = new Rectangle();
-        text = new Text();
-        button = new Button();
-        button0 = new Button();
-        button1 = new Button();
+        Rectangle rectangle = new Rectangle();
+        Text text = new Text();
+        Button button = new Button();
+        Button button0 = new Button();
+        Button button1 = new Button();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -55,7 +49,6 @@ public class FChoixPaiement extends Fenetre {
         button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button.setFont(new Font(17.0));
         button.setOnAction(new EventHandler<ActionEvent>(){
-            @Override
             public void handle(ActionEvent event){
             	graphAC.choixPaiementLiquide();
             }});
@@ -69,7 +62,6 @@ public class FChoixPaiement extends Fenetre {
         button0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button0.setFont(new Font(17.0));
         button0.setOnAction(new EventHandler<ActionEvent>(){
-            @Override
             public void handle(ActionEvent event){
             	graphAC.choixPaiementParCarte();
             }});
@@ -82,7 +74,6 @@ public class FChoixPaiement extends Fenetre {
         button1.setText("Annuler");
         button1.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button1.setOnAction(new EventHandler<ActionEvent>(){
-            @Override
             public void handle(ActionEvent event){
             	graphAC.choixAnnuler();
             }});
@@ -95,4 +86,18 @@ public class FChoixPaiement extends Fenetre {
     		instance = new FChoixPaiement();
     	return instance;
     }
+    
+    public void actionClavier(String a) {}
+
+	public void actionClavier(int a) {}
+
+	public void actionRetour() {}
+
+	public void actionSuivant() {}
+
+	public void actionEspace() {}
+
+	public void actionEffacer() {}
+	
+	public void actionEntrer() {}
 }

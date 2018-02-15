@@ -7,13 +7,14 @@ import javafx.scene.shape.*;
 
 public class FenteBillet extends ComposantVisible {
 
-	public static FenteBillet instance;
+	private static FenteBillet instance;
 	
 	public FenteBillet(boolean enMarche) {
 		super(enMarche);
 	}
 	
 	private FenteBillet() {
+		
         Rectangle rectangle = new Rectangle();
         Button button = new Button();
         Button button0 = new Button();
@@ -44,7 +45,6 @@ public class FenteBillet extends ComposantVisible {
         button.setText("5 €");
         button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button.setOnAction(new EventHandler<ActionEvent>(){
-            @Override
             public void handle(ActionEvent event){
             	graphAC.choix5eur();
             }});
@@ -57,7 +57,6 @@ public class FenteBillet extends ComposantVisible {
         button0.setText("10 €");
         button0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button0.setOnAction(new EventHandler<ActionEvent>(){
-            @Override
             public void handle(ActionEvent event){
             	graphAC.choix10eur();
             }});
@@ -70,7 +69,6 @@ public class FenteBillet extends ComposantVisible {
         button1.setText("50 €");
         button1.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button1.setOnAction(new EventHandler<ActionEvent>(){
-            @Override
             public void handle(ActionEvent event){
             	graphAC.choix50eur();
             }});
@@ -83,7 +81,6 @@ public class FenteBillet extends ComposantVisible {
         button2.setText("20 €");
         button2.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button2.setOnAction(new EventHandler<ActionEvent>(){
-            @Override
             public void handle(ActionEvent event){
             	graphAC.choix20eur();
             }});

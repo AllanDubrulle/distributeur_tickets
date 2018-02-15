@@ -4,16 +4,13 @@ import javafx.scene.shape.*;
 import javafx.scene.text.*;
 
 public class FAttenteCodePIN extends Fenetre {
-
-    public Rectangle rectangle;
-    public Text text;
     
-    public static FAttenteCodePIN instance;
+    private static FAttenteCodePIN instance;
 
     private FAttenteCodePIN() {
 
-        rectangle = new Rectangle();
-        text = new Text();
+        Rectangle rectangle = new Rectangle();
+        Text text = new Text();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -47,4 +44,18 @@ public class FAttenteCodePIN extends Fenetre {
     		instance = new FAttenteCodePIN();
     	return instance;
     }
+    
+    public void actionClavier(String a) {}
+
+	public void actionClavier(int a) {}
+
+	public void actionRetour() {}
+
+	public void actionSuivant() {}
+
+	public void actionEspace() {}
+
+	public void actionEffacer() {}
+	
+	public void actionEntrer() {}
 }

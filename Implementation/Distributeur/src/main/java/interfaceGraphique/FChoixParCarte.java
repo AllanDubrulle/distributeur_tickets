@@ -7,20 +7,14 @@ import javafx.scene.control.*;
 
 public class FChoixParCarte extends Fenetre {
 
-    public Button button;
-    public Button button0;
-    public ChoiceBox<String> choiceBox;
-    public Text text;
-
-    public static FChoixParCarte instance;
+    private static FChoixParCarte instance;
     
     private FChoixParCarte() {
 
-        button = new Button();
-        button0 = new Button();
-        choiceBox = new ChoiceBox<String>();
-        text = new Text();
-        choiceBox.getItems().addAll("0000000001", "0000000002", "0000000003");
+        Button button = new Button();
+        Button button0 = new Button();
+        TextField textField = new TextField();
+        Text text = new Text();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -38,7 +32,6 @@ public class FChoixParCarte extends Fenetre {
         button.setText("Valider");
         button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button.setOnAction(new EventHandler<ActionEvent>(){
-        	@Override
         	public void handle(ActionEvent event) {
         		graphAC.choixValider();
         	}
@@ -53,15 +46,14 @@ public class FChoixParCarte extends Fenetre {
         button0.setText("Retour");
         button0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button0.setOnAction(new EventHandler<ActionEvent>(){
-        	@Override
         	public void handle(ActionEvent event) {
         		graphAC.choixRetour();
         	}
         });
 
-        choiceBox.setLayoutX(100.0);
-        choiceBox.setLayoutY(85.0);
-        choiceBox.setPrefWidth(200.0);
+        textField.setLayoutX(100.0);
+        textField.setLayoutY(85.0);
+        textField.setPrefWidth(200.0);
 
         text.setLayoutX(20.0);
         text.setLayoutY(30.0);
@@ -70,7 +62,7 @@ public class FChoixParCarte extends Fenetre {
         text.setText("Choisissez un numéro de carte :");
         text.setFont(new Font("System Bold", 15.0));
 
-        getChildren().addAll(button, button0, choiceBox, text);
+        getChildren().addAll(button, button0, textField, text);
     }
     
     public static FChoixParCarte getInstance() {
@@ -78,4 +70,18 @@ public class FChoixParCarte extends Fenetre {
     		instance = new FChoixParCarte();
     	return instance;
     }
+    
+    public void actionClavier(String a) {}
+
+	public void actionClavier(int a) {}
+
+	public void actionRetour() {}
+
+	public void actionSuivant() {}
+
+	public void actionEspace() {}
+
+	public void actionEffacer() {}
+	
+	public void actionEntrer() {}
 }

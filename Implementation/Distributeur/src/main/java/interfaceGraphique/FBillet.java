@@ -9,81 +9,46 @@ import javafx.scene.shape.*;
 import javafx.scene.text.*;
 
 public class FBillet extends Fenetre {
-    public Rectangle rectangle;
-    public VBox vBox;
-    public HBox hBox;
-    public Text text;
-    public TextField textField3;
-    public HBox hBox0;
-    public Text text0;
-    public TextField textField4;
-    public HBox hBox1;
-    public HBox hBox2;
-    public Text text1;
-    public RadioButton radioButton;
-    public RadioButton radioButton0;
-    public HBox hBox3;
-    public Text text2;
-    public RadioButton radioButton1;
-    public RadioButton radioButton2;
-    public HBox hBox4;
-    public Text text3;
-    public TextField textField5;
-    public Text text4;
-    public TextField textField6;
-    public HBox hBox5;
-    public Text text5;
-    public TextField textField;
-    public HBox hBox6;
-    public Text text6;
-    public TextField textField0;
-    public Text text7;
-    public TextField textField1;
-    public Text text8;
-    public TextField textField2;
-    public Button button;
-    public Button button0;
-    public Text text9;
-    
-    public static FBillet instance;
+
+	private static FBillet instance;
 
     private FBillet() {
 
-        rectangle = new Rectangle();
-        vBox = new VBox();
-        hBox = new HBox();
-        text = new Text();
-        textField3 = new TextField();
-        hBox0 = new HBox();
-        text0 = new Text();
-        textField4 = new TextField();
-        hBox1 = new HBox();
-        hBox2 = new HBox();
-        text1 = new Text();
-        radioButton = new RadioButton();
-        radioButton0 = new RadioButton();
-        hBox3 = new HBox();
-        text2 = new Text();
-        radioButton1 = new RadioButton();
-        radioButton2 = new RadioButton();
-        hBox4 = new HBox();
-        text3 = new Text();
-        textField5 = new TextField();
-        text4 = new Text();
-        textField6 = new TextField();
-        hBox5 = new HBox();
-        text5 = new Text();
-        textField = new TextField();
-        hBox6 = new HBox();
-        text6 = new Text();
-        textField0 = new TextField();
-        text7 = new Text();
-        textField1 = new TextField();
-        text8 = new Text();
-        textField2 = new TextField();
-        button = new Button();
-        button0 = new Button();
-        text9 = new Text();
+        Rectangle rectangle = new Rectangle();
+        VBox vBox = new VBox();
+        HBox hBox = new HBox();
+        Text text = new Text();
+        TextField textField3 = new TextField();
+        HBox hBox0 = new HBox();
+        Text text0 = new Text();
+        TextField textField4 = new TextField();
+        HBox hBox1 = new HBox();
+        HBox hBox2 = new HBox();
+        Text text1 = new Text();
+        RadioButton radioButton = new RadioButton();
+        RadioButton radioButton0 = new RadioButton();
+        HBox hBox3 = new HBox();
+        Text text2 = new Text();
+        RadioButton radioButton1 = new RadioButton();
+        RadioButton radioButton2 = new RadioButton();
+        HBox hBox4 = new HBox();
+        Text text3 = new Text();
+        TextField textField5 = new TextField();
+        Text text4 = new Text();
+        TextField textField6 = new TextField();
+        HBox hBox5 = new HBox();
+        Text text5 = new Text();
+        TextField textField = new TextField();
+        HBox hBox6 = new HBox();
+        Text text6 = new Text();
+        TextField textField0 = new TextField();
+        Text text7 = new Text();
+        TextField textField1 = new TextField();
+        Text text8 = new Text();
+        TextField textField2 = new TextField();
+        Button button = new Button();
+        Button button0 = new Button();
+        Text text9 = new Text();
 
         setPrefHeight(400.0);
         setPrefWidth(800.0);
@@ -237,7 +202,6 @@ public class FBillet extends Fenetre {
         button.setText("Annuler");
         button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button.setOnAction(new EventHandler<ActionEvent>(){
-            @Override
             public void handle(ActionEvent event){
             	graphAC.choixAnnuler();
             }});
@@ -250,7 +214,6 @@ public class FBillet extends Fenetre {
         button0.setText("Valider");
         button0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button0.setOnAction(new EventHandler<ActionEvent>(){
-            @Override
             public void handle(ActionEvent event){
             	graphAC.choixValider();
             }});
@@ -281,4 +244,18 @@ public class FBillet extends Fenetre {
     		instance = new FBillet();
     	return instance;
     }
+    
+    public void actionClavier(String a) {}
+
+	public void actionClavier(int a) {}
+
+	public void actionRetour() {}
+
+	public void actionSuivant() {}
+
+	public void actionEspace() {}
+
+	public void actionEffacer() {}
+	
+	public void actionEntrer() {}
 }

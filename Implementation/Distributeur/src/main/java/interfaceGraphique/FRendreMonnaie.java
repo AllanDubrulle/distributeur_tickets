@@ -6,16 +6,13 @@ import javafx.scene.control.*;
 import javafx.scene.text.*;
 
 public class FRendreMonnaie extends Fenetre {
-
-    public Text text;
-    public Button button;
     
-    public static FRendreMonnaie instance;
+    private static FRendreMonnaie instance;
 
     private FRendreMonnaie() {
 
-        text = new Text();
-        button = new Button();
+        Text text = new Text();
+        Button button = new Button();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -41,7 +38,6 @@ public class FRendreMonnaie extends Fenetre {
         button.setText("Ok");
         button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button.setOnAction(new EventHandler<ActionEvent>(){
-            @Override
             public void handle(ActionEvent event){
             	graphAC.choixOk();
             }});
@@ -54,4 +50,18 @@ public class FRendreMonnaie extends Fenetre {
     		instance = new FRendreMonnaie();
     	return instance;
     }
+    
+    public void actionClavier(String a) {}
+
+	public void actionClavier(int a) {}
+
+	public void actionRetour() {}
+
+	public void actionSuivant() {}
+
+	public void actionEspace() {}
+
+	public void actionEffacer() {}
+	
+	public void actionEntrer() {}
 }
