@@ -9,9 +9,8 @@ public class Main extends Application
 	Stage primaryStage = new Stage();
 	public void start(Stage stage)
 	{
-		FenetreConfiguration fenetre = FenetreConfiguration.getInstance();
 		StackPane root = new StackPane();
-        root.getChildren().add(fenetre);
+        root.getChildren().add(FenetreConfiguration.getInstance());
         Scene scene = new Scene(root, 600, 400);
         primaryStage.setResizable(false);
         primaryStage.setScene(scene);

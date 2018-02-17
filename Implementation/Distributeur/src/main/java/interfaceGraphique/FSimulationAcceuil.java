@@ -41,7 +41,6 @@ class FSimulationAcceuil extends Ecran
         {
             public void handle(ActionEvent event)
             {
-            	System.out.println("bli");
             	GraphiqueACoeurImpl.getInstance().choixDemarrerSimul();
             	
             }

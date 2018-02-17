@@ -13,14 +13,8 @@ import javafx.scene.layout.*;
 class FenetreSimulation extends BorderPane 
 {
     private MenuBar menuBar;
-	private Clavier clavier = Clavier.getInstance();
-    private LecteurCarte scanneur = LecteurCarte.getInstance();
-    private Reception reception = Reception.getInstance();
-    private FenteBillet fenteB = FenteBillet.getInstance();
-    private FentePiece fenteP = FentePiece.getInstance();
     private VBox claRe = new VBox();
     private VBox fentes = new VBox();
-    
     private Ecran fenetre = FSimulationAcceuil.getInstance();
     private static FenetreSimulation instance;
     
@@ -52,32 +46,12 @@ class FenetreSimulation extends BorderPane
         CheckMenuItem checkMenuItem10 = new CheckMenuItem();
         CheckMenuItem checkMenuItem11 = new CheckMenuItem();
         
-        BorderPane.setAlignment(fenetre, Pos.CENTER);
-        BorderPane.setMargin(fenetre, new Insets(0.0, 0.0, 0.0, 0.0));
+        setAlignment(fenetre, Pos.CENTER);
+        setMargin(fenetre, new Insets(0.0, 0.0, 0.0, 0.0));
         setCenter(fenetre);
         
-        if (FenetreConfiguration.deuxFentes())
-        	fentes.getChildren().addAll(fenteB, fenteP);
-        else if (FenetreConfiguration.fentePiece())
-        	fentes.getChildren().add(fenteP);
-        
-        if (FenetreConfiguration.ecranEtClavier() || FenetreConfiguration.clavierEtNonEcran())
-        	claRe.getChildren().addAll(clavier, reception);
-        else if (FenetreConfiguration.ecranEtNonClavier())
-        	claRe.getChildren().add(reception);
-        
-        BorderPane.setMargin(claRe, new Insets(0.0, 0.0, 0.0, 145.0));
-        VBox.setMargin(clavier, new Insets(0.0, 0.0, 20.0, 182.5));
-        VBox.setMargin(reception, new Insets(0.0, 0.0, 20.0, 0.0));
-        setBottom(claRe);
-        
-        BorderPane.setMargin(scanneur, new Insets(100.0, 25.0, 0.0, 0.0));
-        setRight(scanneur);
-        
-        
-        BorderPane.setMargin(fentes, new Insets(100.0, 0.0, 0.0, 10.0));
-        //VBox.setMargin(fenteP, new Insets(50.0, 0.0, 0.0, 0.0));
-        setLeft(fentes);
+        setMargin(LecteurCarte.getInstance(), new Insets(100.0, 25.0, 0.0, 0.0));
+        setRight(LecteurCarte.getInstance());
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -86,7 +60,7 @@ class FenetreSimulation extends BorderPane
         setPrefHeight(800.0);
         setPrefWidth(1300.0);
 
-        BorderPane.setAlignment(pane, javafx.geometry.Pos.CENTER);
+        setAlignment(pane, javafx.geometry.Pos.CENTER);
         pane.setPrefHeight(39.0);
         pane.setPrefWidth(1300.0);
 
@@ -184,7 +158,35 @@ class FenetreSimulation extends BorderPane
 		this.fenetre = fen; 
         fenetre.setLayoutX(259.0);
         fenetre.setLayoutY(75.0);
-		getChildren().setAll(fenetre, claRe, fentes, scanneur, menuBar);
+		getChildren().setAll(fenetre, claRe, fentes, LecteurCarte.getInstance(), menuBar);
 		Clavier.setFenetre(fen);
 	}
+    
+    public void setParametre()
+    {
+    	fentes.getChildren().clear();
+        if (FenetreConfiguration.getInstance().deuxFentes())
+        {
+        	fentes.getChildren().addAll(FenteBillet.getInstance(), FentePiece.getInstance());
+        }
+        
+        else if (FenetreConfiguration.getInstance().fentePiece())
+        {
+        	fentes.getChildren().add(FentePiece.getInstance());
+        }
+        
+        if (FenetreConfiguration.getInstance().ecranEtClavier() || FenetreConfiguration.getInstance().clavierEtNonEcran())
+        	claRe.getChildren().addAll(Clavier.getInstance(), Reception.getInstance());
+        else if (FenetreConfiguration.getInstance().ecranEtNonClavier())
+        	claRe.getChildren().add(Reception.getInstance());
+        
+        setMargin(claRe, new Insets(0.0, 0.0, 0.0, 145.0));
+        VBox.setMargin(Clavier.getInstance(), new Insets(0.0, 0.0, 20.0, 182.5));
+        VBox.setMargin(Reception.getInstance(), new Insets(0.0, 0.0, 20.0, 0.0));
+        setBottom(claRe);
+                
+        setMargin(fentes, new Insets(100.0, 0.0, 0.0, 10.0));
+        //VBox.setMargin(fenteP, new Insets(50.0, 0.0, 0.0, 0.0));
+        setLeft(fentes);
+    }
 }

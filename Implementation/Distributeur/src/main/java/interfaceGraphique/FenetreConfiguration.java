@@ -13,7 +13,7 @@ public class FenetreConfiguration extends Ecran
 {
     //public ProgressBar test = new ProgressBar(0.1);    
     private static FenetreConfiguration instance;
-    private static RadioButton radioButton, radioButton0, radioButton1, radioButton2, radioButton3, radioButton4;
+    private RadioButton radioButton, radioButton0, radioButton1, radioButton2, radioButton3, radioButton4;
 
     private FenetreConfiguration() 
     {
@@ -112,9 +112,12 @@ public class FenetreConfiguration extends Ecran
         {
             public void handle(ActionEvent event)
             {
+            		
             		StackPane root = new StackPane();
             		Stage stage = new Stage();
-                    root.getChildren().add(FenetreSimulation.getInstance());
+            		System.out.println("ozzqeiozijqijopqz");
+            		FenetreSimulation.getInstance().setParametre();
+            		root.getChildren().add(FenetreSimulation.getInstance());
                     Scene scene = new Scene(root, 1300, 800);
                     stage.setResizable(false);
                     stage.setScene(scene);
@@ -137,42 +140,42 @@ public class FenetreConfiguration extends Ecran
     	return instance;
     }
     
-    public static boolean ecranEtClavier()
+    public boolean ecranEtClavier()
     {
     	if (radioButton.isSelected())
     		return true;
     	return false;
     }
     
-    public static boolean clavierEtNonEcran()
+    public boolean clavierEtNonEcran()
     {
     	if (radioButton0.isSelected())
     		return true;
     	return false;
     }
     
-    public static boolean ecranEtNonClavier()
+    public boolean ecranEtNonClavier()
     {
     	if (radioButton2.isSelected())
     		return true;
     	return false;
     }
     
-    public static boolean deuxFentes()
+    public boolean deuxFentes()
     {
     	if (radioButton2.isSelected())
     		return true;
     	return false;
     }
     
-    public static boolean fentePiece()
+    public boolean fentePiece()
     {
     	if (radioButton3.isSelected())
     		return true;
     	return false;
     }
     
-    public static boolean aucuneFente()
+    public boolean aucuneFente()
     {
     	if (radioButton4.isSelected())
     		return true;
