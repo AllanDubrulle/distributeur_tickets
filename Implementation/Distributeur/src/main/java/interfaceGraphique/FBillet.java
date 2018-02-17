@@ -457,7 +457,7 @@ class FBillet extends Ecran
 	
 	public void actionEntrer() 
 	{
-		graphAC.choixValider();
+		graphAC.choixValiderBillet();
 	}
 	
 	public static String getGareDepart()

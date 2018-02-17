@@ -144,7 +144,7 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 
 	public void afficherChoixParLiquide() 
 	{
-		fenetreSim.afficher(FChoixParCarte.getInstance());
+		fenetreSim.afficher(FChoixParLiquide.getInstance());
 	}
 	
 	public void afficherChoixParCarte() 

@@ -6,4 +6,8 @@ class EtatCreationBillet extends EtatCreationTitre
 	{
 		controleur.getCoeurAGraphique().afficherRecapBillet();
 	}
+	public void confirmeBillet()
+	{
+		controleur.modifEtat(EtatPaiement.getInstance());
+	}
 }

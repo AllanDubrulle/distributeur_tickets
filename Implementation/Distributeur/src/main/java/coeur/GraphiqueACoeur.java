@@ -5,7 +5,7 @@ public interface GraphiqueACoeur
 	public void choixBillet();
 	public void choixValidConfig();
 	public void choixDemarrerSimul();
-	public void choixValider();
+	public void choixValiderBillet();
 	public void choixAnnuler();
 	public void choixRechercheGD();
 	public void choixRechercheGA();

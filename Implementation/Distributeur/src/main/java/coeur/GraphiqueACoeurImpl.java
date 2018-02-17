@@ -1,37 +1,50 @@
 package coeur;
 
-import interfaceGraphique.CoeurAGraphiqueImpl;
-
 public class GraphiqueACoeurImpl implements GraphiqueACoeur 
 {	
 	private Controleur controleur;
 	
-	private static CoeurAGraphiqueImpl cAG = new CoeurAGraphiqueImpl();
-	
 	public void choixBillet() 
 	{
-		controleur.modifEtat(EtatChoixBillet.getInstance());
+		controleur.getEtatActuel().choixBillet();
 	}
 	
 	public void choixValidConfig() 
 	{
-		cAG.afficherSimulation();
+		controleur.getEtatActuel().valideConfig();
 	}
 	
 	public void choixDemarrerSimul() 
 	{
-		cAG.afficherAccueil();
+		controleur.getEtatActuel().demarreSimulation();
 	}
 	
-	public void choixValider() 
+	public void choixValiderBillet() 
 	{
-		
+		controleur.getEtatActuel().valideBillet();
 	}
 	
 	public void choixAnnuler() 
 	{
-		
+		controleur.getEtatActuel().annule();
 	}
+	public void choixPaiement() 
+	{
+		controleur.getEtatActuel().confirmeBillet();
+	}
+	public void choixPaiementParCarte() 
+	{
+		controleur.getEtatActuel().choixParCarte();
+	}
+	public void choixPaiementLiquide() 
+	{
+		controleur.getEtatActuel().choixEnLiquide();
+	}
+	public void choixRetourEcranPrinc() 
+	{
+		controleur.getEtatActuel().retourMenuPrincipal();
+	}
+
 	
 	public void choixRechercheGD() 
 	{
@@ -55,7 +68,7 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 	
 	public void choixAchatAbo() 
 	{
-		cAG.afficherChoixAchatAbo();
+
 	}
 	
 	public void choixPass() 
@@ -173,10 +186,6 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 		
 	}
 
-	public void choixPaiement() 
-	{
-		
-	}
 
 	public void choixOk() 
 	{
@@ -193,20 +202,6 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 		
 	}
 
-	public void choixRetourEcranPrinc() 
-	{
-		
-	}
-
-	public void choixPaiementParCarte() 
-	{
-		
-	}
-
-	public void choixPaiementLiquide() 
-	{
-		
-	}
 
 	public void choixChangerHeure() 
 	{

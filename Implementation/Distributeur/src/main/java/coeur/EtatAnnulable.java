@@ -13,4 +13,8 @@ class EtatAnnulable extends ControleurEtat
 	{
 		controleur.modifEtat(controleur.getEtatsPrecedents().pop());
 	}
+	public void retourMenuPrincipal()
+	{
+		controleur.modifEtat(EtatMenu.getInstance());
+	}
 }

@@ -12,4 +12,8 @@ class EtatMenu extends ControleurEtat
 	public void choixBillet() {
 		controleur.modifEtat(EtatChoixBillet.getInstance());
 	}
+	public void entree()
+	{
+		controleur.getCoeurAGraphique().afficherAccueil();
+	}
 }

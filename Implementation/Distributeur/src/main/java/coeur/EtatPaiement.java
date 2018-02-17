@@ -13,6 +13,10 @@ class EtatPaiement extends EtatAnnulable
 	{
 		controleur.modifEtat(EtatParCarte.getInstance());
 	}
+	public void choixEnLiquide() 
+	{
+		controleur.modifEtat(EtatPaiementLiquide.getInstance());
+	}
 	
 	public void entree() 
 	{
