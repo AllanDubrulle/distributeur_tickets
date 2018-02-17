@@ -18,7 +18,6 @@ public class EtatMenu extends ControleurEtat
 	}
 	public void entree()
 	{
-		System.out.println("blibli");
 		Controleur.getInstance().getCoeurAGraphique().afficherAccueil();
 	}
 

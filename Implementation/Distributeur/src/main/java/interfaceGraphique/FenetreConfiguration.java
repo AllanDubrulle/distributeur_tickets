@@ -13,19 +13,20 @@ public class FenetreConfiguration extends Ecran
 {
     //public ProgressBar test = new ProgressBar(0.1);    
     private static FenetreConfiguration instance;
+    private static RadioButton radioButton, radioButton0, radioButton1, radioButton2, radioButton3, radioButton4;
 
     private FenetreConfiguration() 
     {
         VBox vBox = new VBox();
         Text text = new Text();
         Text text0 = new Text();
-        RadioButton radioButton = new RadioButton();
-        RadioButton radioButton0 = new RadioButton();
-        RadioButton radioButton1 = new RadioButton();
+        radioButton = new RadioButton();
+        radioButton0 = new RadioButton();
+        radioButton1 = new RadioButton();
         Text text1 = new Text();
-        RadioButton radioButton2 = new RadioButton();
-        RadioButton radioButton3 = new RadioButton();
-        RadioButton radioButton4 = new RadioButton();
+        radioButton2 = new RadioButton();
+        radioButton3 = new RadioButton();
+        radioButton4 = new RadioButton();
         CheckBox checkBox = new CheckBox();
         Button button = new Button();
 
@@ -134,6 +135,48 @@ public class FenetreConfiguration extends Ecran
     	if (instance == null)
     		instance = new FenetreConfiguration();
     	return instance;
+    }
+    
+    public static boolean ecranEtClavier()
+    {
+    	if (radioButton.isSelected())
+    		return true;
+    	return false;
+    }
+    
+    public static boolean clavierEtNonEcran()
+    {
+    	if (radioButton0.isSelected())
+    		return true;
+    	return false;
+    }
+    
+    public static boolean ecranEtNonClavier()
+    {
+    	if (radioButton2.isSelected())
+    		return true;
+    	return false;
+    }
+    
+    public static boolean deuxFentes()
+    {
+    	if (radioButton2.isSelected())
+    		return true;
+    	return false;
+    }
+    
+    public static boolean fentePiece()
+    {
+    	if (radioButton3.isSelected())
+    		return true;
+    	return false;
+    }
+    
+    public static boolean aucuneFente()
+    {
+    	if (radioButton4.isSelected())
+    		return true;
+    	return false;
     }
     
 	public void actionClavier(String a) {}

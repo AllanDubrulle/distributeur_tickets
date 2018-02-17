@@ -56,7 +56,16 @@ class FenetreSimulation extends BorderPane
         BorderPane.setMargin(fenetre, new Insets(0.0, 0.0, 0.0, 0.0));
         setCenter(fenetre);
         
-        claRe.getChildren().addAll(clavier, reception);
+        if (FenetreConfiguration.deuxFentes())
+        	fentes.getChildren().addAll(fenteB, fenteP);
+        else if (FenetreConfiguration.fentePiece())
+        	fentes.getChildren().add(fenteP);
+        
+        if (FenetreConfiguration.ecranEtClavier() || FenetreConfiguration.clavierEtNonEcran())
+        	claRe.getChildren().addAll(clavier, reception);
+        else if (FenetreConfiguration.ecranEtNonClavier())
+        	claRe.getChildren().add(reception);
+        
         BorderPane.setMargin(claRe, new Insets(0.0, 0.0, 0.0, 145.0));
         VBox.setMargin(clavier, new Insets(0.0, 0.0, 20.0, 182.5));
         VBox.setMargin(reception, new Insets(0.0, 0.0, 20.0, 0.0));
@@ -65,9 +74,9 @@ class FenetreSimulation extends BorderPane
         BorderPane.setMargin(scanneur, new Insets(100.0, 25.0, 0.0, 0.0));
         setRight(scanneur);
         
-        fentes.getChildren().addAll(fenteB, fenteP);
+        
         BorderPane.setMargin(fentes, new Insets(100.0, 0.0, 0.0, 10.0));
-        VBox.setMargin(fenteP, new Insets(50.0, 0.0, 0.0, 0.0));
+        //VBox.setMargin(fenteP, new Insets(50.0, 0.0, 0.0, 0.0));
         setLeft(fentes);
 
         setMaxHeight(USE_PREF_SIZE);
