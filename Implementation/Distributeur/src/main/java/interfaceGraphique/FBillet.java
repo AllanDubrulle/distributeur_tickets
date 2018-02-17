@@ -460,7 +460,7 @@ class FBillet extends Ecran
 		graphAC.choixValider();
 	}
 	
-	/*public static String getGareDepart()
+	public static String getGareDepart()
 	{
 		return textField3.getText();
 	}
@@ -500,9 +500,9 @@ class FBillet extends Ecran
 	
 	public static String getAllerRetour()
 	{
-		if (radioButton0.isSelected())
+		if (radioButton.isSelected())
 			return "Aller simple";
 		else
 			return "Aller-retour";
-	}*/
+	}
 }

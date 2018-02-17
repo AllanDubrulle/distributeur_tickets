@@ -249,11 +249,6 @@ class FAboAchat extends Ecran
     		s = textField.getText();
     		textField.setText(s + a);
     	}
-    	else if(pos == 1) 
-    	{
-    		s = textField0.getText();
-    		textField0.setText(s + a);
-    	}
     	else if(pos == 2) 
     	{
     		s = textField1.getText();
@@ -273,6 +268,21 @@ class FAboAchat extends Ecran
 
 	public void actionClavier(int a) 
 	{
+		if (pos == 1)
+		{
+			String s = textField0.getText();
+    		textField0.setText(s + a);
+    		if (s.length() == 2)
+    			textField0.setText(s + "." + a);
+    		else if (s.length() == 5)
+    			textField0.setText(s + "." + a);
+    		else if (s.length() == 8)
+    			textField0.setText(s + "-" + a);
+    		else if (s.length() == 12)
+    			textField0.setText(s + "." + a);
+    		else if (s.length() == 14)
+    			actionSuivant();
+		}
 		if (pos == 4) 
 		{
 			if (a == 1)
@@ -391,5 +401,50 @@ class FAboAchat extends Ecran
 	public void actionEntrer() 
 	{
 		graphAC.choixValider();
+	}
+	
+	public static String getNom()
+	{
+		return textField.getText();
+	}
+	
+	public static String getNumRegNat()
+	{
+		return textField0.getText();
+	}
+	
+	public static String getGareDepart()
+	{
+		return textField1.getText();
+	}
+	
+	public static String getGareArrivee()
+	{
+		return textField2.getText();
+	}
+	
+	public static String getValidite()
+	{
+		if (radioButton.isSelected())
+			return "1 mois";
+		else if (radioButton0.isSelected())
+			return "3 mois";
+		else if (radioButton1.isSelected())
+			return "6 mois";
+		else
+			return "12 mois";
+	}
+	
+	public static String getClasse()
+	{
+		if (radioButton3.isSelected())
+			return "1e classe";
+		else
+			return "2e classe";
+	}
+	
+	public static String getReduction()
+	{
+		return textField3.getText();
 	}
 }

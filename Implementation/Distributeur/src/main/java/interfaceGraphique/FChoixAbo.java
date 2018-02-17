@@ -8,12 +8,13 @@ import javafx.scene.control.*;
 class FChoixAbo extends Ecran 
 {    
     private static FChoixAbo instance;
+    private static ChoiceBox<String> choiceBox;
 
     private FChoixAbo() 
     {
         Button button = new Button();
         Button button0 = new Button();
-        ChoiceBox<String> choiceBox = new ChoiceBox<String>();
+        choiceBox = new ChoiceBox<String>();
         Text text = new Text();
 
         setMaxHeight(USE_PREF_SIZE);
@@ -95,5 +96,10 @@ class FChoixAbo extends Ecran
 	public void actionEntrer() 
 	{
 		graphAC.choixValider();
+	}
+	
+	public static String getNumAbo()
+	{
+		return choiceBox.getSelectionModel().getSelectedItem();	
 	}
 }

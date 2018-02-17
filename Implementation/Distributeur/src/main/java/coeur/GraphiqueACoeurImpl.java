@@ -10,8 +10,7 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 	
 	public void choixBillet() 
 	{
-		//controleur.modifEtat(EtatChoixBillet.getInstance());
-		cAG.afficherChoixBillet();
+		controleur.modifEtat(EtatChoixBillet.getInstance());
 	}
 	
 	public void choixValidConfig() 
@@ -26,7 +25,7 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 	
 	public void choixValider() 
 	{
-		//cAG.afficherRecapBillet();
+		
 	}
 	
 	public void choixAnnuler() 
