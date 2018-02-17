@@ -26,7 +26,7 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 	
 	public void choixValider() 
 	{
-		
+		//cAG.afficherRecapBillet();
 	}
 	
 	public void choixAnnuler() 

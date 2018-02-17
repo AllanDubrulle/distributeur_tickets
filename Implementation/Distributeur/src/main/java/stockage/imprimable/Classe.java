@@ -1,6 +1,7 @@
 package stockage.imprimable;
 
-enum Classe {
+enum Classe 
+{
 	C1,
 	C2;
 }

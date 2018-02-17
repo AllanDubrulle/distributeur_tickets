@@ -459,4 +459,50 @@ class FBillet extends Ecran
 	{
 		graphAC.choixValider();
 	}
+	
+	/*public static String getGareDepart()
+	{
+		return textField3.getText();
+	}
+	
+	public static String getGareArrivee()
+	{
+		return textField4.getText();
+	}
+	
+	public static String getReduction()
+	{
+		return textField6.getText();
+	}
+	
+	public static String getType()
+	{
+		return textField5.getText();
+	}
+	
+	public static String getNombre()
+	{
+		return textField.getText();
+	}
+
+	public static String getDate()
+	{
+		return textField0.getText() + "/" + textField1.getText() + "/" + textField2.getText();
+	}
+	
+	public static String getClasse()
+	{
+		if (radioButton1.isSelected())
+			return "1e classe";
+		else
+			return "2e classe";
+	}
+	
+	public static String getAllerRetour()
+	{
+		if (radioButton0.isSelected())
+			return "Aller simple";
+		else
+			return "Aller-retour";
+	}*/
 }
