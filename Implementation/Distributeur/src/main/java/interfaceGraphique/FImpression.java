@@ -1,18 +1,16 @@
 package interfaceGraphique;
 
-import javafx.scene.control.*;
 import javafx.scene.text.*;
 import javafx.scene.shape.*;
 
-public class FImpression extends Fenetre {
-
+class FImpression extends Ecran 
+{
     private static FImpression instance;
     
-    private FImpression() {
-
+    private FImpression() 
+    {
         Rectangle rectangle = new Rectangle();
         Text text = new Text();
-        ProgressBar progressBar = new ProgressBar();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -38,16 +36,11 @@ public class FImpression extends Fenetre {
         text.setWrappingWidth(231.841796875);
         text.setFont(new Font("System Italic", 18.0));
 
-        progressBar.setLayoutX(284.0);
-        progressBar.setLayoutY(200.0);
-        progressBar.setPrefHeight(23.0);
-        progressBar.setPrefWidth(232.0);
-        progressBar.setProgress(0.0);
-
-        getChildren().addAll(rectangle, text, progressBar);
+        getChildren().addAll(rectangle, text);
     }
 
-    public static FImpression getInstance() {
+    public static FImpression getInstance() 
+    {
     	if(instance == null)
     		instance = new FImpression();
     	return instance;

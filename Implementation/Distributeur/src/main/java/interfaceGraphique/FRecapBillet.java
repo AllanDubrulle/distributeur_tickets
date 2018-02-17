@@ -8,12 +8,12 @@ import javafx.scene.layout.*;
 import javafx.scene.shape.*;
 import javafx.scene.text.*;
 
-public class FRecapBillet extends Fenetre {
-    
+class FRecapBillet extends Ecran 
+{    
     private static FRecapBillet instance;
 
-    private FRecapBillet() {
-
+    private FRecapBillet() 
+    {
         Rectangle rectangle = new Rectangle();
         VBox vBox = new VBox();
         HBox hBox = new HBox();
@@ -209,8 +209,10 @@ public class FRecapBillet extends Fenetre {
         button.setPrefWidth(75.0);
         button.setText("Retour");
         button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button.setOnAction(new EventHandler<ActionEvent>() {
-        	public void handle(ActionEvent event) {
+        button.setOnAction(new EventHandler<ActionEvent>() 
+        {
+        	public void handle(ActionEvent event) 
+        	{
         		graphAC.choixRetour();
         	}
         });
@@ -222,8 +224,10 @@ public class FRecapBillet extends Fenetre {
         button0.setPrefWidth(100.0);
         button0.setText("Paiement");
         button0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button0.setOnAction(new EventHandler<ActionEvent>() {
-        	public void handle(ActionEvent event) {
+        button0.setOnAction(new EventHandler<ActionEvent>() 
+        {
+        	public void handle(ActionEvent event) 
+        	{
         		graphAC.choixPaiement();
         	}
         });
@@ -251,7 +255,8 @@ public class FRecapBillet extends Fenetre {
         getChildren().addAll(rectangle, vBox, button, button0, text17);
     }
 
-    public static FRecapBillet getInstance() {
+    public static FRecapBillet getInstance() 
+    {
     	if (instance == null)
     		instance = new FRecapBillet();
     	return instance;
@@ -261,7 +266,10 @@ public class FRecapBillet extends Fenetre {
 
 	public void actionClavier(int a) {}
 
-	public void actionRetour() {}
+	public void actionRetour() 
+	{
+		graphAC.choixRetour();
+	}
 
 	public void actionSuivant() {}
 
@@ -269,5 +277,8 @@ public class FRecapBillet extends Fenetre {
 
 	public void actionEffacer() {}
 	
-	public void actionEntrer() {}
+	public void actionEntrer() 
+	{
+		graphAC.choixPaiement();
+	}
 }

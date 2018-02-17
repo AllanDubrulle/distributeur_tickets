@@ -2,7 +2,7 @@ package stockage.imprimable;
 
 import java.util.Date;
 
-public abstract class TitreDeTransport
+abstract class TitreDeTransport
 {
 	protected Date dateValidite ;
 	protected Date dateExp;
@@ -13,8 +13,7 @@ public abstract class TitreDeTransport
 	protected Reduction reduction = Reduction.AUCUNE;
 	protected int montantAPayer;
 	
-	public TitreDeTransport(Date dateValidite, Date dateExp, String gareDepart, String gareArrivee, int classe,
-			TypeTitre type, int montantAPayer)
+	public TitreDeTransport(Date dateValidite, Date dateExp, String gareDepart, String gareArrivee, int classe, TypeTitre type, int montantAPayer)
 	{
 		this.dateValidite = dateValidite;
 		this.dateExp = dateExp;
@@ -25,8 +24,7 @@ public abstract class TitreDeTransport
 		this.montantAPayer = montantAPayer;
 	}
 
-	public TitreDeTransport(Date dateValidite, Date dateExp, String gareDepart, String gareArrivee, int classe,
-			Reduction reduction, int montantAPayer)
+	public TitreDeTransport(Date dateValidite, Date dateExp, String gareDepart, String gareArrivee, int classe, Reduction reduction, int montantAPayer)
 	{
 		this.dateValidite = dateValidite;
 		this.dateExp = dateExp;
@@ -37,8 +35,7 @@ public abstract class TitreDeTransport
 		this.montantAPayer = montantAPayer;
 	}
 
-	public TitreDeTransport(Date dateValidite, Date dateExp, String gareDepart, String gareArrivee, int classe,
-			int montantAPayer)
+	public TitreDeTransport(Date dateValidite, Date dateExp, String gareDepart, String gareArrivee, int classe, int montantAPayer)
 	{
 		this.dateValidite = dateValidite;
 		this.dateExp = dateExp;
@@ -48,9 +45,7 @@ public abstract class TitreDeTransport
 		this.montantAPayer = montantAPayer;
 	}
 
-	
-	public TitreDeTransport(Date dateValidite, Date dateExp, String gareDepart, String gareArrivee, int classe,
-			TypeTitre type, Reduction reduction, int montantAPayer)
+	public TitreDeTransport(Date dateValidite, Date dateExp, String gareDepart, String gareArrivee, int classe, TypeTitre type, Reduction reduction, int montantAPayer)
 	{
 		this.dateValidite = dateValidite;
 		this.dateExp = dateExp;
@@ -61,7 +56,4 @@ public abstract class TitreDeTransport
 		this.reduction = reduction;
 		this.montantAPayer = montantAPayer;
 	}
-
-	
-
 }

@@ -8,32 +8,34 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.layout.*;
 
-public class FPass3 extends Fenetre {
-    
+class FPass3 extends Ecran 
+{    
     private static FPass3 instance;
+    private static TextField textField, textField0, textField1, textField2;
+    private static RadioButton radioButton, radioButton0;
 
-    private FPass3() {
-
+    private FPass3() 
+    {
         Rectangle rectangle = new Rectangle();
         Text text = new Text();
         VBox vBox = new VBox();
         HBox hBox = new HBox();
         HBox hBox0 = new HBox();
         Text text0 = new Text();
-        TextField textField = new TextField();
+        textField = new TextField();
         HBox hBox1 = new HBox();
         Text text1 = new Text();
-        TextField textField0 = new TextField();
+        textField0 = new TextField();
         HBox hBox2 = new HBox();
         Text text2 = new Text();
-        TextField textField1 = new TextField();
+        textField1 = new TextField();
         HBox hBox3 = new HBox();
         Text text3 = new Text();
-        RadioButton radioButton = new RadioButton();
-        RadioButton radioButton0 = new RadioButton();
+        radioButton = new RadioButton();
+        radioButton0 = new RadioButton();
         HBox hBox4 = new HBox();
         Text text4 = new Text();
-        TextField textField2 = new TextField();
+        textField2 = new TextField();
         Button button = new Button();
         Button button0 = new Button();
 
@@ -142,10 +144,14 @@ public class FPass3 extends Fenetre {
         button.setPrefHeight(31.0);
         button.setPrefWidth(75.0);
         button.setText("Annuler");
-        button.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        button.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	graphAC.choixAnnuler();
-            }});
+            }
+        });
 
         button0.setLayoutX(703.0);
         button0.setLayoutY(354.0);
@@ -153,10 +159,14 @@ public class FPass3 extends Fenetre {
         button0.setPrefHeight(31.0);
         button0.setPrefWidth(75.0);
         button0.setText("Valider");
-        button0.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        button0.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	graphAC.choixValider();
-            }});
+            }
+        });
 
         hBox0.getChildren().addAll(text0, textField);
         hBox1.getChildren().addAll(text1, textField0);
@@ -167,23 +177,106 @@ public class FPass3 extends Fenetre {
         getChildren().addAll(rectangle, text, vBox, button, button0);
     }
 
-    public static FPass3 getInstance() {
+    public static FPass3 getInstance() 
+    {
     	if (instance == null)
     		instance = new FPass3();
     	return instance;
     }
     
-    public void actionClavier(String a) {}
+    public void actionClavier(String a) 
+    {
+    	if (pos == 0)
+    		textField.setText(textField.getText() + a);
+    	else if (pos == 1)
+    		textField0.setText(textField0.getText() + a);
+    	else if (pos == 2)
+    		textField1.setText(textField1.getText() + a);
+    	else if (pos == 4)
+    		textField2.setText(textField2.getText() + a);
+    }
 
-	public void actionClavier(int a) {}
+	public void actionClavier(int a) 
+	{
+		if (pos == 3)
+		{
+			if (a == 1)
+				radioButton.setSelected(true);
+			else if (a == 2)
+				radioButton0.setSelected(true);
+		}
+	}
 
-	public void actionRetour() {}
+	public void actionRetour() 
+	{
+		graphAC.choixAnnuler();
+	}
 
-	public void actionSuivant() {}
+	public void actionSuivant() 
+	{
+		if (pos == 5)
+		{
+			pos = 0;
+			textField0.requestFocus();
+		}
+		else
+		{
+			if (pos == 0)
+				textField0.requestFocus();
+			else if (pos == 1)
+				textField1.requestFocus();
+			else if (pos == 2)
+				radioButton.requestFocus();
+			else if (pos == 3)
+				textField2.requestFocus();
+			else
+				textField.requestFocus();
+			pos ++;
+		}
+	}
 
-	public void actionEspace() {}
+	public void actionEspace() 
+	{
+    	if (pos == 0)
+    		textField.setText(textField.getText() + " ");
+    	else if (pos == 1)
+    		textField0.setText(textField0.getText() + " ");
+    	else if (pos == 2)
+    		textField1.setText(textField1.getText() + " ");
+    	else if (pos == 4)
+    		textField2.setText(textField2.getText() + " ");
+    }
 
-	public void actionEffacer() {}
+	public void actionEffacer() 
+	{
+		if (pos == 0)
+		{
+			String s = textField.getText();
+			if (s.length() > 0)
+				textField.setText(s.substring(0, s.length()-1));
+		}
+		else if (pos == 1)
+		{
+			String s = textField0.getText();
+			if (s.length() > 0)
+				textField0.setText(s.substring(0, s.length()-1));
+		}
+		else if (pos == 2)
+		{
+			String s = textField1.getText();
+			if (s.length() > 0)
+				textField1.setText(s.substring(0, s.length()-1));
+		}
+		else if (pos == 4)
+		{
+			String s = textField2.getText();
+			if (s.length() > 0)
+				textField2.setText(s.substring(0, s.length()-1));
+		}
+	}
 	
-	public void actionEntrer() {}
+	public void actionEntrer() 
+	{
+		graphAC.choixValider();
+	}
 }

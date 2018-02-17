@@ -8,12 +8,12 @@ import javafx.scene.text.*;
 import javafx.scene.shape.*;
 import javafx.scene.layout.*;
 
-public class FHoraireMenu extends Fenetre {
-	
+class FHoraireMenu extends Ecran 
+{	
 	private static FHoraireMenu instance;
 	
-    private FHoraireMenu() {
-
+    private FHoraireMenu() 
+    {
         Rectangle rectangle = new Rectangle();
         Text text = new Text();
         Text text0 = new Text();
@@ -72,9 +72,12 @@ public class FHoraireMenu extends Fenetre {
         button.setPrefHeight(31.0);
         button.setPrefWidth(185.0);
         button.setText("Départs");
+        button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         VBox.setMargin(button, new Insets(0.0, 0.0, 20.0, 0.0));
-        button.setOnAction(new EventHandler<ActionEvent>() {
-        	public void handle(ActionEvent event) {
+        button.setOnAction(new EventHandler<ActionEvent>() 
+        {
+        	public void handle(ActionEvent event) 
+        	{
         		graphAC.choixHoraireDepart();
         	}
         });
@@ -83,8 +86,11 @@ public class FHoraireMenu extends Fenetre {
         button0.setPrefHeight(31.0);
         button0.setPrefWidth(237.0);
         button0.setText("Arrivées");
-        button0.setOnAction(new EventHandler<ActionEvent>() {
-        	public void handle(ActionEvent event) {
+        button0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        button0.setOnAction(new EventHandler<ActionEvent>() 
+        {
+        	public void handle(ActionEvent event) 
+        	{
         		graphAC.choixHoraireArrivee();
         	}
         });
@@ -93,9 +99,12 @@ public class FHoraireMenu extends Fenetre {
         button1.setPrefHeight(31.0);
         button1.setPrefWidth(192.0);
         button1.setText("Itinéraire");
+        button1.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         VBox.setMargin(button1, new Insets(20.0, 0.0, 0.0, 0.0));
-        button1.setOnAction(new EventHandler<ActionEvent>() {
-        	public void handle(ActionEvent event) {
+        button1.setOnAction(new EventHandler<ActionEvent>() 
+        {
+        	public void handle(ActionEvent event) 
+        	{
         		graphAC.choixHoraireItineraire();
         	}
         });
@@ -123,14 +132,23 @@ public class FHoraireMenu extends Fenetre {
         button2.setLayoutY(344.0);
         button2.setMnemonicParsing(false);
         button2.setText("Annuler");
-
+        button2.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        button2.setOnAction(new EventHandler<ActionEvent>() 
+        {
+        	public void handle(ActionEvent event) 
+        	{
+        		graphAC.choixAnnuler();
+        	}
+        });
+        
         vBox.getChildren().addAll(button, button0, button1);
         vBox0.getChildren().addAll(text1, text2, text3);
         hBox.getChildren().addAll(vBox, vBox0);
         getChildren().addAll(rectangle, text, text0, hBox, button2);
     }
     
-    public static FHoraireMenu getInstance() {
+    public static FHoraireMenu getInstance() 
+    {
     	if (instance == null) 
     		instance = new FHoraireMenu();
 		return instance;
@@ -138,9 +156,20 @@ public class FHoraireMenu extends Fenetre {
     
     public void actionClavier(String a) {}
 
-	public void actionClavier(int a) {}
+	public void actionClavier(int a) 
+	{
+		if (a == 1)
+			graphAC.choixHoraireItineraire();
+		else if (a == 2)
+			graphAC.choixHoraireDepart();
+		else if (a == 3)
+			graphAC.choixHoraireArrivee();
+	}
 
-	public void actionRetour() {}
+	public void actionRetour() 
+	{
+		graphAC.choixAnnuler();
+	}
 
 	public void actionSuivant() {}
 

@@ -8,26 +8,29 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.layout.*;
 
-public class FPass2 extends Fenetre {
-    
+class FPass2 extends Ecran 
+{    
     private static FPass2 instance;
+    private static TextField textField, textField1;
+    private static RadioButton radioButton, radioButton0;
+    private static int pos = 0;
 
-    private FPass2() {
-
+    private FPass2() 
+    {
         Rectangle rectangle = new Rectangle();
         Text text = new Text();
         VBox vBox = new VBox();
         HBox hBox = new HBox();
         HBox hBox0 = new HBox();
         Text text0 = new Text();
-        TextField textField = new TextField();
+        textField = new TextField();
         HBox hBox1 = new HBox();
         Text text1 = new Text();
-        RadioButton radioButton = new RadioButton();
-        RadioButton radioButton0 = new RadioButton();
+        radioButton = new RadioButton();
+        radioButton0 = new RadioButton();
         HBox hBox2 = new HBox();
         Text text2 = new Text();
-        TextField textField1 = new TextField();
+        textField1 = new TextField();
         Button button = new Button();
         Button button0 = new Button();
 
@@ -115,10 +118,14 @@ public class FPass2 extends Fenetre {
         button.setPrefHeight(31.0);
         button.setPrefWidth(75.0);
         button.setText("Annuler");
-        button.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        button.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	graphAC.choixAnnuler();
-            }});
+            }
+        });
 
         button0.setLayoutX(702.5);
         button0.setLayoutY(354.0);
@@ -126,10 +133,14 @@ public class FPass2 extends Fenetre {
         button0.setPrefHeight(31.0);
         button0.setPrefWidth(75.0);
         button0.setText("Valider");
-        button0.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        button0.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	graphAC.choixValider();
-            }});
+            }
+        });
 
         hBox0.getChildren().addAll(text0, textField);
         hBox1.getChildren().addAll(text1, radioButton, radioButton0);
@@ -138,23 +149,80 @@ public class FPass2 extends Fenetre {
         getChildren().addAll(rectangle, text, vBox, button, button0);
     }
 
-    public static FPass2 getInstance() {
+    public static FPass2 getInstance() 
+    {
     	if (instance == null)
     		instance = new FPass2();
     	return instance;
     }
     
-    public void actionClavier(String a) {}
+    public void actionClavier(String a) 
+    {
+    	if (pos == 0)
+    		textField.setText(textField.getText() + a);
+    	else if (pos == 2)
+    		textField1.setText(textField.getText() + a);
+    }
 
-	public void actionClavier(int a) {}
+	public void actionClavier(int a) 
+	{
+		if (pos == 1)
+		{	
+			if (a == 1)
+				radioButton.setSelected(true);
+			else if (a == 2)
+				radioButton0.setSelected(true);
+		}
+	}
 
-	public void actionRetour() {}
+	public void actionRetour() 
+	{
+		graphAC.choixAnnuler();
+	}
 
-	public void actionSuivant() {}
+	public void actionSuivant() 
+	{
+		if (pos == 2)
+		{
+			textField.requestFocus();
+			pos = 0;
+		}
+		else
+		{
+			if (pos == 0)
+				radioButton.requestFocus();
+			else if (pos == 1)
+				textField1.requestFocus();
+			pos++;
+		}
+	}
 
-	public void actionEspace() {}
+	public void actionEspace() 
+	{
+		if (pos == 0)
+			textField.setText(textField.getText() + " ");
+		if (pos == 2)
+			textField.setText(textField.getText() + " ");
+	}
 
-	public void actionEffacer() {}
+	public void actionEffacer() 
+	{
+		if (pos == 1)
+		{
+			String s = textField.getText();
+			if (s.length() > 0)
+				textField.setText(s.substring(0, s.length()-1));
+		}
+		else if (pos == 2)
+		{
+			String s = textField1.getText();
+			if (s.length() > 0)
+				textField1.setText(s.substring(0, s.length()-1));
+		}
+	}
 	
-	public void actionEntrer() {}
+	public void actionEntrer() 
+	{
+		graphAC.choixValider();
+	}
 }

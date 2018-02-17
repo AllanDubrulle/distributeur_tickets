@@ -5,13 +5,13 @@ import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
-public class DistributeurTest extends Application {
-
+class DistributeurTest extends Application 
+{
     public static Stage primaryStage = new Stage();
-    @Override
-    public void start(Stage primaryStage) {
+    public void start(Stage primaryStage) 
+    {
         primaryStage = DistributeurTest.primaryStage;
-        FConfiguration fen = FConfiguration.getInstance();
+        FenetreConfiguration fen = FenetreConfiguration.getInstance();
         StackPane root = new StackPane();
         root.getChildren().add(fen);
         Scene scene = new Scene(root, 600, 400);
@@ -20,7 +20,8 @@ public class DistributeurTest extends Application {
         primaryStage.setTitle("Fenêtre de configuration");
         primaryStage.show();
     }
-    public static void main(String[] args) {
+    public static void main(String[] args) 
+    {
         launch(args);
     }
 }

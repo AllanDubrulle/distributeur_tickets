@@ -3,12 +3,12 @@ package interfaceGraphique;
 import javafx.scene.shape.*;
 import javafx.scene.text.*;
 
-public class FAttenteCodePIN extends Fenetre {
-    
+class FAttenteCodePIN extends Ecran 
+{    
     private static FAttenteCodePIN instance;
 
-    private FAttenteCodePIN() {
-
+    private FAttenteCodePIN() 
+    {
         Rectangle rectangle = new Rectangle();
         Text text = new Text();
 
@@ -39,7 +39,8 @@ public class FAttenteCodePIN extends Fenetre {
         getChildren().addAll(rectangle, text);
     }
 
-    public static FAttenteCodePIN getInstance() {
+    public static FAttenteCodePIN getInstance() 
+    {
     	if (instance == null)
     		instance = new FAttenteCodePIN();
     	return instance;

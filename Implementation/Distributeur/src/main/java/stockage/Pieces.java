@@ -1,6 +1,7 @@
 package stockage;
 
-enum Pieces implements Valeur {
+enum Pieces implements Valeur 
+{
 	P1 { public int valeur()
 			{ return 1; }
 		},

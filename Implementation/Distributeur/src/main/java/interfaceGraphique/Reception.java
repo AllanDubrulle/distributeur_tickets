@@ -2,15 +2,17 @@ package interfaceGraphique;
 
 import javafx.scene.shape.*;
 
-public class Reception extends ComposantVisible {
-
+class Reception extends ComposantVisible 
+{
 	private static Reception instance;
 	
-	public Reception(boolean enMarche) {
+	public Reception(boolean enMarche) 
+	{
 		super(enMarche);
 	}
 	
-	private Reception(){
+	private Reception()
+	{
         Rectangle rectangle = new Rectangle();
         
         setMaxHeight(USE_PREF_SIZE);
@@ -32,7 +34,8 @@ public class Reception extends ComposantVisible {
         getChildren().add(rectangle);
     }
 
-	public static Reception getInstance() {
+	public static Reception getInstance() 
+	{
 		if (instance == null)
 			instance = new Reception();
 		return instance;

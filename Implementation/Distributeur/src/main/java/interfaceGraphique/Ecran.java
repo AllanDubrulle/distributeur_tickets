@@ -1,9 +1,24 @@
 package interfaceGraphique;
 
-class Ecran extends ComposantVisible {
+import coeur.GraphiqueACoeurImpl;
 
-	public Ecran(boolean enMarche) {
+abstract class Ecran extends ComposantVisible 
+{
+	public Ecran(boolean enMarche) 
+	{
 		super(enMarche);
-		// TODO Auto-generated constructor stub
 	}
+	
+	public Ecran() {};
+	
+	protected GraphiqueACoeurImpl graphAC = new GraphiqueACoeurImpl();
+	protected int pos;
+    
+	public abstract void actionClavier(String a);
+	public abstract void actionClavier(int a);
+	public abstract void actionRetour();
+	public abstract void actionSuivant();
+	public abstract void actionEspace();
+	public abstract void actionEffacer();
+	public abstract void actionEntrer();
 }

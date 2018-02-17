@@ -6,16 +6,15 @@ import javafx.scene.control.*;
 import javafx.scene.shape.*;
 import javafx.scene.text.*;
 
-public class FSimulationAcceuil extends Fenetre {
-
+class FSimulationAcceuil extends Ecran 
+{
     private static FSimulationAcceuil instance;
     
-    private FSimulationAcceuil() {
-
+    private FSimulationAcceuil() 
+    {
         Rectangle rectangle = new Rectangle();
         Button button = new Button();
         
-
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
         setMinHeight(USE_PREF_SIZE);
@@ -35,17 +34,20 @@ public class FSimulationAcceuil extends Fenetre {
         button.setLayoutY(175.0);
         button.setMnemonicParsing(false);
         button.setText("Démarrer");
+        button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button.setFont(new Font(24.0));
-        button.setOnAction(new EventHandler<ActionEvent>(){
-            @Override
-            public void handle(ActionEvent event){
+        button.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	graphAC.choixDemarrerSimul();
             }
         });
         getChildren().addAll(rectangle, button);
     }
     
-    public static FSimulationAcceuil getInstance() {
+    public static FSimulationAcceuil getInstance() 
+    {
     	if (instance == null)
     		instance = new FSimulationAcceuil();
     	return instance;
@@ -63,5 +65,8 @@ public class FSimulationAcceuil extends Fenetre {
 
 	public void actionEffacer() {}
 	
-	public void actionEntrer() {}
+	public void actionEntrer() 
+	{
+		graphAC.choixDemarrerSimul();
+	}
 }

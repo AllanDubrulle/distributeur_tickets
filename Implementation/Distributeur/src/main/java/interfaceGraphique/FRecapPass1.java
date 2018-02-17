@@ -8,12 +8,12 @@ import javafx.scene.text.*;
 import javafx.scene.shape.*;
 import javafx.scene.layout.*;
 
-public class FRecapPass1 extends Fenetre {
-    
+class FRecapPass1 extends Ecran 
+{    
     private static FRecapPass1 instance;
 
-    private FRecapPass1() {
-
+    private FRecapPass1() 
+    {
         Rectangle rectangle = new Rectangle();
         Text text = new Text();
         VBox vBox = new VBox();
@@ -188,8 +188,10 @@ public class FRecapPass1 extends Fenetre {
         button.setPrefWidth(75.0);
         button.setText("Retour");
         button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button.setOnAction(new EventHandler<ActionEvent>() {
-        	public void handle(ActionEvent event) {
+        button.setOnAction(new EventHandler<ActionEvent>() 
+        {
+        	public void handle(ActionEvent event) 
+        	{
         		graphAC.choixRetour();
         	}
         });
@@ -201,8 +203,10 @@ public class FRecapPass1 extends Fenetre {
         button0.setPrefWidth(100.0);
         button0.setText("Paiement");
         button0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button0.setOnAction(new EventHandler<ActionEvent>() {
-        	public void handle(ActionEvent event) {
+        button0.setOnAction(new EventHandler<ActionEvent>() 
+        {
+        	public void handle(ActionEvent event) 
+        	{
         		graphAC.choixPaiement();
         	}
         });
@@ -218,7 +222,8 @@ public class FRecapPass1 extends Fenetre {
         getChildren().addAll(rectangle, text, vBox, button, button0);
     }
 
-    public static FRecapPass1 getInstance() {
+    public static FRecapPass1 getInstance() 
+    {
     	if (instance == null)
     		instance = new FRecapPass1();
     	return instance;
@@ -228,7 +233,10 @@ public class FRecapPass1 extends Fenetre {
 
 	public void actionClavier(int a) {}
 
-	public void actionRetour() {}
+	public void actionRetour() 
+	{
+		graphAC.choixRetour();
+	}
 
 	public void actionSuivant() {}
 
@@ -236,5 +244,8 @@ public class FRecapPass1 extends Fenetre {
 
 	public void actionEffacer() {}
 	
-	public void actionEntrer() {}
+	public void actionEntrer() 
+	{
+		graphAC.choixPaiement();
+	}
 }

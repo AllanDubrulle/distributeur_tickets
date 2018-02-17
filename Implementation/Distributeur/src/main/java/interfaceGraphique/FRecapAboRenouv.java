@@ -8,28 +8,12 @@ import javafx.scene.text.*;
 import javafx.scene.shape.*;
 import javafx.scene.layout.*;
 
-public class FRecapAboRenouv extends Fenetre {
+class FRecapAboRenouv extends Ecran 
+{
+    private static FRecapAboRenouv instance;
 
-    public Rectangle rectangle;
-    public VBox vBox;
-    public HBox hBox;
-    public HBox hBox0;
-    public Text text;
-    public Text text0;
-    public HBox hBox1;
-    public Text text1;
-    public Text text2;
-    public HBox hBox2;
-    public Text text3;
-    public Text text4;
-    public Text text5;
-    public Button button;
-    public Button button0;
-    
-    public static FRecapAboRenouv instance;
-
-    private FRecapAboRenouv() {
-
+    private FRecapAboRenouv() 
+    {
         Rectangle rectangle = new Rectangle();
         VBox vBox = new VBox();
         HBox hBox = new HBox();
@@ -132,8 +116,10 @@ public class FRecapAboRenouv extends Fenetre {
         button.setPrefWidth(75.0);
         button.setText("Retour");
         button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button.setOnAction(new EventHandler<ActionEvent>() {
-        	public void handle(ActionEvent event) {
+        button.setOnAction(new EventHandler<ActionEvent>() 
+        {
+        	public void handle(ActionEvent event) 
+        	{
         		graphAC.choixRetour();
         	}
         });
@@ -145,8 +131,10 @@ public class FRecapAboRenouv extends Fenetre {
         button0.setPrefWidth(100.0);
         button0.setText("Paiement");
         button0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button0.setOnAction(new EventHandler<ActionEvent>() {
-        	public void handle(ActionEvent event) {
+        button0.setOnAction(new EventHandler<ActionEvent>() 
+        {
+        	public void handle(ActionEvent event) 
+        	{
         		graphAC.choixPaiement();
         	}
         });
@@ -158,7 +146,8 @@ public class FRecapAboRenouv extends Fenetre {
         getChildren().addAll(rectangle, vBox, text5, button, button0);
     }
 
-    public static FRecapAboRenouv getInstance() {
+    public static FRecapAboRenouv getInstance() 
+    {
     	if (instance == null)
     		instance = new FRecapAboRenouv();
     	return instance;
@@ -168,7 +157,10 @@ public class FRecapAboRenouv extends Fenetre {
 
 	public void actionClavier(int a) {}
 
-	public void actionRetour() {}
+	public void actionRetour() 
+	{
+		graphAC.choixRetour();
+	}
 
 	public void actionSuivant() {}
 
@@ -176,5 +168,8 @@ public class FRecapAboRenouv extends Fenetre {
 
 	public void actionEffacer() {}
 	
-	public void actionEntrer() {}
+	public void actionEntrer() 
+	{
+		graphAC.choixPaiement();
+	}
 }

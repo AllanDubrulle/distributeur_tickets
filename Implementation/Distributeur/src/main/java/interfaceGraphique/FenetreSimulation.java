@@ -10,8 +10,8 @@ import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
 
-public class Base extends BorderPane {
-
+class FenetreSimulation extends BorderPane 
+{
     private MenuBar menuBar;
 	private Clavier clavier = Clavier.getInstance();
     private LecteurCarte scanneur = LecteurCarte.getInstance();
@@ -21,12 +21,11 @@ public class Base extends BorderPane {
     private VBox claRe = new VBox();
     private VBox fentes = new VBox();
     
-    private Fenetre fenetre = FSimulationAcceuil.getInstance();
+    private Ecran fenetre = FSimulationAcceuil.getInstance();
+    private static FenetreSimulation instance;
     
-    private static Base instance;
-    
-    private Base() {
-
+    private FenetreSimulation()
+    {
         Pane pane = new Pane();
         menuBar = new MenuBar();
         Menu menu = new Menu();
@@ -134,10 +133,10 @@ public class Base extends BorderPane {
         menu3.setText("Fentes");
 
         checkMenuItem6.setMnemonicParsing(false);
-        checkMenuItem6.setText("Fentes à  pièces et à  billets");
+        checkMenuItem6.setText("Fentes à pièces et à billets");
 
         checkMenuItem7.setMnemonicParsing(false);
-        checkMenuItem7.setText("Fente à  pièces uniquement");
+        checkMenuItem7.setText("Fente à pièces uniquement");
 
         checkMenuItem8.setMnemonicParsing(false);
         checkMenuItem8.setText("Aucune fente");
@@ -146,7 +145,7 @@ public class Base extends BorderPane {
         menu4.setText("Clavier");
 
         checkMenuItem9.setMnemonicParsing(false);
-        checkMenuItem9.setText("Clavier et écran tacitile");
+        checkMenuItem9.setText("Clavier et écran tactile");
 
         checkMenuItem10.setMnemonicParsing(false);
         checkMenuItem10.setText("Clavier et écran non tactile");
@@ -164,16 +163,19 @@ public class Base extends BorderPane {
 
     }
 	
-    public static Base getInstance() {
+    public static FenetreSimulation getInstance() 
+    {
     	if (instance == null)
-    		instance = new Base();
+    		instance = new FenetreSimulation();
     	return instance;
     }
     
-    public void afficher(Fenetre fen) {
+    public void afficher(Ecran fen) 
+    {
 		this.fenetre = fen; 
         fenetre.setLayoutX(259.0);
         fenetre.setLayoutY(75.0);
 		getChildren().setAll(fenetre, claRe, fentes, scanneur, menuBar);
+		Clavier.setFenetre(fen);
 	}
 }

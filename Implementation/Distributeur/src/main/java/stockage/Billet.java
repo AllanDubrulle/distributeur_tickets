@@ -1,6 +1,7 @@
 package stockage;
 
-public enum Billet implements Valeur {
+enum Billet implements Valeur 
+{
 	
 	B50 { public int valeur()
 		{ return 5000; }

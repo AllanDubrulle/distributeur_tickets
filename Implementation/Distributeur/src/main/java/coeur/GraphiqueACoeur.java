@@ -1,7 +1,7 @@
 package coeur;
 
-public interface GraphiqueACoeur {
-	
+public interface GraphiqueACoeur 
+{	
 	public void choixBillet();
 	public void choixValidConfig();
 	public void choixDemarrerSimul();
@@ -21,6 +21,7 @@ public interface GraphiqueACoeur {
 	public void choixPass10Trajets();
 	public void choixPass10Tajets2Gares();
 	public void choixScannerCode();
+	public void choixTaperCodeAbo();
 	public void choix5eur();
 	public void choix10eur();
 	public void choix50eur();

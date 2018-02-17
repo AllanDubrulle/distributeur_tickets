@@ -8,12 +8,12 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.layout.*;
 
-public class FPassMenu extends Fenetre {
-
+class FPassMenu extends Ecran 
+{
     private static FPassMenu instance;
     
-    private FPassMenu() {
-
+    private FPassMenu() 
+    {
         Rectangle rectangle = new Rectangle();
         Text text = new Text();
         Text text0 = new Text();
@@ -72,30 +72,42 @@ public class FPassMenu extends Fenetre {
         button.setPrefHeight(31.0);
         button.setPrefWidth(185.0);
         button.setText("Pass illimité");
+        button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         VBox.setMargin(button, new Insets(0.0, 0.0, 20.0, 0.0));
-        button.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	graphAC.choixPassIllimite();
-            }});
+            }
+        });
 
         button0.setMnemonicParsing(false);
         button0.setPrefHeight(31.0);
         button0.setPrefWidth(237.0);
         button0.setText("Pass 10 trajets");
-        button0.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        button0.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	graphAC.choixPass10Trajets();
-            }});
+            }
+        });
 
         button1.setMnemonicParsing(false);
         button1.setPrefHeight(31.0);
         button1.setPrefWidth(192.0);
         button1.setText("Pass 10 trajets 2 gares");
+        button1.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         VBox.setMargin(button1, new Insets(20.0, 0.0, 0.0, 0.0));
-        button1.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button1.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	graphAC.choixPass10Tajets2Gares();
-            }});
+            }
+        });
         
         vBox0.setPrefHeight(125.0);
         vBox0.setPrefWidth(531.0);
@@ -120,10 +132,14 @@ public class FPassMenu extends Fenetre {
         button2.setLayoutY(344.0);
         button2.setMnemonicParsing(false);
         button2.setText("Annuler");
-        button2.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){	
+        button2.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        button2.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {	
             	graphAC.choixAnnuler();
-            }});
+            }
+        });
 
         vBox.getChildren().addAll(button, button0, button1);
         vBox0.getChildren().addAll(text1, text2, text3);
@@ -131,7 +147,8 @@ public class FPassMenu extends Fenetre {
         getChildren().addAll(rectangle, text, text0, hBox, button2);
     }
 
-    public static FPassMenu getInstance() {
+    public static FPassMenu getInstance() 
+    {
     	if (instance == null)
     		instance = new FPassMenu();
     	return instance;
@@ -139,9 +156,20 @@ public class FPassMenu extends Fenetre {
     
     public void actionClavier(String a) {}
 
-	public void actionClavier(int a) {}
+	public void actionClavier(int a) 
+	{
+		if (a == 1)
+			graphAC.choixPassIllimite();
+		else if (a == 2)
+			graphAC.choixPass10Trajets();
+		else if (a == 3)
+			graphAC.choixPass10Tajets2Gares();
+	}
 
-	public void actionRetour() {}
+	public void actionRetour() 
+	{
+		graphAC.choixAnnuler();
+	}
 
 	public void actionSuivant() {}
 

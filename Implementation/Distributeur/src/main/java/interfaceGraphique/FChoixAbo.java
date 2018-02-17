@@ -5,12 +5,12 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.*;
 
-public class FChoixAbo extends Fenetre {
-    
+class FChoixAbo extends Ecran 
+{    
     private static FChoixAbo instance;
 
-    private FChoixAbo() {
-
+    private FChoixAbo() 
+    {
         Button button = new Button();
         Button button0 = new Button();
         ChoiceBox<String> choiceBox = new ChoiceBox<String>();
@@ -31,10 +31,13 @@ public class FChoixAbo extends Fenetre {
         button.setPrefWidth(75.0);
         button.setText("Valider");
         button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	graphAC.choixValider();
-            }});
+            }
+        });
 
         button0.setAlignment(javafx.geometry.Pos.BOTTOM_RIGHT);
         button0.setLayoutX(10.0);
@@ -44,10 +47,13 @@ public class FChoixAbo extends Fenetre {
         button0.setPrefWidth(75.0);
         button0.setText("Retour");
         button0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button0.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button0.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	graphAC.choixRetour();
-            }});
+            }
+        });
 
         choiceBox.setLayoutX(100.0);
         choiceBox.setLayoutY(85.0);
@@ -64,7 +70,8 @@ public class FChoixAbo extends Fenetre {
 
     }
 
-    public static FChoixAbo getInstance() {
+    public static FChoixAbo getInstance() 
+    {
     	if (instance == null)
     		instance = new FChoixAbo();
     	return instance;
@@ -74,7 +81,10 @@ public class FChoixAbo extends Fenetre {
 
 	public void actionClavier(int a) {}
 
-	public void actionRetour() {}
+	public void actionRetour() 
+	{
+		graphAC.choixAnnuler();
+	}
 
 	public void actionSuivant() {}
 
@@ -82,5 +92,8 @@ public class FChoixAbo extends Fenetre {
 
 	public void actionEffacer() {}
 	
-	public void actionEntrer() {}
+	public void actionEntrer() 
+	{
+		graphAC.choixValider();
+	}
 }

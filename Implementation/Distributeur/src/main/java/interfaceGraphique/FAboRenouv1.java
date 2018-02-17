@@ -6,16 +6,17 @@ import javafx.scene.shape.*;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
-public class FAboRenouv1 extends Fenetre {
-
+class FAboRenouv1 extends Ecran 
+{
     private static FAboRenouv1 instance;
     
-    private FAboRenouv1() {
-
+    private FAboRenouv1() 
+    {
         Rectangle rectangle = new Rectangle();
         Text text = new Text();
         Button button = new Button();
         Button button0 = new Button();
+        Button button1 = new Button();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -41,15 +42,33 @@ public class FAboRenouv1 extends Fenetre {
         text.setUnderline(true);
         text.setFont(new Font("System Bold", 22.0));
 
-        button.setLayoutX(318.0);
+        button.setLayoutX(200.0);
         button.setLayoutY(185.0);
         button.setMnemonicParsing(false);
+        button.setPrefWidth(100.0);
         button.setText("Scanner le code barre");
         button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	graphAC.choixScannerCode();
-            }});
+            }
+        });
+        
+        button1.setLayoutX(500.0);
+        button1.setLayoutY(185.0);
+        button1.setMnemonicParsing(false);
+        button1.setPrefWidth(100.0);
+        button1.setText("Taper le code");
+        button1.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        button1.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
+            	graphAC.choixTaperCodeAbo();
+            }
+        });
 
         button0.setLayoutX(359.5);
         button0.setLayoutY(349.0);
@@ -59,14 +78,17 @@ public class FAboRenouv1 extends Fenetre {
         button0.setText("Annuler");
         button0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button0.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+            public void handle(ActionEvent event)
+            {
             	graphAC.choixAnnuler();
-            }});
+            }
+        });
 
         getChildren().addAll(rectangle, text, button, button0);
     }
 
-    public static FAboRenouv1 getInstance() {
+    public static FAboRenouv1 getInstance() 
+    {
     	if (instance == null)
     		instance = new FAboRenouv1();
     	return instance;
@@ -74,9 +96,18 @@ public class FAboRenouv1 extends Fenetre {
     
     public void actionClavier(String a) {}
 
-	public void actionClavier(int a) {}
+	public void actionClavier(int a) 
+	{
+		if (a == 1)
+			graphAC.choixTaperCodeAbo();
+		else if (a == 2)
+			graphAC.choixScannerCode();
+	}
 
-	public void actionRetour() {}
+	public void actionRetour() 
+	{
+		graphAC.choixAnnuler();
+	}
 
 	public void actionSuivant() {}
 

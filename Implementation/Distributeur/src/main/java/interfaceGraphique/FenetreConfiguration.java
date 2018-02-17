@@ -7,13 +7,13 @@ import javafx.geometry.*;
 import javafx.scene.layout.*;
 import javafx.scene.control.*;
 
-public class FConfiguration extends Fenetre {
-    //public ProgressBar test = new ProgressBar(0.1);
-    
-    private static FConfiguration instance;
+class FenetreConfiguration extends Ecran 
+{
+    //public ProgressBar test = new ProgressBar(0.1);    
+    private static FenetreConfiguration instance;
 
-    private FConfiguration() {
-
+    private FenetreConfiguration() 
+    {
         VBox vBox = new VBox();
         Text text = new Text();
         Text text0 = new Text();
@@ -105,10 +105,13 @@ public class FConfiguration extends Fenetre {
         button.setPrefWidth(75.0);
         button.setText("Valider");
         button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
-            	graphAC.choixValider();
-            }});
+        button.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
+            	graphAC.choixValidConfig();
+            }
+        });
         
         //test.setProgress(0.9);
 
@@ -117,9 +120,10 @@ public class FConfiguration extends Fenetre {
         getChildren().addAll(vBox, button);
     }
     
-    public static FConfiguration getInstance() {
+    public static FenetreConfiguration getInstance() 
+    {
     	if (instance == null)
-    		instance = new FConfiguration();
+    		instance = new FenetreConfiguration();
     	return instance;
     }
     

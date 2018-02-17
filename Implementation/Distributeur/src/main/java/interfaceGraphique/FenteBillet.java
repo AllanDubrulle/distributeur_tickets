@@ -5,16 +5,17 @@ import javafx.event.EventHandler;
 import javafx.scene.control.*;
 import javafx.scene.shape.*;
 
-public class FenteBillet extends ComposantVisible {
-
+class FenteBillet extends ComposantVisible 
+{
 	private static FenteBillet instance;
 	
-	public FenteBillet(boolean enMarche) {
+	public FenteBillet(boolean enMarche) 
+	{
 		super(enMarche);
 	}
 	
-	private FenteBillet() {
-		
+	private FenteBillet() 
+	{
         Rectangle rectangle = new Rectangle();
         Button button = new Button();
         Button button0 = new Button();
@@ -44,10 +45,13 @@ public class FenteBillet extends ComposantVisible {
         button.setPrefWidth(50.0);
         button.setText("5 €");
         button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	graphAC.choix5eur();
-            }});
+            }
+        });
 
         button0.setLayoutX(62.5);
         button0.setLayoutY(24.0);
@@ -56,10 +60,13 @@ public class FenteBillet extends ComposantVisible {
         button0.setPrefWidth(50.0);
         button0.setText("10 €");
         button0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button0.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button0.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	graphAC.choix10eur();
-            }});
+            }
+        });
 
         button1.setLayoutX(177.5);
         button1.setLayoutY(24.0);
@@ -68,10 +75,13 @@ public class FenteBillet extends ComposantVisible {
         button1.setPrefWidth(50.0);
         button1.setText("50 €");
         button1.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button1.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button1.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	graphAC.choix50eur();
-            }});
+            }
+        });
 
         button2.setLayoutX(120.0);
         button2.setLayoutY(24.0);
@@ -80,15 +90,19 @@ public class FenteBillet extends ComposantVisible {
         button2.setPrefWidth(50.0);
         button2.setText("20 €");
         button2.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button2.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button2.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	graphAC.choix20eur();
-            }});
+            }
+        });
 
         getChildren().addAll(rectangle, button, button0, button1, button2);
     }
 
-	public static FenteBillet getInstance() {
+	public static FenteBillet getInstance() 
+	{
     	if (instance == null)
     		instance = new FenteBillet();
     	return instance;

@@ -8,12 +8,12 @@ import javafx.scene.layout.*;
 import javafx.scene.shape.*;
 import javafx.scene.text.*;
 
-public class FChoixParLiquide extends Fenetre {
-    
+class FChoixParLiquide extends Ecran 
+{    
     private static FChoixParLiquide instance;
 
-    private FChoixParLiquide() {
-
+    private FChoixParLiquide() 
+    {
         Rectangle rectangle = new Rectangle();
         Text text = new Text();
         Button button = new Button();
@@ -57,10 +57,13 @@ public class FChoixParLiquide extends Fenetre {
         button.setPrefWidth(75.0);
         button.setText("Annuler");
         button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	graphAC.choixAnnuler();
-            }});
+            }
+        });
 
         vBox.setLayoutX(113.0);
         vBox.setLayoutY(148.0);
@@ -109,10 +112,10 @@ public class FChoixParLiquide extends Fenetre {
         hBox1.getChildren().addAll(text4, text5);
         vBox.getChildren().addAll(hBox, hBox0, hBox1);
         getChildren().addAll(rectangle, text, button, vBox);
-        /*est-ce qu'on peut annuler ?*/
     }
     
-    public static FChoixParLiquide getInstance() {
+    public static FChoixParLiquide getInstance() 
+    {
     	if(instance == null)
     		instance = new FChoixParLiquide();
     	return instance;
@@ -122,7 +125,10 @@ public class FChoixParLiquide extends Fenetre {
 
 	public void actionClavier(int a) {}
 
-	public void actionRetour() {}
+	public void actionRetour() 
+	{
+		graphAC.choixAnnuler();
+	}
 
 	public void actionSuivant() {}
 

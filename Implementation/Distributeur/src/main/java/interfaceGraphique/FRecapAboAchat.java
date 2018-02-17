@@ -8,12 +8,12 @@ import javafx.scene.text.*;
 import javafx.scene.shape.*;
 import javafx.scene.layout.*;
 
-public class FRecapAboAchat extends Fenetre {
-    
+class FRecapAboAchat extends Ecran 
+{    
     private static FRecapAboAchat instance;
     
-    private FRecapAboAchat() {
-
+    private FRecapAboAchat() 
+    {
         Rectangle rectangle = new Rectangle();
         Text text = new Text();
         VBox vBox = new VBox();
@@ -210,8 +210,10 @@ public class FRecapAboAchat extends Fenetre {
         button.setPrefWidth(75.0);
         button.setText("Retour");
         button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button.setOnAction(new EventHandler<ActionEvent>() {
-        	public void handle(ActionEvent event) {
+        button.setOnAction(new EventHandler<ActionEvent>() 
+        {
+        	public void handle(ActionEvent event) 
+        	{
         		graphAC.choixRetour();
         	}
         });
@@ -223,8 +225,10 @@ public class FRecapAboAchat extends Fenetre {
         button0.setPrefWidth(100.0);
         button0.setText("Paiement");
         button0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button0.setOnAction(new EventHandler<ActionEvent>() {
-        	public void handle(ActionEvent event) {
+        button0.setOnAction(new EventHandler<ActionEvent>() 
+        {
+        	public void handle(ActionEvent event) 
+        	{
         		graphAC.choixPaiement();
         	}
         });
@@ -251,7 +255,10 @@ public class FRecapAboAchat extends Fenetre {
 
 	public void actionClavier(int a) {}
 
-	public void actionRetour() {}
+	public void actionRetour() 
+	{
+		graphAC.choixRetour();
+	}
 
 	public void actionSuivant() {}
 
@@ -259,5 +266,8 @@ public class FRecapAboAchat extends Fenetre {
 
 	public void actionEffacer() {}
 	
-	public void actionEntrer() {}
+	public void actionEntrer() 
+	{
+		graphAC.choixPaiement();
+	}
 }

@@ -6,12 +6,12 @@ import javafx.scene.control.*;
 import javafx.scene.text.*;
 import javafx.scene.shape.*;
 
-public class FChoixPaiement extends Fenetre {
-    
+class FChoixPaiement extends Ecran 
+{    
     private static FChoixPaiement instance;
 
-    private FChoixPaiement() {
-
+    private FChoixPaiement() 
+    {
         Rectangle rectangle = new Rectangle();
         Text text = new Text();
         Button button = new Button();
@@ -48,10 +48,13 @@ public class FChoixPaiement extends Fenetre {
         button.setText("Paiement liquide");
         button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button.setFont(new Font(17.0));
-        button.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	graphAC.choixPaiementLiquide();
-            }});
+            }
+        });
 
         button0.setLayoutX(475.0);
         button0.setLayoutY(170.0);
@@ -61,10 +64,13 @@ public class FChoixPaiement extends Fenetre {
         button0.setText("Paiement par carte");
         button0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button0.setFont(new Font(17.0));
-        button0.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button0.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	graphAC.choixPaiementParCarte();
-            }});
+            }
+        });
 
         button1.setLayoutX(362.5);
         button1.setLayoutY(333.0);
@@ -73,15 +79,19 @@ public class FChoixPaiement extends Fenetre {
         button1.setPrefWidth(75.0);
         button1.setText("Annuler");
         button1.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button1.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button1.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	graphAC.choixAnnuler();
-            }});
+            }
+        });
 
         getChildren().addAll(rectangle, text, button, button0, button1);
     }
 
-    public static FChoixPaiement getInstance() {
+    public static FChoixPaiement getInstance() 
+    {
     	if(instance == null)
     		instance = new FChoixPaiement();
     	return instance;
@@ -89,9 +99,18 @@ public class FChoixPaiement extends Fenetre {
     
     public void actionClavier(String a) {}
 
-	public void actionClavier(int a) {}
+	public void actionClavier(int a) 
+	{
+		if (a == 1)
+			graphAC.choixPaiementLiquide();
+		if (a == 2)
+			graphAC.choixPaiementParCarte();
+	}
 
-	public void actionRetour() {}
+	public void actionRetour() 
+	{
+		graphAC.choixAnnuler();
+	}
 
 	public void actionSuivant() {}
 

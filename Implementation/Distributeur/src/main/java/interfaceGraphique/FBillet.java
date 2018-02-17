@@ -8,44 +8,47 @@ import javafx.scene.layout.*;
 import javafx.scene.shape.*;
 import javafx.scene.text.*;
 
-public class FBillet extends Fenetre {
-
+class FBillet extends Ecran 
+{
 	private static FBillet instance;
+	private static TextField textField, textField0, textField1, textField2, textField3, textField4, textField5, textField6;
+	private static RadioButton radioButton, radioButton0, radioButton1, radioButton2;
+	private static int pos = 0;
 
-    private FBillet() {
-
+    private FBillet() 
+    {
         Rectangle rectangle = new Rectangle();
         VBox vBox = new VBox();
         HBox hBox = new HBox();
         Text text = new Text();
-        TextField textField3 = new TextField();
+        textField3 = new TextField();
         HBox hBox0 = new HBox();
         Text text0 = new Text();
-        TextField textField4 = new TextField();
+        textField4 = new TextField();
         HBox hBox1 = new HBox();
         HBox hBox2 = new HBox();
         Text text1 = new Text();
-        RadioButton radioButton = new RadioButton();
-        RadioButton radioButton0 = new RadioButton();
+        radioButton = new RadioButton();
+        radioButton0 = new RadioButton();
         HBox hBox3 = new HBox();
         Text text2 = new Text();
-        RadioButton radioButton1 = new RadioButton();
-        RadioButton radioButton2 = new RadioButton();
+        radioButton1 = new RadioButton();
+        radioButton2 = new RadioButton();
         HBox hBox4 = new HBox();
         Text text3 = new Text();
-        TextField textField5 = new TextField();
+        textField5 = new TextField();
         Text text4 = new Text();
-        TextField textField6 = new TextField();
+        textField6 = new TextField();
         HBox hBox5 = new HBox();
         Text text5 = new Text();
-        TextField textField = new TextField();
+        textField = new TextField();
         HBox hBox6 = new HBox();
         Text text6 = new Text();
-        TextField textField0 = new TextField();
+        textField0 = new TextField();
         Text text7 = new Text();
-        TextField textField1 = new TextField();
+        textField1 = new TextField();
         Text text8 = new Text();
-        TextField textField2 = new TextField();
+        textField2 = new TextField();
         Button button = new Button();
         Button button0 = new Button();
         Text text9 = new Text();
@@ -87,6 +90,7 @@ public class FBillet extends Fenetre {
 
         textField4.setPrefWidth(200.0);
         VBox.setMargin(hBox0, new Insets(0.0, 0.0, 10.0, 0.0));
+        textField4.setOnKeyPressed(null);
 
         hBox1.setPrefHeight(0.0);
         hBox1.setPrefWidth(711.0);
@@ -201,10 +205,13 @@ public class FBillet extends Fenetre {
         button.setPrefWidth(75.0);
         button.setText("Annuler");
         button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	graphAC.choixAnnuler();
-            }});
+            }
+        });
 
         button0.setLayoutX(702.5);
         button0.setLayoutY(354.0);
@@ -213,10 +220,13 @@ public class FBillet extends Fenetre {
         button0.setPrefWidth(75.0);
         button0.setText("Valider");
         button0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button0.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button0.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	graphAC.choixValider();
-            }});
+            }
+        });
 
         text9.setFontSmoothingType(javafx.scene.text.FontSmoothingType.LCD);
         text9.setLayoutX(31.0);
@@ -239,23 +249,214 @@ public class FBillet extends Fenetre {
         getChildren().addAll(rectangle, vBox, button, button0, text9);
     }
 
-    public static FBillet getInstance() {
+    public static FBillet getInstance() 
+    {
     	if (instance == null)
     		instance = new FBillet();
     	return instance;
     }
     
-    public void actionClavier(String a) {}
+    public void actionClavier(String a) 
+    {
+    	if (pos == 0)
+    		textField3.setText(textField3.getText() + a);
+    	else if (pos == 1)
+    		textField4.setText(textField4.getText() + a);
+    	else if (pos == 4)
+    		textField5.setText(textField5.getText() + a);
+    	else if (pos == 5)
+    		textField6.setText(textField6.getText() + a);
+    }
 
-	public void actionClavier(int a) {}
+	public void actionClavier(int a) 
+	{
+		if (pos == 2)
+		{
+			if (a == 1)
+				radioButton.setSelected(true);
+			else if (a == 2)
+				radioButton0.setSelected(true);
+		}
+		else if (pos == 3)
+		{
+			if (a == 1)
+				radioButton1.setSelected(true);
+			else if (a == 2)
+				radioButton2.setSelected(true);
+		}
+		else if (pos == 6)
+		{
+			String s = textField.getText();
+			if (s.length() == 2)
+			{
+				actionSuivant();
+				if (Integer.parseInt(textField.getText()) == 0)
+					textField.setText(" 1");
+			}
+			else
+				textField.setText(s + a);
+		}
+		else if (pos == 7)
+		{
+			String s = textField0.getText();
+			if (s.length() == 1)
+			{
+				textField0.setText(s + a);
+				actionSuivant();
+				if(Integer.parseInt(textField0.getText()) > 31)
+					textField0.setText("31");
+				if(Integer.parseInt(textField0.getText()) == 0)
+					textField0.setText("01");
+			}
+			else if (s.length() < 2)
+				textField0.setText(s + a);
+		}
+		else if (pos == 8)
+		{
+			String s = textField1.getText();
+			if (s.length() == 1)
+			{
+				textField1.setText(s + a);
+				s = textField1.getText();
+				actionSuivant();
+				if(Integer.parseInt(s) > 12)
+					textField1.setText("12");
+				if(Integer.parseInt(s) == 4 || Integer.parseInt(s) == 6 || Integer.parseInt(s) == 9 || Integer.parseInt(s) == 11)
+					if(Integer.parseInt(textField0.getText()) > 30)
+						textField0.setText("30");
+				if(Integer.parseInt(s) == 2)
+					if(Integer.parseInt(s)>29)
+						textField0.setText("29");
+				if(Integer.parseInt(textField1.getText()) == 0)
+					textField1.setText("01");
+			}
+			else if (s.length() < 2)
+				textField1.setText(s + a);
+		}
+		else if (pos == 9)
+		{
+			String s = textField2.getText();
+			if (s.length() == 3)
+			{
+				textField2.setText(s + a);
+				s = textField2.getText();
+				actionSuivant();
+				if(Integer.parseInt(s) > 2099)
+					textField2.setText("2099");
+				if(Integer.parseInt(s) < 2018)
+					textField2.setText("2018");
+				if(Integer.parseInt(textField1.getText()) == 2 && Integer.parseInt(textField2.getText())%4 != 0)
+					if(Integer.parseInt(textField0.getText())>28)
+						textField0.setText("28");
+			}
+			else if (s.length() < 4)
+				textField2.setText(s + a);
+		}
+	}
 
-	public void actionRetour() {}
+	public void actionRetour() 
+	{
+		graphAC.choixRetour();
+	}
 
-	public void actionSuivant() {}
+	public void actionSuivant() 
+	{
+		if (pos == 9)
+		{
+			textField3.requestFocus();
+			pos = 0;
+		}
+		else
+		{
+			if (pos == 0)
+				textField4.requestFocus();
+			else if (pos == 1)
+				radioButton.requestFocus();
+			else if (pos == 2)
+				radioButton1.requestFocus();
+			else if (pos == 3)
+				textField5.requestFocus();
+			else if (pos == 4)
+				textField6.requestFocus();
+			else if (pos == 5)
+				textField.requestFocus();
+			else if (pos == 6)
+				textField0.requestFocus();
+			else if (pos == 7)
+				textField1.requestFocus();
+			else
+				textField2.requestFocus();
+			pos ++;
+		}
+	}
 
-	public void actionEspace() {}
+	public void actionEspace() 
+	{
+		if (pos == 0)
+			textField3.setText(textField3.getText() + " ");
+		else if (pos == 1)
+			textField4.setText(textField4.getText() + " ");
+		else if (pos == 4)
+			textField5.setText(textField5.getText() + " ");
+		else if (pos == 5)
+			textField6.setText(textField6.getText() + " ");
+		
+	}
 
-	public void actionEffacer() {}
+	public void actionEffacer() 
+	{
+		if (pos == 0)
+		{
+			String s = textField3.getText();
+			if (s.length() > 0)
+				textField3.setText(s.substring(0, s.length()-1));
+		}
+		else if (pos == 1)
+		{
+			String s = textField4.getText();
+			if (s.length() > 0)
+				textField4.setText(s.substring(0, s.length()-1));
+		}
+		else if (pos == 4)
+		{
+			String s = textField5.getText();
+			if (s.length() > 0)
+				textField5.setText(s.substring(0, s.length()-1));
+		}
+		else if (pos == 5)
+		{
+			String s = textField6.getText();
+			if (s.length() > 0)
+				textField6.setText(s.substring(0, s.length()-1));
+		}
+		else if (pos == 6) 
+		{
+			String s = textField.getText();
+			if (s.length() > 0)
+				textField.setText(s.substring(0, s.length()-1));
+		}
+		else if (pos == 7)
+		{
+			String s = textField0.getText();
+			if (s.length() > 0)
+				textField0.setText(s.substring(0, s.length()-1));
+		}
+		else if (pos == 8)
+		{
+			String s = textField1.getText();
+			if (s.length() > 0)
+				textField1.setText(s.substring(0, s.length()-1));
+		}
+		else if (pos == 9)
+		{
+			String s = textField2.getText();
+			if (s.length() > 0)
+				textField2.setText(s.substring(0, s.length()-1));
+		}
+	}
 	
-	public void actionEntrer() {}
+	public void actionEntrer() 
+	{
+		graphAC.choixValider();
+	}
 }

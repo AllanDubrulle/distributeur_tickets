@@ -8,24 +8,27 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.layout.*;
 
-public class FAboRenouv2 extends Fenetre {
-
+class FAboRenouv2 extends Ecran 
+{
     private static FAboRenouv2 instance;
+    private static RadioButton radioButton, radioButton0, radioButton1, radioButton2;
+    private static TextField textField;
+    private static int pos = 0;
     
-    private FAboRenouv2() {
-
+    private FAboRenouv2() 
+    {
         Rectangle rectangle = new Rectangle();
         VBox vBox = new VBox();
         HBox hBox = new HBox();
         HBox hBox0 = new HBox();
         Text text = new Text();
-        TextField textField = new TextField();
+        textField = new TextField();
         HBox hBox1 = new HBox();
         Text text0 = new Text();
-        RadioButton radioButton = new RadioButton();
-        RadioButton radioButton0 = new RadioButton();
-        RadioButton radioButton1 = new RadioButton();
-        RadioButton radioButton2 = new RadioButton();
+        radioButton = new RadioButton();
+        radioButton0 = new RadioButton();
+        radioButton1 = new RadioButton();
+        radioButton2 = new RadioButton();
         Text text1 = new Text();
         Button button = new Button();
         Button button0 = new Button();
@@ -63,9 +66,6 @@ public class FAboRenouv2 extends Fenetre {
 
         textField.setPrefHeight(31.0);
         textField.setPrefWidth(250.0);
-        textField.setPromptText("Entrez votre numéro d'abonnement.");
-        textField.setPrefColumnCount(50);
-        textField.getText();
         HBox.setMargin(textField, new Insets(0.0, 0.0, 10.0, 21.0));
 
         hBox1.setPrefHeight(41.0);
@@ -114,10 +114,13 @@ public class FAboRenouv2 extends Fenetre {
         button.setPrefWidth(75.0);
         button.setText("Annuler");
         button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	graphAC.choixAnnuler();
-            }});
+            }
+        });
 
         button0.setLayoutX(703.0);
         button0.setLayoutY(354.0);
@@ -126,10 +129,13 @@ public class FAboRenouv2 extends Fenetre {
         button0.setPrefWidth(75.0);
         button0.setText("Valider");
         button0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button0.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button0.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	graphAC.choixValider();
-            }});
+            }
+        });
 
         hBox0.getChildren().addAll(text, textField);
         hBox1.getChildren().addAll(text0, radioButton, radioButton0, radioButton1, radioButton2);
@@ -137,7 +143,8 @@ public class FAboRenouv2 extends Fenetre {
         getChildren().addAll(rectangle, vBox, text1, button, button0);
     }
 
-    public static FAboRenouv2 getInstance() {
+    public static FAboRenouv2 getInstance() 
+    {
     	if (instance == null)
     		instance = new FAboRenouv2();
     	return instance;
@@ -145,15 +152,60 @@ public class FAboRenouv2 extends Fenetre {
     
     public void actionClavier(String a) {}
 
-	public void actionClavier(int a) {}
+	public void actionClavier(int a) 
+	{
+		if (pos == 0)
+		{
+			String s = textField.getText();
+			textField.setText(s + a);
+		}
+		else
+		{
+			if (a == 1)
+				radioButton.setSelected(true);
+			else if (a == 2)
+				radioButton0.setSelected(true);
+			else if (a == 3)
+				radioButton1.setSelected(true);
+			else if (a == 4)
+				radioButton2.setSelected(true);
+		}
+		
+	}
 
-	public void actionRetour() {}
+	public void actionRetour() 
+	{
+		graphAC.choixAnnuler();
+	}
 
-	public void actionSuivant() {}
+	public void actionSuivant() 
+	{
+		if (pos == 1)
+		{
+			textField.requestFocus();
+			pos = 0;
+		}
+		else
+		{
+			radioButton.requestFocus();
+			pos ++;
+		}
+	}
 
 	public void actionEspace() {}
 
-	public void actionEffacer() {}
+	public void actionEffacer() 
+	{
+		if (pos == 0)
+		{
+			String s = textField.getText();
+			if (s.length()>0)
+				textField.setText(s.substring(0, s.length()-1));
+		}
+	}
 	
-	public void actionEntrer() {}
+	public void actionEntrer() 
+	{
+		graphAC.choixValider();
+	}
 }

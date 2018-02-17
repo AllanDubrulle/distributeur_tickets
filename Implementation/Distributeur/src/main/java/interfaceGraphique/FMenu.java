@@ -8,12 +8,12 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.shape.*;
 
-public class FMenu extends Fenetre {
-
+class FMenu extends Ecran 
+{
     private static FMenu instance;
     
-    private FMenu() {
-
+    private FMenu() 
+    {
         Rectangle rectangle = new Rectangle();
         VBox vBox = new VBox();
         Button button = new Button();
@@ -48,54 +48,74 @@ public class FMenu extends Fenetre {
         button.setPrefHeight(31.0);
         button.setPrefWidth(250.0);
         button.setText("Acheter un billet");
+        button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         VBox.setMargin(button, new Insets(0.0, 0.0, 5.0, 0.0));
-        button.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	graphAC.choixBillet();
-            }});
+            }
+        });
 
         button0.setAlignment(javafx.geometry.Pos.TOP_LEFT);
         button0.setMnemonicParsing(false);
         button0.setPrefHeight(31.0);
         button0.setPrefWidth(283.0);
         button0.setText("Acheter un abonnement");
+        button0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         VBox.setMargin(button0, new Insets(0.0, 0.0, 5.0, 0.0));
-        button0.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button0.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	graphAC.choixAchatAbo();
-            }});
+            }
+        });
 
         button1.setAlignment(javafx.geometry.Pos.TOP_LEFT);
         button1.setMnemonicParsing(false);
         button1.setPrefHeight(31.0);
         button1.setPrefWidth(288.0);
         button1.setText("Renouveler un abonnement");
+        button1.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         VBox.setMargin(button1, new Insets(0.0, 0.0, 5.0, 0.0));
-        button1.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button1.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	graphAC.choixRenouvAbo();
-            }});
+            }
+        });
 
         button2.setAlignment(javafx.geometry.Pos.TOP_LEFT);
         button2.setMnemonicParsing(false);
         button2.setPrefHeight(31.0);
         button2.setPrefWidth(300.0);
         button2.setText("Acheter un pass");
+        button2.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         VBox.setMargin(button2, new Insets(0.0, 0.0, 5.0, 0.0));
-        button2.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button2.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	graphAC.choixPass();
-            }});
+            }
+        });
 
         button3.setAlignment(javafx.geometry.Pos.TOP_LEFT);
         button3.setMnemonicParsing(false);
         button3.setPrefHeight(31.0);
         button3.setPrefWidth(392.0);
         button3.setText("Vérifier l'horaire d'un train");
-        button3.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button3.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        button3.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	graphAC.choixHoraire();
-            }});
+            }
+        });
 
         text.setFontSmoothingType(javafx.scene.text.FontSmoothingType.LCD);
         text.setLayoutX(44.0);
@@ -109,7 +129,8 @@ public class FMenu extends Fenetre {
         getChildren().addAll(rectangle, vBox, text);
     }
 
-    public static FMenu getInstance() {
+    public static FMenu getInstance() 
+    {
     	if (instance == null)
     		instance = new FMenu();
     	return instance;
@@ -117,7 +138,19 @@ public class FMenu extends Fenetre {
 
 	public void actionClavier(String a) {}
 
-	public void actionClavier(int a) {}
+	public void actionClavier(int a) 
+	{
+		if (a == 1)
+			graphAC.choixBillet();
+		else if (a == 2)
+			graphAC.choixAchatAbo();
+		else if (a == 3)
+			graphAC.choixRenouvAbo();
+		else if (a == 4)
+			graphAC.choixPass();
+		else if (a == 5)
+			graphAC.choixHoraire();
+	}
 
 	public void actionRetour() {}
 

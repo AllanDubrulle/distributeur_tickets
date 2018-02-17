@@ -1,5 +1,6 @@
 package stockage;
 
-class BDDBanque {
+class BDDBanque 
+{
 
 }

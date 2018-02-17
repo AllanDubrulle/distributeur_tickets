@@ -1,7 +1,7 @@
 package coeur;
 
-public abstract class ControleurEtat {
-	
+abstract class ControleurEtat 
+{	
 	protected static ControleurEtat instance;
 	protected static Controleur controleur;
 	protected ControleurEtat() {};

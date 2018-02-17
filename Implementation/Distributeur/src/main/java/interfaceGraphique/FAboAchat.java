@@ -8,15 +8,15 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.layout.*;
 
-public class FAboAchat extends Fenetre {
-    
+class FAboAchat extends Ecran 
+{
     private static FAboAchat instance;
-    private TextField textField, textField0, textField1, textField2, textField3;
-    private RadioButton radioButton, radioButton0, radioButton1, radioButton2, radioButton3, radioButton4;
+    private static TextField textField, textField0, textField1, textField2, textField3;
+    private static RadioButton radioButton, radioButton0, radioButton1, radioButton2, radioButton3, radioButton4;
+    private static int pos = 0;
     
-    private FAboAchat() {
-
-    	pos = 0;
+    private FAboAchat() 
+    {
         Rectangle rectangle = new Rectangle();
         Text text = new Text();
         VBox vBox = new VBox();
@@ -45,7 +45,7 @@ public class FAboAchat extends Fenetre {
         radioButton4 = new RadioButton();
         HBox hBox6 = new HBox();
         Text text6 = new Text();
-        TextField textField3 = new TextField();
+        textField3 = new TextField();
         Button button = new Button();
         Button button0 = new Button();
 
@@ -190,9 +190,6 @@ public class FAboAchat extends Fenetre {
         HBox.setMargin(text6, new Insets(0.0));
 
         textField3.setPrefWidth(300.0);
-        textField3.setPromptText("Entrez un type de réduction.");
-        textField3.setPrefColumnCount(50);
-        textField3.getText();
         HBox.setMargin(textField3, new Insets(0.0, 0.0, 0.0, 50.0));
         hBox6.setPadding(new Insets(0.0, 0.0, 10.0, 0.0));
 
@@ -203,10 +200,13 @@ public class FAboAchat extends Fenetre {
         button.setPrefWidth(75.0);
         button.setText("Annuler");
         button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	graphAC.choixAnnuler();
-            }});
+            }
+        });
 
         button0.setLayoutX(702.5);
         button0.setLayoutY(354.0);
@@ -215,10 +215,13 @@ public class FAboAchat extends Fenetre {
         button0.setPrefWidth(75.0);
         button0.setText("Valider");
         button0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button0.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button0.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	graphAC.choixValider();
-            }});
+            }
+        });
 
         hBox0.getChildren().addAll(text0, textField);
         hBox1.getChildren().addAll(text1, textField0);
@@ -230,39 +233,48 @@ public class FAboAchat extends Fenetre {
         vBox.getChildren().addAll(hBox, hBox0, hBox1, hBox2, hBox3, hBox4, hBox5, hBox6);
         getChildren().addAll(rectangle, text, vBox, button, button0);
     }
-
-    public static FAboAchat getInstance() {
+    
+    public static FAboAchat getInstance() 
+    {
     	if (instance == null)
     		instance = new FAboAchat();
     	return instance;
     }
     
-    public void actionClavier(String a) {
+    public void actionClavier(String a) 
+    {
     	String s;
-    	if (pos == 0) {
+    	if (pos == 0) 
+    	{
     		s = textField.getText();
     		textField.setText(s + a);
     	}
-    	else if(pos == 1) {
+    	else if(pos == 1) 
+    	{
     		s = textField0.getText();
-    		textField.setText(s + a);
+    		textField0.setText(s + a);
     	}
-    	else if(pos == 2) {
+    	else if(pos == 2) 
+    	{
     		s = textField1.getText();
-    		textField.setText(s + a);
+    		textField1.setText(s + a);
     	}
-    	else if(pos == 3) {
+    	else if(pos == 3) 
+    	{
     		s = textField2.getText();
-    		textField.setText(s + a);
+    		textField2.setText(s + a);
     	}
-    	else if(pos == 6) {
+    	else if(pos == 6) 
+    	{
     		s = textField3.getText();
-    		textField.setText(s + a);
+    		textField3.setText(s + a);
     	}
     }
 
-	public void actionClavier(int a) {
-		if (pos == 4) {
+	public void actionClavier(int a) 
+	{
+		if (pos == 4) 
+		{
 			if (a == 1)
 	    		radioButton.setSelected(true);
 			else if (a == 2)
@@ -272,7 +284,8 @@ public class FAboAchat extends Fenetre {
 			else if (a == 4) 
 	    		radioButton2.setSelected(true);
 		}
-		else if (pos == 5) {
+		else if (pos == 5) 
+		{
 			if (a == 1) 
 	    		radioButton3.setSelected(true);
 			else if (a == 2) 
@@ -280,71 +293,103 @@ public class FAboAchat extends Fenetre {
 		}
 	}
 
-	public void actionRetour() {
-		graphAC.choixRetour();
+	public void actionRetour() 
+	{
+		graphAC.choixAnnuler();
 	}
 
-	public void actionSuivant() {
-		if(pos == 6)
+	public void actionSuivant() 
+	{
+		if(pos == 6) 
+		{
 			pos = 0;
-		else
+			textField.requestFocus();
+		}
+		else 
+		{
+			if (pos == 0)
+				textField0.requestFocus();
+			else if (pos == 1)
+				textField1.requestFocus();
+			else if (pos == 2)
+				textField2.requestFocus();
+			else if (pos == 3)
+				radioButton.requestFocus();
+			else if (pos == 4)
+				radioButton3.requestFocus();
+			else
+				textField3.requestFocus();
 			pos++;
+		}
 	}
 
-	public void actionEspace() {
+	public void actionEspace() 
+	{
 		String s;
-    	if (pos == 0) {
+    	if (pos == 0) 
+    	{
     		s = textField.getText();
     		textField.setText(s + " ");
     	}
-    	else if(pos == 1) {
+    	else if(pos == 1) 
+    	{
     		s = textField0.getText();
-    		textField.setText(s + " ");
+    		textField0.setText(s + " ");
     	}
-    	else if(pos == 2) {
+    	else if(pos == 2) 
+    	{
     		s = textField1.getText();
-    		textField.setText(s + " ");
+    		textField1.setText(s + " ");
     	}
-    	else if(pos == 3) {
+    	else if(pos == 3) 
+    	{
     		s = textField2.getText();
-    		textField.setText(s + " ");
+    		textField2.setText(s + " ");
     	}
-    	else if(pos == 6) {
+    	else if(pos == 6) 
+    	{
     		s = textField3.getText();
-    		textField.setText(s + " ");
+    		textField3.setText(s + " ");
     	}
 	}
 
-	public void actionEffacer() {
+	public void actionEffacer() 
+	{
 		String s;
-    	if (pos == 0) {
+    	if (pos == 0) 
+    	{
     		s = textField.getText();
     		if (s.length()>0)
     			textField.setText(s.substring(0, s.length()-1));
     	}
-    	else if(pos == 1) {
+    	else if(pos == 1) 
+    	{
     		s = textField0.getText();
     		if (s.length()>0)
     			textField0.setText(s.substring(0, s.length()-1));
     	}
-    	else if(pos == 2) {
+    	else if(pos == 2) 
+    	{
     		s = textField1.getText();
     		if (s.length()>0)
     			textField1.setText(s.substring(0, s.length()-1));
     	}
-    	else if(pos == 3) {
+    	else if(pos == 3) 
+    	{
     		s = textField2.getText();
     		if (s.length()>0)
     			textField2.setText(s.substring(0, s.length()-1));
     	}
-    	else if(pos == 6) {
+    	else if(pos == 6) 
+    	{
     		s = textField3.getText();
     		if (s.length()>0)
     			textField3.setText(s.substring(0, s.length()-1));
     	}
 	}
 	
-	public void actionEntrer() {
-		graphAC.choixRetour();
+	public void actionEntrer() 
+	{
+		graphAC.choixValider();
 	}
 }

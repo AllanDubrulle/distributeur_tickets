@@ -6,12 +6,12 @@ import javafx.scene.control.*;
 import javafx.scene.shape.*;
 import javafx.scene.text.*;
 
-public class FFin extends Fenetre {
-    
+class FFin extends Ecran 
+{    
     private static FFin instance;
 
-    private FFin() {
-
+    private FFin() 
+    {
         Rectangle rectangle = new Rectangle();
         Button button = new Button();
 
@@ -34,16 +34,21 @@ public class FFin extends Fenetre {
         button.setLayoutY(181.0);
         button.setMnemonicParsing(false);
         button.setText("Revenir à l'écran principal");
+        button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button.setFont(new Font(18.0));
-        button.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	graphAC.choixRetourEcranPrinc();
-            }});
+            }
+        });
 
         getChildren().addAll(rectangle, button);
     }
 
-    public static FFin getInstance() {
+    public static FFin getInstance() 
+    {
     	if(instance == null)
     		instance = new FFin();
     	return instance;
@@ -61,5 +66,8 @@ public class FFin extends Fenetre {
 
 	public void actionEffacer() {}
 	
-	public void actionEntrer() {}
+	public void actionEntrer() 
+	{
+		graphAC.choixRetourEcranPrinc();
+	}
 }

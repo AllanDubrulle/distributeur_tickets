@@ -8,12 +8,14 @@ import javafx.scene.text.*;
 import javafx.scene.shape.*;
 import javafx.scene.layout.*;
 
-public class FHoraireArrivee extends Fenetre {
+class FHoraireArrivee extends Ecran {
 	
 	private static FHoraireArrivee instance;
+	private static TextField textField, textField0, textField1;
+	private static int pos = 0; 
 	
-    private FHoraireArrivee() {
-
+    private FHoraireArrivee() 
+    {
         Rectangle rectangle = new Rectangle();
         Text text = new Text();
         HBox hBox = new HBox();
@@ -21,11 +23,11 @@ public class FHoraireArrivee extends Fenetre {
         Text text0 = new Text();
         Text text1 = new Text();
         VBox vBox0 = new VBox();
-        TextField textField = new TextField();
+        textField = new TextField();
         HBox hBox0 = new HBox();
-        TextField textField0 = new TextField();
+        textField0 = new TextField();
         Text text2 = new Text();
-        TextField textField1 = new TextField();
+        textField1 = new TextField();
         VBox vBox1 = new VBox();
         Button button = new Button();
         Button button0 = new Button();
@@ -101,10 +103,13 @@ public class FHoraireArrivee extends Fenetre {
         button.setPrefHeight(31.0);
         button.setPrefWidth(185.0);
         button.setText("Rechercher");
+        button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         VBox.setMargin(button, new Insets(20.0, 0.0, 0.0, 0.0));
         HBox.setMargin(vBox1, new Insets(0.0, 0.0, 0.0, 10.0));
-        button.setOnAction(new EventHandler<ActionEvent>() {
-        	public void handle(ActionEvent event) {
+        button.setOnAction(new EventHandler<ActionEvent>() 
+        {
+        	public void handle(ActionEvent event) 
+        	{
         		graphAC.choixRechercheGA();
         	}
         });
@@ -113,8 +118,11 @@ public class FHoraireArrivee extends Fenetre {
         button0.setLayoutY(349.0);
         button0.setMnemonicParsing(false);
         button0.setText("Annuler");
-        button0.setOnAction(new EventHandler<ActionEvent>() {
-        	public void handle(ActionEvent event) {
+        button0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        button0.setOnAction(new EventHandler<ActionEvent>() 
+        {
+        	public void handle(ActionEvent event) 
+        	{
         		graphAC.choixAnnuler();
         	}
         });
@@ -127,23 +135,101 @@ public class FHoraireArrivee extends Fenetre {
         getChildren().addAll(rectangle, hBox, button0);
     }
     
-    public static FHoraireArrivee getInstance() {
+    public static FHoraireArrivee getInstance() 
+    {
     	if (instance == null) 
     		instance = new FHoraireArrivee();
 		return instance;
     }	
     
-    public void actionClavier(String a) {}
+    public void actionClavier(String a) 
+    {
+    	if (pos == 0)
+    		textField.setText(textField.getText() + a);
+    }
 
-	public void actionClavier(int a) {}
+	public void actionClavier(int a) 
+	{
+		if (pos == 1) 
+		{
+			String s = textField0.getText();
+			if (s.length() == 1)
+			{
+				textField0.setText(s + a);
+				actionSuivant();
+				if (Integer.parseInt(textField0.getText()) > 23)
+					textField1.setText("23");
+			}
+			textField0.setText(s + a);
+		}
+		else if (pos == 2) 
+		{
+			String s = textField1.getText();
+			if (s.length() == 1)
+			{
+				textField1.setText(s + a);
+				actionSuivant();
+				if (Integer.parseInt(textField1.getText()) > 59)
+					textField1.setText("59");
+			}
+			textField1.setText(s + a);
+		}
+	}
 
-	public void actionRetour() {}
+	public void actionRetour() 
+	{
+		graphAC.choixAnnuler();
+	}
 
-	public void actionSuivant() {}
+	public void actionSuivant() 
+	{
+		{
+			if (pos == 2)
+			{
+				textField.requestFocus();
+				pos = 0;
+			}
+			else
+			{
+				if (pos == 0)
+					textField0.requestFocus();
+				else if (pos == 1)
+					textField1.requestFocus();
+				pos ++;
+			}
+		}
+	}
 
-	public void actionEspace() {}
+	public void actionEspace() 
+	{
+    	if (pos == 0)
+    		textField.setText(textField.getText() + " ");
+    }
 
-	public void actionEffacer() {}
+	public void actionEffacer() 
+	{
+		if (pos == 0)
+		{
+			String s = textField.getText();
+			if (s.length() > 0)
+				textField.setText(s.substring(0, s.length()-1));
+		}
+		else if (pos == 1)
+		{
+			String s = textField0.getText();
+			if (s.length() > 0)
+				textField0.setText(s.substring(0, s.length()-1));
+		}
+		else
+		{
+			String s = textField1.getText();
+			if (s.length() > 0)
+				textField1.setText(s.substring(0, s.length()-1));
+		}
+	}
 	
-	public void actionEntrer() {}
+	public void actionEntrer() 
+	{
+		graphAC.choixRechercheGA();
+	}
 }

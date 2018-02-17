@@ -1,5 +1,6 @@
 package stockage;
 
-public class HoraireTrains {
+class HoraireTrains 
+{
 
 }

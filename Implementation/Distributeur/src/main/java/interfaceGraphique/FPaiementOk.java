@@ -6,9 +6,9 @@ import javafx.scene.control.*;
 import javafx.scene.shape.*;
 import javafx.scene.text.*;
 
-public class FPaiementOk extends Fenetre {
+class FPaiementOk extends Ecran {
     
-    public static FPaiementOk instance;
+    private static FPaiementOk instance;
 
     private FPaiementOk() {
 
@@ -46,10 +46,13 @@ public class FPaiementOk extends Fenetre {
         button.setPrefWidth(75.0);
         button.setText("Non");
         button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	graphAC.choixNon();
-            }});
+            }
+        });
 
         button0.setLayoutX(150.0);
         button0.setLayoutY(200.0);
@@ -58,15 +61,19 @@ public class FPaiementOk extends Fenetre {
         button0.setPrefWidth(75.0);
         button0.setText("Oui");
         button0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button0.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button0.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	graphAC.choixOui();
-            }});
+            }
+        });
 
         getChildren().addAll(rectangle, text, button, button0);
     }
 
-    public static FPaiementOk getInstance() {
+    public static FPaiementOk getInstance() 
+    {
     	if(instance == null)
     		instance = new FPaiementOk();
     	return instance;
@@ -74,7 +81,13 @@ public class FPaiementOk extends Fenetre {
     
     public void actionClavier(String a) {}
 
-	public void actionClavier(int a) {}
+	public void actionClavier(int a) 
+	{
+		if (a == 1)
+			graphAC.choixNon();
+		else if (a == 2)
+			graphAC.choixOui();
+	}
 
 	public void actionRetour() {}
 

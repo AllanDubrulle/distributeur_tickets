@@ -5,15 +5,16 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.*;
 
-public class FChoixParCarte extends Fenetre {
-
+class FChoixParCarte extends Ecran 
+{
     private static FChoixParCarte instance;
+    private static TextField textField;
     
-    private FChoixParCarte() {
-
+    private FChoixParCarte() 
+    {
         Button button = new Button();
         Button button0 = new Button();
-        TextField textField = new TextField();
+        textField = new TextField();
         Text text = new Text();
 
         setMaxHeight(USE_PREF_SIZE);
@@ -23,7 +24,6 @@ public class FChoixParCarte extends Fenetre {
         setPrefHeight(200.0);
         setPrefWidth(400.0);
 
-        button.setAlignment(javafx.geometry.Pos.BOTTOM_RIGHT);
         button.setLayoutX(315.0);
         button.setLayoutY(160.0);
         button.setMnemonicParsing(false);
@@ -31,23 +31,26 @@ public class FChoixParCarte extends Fenetre {
         button.setPrefWidth(75.0);
         button.setText("Valider");
         button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button.setOnAction(new EventHandler<ActionEvent>(){
-        	public void handle(ActionEvent event) {
+        button.setOnAction(new EventHandler<ActionEvent>()
+        {
+        	public void handle(ActionEvent event) 
+        	{
         		graphAC.choixValider();
         	}
         });
 
-        button0.setAlignment(javafx.geometry.Pos.BOTTOM_RIGHT);
         button0.setLayoutX(10.0);
         button0.setLayoutY(160.0);
         button0.setMnemonicParsing(false);
         button0.setPrefHeight(31.0);
         button0.setPrefWidth(75.0);
-        button0.setText("Retour");
+        button0.setText("Annuler");
         button0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button0.setOnAction(new EventHandler<ActionEvent>(){
-        	public void handle(ActionEvent event) {
-        		graphAC.choixRetour();
+        button0.setOnAction(new EventHandler<ActionEvent>()
+        {
+        	public void handle(ActionEvent event) 
+        	{
+        		graphAC.choixAnnuler();
         	}
         });
 
@@ -73,15 +76,28 @@ public class FChoixParCarte extends Fenetre {
     
     public void actionClavier(String a) {}
 
-	public void actionClavier(int a) {}
+	public void actionClavier(int a) 
+	{
+		textField.setText(textField.getText() + a);
+	}
 
-	public void actionRetour() {}
+	public void actionRetour() 
+	{
+		graphAC.choixAnnuler();
+	}
 
 	public void actionSuivant() {}
 
 	public void actionEspace() {}
 
-	public void actionEffacer() {}
+	public void actionEffacer() 
+	{
+		if (textField.getText().length() > 0)
+			textField.setText(textField.getText().substring(0, textField.getText().length()-1));
+	}
 	
-	public void actionEntrer() {}
+	public void actionEntrer() 
+	{
+		graphAC.choixValider();
+	}
 }

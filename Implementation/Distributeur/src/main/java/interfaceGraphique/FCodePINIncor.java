@@ -6,12 +6,12 @@ import javafx.scene.control.*;
 import javafx.scene.shape.*;
 import javafx.scene.text.*;
 
-public class FCodePINIncor extends Fenetre {
-
+class FCodePINIncor extends Ecran 
+{
     private static FCodePINIncor instance;
     
-    private FCodePINIncor() {
-
+    private FCodePINIncor() 
+    {
         Rectangle rectangle = new Rectangle();
         Text text = new Text();
         Button button = new Button();
@@ -47,15 +47,19 @@ public class FCodePINIncor extends Fenetre {
         button.setPrefWidth(75.0);
         button.setText("Annuler");
         button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	graphAC.choixAnnuler();
-            }});
+            }
+        });
 
         getChildren().addAll(rectangle, text);
     }
 
-    public static FCodePINIncor getInstance() {
+    public static FCodePINIncor getInstance() 
+    {
     	if(instance == null)
     		instance = new FCodePINIncor();
     	return instance;
@@ -65,7 +69,10 @@ public class FCodePINIncor extends Fenetre {
 
 	public void actionClavier(int a) {}
 
-	public void actionRetour() {}
+	public void actionRetour() 
+	{
+		graphAC.choixAnnuler();
+	}
 
 	public void actionSuivant() {}
 

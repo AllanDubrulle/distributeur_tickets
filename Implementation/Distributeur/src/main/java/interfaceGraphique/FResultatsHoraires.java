@@ -8,65 +8,38 @@ import javafx.scene.layout.*;
 import javafx.scene.shape.*;
 import javafx.scene.text.*;
 
-public class FResultatsHoraires extends Fenetre {
+class FResultatsHoraires extends Ecran 
+{    
+    private static FResultatsHoraires instance;
 
-    public Rectangle rectangle;
-    public HBox hBox;
-    public VBox vBox;
-    public Text text;
-    public Text text0;
-    public Text text1;
-    public Text text2;
-    public Text text3;
-    public Text text4;
-    public VBox vBox0;
-    public Text text5;
-    public Text text6;
-    public Text text7;
-    public Text text8;
-    public Text text9;
-    public Text text10;
-    public VBox vBox1;
-    public Text text11;
-    public Text text12;
-    public Text text13;
-    public Text text14;
-    public Text text15;
-    public Text text16;
-    public Text text17;
-    public Button button;
-    public Button button0;
-    
-    public static FResultatsHoraires instance;
-
-    private FResultatsHoraires() {
-
-        rectangle = new Rectangle();
-        hBox = new HBox();
-        vBox = new VBox();
-        text = new Text();
-        text0 = new Text();
-        text1 = new Text();
-        text2 = new Text();
-        text3 = new Text();
-        text4 = new Text();
-        vBox0 = new VBox();
-        text5 = new Text();
-        text6 = new Text();
-        text7 = new Text();
-        text8 = new Text();
-        text9 = new Text();
-        text10 = new Text();
-        vBox1 = new VBox();
-        text11 = new Text();
-        text12 = new Text();
-        text13 = new Text();
-        text14 = new Text();
-        text15 = new Text();
-        text16 = new Text();
-        text17 = new Text();
-        button = new Button();
-        button0 = new Button();
+    private FResultatsHoraires() 
+    {
+        Rectangle rectangle = new Rectangle();
+        HBox hBox = new HBox();
+        VBox vBox = new VBox();
+        Text text = new Text();
+        Text text0 = new Text();
+        Text text1 = new Text();
+        Text text2 = new Text();
+        Text text3 = new Text();
+        Text text4 = new Text();
+        VBox vBox0 = new VBox();
+        Text text5 = new Text();
+        Text text6 = new Text();
+        Text text7 = new Text();
+        Text text8 = new Text();
+        Text text9 = new Text();
+        Text text10 = new Text();
+        VBox vBox1 = new VBox();
+        Text text11 = new Text();
+        Text text12 = new Text();
+        Text text13 = new Text();
+        Text text14 = new Text();
+        Text text15 = new Text();
+        Text text16 = new Text();
+        Text text17 = new Text();
+        Button button = new Button();
+        Button button0 = new Button();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -201,9 +174,11 @@ public class FResultatsHoraires extends Fenetre {
         button.setPrefHeight(31.0);
         button.setPrefWidth(200.0);
         button.setText("Changer l'heure");
-        button.setOnAction(new EventHandler<ActionEvent>() {
-        	@Override
-        	public void handle(ActionEvent event) {
+        button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        button.setOnAction(new EventHandler<ActionEvent>() 
+        {
+        	public void handle(ActionEvent event) 
+        	{
         		graphAC.choixChangerHeure();
         	}
         });
@@ -214,9 +189,11 @@ public class FResultatsHoraires extends Fenetre {
         button0.setPrefHeight(31.0);
         button0.setPrefWidth(200.0);
         button0.setText("Retour à l'écran principal");
-        button.setOnAction(new EventHandler<ActionEvent>() {
-        	@Override
-        	public void handle(ActionEvent event) {
+        button0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        button0.setOnAction(new EventHandler<ActionEvent>() 
+        {
+        	public void handle(ActionEvent event) 
+        	{
         		graphAC.choixRetourEcranPrinc();
         	}
         });
@@ -226,10 +203,10 @@ public class FResultatsHoraires extends Fenetre {
         vBox1.getChildren().addAll(text11, text12, text13, text14, text15, text16);
         hBox.getChildren().addAll(vBox, vBox0, vBox1);
         getChildren().addAll(rectangle, hBox, text17, button, button0);
-
     }
 
-    public static FResultatsHoraires getInstance() {
+    public static FResultatsHoraires getInstance() 
+    {
     	if (instance == null)
     		instance = new FResultatsHoraires();
     	return instance;
@@ -239,7 +216,10 @@ public class FResultatsHoraires extends Fenetre {
 
 	public void actionClavier(int a) {}
 
-	public void actionRetour() {}
+	public void actionRetour() 
+	{
+		graphAC.choixRetour();
+	}
 
 	public void actionSuivant() {}
 
@@ -247,5 +227,8 @@ public class FResultatsHoraires extends Fenetre {
 
 	public void actionEffacer() {}
 	
-	public void actionEntrer() {}
+	public void actionEntrer()
+	{
+		graphAC.choixRetourEcranPrinc();
+	}
 }

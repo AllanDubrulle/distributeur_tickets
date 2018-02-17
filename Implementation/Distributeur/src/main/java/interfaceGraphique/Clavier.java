@@ -7,17 +7,18 @@ import javafx.scene.control.*;
 import javafx.scene.shape.*;
 import javafx.scene.layout.*;
 
-public class Clavier extends ComposantVisible {
+class Clavier extends ComposantVisible 
+{	
+	private static Clavier instance;	
+	private static Ecran fenetre;
 	
-	private static Clavier instance;
-	
-	private Fenetre fenetre;
-	
-	public Clavier(boolean enMarche) {
+	public Clavier(boolean enMarche) 
+	{
 		super(enMarche);
 	}
 	
-	private Clavier() {
+	private Clavier() 
+	{
         Rectangle rectangle = new Rectangle();
         VBox vBox = new VBox();
         HBox hBox = new HBox();
@@ -95,10 +96,13 @@ public class Clavier extends ComposantVisible {
         button.setPrefWidth(50.0);
         button.setText("1");
         button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	fenetre.actionClavier(1);
-            }});
+            }
+        });
 
         button0.setMnemonicParsing(false);
         button0.setPrefHeight(31.0);
@@ -106,20 +110,26 @@ public class Clavier extends ComposantVisible {
         button0.setText("2");
         button0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         HBox.setMargin(button0, new Insets(0.0, 8.0, 0.0, 8.0));
-        button0.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button0.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	fenetre.actionClavier(2);
-            }});
+            }
+        });
 
         button1.setMnemonicParsing(false);
         button1.setPrefHeight(31.0);
         button1.setPrefWidth(50.0);
         button1.setText("3");
         button1.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button1.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button1.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	fenetre.actionClavier(3);
-            }});
+            }
+        });
 
         button2.setMnemonicParsing(false);
         button2.setPrefHeight(31.0);
@@ -127,20 +137,26 @@ public class Clavier extends ComposantVisible {
         button2.setText("4");
         button2.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         HBox.setMargin(button2, new Insets(0.0, 8.0, 0.0, 8.0));
-        button2.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button2.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	fenetre.actionClavier(4);
-            }});
+            }
+        });
 
         button3.setMnemonicParsing(false);
         button3.setPrefHeight(31.0);
         button3.setPrefWidth(50.0);
         button3.setText("5");
         button3.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button3.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button3.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	fenetre.actionClavier(5);
-            }});
+            }
+        });
 
         button4.setMnemonicParsing(false);
         button4.setPrefHeight(31.0);
@@ -148,20 +164,26 @@ public class Clavier extends ComposantVisible {
         button4.setText("6");
         button4.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         HBox.setMargin(button4, new Insets(0.0, 8.0, 0.0, 8.0));
-        button4.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button4.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	fenetre.actionClavier(6);
-            }});
+            }
+        });
 
         button5.setMnemonicParsing(false);
         button5.setPrefHeight(31.0);
         button5.setPrefWidth(50.0);
         button5.setText("7");
         button5.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button5.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button5.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	fenetre.actionClavier(7);
-            }});
+            }
+        });
 
         button6.setMnemonicParsing(false);
         button6.setPrefHeight(31.0);
@@ -169,20 +191,26 @@ public class Clavier extends ComposantVisible {
         button6.setText("8");
         button6.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         HBox.setMargin(button6, new Insets(0.0, 8.0, 0.0, 8.0));
-        button6.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button6.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	fenetre.actionClavier(8);
-            }});
+            }
+        });
 
         button7.setMnemonicParsing(false);
         button7.setPrefHeight(31.0);
         button7.setPrefWidth(50.0);
         button7.setText("9");
         button7.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button7.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button7.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	fenetre.actionClavier(9);
-            }});
+            }
+        });
 
         button8.setMnemonicParsing(false);
         button8.setPrefHeight(31.0);
@@ -191,10 +219,13 @@ public class Clavier extends ComposantVisible {
         button8.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         HBox.setMargin(button8, new Insets(0.0, 0.0, 0.0, 8.0));
         VBox.setMargin(hBox, new Insets(0.0));
-        button8.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button8.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	fenetre.actionClavier(0);
-            }});
+            }
+        });
 
         hBox0.setPrefHeight(0.0);
         hBox0.setPrefWidth(973.0);
@@ -206,10 +237,13 @@ public class Clavier extends ComposantVisible {
         button9.setText("A");
         button9.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         HBox.setMargin(button9, new Insets(0.0));
-        button9.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button9.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	fenetre.actionClavier("A");
-            }});
+            }
+        });
 
         button10.setMinWidth(USE_PREF_SIZE);
         button10.setMnemonicParsing(false);
@@ -218,20 +252,26 @@ public class Clavier extends ComposantVisible {
         button10.setText("Z");
         button10.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         HBox.setMargin(button10, new Insets(0.0, 8.0, 0.0, 8.0));
-        button10.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button10.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	fenetre.actionClavier("Z");
-            }});
+            }
+        });
 
         button11.setMnemonicParsing(false);
         button11.setPrefHeight(31.0);
         button11.setPrefWidth(50.0);
         button11.setText("E");
         button11.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button11.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button11.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	fenetre.actionClavier("E");
-            }});
+            }
+        });
 
         button12.setMnemonicParsing(false);
         button12.setPrefHeight(31.0);
@@ -239,20 +279,25 @@ public class Clavier extends ComposantVisible {
         button12.setText("R");
         button12.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         HBox.setMargin(button12, new Insets(0.0, 8.0, 0.0, 8.0));
-        button12.setOnAction(new EventHandler<ActionEvent>(){
+        button12.setOnAction(new EventHandler<ActionEvent>()
+        {
             public void handle(ActionEvent event){
             	fenetre.actionClavier("R");
-            }});
+            }
+        });
 
         button13.setMnemonicParsing(false);
         button13.setPrefHeight(31.0);
         button13.setPrefWidth(50.0);
         button13.setText("T");
         button13.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button13.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button13.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	fenetre.actionClavier("T");
-            }});
+            }
+        });
 
         button14.setMnemonicParsing(false);
         button14.setPrefHeight(31.0);
@@ -260,10 +305,13 @@ public class Clavier extends ComposantVisible {
         button14.setText("Y");
         button14.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         HBox.setMargin(button14, new Insets(0.0, 8.0, 0.0, 8.0));
-        button14.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button14.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	fenetre.actionClavier("Y");
-            }});
+            }
+        });
 
         button15.setMnemonicParsing(false);
         button15.setPrefHeight(31.0);
@@ -271,10 +319,13 @@ public class Clavier extends ComposantVisible {
         button15.setText("U");
         button15.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         HBox.setMargin(button15, new Insets(0.0, 8.0, 0.0, 0.0));
-        button15.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button15.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	fenetre.actionClavier("U");
-            }});
+            }
+        });
 
         button16.setMnemonicParsing(false);
         button16.setPrefHeight(31.0);
@@ -282,10 +333,13 @@ public class Clavier extends ComposantVisible {
         button16.setText("I");
         button16.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         HBox.setMargin(button16, new Insets(0.0));
-        button16.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button16.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	fenetre.actionClavier("I");
-            }});
+            }
+        });
 
         button17.setMnemonicParsing(false);
         button17.setPrefHeight(31.0);
@@ -293,10 +347,13 @@ public class Clavier extends ComposantVisible {
         button17.setText("O");
         button17.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         HBox.setMargin(button17, new Insets(0.0, 8.0, 0.0, 8.0));
-        button17.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button17.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	fenetre.actionClavier("O");
-            }});
+            }
+        });
 
         button18.setMnemonicParsing(false);
         button18.setPrefHeight(31.0);
@@ -304,10 +361,13 @@ public class Clavier extends ComposantVisible {
         button18.setText("P");
         button18.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         VBox.setMargin(hBox0, new Insets(5.0, 0.0, 0.0, 0.0));
-        button18.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button18.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	fenetre.actionClavier("P");
-            }});
+            }
+        });
 
         hBox1.setPrefHeight(0.0);
         hBox1.setPrefWidth(973.0);
@@ -317,10 +377,13 @@ public class Clavier extends ComposantVisible {
         button19.setPrefWidth(50.0);
         button19.setText("Q");
         button19.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button19.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button19.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	fenetre.actionClavier("Q");
-            }});
+            }
+        });
 
         button110.setMnemonicParsing(false);
         button110.setPrefHeight(31.0);
@@ -328,20 +391,26 @@ public class Clavier extends ComposantVisible {
         button110.setText("S");
         button110.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         HBox.setMargin(button110, new Insets(0.0, 8.0, 0.0, 8.0));
-        button110.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button110.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	fenetre.actionClavier("S");
-            }});
+            }
+        });
 
         button111.setMnemonicParsing(false);
         button111.setPrefHeight(31.0);
         button111.setPrefWidth(50.0);
         button111.setText("D");
         button111.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button111.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button111.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	fenetre.actionClavier("D");
-            }});
+            }
+        });
 
         button112.setMnemonicParsing(false);
         button112.setPrefHeight(31.0);
@@ -349,20 +418,26 @@ public class Clavier extends ComposantVisible {
         button112.setText("F");
         button112.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         HBox.setMargin(button112, new Insets(0.0, 8.0, 0.0, 8.0));
-        button112.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button112.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	fenetre.actionClavier("F");
-            }});
+            }
+        });
 
         button113.setMnemonicParsing(false);
         button113.setPrefHeight(31.0);
         button113.setPrefWidth(50.0);
         button113.setText("G");
         button113.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button113.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button113.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	fenetre.actionClavier("G");
-            }});
+            }
+        });
 
         button114.setMnemonicParsing(false);
         button114.setPrefHeight(31.0);
@@ -370,20 +445,26 @@ public class Clavier extends ComposantVisible {
         button114.setText("H");
         button114.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         HBox.setMargin(button114, new Insets(0.0, 8.0, 0.0, 8.0));
-        button114.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button114.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	fenetre.actionClavier("H");
-            }});
+            }
+        });
 
         button115.setMnemonicParsing(false);
         button115.setPrefHeight(31.0);
         button115.setPrefWidth(50.0);
         button115.setText("J");
         button115.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button115.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button115.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	fenetre.actionClavier("J");
-            }});
+            }
+        });
 
         button116.setMnemonicParsing(false);
         button116.setPrefHeight(31.0);
@@ -391,20 +472,26 @@ public class Clavier extends ComposantVisible {
         button116.setText("K");
         button116.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         HBox.setMargin(button116, new Insets(0.0, 8.0, 0.0, 8.0));
-        button116.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button116.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	fenetre.actionClavier("K");
-            }});
+            }
+        });
 
         button117.setMnemonicParsing(false);
         button117.setPrefHeight(31.0);
         button117.setPrefWidth(50.0);
         button117.setText("L");
         button117.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button117.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button117.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	fenetre.actionClavier("L");
-            }});
+            }
+        });
 
         button118.setMnemonicParsing(false);
         button118.setPrefHeight(31.0);
@@ -413,10 +500,13 @@ public class Clavier extends ComposantVisible {
         button118.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         HBox.setMargin(button118, new Insets(0.0, 0.0, 0.0, 8.0));
         VBox.setMargin(hBox1, new Insets(5.0, 0.0, 0.0, 0.0));
-        button118.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button118.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	fenetre.actionClavier("M");
-            }});
+            }
+        });
 
         hBox2.setPrefHeight(31.0);
         hBox2.setPrefWidth(526.0);
@@ -426,10 +516,13 @@ public class Clavier extends ComposantVisible {
         button119.setPrefWidth(50.0);
         button119.setText("W");
         button119.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button119.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button119.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	fenetre.actionClavier("W");
-            }});
+            }
+        });
 
         button1110.setMnemonicParsing(false);
         button1110.setPrefHeight(31.0);
@@ -437,20 +530,26 @@ public class Clavier extends ComposantVisible {
         button1110.setText("X");
         button1110.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         HBox.setMargin(button1110, new Insets(0.0, 8.0, 0.0, 8.0));
-        button1110.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button1110.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	fenetre.actionClavier("X");
-            }});
+            }
+        });
 
         button1111.setMnemonicParsing(false);
         button1111.setPrefHeight(31.0);
         button1111.setPrefWidth(50.0);
         button1111.setText("C");
         button1111.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button1111.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button1111.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	fenetre.actionClavier("C");
-            }});
+            }
+        });
 
         button1112.setMnemonicParsing(false);
         button1112.setPrefHeight(31.0);
@@ -458,20 +557,26 @@ public class Clavier extends ComposantVisible {
         button1112.setText("V");
         button1112.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         HBox.setMargin(button1112, new Insets(0.0, 8.0, 0.0, 8.0));
-        button1112.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button1112.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	fenetre.actionClavier("V");
-            }});
+            }
+        });
 
         button1113.setMnemonicParsing(false);
         button1113.setPrefHeight(31.0);
         button1113.setPrefWidth(50.0);
         button1113.setText("B");
         button1113.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button1113.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button1113.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	fenetre.actionClavier("B");
-            }});
+            }
+        });
 
         button1114.setMnemonicParsing(false);
         button1114.setPrefHeight(31.0);
@@ -479,10 +584,13 @@ public class Clavier extends ComposantVisible {
         button1114.setText("N");
         button1114.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         HBox.setMargin(button1114, new Insets(0.0, 8.0, 0.0, 8.0));
-        button1114.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button1114.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	fenetre.actionClavier("N");
-            }});
+            }
+        });
 
         button1115.setMnemonicParsing(false);
         button1115.setPrefHeight(31.0);
@@ -491,10 +599,13 @@ public class Clavier extends ComposantVisible {
         button1115.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button1115.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         HBox.setMargin(button1115, new Insets(0.0, 8.0, 0.0, 0.0));
-        button1115.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button1115.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	fenetre.actionEffacer();
-            }});
+            }
+        });
 
         button1116.setMnemonicParsing(false);
         button1116.setPrefHeight(31.0);
@@ -502,10 +613,13 @@ public class Clavier extends ComposantVisible {
         button1116.setText("SUIVANT");
         button1116.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         VBox.setMargin(hBox2, new Insets(5.0, 0.0, 0.0, 15.0));
-        button1116.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button1116.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	fenetre.actionSuivant();
-            }});
+            }
+        });
 
         hBox3.setLayoutX(10.0);
         hBox3.setPrefHeight(1.0);
@@ -516,10 +630,13 @@ public class Clavier extends ComposantVisible {
         button1117.setPrefWidth(80.0);
         button1117.setText("RETOUR");
         button1117.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button1117.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button1117.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	fenetre.actionRetour();
-            }});
+            }
+        });
 
         button1118.setMnemonicParsing(false);
         button1118.setPrefHeight(31.0);
@@ -527,10 +644,13 @@ public class Clavier extends ComposantVisible {
         button1118.setText("ESPACE");
         button1118.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         HBox.setMargin(button1118, new Insets(0.0, 8.0, 0.0, 8.0));
-        button1118.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button1118.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	fenetre.actionEspace();
-            }});
+            }
+        });
 
         button1119.setMnemonicParsing(false);
         button1119.setPrefHeight(31.0);
@@ -538,10 +658,13 @@ public class Clavier extends ComposantVisible {
         button1119.setText("ENTRER");
         button1119.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         VBox.setMargin(hBox3, new Insets(5.0, 0.0, 0.0, 0.0));
-        button1119.setOnAction(new EventHandler<ActionEvent>(){
-            public void handle(ActionEvent event){
+        button1119.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
             	fenetre.actionEntrer();
-            }});
+            }
+        });
 
         hBox.getChildren().addAll(button, button0, button1, button2, button3, button4, button5, button6, button7, button8);
         hBox0.getChildren().addAll(button9, button10, button11, button12, button13, button14, button15, button16, button17, button18);
@@ -552,9 +675,15 @@ public class Clavier extends ComposantVisible {
         getChildren().addAll(rectangle, vBox);
     }
 
-	public static Clavier getInstance() {
+	public static Clavier getInstance() 
+	{
     	if (instance == null)
     		instance = new Clavier();
     	return instance;
     }
+	
+	public static void setFenetre(Ecran fen)
+	{
+		fenetre = fen;
+	}
 }
