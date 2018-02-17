@@ -8,10 +8,10 @@ import stockage.CoeurAStockageImpl;
 
 class Controleur 
 {	
-	private ControleurEtat etatActuel = EtatConfiguration.getInstance();
-	private Stack<ControleurEtat> etatsPrecedents;
-	private CoeurAGraphiqueImpl coeurAGraphique = new CoeurAGraphiqueImpl();
-	private CoeurAStockageImpl coeurAStockage = new CoeurAStockageImpl();
+	private static ControleurEtat etatActuel = EtatConfiguration.getInstance();
+	private static Stack<ControleurEtat> etatsPrecedents;
+	private static CoeurAGraphiqueImpl coeurAGraphique = new CoeurAGraphiqueImpl();
+	private static CoeurAStockageImpl coeurAStockage = new CoeurAStockageImpl();
 	
 	public void modifEtat(ControleurEtat etat) 
 	{
@@ -25,7 +25,7 @@ class Controleur
 		return etatsPrecedents;
 	}
 	
-	public CoeurAGraphique getCoeurAGraphique() 
+	public static CoeurAGraphique getCoeurAGraphique() 
 	{
 		return coeurAGraphique;
 	}
@@ -34,7 +34,7 @@ class Controleur
 	{
 		return coeurAStockage;
 	}
-	public ControleurEtat getEtatActuel() 
+	public static ControleurEtat getEtatActuel() 
 	{
 		return etatActuel;
 	}

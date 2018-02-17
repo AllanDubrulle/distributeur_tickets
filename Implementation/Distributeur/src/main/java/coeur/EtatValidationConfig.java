@@ -12,4 +12,8 @@ class EtatValidationConfig extends ControleurEtat
 	{
 		controleur.modifEtat(EtatMenu.getInstance());
 	}
+	public void entree()
+	{
+		controleur.getCoeurAGraphique().afficherSimulation();
+	}
 }

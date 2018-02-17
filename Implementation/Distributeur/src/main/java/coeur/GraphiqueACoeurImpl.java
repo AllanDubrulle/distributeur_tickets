@@ -2,47 +2,45 @@ package coeur;
 
 public class GraphiqueACoeurImpl implements GraphiqueACoeur 
 {	
-	private Controleur controleur;
-	
 	public void choixBillet() 
 	{
-		controleur.getEtatActuel().choixBillet();
+		Controleur.getEtatActuel().choixBillet();
 	}
 	
 	public void choixValidConfig() 
 	{
-		controleur.getEtatActuel().valideConfig();
+		Controleur.getEtatActuel().valideConfig();
 	}
 	
 	public void choixDemarrerSimul() 
 	{
-		controleur.getEtatActuel().demarreSimulation();
+		Controleur.getEtatActuel().demarreSimulation();
 	}
 	
 	public void choixValiderBillet() 
 	{
-		controleur.getEtatActuel().valideBillet();
+		Controleur.getEtatActuel().valideBillet();
 	}
 	
 	public void choixAnnuler() 
 	{
-		controleur.getEtatActuel().annule();
+		Controleur.getEtatActuel().annule();
 	}
 	public void choixPaiement() 
 	{
-		controleur.getEtatActuel().confirmeBillet();
+		Controleur.getEtatActuel().confirmeBillet();
 	}
 	public void choixPaiementParCarte() 
 	{
-		controleur.getEtatActuel().choixParCarte();
+		Controleur.getEtatActuel().choixParCarte();
 	}
 	public void choixPaiementLiquide() 
 	{
-		controleur.getEtatActuel().choixEnLiquide();
+		Controleur.getEtatActuel().choixEnLiquide();
 	}
 	public void choixRetourEcranPrinc() 
 	{
-		controleur.getEtatActuel().retourMenuPrincipal();
+		Controleur.getEtatActuel().retourMenuPrincipal();
 	}
 
 	
