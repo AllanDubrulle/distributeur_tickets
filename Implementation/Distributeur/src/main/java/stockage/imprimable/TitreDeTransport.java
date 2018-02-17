@@ -2,18 +2,19 @@ package stockage.imprimable;
 
 import java.util.Date;
 
-abstract class TitreDeTransport
+public abstract class TitreDeTransport
 {
 	protected Date dateValidite ;
 	protected Date dateExp;
 	protected String gareDepart;
 	protected String gareArrivee;
-	protected int classe;
+	protected Classe classe;
 	protected TypeTitre type = TypeTitre.STANDARD;
 	protected Reduction reduction = Reduction.AUCUNE;
 	protected int montantAPayer;
+
 	
-	public TitreDeTransport(Date dateValidite, Date dateExp, String gareDepart, String gareArrivee, int classe, TypeTitre type, int montantAPayer)
+	public TitreDeTransport(Date dateValidite, Date dateExp, String gareDepart, String gareArrivee,Classe classe, TypeTitre type, int montantAPayer)
 	{
 		this.dateValidite = dateValidite;
 		this.dateExp = dateExp;
@@ -24,7 +25,7 @@ abstract class TitreDeTransport
 		this.montantAPayer = montantAPayer;
 	}
 
-	public TitreDeTransport(Date dateValidite, Date dateExp, String gareDepart, String gareArrivee, int classe, Reduction reduction, int montantAPayer)
+	public TitreDeTransport(Date dateValidite, Date dateExp, String gareDepart, String gareArrivee, Classe classe, Reduction reduction, int montantAPayer)
 	{
 		this.dateValidite = dateValidite;
 		this.dateExp = dateExp;
@@ -35,7 +36,7 @@ abstract class TitreDeTransport
 		this.montantAPayer = montantAPayer;
 	}
 
-	public TitreDeTransport(Date dateValidite, Date dateExp, String gareDepart, String gareArrivee, int classe, int montantAPayer)
+	public TitreDeTransport(Date dateValidite, Date dateExp, String gareDepart, String gareArrivee, Classe classe, int montantAPayer)
 	{
 		this.dateValidite = dateValidite;
 		this.dateExp = dateExp;
@@ -45,7 +46,7 @@ abstract class TitreDeTransport
 		this.montantAPayer = montantAPayer;
 	}
 
-	public TitreDeTransport(Date dateValidite, Date dateExp, String gareDepart, String gareArrivee, int classe, TypeTitre type, Reduction reduction, int montantAPayer)
+	public TitreDeTransport(Date dateValidite, Date dateExp, String gareDepart, String gareArrivee, Classe classe, TypeTitre type, Reduction reduction, int montantAPayer)
 	{
 		this.dateValidite = dateValidite;
 		this.dateExp = dateExp;
