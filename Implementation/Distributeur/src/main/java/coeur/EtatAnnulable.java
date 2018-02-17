@@ -1,20 +1,14 @@
 package coeur;
 
-class EtatAnnulable extends ControleurEtat 
+abstract class EtatAnnulable extends ControleurEtat 
 {	
-	public static EtatAnnulable getInstance() 
-	{
-		if (instance == null)
-			instance = new EtatAnnulable();
-		return (EtatAnnulable) instance;
-	}
 	
 	public void annule() 
 	{
-		controleur.modifEtat(controleur.getEtatsPrecedents().pop());
+		Controleur.getInstance().modifEtat(Controleur.getInstance().getEtatsPrecedents().pop());
 	}
 	public void retourMenuPrincipal()
 	{
-		controleur.modifEtat(EtatMenu.getInstance());
+		Controleur.getInstance().modifEtat(EtatMenu.getInstance());
 	}
 }

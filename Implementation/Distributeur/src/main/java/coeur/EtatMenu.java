@@ -1,19 +1,26 @@
 package coeur;
 
-class EtatMenu extends ControleurEtat 
+public class EtatMenu extends ControleurEtat 
 {	
+	private static EtatMenu instance;
 	public static EtatMenu getInstance() 
 	{
-		if (instance == null)
+		if (instance ==null)
+		{
+			System.out.println("blibli");
 			instance = new EtatMenu();
+		}
 		return (EtatMenu) instance;
 	}
 	
 	public void choixBillet() {
-		controleur.modifEtat(EtatChoixBillet.getInstance());
+		Controleur.getInstance().modifEtat(EtatChoixBillet.getInstance());
 	}
 	public void entree()
 	{
-		controleur.getCoeurAGraphique().afficherAccueil();
+		System.out.println("blibli");
+		Controleur.getInstance().getCoeurAGraphique().afficherAccueil();
 	}
+
+
 }

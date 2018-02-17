@@ -2,12 +2,22 @@ package coeur;
 
 class EtatCreationBillet extends EtatCreationTitre
 {	
+	private static EtatCreationBillet instance;
+	public static EtatCreationBillet getInstance() 
+	{
+		if (instance ==null)
+		{
+			instance = new EtatCreationBillet();
+		}
+		return (EtatCreationBillet) instance;
+	}
+	
 	public void entree() 
 	{
-		controleur.getCoeurAGraphique().afficherRecapBillet();
+		Controleur.getInstance().getCoeurAGraphique().afficherRecapBillet();
 	}
 	public void confirmeBillet()
 	{
-		controleur.modifEtat(EtatPaiement.getInstance());
+		Controleur.getInstance().modifEtat(EtatPaiement.getInstance());
 	}
 }

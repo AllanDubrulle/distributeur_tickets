@@ -11,7 +11,7 @@ abstract class Ecran extends ComposantVisible
 	
 	public Ecran() {};
 	
-	protected GraphiqueACoeurImpl graphAC = new GraphiqueACoeurImpl();
+	protected GraphiqueACoeurImpl graphAC = GraphiqueACoeurImpl.getInstance();
 	protected int pos;
     
 	public abstract void actionClavier(String a);

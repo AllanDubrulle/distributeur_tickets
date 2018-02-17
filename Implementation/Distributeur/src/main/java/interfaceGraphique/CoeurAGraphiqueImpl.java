@@ -7,33 +7,21 @@ import javafx.stage.Stage;
 public class CoeurAGraphiqueImpl implements CoeurAGraphique
 {
 	private static FenetreSimulation fenetreSim = FenetreSimulation.getInstance();
-	private static FenetreConfiguration fenetreConfig = FenetreConfiguration.getInstance();
-	private static Stage primaryStage = new Stage();
-	
-	public void afficherConfiguration() 
+	private static CoeurAGraphiqueImpl instance;
+	private CoeurAGraphiqueImpl()
 	{
-		StackPane root = new StackPane();
-        root.getChildren().add(fenetreConfig);
-        Scene scene = new Scene(root, 600, 400);
-        primaryStage.setResizable(false);
-        primaryStage.setScene(scene);
-        primaryStage.setTitle("Fenêtre de configuration");
-        primaryStage.show();
+		
 	}
 	
-	public void afficherSimulation() 
+	public static CoeurAGraphiqueImpl getInstance()
 	{
-		StackPane root = new StackPane();
-		Stage stage = new Stage();
-        root.getChildren().add(fenetreSim);
-        Scene scene = new Scene(root, 1300, 800);
-        stage.setResizable(false);
-        stage.setScene(scene);
-        stage.setTitle("Fenêtre de simulation");
-        stage.show();
-        primaryStage.close();
-	}
-	
+		if(instance==null)
+		{
+			instance = new CoeurAGraphiqueImpl();
+		}
+		return instance;
+		
+	}	
 	public void afficherAccueil() 
 	{
 		fenetreSim.afficher(FMenu.getInstance());

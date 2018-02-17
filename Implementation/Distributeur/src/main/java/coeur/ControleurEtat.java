@@ -2,8 +2,6 @@ package coeur;
 
 abstract class ControleurEtat 
 {	
-	protected static ControleurEtat instance;
-	protected static Controleur controleur;
 	protected ControleurEtat() {}
 	public void entree() {}
 	public void annule() {}
@@ -15,4 +13,8 @@ abstract class ControleurEtat
 	public void choixParCarte() {}
 	public void choixEnLiquide() {}
 	public void retourMenuPrincipal() {}
+	
+	public String toString() {
+		return this.getClass().getName();
+	}
 }

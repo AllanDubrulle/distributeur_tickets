@@ -3,8 +3,6 @@ package coeur;
 public interface GraphiqueACoeur 
 {	
 	public void choixBillet();
-	public void choixValidConfig();
-	public void choixDemarrerSimul();
 	public void choixValiderBillet();
 	public void choixAnnuler();
 	public void choixRechercheGD();
@@ -45,4 +43,5 @@ public interface GraphiqueACoeur
 	public void choixPaiementParCarte();
 	public void choixPaiementLiquide();
 	public void choixChangerHeure();
+	public void choixValider(); // a retirer test 
 }

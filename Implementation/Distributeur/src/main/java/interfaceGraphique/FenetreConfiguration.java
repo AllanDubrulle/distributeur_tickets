@@ -1,13 +1,15 @@
 package interfaceGraphique;
 
 import javafx.scene.text.*;
+import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.*;
 import javafx.scene.layout.*;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 
-class FenetreConfiguration extends Ecran 
+public class FenetreConfiguration extends Ecran 
 {
     //public ProgressBar test = new ProgressBar(0.1);    
     private static FenetreConfiguration instance;
@@ -109,7 +111,14 @@ class FenetreConfiguration extends Ecran
         {
             public void handle(ActionEvent event)
             {
-            	graphAC.choixValidConfig();
+            		StackPane root = new StackPane();
+            		Stage stage = new Stage();
+                    root.getChildren().add(FenetreSimulation.getInstance());
+                    Scene scene = new Scene(root, 1300, 800);
+                    stage.setResizable(false);
+                    stage.setScene(scene);
+                    stage.setTitle("Fenêtre de simulation");
+                    stage.show();
             }
         });
         

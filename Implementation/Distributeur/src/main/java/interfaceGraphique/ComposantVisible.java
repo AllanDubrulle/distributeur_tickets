@@ -6,7 +6,7 @@ import javafx.scene.layout.*;
 public abstract class ComposantVisible extends Pane 
 {	
 	private boolean enMarche;
-	protected GraphiqueACoeurImpl graphAC = new GraphiqueACoeurImpl(); 
+	protected GraphiqueACoeurImpl graphAC = GraphiqueACoeurImpl.getInstance(); 
 	
 	public ComposantVisible(boolean enMarche) 
 	{

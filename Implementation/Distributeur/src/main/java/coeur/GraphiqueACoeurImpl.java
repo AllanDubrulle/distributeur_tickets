@@ -2,45 +2,59 @@ package coeur;
 
 public class GraphiqueACoeurImpl implements GraphiqueACoeur 
 {	
-	public void choixBillet() 
+	private Controleur controleur = Controleur.getInstance();
+	private static GraphiqueACoeurImpl instance;
+	
+	private GraphiqueACoeurImpl() 
 	{
-		Controleur.getEtatActuel().choixBillet();
+	
 	}
 	
-	public void choixValidConfig() 
+	public static GraphiqueACoeurImpl getInstance()
 	{
-		Controleur.getEtatActuel().valideConfig();
+		if(instance==null)
+		{
+			instance = new GraphiqueACoeurImpl();
+		}
+		return instance;
+		
+	}	
+	
+	public void choixBillet() 
+	{
+		controleur.getEtatActuel().choixBillet();
 	}
 	
 	public void choixDemarrerSimul() 
 	{
-		Controleur.getEtatActuel().demarreSimulation();
+		System.out.println("bli");
+		controleur.getEtatActuel().demarreSimulation();
 	}
 	
 	public void choixValiderBillet() 
 	{
-		Controleur.getEtatActuel().valideBillet();
+		controleur.getEtatActuel().valideBillet();
 	}
 	
 	public void choixAnnuler() 
 	{
-		Controleur.getEtatActuel().annule();
+		controleur.getEtatActuel().annule();
 	}
 	public void choixPaiement() 
 	{
-		Controleur.getEtatActuel().confirmeBillet();
+		controleur.getEtatActuel().confirmeBillet();
 	}
 	public void choixPaiementParCarte() 
 	{
-		Controleur.getEtatActuel().choixParCarte();
+		controleur.getEtatActuel().choixParCarte();
 	}
 	public void choixPaiementLiquide() 
 	{
-		Controleur.getEtatActuel().choixEnLiquide();
+		controleur.getEtatActuel().choixEnLiquide();
 	}
 	public void choixRetourEcranPrinc() 
 	{
-		Controleur.getEtatActuel().retourMenuPrincipal();
+		controleur.getEtatActuel().retourMenuPrincipal();
 	}
 
 	
@@ -213,6 +227,12 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 
 	public void choixTaperCodeAbo() 
 	{
+		
+	}
+
+	@Override
+	public void choixValider() {
+		// a retirer en fonction du choix final 
 		
 	}
 }

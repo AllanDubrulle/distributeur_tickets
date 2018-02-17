@@ -2,6 +2,7 @@ package coeur;
 
 class EtatPaiement extends EtatAnnulable 
 {	
+	private static EtatPaiement instance;
 	public static EtatPaiement getInstance() 
 	{
 		if (instance == null)
@@ -11,15 +12,15 @@ class EtatPaiement extends EtatAnnulable
 	
 	public void choixParCarte() 
 	{
-		controleur.modifEtat(EtatParCarte.getInstance());
+		Controleur.getInstance().modifEtat(EtatParCarte.getInstance());
 	}
 	public void choixEnLiquide() 
 	{
-		controleur.modifEtat(EtatPaiementLiquide.getInstance());
+		Controleur.getInstance().modifEtat(EtatPaiementLiquide.getInstance());
 	}
 	
 	public void entree() 
 	{
-		controleur.getCoeurAGraphique().afficherPaiement();
+		Controleur.getInstance().getCoeurAGraphique().afficherPaiement();
 	}
 }

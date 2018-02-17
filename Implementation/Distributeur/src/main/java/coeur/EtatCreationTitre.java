@@ -1,9 +1,9 @@
 package coeur;
 
-class EtatCreationTitre extends EtatAnnulable 
+abstract class EtatCreationTitre extends EtatAnnulable 
 {	
 	public void confirme() 
 	{
-		controleur.modifEtat(EtatPaiement.getInstance());
+		Controleur.getInstance().modifEtat(EtatPaiement.getInstance());
 	}
 }

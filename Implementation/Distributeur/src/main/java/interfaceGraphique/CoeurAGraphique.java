@@ -2,8 +2,6 @@ package interfaceGraphique;
 
 public interface CoeurAGraphique 
 {
-	public void afficherConfiguration();
-	public void afficherSimulation();
 	public void afficherAccueil();
 	public void afficherChoixBillet();
 	public void afficherChoixAchatAbo();
