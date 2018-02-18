@@ -7,7 +7,6 @@ public class EtatMenu extends ControleurEtat
 	{
 		if (instance ==null)
 		{
-			System.out.println("blibli");
 			instance = new EtatMenu();
 		}
 		return (EtatMenu) instance;

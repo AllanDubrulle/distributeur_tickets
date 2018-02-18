@@ -234,7 +234,7 @@ class FenetreSimulation extends BorderPane
         else if (FenetreConfiguration.getInstance().ecranEtNonClavier())
         {
         	claRe.getChildren().add(Reception.getInstance());
-        	checkMenuItem.setSelected(true);
+        	checkMenuItem10.setSelected(true);
         }
         
         scanLect.getChildren().clear();

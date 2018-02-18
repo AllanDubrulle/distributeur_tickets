@@ -27,7 +27,6 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 	
 	public void choixDemarrerSimul() 
 	{
-		System.out.println("bli");
 		controleur.getEtatActuel().demarreSimulation();
 	}
 	

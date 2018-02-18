@@ -41,8 +41,7 @@ class FSimulationAcceuil extends Ecran
         {
             public void handle(ActionEvent event)
             {
-            	GraphiqueACoeurImpl.getInstance().choixDemarrerSimul();
-            	
+            	GraphiqueACoeurImpl.getInstance().choixDemarrerSimul();	
             }
         });
         getChildren().addAll(rectangle, button);
