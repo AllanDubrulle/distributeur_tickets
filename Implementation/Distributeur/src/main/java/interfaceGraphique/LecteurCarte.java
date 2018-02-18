@@ -6,6 +6,7 @@ import javafx.geometry.*;
 import javafx.scene.control.*;
 import javafx.scene.shape.*;
 import javafx.scene.layout.*;
+import javafx.scene.text.*;
 
 class LecteurCarte extends ComposantVisible 
 {
@@ -58,7 +59,7 @@ class LecteurCarte extends ComposantVisible
 
         hBox.setPrefHeight(37.0);
         hBox.setPrefWidth(110.0);
-
+        
         button.setMnemonicParsing(false);
         button.setText("1");
         button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
@@ -248,7 +249,7 @@ class LecteurCarte extends ComposantVisible
 	
 	public void actionScanneurEff() 
 	{
-		if (passwordField.getText().length() > 4)
+		if (passwordField.getText().length() > 0)
 			passwordField.setText(passwordField.getText().substring(0, passwordField.getText().length()-1));
 	}
 }

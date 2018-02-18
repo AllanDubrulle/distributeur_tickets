@@ -230,7 +230,6 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 		
 	}
 
-	@Override
 	public void choixValider() {
 		// a retirer en fonction du choix final 
 		

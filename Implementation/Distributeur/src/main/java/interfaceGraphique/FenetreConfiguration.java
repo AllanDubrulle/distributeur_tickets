@@ -14,6 +14,7 @@ public class FenetreConfiguration extends Ecran
     //public ProgressBar test = new ProgressBar(0.1);    
     private static FenetreConfiguration instance;
     private RadioButton radioButton, radioButton0, radioButton1, radioButton2, radioButton3, radioButton4;
+    private CheckBox checkBox;
 
     private FenetreConfiguration() 
     {
@@ -27,7 +28,7 @@ public class FenetreConfiguration extends Ecran
         radioButton2 = new RadioButton();
         radioButton3 = new RadioButton();
         radioButton4 = new RadioButton();
-        CheckBox checkBox = new CheckBox();
+        checkBox = new CheckBox();
         Button button = new Button();
 
         setMaxHeight(USE_PREF_SIZE);
@@ -115,7 +116,6 @@ public class FenetreConfiguration extends Ecran
             		
             		StackPane root = new StackPane();
             		Stage stage = new Stage();
-            		System.out.println("ozzqeiozijqijopqz");
             		FenetreSimulation.getInstance().setParametre();
             		root.getChildren().add(FenetreSimulation.getInstance());
                     Scene scene = new Scene(root, 1300, 800);
@@ -178,6 +178,13 @@ public class FenetreConfiguration extends Ecran
     public boolean aucuneFente()
     {
     	if (radioButton4.isSelected())
+    		return true;
+    	return false;
+    }
+    
+    public boolean scanneur()
+    {
+    	if (checkBox.isSelected())
     		return true;
     	return false;
     }
