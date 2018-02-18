@@ -149,8 +149,7 @@ class FenetreSimulation extends BorderPane
         checkMenuItem8.setToggleGroup(t1);
 
         menu4.setMnemonicParsing(false);
-        menu4.setText("Clavier");
-
+        menu4.setText("Clavier et écran");
         checkMenuItem9.setMnemonicParsing(false);
         checkMenuItem9.setText("Clavier et écran tactile");
         checkMenuItem9.setOnAction(new EventHandler<ActionEvent>() {

@@ -1,6 +1,7 @@
 package interfaceGraphique;
 
 import javafx.scene.text.*;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -10,8 +11,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 
 public class FenetreConfiguration extends Ecran 
-{
-    //public ProgressBar test = new ProgressBar(0.1);    
+{ 
     private static FenetreConfiguration instance;
     private RadioButton radioButton, radioButton0, radioButton1, radioButton2, radioButton3, radioButton4;
     private CheckBox checkBox;
@@ -118,18 +118,16 @@ public class FenetreConfiguration extends Ecran
             		Stage stage = new Stage();
             		FenetreSimulation.getInstance().setParametre();
             		root.getChildren().add(FenetreSimulation.getInstance());
-                    Scene scene = new Scene(root, 1300, 800);
+            		Rectangle2D screen = Screen.getPrimary().getVisualBounds();
+                    Scene scene = new Scene(root, screen.getWidth(), screen.getHeight());
                     stage.setResizable(false);
                     stage.setScene(scene);
                     stage.setTitle("Fenêtre de simulation");
                     stage.show();
             }
         });
-        
-        //test.setProgress(0.9);
 
         vBox.getChildren().addAll(text, text0, radioButton, radioButton0, radioButton1, text1, radioButton2, radioButton3, radioButton4, checkBox);
-        //vBox.getChildren().add(test);
         getChildren().addAll(vBox, button);
     }
     

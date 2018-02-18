@@ -1,6 +1,9 @@
+
 import javafx.application.Application;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import interfaceGraphique.*;
 
@@ -10,9 +13,9 @@ public class Main extends Application
 	public void start(Stage stage)
 	{
 		StackPane root = new StackPane();
+		Rectangle2D screen = Screen.getPrimary().getVisualBounds();
         root.getChildren().add(FenetreConfiguration.getInstance());
-        Scene scene = new Scene(root, 600, 400);
-        primaryStage.setResizable(false);
+        Scene scene = new Scene(root, screen.getWidth(), screen.getHeight());
         primaryStage.setScene(scene);
         primaryStage.setTitle("Fenêtre de configuration");
         primaryStage.show();
