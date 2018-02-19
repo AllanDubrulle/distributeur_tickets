@@ -133,7 +133,7 @@ class FAboRenouv2 extends Ecran
         {
             public void handle(ActionEvent event)
             {
-            	graphAC.choixValider();
+            	graphAC.choixValiderRenouvAbo();
             }
         });
 
@@ -206,6 +206,6 @@ class FAboRenouv2 extends Ecran
 	
 	public void actionEntrer() 
 	{
-		graphAC.choixValider();
+		graphAC.choixValiderRenouvAbo();
 	}
 }

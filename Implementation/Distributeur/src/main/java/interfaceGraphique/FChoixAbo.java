@@ -36,7 +36,7 @@ class FChoixAbo extends Ecran
         {
             public void handle(ActionEvent event)
             {
-            	graphAC.choixValider();
+            	graphAC.choixValiderNumAbo();
             }
         });
 
@@ -95,7 +95,7 @@ class FChoixAbo extends Ecran
 	
 	public void actionEntrer() 
 	{
-		graphAC.choixValider();
+		graphAC.choixValiderNumAbo();
 	}
 	
 	public static String getNumAbo()

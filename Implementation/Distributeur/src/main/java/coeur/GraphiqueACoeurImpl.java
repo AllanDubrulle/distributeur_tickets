@@ -30,11 +30,6 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 		controleur.getEtatActuel().demarreSimulation();
 	}
 	
-	public void choixValiderBillet() 
-	{
-		controleur.getEtatActuel().valideBillet();
-	}
-	
 	public void choixAnnuler() 
 	{
 		controleur.getEtatActuel().annule();
@@ -74,12 +69,12 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 	
 	public void choixRenouvAbo() 
 	{
-		
+		controleur.getEtatActuel().choixRenouvAbo();
 	}
 	
 	public void choixAchatAbo() 
 	{
-
+		controleur.getEtatActuel().choixAchatAbo();
 	}
 	
 	public void choixPass() 
@@ -194,7 +189,7 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 
 	public void choixRetour() 
 	{
-		
+		controleur.getEtatActuel().annule();
 	}
 
 
@@ -228,9 +223,44 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 	{
 		
 	}
+	
+	public void choixValiderBillet() 
+	{
+		controleur.getEtatActuel().valideBillet();
+	}
+	
+	public void choixValiderAchatAbo() 
+	{
+		controleur.getEtatActuel().valideAchatAbo();
+	}
 
-	public void choixValider() {
-		// a retirer en fonction du choix final 
-		
+	public void choixValiderRenouvAbo() 
+	{
+		controleur.getEtatActuel().valideRenouvAbo();
+	}
+
+	public void choixValiderNumAbo() 
+	{
+		controleur.getEtatActuel().valideNumAbo();
+	}
+
+	public void choixValiderNumCarte() 
+	{
+		controleur.getEtatActuel().choixCarte();
+	}
+
+	public void choixValiderPassIllimite() 
+	{
+		controleur.getEtatActuel().validePassIllimite();
+	}
+
+	public void choixValiderPass10Trajets() 
+	{
+		controleur.getEtatActuel().validePass10Trajets();
+	}
+
+	public void choixValiderPass10Trajets2Gares() 
+	{
+		controleur.getEtatActuel().validePass10Trajets2Gares();
 	}
 }

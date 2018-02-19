@@ -164,7 +164,7 @@ class FPass3 extends Ecran
         {
             public void handle(ActionEvent event)
             {
-            	graphAC.choixValider();
+            	graphAC.choixValiderPass10Trajets2Gares();
             }
         });
 
@@ -277,6 +277,6 @@ class FPass3 extends Ecran
 	
 	public void actionEntrer() 
 	{
-		graphAC.choixValider();
+		graphAC.choixValiderPass10Trajets2Gares();
 	}
 }

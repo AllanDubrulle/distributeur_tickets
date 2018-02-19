@@ -14,9 +14,7 @@ class Controleur
 	private CoeurAStockageImpl coeurAStockage = new CoeurAStockageImpl();
 	private static Controleur instance;
 	
-	private Controleur() 
-	{
-	}
+	private Controleur() {}
 	
 	public static Controleur getInstance()
 	{

@@ -120,6 +120,7 @@ public class FenetreConfiguration extends Ecran
             		root.getChildren().add(FenetreSimulation.getInstance());
             		Rectangle2D screen = Screen.getPrimary().getVisualBounds();
                     Scene scene = new Scene(root, screen.getWidth(), screen.getHeight());
+                    scene.setFill(javafx.scene.paint.Color.WHITE);
                     stage.setResizable(false);
                     stage.setScene(scene);
                     stage.setTitle("Fenêtre de simulation");

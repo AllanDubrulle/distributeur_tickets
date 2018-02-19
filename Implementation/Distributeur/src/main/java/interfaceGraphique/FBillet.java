@@ -224,7 +224,7 @@ class FBillet extends Ecran
         {
             public void handle(ActionEvent event)
             {
-            	graphAC.choixValider();
+            	graphAC.choixValiderBillet();
             }
         });
 

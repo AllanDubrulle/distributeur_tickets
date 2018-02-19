@@ -35,7 +35,7 @@ class FChoixParCarte extends Ecran
         {
         	public void handle(ActionEvent event) 
         	{
-        		graphAC.choixValider();
+        		graphAC.choixValiderNumCarte();
         	}
         });
 
@@ -98,6 +98,6 @@ class FChoixParCarte extends Ecran
 	
 	public void actionEntrer() 
 	{
-		graphAC.choixValider();
+		graphAC.choixValiderNumCarte();
 	}
 }

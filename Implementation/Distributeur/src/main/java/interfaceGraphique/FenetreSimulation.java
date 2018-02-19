@@ -9,6 +9,8 @@ import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Text;
 import javafx.event.EventHandler;
 
 class FenetreSimulation extends BorderPane 
@@ -219,7 +221,9 @@ class FenetreSimulation extends BorderPane
         }
         else if (FenetreConfiguration.getInstance().fentePiece())
         {
-        	fentes.getChildren().add(FentePiece.getInstance());
+    		Text text = new Text();
+            VBox.setMargin(text, new Insets(40.0, 0.0, 0.0, 0.0));
+        	fentes.getChildren().addAll(text, FentePiece.getInstance());
         	checkMenuItem7.setSelected(true);
         }
         
@@ -232,7 +236,9 @@ class FenetreSimulation extends BorderPane
         }
         else if (FenetreConfiguration.getInstance().ecranEtNonClavier())
         {
-        	claRe.getChildren().add(Reception.getInstance());
+    		Text text = new Text();
+            VBox.setMargin(text, new Insets(97.0, 0.0, 100.0, 0.0));
+        	claRe.getChildren().addAll(text, Reception.getInstance());
         	checkMenuItem10.setSelected(true);
         }
         
@@ -241,6 +247,12 @@ class FenetreSimulation extends BorderPane
         {
         	scanLect.getChildren().add(Scanneur.getInstance());
         	checkMenuItem5.setSelected(true);
+        }
+        else if (!FenetreConfiguration.getInstance().scanneur())
+        {
+    		Text text = new Text();
+            VBox.setMargin(text, new Insets(80.0, 0.0, 0.0, 0.0));
+            scanLect.getChildren().add(text);
         }
         scanLect.getChildren().add(LecteurCarte.getInstance());
         
@@ -261,6 +273,7 @@ class FenetreSimulation extends BorderPane
         fentes.setLayoutY(100.0);
         getChildren().setAll(pane, claRe, fentes, scanLect, fenetre);
     }
+    
     public void mAJComposants()
     {
     	if (checkMenuItem6.isSelected())
@@ -271,7 +284,9 @@ class FenetreSimulation extends BorderPane
     	if (checkMenuItem7.isSelected())
     	{
     		fentes.getChildren().clear();
-    		fentes.getChildren().add(FentePiece.getInstance());
+    		Text text = new Text();
+            VBox.setMargin(text, new Insets(40.0, 0.0, 0.0, 0.0));
+    		fentes.getChildren().addAll(text, FentePiece.getInstance());
     	}
     	if (checkMenuItem8.isSelected())
     		fentes.getChildren().clear();
@@ -288,12 +303,16 @@ class FenetreSimulation extends BorderPane
     	if (checkMenuItem11.isSelected())
     	{
     		claRe.getChildren().clear();
-    		claRe.getChildren().add(Reception.getInstance());
+    		Text text = new Text();
+            VBox.setMargin(text, new Insets(97.0, 0.0, 100.0, 182.5));
+    		claRe.getChildren().addAll(text, Reception.getInstance());
     	}
     	if (!checkMenuItem5.isSelected())
     	{
     		scanLect.getChildren().clear();
-    		scanLect.getChildren().add(LecteurCarte.getInstance());
+    		Text text = new Text();
+            VBox.setMargin(text, new Insets(80.0, 0.0, 0.0, 0.0));
+    		scanLect.getChildren().addAll(text, LecteurCarte.getInstance());
     	}
     	if (checkMenuItem5.isSelected())
     	{

@@ -180,7 +180,7 @@ class FPass1 extends Ecran
         {
             public void handle(ActionEvent event)
             {
-            	graphAC.choixValider();
+            	graphAC.choixValiderPassIllimite();
             }
         });
 
@@ -301,6 +301,6 @@ class FPass1 extends Ecran
 	
 	public void actionEntrer() 
 	{
-		graphAC.choixValider();
+		graphAC.choixValiderPassIllimite();
 	}
 }

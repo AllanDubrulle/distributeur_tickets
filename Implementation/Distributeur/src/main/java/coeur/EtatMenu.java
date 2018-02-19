@@ -12,9 +12,21 @@ public class EtatMenu extends ControleurEtat
 		return (EtatMenu) instance;
 	}
 	
-	public void choixBillet() {
+	public void choixBillet() 
+	{
 		Controleur.getInstance().modifEtat(EtatChoixBillet.getInstance());
 	}
+
+	public void choixRenouvAbo() 
+	{
+		Controleur.getInstance().modifEtat(EtatChoixRenouvAbo.getInstance());
+	}
+	
+	public void choixAchatAbo() 
+	{
+		Controleur.getInstance().modifEtat(EtatChoixAchatAbo.getInstance());
+	}
+	
 	public void entree()
 	{
 		Controleur.getInstance().getCoeurAGraphique().afficherAccueil();
