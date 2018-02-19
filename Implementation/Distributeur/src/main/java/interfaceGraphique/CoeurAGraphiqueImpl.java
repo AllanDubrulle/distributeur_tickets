@@ -8,6 +8,12 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 {
 	private static FenetreSimulation fenetreSim = FenetreSimulation.getInstance();
 	private static CoeurAGraphiqueImpl instance;
+	private Stage pStage = new Stage();
+	
+	public Stage getStage() 
+	{
+		return pStage;
+	}
 	private CoeurAGraphiqueImpl()
 	{
 		
@@ -101,7 +107,6 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	{
 		StackPane root2 = new StackPane();
 		FChoixAbo fen = FChoixAbo.getInstance();
-		Stage pStage = new Stage();
 		Scene sc = new Scene(root2, 400,200);
 		root2.getChildren().add(fen);
 		pStage.setResizable(false);
@@ -139,7 +144,6 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	{
 		StackPane root2 = new StackPane();
 		FChoixParCarte fen = FChoixParCarte.getInstance();
-		Stage pStage = new Stage();
 		Scene sc = new Scene(root2, 400,200);
 		root2.getChildren().add(fen);
 		pStage.setResizable(false);
@@ -194,5 +198,9 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	public void afficherFin() 
 	{
 		fenetreSim.afficher(FFin.getInstance());
+	}
+	public void afficherChoixTaperCode() 
+	{
+		fenetreSim.afficher(FAboRenouv2.getInstance());
 	}
 }

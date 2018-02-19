@@ -50,7 +50,7 @@ class FChoixParCarte extends Ecran
         {
         	public void handle(ActionEvent event) 
         	{
-        		graphAC.choixAnnuler();
+        		graphAC.choixAnnulerChoixCarte();
         	}
         });
 

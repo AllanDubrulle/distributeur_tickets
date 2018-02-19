@@ -38,7 +38,7 @@ class Controleur
 		return etatsPrecedents;
 	}
 	
-	public CoeurAGraphique getCoeurAGraphique() 
+	public CoeurAGraphiqueImpl getCoeurAGraphique() 
 	{
 		return coeurAGraphique;
 	}

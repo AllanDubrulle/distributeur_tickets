@@ -36,12 +36,17 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 	}
 	public void choixPaiement() 
 	{
-		controleur.getEtatActuel().confirmeBillet();
+		controleur.getEtatActuel().confirme();
 	}
 	public void choixPaiementParCarte() 
 	{
 		controleur.getEtatActuel().choixParCarte();
 	}
+	public void choixAnnulerChoixCarte()
+	{
+		controleur.getEtatActuel().choixAnnulerParCarte();
+	}
+	
 	public void choixPaiementLiquide() 
 	{
 		controleur.getEtatActuel().choixEnLiquide();
@@ -189,7 +194,7 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 
 	public void choixRetour() 
 	{
-		controleur.getEtatActuel().annule();
+		controleur.getEtatActuel().retour();
 	}
 
 
@@ -216,12 +221,22 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 
 	public void choixScannerCode() 
 	{
+		controleur.getEtatActuel().scanneCode();
+	}
+	
+	public void choixTaperCode()
+	{
 		
+	}
+	
+	public void choixAnnulerScanner() 
+	{
+		controleur.getEtatActuel().choixAnnulerScanner();
 	}
 
 	public void choixTaperCodeAbo() 
 	{
-		
+		controleur.getEtatActuel().choixTaperCode();	
 	}
 	
 	public void choixValiderBillet() 

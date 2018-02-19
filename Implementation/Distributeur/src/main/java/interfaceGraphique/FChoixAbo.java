@@ -52,7 +52,7 @@ class FChoixAbo extends Ecran
         {
             public void handle(ActionEvent event)
             {
-            	graphAC.choixRetour();
+            	graphAC.choixAnnulerScanner();
             }
         });
 

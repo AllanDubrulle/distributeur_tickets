@@ -32,4 +32,5 @@ public interface CoeurAGraphique
 	public void afficherViderBacRecep();
 	public void afficherResultatsHoraires();
 	public void afficherFin();
+	public void afficherChoixTaperCode();
 }

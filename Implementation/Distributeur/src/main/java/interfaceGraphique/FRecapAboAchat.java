@@ -166,7 +166,7 @@ class FRecapAboAchat extends Ecran
 
         text11.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text11.setStrokeWidth(0.0);
-        text11.setText(FAboAchat.getValidite());
+        text11.setText(FAboAchat.getClasse());
         text11.setWrappingWidth(200.0);
         text11.setFont(new Font("System Bold Italic", 15.0));
         hBox5.setPadding(new Insets(0.0, 0.0, 10.0, 0.0));

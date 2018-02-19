@@ -16,7 +16,7 @@ public class EtatCreationPass10Trajets extends EtatCreationTitre
 	{
 		Controleur.getInstance().getCoeurAGraphique().afficherRecapPass10Trajets();
 	}
-	public void confirmePass10Trajets()
+	public void confirme()
 	{
 		Controleur.getInstance().modifEtat(EtatPaiement.getInstance());
 	}

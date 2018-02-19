@@ -5,8 +5,10 @@ abstract class ControleurEtat
 	protected ControleurEtat() {}
 	public void entree() {}
 	public void annule() {}
+	public void retour() {}
 	public void choixBillet() {}
 	public void choixRenouvAbo() {}
+	public void scanneCode() {}
 	public void choixAchatAbo() {}
 	public void valideConfig() {}
 	public void demarreSimulation() {}
@@ -17,14 +19,12 @@ abstract class ControleurEtat
 	public void validePass10Trajets() {}
 	public void validePass10Trajets2Gares() {}
 	public void valideNumAbo() {}
-	public void confirmeBillet() {}
-	public void confirmeAchatAbo() {}
-	public void confirmeModificationAbo() {}
-	public void confirmePassIllimite() {}
-	public void confirmePass10Trajets() {}
-	public void confirmePass10Trajets2Gares() {}
+	public void choixTaperCode() {}
+	public void choixAnnulerScanner() {}
+	public void confirme() {}
 	public void choixParCarte() {}
 	public void choixCarte() {}
+	public void choixAnnulerParCarte() {}
 	public void choixEnLiquide() {}
 	public void retourMenuPrincipal() {}
 	

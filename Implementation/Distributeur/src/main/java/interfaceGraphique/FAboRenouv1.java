@@ -43,9 +43,9 @@ class FAboRenouv1 extends Ecran
         text.setFont(new Font("System Bold", 22.0));
 
         button.setLayoutX(200.0);
-        button.setLayoutY(185.0);
+        button.setLayoutY(150.0);
         button.setMnemonicParsing(false);
-        button.setPrefWidth(100.0);
+        button.setPrefWidth(200.0);
         button.setText("Scanner le code barre");
         button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button.setOnAction(new EventHandler<ActionEvent>()
@@ -56,10 +56,10 @@ class FAboRenouv1 extends Ecran
             }
         });
         
-        button1.setLayoutX(500.0);
-        button1.setLayoutY(185.0);
+        button1.setLayoutX(200.0);
+        button1.setLayoutY(220.0);
         button1.setMnemonicParsing(false);
-        button1.setPrefWidth(100.0);
+        button1.setPrefWidth(200.0);
         button1.setText("Taper le code");
         button1.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button1.setOnAction(new EventHandler<ActionEvent>()
@@ -84,7 +84,7 @@ class FAboRenouv1 extends Ecran
             }
         });
 
-        getChildren().addAll(rectangle, text, button, button0);
+        getChildren().addAll(rectangle, text, button, button0, button1);
     }
 
     public static FAboRenouv1 getInstance() 

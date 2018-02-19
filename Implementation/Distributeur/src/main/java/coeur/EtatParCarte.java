@@ -20,4 +20,8 @@ class EtatParCarte extends EtatAnnulable
 	{
 		Controleur.getInstance().getCoeurAGraphique().afficherChoixParCarte();
 	}
+	public void choixAnnulerParCarte() 
+	{
+		Controleur.getInstance().getCoeurAGraphique().getStage().close();
+	}
 }

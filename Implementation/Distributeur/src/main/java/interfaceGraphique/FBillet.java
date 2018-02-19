@@ -356,7 +356,7 @@ class FBillet extends Ecran
 
 	public void actionRetour() 
 	{
-		graphAC.choixRetour();
+		graphAC.choixAnnuler();
 	}
 
 	public void actionSuivant() 
