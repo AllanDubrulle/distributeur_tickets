@@ -1,5 +1,6 @@
 package interfaceGraphique;
 
+import Main.*;
 import javafx.scene.text.*;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
@@ -113,7 +114,6 @@ public class FenetreConfiguration extends Ecran
         {
             public void handle(ActionEvent event)
             {
-            		
             		StackPane root = new StackPane();
             		Stage stage = new Stage();
             		FenetreSimulation.getInstance().setParametre();
@@ -125,6 +125,7 @@ public class FenetreConfiguration extends Ecran
                     stage.setScene(scene);
                     stage.setTitle("Fenêtre de simulation");
                     stage.show();
+                    Main.getStage().close();
             }
         });
 
@@ -155,7 +156,7 @@ public class FenetreConfiguration extends Ecran
     
     public boolean ecranEtNonClavier()
     {
-    	if (radioButton2.isSelected())
+    	if (radioButton1.isSelected())
     		return true;
     	return false;
     }

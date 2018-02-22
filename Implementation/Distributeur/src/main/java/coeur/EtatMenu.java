@@ -27,6 +27,18 @@ public class EtatMenu extends ControleurEtat
 		Controleur.getInstance().modifEtat(EtatChoixAchatAbo.getInstance());
 	}
 	
+	public void choixPass()
+	{
+		Controleur.getInstance().modifEtat(EtatChoixPass.getInstance());
+	}
+	
+	public void choixHoraire() 
+	{
+		Controleur.getInstance().modifEtat(EtatChoixHoraire.getInstance());
+	}
+	
+	
+	
 	public void entree()
 	{
 		Controleur.getInstance().getCoeurAGraphique().afficherAccueil();

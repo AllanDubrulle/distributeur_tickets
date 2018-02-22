@@ -225,4 +225,22 @@ class FPass2 extends Ecran
 	{
 		graphAC.choixValiderPass10Trajets();
 	}
+	
+	public static String getNom()
+	{
+		return textField.getText();
+	}
+	
+	public static String getClasse()
+	{
+		if (radioButton.isSelected())
+			return "1e classe";
+		else 
+			return "2e classe";
+	}
+	
+	public static String getReduction()
+	{
+		return textField1.getText();
+	}
 }

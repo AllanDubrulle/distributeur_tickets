@@ -14,6 +14,7 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	{
 		return pStage;
 	}
+	
 	private CoeurAGraphiqueImpl()
 	{
 		
@@ -28,61 +29,56 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 		return instance;
 		
 	}	
+	
 	public void afficherAccueil() 
 	{
 		fenetreSim.afficher(FMenu.getInstance());
 	}
-
+	public void afficherFin() 
+	{
+		fenetreSim.afficher(FFin.getInstance());
+	}
+	
 	public void afficherChoixBillet() 
 	{
 		fenetreSim.afficher(FBillet.getInstance());
 	}
-	
 	public void afficherChoixAchatAbo() 
 	{
 		fenetreSim.afficher(FAboAchat.getInstance());
 	}
-	
 	public void afficherChoixRenouvAbo() 
 	{
 		fenetreSim.afficher(FAboRenouv1.getInstance());
 	}
-	
 	public void afficherChoixPass() 
 	{
 		fenetreSim.afficher(FPassMenu.getInstance());
 	}
-	
 	public void afficherChoixPassIllimite() 
 	{
 		fenetreSim.afficher(FPass1.getInstance());
 	}
-	
 	public void afficherChoixPass10Trajets() 
 	{
 		fenetreSim.afficher(FPass2.getInstance());
 	}
-	
 	public void afficherChoixPass10Trajets2Gares() 
 	{
 		fenetreSim.afficher(FPass3.getInstance());
 	}
-	
 	public void afficherChoixHoraire() 
 	{
 		fenetreSim.afficher(FHoraireMenu.getInstance());
 	}
-	
 	public void afficherChoixItineraire() 
 	{
 		fenetreSim.afficher(FHoraireArEtDep.getInstance());
 	}
-	
 	public void afficherChoixArrivee() 
 	{
 		fenetreSim.afficher(FHoraireArrivee.getInstance());
 	}
-	
 	public void afficherChoixDepart() 
 	{
 		fenetreSim.afficher(FHoraireDepart.getInstance());
@@ -92,15 +88,30 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	{
 		fenetreSim.afficher(FRecapBillet.getInstance());
 	}
-
 	public void afficherRecapAchatAbo() 
 	{
 		fenetreSim.afficher(FRecapAboAchat.getInstance());
 	}
-
 	public void afficherRecapRenouvAbo() 
 	{
 		fenetreSim.afficher(FRecapAboRenouv.getInstance());
+	}
+	public void afficherRecapPassIllimite() 
+	{
+		fenetreSim.afficher(FRecapPass1.getInstance());
+	}
+	public void afficherRecapPass10Trajets() 
+	{
+		fenetreSim.afficher(FRecapPass2.getInstance());
+	}
+	public void afficherRecapPass10Trajets2Gares() 
+	{
+		fenetreSim.afficher(FRecapPass3.getInstance());
+	}
+	
+	public void afficherResultatsHoraires() 
+	{
+		fenetreSim.afficher(FResultatsHoraires.getInstance());
 	}
 	
 	public void afficherNumAbo() 
@@ -114,32 +125,19 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 		pStage.setTitle("Choix du numéro d'abonnement");
 		pStage.show();
 	}
-
-	public void afficherRecapPassIllimite() 
+	public void afficherChoixTaperCode() 
 	{
-		fenetreSim.afficher(FRecapPass1.getInstance());
-	}
-
-	public void afficherRecapPass10Trajets() 
-	{
-		fenetreSim.afficher(FRecapPass2.getInstance());
-	}
-
-	public void afficherRecapPass10Trajets2Gares() 
-	{
-		fenetreSim.afficher(FRecapPass3.getInstance());
+		fenetreSim.afficher(FAboRenouv2.getInstance());
 	}
 	
 	public void afficherPaiement() 
 	{
 		fenetreSim.afficher(FChoixPaiement.getInstance());
 	}
-
 	public void afficherChoixParLiquide() 
 	{
 		fenetreSim.afficher(FChoixParLiquide.getInstance());
 	}
-	
 	public void afficherChoixParCarte() 
 	{
 		StackPane root2 = new StackPane();
@@ -151,22 +149,18 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 		pStage.setTitle("Choix du numéro de carte");
 		pStage.show();
 	}
-
 	public void afficherAttentePIN() 
 	{
 		fenetreSim.afficher(FAttenteCodePIN.getInstance());
-	}
-	
+	}	
 	public void afficherCodePINIncor() 
 	{
 		fenetreSim.afficher(FCodePINIncor.getInstance());
 	}
-
 	public void afficherValidationPaiement() 
 	{
 		fenetreSim.afficher(FPaiementOk.getInstance());
 	}
-	
 	public void afficherRendreMonnaie() 
 	{
 		fenetreSim.afficher(FRendreMonnaie.getInstance());
@@ -176,7 +170,6 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	{
 		fenetreSim.afficher(FImpression.getInstance());
 	}
-	
 	public void afficherViderBacRecep() 
 	{
 		StackPane root2 = new StackPane();
@@ -190,17 +183,4 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 		pStage.show();
 	}
 	
-	public void afficherResultatsHoraires() 
-	{
-		fenetreSim.afficher(FResultatsHoraires.getInstance());
-	}
-	
-	public void afficherFin() 
-	{
-		fenetreSim.afficher(FFin.getInstance());
-	}
-	public void afficherChoixTaperCode() 
-	{
-		fenetreSim.afficher(FAboRenouv2.getInstance());
-	}
 }

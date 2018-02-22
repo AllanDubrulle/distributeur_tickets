@@ -9,7 +9,6 @@ import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
-import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.event.EventHandler;
 
@@ -228,18 +227,20 @@ class FenetreSimulation extends BorderPane
         }
         
         claRe.getChildren().clear();
-        checkMenuItem11.setSelected(true);
-        if (FenetreConfiguration.getInstance().ecranEtClavier() || FenetreConfiguration.getInstance().clavierEtNonEcran())
+        if (FenetreConfiguration.getInstance().ecranEtClavier() ||  FenetreConfiguration.getInstance().clavierEtNonEcran())
         {
         	claRe.getChildren().addAll(Clavier.getInstance(), Reception.getInstance());
-        	checkMenuItem9.setSelected(true);
+        	if (FenetreConfiguration.getInstance().clavierEtNonEcran())
+        		checkMenuItem10.setSelected(true);
+        	else 
+        		checkMenuItem9.setSelected(true);
         }
         else if (FenetreConfiguration.getInstance().ecranEtNonClavier())
         {
-    		Text text = new Text();
-            VBox.setMargin(text, new Insets(97.0, 0.0, 100.0, 0.0));
-        	claRe.getChildren().addAll(text, Reception.getInstance());
-        	checkMenuItem10.setSelected(true);
+    		Text text1 = new Text();
+            VBox.setMargin(text1, new Insets(97.0, 0.0, 100.0, 0.0));
+        	claRe.getChildren().addAll(text1, Reception.getInstance());
+        	checkMenuItem11.setSelected(true);
         }
         
         scanLect.getChildren().clear();
@@ -276,49 +277,43 @@ class FenetreSimulation extends BorderPane
     
     public void mAJComposants()
     {
+		fentes.getChildren().clear();
+		claRe.getChildren().clear();
+		scanLect.getChildren().clear();
+		
     	if (checkMenuItem6.isSelected())
-    	{
-    		fentes.getChildren().clear();
     		fentes.getChildren().addAll(FenteBillet.getInstance(), FentePiece.getInstance());
-    	}
+    	
     	if (checkMenuItem7.isSelected())
     	{
-    		fentes.getChildren().clear();
     		Text text = new Text();
             VBox.setMargin(text, new Insets(40.0, 0.0, 0.0, 0.0));
     		fentes.getChildren().addAll(text, FentePiece.getInstance());
     	}
-    	if (checkMenuItem8.isSelected())
-    		fentes.getChildren().clear();
+    	
     	if (checkMenuItem9.isSelected())
-    	{
-    		claRe.getChildren().clear();
     		claRe.getChildren().addAll(Clavier.getInstance(),Reception.getInstance());
-    	}
+    	
     	if (checkMenuItem10.isSelected())
-    	{
-    		claRe.getChildren().clear();
     		claRe.getChildren().addAll(Clavier.getInstance(), Reception.getInstance());
-    	}
+
     	if (checkMenuItem11.isSelected())
     	{
-    		claRe.getChildren().clear();
     		Text text = new Text();
             VBox.setMargin(text, new Insets(97.0, 0.0, 100.0, 182.5));
     		claRe.getChildren().addAll(text, Reception.getInstance());
     	}
+    	
     	if (!checkMenuItem5.isSelected())
     	{
-    		scanLect.getChildren().clear();
     		Text text = new Text();
             VBox.setMargin(text, new Insets(80.0, 0.0, 0.0, 0.0));
     		scanLect.getChildren().addAll(text, LecteurCarte.getInstance());
     	}
+    	
     	if (checkMenuItem5.isSelected())
-    	{
-    		scanLect.getChildren().clear();
     		scanLect.getChildren().addAll( Scanneur.getInstance(), LecteurCarte.getInstance());
-    	}
+    	
         getChildren().setAll(pane, claRe, fentes, scanLect, fenetre);
     }
 }

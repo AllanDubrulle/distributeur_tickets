@@ -1,3 +1,4 @@
+package Main;
 
 import javafx.application.Application;
 import javafx.geometry.Rectangle2D;
@@ -9,7 +10,8 @@ import interfaceGraphique.*;
 
 public class Main extends Application 
 {	
-	Stage primaryStage = new Stage();
+	private static Stage primaryStage = new Stage();
+	
 	public void start(Stage stage)
 	{
 		StackPane root = new StackPane();
@@ -24,5 +26,10 @@ public class Main extends Application
 	public static void main(String[] args) 
 	{
 		launch(args);
+	}
+	
+	public static Stage getStage()
+	{
+		return primaryStage;
 	}
 }

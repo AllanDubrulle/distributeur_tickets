@@ -208,4 +208,21 @@ class FAboRenouv2 extends Ecran
 	{
 		graphAC.choixValiderRenouvAbo();
 	}
+	
+	public static String getNumAbo()
+	{
+		return textField.getText();
+	}
+	
+	public static String getValidite()
+	{
+		if (radioButton.isSelected())
+			return "1 mois";
+		else if (radioButton0.isSelected())
+			return "3 mois";
+		else if (radioButton1.isSelected())
+			return "6 mois";
+		else
+			return "12 mois";
+	}
 }

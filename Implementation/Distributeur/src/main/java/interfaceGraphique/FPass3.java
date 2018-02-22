@@ -279,4 +279,32 @@ class FPass3 extends Ecran
 	{
 		graphAC.choixValiderPass10Trajets2Gares();
 	}
+	
+	public static String getNom() 
+	{
+		return textField.getText();
+	}
+	
+	public static String getDepart()
+	{
+		return textField0.getText();
+	}
+	
+	public static String getArrivee()
+	{
+		return textField1.getText();
+	}
+	
+	public static String getClasse()
+	{
+		if (radioButton.isSelected())
+			return "1e classe";
+		else
+			return "2e classe";
+	}
+	
+	public static String getReduction()
+	{
+		return textField2.getText();
+	}
 }

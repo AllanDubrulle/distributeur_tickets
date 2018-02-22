@@ -145,11 +145,12 @@ class FHoraireArEtDep extends Ecran
         hBox1.getChildren().addAll(textField1, text3, textField2);
         vBox0.getChildren().addAll(hBox0, hBox1);
         vBox1.getChildren().add(button);
-        hBox.getChildren().addAll(vBox0, vBox0,vBox1);
+        hBox.getChildren().addAll(vBox, vBox0,vBox1);
         getChildren().addAll(rectangle, text, hBox, button0);
     }
     
-    public static FHoraireArEtDep getInstance() {
+    public static FHoraireArEtDep getInstance() 
+    {
     	if (instance == null) 
     		instance = new FHoraireArEtDep();
 		return instance;

@@ -346,8 +346,11 @@ class FBillet extends Ecran
 				if(Integer.parseInt(s) < 2018)
 					textField2.setText("2018");
 				if(Integer.parseInt(textField1.getText()) == 2 && Integer.parseInt(textField2.getText())%4 != 0)
-					if(Integer.parseInt(textField0.getText())>28)
+					if(Integer.parseInt(textField0.getText()) > 28)
 						textField0.setText("28");
+				if(Integer.parseInt(textField1.getText()) == 2 && Integer.parseInt(textField2.getText())%4 == 0)
+					if(Integer.parseInt(textField0.getText()) > 29)
+						textField0.setText("29");
 			}
 			else if (s.length() < 4)
 				textField2.setText(s + a);

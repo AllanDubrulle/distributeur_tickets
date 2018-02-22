@@ -84,7 +84,7 @@ class FRecapPass1 extends Ecran
 
         text1.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1.setStrokeWidth(0.0);
-        text1.setText("(nom)");
+        text1.setText(FPass1.getNom());
         text1.setWrappingWidth(200.0);
         HBox.setMargin(text1, new Insets(0.0, 0.0, 0.0, 161.0));
         text1.setFont(new Font("System Bold Italic", 15.0));
@@ -100,7 +100,7 @@ class FRecapPass1 extends Ecran
 
         text3.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text3.setStrokeWidth(0.0);
-        text3.setText("(gare depart)");
+        text3.setText(FPass1.getDepart());
         text3.setWrappingWidth(200.0);
         text3.setFont(new Font("System Bold Italic", 15.0));
         VBox.setMargin(hBox1, new Insets(0.0, 0.0, 10.0, 0.0));
@@ -115,7 +115,7 @@ class FRecapPass1 extends Ecran
 
         text5.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text5.setStrokeWidth(0.0);
-        text5.setText("(gare arrivee)");
+        text5.setText(FPass1.getArrivee());
         text5.setWrappingWidth(200.0);
         text5.setFont(new Font("System Bold Italic", 15.0));
         VBox.setMargin(hBox2, new Insets(0.0, 0.0, 10.0, 0.0));
@@ -130,7 +130,7 @@ class FRecapPass1 extends Ecran
 
         text7.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text7.setStrokeWidth(0.0);
-        text7.setText("(classe)");
+        text7.setText(FPass1.getClasse());
         text7.setWrappingWidth(200.0);
         text7.setFont(new Font("System Bold Italic", 15.0));
         VBox.setMargin(hBox3, new Insets(0.0, 0.0, 10.0, 0.0));
@@ -145,7 +145,7 @@ class FRecapPass1 extends Ecran
 
         text9.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text9.setStrokeWidth(0.0);
-        text9.setText("(reduction)");
+        text9.setText(FPass1.getReduction());
         text9.setWrappingWidth(200.0);
         text9.setFont(new Font("System Bold Italic", 15.0));
         VBox.setMargin(hBox4, new Insets(0.0, 0.0, 10.0, 0.0));
@@ -160,7 +160,7 @@ class FRecapPass1 extends Ecran
 
         text11.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text11.setStrokeWidth(0.0);
-        text11.setText("(validite)");
+        text11.setText(FPass1.getNbrJours());
         text11.setWrappingWidth(200.0);
         text11.setFont(new Font("System Bold Italic", 15.0));
         HBox.setMargin(text11, new Insets(0.0, 0.0, 0.0, 10.0));
