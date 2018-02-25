@@ -11,11 +11,6 @@ public class EtatChoixRenouvAbo extends EtatAnnulable
 		return (EtatChoixRenouvAbo) instance;
 	}
 	
-	public void valideRenouvAbo() 
-	{
-		Controleur.getInstance().modifEtat(EtatModificationAbo.getInstance());
-	}
-	
 	public void entree() 
 	{
 		Controleur.getInstance().getCoeurAGraphique().afficherChoixRenouvAbo();
@@ -23,16 +18,11 @@ public class EtatChoixRenouvAbo extends EtatAnnulable
 	
 	public void scanneCode() 
 	{
-		Controleur.getInstance().getCoeurAGraphique().afficherNumAbo();
-	}
-	
-	public void choixAnnulerScanner() 
-	{
-		Controleur.getInstance().getCoeurAGraphique().getStage().close();
+		Controleur.getInstance().modifEtat(EtatChoixScannerCode.getInstance());
 	}
 	
 	public void choixTaperCode() 
 	{
-		Controleur.getInstance().getCoeurAGraphique().afficherChoixTaperCode();
+		Controleur.getInstance().modifEtat(EtatChoixTaperCode.getInstance());
 	}
 }

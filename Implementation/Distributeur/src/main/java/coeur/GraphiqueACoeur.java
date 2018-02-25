@@ -36,7 +36,6 @@ public interface GraphiqueACoeur
 	
 	public void choixScannerCode();
 	public void choixTaperCodeAbo();
-	public void choixTaperCode();
 	public void choixAnnulerScanner();
 	public void choixValiderNumAbo();
 	

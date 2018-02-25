@@ -37,11 +37,10 @@ public class EtatMenu extends ControleurEtat
 		Controleur.getInstance().modifEtat(EtatChoixHoraire.getInstance());
 	}
 	
-	
-	
 	public void entree()
 	{
-		Controleur.getInstance().getCoeurAGraphique().afficherAccueil();
+		Controleur.getInstance().getCoeurAGraphique().afficherMenu();
+		Controleur.getInstance().getEtatsPrecedents().clear();
 	}
 
 

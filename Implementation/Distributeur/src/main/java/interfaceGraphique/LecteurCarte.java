@@ -6,12 +6,12 @@ import javafx.geometry.*;
 import javafx.scene.control.*;
 import javafx.scene.shape.*;
 import javafx.scene.layout.*;
-import javafx.scene.text.*;
 
 class LecteurCarte extends ComposantVisible 
 {
 	private static LecteurCarte instance;
-	private static PasswordField passwordField;
+	private PasswordField passwordField;
+	private Button button, button0, button1, button2, button3, button4, button5, button6, button7, button8, button9, button10, button11;
 	
 	public LecteurCarte(boolean enMarche) 
 	{
@@ -24,22 +24,22 @@ class LecteurCarte extends ComposantVisible
         VBox vBox = new VBox();
         passwordField = new PasswordField();
         HBox hBox = new HBox();
-        Button button = new Button();
-        Button button0 = new Button();
-        Button button1 = new Button();
+        button = new Button();
+        button0 = new Button();
+        button1 = new Button();
         HBox hBox0 = new HBox();
-        Button button2 = new Button();
-        Button button3 = new Button();
-        Button button4 = new Button();
+        button2 = new Button();
+        button3 = new Button();
+        button4 = new Button();
         HBox hBox1 = new HBox();
-        Button button5 = new Button();
-        Button button6 = new Button();
-        Button button7 = new Button();
+        button5 = new Button();
+        button6 = new Button();
+        button7 = new Button();
         HBox hBox2 = new HBox();
-        Button button8 = new Button();
-        Button button9 = new Button();
-        Button button10 = new Button();
-        Button button11 = new Button();
+        button8 = new Button();
+        button9 = new Button();
+        button10 = new Button();
+        button11 = new Button();
 
         setPrefHeight(250.0);
         setPrefWidth(200.0);
@@ -218,7 +218,7 @@ class LecteurCarte extends ComposantVisible
         button11.setText("Insérer carte");
         button11.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         VBox.setMargin(button11, new Insets(0.0, 0.0, 0.0, 47.0));
-        button.setOnAction(new EventHandler<ActionEvent>()
+        button11.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -251,5 +251,40 @@ class LecteurCarte extends ComposantVisible
 	{
 		if (passwordField.getText().length() > 0)
 			passwordField.setText(passwordField.getText().substring(0, passwordField.getText().length()-1));
+	}
+	
+	public Button getButton(int i)
+	{
+		if (i == 0)
+			return button;
+		else if (i == 1)
+			return button0;
+		else if (i == 2)
+			return button1;
+		else if (i == 3)
+			return button2;
+		else if (i == 4)
+			return button3;
+		else if (i == 5)
+			return button4;
+		else if (i == 6)
+			return button5;
+		else if (i == 7)
+			return button6;
+		else if (i == 8)
+			return button7;
+		else if (i == 9)
+			return button8;
+		else if (i == 10)
+			return button9;
+		else if (i == 11)
+			return button10;
+		else
+			return button11;
+	}
+	
+	public PasswordField getField()
+	{
+		return passwordField;
 	}
 }

@@ -16,8 +16,4 @@ public class EtatCreationAbo extends EtatCreationTitre
 	{
 		Controleur.getInstance().getCoeurAGraphique().afficherRecapAchatAbo();
 	}
-	public void confirme()
-	{
-		Controleur.getInstance().modifEtat(EtatPaiement.getInstance());
-	}
 }

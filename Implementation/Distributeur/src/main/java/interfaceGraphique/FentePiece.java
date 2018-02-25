@@ -8,6 +8,7 @@ import javafx.scene.shape.*;
 class FentePiece extends ComposantVisible
 {
 	private static FentePiece instance;
+	private Button button, button0, button1, button2, button3, button4, button5, button6;
 	
 	public FentePiece(boolean enMarche) 
 	{
@@ -18,14 +19,14 @@ class FentePiece extends ComposantVisible
 	{
         Circle circle = new Circle();
         Rectangle rectangle = new Rectangle();
-        Button button = new Button();
-        Button button0 = new Button();
-        Button button1 = new Button();
-        Button button2 = new Button();
-        Button button3 = new Button();
-        Button button4 = new Button();
-        Button button5 = new Button();
-        Button button6 = new Button();
+        button = new Button();
+        button0 = new Button();
+        button1 = new Button();
+        button2 = new Button();
+        button3 = new Button();
+        button4 = new Button();
+        button5 = new Button();
+        button6 = new Button();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -169,7 +170,7 @@ class FentePiece extends ComposantVisible
             	graphAC.choix20cts();
             }
         });
-
+        
         getChildren().addAll(circle, rectangle, button, button0, button1, button2, button3, button4, button5, button6);
     }
 
@@ -179,4 +180,24 @@ class FentePiece extends ComposantVisible
     		instance = new FentePiece();
     	return instance;
     }
+	
+	public Button getButton(int i)
+	{
+		if (i == 0)
+			return button;
+		else if (i == 1)
+			return button0;
+		else if (i == 2)
+			return button1;
+		else if (i == 3)
+			return button2;
+		else if (i == 4)
+			return button3;
+		else if (i == 5)
+			return button4;
+		else if (i == 6)
+			return button5;
+		else
+			return button6;
+	}
 }

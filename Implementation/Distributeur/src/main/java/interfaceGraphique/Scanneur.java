@@ -1,11 +1,5 @@
 package interfaceGraphique;
 
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.geometry.Insets;
-import javafx.scene.control.Button;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
 import javafx.scene.shape.Rectangle;
 
 class Scanneur extends ComposantVisible 
@@ -20,8 +14,6 @@ class Scanneur extends ComposantVisible
 	private Scanneur()
 	{
 		Rectangle rectangle = new Rectangle();
-		Button button = new Button();
-		VBox vBox = new VBox();
     
 		setMaxHeight(USE_PREF_SIZE);
 		setMaxWidth(USE_PREF_SIZE);
@@ -39,22 +31,7 @@ class Scanneur extends ComposantVisible
 		rectangle.setStrokeType(javafx.scene.shape.StrokeType.INSIDE);
 		rectangle.setWidth(200.0);
 		
-		button.setMnemonicParsing(false);
-        button.setText("Scanner code");
-        button.setPrefWidth(200.0);
-        button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button.setOnAction(new EventHandler<ActionEvent>()
-        {
-            public void handle(ActionEvent event)
-            {
-            	;
-            }
-        });
-		
-        VBox.setMargin(rectangle, new Insets(0.0, 0.0, 5.0, 0.0));
-        
-		vBox.getChildren().addAll(rectangle, button);
-		getChildren().add(vBox);
+		getChildren().add(rectangle);
 	}
 
 	public static Scanneur getInstance() 

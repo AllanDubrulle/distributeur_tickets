@@ -12,6 +12,11 @@ class EtatAccueil extends ControleurEtat
 		return (EtatAccueil) instance;
 	}
 	
+	public void entree()
+	{
+		Controleur.getInstance().getCoeurAGraphique().afficherAccueil();
+	}
+	
 	public void demarreSimulation()
 	{
 		Controleur.getInstance().modifEtat(EtatMenu.getInstance());

@@ -1,17 +1,17 @@
 package coeur;
 
-class EtatAttentePIN extends EtatAnnulable 
+class EtatPINIncorrect extends EtatAnnulable 
 {	
-	private static EtatAttentePIN instance;
+	private static EtatPINIncorrect instance;
 	private String carteBancaire;
 	
-	public static EtatAttentePIN getInstance() 
+	public static EtatPINIncorrect getInstance() 
 	{
 		if (instance ==null)
 		{
-			instance = new EtatAttentePIN();
+			instance = new EtatPINIncorrect();
 		}
-		return (EtatAttentePIN) instance;
+		return (EtatPINIncorrect) instance;
 	}
 	
 	public void setCarteBancaire(String carteBancaire) 
@@ -21,7 +21,7 @@ class EtatAttentePIN extends EtatAnnulable
 	
 	public void entree() 
 	{
-		Controleur.getInstance().getCoeurAGraphique().afficherAttentePIN();
+		Controleur.getInstance().getCoeurAGraphique().afficherCodePINIncor();
 	}
 	
 	public void validePIN(int codePIN) 
@@ -31,6 +31,6 @@ class EtatAttentePIN extends EtatAnnulable
 	}
 	public void choixPINOk()
 	{
-		Controleur.getInstance().modifEtat(EtatPINIncorrect.getInstance());
+		Controleur.getInstance().modifEtat(EtatValidationPaiement.getInstance());
 	}
 }

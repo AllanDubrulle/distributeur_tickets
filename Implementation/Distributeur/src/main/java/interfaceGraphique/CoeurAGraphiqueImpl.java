@@ -9,10 +9,15 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	private static FenetreSimulation fenetreSim = FenetreSimulation.getInstance();
 	private static CoeurAGraphiqueImpl instance;
 	private Stage pStage = new Stage();
+	private Stage pStage2 = new Stage();
 	
 	public Stage getStage() 
 	{
 		return pStage;
+	}
+	public Stage getStage2() 
+	{
+		return pStage2;
 	}
 	
 	private CoeurAGraphiqueImpl()
@@ -31,6 +36,10 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	}	
 	
 	public void afficherAccueil() 
+	{
+		fenetreSim.afficher(FSimulationAcceuil.getInstance());
+	}
+	public void afficherMenu() 
 	{
 		fenetreSim.afficher(FMenu.getInstance());
 	}
@@ -96,6 +105,14 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	{
 		fenetreSim.afficher(FRecapAboRenouv.getInstance());
 	}
+	public void afficherRecapRenouvAboScanne() 
+	{
+		fenetreSim.afficher(FRecapAboRenouvScanne.getInstance());
+	}
+	public void afficherRenouvScanne()
+	{
+		fenetreSim.afficher(FAboRenouvScanne.getInstance());
+	}
 	public void afficherRecapPassIllimite() 
 	{
 		fenetreSim.afficher(FRecapPass1.getInstance());
@@ -149,6 +166,10 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 		pStage.setTitle("Choix du numéro de carte");
 		pStage.show();
 	}
+	public void afficherInsertionCarte() 
+	{
+		fenetreSim.afficher(FInsererCarte.getInstance());
+	}
 	public void afficherAttentePIN() 
 	{
 		fenetreSim.afficher(FAttenteCodePIN.getInstance());
@@ -174,13 +195,13 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	{
 		StackPane root2 = new StackPane();
 		FBacReception fen = FBacReception.getInstance();
-		Stage pStage = new Stage();
+		pStage2 = new Stage();
 		Scene sc = new Scene(root2, 400,200);
 		root2.getChildren().add(fen);
-		pStage.setResizable(false);
-		pStage.setScene(sc);
-		pStage.setTitle("Vider le bac de réception");
-		pStage.show();
+		pStage2.setResizable(false);
+		pStage2.setScene(sc);
+		pStage2.setTitle("Vider le bac de réception");
+		pStage2.show();
 	}
 	
 }

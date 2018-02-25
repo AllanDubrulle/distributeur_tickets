@@ -28,10 +28,12 @@ abstract class ControleurEtat
 	public void valideBillet() {}
 	public void valideAchatAbo() {}
 	public void valideRenouvAbo() {}
+	public void valideRenouvAboScanne() {}
 	public void validePassIllimite() {}
 	public void validePass10Trajets() {}
 	public void validePass10Trajets2Gares() {}
 	public void valideNumAbo() {}
+	public void valideNumAboScanne() {}
 
 	public void scanneCode() {}
 	public void choixTaperCode() {}
@@ -39,8 +41,15 @@ abstract class ControleurEtat
 	
 	public void choixParCarte() {}
 	public void choixCarte() {}
+	public void choixInsererCarte() {}
 	public void choixAnnulerParCarte() {}
 	public void choixEnLiquide() {}
+	public void choixPINOk() {}
+	
+	public void choixOui() {}
+	public void choixNon() {}
+	public void choixOk() {}
+	
 	
 	public String toString() 
 	{

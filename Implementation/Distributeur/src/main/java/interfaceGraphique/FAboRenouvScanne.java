@@ -8,21 +8,19 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.layout.*;
 
-class FAboRenouv2 extends Ecran 
+class FAboRenouvScanne extends Ecran 
 {
-    private static FAboRenouv2 instance;
+    private static FAboRenouvScanne instance;
     private static RadioButton radioButton, radioButton0, radioButton1, radioButton2;
-    private static TextField textField;
-    private static int pos = 0;
-    
-    private FAboRenouv2() 
+    private static Text text2;
+    private FAboRenouvScanne() 
     {
         Rectangle rectangle = new Rectangle();
         VBox vBox = new VBox();
         HBox hBox = new HBox();
         HBox hBox0 = new HBox();
         Text text = new Text();
-        textField = new TextField();
+        text2 = new Text();
         HBox hBox1 = new HBox();
         Text text0 = new Text();
         radioButton = new RadioButton();
@@ -63,10 +61,9 @@ class FAboRenouv2 extends Ecran
         text.setStrokeWidth(0.0);
         text.setText("Numéro de l'abonnement : ");
         HBox.setMargin(text, new Insets(0.0));
-
-        textField.setPrefHeight(31.0);
-        textField.setPrefWidth(250.0);
-        HBox.setMargin(textField, new Insets(0.0, 0.0, 10.0, 21.0));
+        
+        text2.setText(FChoixAbo.getNumAbo());
+        HBox.setMargin(text2, new Insets(0.0, 0.0, 10.0, 21.0));
 
         hBox1.setPrefHeight(41.0);
         hBox1.setPrefWidth(725.0);
@@ -134,20 +131,20 @@ class FAboRenouv2 extends Ecran
         {
             public void handle(ActionEvent event)
             {
-            	graphAC.choixValiderRenouvAbo();
+            	graphAC.choixValiderRenouvAboScanne();
             }
         });
 
-        hBox0.getChildren().addAll(text, textField);
+        hBox0.getChildren().addAll(text, text2);
         hBox1.getChildren().addAll(text0, radioButton, radioButton0, radioButton1, radioButton2);
         vBox.getChildren().addAll(hBox, hBox0, hBox1);
         getChildren().addAll(rectangle, vBox, text1, button, button0);
     }
 
-    public static FAboRenouv2 getInstance() 
+    public static FAboRenouvScanne getInstance() 
     {
     	if (instance == null)
-    		instance = new FAboRenouv2();
+    		instance = new FAboRenouvScanne();
     	return instance;
     }
     
@@ -155,23 +152,14 @@ class FAboRenouv2 extends Ecran
 
 	public void actionClavier(int a) 
 	{
-		if (pos == 0)
-		{
-			String s = textField.getText();
-			textField.setText(s + a);
-		}
-		else
-		{
-			if (a == 1)
-				radioButton.setSelected(true);
-			else if (a == 2)
-				radioButton0.setSelected(true);
-			else if (a == 3)
-				radioButton1.setSelected(true);
-			else if (a == 4)
-				radioButton2.setSelected(true);
-		}
-		
+		if (a == 1)
+			radioButton.setSelected(true);
+		else if (a == 2)
+			radioButton0.setSelected(true);
+		else if (a == 3)
+			radioButton1.setSelected(true);
+		else if (a == 4)
+			radioButton2.setSelected(true);
 	}
 
 	public void actionRetour() 
@@ -179,40 +167,20 @@ class FAboRenouv2 extends Ecran
 		graphAC.choixAnnuler();
 	}
 
-	public void actionSuivant() 
-	{
-		if (pos == 1)
-		{
-			textField.requestFocus();
-			pos = 0;
-		}
-		else
-		{
-			radioButton.requestFocus();
-			pos ++;
-		}
-	}
+	public void actionSuivant() {}
 
 	public void actionEspace() {}
 
-	public void actionEffacer() 
-	{
-		if (pos == 0)
-		{
-			String s = textField.getText();
-			if (s.length()>0)
-				textField.setText(s.substring(0, s.length()-1));
-		}
-	}
+	public void actionEffacer() {}
 	
 	public void actionEntrer() 
 	{
-		graphAC.choixValiderRenouvAbo();
+		graphAC.choixValiderRenouvAboScanne();
 	}
 	
 	public static String getNumAbo()
 	{
-		return textField.getText();
+		return text2.getText();
 	}
 	
 	public static String getValidite()

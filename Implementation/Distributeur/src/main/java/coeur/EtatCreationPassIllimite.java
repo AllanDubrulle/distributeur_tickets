@@ -16,8 +16,4 @@ public class EtatCreationPassIllimite extends EtatCreationTitre
 	{
 		Controleur.getInstance().getCoeurAGraphique().afficherRecapPassIllimite();
 	}
-	public void confirme()
-	{
-		Controleur.getInstance().modifEtat(EtatPaiement.getInstance());
-	}
 }

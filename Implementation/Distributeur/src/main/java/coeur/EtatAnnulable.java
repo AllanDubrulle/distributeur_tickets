@@ -10,12 +10,11 @@ abstract class EtatAnnulable extends ControleurEtat
 	
 	public void annule() 
 	{
-		Controleur.getInstance().getEtatsPrecedents().clear();
 		Controleur.getInstance().modifEtat(EtatMenu.getInstance());
 	}
 	
 	public void retourMenuPrincipal()
 	{
-		Controleur.getInstance().modifEtat(EtatMenu.getInstance());
+		Controleur.getInstance().modifEtat(EtatAccueil.getInstance());
 	}
 }

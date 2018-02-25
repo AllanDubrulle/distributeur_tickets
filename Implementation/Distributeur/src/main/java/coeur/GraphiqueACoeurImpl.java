@@ -31,15 +31,15 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 	}
 	public void choixOk() 
 	{
-		
+		controleur.getEtatActuel().choixOk();
 	}
 	public void choixOui() 
 	{
-		
+		controleur.getEtatActuel().choixNon();
 	}
 	public void choixNon() 
 	{
-		
+		controleur.getEtatActuel().choixOui();
 	}
 	public void choixRetourEcranPrinc() 
 	{
@@ -120,6 +120,10 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 	{
 		controleur.getEtatActuel().valideRenouvAbo();
 	}
+	public void choixValiderRenouvAboScanne() 
+	{
+		controleur.getEtatActuel().valideRenouvAboScanne();
+	}
 	public void choixValiderPassIllimite() 
 	{
 		controleur.getEtatActuel().validePassIllimite();
@@ -137,10 +141,7 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 	{
 		controleur.getEtatActuel().scanneCode();
 	}
-	public void choixTaperCode()
-	{
-		
-	}
+	
 	public void choixAnnulerScanner() 
 	{
 		controleur.getEtatActuel().choixAnnulerScanner();
@@ -152,6 +153,10 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 	public void choixValiderNumAbo() 
 	{
 		controleur.getEtatActuel().valideNumAbo();
+	}
+	public void choixValiderNumAboScanne() 
+	{
+		controleur.getEtatActuel().valideNumAboScanne();
 	}
 	
 	public void choix5eur() 
@@ -205,11 +210,11 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 	
 	public void choixScanneurOK() 
 	{
-		
+		controleur.getEtatActuel().choixPINOk();
 	}
 	public void choixScanneurInserer() 
 	{
-			
+		controleur.getEtatActuel().choixInsererCarte();
 	}
 	
 	public void choixPaiement() 

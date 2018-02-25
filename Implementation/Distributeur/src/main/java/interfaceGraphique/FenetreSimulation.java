@@ -72,12 +72,27 @@ class FenetreSimulation extends BorderPane
 
         checkMenuItem.setMnemonicParsing(false);
         checkMenuItem.setText("Lecteur de cartes");
+        checkMenuItem.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent e) {
+            	mAJComposants();
+            }
+        });
 
         checkMenuItem0.setMnemonicParsing(false);
         checkMenuItem0.setText("Fente à  billets");
+        checkMenuItem0.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent e) {
+            	mAJComposants();
+            }
+        });
 
         checkMenuItem1.setMnemonicParsing(false);
         checkMenuItem1.setText("Fente à  pièces");
+        checkMenuItem1.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent e) {
+            	mAJComposants();
+            }
+        });
 
         checkMenuItem2.setMnemonicParsing(false);
         checkMenuItem2.setText("Scanneur de codes");
@@ -313,6 +328,44 @@ class FenetreSimulation extends BorderPane
     	
     	if (checkMenuItem5.isSelected())
     		scanLect.getChildren().addAll( Scanneur.getInstance(), LecteurCarte.getInstance());
+    	
+    	if (checkMenuItem.isSelected()) 
+    	{
+    		for (int i = 0; i < 13; i++)
+    			LecteurCarte.getInstance().getButton(i).setDisable(true);
+    		LecteurCarte.getInstance().getField().setDisable(true);
+    	}
+    	
+    	if (checkMenuItem1.isSelected())
+    	{
+    		for (int i = 0; i < 8; i++)
+    			FentePiece.getInstance().getButton(i).setDisable(true);
+    	}
+    	
+    	if (checkMenuItem0.isSelected())
+    	{
+    		for (int i = 0; i < 4; i++)
+    			FenteBillet.getInstance().getButton(i).setDisable(true);
+    	}
+    	
+    	if (!checkMenuItem.isSelected()) 
+    	{
+    		for (int i = 0; i < 13; i++)
+    			LecteurCarte.getInstance().getButton(i).setDisable(false);
+    		LecteurCarte.getInstance().getField().setDisable(false);
+    	}
+    	
+    	if (!checkMenuItem1.isSelected())
+    	{
+    		for (int i = 0; i < 8; i++)
+    			FentePiece.getInstance().getButton(i).setDisable(false);
+    	}
+    	
+    	if (!checkMenuItem0.isSelected())
+    	{
+    		for (int i = 0; i < 4; i++)
+    			FenteBillet.getInstance().getButton(i).setDisable(false);
+    	}
     	
         getChildren().setAll(pane, claRe, fentes, scanLect, fenetre);
     }

@@ -8,6 +8,7 @@ import javafx.scene.shape.*;
 class FenteBillet extends ComposantVisible 
 {
 	private static FenteBillet instance;
+	private Button button, button1, button0, button2;
 	
 	public FenteBillet(boolean enMarche) 
 	{
@@ -17,10 +18,10 @@ class FenteBillet extends ComposantVisible
 	private FenteBillet() 
 	{
         Rectangle rectangle = new Rectangle();
-        Button button = new Button();
-        Button button0 = new Button();
-        Button button1 = new Button();
-        Button button2 = new Button();
+        button = new Button();
+        button0 = new Button();
+        button1 = new Button();
+        button2 = new Button();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -107,4 +108,17 @@ class FenteBillet extends ComposantVisible
     		instance = new FenteBillet();
     	return instance;
     }
+	
+	public Button getButton(int i)
+	{
+		if (i == 0)
+			return button;
+		else if (i == 1)
+			return button0;
+		else if (i == 2)
+			return button1;
+		else
+			return button2;
+		
+	}
 }

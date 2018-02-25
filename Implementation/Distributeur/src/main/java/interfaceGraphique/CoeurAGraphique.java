@@ -2,7 +2,7 @@ package interfaceGraphique;
 
 public interface CoeurAGraphique 
 {
-	public void afficherAccueil();
+	public void afficherMenu();
 	public void afficherFin();
 	
 	public void afficherChoixBillet();

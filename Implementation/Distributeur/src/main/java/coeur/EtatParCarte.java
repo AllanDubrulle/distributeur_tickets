@@ -13,8 +13,15 @@ class EtatParCarte extends EtatAnnulable
 	public void choixCarte(String carteBancaire) 
 	{
 		EtatAttentePIN.getInstance().setCarteBancaire(carteBancaire);
-		Controleur.getInstance().modifEtat(EtatAttentePIN.getInstance());
+		Controleur.getInstance().modifEtat(EtatAttenteInsertionCarte.getInstance());
+		Controleur.getInstance().getCoeurAGraphique().getStage().close();
 	}
+	public void choixCarte() 
+	{
+		Controleur.getInstance().modifEtat(EtatAttenteInsertionCarte.getInstance());
+		Controleur.getInstance().getCoeurAGraphique().getStage().close();
+	}
+	//cette dernière méthode est pour les tests, à modifier évidemment !
 	
 	public void entree() 
 	{
