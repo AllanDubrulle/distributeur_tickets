@@ -161,51 +161,55 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 	
 	public void choix5eur() 
 	{
-			
+		controleur.getEtatActuel().inserer(500);
 	}
 	public void choix10eur() 
 	{
-			
+		controleur.getEtatActuel().inserer(1000);
 	}
 	public void choix50eur() 
 	{
-		
+		controleur.getEtatActuel().inserer(5000);
 	}
 	public void choix20eur() 
 	{
-		
+		controleur.getEtatActuel().inserer(2000);
 	}
 	public void choix1ct() 
 	{
-			
+		controleur.getEtatActuel().inserer(1);
 	}
 	public void choix2cts() 
 	{
-		
+		controleur.getEtatActuel().inserer(2);
 	}
 	public void choix5cts() 
 	{
-			
+		controleur.getEtatActuel().inserer(5);
 	}
 	public void choix2eur() 
 	{
-			
+		controleur.getEtatActuel().inserer(200);
 	}
 	public void choix10cts() 
 	{
-		
+		controleur.getEtatActuel().inserer(10);
 	}
 	public void choix1eur() 
 	{
-			
+		controleur.getEtatActuel().inserer(100);
 	}
 	public void choix50cts() 
 	{
-			
+		controleur.getEtatActuel().inserer(50);
 	}
 	public void choix20cts() 
 	{
-		
+		controleur.getEtatActuel().inserer(20);
+	}
+	public void paiementLiquideOk()
+	{
+		controleur.getEtatActuel().validePaiement();
 	}
 	
 	public void choixScanneurOK() 

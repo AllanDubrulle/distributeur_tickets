@@ -1,5 +1,6 @@
 package interfaceGraphique;
 
+import coeur.GraphiqueACoeurImpl;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.*;
@@ -11,6 +12,8 @@ import javafx.scene.text.*;
 class FChoixParLiquide extends Ecran 
 {    
     private static FChoixParLiquide instance;
+    private static double montantIntroduit;
+    private static Text text1, text3, text5;
 
     private FChoixParLiquide() 
     {
@@ -20,13 +23,13 @@ class FChoixParLiquide extends Ecran
         VBox vBox = new VBox();
         HBox hBox = new HBox();
         Text text0 = new Text();
-        Text text1 = new Text();
+        text1 = new Text();
         HBox hBox0 = new HBox();
         Text text2 = new Text();
-        Text text3 = new Text();
+        text3 = new Text();
         HBox hBox1 = new HBox();
         Text text4 = new Text();
-        Text text5 = new Text();
+        text5 = new Text();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -80,7 +83,7 @@ class FChoixParLiquide extends Ecran
 
         text1.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1.setStrokeWidth(0.0);
-        text1.setText("(montant à payer)");
+        text1.setText(String.valueOf(Double.valueOf(FBillet.getPrix())/100) + " €");
 
         hBox0.setPrefHeight(0.0);
         hBox0.setPrefWidth(100.0);
@@ -92,7 +95,7 @@ class FChoixParLiquide extends Ecran
 
         text3.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text3.setStrokeWidth(0.0);
-        text3.setText("(montant introduit)");
+        text3.setText("0.0 €");
         VBox.setMargin(hBox0, new Insets(20.0, 0.0, 20.0, 0.0));
 
         hBox1.setPrefHeight(0.0);
@@ -105,7 +108,7 @@ class FChoixParLiquide extends Ecran
 
         text5.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text5.setStrokeWidth(0.0);
-        text5.setText("(montant restant)");
+        text5.setText(String.valueOf(Double.valueOf(FBillet.getPrix())/100) + " €");
 
         hBox.getChildren().addAll(text0, text1);
         hBox0.getChildren().addAll(text2, text3);
@@ -137,4 +140,21 @@ class FChoixParLiquide extends Ecran
 	public void actionEffacer() {}
 	
 	public void actionEntrer() {}
+	
+	public static double getMontantIntroduit()
+	{
+		return montantIntroduit;
+	}
+	public void setMontantIntroduit(double i)
+	{
+		montantIntroduit = i;
+        text3.setText(String.valueOf(montantIntroduit/100));
+        text5.setText(String.valueOf(getRestant()/100));
+        if (getRestant() <= 0)
+        	graphAC.paiementLiquideOk();
+	}
+	public static double getRestant()
+	{
+		return Integer.parseInt(FBillet.getPrix()) - montantIntroduit;
+	}
 }

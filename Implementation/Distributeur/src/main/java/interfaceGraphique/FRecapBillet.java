@@ -201,7 +201,7 @@ class FRecapBillet extends Ecran
 
         text16.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text16.setStrokeWidth(0.0);
-        text16.setText("(prix)");
+        text16.setText(String.valueOf(Double.valueOf(FBillet.getPrix())/100) + " €");
         text16.setWrappingWidth(200.0);
         text16.setFont(new Font("System Bold Italic", 15.0));
         HBox.setMargin(text16, new Insets(0.0, 0.0, 0.0, 140.0));

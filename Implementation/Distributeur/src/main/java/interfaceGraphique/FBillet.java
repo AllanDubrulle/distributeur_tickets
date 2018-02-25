@@ -508,4 +508,9 @@ class FBillet extends Ecran
 		else
 			return "Aller-retour";
 	}
+	
+	public static String getPrix()
+	{
+		return "10000";
+	}
 }

@@ -10,6 +10,7 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	private static CoeurAGraphiqueImpl instance;
 	private Stage pStage = new Stage();
 	private Stage pStage2 = new Stage();
+	private Stage pStage3 = new Stage();
 	
 	public Stage getStage() 
 	{
@@ -18,6 +19,10 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	public Stage getStage2() 
 	{
 		return pStage2;
+	}
+	public Stage getStage3() 
+	{
+		return pStage3;
 	}
 	
 	private CoeurAGraphiqueImpl()
@@ -184,7 +189,15 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	}
 	public void afficherRendreMonnaie() 
 	{
-		fenetreSim.afficher(FRendreMonnaie.getInstance());
+		StackPane root2 = new StackPane();
+		FRendreMonnaie fen = FRendreMonnaie.getInstance();
+		pStage3 = new Stage();
+		Scene sc = new Scene(root2, 400,200);
+		root2.getChildren().add(fen);
+		pStage3.setResizable(false);
+		pStage3.setScene(sc);
+		pStage3.setTitle("Vider le bac de réception");
+		pStage3.show();
 	}
 
 	public void afficherImpression() 
@@ -203,5 +216,8 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 		pStage2.setTitle("Vider le bac de réception");
 		pStage2.show();
 	}
-	
+	public void insererMonnaie(double i)
+	{
+		FChoixParLiquide.getInstance().setMontantIntroduit(FChoixParLiquide.getMontantIntroduit() + i);
+	}
 }

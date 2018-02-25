@@ -44,6 +44,8 @@ abstract class ControleurEtat
 	public void choixInsererCarte() {}
 	public void choixAnnulerParCarte() {}
 	public void choixEnLiquide() {}
+	public void inserer(double i) {}
+	public void validePaiement() {}
 	public void choixPINOk() {}
 	
 	public void choixOui() {}

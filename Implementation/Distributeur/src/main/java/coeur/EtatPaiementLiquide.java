@@ -15,4 +15,12 @@ class EtatPaiementLiquide extends EtatAnnulable
 	{
 		Controleur.getInstance().getCoeurAGraphique().afficherChoixParLiquide();
 	}
+	public void inserer(double i)
+	{
+		Controleur.getInstance().getCoeurAGraphique().insererMonnaie(i);
+	}
+	public void validePaiement()
+	{
+		Controleur.getInstance().modifEtat(EtatPaiementLiquideOk.getInstance());
+	}
 }
