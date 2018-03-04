@@ -19,7 +19,7 @@ class EtatRendreMonnaie extends EtatAnnulable
 	}
 	public void choixOk()
 	{
-		Controleur.getInstance().modifEtat(EtatImpression.getInstance());
+		Controleur.getInstance().modifEtat(EtatValidationPaiement.getInstance());
 		Controleur.getInstance().getCoeurAGraphique().getStage3().close();
 	}
 }

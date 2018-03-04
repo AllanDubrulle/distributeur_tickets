@@ -10,12 +10,11 @@ import javafx.scene.layout.*;
 
 class FAboAchat extends Ecran 
 {
-    private static FAboAchat instance;
     private static TextField textField, textField0, textField1, textField2, textField3;
     private static RadioButton radioButton, radioButton0, radioButton1, radioButton2, radioButton3, radioButton4;
     private static int pos = 0;
     
-    private FAboAchat() 
+    public FAboAchat() 
     {
         Rectangle rectangle = new Rectangle();
         Text text = new Text();
@@ -232,13 +231,6 @@ class FAboAchat extends Ecran
         hBox6.getChildren().addAll(text6, textField3);
         vBox.getChildren().addAll(hBox, hBox0, hBox1, hBox2, hBox3, hBox4, hBox5, hBox6);
         getChildren().addAll(rectangle, text, vBox, button, button0);
-    }
-    
-    public static FAboAchat getInstance() 
-    {
-    	if (instance == null)
-    		instance = new FAboAchat();
-    	return instance;
     }
     
     public void actionClavier(String a) 

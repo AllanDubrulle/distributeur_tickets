@@ -7,10 +7,8 @@ import javafx.scene.text.*;
 import javafx.scene.shape.*;
 
 class FChoixPaiement extends Ecran 
-{    
-    private static FChoixPaiement instance;
-
-    private FChoixPaiement() 
+{
+    public FChoixPaiement() 
     {
         Rectangle rectangle = new Rectangle();
         Text text = new Text();
@@ -88,13 +86,6 @@ class FChoixPaiement extends Ecran
         });
 
         getChildren().addAll(rectangle, text, button, button0, button1);
-    }
-
-    public static FChoixPaiement getInstance() 
-    {
-    	if(instance == null)
-    		instance = new FChoixPaiement();
-    	return instance;
     }
     
     public void actionClavier(String a) {}

@@ -7,9 +7,7 @@ import javafx.scene.text.*;
 
 class FRendreMonnaie extends Ecran 
 {    
-    private static FRendreMonnaie instance;
-
-    private FRendreMonnaie() 
+    public FRendreMonnaie() 
     {
         Text text = new Text();
         Button button = new Button();
@@ -46,13 +44,6 @@ class FRendreMonnaie extends Ecran
         });
 
         getChildren().addAll(text, button);
-    }
-
-    public static FRendreMonnaie getInstance() 
-    {
-    	if(instance == null)
-    		instance = new FRendreMonnaie();
-    	return instance;
     }
     
     public void actionClavier(String a) {}

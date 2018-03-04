@@ -10,9 +10,7 @@ import javafx.scene.text.*;
 
 class FRecapBillet extends Ecran 
 {    
-    private static FRecapBillet instance;
-
-    private FRecapBillet() 
+    public FRecapBillet() 
     {
         Rectangle rectangle = new Rectangle();
         VBox vBox = new VBox();
@@ -257,13 +255,6 @@ class FRecapBillet extends Ecran
         hBox8.getChildren().addAll(text15, text16);
         vBox.getChildren().addAll(hBox, hBox0, hBox1, hBox3, hBox4, hBox5, hBox6, hBox7, hBox8);
         getChildren().addAll(rectangle, vBox, button, button0, text17);
-    }
-
-    public static FRecapBillet getInstance() 
-    {
-    	if (instance == null)
-    		instance = new FRecapBillet();
-    	return instance;
     }
     
     public void actionClavier(String a) {}

@@ -11,6 +11,7 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	private Stage pStage = new Stage();
 	private Stage pStage2 = new Stage();
 	private Stage pStage3 = new Stage();
+	private FChoixParLiquide fLiquide;
 	
 	public Stage getStage() 
 	{
@@ -42,104 +43,104 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	
 	public void afficherAccueil() 
 	{
-		fenetreSim.afficher(FSimulationAcceuil.getInstance());
+		fenetreSim.afficher(new FSimulationAcceuil());
 	}
 	public void afficherMenu() 
 	{
-		fenetreSim.afficher(FMenu.getInstance());
+		fenetreSim.afficher(new FMenu());
 	}
 	public void afficherFin() 
 	{
-		fenetreSim.afficher(FFin.getInstance());
+		fenetreSim.afficher(new FFin());
 	}
 	
 	public void afficherChoixBillet() 
 	{
-		fenetreSim.afficher(FBillet.getInstance());
+		fenetreSim.afficher(new FBillet());
 	}
 	public void afficherChoixAchatAbo() 
 	{
-		fenetreSim.afficher(FAboAchat.getInstance());
+		fenetreSim.afficher(new FAboAchat());
 	}
 	public void afficherChoixRenouvAbo() 
 	{
-		fenetreSim.afficher(FAboRenouv1.getInstance());
+		fenetreSim.afficher(new FAboRenouv1());
 	}
 	public void afficherChoixPass() 
 	{
-		fenetreSim.afficher(FPassMenu.getInstance());
+		fenetreSim.afficher(new FPassMenu());
 	}
 	public void afficherChoixPassIllimite() 
 	{
-		fenetreSim.afficher(FPass1.getInstance());
+		fenetreSim.afficher(new FPass1());
 	}
 	public void afficherChoixPass10Trajets() 
 	{
-		fenetreSim.afficher(FPass2.getInstance());
+		fenetreSim.afficher(new FPass2());
 	}
 	public void afficherChoixPass10Trajets2Gares() 
 	{
-		fenetreSim.afficher(FPass3.getInstance());
+		fenetreSim.afficher(new FPass3());
 	}
 	public void afficherChoixHoraire() 
 	{
-		fenetreSim.afficher(FHoraireMenu.getInstance());
+		fenetreSim.afficher(new FHoraireMenu());
 	}
 	public void afficherChoixItineraire() 
 	{
-		fenetreSim.afficher(FHoraireArEtDep.getInstance());
+		fenetreSim.afficher(new FHoraireArEtDep());
 	}
 	public void afficherChoixArrivee() 
 	{
-		fenetreSim.afficher(FHoraireArrivee.getInstance());
+		fenetreSim.afficher(new FHoraireArrivee());
 	}
 	public void afficherChoixDepart() 
 	{
-		fenetreSim.afficher(FHoraireDepart.getInstance());
+		fenetreSim.afficher(new FHoraireDepart());
 	}
 	
 	public void afficherRecapBillet() 
 	{
-		fenetreSim.afficher(FRecapBillet.getInstance());
+		fenetreSim.afficher(new FRecapBillet());
 	}
 	public void afficherRecapAchatAbo() 
 	{
-		fenetreSim.afficher(FRecapAboAchat.getInstance());
+		fenetreSim.afficher(new FRecapAboAchat());
 	}
 	public void afficherRecapRenouvAbo() 
 	{
-		fenetreSim.afficher(FRecapAboRenouv.getInstance());
+		fenetreSim.afficher(new FRecapAboRenouv());
 	}
 	public void afficherRecapRenouvAboScanne() 
 	{
-		fenetreSim.afficher(FRecapAboRenouvScanne.getInstance());
+		fenetreSim.afficher(new FRecapAboRenouvScanne());
 	}
 	public void afficherRenouvScanne()
 	{
-		fenetreSim.afficher(FAboRenouvScanne.getInstance());
+		fenetreSim.afficher(new FAboRenouvScanne());
 	}
 	public void afficherRecapPassIllimite() 
 	{
-		fenetreSim.afficher(FRecapPass1.getInstance());
+		fenetreSim.afficher(new FRecapPass1());
 	}
 	public void afficherRecapPass10Trajets() 
 	{
-		fenetreSim.afficher(FRecapPass2.getInstance());
+		fenetreSim.afficher(new FRecapPass2());
 	}
 	public void afficherRecapPass10Trajets2Gares() 
 	{
-		fenetreSim.afficher(FRecapPass3.getInstance());
+		fenetreSim.afficher(new FRecapPass3());
 	}
 	
 	public void afficherResultatsHoraires() 
 	{
-		fenetreSim.afficher(FResultatsHoraires.getInstance());
+		fenetreSim.afficher(new FResultatsHoraires());
 	}
 	
 	public void afficherNumAbo() 
 	{
 		StackPane root2 = new StackPane();
-		FChoixAbo fen = FChoixAbo.getInstance();
+		FChoixAbo fen = new FChoixAbo();
 		Scene sc = new Scene(root2, 400,200);
 		root2.getChildren().add(fen);
 		pStage.setResizable(false);
@@ -149,21 +150,22 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	}
 	public void afficherChoixTaperCode() 
 	{
-		fenetreSim.afficher(FAboRenouv2.getInstance());
+		fenetreSim.afficher(new FAboRenouv2());
 	}
 	
 	public void afficherPaiement() 
 	{
-		fenetreSim.afficher(FChoixPaiement.getInstance());
+		fenetreSim.afficher(new FChoixPaiement());
 	}
 	public void afficherChoixParLiquide() 
 	{
-		fenetreSim.afficher(FChoixParLiquide.getInstance());
+		fLiquide = new FChoixParLiquide();
+		fenetreSim.afficher(fLiquide);
 	}
 	public void afficherChoixParCarte() 
 	{
 		StackPane root2 = new StackPane();
-		FChoixParCarte fen = FChoixParCarte.getInstance();
+		FChoixParCarte fen = new FChoixParCarte();
 		Scene sc = new Scene(root2, 400,200);
 		root2.getChildren().add(fen);
 		pStage.setResizable(false);
@@ -173,24 +175,26 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	}
 	public void afficherInsertionCarte() 
 	{
-		fenetreSim.afficher(FInsererCarte.getInstance());
+		fenetreSim.afficher(new FInsererCarte());
 	}
 	public void afficherAttentePIN() 
 	{
-		fenetreSim.afficher(FAttenteCodePIN.getInstance());
+		fenetreSim.afficher(new FAttenteCodePIN());
 	}	
 	public void afficherCodePINIncor() 
 	{
-		fenetreSim.afficher(FCodePINIncor.getInstance());
+		fenetreSim.afficher(new FCodePINIncor());
 	}
 	public void afficherValidationPaiement() 
 	{
-		fenetreSim.afficher(FPaiementOk.getInstance());
+		fenetreSim.afficher(new FPaiementOk());
+		if (fLiquide != null)
+			fLiquide.setMontantIntroduit(0);
 	}
 	public void afficherRendreMonnaie() 
 	{
 		StackPane root2 = new StackPane();
-		FRendreMonnaie fen = FRendreMonnaie.getInstance();
+		FRendreMonnaie fen = new FRendreMonnaie();
 		pStage3 = new Stage();
 		Scene sc = new Scene(root2, 400,200);
 		root2.getChildren().add(fen);
@@ -202,12 +206,12 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 
 	public void afficherImpression() 
 	{
-		fenetreSim.afficher(FImpression.getInstance());
+		fenetreSim.afficher(new FImpression());
 	}
 	public void afficherViderBacRecep() 
 	{
 		StackPane root2 = new StackPane();
-		FBacReception fen = FBacReception.getInstance();
+		FBacReception fen = new FBacReception();
 		pStage2 = new Stage();
 		Scene sc = new Scene(root2, 400,200);
 		root2.getChildren().add(fen);
@@ -218,6 +222,6 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	}
 	public void insererMonnaie(double i)
 	{
-		FChoixParLiquide.getInstance().setMontantIntroduit(FChoixParLiquide.getMontantIntroduit() + i);
+		fLiquide.setMontantIntroduit(fLiquide.getMontantIntroduit() + i);
 	}
 }

@@ -10,9 +10,7 @@ import javafx.scene.shape.*;
 
 class FMenu extends Ecran 
 {
-    private static FMenu instance;
-    
-    private FMenu() 
+    public FMenu() 
     {
         Rectangle rectangle = new Rectangle();
         VBox vBox = new VBox();
@@ -128,14 +126,7 @@ class FMenu extends Ecran
         vBox.getChildren().addAll(button, button0, button1, button2, button3);
         getChildren().addAll(rectangle, vBox, text);
     }
-
-    public static FMenu getInstance() 
-    {
-    	if (instance == null)
-    		instance = new FMenu();
-    	return instance;
-    }
-
+    
 	public void actionClavier(String a) {}
 
 	public void actionClavier(int a) 

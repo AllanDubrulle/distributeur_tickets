@@ -10,9 +10,7 @@ import javafx.scene.layout.*;
 
 class FPassMenu extends Ecran 
 {
-    private static FPassMenu instance;
-    
-    private FPassMenu() 
+    public FPassMenu() 
     {
         Rectangle rectangle = new Rectangle();
         Text text = new Text();
@@ -145,13 +143,6 @@ class FPassMenu extends Ecran
         vBox0.getChildren().addAll(text1, text2, text3);
         hBox.getChildren().addAll(vBox, vBox0);
         getChildren().addAll(rectangle, text, text0, hBox, button2);
-    }
-
-    public static FPassMenu getInstance() 
-    {
-    	if (instance == null)
-    		instance = new FPassMenu();
-    	return instance;
     }
     
     public void actionClavier(String a) {}

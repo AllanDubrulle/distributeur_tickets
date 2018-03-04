@@ -8,13 +8,12 @@ import javafx.scene.text.*;
 import javafx.scene.shape.*;
 import javafx.scene.layout.*;
 
-class FHoraireArrivee extends Ecran {
-	
-	private static FHoraireArrivee instance;
+class FHoraireArrivee extends Ecran 
+{
 	private static TextField textField, textField0, textField1;
 	private static int pos = 0; 
 	
-    private FHoraireArrivee() 
+    public FHoraireArrivee() 
     {
         Rectangle rectangle = new Rectangle();
         Text text = new Text();
@@ -134,13 +133,6 @@ class FHoraireArrivee extends Ecran {
         hBox.getChildren().addAll(vBox, vBox0, vBox1);
         getChildren().addAll(rectangle, hBox, button0);
     }
-    
-    public static FHoraireArrivee getInstance() 
-    {
-    	if (instance == null) 
-    		instance = new FHoraireArrivee();
-		return instance;
-    }	
     
     public void actionClavier(String a) 
     {

@@ -2,7 +2,6 @@ package coeur;
 
 import java.util.Stack;
 
-import interfaceGraphique.CoeurAGraphique;
 import interfaceGraphique.CoeurAGraphiqueImpl;
 import stockage.CoeurAStockageImpl;
 

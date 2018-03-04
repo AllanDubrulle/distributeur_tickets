@@ -10,9 +10,7 @@ import javafx.scene.layout.*;
 
 class FRecapAboRenouv extends Ecran 
 {
-    private static FRecapAboRenouv instance;
-
-    private FRecapAboRenouv() 
+    public FRecapAboRenouv() 
     {
         Rectangle rectangle = new Rectangle();
         VBox vBox = new VBox();
@@ -144,13 +142,6 @@ class FRecapAboRenouv extends Ecran
         hBox2.getChildren().addAll(text3, text4);
         vBox.getChildren().addAll(hBox0, hBox1, hBox2);
         getChildren().addAll(rectangle, vBox, text5, button, button0);
-    }
-
-    public static FRecapAboRenouv getInstance() 
-    {
-    	if (instance == null)
-    		instance = new FRecapAboRenouv();
-    	return instance;
     }
     
     public void actionClavier(String a) {}

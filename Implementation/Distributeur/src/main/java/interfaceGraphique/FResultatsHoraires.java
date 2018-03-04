@@ -10,9 +10,7 @@ import javafx.scene.text.*;
 
 class FResultatsHoraires extends Ecran 
 {    
-    private static FResultatsHoraires instance;
-
-    private FResultatsHoraires() 
+    public FResultatsHoraires() 
     {
         Rectangle rectangle = new Rectangle();
         HBox hBox = new HBox();
@@ -203,13 +201,6 @@ class FResultatsHoraires extends Ecran
         vBox1.getChildren().addAll(text11, text12, text13, text14, text15, text16);
         hBox.getChildren().addAll(vBox, vBox0, vBox1);
         getChildren().addAll(rectangle, hBox, text17, button, button0);
-    }
-
-    public static FResultatsHoraires getInstance() 
-    {
-    	if (instance == null)
-    		instance = new FResultatsHoraires();
-    	return instance;
     }
     
     public void actionClavier(String a) {}

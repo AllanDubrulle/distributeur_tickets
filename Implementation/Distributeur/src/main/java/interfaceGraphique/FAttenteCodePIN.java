@@ -4,10 +4,8 @@ import javafx.scene.shape.*;
 import javafx.scene.text.*;
 
 class FAttenteCodePIN extends Ecran 
-{    
-    private static FAttenteCodePIN instance;
-
-    private FAttenteCodePIN() 
+{
+    public FAttenteCodePIN() 
     {
         Rectangle rectangle = new Rectangle();
         Text text = new Text();
@@ -37,13 +35,6 @@ class FAttenteCodePIN extends Ecran
         text.setFont(new Font("System Italic", 18.0));
 
         getChildren().addAll(rectangle, text);
-    }
-
-    public static FAttenteCodePIN getInstance() 
-    {
-    	if (instance == null)
-    		instance = new FAttenteCodePIN();
-    	return instance;
     }
     
     public void actionClavier(String a) {}

@@ -7,10 +7,9 @@ import javafx.scene.control.*;
 
 class FChoixParCarte extends Ecran 
 {
-    private static FChoixParCarte instance;
     private static TextField textField;
     
-    private FChoixParCarte() 
+    public FChoixParCarte() 
     {
         Button button = new Button();
         Button button0 = new Button();
@@ -66,12 +65,6 @@ class FChoixParCarte extends Ecran
         text.setFont(new Font("System Bold", 15.0));
 
         getChildren().addAll(button, button0, textField, text);
-    }
-    
-    public static FChoixParCarte getInstance() {
-    	if (instance == null)
-    		instance = new FChoixParCarte();
-    	return instance;
     }
     
     public void actionClavier(String a) {}

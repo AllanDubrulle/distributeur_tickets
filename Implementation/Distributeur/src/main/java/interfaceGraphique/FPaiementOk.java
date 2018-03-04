@@ -8,9 +8,7 @@ import javafx.scene.text.*;
 
 class FPaiementOk extends Ecran {
     
-    private static FPaiementOk instance;
-
-    private FPaiementOk() {
+    public FPaiementOk() {
 
         Rectangle rectangle = new Rectangle();
         Text text = new Text();
@@ -71,13 +69,6 @@ class FPaiementOk extends Ecran {
 
         getChildren().addAll(rectangle, text, button, button0);
     }
-
-    public static FPaiementOk getInstance() 
-    {
-    	if(instance == null)
-    		instance = new FPaiementOk();
-    	return instance;
-    }	
     
     public void actionClavier(String a) {}
 

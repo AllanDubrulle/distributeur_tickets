@@ -9,13 +9,12 @@ import javafx.event.EventHandler;
 import javafx.scene.layout.*;
 
 class FPass2 extends Ecran 
-{    
-    private static FPass2 instance;
+{
     private static TextField textField, textField1;
     private static RadioButton radioButton, radioButton0;
     private static int pos = 0;
 
-    private FPass2() 
+    public FPass2() 
     {
         Rectangle rectangle = new Rectangle();
         Text text = new Text();
@@ -147,13 +146,6 @@ class FPass2 extends Ecran
         hBox2.getChildren().addAll(text2, textField1);
         vBox.getChildren().addAll(hBox, hBox0, hBox1, hBox2);
         getChildren().addAll(rectangle, text, vBox, button, button0);
-    }
-
-    public static FPass2 getInstance() 
-    {
-    	if (instance == null)
-    		instance = new FPass2();
-    	return instance;
     }
     
     public void actionClavier(String a) 

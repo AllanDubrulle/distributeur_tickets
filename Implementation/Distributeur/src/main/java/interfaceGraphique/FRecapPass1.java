@@ -10,9 +10,7 @@ import javafx.scene.layout.*;
 
 class FRecapPass1 extends Ecran 
 {    
-    private static FRecapPass1 instance;
-
-    private FRecapPass1() 
+    public FRecapPass1() 
     {
         Rectangle rectangle = new Rectangle();
         Text text = new Text();
@@ -220,13 +218,6 @@ class FRecapPass1 extends Ecran
         hBox6.getChildren().addAll(text12, text13);
         vBox.getChildren().addAll(hBox, hBox0, hBox1, hBox2, hBox3, hBox4, hBox5, hBox6);
         getChildren().addAll(rectangle, text, vBox, button, button0);
-    }
-
-    public static FRecapPass1 getInstance() 
-    {
-    	if (instance == null)
-    		instance = new FRecapPass1();
-    	return instance;
     }
     
     public void actionClavier(String a) {}

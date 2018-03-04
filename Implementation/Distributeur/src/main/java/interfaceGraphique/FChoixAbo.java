@@ -7,11 +7,10 @@ import javafx.event.EventHandler;
 import javafx.scene.control.*;
 
 class FChoixAbo extends Ecran 
-{    
-    private static FChoixAbo instance;
+{
     private static ChoiceBox<String> choiceBox;
 
-    private FChoixAbo() 
+    public FChoixAbo() 
     {
         Button button = new Button();
         Button button0 = new Button();
@@ -71,13 +70,6 @@ class FChoixAbo extends Ecran
 
         getChildren().addAll(button, button0, choiceBox, text);
 
-    }
-
-    public static FChoixAbo getInstance() 
-    {
-    	if (instance == null)
-    		instance = new FChoixAbo();
-    	return instance;
     }
     
     public void actionClavier(String a) {}

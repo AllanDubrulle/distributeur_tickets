@@ -9,10 +9,8 @@ import javafx.scene.shape.*;
 import javafx.scene.layout.*;
 
 class FHoraireMenu extends Ecran 
-{	
-	private static FHoraireMenu instance;
-	
-    private FHoraireMenu() 
+{
+	public FHoraireMenu() 
     {
         Rectangle rectangle = new Rectangle();
         Text text = new Text();
@@ -146,13 +144,6 @@ class FHoraireMenu extends Ecran
         hBox.getChildren().addAll(vBox, vBox0);
         getChildren().addAll(rectangle, text, text0, hBox, button2);
     }
-    
-    public static FHoraireMenu getInstance() 
-    {
-    	if (instance == null) 
-    		instance = new FHoraireMenu();
-		return instance;
-    }	
     
     public void actionClavier(String a) {}
 

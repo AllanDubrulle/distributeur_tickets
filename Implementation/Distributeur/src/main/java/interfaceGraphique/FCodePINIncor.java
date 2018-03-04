@@ -8,9 +8,7 @@ import javafx.scene.text.*;
 
 class FCodePINIncor extends Ecran 
 {
-    private static FCodePINIncor instance;
-    
-    private FCodePINIncor() 
+    public FCodePINIncor() 
     {
         Rectangle rectangle = new Rectangle();
         Text text = new Text();
@@ -56,13 +54,6 @@ class FCodePINIncor extends Ecran
         });
 
         getChildren().addAll(rectangle, text);
-    }
-
-    public static FCodePINIncor getInstance() 
-    {
-    	if(instance == null)
-    		instance = new FCodePINIncor();
-    	return instance;
     }
     
 	public void actionClavier(String a) {}

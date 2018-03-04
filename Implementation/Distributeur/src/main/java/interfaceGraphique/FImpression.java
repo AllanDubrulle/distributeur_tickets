@@ -5,9 +5,7 @@ import javafx.scene.shape.*;
 
 class FImpression extends Ecran 
 {
-    private static FImpression instance;
-    
-    private FImpression() 
+    public FImpression() 
     {
         Rectangle rectangle = new Rectangle();
         Text text = new Text();
@@ -37,13 +35,6 @@ class FImpression extends Ecran
         text.setFont(new Font("System Italic", 18.0));
 
         getChildren().addAll(rectangle, text);
-    }
-
-    public static FImpression getInstance() 
-    {
-    	if(instance == null)
-    		instance = new FImpression();
-    	return instance;
     }
     
 	public void actionClavier(String a) {}

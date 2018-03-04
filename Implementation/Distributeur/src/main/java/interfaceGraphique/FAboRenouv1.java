@@ -7,10 +7,8 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
 class FAboRenouv1 extends Ecran 
-{
-    private static FAboRenouv1 instance;
-    
-    private FAboRenouv1() 
+{   
+    public FAboRenouv1() 
     {
         Rectangle rectangle = new Rectangle();
         Text text = new Text();
@@ -85,13 +83,6 @@ class FAboRenouv1 extends Ecran
         });
 
         getChildren().addAll(rectangle, text, button, button0, button1);
-    }
-
-    public static FAboRenouv1 getInstance() 
-    {
-    	if (instance == null)
-    		instance = new FAboRenouv1();
-    	return instance;
     }
     
     public void actionClavier(String a) {}

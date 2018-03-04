@@ -58,7 +58,7 @@ class FenetreSimulation extends BorderPane
         menuBar.setPrefHeight(32.0);
         menuBar.setPrefWidth(270.0);
         
-        afficher(FSimulationAcceuil.getInstance());
+        afficher(new FSimulationAcceuil());
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);

@@ -1,6 +1,5 @@
 package interfaceGraphique;
 
-import coeur.GraphiqueACoeurImpl;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.*;
@@ -10,12 +9,11 @@ import javafx.scene.shape.*;
 import javafx.scene.text.*;
 
 class FChoixParLiquide extends Ecran 
-{    
-    private static FChoixParLiquide instance;
-    private static double montantIntroduit;
+{
+    private static double montantIntroduit = 0;
     private static Text text1, text3, text5;
 
-    private FChoixParLiquide() 
+    public FChoixParLiquide() 
     {
         Rectangle rectangle = new Rectangle();
         Text text = new Text();
@@ -117,13 +115,6 @@ class FChoixParLiquide extends Ecran
         getChildren().addAll(rectangle, text, button, vBox);
     }
     
-    public static FChoixParLiquide getInstance() 
-    {
-    	if(instance == null)
-    		instance = new FChoixParLiquide();
-    	return instance;
-    }
-    
 	public void actionClavier(String a) {}
 
 	public void actionClavier(int a) {}
@@ -141,7 +132,7 @@ class FChoixParLiquide extends Ecran
 	
 	public void actionEntrer() {}
 	
-	public static double getMontantIntroduit()
+	public double getMontantIntroduit()
 	{
 		return montantIntroduit;
 	}

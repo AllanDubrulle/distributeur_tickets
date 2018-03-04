@@ -7,10 +7,8 @@ import javafx.scene.shape.*;
 import javafx.scene.text.*;
 
 class FFin extends Ecran 
-{    
-    private static FFin instance;
-
-    private FFin() 
+{
+    public FFin() 
     {
         Rectangle rectangle = new Rectangle();
         Button button = new Button();
@@ -45,13 +43,6 @@ class FFin extends Ecran
         });
 
         getChildren().addAll(rectangle, button);
-    }
-
-    public static FFin getInstance() 
-    {
-    	if(instance == null)
-    		instance = new FFin();
-    	return instance;
     }
     
 	public void actionClavier(String a) {}

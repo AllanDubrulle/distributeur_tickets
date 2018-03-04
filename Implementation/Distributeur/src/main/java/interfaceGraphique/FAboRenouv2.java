@@ -10,12 +10,11 @@ import javafx.scene.layout.*;
 
 class FAboRenouv2 extends Ecran 
 {
-    private static FAboRenouv2 instance;
     private static RadioButton radioButton, radioButton0, radioButton1, radioButton2;
     private static TextField textField;
     private static int pos = 0;
     
-    private FAboRenouv2() 
+    public FAboRenouv2() 
     {
         Rectangle rectangle = new Rectangle();
         VBox vBox = new VBox();
@@ -142,13 +141,6 @@ class FAboRenouv2 extends Ecran
         hBox1.getChildren().addAll(text0, radioButton, radioButton0, radioButton1, radioButton2);
         vBox.getChildren().addAll(hBox, hBox0, hBox1);
         getChildren().addAll(rectangle, vBox, text1, button, button0);
-    }
-
-    public static FAboRenouv2 getInstance() 
-    {
-    	if (instance == null)
-    		instance = new FAboRenouv2();
-    	return instance;
     }
     
     public void actionClavier(String a) {}

@@ -6,10 +6,8 @@ import javafx.scene.control.*;
 import javafx.scene.text.*;
 
 class FBacReception extends Ecran 
-{    
-    private static FBacReception instance;
-
-    private FBacReception() 
+{
+	public FBacReception() 
     {
         Text text = new Text();
         Button button = new Button();
@@ -46,13 +44,6 @@ class FBacReception extends Ecran
         });
 
         getChildren().addAll(text, button);
-    }
-
-    public static FBacReception getInstance() 
-    {
-    	if(instance == null)
-    		instance = new FBacReception();
-    	return instance;
     }
 
     public void actionClavier(String a) {}

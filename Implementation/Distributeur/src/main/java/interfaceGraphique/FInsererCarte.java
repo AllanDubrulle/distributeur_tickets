@@ -5,9 +5,7 @@ import javafx.scene.shape.*;
 
 class FInsererCarte extends Ecran 
 {
-    private static FInsererCarte instance;
-    
-    private FInsererCarte() 
+    public FInsererCarte() 
     {
         Rectangle rectangle = new Rectangle();
         Text text = new Text();
@@ -37,13 +35,6 @@ class FInsererCarte extends Ecran
         text.setFont(new Font("System Italic", 18.0));
 
         getChildren().addAll(rectangle, text);
-    }
-
-    public static FInsererCarte getInstance() 
-    {
-    	if(instance == null)
-    		instance = new FInsererCarte();
-    	return instance;
     }
     
 	public void actionClavier(String a) {}

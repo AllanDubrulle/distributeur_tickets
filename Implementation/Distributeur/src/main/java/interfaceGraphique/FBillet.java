@@ -10,12 +10,11 @@ import javafx.scene.text.*;
 
 class FBillet extends Ecran 
 {
-	private static FBillet instance;
 	private static TextField textField, textField0, textField1, textField2, textField3, textField4, textField5, textField6;
 	private static RadioButton radioButton, radioButton0, radioButton1, radioButton2;
 	private static int pos = 0;
 
-    private FBillet() 
+    public FBillet() 
     {
         Rectangle rectangle = new Rectangle();
         VBox vBox = new VBox();
@@ -247,13 +246,6 @@ class FBillet extends Ecran
         hBox6.getChildren().addAll(text6, textField0, text7, textField1, text8, textField2);
         vBox.getChildren().addAll(hBox, hBox0, hBox1, hBox3, hBox4, hBox5, hBox6);
         getChildren().addAll(rectangle, vBox, button, button0, text9);
-    }
-
-    public static FBillet getInstance() 
-    {
-    	if (instance == null)
-    		instance = new FBillet();
-    	return instance;
     }
     
     public void actionClavier(String a) 

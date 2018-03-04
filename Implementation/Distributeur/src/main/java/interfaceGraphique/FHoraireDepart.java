@@ -9,12 +9,11 @@ import javafx.scene.shape.*;
 import javafx.scene.layout.*;
 
 class FHoraireDepart extends Ecran 
-{	
-	private static FHoraireDepart instance;
+{
 	private static TextField textField, textField0, textField1;
 	private static int pos = 0;
 
-    private FHoraireDepart() 
+    public FHoraireDepart() 
     {
         Rectangle rectangle = new Rectangle();
         Text text = new Text();
@@ -132,12 +131,6 @@ class FHoraireDepart extends Ecran
         vBox1.getChildren().add(button);
         hBox.getChildren().addAll(vBox, vBox0, vBox1);
         getChildren().addAll(rectangle, text, hBox, button0);
-    }
-    
-    public static FHoraireDepart getInstance() {
-    	if (instance == null) 
-    		instance = new FHoraireDepart();
-		return instance;
     }	
     
     public void actionClavier(String a) 

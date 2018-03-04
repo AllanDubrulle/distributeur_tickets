@@ -9,9 +9,7 @@ import javafx.scene.text.*;
 
 class FSimulationAcceuil extends Ecran 
 {
-    private static FSimulationAcceuil instance;
-    
-    private FSimulationAcceuil() 
+    public FSimulationAcceuil() 
     {
         Rectangle rectangle = new Rectangle();
         Button button = new Button();
@@ -45,13 +43,6 @@ class FSimulationAcceuil extends Ecran
             }
         });
         getChildren().addAll(rectangle, button);
-    }
-    
-    public static FSimulationAcceuil getInstance() 
-    {
-    	if (instance == null)
-    		instance = new FSimulationAcceuil();
-    	return instance;
     }
     
     public void actionClavier(String a) {}
