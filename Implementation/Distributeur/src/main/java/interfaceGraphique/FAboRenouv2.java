@@ -10,9 +10,9 @@ import javafx.scene.layout.*;
 
 class FAboRenouv2 extends Ecran 
 {
-    private static RadioButton radioButton, radioButton0, radioButton1, radioButton2;
-    private static TextField textField;
-    private static int pos = 0;
+    private RadioButton radioButton, radioButton0, radioButton1, radioButton2;
+    private TextField textField;
+    private int pos = 0;
     
     public FAboRenouv2() 
     {
@@ -202,12 +202,12 @@ class FAboRenouv2 extends Ecran
 		graphAC.choixValiderRenouvAbo();
 	}
 	
-	public static String getNumAbo()
+	public String getNumAbo()
 	{
 		return textField.getText();
 	}
 	
-	public static String getValidite()
+	public String getValidite()
 	{
 		if (radioButton.isSelected())
 			return "1 mois";

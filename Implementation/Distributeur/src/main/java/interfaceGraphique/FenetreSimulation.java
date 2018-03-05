@@ -221,7 +221,7 @@ class FenetreSimulation extends BorderPane
         fenetre.setLayoutX(259.0);
         fenetre.setLayoutY(75.0);
 		getChildren().setAll(fenetre, claRe, fentes, scanLect, pane);
-		Clavier.setFenetre(fen);
+		Clavier.getInstance().setFenetre(fen);
 	}
     
     public void setParametre()
@@ -368,5 +368,10 @@ class FenetreSimulation extends BorderPane
     	}
     	
         getChildren().setAll(pane, claRe, fentes, scanLect, fenetre);
+    }
+    
+    public Ecran getEcran()
+    {
+    	return fenetre;
     }
 }

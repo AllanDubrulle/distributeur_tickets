@@ -6,7 +6,7 @@ import javafx.stage.Stage;
 
 public class CoeurAGraphiqueImpl implements CoeurAGraphique
 {
-	private static FenetreSimulation fenetreSim = FenetreSimulation.getInstance();
+	private FenetreSimulation fenetreSim = FenetreSimulation.getInstance();
 	private static CoeurAGraphiqueImpl instance;
 	private Stage pStage = new Stage();
 	private Stage pStage2 = new Stage();
@@ -105,11 +105,13 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	}
 	public void afficherRecapAchatAbo() 
 	{
-		fenetreSim.afficher(new FRecapAboAchat());
+		fenetreSim.afficher(new FRecapAboAchat((FAboAchat)FenetreSimulation.getInstance().getEcran()));
+		//peut générer un problème !!!! 
 	}
 	public void afficherRecapRenouvAbo() 
 	{
-		fenetreSim.afficher(new FRecapAboRenouv());
+		fenetreSim.afficher(new FRecapAboRenouv((FAboRenouv2)FenetreSimulation.getInstance().getEcran()));
+		//peut générer un problème !!!! 
 	}
 	public void afficherRecapRenouvAboScanne() 
 	{

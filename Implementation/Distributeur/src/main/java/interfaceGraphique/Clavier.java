@@ -10,7 +10,7 @@ import javafx.scene.layout.*;
 class Clavier extends ComposantVisible 
 {	
 	private static Clavier instance;	
-	private static Ecran fenetre;
+	private Ecran fenetre;
 	
 	public Clavier(boolean enMarche) 
 	{
@@ -682,7 +682,7 @@ class Clavier extends ComposantVisible
     	return instance;
     }
 	
-	public static void setFenetre(Ecran fen)
+	public void setFenetre(Ecran fen)
 	{
 		fenetre = fen;
 	}
