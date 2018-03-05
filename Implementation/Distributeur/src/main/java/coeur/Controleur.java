@@ -3,6 +3,7 @@ package coeur;
 import java.util.Stack;
 
 import interfaceGraphique.CoeurAGraphiqueImpl;
+import stockage.CoeurAStockage;
 import stockage.CoeurAStockageImpl;
 
 class Controleur 
@@ -10,7 +11,7 @@ class Controleur
 	private ControleurEtat etatActuel = EtatAccueil.getInstance();
 	private Stack<ControleurEtat> etatsPrecedents = new Stack<ControleurEtat>();
 	private CoeurAGraphiqueImpl coeurAGraphique = CoeurAGraphiqueImpl.getInstance();
-	private CoeurAStockageImpl coeurAStockage = new CoeurAStockageImpl();
+	private CoeurAStockage coeurAStockage = new CoeurAStockageImpl();
 	private static Controleur instance;
 	
 	private Controleur() {}
@@ -26,7 +27,6 @@ class Controleur
 	
 	public void modifEtat(ControleurEtat etat) 
 	{
-		System.out.println(etat);
 		etatsPrecedents.push(etatActuel);
 		etatActuel = etat;
 		etatActuel.entree();
@@ -42,7 +42,7 @@ class Controleur
 		return coeurAGraphique;
 	}
 	
-	public CoeurAStockageImpl getCoeurAStockage() 
+	public CoeurAStockage getCoeurAStockage() 
 	{
 		return coeurAStockage;
 	}
