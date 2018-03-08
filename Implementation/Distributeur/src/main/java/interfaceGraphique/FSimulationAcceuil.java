@@ -1,6 +1,5 @@
 package interfaceGraphique;
 
-import coeur.GraphiqueACoeurImpl;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.*;
@@ -39,7 +38,7 @@ class FSimulationAcceuil extends Ecran
         {
             public void handle(ActionEvent event)
             {
-            	GraphiqueACoeurImpl.getInstance().choixDemarrerSimul();	
+            	graphAC.choixDemarrerSimul();	
             }
         });
         getChildren().addAll(rectangle, button);

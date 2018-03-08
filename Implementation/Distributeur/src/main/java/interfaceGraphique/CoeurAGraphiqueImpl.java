@@ -6,7 +6,6 @@ import javafx.stage.Stage;
 
 public class CoeurAGraphiqueImpl implements CoeurAGraphique
 {
-	private FenetreSimulation fenetreSim = FenetreSimulation.getInstance();
 	private static CoeurAGraphiqueImpl instance;
 	private Stage pStage = new Stage();
 	private Stage pStage2 = new Stage();
@@ -43,100 +42,100 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	
 	public void afficherAccueil() 
 	{
-		fenetreSim.afficher(new FSimulationAcceuil());
+		FenetreSimulation.getInstance().afficher(new FSimulationAcceuil());
 	}
 	public void afficherMenu() 
 	{
-		fenetreSim.afficher(new FMenu());
+		FenetreSimulation.getInstance().afficher(new FMenu());
 	}
 	public void afficherFin() 
 	{
-		fenetreSim.afficher(new FFin());
+		FenetreSimulation.getInstance().afficher(new FFin());
 	}
 	
 	public void afficherChoixBillet() 
 	{
-		fenetreSim.afficher(new FBillet());
+		FenetreSimulation.getInstance().afficher(new FBillet());
 	}
 	public void afficherChoixAchatAbo() 
 	{
-		fenetreSim.afficher(new FAboAchat());
+		FenetreSimulation.getInstance().afficher(new FAboAchat());
 	}
 	public void afficherChoixRenouvAbo() 
 	{
-		fenetreSim.afficher(new FAboRenouv1());
+		FenetreSimulation.getInstance().afficher(new FAboRenouv1());
 	}
 	public void afficherChoixPass() 
 	{
-		fenetreSim.afficher(new FPassMenu());
+		FenetreSimulation.getInstance().afficher(new FPassMenu());
 	}
 	public void afficherChoixPassIllimite() 
 	{
-		fenetreSim.afficher(new FPass1());
+		FenetreSimulation.getInstance().afficher(new FPass1());
 	}
 	public void afficherChoixPass10Trajets() 
 	{
-		fenetreSim.afficher(new FPass2());
+		FenetreSimulation.getInstance().afficher(new FPass2());
 	}
 	public void afficherChoixPass10Trajets2Gares() 
 	{
-		fenetreSim.afficher(new FPass3());
+		FenetreSimulation.getInstance().afficher(new FPass3());
 	}
 	public void afficherChoixHoraire() 
 	{
-		fenetreSim.afficher(new FHoraireMenu());
+		FenetreSimulation.getInstance().afficher(new FHoraireMenu());
 	}
 	public void afficherChoixItineraire() 
 	{
-		fenetreSim.afficher(new FHoraireArEtDep());
+		FenetreSimulation.getInstance().afficher(new FHoraireArEtDep());
 	}
 	public void afficherChoixArrivee() 
 	{
-		fenetreSim.afficher(new FHoraireArrivee());
+		FenetreSimulation.getInstance().afficher(new FHoraireArrivee());
 	}
 	public void afficherChoixDepart() 
 	{
-		fenetreSim.afficher(new FHoraireDepart());
+		FenetreSimulation.getInstance().afficher(new FHoraireDepart());
 	}
 	
 	public void afficherRecapBillet() 
 	{
-		fenetreSim.afficher(new FRecapBillet());
+		FenetreSimulation.getInstance().afficher(new FRecapBillet());
 	}
 	public void afficherRecapAchatAbo() 
 	{
-		fenetreSim.afficher(new FRecapAboAchat((FAboAchat)FenetreSimulation.getInstance().getEcran()));
+		FenetreSimulation.getInstance().afficher(new FRecapAboAchat((FAboAchat)FenetreSimulation.getInstance().getEcran()));
 		//peut générer un problème !!!! 
 	}
 	public void afficherRecapRenouvAbo() 
 	{
-		fenetreSim.afficher(new FRecapAboRenouv((FAboRenouv2)FenetreSimulation.getInstance().getEcran()));
+		FenetreSimulation.getInstance().afficher(new FRecapAboRenouv((FAboRenouv2)FenetreSimulation.getInstance().getEcran()));
 		//peut générer un problème !!!! 
 	}
 	public void afficherRecapRenouvAboScanne() 
 	{
-		fenetreSim.afficher(new FRecapAboRenouvScanne());
+		FenetreSimulation.getInstance().afficher(new FRecapAboRenouvScanne());
 	}
 	public void afficherRenouvScanne()
 	{
-		fenetreSim.afficher(new FAboRenouvScanne());
+		FenetreSimulation.getInstance().afficher(new FAboRenouvScanne());
 	}
 	public void afficherRecapPassIllimite() 
 	{
-		fenetreSim.afficher(new FRecapPass1());
+		FenetreSimulation.getInstance().afficher(new FRecapPass1());
 	}
 	public void afficherRecapPass10Trajets() 
 	{
-		fenetreSim.afficher(new FRecapPass2());
+		FenetreSimulation.getInstance().afficher(new FRecapPass2());
 	}
 	public void afficherRecapPass10Trajets2Gares() 
 	{
-		fenetreSim.afficher(new FRecapPass3());
+		FenetreSimulation.getInstance().afficher(new FRecapPass3());
 	}
 	
 	public void afficherResultatsHoraires() 
 	{
-		fenetreSim.afficher(new FResultatsHoraires());
+		FenetreSimulation.getInstance().afficher(new FResultatsHoraires());
 	}
 	
 	public void afficherNumAbo() 
@@ -152,17 +151,17 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	}
 	public void afficherChoixTaperCode() 
 	{
-		fenetreSim.afficher(new FAboRenouv2());
+		FenetreSimulation.getInstance().afficher(new FAboRenouv2());
 	}
 	
 	public void afficherPaiement() 
 	{
-		fenetreSim.afficher(new FChoixPaiement());
+		FenetreSimulation.getInstance().afficher(new FChoixPaiement());
 	}
 	public void afficherChoixParLiquide() 
 	{
 		fLiquide = new FChoixParLiquide();
-		fenetreSim.afficher(fLiquide);
+		FenetreSimulation.getInstance().afficher(fLiquide);
 	}
 	public void afficherChoixParCarte() 
 	{
@@ -177,19 +176,19 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	}
 	public void afficherInsertionCarte() 
 	{
-		fenetreSim.afficher(new FInsererCarte());
+		FenetreSimulation.getInstance().afficher(new FInsererCarte());
 	}
 	public void afficherAttentePIN() 
 	{
-		fenetreSim.afficher(new FAttenteCodePIN());
+		FenetreSimulation.getInstance().afficher(new FAttenteCodePIN());
 	}	
 	public void afficherCodePINIncor() 
 	{
-		fenetreSim.afficher(new FCodePINIncor());
+		FenetreSimulation.getInstance().afficher(new FCodePINIncor());
 	}
 	public void afficherValidationPaiement() 
 	{
-		fenetreSim.afficher(new FPaiementOk());
+		FenetreSimulation.getInstance().afficher(new FPaiementOk());
 		if (fLiquide != null)
 			fLiquide.setMontantIntroduit(0);
 	}
@@ -208,7 +207,7 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 
 	public void afficherImpression() 
 	{
-		fenetreSim.afficher(new FImpression());
+		FenetreSimulation.getInstance().afficher(new FImpression());
 	}
 	public void afficherViderBacRecep() 
 	{
