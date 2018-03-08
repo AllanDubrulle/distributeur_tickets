@@ -14,7 +14,7 @@ public class Main extends Application
 	{
 		StackPane root = new StackPane();
         root.getChildren().add(FenetreConfiguration.getInstance());
-        Scene scene = new Scene(root, 1300, 800);
+        Scene scene = new Scene(root, FenetreConfiguration.getInstance().getRapportLarg()*600, FenetreConfiguration.getInstance().getRapportHaut()*400);
         primaryStage.setScene(scene);
         primaryStage.setTitle("Fenêtre de configuration");
         primaryStage.show();

@@ -10,11 +10,15 @@ import javafx.scene.layout.*;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 
-public class FenetreConfiguration extends Ecran 
+public class FenetreConfiguration extends Pane 
 { 
     private static FenetreConfiguration instance;
     private RadioButton radioButton, radioButton0, radioButton1, radioButton2, radioButton3, radioButton4;
     private CheckBox checkBox;
+    private double tVoulueHauteur = 266;
+    private double tVoulueLargeur = 400;
+    private double rapportHauteur = tVoulueHauteur/400;
+    private double rapportLargeur = tVoulueLargeur/600;
 
     private FenetreConfiguration() 
     {
@@ -35,39 +39,43 @@ public class FenetreConfiguration extends Ecran
         setMaxWidth(USE_PREF_SIZE);
         setMinHeight(USE_PREF_SIZE);
         setMinWidth(USE_PREF_SIZE);
-        setPrefHeight(400.0);
-        setPrefWidth(600.0);
+        setPrefHeight(400.0*rapportHauteur);
+        setPrefWidth(600.0*rapportLargeur);
 
-        vBox.setLayoutX(50.0);
-        vBox.setLayoutY(30.0);
-        vBox.setPrefHeight(328.0);
-        vBox.setPrefWidth(516.0);
+        vBox.setLayoutX(50.0*rapportLargeur);
+        vBox.setLayoutY(30.0*rapportHauteur);
+        vBox.setPrefHeight(328.0*rapportHauteur);
+        vBox.setPrefWidth(516.0*rapportLargeur);
 
         text.setFontSmoothingType(javafx.scene.text.FontSmoothingType.LCD);
         text.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text.setStrokeWidth(0.0);
         text.setText("Choisissez vos composants optionnels :");
-        text.setFont(new Font("System Bold", 18.0));
-        VBox.setMargin(text, new Insets(0.0, 0.0, 25.0, 0.0));
+        text.setFont(new Font("System Bold", 18.0*rapportHauteur));
+        VBox.setMargin(text, new Insets(0.0, 0.0, 25.0*rapportHauteur, 0.0));
 
         text0.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text0.setStrokeWidth(0.0);
         text0.setText("Clavier et écran :");
-        VBox.setMargin(text0, new Insets(0.0, 0.0, 5.0, 25.0));
+        text0.setFont(new Font(15.0*rapportHauteur));
+        VBox.setMargin(text0, new Insets(0.0, 0.0, 5.0*rapportHauteur, 25.0*rapportLargeur));
 
         radioButton.setMnemonicParsing(false);
         radioButton.setSelected(true);
         radioButton.setText("Clavier et écran tactile");
+        radioButton.setFont(new Font(15.0*rapportHauteur));
         radioButton.setSelected(true);
-        VBox.setMargin(radioButton, new Insets(0.0, 0.0, 5.0, 40.0));
+        VBox.setMargin(radioButton, new Insets(0.0, 0.0, 5.0*rapportHauteur, 40.0*rapportLargeur));
 
         radioButton0.setMnemonicParsing(false);
         radioButton0.setText("Clavier et écran non tactile");
-        VBox.setMargin(radioButton0, new Insets(0.0, 0.0, 5.0, 40.0));
+        radioButton0.setFont(new Font(15.0*rapportHauteur));
+        VBox.setMargin(radioButton0, new Insets(0.0, 0.0, 5.0*rapportHauteur, 40.0*rapportLargeur));
 
         radioButton1.setMnemonicParsing(false);
         radioButton1.setText("Ecran tactile uniquement");
-        VBox.setMargin(radioButton1, new Insets(0.0, 0.0, 15.0, 40.0));
+        radioButton1.setFont(new Font(15.0*rapportHauteur));
+        VBox.setMargin(radioButton1, new Insets(0.0, 0.0, 15.0*rapportHauteur, 40.0*rapportLargeur));
         
         ToggleGroup t1 = new ToggleGroup();
         radioButton.setToggleGroup(t1);
@@ -77,21 +85,25 @@ public class FenetreConfiguration extends Ecran
         text1.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1.setStrokeWidth(0.0);
         text1.setText("Fentes à monnaie :");
-        VBox.setMargin(text1, new Insets(0.0, 0.0, 5.0, 25.0));
+        text1.setFont(new Font(15.0*rapportHauteur));
+        VBox.setMargin(text1, new Insets(0.0, 0.0, 5.0*rapportHauteur, 25.0*rapportLargeur));
 
         radioButton2.setMnemonicParsing(false);
         radioButton2.setSelected(true);
         radioButton2.setText("Fentes à pièces et à billets");
+        radioButton2.setFont(new Font(15.0*rapportHauteur));
         radioButton2.setSelected(true);
-        VBox.setMargin(radioButton2, new Insets(0.0, 0.0, 5.0, 40.0));
+        VBox.setMargin(radioButton2, new Insets(0.0, 0.0, 5.0*rapportHauteur, 40.0*rapportLargeur));
 
         radioButton3.setMnemonicParsing(false);
         radioButton3.setText("Fente à pièce uniquement");
-        VBox.setMargin(radioButton3, new Insets(0.0, 0.0, 5.0, 40.0));
+        radioButton3.setFont(new Font(15.0*rapportHauteur));
+        VBox.setMargin(radioButton3, new Insets(0.0, 0.0, 5.0*rapportHauteur, 40.0*rapportLargeur));
 
         radioButton4.setMnemonicParsing(false);
         radioButton4.setText("Aucune fente");
-        VBox.setMargin(radioButton4, new Insets(0.0, 0.0, 15.0, 40.0));
+        radioButton4.setFont(new Font(15.0*rapportHauteur));
+        VBox.setMargin(radioButton4, new Insets(0.0, 0.0, 15.0*rapportHauteur, 40.0*rapportLargeur));
         
         ToggleGroup t2 = new ToggleGroup();
         radioButton2.setToggleGroup(t2);
@@ -100,13 +112,15 @@ public class FenetreConfiguration extends Ecran
 
         checkBox.setMnemonicParsing(false);
         checkBox.setText("Scanneur de codes");
-        VBox.setMargin(checkBox, new Insets(0.0, 0.0, 0.0, 25.0));
+        checkBox.setFont(new Font(15.0*rapportHauteur));
+        VBox.setMargin(checkBox, new Insets(0.0, 0.0, 0.0, 25.0*rapportLargeur));
 
-        button.setLayoutX(515.0);
-        button.setLayoutY(359.0);
+        button.setLayoutX(515.0*rapportLargeur);
+        button.setLayoutY(359.0*rapportHauteur);
         button.setMnemonicParsing(false);
-        button.setPrefHeight(31.0);
-        button.setPrefWidth(75.0);
+        button.setPrefHeight(31.0*rapportHauteur);
+        button.setPrefWidth(75.0*rapportLargeur);
+        button.setFont(new Font(15.0*rapportHauteur));
         button.setText("Valider");
         button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button.setOnAction(new EventHandler<ActionEvent>()
@@ -186,18 +200,13 @@ public class FenetreConfiguration extends Ecran
     		return true;
     	return false;
     }
-    
-	public void actionClavier(String a) {}
 
-	public void actionClavier(int a) {}
-
-	public void actionRetour() {}
-
-	public void actionSuivant() {}
-
-	public void actionEspace() {}
-
-	public void actionEffacer() {}
-	
-	public void actionEntrer() {}
+	public double getRapportLarg() 
+	{
+		return rapportLargeur;
+	}
+	public double getRapportHaut() 
+	{
+		return rapportHauteur;
+	}
 }

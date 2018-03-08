@@ -9,6 +9,7 @@ import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.event.EventHandler;
 
@@ -22,8 +23,8 @@ class FenetreSimulation extends BorderPane
     private CheckMenuItem checkMenuItem, checkMenuItem0, checkMenuItem1, checkMenuItem2, checkMenuItem3, checkMenuItem4, checkMenuItem5; 
     private RadioMenuItem checkMenuItem6, checkMenuItem7, checkMenuItem8, checkMenuItem9, checkMenuItem10, checkMenuItem11;
     private static FenetreSimulation instance;
-    private double tVoulueHauteur = 360;
-    private double tVoulueLargeur = 640;
+    private double tVoulueHauteur = 720;
+    private double tVoulueLargeur = 1280;
     private double rapportHauteur = tVoulueHauteur/800;
     private double rapportLargeur = tVoulueLargeur/1300;
     
@@ -59,8 +60,8 @@ class FenetreSimulation extends BorderPane
         pane.setPrefHeight(39.0*rapportHauteur);
         pane.setPrefWidth(1300.0*rapportLargeur);
         
-        menuBar.setPrefHeight(32.0*rapportHauteur);
-        menuBar.setPrefWidth(270.0*rapportLargeur);
+        menuBar.setMaxHeight(32.0*rapportHauteur);
+        menuBar.setMaxWidth(350.0*rapportLargeur);;
         
         afficher(new FSimulationAcceuil(rapportHauteur, rapportLargeur));
 
@@ -235,14 +236,15 @@ class FenetreSimulation extends BorderPane
     	checkMenuItem8.setSelected(true);
         if (FenetreConfiguration.getInstance().deuxFentes())
         {
-        	fentes.getChildren().addAll(FenteBillet.getInstance(), FentePiece.getInstance());
+        	fentes.getChildren().addAll(FenteBillet.getInstance(rapportHauteur, rapportLargeur), FentePiece.getInstance(rapportHauteur, rapportLargeur));
         	checkMenuItem6.setSelected(true);
         }
         else if (FenetreConfiguration.getInstance().fentePiece())
         {
     		Text text = new Text();
+            text.setFont(new Font(15.0*rapportHauteur));
             VBox.setMargin(text, new Insets(40.0*rapportHauteur, 0.0, 0.0, 0.0));
-        	fentes.getChildren().addAll(text, FentePiece.getInstance());
+        	fentes.getChildren().addAll(text, FentePiece.getInstance(rapportHauteur, rapportLargeur));
         	checkMenuItem7.setSelected(true);
         }
         
@@ -257,9 +259,10 @@ class FenetreSimulation extends BorderPane
         }
         else if (FenetreConfiguration.getInstance().ecranEtNonClavier())
         {
-    		Text text1 = new Text();
-            VBox.setMargin(text1, new Insets(97.0*rapportHauteur, 0.0, 100.0*rapportHauteur, 0.0));
-        	claRe.getChildren().addAll(text1, Reception.getInstance(rapportHauteur, rapportLargeur));
+    		Text text = new Text();
+            text.setFont(new Font(15.0*rapportHauteur));
+            VBox.setMargin(text, new Insets(97.0*rapportHauteur, 0.0, 100.0*rapportHauteur, 0.0));
+        	claRe.getChildren().addAll(text, Reception.getInstance(rapportHauteur, rapportLargeur));
         	checkMenuItem11.setSelected(true);
         }
         
@@ -272,6 +275,7 @@ class FenetreSimulation extends BorderPane
         else if (!FenetreConfiguration.getInstance().scanneur())
         {
     		Text text = new Text();
+            text.setFont(new Font(15.0*rapportHauteur));
             VBox.setMargin(text, new Insets(80.0*rapportHauteur, 0.0, 0.0, 0.0));
             scanLect.getChildren().add(text);
         }
@@ -289,8 +293,8 @@ class FenetreSimulation extends BorderPane
         scanLect.setLayoutX(1080.0*rapportLargeur);
                 
         setMargin(fentes, new Insets(100.0*rapportHauteur, 0.0, 0.0, 10.0*rapportLargeur));
-        VBox.setMargin(FentePiece.getInstance(), new Insets(50.0*rapportHauteur, 0.0, 0.0, 0.0));
-        fentes.setLayoutX(10.0*rapportHauteur);
+        VBox.setMargin(FentePiece.getInstance(rapportHauteur, rapportLargeur), new Insets(50.0*rapportHauteur, 0.0, 0.0, 0.0));
+        fentes.setLayoutX(10.0*rapportLargeur);
         fentes.setLayoutY(100.0*rapportHauteur);
         getChildren().setAll(pane, claRe, fentes, scanLect, fenetre);
     }
@@ -302,13 +306,14 @@ class FenetreSimulation extends BorderPane
 		scanLect.getChildren().clear();
 		
     	if (checkMenuItem6.isSelected())
-    		fentes.getChildren().addAll(FenteBillet.getInstance(), FentePiece.getInstance());
+    		fentes.getChildren().addAll(FenteBillet.getInstance(rapportHauteur, rapportLargeur), FentePiece.getInstance(rapportHauteur, rapportLargeur));
     	
     	if (checkMenuItem7.isSelected())
     	{
     		Text text = new Text();
+            text.setFont(new Font(15.0*rapportHauteur));
             VBox.setMargin(text, new Insets(40.0*rapportHauteur, 0.0, 0.0, 0.0));
-    		fentes.getChildren().addAll(text, FentePiece.getInstance());
+    		fentes.getChildren().addAll(text, FentePiece.getInstance(rapportHauteur, rapportLargeur));
     	}
     	
     	if (checkMenuItem9.isSelected())
@@ -320,13 +325,15 @@ class FenetreSimulation extends BorderPane
     	if (checkMenuItem11.isSelected())
     	{
     		Text text = new Text();
-            VBox.setMargin(text, new Insets(97.0*rapportHauteur, 0.0, 100.0*rapportHauteur, 182.5*rapportLargeur));
+            text.setFont(new Font(15.0*rapportHauteur));
+            VBox.setMargin(text, new Insets(110.0*rapportHauteur, 0.0, 100.0*rapportHauteur, 182.5*rapportLargeur));
     		claRe.getChildren().addAll(text, Reception.getInstance(rapportHauteur, rapportLargeur));
     	}
     	
     	if (!checkMenuItem5.isSelected())
     	{
     		Text text = new Text();
+            text.setFont(new Font(15.0*rapportHauteur));
             VBox.setMargin(text, new Insets(80.0*rapportHauteur, 0.0, 0.0, 0.0));
     		scanLect.getChildren().addAll(text, LecteurCarte.getInstance(rapportHauteur, rapportLargeur));
     	}
@@ -344,13 +351,13 @@ class FenetreSimulation extends BorderPane
     	if (checkMenuItem1.isSelected())
     	{
     		for (int i = 0; i < 8; i++)
-    			FentePiece.getInstance().getButton(i).setDisable(true);
+    			FentePiece.getInstance(rapportHauteur, rapportLargeur).getButton(i).setDisable(true);
     	}
     	
     	if (checkMenuItem0.isSelected())
     	{
     		for (int i = 0; i < 4; i++)
-    			FenteBillet.getInstance().getButton(i).setDisable(true);
+    			FenteBillet.getInstance(rapportHauteur, rapportLargeur).getButton(i).setDisable(true);
     	}
     	
     	if (!checkMenuItem.isSelected()) 
@@ -363,13 +370,13 @@ class FenetreSimulation extends BorderPane
     	if (!checkMenuItem1.isSelected())
     	{
     		for (int i = 0; i < 8; i++)
-    			FentePiece.getInstance().getButton(i).setDisable(false);
+    			FentePiece.getInstance(rapportHauteur, rapportLargeur).getButton(i).setDisable(false);
     	}
     	
     	if (!checkMenuItem0.isSelected())
     	{
     		for (int i = 0; i < 4; i++)
-    			FenteBillet.getInstance().getButton(i).setDisable(false);
+    			FenteBillet.getInstance(rapportHauteur, rapportLargeur).getButton(i).setDisable(false);
     	}
     	
         getChildren().setAll(pane, claRe, fentes, scanLect, fenetre);
