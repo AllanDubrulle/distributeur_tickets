@@ -22,8 +22,8 @@ class FenetreSimulation extends BorderPane
     private CheckMenuItem checkMenuItem, checkMenuItem0, checkMenuItem1, checkMenuItem2, checkMenuItem3, checkMenuItem4, checkMenuItem5; 
     private RadioMenuItem checkMenuItem6, checkMenuItem7, checkMenuItem8, checkMenuItem9, checkMenuItem10, checkMenuItem11;
     private static FenetreSimulation instance;
-    private double tVoulueHauteur = 720;
-    private double tVoulueLargeur = 1280;
+    private double tVoulueHauteur = 360;
+    private double tVoulueLargeur = 640;
     private double rapportHauteur = tVoulueHauteur/800;
     private double rapportLargeur = tVoulueLargeur/1300;
     
@@ -225,11 +225,8 @@ class FenetreSimulation extends BorderPane
         fenetre.setLayoutX(259.0*rapportLargeur);
         fenetre.setLayoutY(75.0*rapportHauteur);
 		getChildren().setAll(fenetre, claRe, fentes, scanLect, pane);
-<<<<<<< HEAD
 		Clavier.getInstance(rapportHauteur, rapportLargeur).setFenetre(fen);
-=======
-		Clavier.getInstance().setFenetre(fen);
->>>>>>> 62b2da00d1f570f9a091a82cd4ea58ac32e2ac88
+		Clavier.getInstance(rapportHauteur, rapportLargeur).setFenetre(fen);
 	}
     
     public void setParametre()
@@ -382,7 +379,6 @@ class FenetreSimulation extends BorderPane
     {
     	return fenetre;
     }
-<<<<<<< HEAD
     
     public double getRapportHaut()
     {
@@ -392,6 +388,4 @@ class FenetreSimulation extends BorderPane
     {
     	return rapportLargeur;
     }
-=======
->>>>>>> 62b2da00d1f570f9a091a82cd4ea58ac32e2ac88
 }

@@ -9,21 +9,13 @@ import javafx.scene.shape.*;
 import javafx.scene.layout.*;
 
 class FRecapAboRenouv extends Ecran 
-{
-<<<<<<< HEAD
-    private FAboRenouv2 fen;
-    
-	public FRecapAboRenouv(FAboRenouv2 fen) 
-    {
-        this.fen = fen;
-		Rectangle rectangle = new Rectangle();
-=======
+{   
 	private FAboRenouv2 fen;
-    public FRecapAboRenouv(FAboRenouv2 fen) 
+ 
+	public FRecapAboRenouv(FAboRenouv2 fen) 
     {
     	this.fen=fen;
         Rectangle rectangle = new Rectangle();
->>>>>>> 62b2da00d1f570f9a091a82cd4ea58ac32e2ac88
         VBox vBox = new VBox();
         HBox hBox = new HBox();
         HBox hBox0 = new HBox();

@@ -43,8 +43,4 @@ public interface CoeurAGraphique
 	
 	public void afficherImpression();
 	public void afficherViderBacRecep();
-	public void afficherAccueil();
-	public void afficherInsertionCarte();
-	public void afficherRecapRenouvAboScanne();
-	public void insererMonnaie(double i);	
 }

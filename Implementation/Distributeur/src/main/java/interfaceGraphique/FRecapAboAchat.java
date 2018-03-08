@@ -11,18 +11,11 @@ import javafx.scene.layout.*;
 class FRecapAboAchat extends Ecran 
 {    
 	private FAboAchat fen;
-<<<<<<< HEAD
 	
-    public FRecapAboAchat(FAboAchat fen) 
-    {
-        this.fen = fen;
-    	Rectangle rectangle = new Rectangle();
-=======
     public FRecapAboAchat(FAboAchat fen) 
     {
     	this.fen=fen;
         Rectangle rectangle = new Rectangle();
->>>>>>> 62b2da00d1f570f9a091a82cd4ea58ac32e2ac88
         Text text = new Text();
         VBox vBox = new VBox();
         HBox hBox = new HBox();

@@ -54,19 +54,11 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	
 	public void afficherAccueil() 
 	{
-<<<<<<< HEAD
 		FenetreSimulation.getInstance().afficher(new FSimulationAcceuil(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 	}
 	public void afficherMenu() 
 	{
 		FenetreSimulation.getInstance().afficher(new FMenu(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
-=======
-		FenetreSimulation.getInstance().afficher(new FSimulationAcceuil());
-	}
-	public void afficherMenu() 
-	{
-		FenetreSimulation.getInstance().afficher(new FMenu());
->>>>>>> 62b2da00d1f570f9a091a82cd4ea58ac32e2ac88
 	}
 	public void afficherFin() 
 	{
@@ -125,18 +117,10 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	public void afficherRecapAchatAbo() 
 	{
 		FenetreSimulation.getInstance().afficher(new FRecapAboAchat((FAboAchat)FenetreSimulation.getInstance().getEcran()));
-<<<<<<< HEAD
-=======
-		//peut générer un problème !!!! 
->>>>>>> 62b2da00d1f570f9a091a82cd4ea58ac32e2ac88
 	}
 	public void afficherRecapRenouvAbo() 
 	{
 		FenetreSimulation.getInstance().afficher(new FRecapAboRenouv((FAboRenouv2)FenetreSimulation.getInstance().getEcran()));
-<<<<<<< HEAD
-=======
-		//peut générer un problème !!!! 
->>>>>>> 62b2da00d1f570f9a091a82cd4ea58ac32e2ac88
 	}
 	public void afficherRecapRenouvAboScanne() 
 	{
