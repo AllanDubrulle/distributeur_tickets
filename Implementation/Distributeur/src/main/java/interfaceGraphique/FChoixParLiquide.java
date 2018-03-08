@@ -145,8 +145,13 @@ class FChoixParLiquide extends Ecran
 	public static double getRestant()
 	{
 		double res = Integer.parseInt(FBillet.getPrix()) - montantIntroduit;
+<<<<<<< HEAD
 		if (res < 0)
 			res = 0;
+=======
+		if (res<=0)
+			res=0;
+>>>>>>> 62b2da00d1f570f9a091a82cd4ea58ac32e2ac88
 		return res;
 	}
 }

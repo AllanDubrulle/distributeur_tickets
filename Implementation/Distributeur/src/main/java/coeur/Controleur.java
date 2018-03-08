@@ -27,7 +27,6 @@ class Controleur
 	
 	public void modifEtat(ControleurEtat etat) 
 	{
-		System.out.println(etat);
 		etatsPrecedents.push(etatActuel);
 		etatActuel = etat;
 		etatActuel.entree();

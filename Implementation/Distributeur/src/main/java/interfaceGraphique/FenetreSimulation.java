@@ -225,7 +225,11 @@ class FenetreSimulation extends BorderPane
         fenetre.setLayoutX(259.0*rapportLargeur);
         fenetre.setLayoutY(75.0*rapportHauteur);
 		getChildren().setAll(fenetre, claRe, fentes, scanLect, pane);
+<<<<<<< HEAD
 		Clavier.getInstance(rapportHauteur, rapportLargeur).setFenetre(fen);
+=======
+		Clavier.getInstance().setFenetre(fen);
+>>>>>>> 62b2da00d1f570f9a091a82cd4ea58ac32e2ac88
 	}
     
     public void setParametre()
@@ -378,6 +382,7 @@ class FenetreSimulation extends BorderPane
     {
     	return fenetre;
     }
+<<<<<<< HEAD
     
     public double getRapportHaut()
     {
@@ -387,4 +392,6 @@ class FenetreSimulation extends BorderPane
     {
     	return rapportLargeur;
     }
+=======
+>>>>>>> 62b2da00d1f570f9a091a82cd4ea58ac32e2ac88
 }
