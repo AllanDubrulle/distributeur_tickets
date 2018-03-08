@@ -4,9 +4,26 @@ class Imprimante extends interfaceGraphique.ComposantVisible
 {
 	private int nbrImpressions = 250;
 	
-	public void imprimerTitre(stockage.imprimable.TitreDeTransport titre)
+	public int getNbrImpressions() 
 	{
-		
+		return nbrImpressions;
 	}
-		
+	
+	public void setNbrImpressions(int nbrImpressions)
+	{
+		this.nbrImpressions = nbrImpressions;
+	}
+	
+	public void imprimer() throws ComposantHorsService, PlusDePapier
+	{
+		if(!estEnMarche())
+		{
+			throw new ComposantHorsService("Imprimante hors service");
+		}
+		if(getNbrImpressions() == 0)
+		{
+			throw new PlusDePapier("Plus de papier en réserve");
+		}
+		setNbrImpressions(getNbrImpressions()-1);
+	}	
 }

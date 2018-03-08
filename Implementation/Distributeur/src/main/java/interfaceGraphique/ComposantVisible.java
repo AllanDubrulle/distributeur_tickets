@@ -1,12 +1,13 @@
 package interfaceGraphique;
 
+import coeur.GraphiqueACoeur;
 import coeur.GraphiqueACoeurImpl;
 import javafx.scene.layout.*;
 
 public abstract class ComposantVisible extends Pane 
 {	
 	private boolean enMarche;
-	protected GraphiqueACoeurImpl graphAC = GraphiqueACoeurImpl.getInstance(); 
+	protected GraphiqueACoeur graphAC = GraphiqueACoeurImpl.getInstance(); 
 	
 	public ComposantVisible(boolean enMarche) 
 	{

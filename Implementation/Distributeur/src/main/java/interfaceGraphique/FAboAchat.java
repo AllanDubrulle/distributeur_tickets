@@ -10,9 +10,9 @@ import javafx.scene.layout.*;
 
 class FAboAchat extends Ecran 
 {
-    private static TextField textField, textField0, textField1, textField2, textField3;
-    private static RadioButton radioButton, radioButton0, radioButton1, radioButton2, radioButton3, radioButton4;
-    private static int pos = 0;
+    private TextField textField, textField0, textField1, textField2, textField3;
+    private RadioButton radioButton, radioButton0, radioButton1, radioButton2, radioButton3, radioButton4;
+    private int pos = 0;
     
     public FAboAchat() 
     {
@@ -395,27 +395,27 @@ class FAboAchat extends Ecran
 		graphAC.choixValiderAchatAbo();
 	}
 	
-	public static String getNom()
+	public String getNom()
 	{
 		return textField.getText();
 	}
 	
-	public static String getNumRegNat()
+	public String getNumRegNat()
 	{
 		return textField0.getText();
 	}
 	
-	public static String getGareDepart()
+	public String getGareDepart()
 	{
 		return textField1.getText();
 	}
 	
-	public static String getGareArrivee()
+	public String getGareArrivee()
 	{
 		return textField2.getText();
 	}
 	
-	public static String getValidite()
+	public String getValidite()
 	{
 		if (radioButton.isSelected())
 			return "1 mois";
@@ -427,7 +427,7 @@ class FAboAchat extends Ecran
 			return "12 mois";
 	}
 	
-	public static String getClasse()
+	public String getClasse()
 	{
 		if (radioButton3.isSelected())
 			return "1e classe";
@@ -435,7 +435,7 @@ class FAboAchat extends Ecran
 			return "2e classe";
 	}
 	
-	public static String getReduction()
+	public String getReduction()
 	{
 		return textField3.getText();
 	}

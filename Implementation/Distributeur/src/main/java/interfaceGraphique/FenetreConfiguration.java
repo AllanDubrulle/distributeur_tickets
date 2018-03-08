@@ -2,7 +2,6 @@ package interfaceGraphique;
 
 import Main.*;
 import javafx.scene.text.*;
-import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -118,8 +117,7 @@ public class FenetreConfiguration extends Ecran
             		Stage stage = new Stage();
             		FenetreSimulation.getInstance().setParametre();
             		root.getChildren().add(FenetreSimulation.getInstance());
-            		Rectangle2D screen = Screen.getPrimary().getVisualBounds();
-                    Scene scene = new Scene(root, screen.getWidth(), screen.getHeight());
+                    Scene scene = new Scene(root, FenetreSimulation.getInstance().getRapportLarg()*1300, FenetreSimulation.getInstance().getRapportHaut()*800);
                     scene.setFill(javafx.scene.paint.Color.WHITE);
                     stage.setResizable(false);
                     stage.setScene(scene);

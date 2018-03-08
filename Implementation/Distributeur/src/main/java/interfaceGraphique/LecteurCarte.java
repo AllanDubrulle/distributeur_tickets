@@ -5,6 +5,7 @@ import javafx.event.EventHandler;
 import javafx.geometry.*;
 import javafx.scene.control.*;
 import javafx.scene.shape.*;
+import javafx.scene.text.Font;
 import javafx.scene.layout.*;
 
 class LecteurCarte extends ComposantVisible 
@@ -18,7 +19,7 @@ class LecteurCarte extends ComposantVisible
 		super(enMarche);
 	}
 
-	private LecteurCarte() 
+	private LecteurCarte(double hauteur, double largeur) 
 	{
         Rectangle rectangle = new Rectangle();
         VBox vBox = new VBox();
@@ -41,27 +42,32 @@ class LecteurCarte extends ComposantVisible
         button10 = new Button();
         button11 = new Button();
 
-        setPrefHeight(250.0);
-        setPrefWidth(200.0);
+        setPrefHeight(250.0*hauteur);
+        setPrefWidth(200.0*largeur);
 
-        rectangle.setArcHeight(5.0);
-        rectangle.setArcWidth(5.0);
+        rectangle.setArcHeight(5.0*hauteur);
+        rectangle.setArcWidth(5.0*largeur);
         rectangle.setFill(javafx.scene.paint.Color.valueOf("#0000007d"));
-        rectangle.setHeight(250.0);
+        rectangle.setHeight(260.0*hauteur);
         rectangle.setStroke(javafx.scene.paint.Color.BLACK);
         rectangle.setStrokeType(javafx.scene.shape.StrokeType.INSIDE);
-        rectangle.setWidth(200.0);
+        rectangle.setWidth(200.0*largeur);
 
-        vBox.setPrefHeight(250.0);
-        vBox.setPrefWidth(200.0);
+        vBox.setPrefHeight(250.0*hauteur);
+        vBox.setPrefWidth(200.0*largeur);
 
-        VBox.setMargin(passwordField, new Insets(10.0, 20.0, 10.0, 20.0));
+        VBox.setMargin(passwordField, new Insets(10.0*hauteur, 20.0*largeur, 10.0*hauteur, 20.0*largeur));
+        passwordField.setFont(new Font(15.0*hauteur));
+        
 
-        hBox.setPrefHeight(37.0);
-        hBox.setPrefWidth(110.0);
+        hBox.setPrefHeight(37.0*hauteur);
+        hBox.setPrefWidth(110.0*largeur);
         
         button.setMnemonicParsing(false);
+        button.setPrefHeight(31.0*hauteur);
+        button.setPrefWidth(29.0*largeur);
         button.setText("1");
+        button.setFont(new Font(15.0*hauteur));
         button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         HBox.setMargin(button, new Insets(0.0));
         button.setOnAction(new EventHandler<ActionEvent>()
@@ -73,9 +79,12 @@ class LecteurCarte extends ComposantVisible
         });
 
         button0.setMnemonicParsing(false);
+        button0.setPrefHeight(31.0*hauteur);
+        button0.setPrefWidth(29.0*largeur);
         button0.setText("2");
+        button0.setFont(new Font(15.0*hauteur));
         button0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        HBox.setMargin(button0, new Insets(0.0, 10.0, 0.0, 10.0));
+        HBox.setMargin(button0, new Insets(0.0, 10.0*largeur, 0.0, 10.0*largeur));
         button0.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
@@ -85,10 +94,13 @@ class LecteurCarte extends ComposantVisible
         });
 
         button1.setMnemonicParsing(false);
+        button1.setPrefHeight(31.0*hauteur);
+        button1.setPrefWidth(29.0*largeur);
         button1.setText("3");
+        button1.setFont(new Font(15.0*hauteur));
         button1.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         HBox.setMargin(button1, new Insets(0.0));
-        VBox.setMargin(hBox, new Insets(0.0, 0.0, 0.0, 45.0));
+        VBox.setMargin(hBox, new Insets(0.0, 0.0, 2.0*hauteur, 45.0*largeur));
         button1.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
@@ -97,13 +109,16 @@ class LecteurCarte extends ComposantVisible
             }
         });
 
-        hBox0.setPrefHeight(39.0);
-        hBox0.setPrefWidth(205.0);
+        hBox0.setPrefHeight(39.0*hauteur);
+        hBox0.setPrefWidth(205.0*largeur);
 
         button2.setMnemonicParsing(false);
+        button2.setPrefHeight(31.0*hauteur);
+        button2.setPrefWidth(29.0*largeur);
         button2.setText("4");
+        button2.setFont(new Font(15.0*hauteur));
         button2.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        HBox.setMargin(button2, new Insets(0.0, 0.0, 0.0, 17.0));
+        HBox.setMargin(button2, new Insets(0.0, 0.0, 0.0, 17.0*largeur));
         button2.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
@@ -113,9 +128,12 @@ class LecteurCarte extends ComposantVisible
         });
 
         button3.setMnemonicParsing(false);
+        button3.setPrefHeight(31.0*hauteur);
+        button3.setPrefWidth(29.0*largeur);
         button3.setText("5");
+        button3.setFont(new Font(15.0*hauteur));
         button3.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        HBox.setMargin(button3, new Insets(0.0, 10.0, 0.0, 10.0));
+        HBox.setMargin(button3, new Insets(0.0, 10.0*largeur, 0.0, 10.0*largeur));
         button3.setOnAction(new EventHandler<ActionEvent>()
         {
             
@@ -126,9 +144,12 @@ class LecteurCarte extends ComposantVisible
         });
 
         button4.setMnemonicParsing(false);
+        button4.setPrefHeight(31.0*hauteur);
+        button4.setPrefWidth(29.0*largeur);
         button4.setText("6");
+        button4.setFont(new Font(15.0*hauteur));
         button4.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        VBox.setMargin(hBox0, new Insets(0.0, 0.0, 0.0, 28.0));
+        VBox.setMargin(hBox0, new Insets(2.0*hauteur, 0.0, 2.0*hauteur, 28.0*largeur));
         button4.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
@@ -137,13 +158,16 @@ class LecteurCarte extends ComposantVisible
             }
         });
 
-        hBox1.setPrefHeight(40.0);
-        hBox1.setPrefWidth(205.0);
+        hBox1.setPrefHeight(40.0*hauteur);
+        hBox1.setPrefWidth(205.0*largeur);
 
         button5.setMnemonicParsing(false);
+        button5.setPrefHeight(31.0*hauteur);
+        button5.setPrefWidth(29.0*largeur);
         button5.setText("7");
+        button5.setFont(new Font(15.0*hauteur));
         button5.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        HBox.setMargin(button5, new Insets(0.0, 0.0, 0.0, 17.0));
+        HBox.setMargin(button5, new Insets(0.0, 0.0, 0.0, 17.0*largeur));
         button5.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
@@ -153,9 +177,12 @@ class LecteurCarte extends ComposantVisible
         });
 
         button6.setMnemonicParsing(false);
+        button6.setPrefHeight(31.0*hauteur);
+        button6.setPrefWidth(29.0*largeur);
         button6.setText("8");
+        button6.setFont(new Font(15.0*hauteur));
         button6.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        HBox.setMargin(button6, new Insets(0.0, 10.0, 0.0, 10.0));
+        HBox.setMargin(button6, new Insets(0.0, 10.0*largeur, 0.0, 10.0*largeur));
         button6.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
@@ -165,9 +192,12 @@ class LecteurCarte extends ComposantVisible
         });
 
         button7.setMnemonicParsing(false);
+        button7.setPrefHeight(31.0*hauteur);
+        button7.setPrefWidth(29.0*largeur);
         button7.setText("9");
+        button7.setFont(new Font(15.0*hauteur));
         button7.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        VBox.setMargin(hBox1, new Insets(0.0, 0.0, 0.0, 28.0));
+        VBox.setMargin(hBox1, new Insets(0.0, 0.0, 0.0, 28.0*largeur));
         button7.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
@@ -176,11 +206,14 @@ class LecteurCarte extends ComposantVisible
             }
         });
 
-        hBox2.setPrefHeight(40.0);
-        hBox2.setPrefWidth(205.0);
+        hBox2.setPrefHeight(40.0*hauteur);
+        hBox2.setPrefWidth(205.0*largeur);
 
         button8.setMnemonicParsing(false);
+        button8.setPrefHeight(31.0*hauteur);
+        button8.setPrefWidth(46.0*largeur);
         button8.setText("EFF.");
+        button8.setFont(new Font(15.0*hauteur));
         button8.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button8.setOnAction(new EventHandler<ActionEvent>()
         {
@@ -191,9 +224,12 @@ class LecteurCarte extends ComposantVisible
         });
 
         button9.setMnemonicParsing(false);
+        button9.setPrefHeight(31.0*hauteur);
+        button9.setPrefWidth(29.0*largeur);
         button9.setText("0");
+        button9.setFont(new Font(15.0*hauteur));
         button9.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        HBox.setMargin(button9, new Insets(0.0, 10.0, 0.0, 10.0));
+        HBox.setMargin(button9, new Insets(0.0, 10.0*largeur, 0.0, 10.0*largeur));
         button9.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
@@ -203,10 +239,13 @@ class LecteurCarte extends ComposantVisible
         });
 
         button10.setMnemonicParsing(false);
+        button10.setPrefHeight(31.0*hauteur);
+        button10.setPrefWidth(41.0*largeur);
         button10.setText("OK");
+        button10.setFont(new Font(15.0*hauteur));
         button10.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         HBox.setMargin(button10, new Insets(0.0));
-        VBox.setMargin(hBox2, new Insets(0.0, 0.0, 0.0, 28.0));
+        VBox.setMargin(hBox2, new Insets(2.0*hauteur, 0.0, 2.0*hauteur, 28.0*largeur));
         button10.setOnAction(new EventHandler<ActionEvent>(){
             public void handle(ActionEvent event)
             {
@@ -215,9 +254,12 @@ class LecteurCarte extends ComposantVisible
         });
 
         button11.setMnemonicParsing(false);
+        button11.setPrefHeight(31.0*hauteur);
+        button11.setPrefWidth(102.0*largeur);
         button11.setText("Insérer carte");
+        button11.setFont(new Font(15.0*hauteur));
         button11.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        VBox.setMargin(button11, new Insets(0.0, 0.0, 0.0, 47.0));
+        VBox.setMargin(button11, new Insets(0.0, 0.0, 0.0, 47.0*largeur));
         button11.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
@@ -225,7 +267,7 @@ class LecteurCarte extends ComposantVisible
             	graphAC.choixScanneurInserer();
             }
         });
-
+        
         hBox.getChildren().addAll(button, button0, button1);
         hBox0.getChildren().addAll(button2, button3, button4);
         hBox1.getChildren().addAll(button5, button6, button7);
@@ -234,10 +276,10 @@ class LecteurCarte extends ComposantVisible
         getChildren().addAll(rectangle, vBox);
     }
 	
-	public static LecteurCarte getInstance() 
+	public static LecteurCarte getInstance(double hauteur, double largeur) 
 	{
 		if (instance == null)
-			instance = new LecteurCarte();
+			instance = new LecteurCarte(hauteur, largeur);
 		return instance;
 	}
 	

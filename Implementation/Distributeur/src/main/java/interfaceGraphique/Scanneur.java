@@ -11,7 +11,7 @@ class Scanneur extends ComposantVisible
 		super(enMarche);
 	}
 	
-	private Scanneur()
+	private Scanneur(double hauteur, double largeur)
 	{
 		Rectangle rectangle = new Rectangle();
     
@@ -19,25 +19,25 @@ class Scanneur extends ComposantVisible
 		setMaxWidth(USE_PREF_SIZE);
 		setMinHeight(USE_PREF_SIZE);
 		setMinWidth(USE_PREF_SIZE);
-		setPrefHeight(80.0);
-		setPrefWidth(210.0);
+		setPrefHeight(80.0*hauteur);
+		setPrefWidth(210.0*largeur);
     
-		rectangle.setArcHeight(25.0);
-		rectangle.setArcWidth(25.0);
-		rectangle.setHeight(70.0);
-		rectangle.setLayoutX(0.0);
-		rectangle.setLayoutY(0.0);
+		rectangle.setArcHeight(25.0*hauteur);
+		rectangle.setArcWidth(25.0*largeur);
+		rectangle.setHeight(70.0*hauteur);
+		rectangle.setLayoutX(0.0*largeur);
+		rectangle.setLayoutY(0.0*hauteur);
 		rectangle.setStroke(javafx.scene.paint.Color.BLACK);
 		rectangle.setStrokeType(javafx.scene.shape.StrokeType.INSIDE);
-		rectangle.setWidth(200.0);
+		rectangle.setWidth(200.0*largeur);
 		
 		getChildren().add(rectangle);
 	}
 
-	public static Scanneur getInstance() 
+	public static Scanneur getInstance(double hauteur, double largeur) 
 	{
 		if (instance == null)
-			instance = new Scanneur();
+			instance = new Scanneur(hauteur, largeur);
 		return instance;
 	}
 }

@@ -34,7 +34,7 @@ class FPaiementOk extends Ecran {
         text.setLayoutY(100.0);
         text.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text.setStrokeWidth(0.0);
-        text.setText("Souhaitez-vous un ticket ?");
+        text.setText("Souhaitez-vous un reçu ?");
         text.setFont(new Font("System Bold", 22.0));
 
         button.setLayoutX(575.0);

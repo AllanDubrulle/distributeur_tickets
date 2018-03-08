@@ -19,7 +19,7 @@ class EtatViderBac extends EtatAnnulable
 	}
 	public void choixOk()
 	{
-		Controleur.getInstance().modifEtat(EtatFin.getInstance());
+		Controleur.getInstance().modifEtat(EtatAfficherRecu.getInstance());
 		Controleur.getInstance().getCoeurAGraphique().getStage2().close();
 	}
 }

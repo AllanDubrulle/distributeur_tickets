@@ -25,7 +25,7 @@ class Monnayeur extends interfaceGraphique.ComposantVisible
 		for (int i =0;i< ordreBillets.length ;i++)
 		{
 			int nbr = 0;
-			while(montant%ordreBillets[i].valeur()==0 && StockBillet.get(ordreBillets[i])!=0)
+			while(montant%ordreBillets[i].valeur()==0 && StockBillet.get(ordreBillets[i])!=0) //condition du modulo : correcte ?
 			{
 				nbr++;
 				montant-=ordreBillets[i].valeur();
@@ -35,7 +35,7 @@ class Monnayeur extends interfaceGraphique.ComposantVisible
 		for (int i =0;i< ordrePieces.length ;i++)
 		{
 			int nbr = 0;
-			while(montant%ordrePieces[i].valeur()==0 && StockPiece.get(ordrePieces[i])!=0)
+			while(montant%ordrePieces[i].valeur()==0 && StockPiece.get(ordrePieces[i])!=0) //condition du modulo : correcte ?
 			{
 				nbr++;
 				montant-=ordrePieces[i].valeur();

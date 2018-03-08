@@ -1,11 +1,13 @@
 package interfaceGraphique;
 
+import coeur.GraphiqueACoeurImpl;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.*;
+import javafx.scene.layout.Pane;
 import javafx.scene.text.*;
 
-class FBacReception extends Ecran 
+class FBacReception extends Pane
 {
 	public FBacReception() 
     {
@@ -39,27 +41,10 @@ class FBacReception extends Ecran
         {
             public void handle(ActionEvent event)
             {
-            	graphAC.choixOk();
+            	GraphiqueACoeurImpl.getInstance().choixOk();
             }
         });
 
         getChildren().addAll(text, button);
     }
-
-    public void actionClavier(String a) {}
-
-	public void actionClavier(int a) {}
-
-	public void actionRetour() {}
-
-	public void actionSuivant() {}
-
-	public void actionEspace() {}
-
-	public void actionEffacer() {}
-	
-	public void actionEntrer() 
-	{
-		graphAC.choixOk();
-	}
 }

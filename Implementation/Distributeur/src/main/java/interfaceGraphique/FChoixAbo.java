@@ -1,12 +1,14 @@
 package interfaceGraphique;
 
 import javafx.scene.text.*;
+import coeur.GraphiqueACoeurImpl;
 //import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.*;
+import javafx.scene.layout.Pane;
 
-class FChoixAbo extends Ecran 
+class FChoixAbo extends Pane 
 {
     private static ChoiceBox<String> choiceBox;
 
@@ -37,7 +39,7 @@ class FChoixAbo extends Ecran
         {
             public void handle(ActionEvent event)
             {
-            	graphAC.choixValiderNumAbo();
+            	GraphiqueACoeurImpl.getInstance().choixValiderNumAbo();
             }
         });
 
@@ -53,7 +55,7 @@ class FChoixAbo extends Ecran
         {
             public void handle(ActionEvent event)
             {
-            	graphAC.choixAnnulerScanner();
+            	GraphiqueACoeurImpl.getInstance().choixAnnulerScanner();
             }
         });
 
@@ -71,26 +73,6 @@ class FChoixAbo extends Ecran
         getChildren().addAll(button, button0, choiceBox, text);
 
     }
-    
-    public void actionClavier(String a) {}
-
-	public void actionClavier(int a) {}
-
-	public void actionRetour() 
-	{
-		graphAC.choixAnnuler();
-	}
-
-	public void actionSuivant() {}
-
-	public void actionEspace() {}
-
-	public void actionEffacer() {}
-	
-	public void actionEntrer() 
-	{
-		graphAC.choixValiderNumAbo();
-	}
 	
 	public static String getNumAbo()
 	{

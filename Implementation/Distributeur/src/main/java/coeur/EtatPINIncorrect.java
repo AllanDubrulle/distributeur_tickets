@@ -22,6 +22,7 @@ class EtatPINIncorrect extends EtatAnnulable
 	public void entree() 
 	{
 		Controleur.getInstance().getCoeurAGraphique().afficherCodePINIncor();
+		Controleur.getInstance().getCoeurAGraphique().effacerPIN();
 	}
 	
 	public void validePIN(int codePIN) 

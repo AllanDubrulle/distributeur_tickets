@@ -23,6 +23,7 @@ class EtatValidationPaiement extends EtatAnnulable
 	{
 		Controleur.getInstance().getCoeurAStockage().creerCarte(carteBancaire, codePIN);
 		Controleur.getInstance().getCoeurAGraphique().afficherValidationPaiement();
+		Controleur.getInstance().getCoeurAGraphique().effacerPIN();
 	}
 	public void choixOui()
 	{

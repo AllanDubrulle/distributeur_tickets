@@ -30,6 +30,7 @@ public interface GraphiqueACoeur
 	public void choixValiderBillet();
 	public void choixValiderAchatAbo();
 	public void choixValiderRenouvAbo();
+	public void choixValiderRenouvAboScanne();
 	public void choixValiderPassIllimite();
 	public void choixValiderPass10Trajets();
 	public void choixValiderPass10Trajets2Gares();
@@ -56,6 +57,7 @@ public interface GraphiqueACoeur
 	public void choixScanneurInserer();
 	
 	public void choixPaiement();
+	public void paiementLiquideOk();
 	public void choixPaiementParCarte();
 	public void choixPaiementLiquide();
 	public void choixAnnulerChoixCarte();
