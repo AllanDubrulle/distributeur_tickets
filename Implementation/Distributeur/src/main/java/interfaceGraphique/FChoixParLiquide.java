@@ -132,7 +132,7 @@ class FChoixParLiquide extends Ecran
 	
 	public void actionEntrer() {}
 	
-	public static double getMontantIntroduit()
+	public double getMontantIntroduit()
 	{
 		return montantIntroduit;
 	}
@@ -142,7 +142,7 @@ class FChoixParLiquide extends Ecran
         text3.setText(String.valueOf(montantIntroduit/100));
         text5.setText(String.valueOf(getRestant()/100));
 	}
-	public static double getRestant()
+	public double getRestant()
 	{
 		double res = Integer.parseInt(FBillet.getPrix()) - montantIntroduit;
 		if (res < 0)

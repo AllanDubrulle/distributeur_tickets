@@ -23,8 +23,9 @@ class FenetreSimulation extends BorderPane
     private CheckMenuItem checkMenuItem, checkMenuItem0, checkMenuItem1, checkMenuItem2, checkMenuItem3, checkMenuItem4, checkMenuItem5; 
     private RadioMenuItem checkMenuItem6, checkMenuItem7, checkMenuItem8, checkMenuItem9, checkMenuItem10, checkMenuItem11;
     private static FenetreSimulation instance;
-    private double tVoulueHauteur = 720;
-    private double tVoulueLargeur = 1280;
+    
+    private double tVoulueHauteur = FenetreConfiguration.getInstance().getHauteur();
+    private double tVoulueLargeur = FenetreConfiguration.getInstance().getLargeur();
     private double rapportHauteur = tVoulueHauteur/800;
     private double rapportLargeur = tVoulueLargeur/1300;
     

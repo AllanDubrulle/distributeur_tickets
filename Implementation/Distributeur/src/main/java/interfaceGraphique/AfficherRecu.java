@@ -11,6 +11,8 @@ import javafx.scene.layout.*;
 
 class AfficherRecu extends Pane 
 {
+	private FChoixParLiquide fLiquide;
+	
     public AfficherRecu() 
     {
         VBox vBox = new VBox();
@@ -97,7 +99,7 @@ class AfficherRecu extends Pane
 
         text5.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text5.setStrokeWidth(0.0);
-        text5.setText(String.valueOf(FChoixParLiquide.getMontantIntroduit()/100));
+        text5.setText(String.valueOf(fLiquide.getMontantIntroduit()/100));
         text5.setWrappingWidth(60.0);
         VBox.setMargin(hBox2, new Insets(5.0, 0.0, 5.0, 0.0));
 
@@ -111,7 +113,7 @@ class AfficherRecu extends Pane
 
         text7.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text7.setStrokeWidth(0.0);
-        text7.setText(String.valueOf(Math.abs(FChoixParLiquide.getRestant()/100)));
+        text7.setText(String.valueOf(Math.abs(fLiquide.getRestant()/100)));
         text7.setWrappingWidth(60.0);
 
         hBox4.setPrefHeight(0.0);
