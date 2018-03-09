@@ -18,4 +18,9 @@ class EtatImpression extends EtatAnnulable
 		Controleur.getInstance().getCoeurAGraphique().afficherImpression();
 		Controleur.getInstance().modifEtat(EtatViderBac.getInstance());
 	}
+	
+	public void après5sec()
+	{
+		
+	}
 }

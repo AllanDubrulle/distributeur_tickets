@@ -211,7 +211,7 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	}
 	public void afficherValidationPaiement() 
 	{
-		FenetreSimulation.getInstance().afficher(new FPaiementOk());
+		FenetreSimulation.getInstance().afficher(new FDemandeRecu());
 		if (fLiquide != null)
 			fLiquide.setMontantIntroduit(0);
 	}
@@ -226,6 +226,7 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 		pStage3.setScene(sc);
 		pStage3.setTitle("Vider le bac de réception");
 		pStage3.show();
+		afficherRendu();
 	}
 
 	public void afficherImpression() 
@@ -287,5 +288,12 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	public void effacerPIN()
 	{
 		LecteurCarte.getInstance(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()).getField().clear();
+	}
+	public void afficherDemandeRecu()
+	{
+		FenetreSimulation.getInstance().afficher(new FDemandeRecu());
+		if (fLiquide != null)
+			fLiquide.setMontantIntroduit(0);
+		
 	}
 }

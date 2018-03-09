@@ -11,8 +11,6 @@ import javafx.scene.layout.*;
 
 class AfficherRecu extends Pane 
 {
-	private FChoixParLiquide fLiquide;
-
     public AfficherRecu(FChoixParLiquide fLiquide,FBillet fenBillet) 
 
     {

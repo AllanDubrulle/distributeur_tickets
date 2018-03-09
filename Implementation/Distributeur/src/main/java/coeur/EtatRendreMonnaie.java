@@ -14,13 +14,13 @@ class EtatRendreMonnaie extends EtatAnnulable
 	}
 	
 	public void entree() 
-	{
-		Controleur.getInstance().getCoeurAGraphique().afficherFin();
+	{	
 		Controleur.getInstance().getCoeurAGraphique().afficherRendreMonnaie();
 	}
 	public void choixOk()
 	{
-		Controleur.getInstance().modifEtat(EtatAfficherRendu.getInstance());
-		Controleur.getInstance().getCoeurAGraphique().getStage3().close();
+		Controleur.getInstance().modifEtat(EtatDemandeRecu.getInstance());
+		Controleur.getInstance().getCoeurAGraphique().getStage3().close(); // a changer si possible lien entre
+		Controleur.getInstance().getCoeurAGraphique().getStage6().close(); // gui et coeur crée 
 	}
 }

@@ -20,6 +20,6 @@ class EtatAfficherRecu extends EtatAnnulable
 	public void choixOk()
 	{
 		Controleur.getInstance().modifEtat(EtatAfficherBillet.getInstance());
-		Controleur.getInstance().getCoeurAGraphique().getStage5().close();
+		Controleur.getInstance().getCoeurAGraphique().getStage5().close(); // a enlever si possible
 	}
 }

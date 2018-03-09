@@ -24,6 +24,6 @@ public class EtatChoixScannerCode extends EtatAnnulable
 	
 	public void choixAnnulerScanner() 
 	{
-		Controleur.getInstance().getCoeurAGraphique().getStage().close();
+		Controleur.getInstance().getCoeurAGraphique().getStage().close(); // a enlever si possible
 	}
 }

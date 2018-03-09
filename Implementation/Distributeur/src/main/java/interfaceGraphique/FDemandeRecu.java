@@ -6,9 +6,9 @@ import javafx.scene.control.*;
 import javafx.scene.shape.*;
 import javafx.scene.text.*;
 
-class FPaiementOk extends Ecran {
+class FDemandeRecu extends Ecran {
     
-    public FPaiementOk() {
+    public FDemandeRecu() {
 
         Rectangle rectangle = new Rectangle();
         Text text = new Text();
