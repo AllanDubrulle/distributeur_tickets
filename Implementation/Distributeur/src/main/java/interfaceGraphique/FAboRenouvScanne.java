@@ -10,10 +10,10 @@ import javafx.scene.layout.*;
 
 class FAboRenouvScanne extends Ecran 
 {
-    private static RadioButton radioButton, radioButton0, radioButton1, radioButton2;
-    private static Text text2;
+    private RadioButton radioButton, radioButton0, radioButton1, radioButton2;
+    private Text text2;
     
-    public FAboRenouvScanne() 
+    public FAboRenouvScanne(FChoixAbo fenAbo) 
     {
         Rectangle rectangle = new Rectangle();
         VBox vBox = new VBox();
@@ -62,7 +62,7 @@ class FAboRenouvScanne extends Ecran
         text.setText("Numéro de l'abonnement : ");
         HBox.setMargin(text, new Insets(0.0));
         
-        text2.setText(FChoixAbo.getNumAbo());
+        text2.setText(fenAbo.getNumAbo());
         HBox.setMargin(text2, new Insets(0.0, 0.0, 10.0, 21.0));
 
         hBox1.setPrefHeight(41.0);
@@ -171,12 +171,12 @@ class FAboRenouvScanne extends Ecran
 		graphAC.choixValiderRenouvAboScanne();
 	}
 	
-	public static String getNumAbo()
+	public String getNumAbo()
 	{
 		return text2.getText();
 	}
 	
-	public static String getValidite()
+	public String getValidite()
 	{
 		if (radioButton.isSelected())
 			return "1 mois";

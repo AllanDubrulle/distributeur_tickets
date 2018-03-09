@@ -10,9 +10,9 @@ import javafx.scene.text.*;
 
 class FBillet extends Ecran 
 {
-	private static TextField textField, textField0, textField1, textField2, textField3, textField4, textField5, textField6;
-	private static RadioButton radioButton, radioButton0, radioButton1, radioButton2;
-	private static int pos = 0;
+	private TextField textField, textField0, textField1, textField2, textField3, textField4, textField5, textField6;
+	private RadioButton radioButton, radioButton0, radioButton1, radioButton2;
+	private int pos = 0;
 
     public FBillet() 
     {
@@ -455,37 +455,37 @@ class FBillet extends Ecran
 		graphAC.choixValiderBillet();
 	}
 	
-	public static String getGareDepart()
+	public String getGareDepart()
 	{
 		return textField3.getText();
 	}
 	
-	public static String getGareArrivee()
+	public String getGareArrivee()
 	{
 		return textField4.getText();
 	}
 	
-	public static String getReduction()
+	public String getReduction()
 	{
 		return textField6.getText();
 	}
 	
-	public static String getType()
+	public String getType()
 	{
 		return textField5.getText();
 	}
 	
-	public static String getNombre()
+	public String getNombre()
 	{
 		return textField.getText();
 	}
 
-	public static String getDate()
+	public String getDate()
 	{
 		return textField0.getText() + "/" + textField1.getText() + "/" + textField2.getText();
 	}
 	
-	public static String getClasse()
+	public String getClasse()
 	{
 		if (radioButton1.isSelected())
 			return "1e classe";
@@ -493,7 +493,7 @@ class FBillet extends Ecran
 			return "2e classe";
 	}
 	
-	public static String getAllerRetour()
+	public String getAllerRetour()
 	{
 		if (radioButton.isSelected())
 			return "Aller simple";
@@ -501,7 +501,7 @@ class FBillet extends Ecran
 			return "Aller-retour";
 	}
 	
-	public static String getPrix()
+	public String getPrix()
 	{
 		return "10000";
 	}

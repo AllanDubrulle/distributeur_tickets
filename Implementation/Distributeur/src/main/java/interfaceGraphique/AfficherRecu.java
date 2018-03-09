@@ -11,7 +11,8 @@ import javafx.scene.layout.*;
 
 class AfficherRecu extends Pane 
 {
-    public AfficherRecu() 
+	private FChoixParLiquide fLiquide;
+    public AfficherRecu(FChoixParLiquide fLiquide,FBillet fenBillet) 
     {
         VBox vBox = new VBox();
         HBox hBox = new HBox();
@@ -83,7 +84,7 @@ class AfficherRecu extends Pane
 
         text3.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text3.setStrokeWidth(0.0);
-        text3.setText(String.valueOf(Double.valueOf(FBillet.getPrix())/100));
+        text3.setText(String.valueOf(Double.valueOf(fenBillet.getPrix())/100));
         text3.setWrappingWidth(60.0);
 
         hBox2.setPrefHeight(0.0);
@@ -97,7 +98,7 @@ class AfficherRecu extends Pane
 
         text5.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text5.setStrokeWidth(0.0);
-        text5.setText(String.valueOf(FChoixParLiquide.getMontantIntroduit()/100));
+        text5.setText(String.valueOf(fLiquide.getMontantIntroduit()/100));
         text5.setWrappingWidth(60.0);
         VBox.setMargin(hBox2, new Insets(5.0, 0.0, 5.0, 0.0));
 
@@ -111,7 +112,7 @@ class AfficherRecu extends Pane
 
         text7.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text7.setStrokeWidth(0.0);
-        text7.setText(String.valueOf(Math.abs(FChoixParLiquide.getRestant()/100)));
+        text7.setText(String.valueOf(Math.abs(fLiquide.getRestant()/100)));
         text7.setWrappingWidth(60.0);
 
         hBox4.setPrefHeight(0.0);

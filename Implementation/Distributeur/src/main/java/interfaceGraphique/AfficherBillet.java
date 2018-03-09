@@ -11,7 +11,7 @@ import javafx.scene.shape.Rectangle;
 
 class AfficherBillet extends Pane 
 {
-    public AfficherBillet() 
+    public AfficherBillet(FBillet fen) 
     {
         VBox vBox = new VBox();
         HBox hBox = new HBox();
@@ -54,7 +54,7 @@ class AfficherBillet extends Pane
 
         text.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text.setStrokeWidth(0.0);
-        text.setText("BILLET " + FBillet.getType().toUpperCase());
+        text.setText("BILLET " + fen.getType().toUpperCase());
         text.setWrappingWidth(200.0);
         text.setFont(new Font("System Bold Italic", 18.0));
 
@@ -76,7 +76,7 @@ class AfficherBillet extends Pane
 
         text1.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1.setStrokeWidth(0.0);
-        text1.setText(FBillet.getAllerRetour().toUpperCase());
+        text1.setText(fen.getAllerRetour().toUpperCase());
         text1.setWrappingWidth(200.0);
         text1.setFont(new Font("System Bold Italic", 18.0));
 
@@ -94,7 +94,7 @@ class AfficherBillet extends Pane
 
         text3.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text3.setStrokeWidth(0.0);
-        text3.setText(FBillet.getClasse());
+        text3.setText(fen.getClasse());
         text3.setWrappingWidth(200.0);
         text3.setFont(new Font("System Bold", 18.0));
         hBox1.setOpaqueInsets(new Insets(0.0));
@@ -110,7 +110,7 @@ class AfficherBillet extends Pane
 
         text5.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text5.setStrokeWidth(0.0);
-        text5.setText(FBillet.getGareDepart());
+        text5.setText(fen.getGareDepart());
         text5.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         HBox.setMargin(text5, new Insets(0.0, 0.0, 0.0, 50.0));
         hBox2.setOpaqueInsets(new Insets(0.0));
@@ -126,7 +126,7 @@ class AfficherBillet extends Pane
 
         text7.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text7.setStrokeWidth(0.0);
-        text7.setText(FBillet.getGareArrivee());
+        text7.setText(fen.getGareArrivee());
         text7.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         HBox.setMargin(text7, new Insets(0.0, 0.0, 0.0, 50.0));
         hBox3.setOpaqueInsets(new Insets(0.0));
@@ -143,7 +143,7 @@ class AfficherBillet extends Pane
 
         text9.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text9.setStrokeWidth(0.0);
-        text9.setText(FBillet.getDate());
+        text9.setText(fen.getDate());
         text9.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         HBox.setMargin(text9, new Insets(0.0, 0.0, 0.0, 50.0));
         hBox4.setOpaqueInsets(new Insets(0.0));
@@ -159,13 +159,13 @@ class AfficherBillet extends Pane
 
         text11.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text11.setStrokeWidth(0.0);
-        text11.setText(FBillet.getReduction());
+        text11.setText(fen.getReduction());
         text11.setWrappingWidth(175.0);
         HBox.setMargin(text11, new Insets(0.0, 0.0, 0.0, 44.0));
 
         text12.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text12.setStrokeWidth(0.0);
-        text12.setText(String.valueOf(Double.valueOf(FBillet.getPrix())/100) + "   EUR");
+        text12.setText(String.valueOf(Double.valueOf(fen.getPrix())/100) + "   EUR");
         text12.setTextAlignment(javafx.scene.text.TextAlignment.RIGHT);
         text12.setWrappingWidth(100.0);
         HBox.setMargin(text12, new Insets(0.0, 0.0, 0.0, 110.0));

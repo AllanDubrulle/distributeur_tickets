@@ -10,7 +10,7 @@ import javafx.scene.layout.Pane;
 
 class FChoixAbo extends Pane 
 {
-    private static ChoiceBox<String> choiceBox;
+    private ChoiceBox<String> choiceBox;
 
     public FChoixAbo() 
     {
@@ -74,7 +74,7 @@ class FChoixAbo extends Pane
 
     }
 	
-	public static String getNumAbo()
+	public String getNumAbo()
 	{
 		return choiceBox.getSelectionModel().getSelectedItem();	
 	}

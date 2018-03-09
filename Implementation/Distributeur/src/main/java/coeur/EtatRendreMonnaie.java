@@ -15,6 +15,7 @@ class EtatRendreMonnaie extends EtatAnnulable
 	
 	public void entree() 
 	{
+		Controleur.getInstance().getCoeurAGraphique().afficherFin();
 		Controleur.getInstance().getCoeurAGraphique().afficherRendreMonnaie();
 	}
 	public void choixOk()

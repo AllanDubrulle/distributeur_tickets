@@ -10,7 +10,7 @@ import javafx.scene.layout.*;
 
 class FRecapPass2 extends Ecran 
 {    
-    public FRecapPass2() 
+    public FRecapPass2(FPass2 fenPass) 
     {
         Rectangle rectangle = new Rectangle();
         Text text = new Text();
@@ -69,7 +69,7 @@ class FRecapPass2 extends Ecran
 
         text1.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1.setStrokeWidth(0.0);
-        text1.setText(FPass2.getNom());
+        text1.setText(fenPass.getNom());
         text1.setWrappingWidth(200.0);
         HBox.setMargin(text1, new Insets(0.0, 0.0, 0.0, 129.0));
         text1.setFont(new Font("System Bold Italic", 15.0));
@@ -85,7 +85,7 @@ class FRecapPass2 extends Ecran
 
         text3.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text3.setStrokeWidth(0.0);
-        text3.setText(FPass2.getClasse());
+        text3.setText(fenPass.getClasse());
         text3.setWrappingWidth(200.0);
         text3.setFont(new Font("System Bold Italic", 15.0));
         HBox.setMargin(text3, new Insets(0.0));
@@ -101,7 +101,7 @@ class FRecapPass2 extends Ecran
 
         text5.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text5.setStrokeWidth(0.0);
-        text5.setText(FPass2.getReduction());
+        text5.setText(fenPass.getReduction());
         text5.setWrappingWidth(200.0);
         text5.setFont(new Font("System Bold Italic", 15.0));
         HBox.setMargin(text5, new Insets(0.0, 0.0, 0.0, 100.0));

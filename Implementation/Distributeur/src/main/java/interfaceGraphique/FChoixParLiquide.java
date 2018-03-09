@@ -10,11 +10,13 @@ import javafx.scene.text.*;
 
 class FChoixParLiquide extends Ecran 
 {
-    private static double montantIntroduit = 0;
-    private static Text text1, text3, text5;
+    private double montantIntroduit = 0;
+    private Text text1, text3, text5;
+    private FBillet fenBillet;
 
-    public FChoixParLiquide() 
+    public FChoixParLiquide(FBillet fenBillet) 
     {
+    	this.fenBillet = fenBillet;
         Rectangle rectangle = new Rectangle();
         Text text = new Text();
         Button button = new Button();
@@ -81,7 +83,7 @@ class FChoixParLiquide extends Ecran
 
         text1.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1.setStrokeWidth(0.0);
-        text1.setText(String.valueOf(Double.valueOf(FBillet.getPrix())/100) + " €");
+        text1.setText(String.valueOf(Double.valueOf(fenBillet.getPrix())/100) + " €");
 
         hBox0.setPrefHeight(0.0);
         hBox0.setPrefWidth(100.0);
@@ -106,7 +108,7 @@ class FChoixParLiquide extends Ecran
 
         text5.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text5.setStrokeWidth(0.0);
-        text5.setText(String.valueOf(Double.valueOf(FBillet.getPrix())/100) + " €");
+        text5.setText(String.valueOf(Double.valueOf(fenBillet.getPrix())/100) + " €");
 
         hBox.getChildren().addAll(text0, text1);
         hBox0.getChildren().addAll(text2, text3);
@@ -132,7 +134,7 @@ class FChoixParLiquide extends Ecran
 	
 	public void actionEntrer() {}
 	
-	public static double getMontantIntroduit()
+	public double getMontantIntroduit()
 	{
 		return montantIntroduit;
 	}
@@ -141,10 +143,12 @@ class FChoixParLiquide extends Ecran
 		montantIntroduit = i;
         text3.setText(String.valueOf(montantIntroduit/100));
         text5.setText(String.valueOf(getRestant()/100));
+        if (getRestant() <= 0)
+        	graphAC.paiementLiquideOk();
 	}
-	public static double getRestant()
+	public double getRestant()
 	{
-		double res = Integer.parseInt(FBillet.getPrix()) - montantIntroduit;
+		double res = Integer.parseInt(fenBillet.getPrix()) - montantIntroduit;
 		if (res < 0)
 			res = 0;
 		if (res<=0)

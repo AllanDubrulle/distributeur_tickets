@@ -10,8 +10,8 @@ import javafx.scene.layout.*;
 
 class FHoraireDepart extends Ecran 
 {
-	private static TextField textField, textField0, textField1;
-	private static int pos = 0;
+	private TextField textField, textField0, textField1;
+	private int pos = 0;
 
     public FHoraireDepart() 
     {

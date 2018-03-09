@@ -10,7 +10,7 @@ import javafx.scene.layout.*;
 
 class FRecapAboRenouvScanne extends Ecran 
 {
-    public FRecapAboRenouvScanne() 
+    public FRecapAboRenouvScanne(FAboRenouvScanne fenAbo) 
     {
         Rectangle rectangle = new Rectangle();
         VBox vBox = new VBox();
@@ -61,7 +61,7 @@ class FRecapAboRenouvScanne extends Ecran
 
         text0.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text0.setStrokeWidth(0.0);
-        text0.setText(FAboRenouvScanne.getNumAbo());
+        text0.setText(fenAbo.getNumAbo());
         text0.setWrappingWidth(200.0);
         text0.setFont(new Font("System Bold Italic", 15.0));
         HBox.setMargin(text0, new Insets(0.0, 0.0, 0.0, 20.0));
@@ -77,7 +77,7 @@ class FRecapAboRenouvScanne extends Ecran
 
         text2.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text2.setStrokeWidth(0.0);
-        text2.setText(FAboRenouvScanne.getValidite());
+        text2.setText(fenAbo.getValidite());
         text2.setWrappingWidth(200.0);
         text2.setFont(new Font("System Bold Italic", 15.0));
         hBox1.setPadding(new Insets(0.0, 0.0, 10.0, 0.0));

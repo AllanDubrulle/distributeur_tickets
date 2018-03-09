@@ -10,9 +10,9 @@ import javafx.scene.layout.*;
 
 class FPass2 extends Ecran 
 {
-    private static TextField textField, textField1;
-    private static RadioButton radioButton, radioButton0;
-    private static int pos = 0;
+    private TextField textField, textField1;
+    private RadioButton radioButton, radioButton0;
+    private int pos = 0;
 
     public FPass2() 
     {
@@ -218,12 +218,12 @@ class FPass2 extends Ecran
 		graphAC.choixValiderPass10Trajets();
 	}
 	
-	public static String getNom()
+	public String getNom()
 	{
 		return textField.getText();
 	}
 	
-	public static String getClasse()
+	public String getClasse()
 	{
 		if (radioButton.isSelected())
 			return "1e classe";
@@ -231,7 +231,7 @@ class FPass2 extends Ecran
 			return "2e classe";
 	}
 	
-	public static String getReduction()
+	public String getReduction()
 	{
 		return textField1.getText();
 	}
