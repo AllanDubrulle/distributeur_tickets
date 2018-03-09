@@ -15,9 +15,10 @@ public class FenetreConfiguration extends Pane
     private static FenetreConfiguration instance;
     private RadioButton radioButton, radioButton0, radioButton1, radioButton2, radioButton3, radioButton4;
     private CheckBox checkBox;
-    private double tVoulueHauteur = 266;
-    private double tVoulueLargeur = 400;
-    private double rapportHauteur = tVoulueHauteur/400;
+    private TextField textField, textField0;
+    private double tVoulueHauteur = 450;
+    private double tVoulueLargeur = 600;
+    private double rapportHauteur = tVoulueHauteur/450;
     private double rapportLargeur = tVoulueLargeur/600;
 
     private FenetreConfiguration() 
@@ -33,6 +34,11 @@ public class FenetreConfiguration extends Pane
         radioButton3 = new RadioButton();
         radioButton4 = new RadioButton();
         checkBox = new CheckBox();
+        HBox hBox = new HBox();
+        Text text2 = new Text();
+        Text text3 = new Text();
+        textField = new TextField();
+        textField0 = new TextField();
         Button button = new Button();
 
         setMaxHeight(USE_PREF_SIZE);
@@ -43,7 +49,7 @@ public class FenetreConfiguration extends Pane
         setPrefWidth(600.0*rapportLargeur);
 
         vBox.setLayoutX(50.0*rapportLargeur);
-        vBox.setLayoutY(30.0*rapportHauteur);
+        vBox.setLayoutY(10.0*rapportHauteur);
         vBox.setPrefHeight(328.0*rapportHauteur);
         vBox.setPrefWidth(516.0*rapportLargeur);
 
@@ -114,9 +120,16 @@ public class FenetreConfiguration extends Pane
         checkBox.setText("Scanneur de codes");
         checkBox.setFont(new Font(15.0*rapportHauteur));
         VBox.setMargin(checkBox, new Insets(0.0, 0.0, 0.0, 25.0*rapportLargeur));
+        
+        text2.setText("Dimensions de la fenêtre de simulation :     ");
+        text3.setText("  x  ");
+        text2.setFont(new Font(15.0*rapportHauteur));
+        text3.setFont(new Font(15.0*rapportHauteur));
+        hBox.getChildren().addAll(text2, textField, text3, textField0);
+        VBox.setMargin(hBox, new Insets(15.0*rapportHauteur, 0.0, 15.0*rapportHauteur, 0.0));
 
         button.setLayoutX(515.0*rapportLargeur);
-        button.setLayoutY(359.0*rapportHauteur);
+        button.setLayoutY(369.0*rapportHauteur);
         button.setMnemonicParsing(false);
         button.setPrefHeight(31.0*rapportHauteur);
         button.setPrefWidth(75.0*rapportLargeur);
@@ -127,21 +140,21 @@ public class FenetreConfiguration extends Pane
         {
             public void handle(ActionEvent event)
             {
-            		StackPane root = new StackPane();
-            		Stage stage = new Stage();
-            		FenetreSimulation.getInstance().setParametre();
-            		root.getChildren().add(FenetreSimulation.getInstance());
-                    Scene scene = new Scene(root, FenetreSimulation.getInstance().getRapportLarg()*1300, FenetreSimulation.getInstance().getRapportHaut()*800);
-                    scene.setFill(javafx.scene.paint.Color.WHITE);
-                    stage.setResizable(false);
-                    stage.setScene(scene);
-                    stage.setTitle("Fenêtre de simulation");
-                    stage.show();
-                    Main.getStage().close();
+            	StackPane root = new StackPane();
+            	Stage stage = new Stage();
+            	FenetreSimulation.getInstance().setParametre();
+            	root.getChildren().add(FenetreSimulation.getInstance());
+                Scene scene = new Scene(root, FenetreSimulation.getInstance().getRapportLarg()*1300, FenetreSimulation.getInstance().getRapportHaut()*800);
+                scene.setFill(javafx.scene.paint.Color.WHITE);
+                stage.setResizable(false);
+                stage.setScene(scene);
+                stage.setTitle("Fenêtre de simulation");
+                stage.show();
+                Main.getStage().close();
             }
         });
 
-        vBox.getChildren().addAll(text, text0, radioButton, radioButton0, radioButton1, text1, radioButton2, radioButton3, radioButton4, checkBox);
+        vBox.getChildren().addAll(text, text0, radioButton, radioButton0, radioButton1, text1, radioButton2, radioButton3, radioButton4, checkBox, hBox);
         getChildren().addAll(vBox, button);
     }
     
@@ -208,5 +221,22 @@ public class FenetreConfiguration extends Pane
 	public double getRapportHaut() 
 	{
 		return rapportHauteur;
+	}
+	
+	public double getHauteur()
+	{
+		if (textField0.getText().length() == 0 || Double.valueOf(textField0.getText()) < 720)
+		{
+			textField0.setText("720");
+		}
+		return Double.valueOf(textField0.getText());
+	}
+	public double getLargeur()
+	{
+		if (textField.getText().length() == 0 || Double.valueOf(textField.getText()) < 1280)
+		{
+			textField.setText("1280");
+		}
+		return Double.valueOf(textField.getText());
 	}
 }

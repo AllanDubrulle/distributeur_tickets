@@ -11,6 +11,7 @@ import javafx.scene.layout.*;
 
 class AfficherRendu extends Pane 
 {
+	private FChoixParLiquide fLiquide;
     public AfficherRendu(FChoixParLiquide fenLiquide,FBillet fenBillet) 
     {
         VBox vBox = new VBox();
@@ -132,6 +133,7 @@ class AfficherRendu extends Pane
         text5.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text5.setStrokeWidth(0.0);
         text5.setText(String.valueOf(fenLiquide.getMontantIntroduit()/100));
+        text5.setText(String.valueOf(fLiquide.getMontantIntroduit()/100));
         text5.setWrappingWidth(60.0);
         VBox.setMargin(hBox2, new Insets(5.0, 0.0, 5.0, 0.0));
 
@@ -146,6 +148,7 @@ class AfficherRendu extends Pane
         text7.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text7.setStrokeWidth(0.0);
         text7.setText(String.valueOf(Math.abs(fenLiquide.getRestant()/100)));
+        text7.setText(String.valueOf(Math.abs(fLiquide.getRestant()/100)));
         text7.setWrappingWidth(60.0);
 
         hBox4.setPrefHeight(0.0);
