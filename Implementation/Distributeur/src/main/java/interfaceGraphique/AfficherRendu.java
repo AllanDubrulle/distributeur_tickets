@@ -1,10 +1,6 @@
 package interfaceGraphique;
 
 import javafx.scene.shape.*;
-import javafx.scene.control.*;
-import coeur.GraphiqueACoeurImpl;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.geometry.*;
 import javafx.scene.text.*;
 import javafx.scene.layout.*;
@@ -64,18 +60,17 @@ class AfficherRendu extends Pane
         HBox hBox15 = new HBox();
         Text text1110 = new Text();
         Text text1111 = new Text();
-        Button button = new Button();
         Rectangle rectangle = new Rectangle();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
         setMinHeight(USE_PREF_SIZE);
         setMinWidth(USE_PREF_SIZE);
-        setPrefHeight(550.0);
+        setPrefHeight(520.0);
         setPrefWidth(250.0);
 
         vBox.setAlignment(javafx.geometry.Pos.TOP_CENTER);
-        vBox.setPrefHeight(550.0);
+        vBox.setPrefHeight(520.0);
         vBox.setPrefWidth(250.0);
 
         hBox.setPrefHeight(0.0);
@@ -351,18 +346,7 @@ class AfficherRendu extends Pane
         text1111.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         text1111.setWrappingWidth(75.0);
         VBox.setMargin(hBox15, new Insets(0.0, 0.0, 0.0, 30.0));
-
-        button.setMnemonicParsing(false);
-        button.setText("Ok");
-        button.setOnAction(new EventHandler<ActionEvent>()
-        {
-            public void handle(ActionEvent event)
-            {
-            	GraphiqueACoeurImpl.getInstance().choixOk();
-            }
-        });
-        VBox.setMargin(button, new Insets(20.0, 0.0, 0.0, 0.0));
-        vBox.setOpaqueInsets(new Insets(0.0));
+        
         vBox.setPadding(new Insets(20.0, 20.0, 0.0, 20.0));
 
         rectangle.setArcHeight(5.0);
@@ -393,7 +377,7 @@ class AfficherRendu extends Pane
         hBox13.getChildren().addAll(text116, text117);
         hBox14.getChildren().addAll(text118, text119);
         hBox15.getChildren().addAll(text1110, text1111);
-        vBox.getChildren().addAll(hBox, hBox0, text1, hBox1, hBox2, hBox3, hBox4, hBox5, hBox6, hBox7, hBox8, hBox9, hBox10, hBox11, hBox12, hBox13, hBox14, hBox15, button);
+        vBox.getChildren().addAll(hBox, hBox0, text1, hBox1, hBox2, hBox3, hBox4, hBox5, hBox6, hBox7, hBox8, hBox9, hBox10, hBox11, hBox12, hBox13, hBox14, hBox15);
         getChildren().add(vBox);
         getChildren().add(rectangle);
 

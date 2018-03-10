@@ -17,6 +17,6 @@ public class EtatChoixPassIllimite extends EtatAnnulable
 	
 	public void entree() 
 	{
-		Controleur.getInstance().getCoeurAGraphique().afficherChoixBillet();
+		Controleur.getInstance().getCoeurAGraphique().afficherChoixPassIllimite();
 	}
 }

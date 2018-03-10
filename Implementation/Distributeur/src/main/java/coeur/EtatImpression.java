@@ -1,5 +1,8 @@
 package coeur;
 
+import javafx.animation.PauseTransition;
+import javafx.util.Duration;
+
 class EtatImpression extends EtatAnnulable 
 {	
 	private static EtatImpression instance;
@@ -16,11 +19,13 @@ class EtatImpression extends EtatAnnulable
 	public void entree() 
 	{
 		Controleur.getInstance().getCoeurAGraphique().afficherImpression();
-		Controleur.getInstance().modifEtat(EtatViderBac.getInstance());
+		PauseTransition delay = new PauseTransition(Duration.seconds(5));
+		delay.setOnFinished( event -> apres5sec());
+		delay.play();
 	}
 	
-	public void après5sec()
+	public void apres5sec()
 	{
-		
+		Controleur.getInstance().modifEtat(EtatViderBac.getInstance());
 	}
 }

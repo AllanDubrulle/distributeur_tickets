@@ -26,8 +26,8 @@ class FenetreSimulation extends BorderPane
     
     private double tVoulueHauteur = FenetreConfiguration.getInstance().getHauteur();
     private double tVoulueLargeur = FenetreConfiguration.getInstance().getLargeur();
-    private double rapportHauteur = tVoulueHauteur/800;
-    private double rapportLargeur = tVoulueLargeur/1300;
+    private double rapportHauteur = tVoulueHauteur/850;
+    private double rapportLargeur = tVoulueLargeur/1350;
     
     private FenetreSimulation()
     {
@@ -56,10 +56,11 @@ class FenetreSimulation extends BorderPane
         checkMenuItem9 = new RadioMenuItem();
         checkMenuItem10 = new RadioMenuItem();
         checkMenuItem11 = new RadioMenuItem();
+        EcranContour contour = EcranContour.getInstance();
 
         setAlignment(pane, javafx.geometry.Pos.CENTER);
         pane.setPrefHeight(39.0*rapportHauteur);
-        pane.setPrefWidth(1300.0*rapportLargeur);
+        pane.setPrefWidth(1350.0*rapportLargeur);
         
         menuBar.setMaxHeight(32.0*rapportHauteur);
         menuBar.setMaxWidth(350.0*rapportLargeur);;
@@ -70,8 +71,8 @@ class FenetreSimulation extends BorderPane
         setMaxWidth(USE_PREF_SIZE);
         setMinHeight(USE_PREF_SIZE);
         setMinWidth(USE_PREF_SIZE);
-        setPrefHeight(800.0*rapportHauteur);
-        setPrefWidth(1300.0*rapportLargeur);
+        setPrefHeight(850.0*rapportHauteur);
+        setPrefWidth(1350.0*rapportLargeur);
 
         menu.setMnemonicParsing(false);
         menu.setText("Pannes");
@@ -204,6 +205,9 @@ class FenetreSimulation extends BorderPane
         checkMenuItem10.setToggleGroup(t);
         checkMenuItem11.setToggleGroup(t);
         
+        contour.setLayoutX(259.0*rapportLargeur);
+        contour.setLayoutY(75.0*rapportHauteur);
+        
         menu1.getItems().addAll(menuItem1, menuItem2);
         menu0.getItems().addAll(menuItem, menuItem0);
         menu.getItems().addAll(checkMenuItem, checkMenuItem0, checkMenuItem1, checkMenuItem2, checkMenuItem3, checkMenuItem4, menu0, menu1);
@@ -211,7 +215,7 @@ class FenetreSimulation extends BorderPane
         menu4.getItems().addAll(checkMenuItem9, checkMenuItem10, checkMenuItem11);
         menu2.getItems().addAll(checkMenuItem5, menu3, menu4);
         menuBar.getMenus().addAll(menu, menu2);
-        pane.getChildren().add(menuBar);
+        pane.getChildren().addAll(menuBar, contour);
     }
 	
     public static FenetreSimulation getInstance() 
@@ -224,10 +228,9 @@ class FenetreSimulation extends BorderPane
     public void afficher(Ecran fen) 
     {
 		this.fenetre = fen; 
-        fenetre.setLayoutX(259.0*rapportLargeur);
-        fenetre.setLayoutY(75.0*rapportHauteur);
-		getChildren().setAll(fenetre, claRe, fentes, scanLect, pane);
-		Clavier.getInstance(rapportHauteur, rapportLargeur).setFenetre(fen);
+        fenetre.setLayoutX(284.0*rapportLargeur);
+        fenetre.setLayoutY(100.0*rapportHauteur);
+		getChildren().setAll(pane, fenetre, claRe, fentes, scanLect);
 		Clavier.getInstance(rapportHauteur, rapportLargeur).setFenetre(fen);
 	}
     
@@ -285,13 +288,13 @@ class FenetreSimulation extends BorderPane
         
         VBox.setMargin(Clavier.getInstance(rapportHauteur, rapportLargeur), new Insets(0.0, 0.0, 20.0*rapportHauteur, 182.5*rapportLargeur));
         VBox.setMargin(Reception.getInstance(rapportHauteur, rapportLargeur), new Insets(0.0, 0.0, 20.0*rapportHauteur, 0.0));
-        claRe.setLayoutY(500.0*rapportHauteur);
-        claRe.setLayoutX(145.0*rapportLargeur);
+        claRe.setLayoutY(550.0*rapportHauteur);
+        claRe.setLayoutX(195.0*rapportLargeur);
         
         VBox.setMargin(Scanneur.getInstance(rapportHauteur, rapportLargeur), new Insets(0.0, 0.0, 20.0*rapportHauteur, 0.0));
         VBox.setMargin(LecteurCarte.getInstance(rapportHauteur, rapportLargeur), new Insets(20.0*rapportHauteur, 0.0, 20.0*rapportHauteur, 0.0));
         scanLect.setLayoutY(85.0*rapportHauteur);
-        scanLect.setLayoutX(1080.0*rapportLargeur);
+        scanLect.setLayoutX(1130.0*rapportLargeur);
                 
         setMargin(fentes, new Insets(100.0*rapportHauteur, 0.0, 0.0, 10.0*rapportLargeur));
         VBox.setMargin(FentePiece.getInstance(rapportHauteur, rapportLargeur), new Insets(50.0*rapportHauteur, 0.0, 0.0, 0.0));

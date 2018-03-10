@@ -144,7 +144,7 @@ public class FenetreConfiguration extends Pane
             	Stage stage = new Stage();
             	FenetreSimulation.getInstance().setParametre();
             	root.getChildren().add(FenetreSimulation.getInstance());
-                Scene scene = new Scene(root, FenetreSimulation.getInstance().getRapportLarg()*1300, FenetreSimulation.getInstance().getRapportHaut()*800);
+                Scene scene = new Scene(root, FenetreSimulation.getInstance().getRapportLarg()*1350, FenetreSimulation.getInstance().getRapportHaut()*850);
                 scene.setFill(javafx.scene.paint.Color.WHITE);
                 stage.setResizable(false);
                 stage.setScene(scene);
@@ -225,7 +225,7 @@ public class FenetreConfiguration extends Pane
 	
 	public double getHauteur()
 	{
-		if (textField0.getText().length() == 0 || Double.valueOf(textField0.getText()) < 720)
+		if (textField0.getText().length() == 0 || Double.valueOf(textField0.getText()) < 360)
 		{
 			textField0.setText("720");
 		}
@@ -233,7 +233,7 @@ public class FenetreConfiguration extends Pane
 	}
 	public double getLargeur()
 	{
-		if (textField.getText().length() == 0 || Double.valueOf(textField.getText()) < 1280)
+		if (textField.getText().length() == 0 || Double.valueOf(textField.getText()) < 640)
 		{
 			textField.setText("1280");
 		}

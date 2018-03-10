@@ -27,8 +27,8 @@ class EtatAttentePIN extends EtatAnnulable
 	
 	public void validePIN(int codePIN) 
 	{
-		((EtatValidationPaiement) EtatValidationPaiement.getInstance()).setParametres(codePIN, carteBancaire);
-		Controleur.getInstance().modifEtat(EtatValidationPaiement.getInstance());
+		((EtatDemandeRecu) EtatDemandeRecu.getInstance()).setParametres(codePIN, carteBancaire);
+		Controleur.getInstance().modifEtat(EtatDemandeRecu.getInstance());
 	}
 	public void choixPINOk()
 	{

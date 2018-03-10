@@ -1,16 +1,16 @@
 package coeur;
 
-class EtatValidationPaiement extends EtatAnnulable 
+class EtatDemandeRecu extends EtatAnnulable 
 {	
-	private static EtatValidationPaiement instance;
+	private static EtatDemandeRecu instance;
 	private int codePIN;
 	private String carteBancaire;
 	
-	public static EtatValidationPaiement getInstance() 
+	public static EtatDemandeRecu getInstance() 
 	{
 		if (instance == null)
-			instance = new EtatValidationPaiement();
-		return (EtatValidationPaiement) instance;
+			instance = new EtatDemandeRecu();
+		return (EtatDemandeRecu) instance;
 	}
 	
 	public void setParametres(int codePIN, String carteBancaire) 
@@ -23,6 +23,7 @@ class EtatValidationPaiement extends EtatAnnulable
 	{
 		Controleur.getInstance().getCoeurAStockage().creerCarte(carteBancaire, codePIN);
 		Controleur.getInstance().getCoeurAGraphique().effacerPIN();
+		Controleur.getInstance().getCoeurAGraphique().afficherDemandeRecu();
 	}
 	public void choixOui()
 	{

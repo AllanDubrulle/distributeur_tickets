@@ -8,7 +8,7 @@ import javafx.event.EventHandler;
 
 class FAboRenouv1 extends Ecran 
 {   
-    public FAboRenouv1() 
+    public FAboRenouv1(double hauteur, double largeur) 
     {
         Rectangle rectangle = new Rectangle();
         Text text = new Text();
@@ -20,31 +20,33 @@ class FAboRenouv1 extends Ecran
         setMaxWidth(USE_PREF_SIZE);
         setMinHeight(USE_PREF_SIZE);
         setMinWidth(USE_PREF_SIZE);
-        setPrefHeight(400.0);
-        setPrefWidth(800.0);
+        setPrefHeight(400.0*hauteur);
+        setPrefWidth(800.0*largeur);
 
-        rectangle.setArcHeight(5.0);
-        rectangle.setArcWidth(5.0);
+        rectangle.setArcHeight(5.0*hauteur);
+        rectangle.setArcWidth(5.0*largeur);
         rectangle.setFill(javafx.scene.paint.Color.valueOf("#d3d3d3"));
-        rectangle.setHeight(400.0);
+        rectangle.setHeight(400.0*hauteur);
         rectangle.setStroke(javafx.scene.paint.Color.BLACK);
         rectangle.setStrokeType(javafx.scene.shape.StrokeType.INSIDE);
-        rectangle.setWidth(800.0);
+        rectangle.setWidth(800.0*largeur);
 
         text.setFontSmoothingType(javafx.scene.text.FontSmoothingType.LCD);
-        text.setLayoutX(54.0);
-        text.setLayoutY(83.0);
+        text.setLayoutX(54.0*largeur);
+        text.setLayoutY(83.0*hauteur);
         text.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text.setStrokeWidth(0.0);
         text.setText("Renouveler un abonnement");
         text.setUnderline(true);
-        text.setFont(new Font("System Bold", 22.0));
+        text.setFont(new Font("System Bold", 22.0*hauteur));
 
-        button.setLayoutX(200.0);
-        button.setLayoutY(150.0);
+        button.setLayoutX(200.0*largeur);
+        button.setLayoutY(150.0*hauteur);
         button.setMnemonicParsing(false);
-        button.setPrefWidth(200.0);
+        button.setPrefWidth(200.0*largeur);
+        button.setPrefHeight(35.0*hauteur);
         button.setText("Scanner le code barre");
+        button.setFont(new Font(15.0*hauteur));
         button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button.setOnAction(new EventHandler<ActionEvent>()
         {
@@ -54,11 +56,13 @@ class FAboRenouv1 extends Ecran
             }
         });
         
-        button1.setLayoutX(200.0);
-        button1.setLayoutY(220.0);
+        button1.setLayoutX(200.0*largeur);
+        button1.setLayoutY(220.0*hauteur);
         button1.setMnemonicParsing(false);
-        button1.setPrefWidth(200.0);
+        button1.setPrefWidth(200.0*largeur);
+        button1.setPrefHeight(35.0*hauteur);
         button1.setText("Taper le code");
+        button1.setFont(new Font(15.0*hauteur));
         button1.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button1.setOnAction(new EventHandler<ActionEvent>()
         {
@@ -68,12 +72,13 @@ class FAboRenouv1 extends Ecran
             }
         });
 
-        button0.setLayoutX(359.5);
-        button0.setLayoutY(349.0);
+        button0.setLayoutX(359.5*largeur);
+        button0.setLayoutY(349.0*hauteur);
         button0.setMnemonicParsing(false);
-        button0.setPrefHeight(31.0);
-        button0.setPrefWidth(75.0);
+        button0.setPrefHeight(31.0*hauteur);
+        button0.setPrefWidth(75.0*largeur);
         button0.setText("Annuler");
+        button0.setFont(new Font(15.0*hauteur));
         button0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button0.setOnAction(new EventHandler<ActionEvent>(){
             public void handle(ActionEvent event)

@@ -37,7 +37,7 @@ public interface CoeurAGraphique
 	public void afficherInsertionCarte();
 	public void afficherAttentePIN();
 	public void afficherCodePINIncor();
-	public void afficherValidationPaiement();
+	public void afficherDemandeRecu();
 	public void insererMonnaie(double i);
 	public void afficherRendreMonnaie();
 	

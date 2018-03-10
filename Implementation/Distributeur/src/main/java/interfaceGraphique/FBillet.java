@@ -14,7 +14,7 @@ class FBillet extends Ecran
 	private RadioButton radioButton, radioButton0, radioButton1, radioButton2;
 	private int pos = 0;
 
-    public FBillet() 
+    public FBillet(double hauteur, double largeur) 
     {
         Rectangle rectangle = new Rectangle();
         VBox vBox = new VBox();
@@ -52,157 +52,186 @@ class FBillet extends Ecran
         Button button0 = new Button();
         Text text9 = new Text();
 
-        setPrefHeight(400.0);
-        setPrefWidth(800.0);
+        setPrefHeight(400.0*hauteur);
+        setPrefWidth(800.0*largeur);
 
-        rectangle.setArcHeight(5.0);
-        rectangle.setArcWidth(5.0);
+        rectangle.setArcHeight(5.0*hauteur);
+        rectangle.setArcWidth(5.0*largeur);
         rectangle.setFill(javafx.scene.paint.Color.valueOf("#d3d3d3"));
-        rectangle.setHeight(400.0);
+        rectangle.setHeight(400.0*hauteur);
         rectangle.setStroke(javafx.scene.paint.Color.BLACK);
         rectangle.setStrokeType(javafx.scene.shape.StrokeType.INSIDE);
-        rectangle.setWidth(800.0);
+        rectangle.setWidth(800.0*largeur);
 
-        vBox.setLayoutX(47.0);
-        vBox.setLayoutY(83.5);
-        vBox.setPrefHeight(258.0);
-        vBox.setPrefWidth(711.0);
+        vBox.setLayoutX(47.0*largeur);
+        vBox.setLayoutY(103.5*hauteur);
+        vBox.setPrefHeight(258.0*hauteur);
+        vBox.setPrefWidth(711.0*largeur);
 
-        hBox.setPrefHeight(17.0);
-        hBox.setPrefWidth(244.0);
+        hBox.setPrefHeight(17.0*hauteur);
+        hBox.setPrefWidth(244.0*largeur);
 
         text.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text.setStrokeWidth(0.0);
         text.setText("Gare de départ :");
-        HBox.setMargin(text, new Insets(0.0, 70.0, 0.0, 0.0));
+        text.setWrappingWidth(180*largeur);
+        text.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(text, new Insets(0.0, 20.0*largeur, 0.0, 0.0));
 
-        textField3.setPrefWidth(200.0);
-        VBox.setMargin(hBox, new Insets(0.0, 0.0, 10.0, 0.0));
+        textField3.setPrefWidth(200.0*largeur);
+        textField3.setFont(new Font(15.0*hauteur));
+        VBox.setMargin(hBox, new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
 
-        hBox0.setPrefHeight(17.0);
-        hBox0.setPrefWidth(244.0);
+        hBox0.setPrefHeight(17.0*hauteur);
+        hBox0.setPrefWidth(244.0*largeur);
 
         text0.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text0.setStrokeWidth(0.0);
         text0.setText("Gare d'arrivée :");
-        HBox.setMargin(text0, new Insets(0.0, 77.0, 0.0, 0.0));
+        text0.setWrappingWidth(180*largeur);
+        text0.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(text0, new Insets(0.0, 20.0*largeur, 0.0, 0.0));
 
-        textField4.setPrefWidth(200.0);
-        VBox.setMargin(hBox0, new Insets(0.0, 0.0, 10.0, 0.0));
-        textField4.setOnKeyPressed(null);
+        textField4.setPrefWidth(200.0*largeur);
+        textField4.setFont(new Font(15.0*hauteur));
+        VBox.setMargin(hBox0, new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
 
         hBox1.setPrefHeight(0.0);
-        hBox1.setPrefWidth(711.0);
+        hBox1.setPrefWidth(711.0*largeur);
 
-        hBox2.setPrefHeight(41.0);
-        hBox2.setPrefWidth(725.0);
+        hBox2.setPrefHeight(41.0*hauteur);
+        hBox2.setPrefWidth(725.0*largeur);
 
         text1.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1.setStrokeWidth(0.0);
         text1.setText("Aller/ Aller-retour :");
-        HBox.setMargin(text1, new Insets(0.0, 52.0, 0.0, 0.0));
+        text1.setWrappingWidth(180*largeur);
+        text1.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(text1, new Insets(0.0, 20.0*largeur, 0.0, 0.0));
 
         radioButton.setMnemonicParsing(false);
         radioButton.setText("Aller");
+        radioButton.setFont(new Font(15.0*hauteur));
         radioButton.setSelected(true);
 
         radioButton0.setMnemonicParsing(false);
         radioButton0.setText("Aller-retour");
-        HBox.setMargin(radioButton0, new Insets(0.0, 0.0, 0.0, 53.0));
-        HBox.setMargin(hBox2, new Insets(0.0, 0.0, 10.0, 0.0));
+        radioButton0.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(radioButton0, new Insets(0.0, 0.0, 0.0, 53.0*largeur));
+        HBox.setMargin(hBox2, new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
         
         ToggleGroup t1 = new ToggleGroup();
         radioButton.setToggleGroup(t1);
         radioButton0.setToggleGroup(t1);
 
-        hBox3.setPrefHeight(17.0);
-        hBox3.setPrefWidth(244.0);
+        hBox3.setPrefHeight(17.0*hauteur);
+        hBox3.setPrefWidth(244.0*largeur);
 
         text2.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text2.setStrokeWidth(0.0);
         text2.setText("Classe :");
-        HBox.setMargin(text2, new Insets(0.0, 127.0, 0.0, 0.0));
+        text2.setWrappingWidth(180*largeur);
+        text2.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(text2, new Insets(0.0, 20.0*largeur, 0.0, 0.0));
 
         radioButton1.setMnemonicParsing(false);
         radioButton1.setText("1e classe");
+        radioButton1.setFont(new Font(15.0*hauteur));
         radioButton1.setSelected(true);
 
         radioButton2.setMnemonicParsing(false);
         radioButton2.setText("2e classe");
-        HBox.setMargin(radioButton2, new Insets(0.0, 0.0, 0.0, 50.0));
-        VBox.setMargin(hBox3, new Insets(0.0, 0.0, 10.0, 0.0));
+        radioButton2.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(radioButton2, new Insets(0.0, 0.0, 0.0, 50.0*largeur));
+        VBox.setMargin(hBox3, new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
         
         ToggleGroup t2 = new ToggleGroup();
         radioButton2.setToggleGroup(t2);
         radioButton1.setToggleGroup(t2);
 
-        hBox4.setPrefHeight(17.0);
+        hBox4.setPrefHeight(17.0*hauteur);
         hBox4.setPrefWidth(244.0);
 
         text3.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text3.setStrokeWidth(0.0);
         text3.setText("Type de billet :");
-        HBox.setMargin(text3, new Insets(0.0, 77.0, 0.0, 0.0));
+        text3.setWrappingWidth(180*largeur);
+        text3.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(text3, new Insets(0.0, 20.0*largeur, 0.0, 0.0));
 
-        textField5.setPrefWidth(150.0);
+        textField5.setPrefWidth(150.0*largeur);
+        textField5.setFont(new Font(15.0*hauteur));
 
         text4.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text4.setStrokeWidth(0.0);
         text4.setText("Réduction :");
-        HBox.setMargin(text4, new Insets(0.0, 0.0, 0.0, 70.0));
+        text4.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(text4, new Insets(0.0, 0.0, 0.0, 70.0*largeur));
 
-        textField6.setPrefWidth(150.0);
-        HBox.setMargin(textField6, new Insets(0.0, 0.0, 0.0, 50.0));
-        VBox.setMargin(hBox4, new Insets(0.0, 0.0, 10.0, 0.0));
+        textField6.setPrefWidth(150.0*largeur);
+        textField6.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(textField6, new Insets(0.0, 0.0, 0.0, 50.0*largeur));
+        VBox.setMargin(hBox4, new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
 
-        hBox5.setPrefHeight(12.0);
-        hBox5.setPrefWidth(711.0);
+        hBox5.setPrefHeight(12.0*hauteur);
+        hBox5.setPrefWidth(711.0*largeur);
 
         text5.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text5.setStrokeWidth(0.0);
         text5.setText("Nombre de billet(s) : ");
+        text5.setWrappingWidth(180*largeur);
+        text5.setFont(new Font(15.0*hauteur));
         HBox.setMargin(text5, new Insets(0.0));
 
-        textField.setPrefHeight(31.0);
-        textField.setPrefWidth(40.0);
-        HBox.setMargin(textField, new Insets(0.0, 0.0, 0.0, 32.0));
-        VBox.setMargin(hBox5, new Insets(0.0, 0.0, 10.0, 0.0));
+        textField.setPrefHeight(31.0*hauteur);
+        textField.setPrefWidth(40.0*largeur);
+        textField.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(textField, new Insets(0.0, 75.0*largeur, 0.0, 20.0*largeur));
+        VBox.setMargin(hBox5, new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
 
-        hBox6.setLayoutX(82.0);
-        hBox6.setPrefHeight(33.0);
-        hBox6.setPrefWidth(711.0);
+        hBox6.setLayoutX(82.0*largeur);
+        hBox6.setPrefHeight(33.0*hauteur);
+        hBox6.setPrefWidth(400.0*largeur);
 
         text6.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text6.setStrokeWidth(0.0);
         text6.setText("Jour de départ :");
-        HBox.setMargin(text6, new Insets(0.0, 70.0, 0.0, 0.0));
+        text6.setWrappingWidth(180*largeur);
+        text6.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(text6, new Insets(0.0, 20.0*largeur, 0.0, 0.0));
 
-        textField0.setPrefHeight(31.0);
-        textField0.setPrefWidth(35.0);
+        textField0.setPrefHeight(31.0*hauteur);
+        textField0.setPrefWidth(35.0*largeur);
+        textField0.setFont(new Font(15.0*hauteur));
 
         text7.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text7.setStrokeWidth(0.0);
         text7.setText(" / ");
-        HBox.setMargin(text7, new Insets(5.0, 0.0, 0.0, 0.0));
+        text7.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(text7, new Insets(5.0*hauteur, 0.0, 0.0, 0.0));
 
-        textField1.setPrefHeight(31.0);
-        textField1.setPrefWidth(35.0);
+        textField1.setPrefHeight(31.0*hauteur);
+        textField1.setPrefWidth(35.0*largeur);
+        textField1.setFont(new Font(15.0*hauteur));
 
         text8.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text8.setStrokeWidth(0.0);
         text8.setText(" / ");
-        HBox.setMargin(text8, new Insets(5.0, 0.0, 0.0, 0.0));
+        text8.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(text8, new Insets(5.0*hauteur, 0.0, 0.0, 0.0));
 
-        textField2.setPrefHeight(31.0);
-        textField2.setPrefWidth(55.0);
-        HBox.setMargin(textField2, new Insets(0.0, 50.0, 0.0, 0.0));
+        textField2.setPrefHeight(31.0*hauteur);
+        textField2.setPrefWidth(55.0*largeur);
+        textField2.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(textField2, new Insets(0.0, 0.0, 0.0, 0.0));
 
-        button.setLayoutX(22.5);
-        button.setLayoutY(354.0);
+        button.setLayoutX(22.5*largeur);
+        button.setLayoutY(354.0*hauteur);
         button.setMnemonicParsing(false);
-        button.setPrefHeight(31.0);
-        button.setPrefWidth(75.0);
+        button.setPrefHeight(31.0*hauteur);
+        button.setPrefWidth(75.0*largeur);
         button.setText("Annuler");
+        button.setFont(new Font(15.0*hauteur));
         button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button.setOnAction(new EventHandler<ActionEvent>()
         {
@@ -212,12 +241,13 @@ class FBillet extends Ecran
             }
         });
 
-        button0.setLayoutX(702.5);
-        button0.setLayoutY(354.0);
+        button0.setLayoutX(702.5*largeur);
+        button0.setLayoutY(354.0*hauteur);
         button0.setMnemonicParsing(false);
-        button0.setPrefHeight(31.0);
-        button0.setPrefWidth(75.0);
+        button0.setPrefHeight(31.0*hauteur);
+        button0.setPrefWidth(75.0*largeur);
         button0.setText("Valider");
+        button0.setFont(new Font(15.0*hauteur));
         button0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button0.setOnAction(new EventHandler<ActionEvent>()
         {
@@ -228,13 +258,13 @@ class FBillet extends Ecran
         });
 
         text9.setFontSmoothingType(javafx.scene.text.FontSmoothingType.LCD);
-        text9.setLayoutX(31.0);
-        text9.setLayoutY(58.5);
+        text9.setLayoutX(31.0*largeur);
+        text9.setLayoutY(58.5*hauteur);
         text9.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text9.setStrokeWidth(0.0);
         text9.setText("Achat d'un billet de train");
         text9.setUnderline(true);
-        text9.setFont(new Font("System Bold", 22.0));
+        text9.setFont(new Font("System Bold", 22.0*hauteur));
 
         hBox.getChildren().addAll(text, textField3);
         hBox0.getChildren().addAll(text0, textField4);
@@ -242,9 +272,9 @@ class FBillet extends Ecran
         hBox1.getChildren().add(hBox2);
         hBox3.getChildren().addAll(text2, radioButton1, radioButton2);
         hBox4.getChildren().addAll(text3, textField5, text4, textField6);
-        hBox5.getChildren().addAll(text5, textField);
         hBox6.getChildren().addAll(text6, textField0, text7, textField1, text8, textField2);
-        vBox.getChildren().addAll(hBox, hBox0, hBox1, hBox3, hBox4, hBox5, hBox6);
+        hBox5.getChildren().addAll(text5, textField, hBox6);
+        vBox.getChildren().addAll(hBox, hBox0, hBox1, hBox3, hBox4, hBox5);
         getChildren().addAll(rectangle, vBox, button, button0, text9);
     }
     

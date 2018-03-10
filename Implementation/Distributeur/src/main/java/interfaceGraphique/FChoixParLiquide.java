@@ -14,7 +14,7 @@ class FChoixParLiquide extends Ecran
     private Text text1, text3, text5;
     private FBillet fenBillet;
 
-    public FChoixParLiquide(FBillet fenBillet) 
+    public FChoixParLiquide(FBillet fenBillet, double hauteur, double largeur) 
     {
     	this.fenBillet = fenBillet;
         Rectangle rectangle = new Rectangle();
@@ -35,30 +35,31 @@ class FChoixParLiquide extends Ecran
         setMaxWidth(USE_PREF_SIZE);
         setMinHeight(USE_PREF_SIZE);
         setMinWidth(USE_PREF_SIZE);
-        setPrefHeight(400.0);
-        setPrefWidth(800.0);
+        setPrefHeight(400.0*hauteur);
+        setPrefWidth(800.0*largeur);
 
-        rectangle.setArcHeight(5.0);
-        rectangle.setArcWidth(5.0);
+        rectangle.setArcHeight(5.0*hauteur);
+        rectangle.setArcWidth(5.0*largeur);
         rectangle.setFill(javafx.scene.paint.Color.valueOf("#d3d3d3"));
-        rectangle.setHeight(400.0);
+        rectangle.setHeight(400.0*hauteur);
         rectangle.setStroke(javafx.scene.paint.Color.BLACK);
         rectangle.setStrokeType(javafx.scene.shape.StrokeType.INSIDE);
-        rectangle.setWidth(800.0);
+        rectangle.setWidth(800.0*largeur);
 
-        text.setLayoutX(60.0);
-        text.setLayoutY(75.0);
+        text.setLayoutX(60.0*largeur);
+        text.setLayoutY(75.0*hauteur);
         text.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text.setStrokeWidth(0.0);
         text.setText("Veuillez introduire l'argent");
-        text.setFont(new Font("System Bold", 22.0));
+        text.setFont(new Font("System Bold", 22.0*hauteur));
 
-        button.setLayoutX(362.5);
-        button.setLayoutY(333.0);
+        button.setLayoutX(362.5*largeur);
+        button.setLayoutY(333.0*hauteur);
         button.setMnemonicParsing(false);
-        button.setPrefHeight(31.0);
-        button.setPrefWidth(75.0);
+        button.setPrefHeight(31.0*hauteur);
+        button.setPrefWidth(75.0*largeur);
         button.setText("Annuler");
+        button.setFont(new Font(15.0*hauteur));
         button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button.setOnAction(new EventHandler<ActionEvent>()
         {
@@ -68,47 +69,53 @@ class FChoixParLiquide extends Ecran
             }
         });
 
-        vBox.setLayoutX(113.0);
-        vBox.setLayoutY(148.0);
-        vBox.setPrefHeight(40.0);
-        vBox.setPrefWidth(295.0);
+        vBox.setLayoutX(113.0*largeur);
+        vBox.setLayoutY(148.0*hauteur);
+        vBox.setPrefHeight(40.0*hauteur);
+        vBox.setPrefWidth(295.0*largeur);
 
         hBox.setPrefHeight(0.0);
-        hBox.setPrefWidth(100.0);
+        hBox.setPrefWidth(100.0*largeur);
 
         text0.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text0.setStrokeWidth(0.0);
         text0.setText("Montant à payer :");
-        HBox.setMargin(text0, new Insets(0.0, 50.0, 0.0, 0.0));
+        text0.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(text0, new Insets(0.0, 50.0*largeur, 0.0, 0.0));
 
         text1.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1.setStrokeWidth(0.0);
+        text1.setFont(new Font(15.0*hauteur));
         text1.setText(String.valueOf(Double.valueOf(fenBillet.getPrix())/100) + " €");
 
         hBox0.setPrefHeight(0.0);
-        hBox0.setPrefWidth(100.0);
+        hBox0.setPrefWidth(100.0*hauteur);
 
         text2.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text2.setStrokeWidth(0.0);
         text2.setText("Montant introduit :");
-        HBox.setMargin(text2, new Insets(0.0, 43.0, 0.0, 0.0));
+        text2.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(text2, new Insets(0.0, 43.0*largeur, 0.0, 0.0));
 
         text3.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text3.setStrokeWidth(0.0);
         text3.setText("0.0 €");
-        VBox.setMargin(hBox0, new Insets(20.0, 0.0, 20.0, 0.0));
+        VBox.setMargin(hBox0, new Insets(20.0*hauteur, 0.0, 20.0*hauteur, 0.0));
+        text3.setFont(new Font(15.0*hauteur));
 
         hBox1.setPrefHeight(0.0);
-        hBox1.setPrefWidth(100.0);
+        hBox1.setPrefWidth(100.0*largeur);
 
         text4.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text4.setStrokeWidth(0.0);
         text4.setText("Montant restant :");
-        HBox.setMargin(text4, new Insets(0.0, 53.0, 0.0, 0.0));
+        text4.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(text4, new Insets(0.0, 53.0*largeur, 0.0, 0.0));
 
         text5.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text5.setStrokeWidth(0.0);
         text5.setText(String.valueOf(Double.valueOf(fenBillet.getPrix())/100) + " €");
+        text5.setFont(new Font(15.0*hauteur));
 
         hBox.getChildren().addAll(text0, text1);
         hBox0.getChildren().addAll(text2, text3);

@@ -15,11 +15,7 @@ class EtatAfficherRecu extends EtatAnnulable
 	
 	public void entree() 
 	{
-		Controleur.getInstance().getCoeurAGraphique().afficherRecu();
-	}
-	public void choixOk()
-	{
 		Controleur.getInstance().modifEtat(EtatAfficherBillet.getInstance());
-		Controleur.getInstance().getCoeurAGraphique().getStage5().close(); // a enlever si possible
+		Controleur.getInstance().getCoeurAGraphique().afficherRecu();
 	}
 }

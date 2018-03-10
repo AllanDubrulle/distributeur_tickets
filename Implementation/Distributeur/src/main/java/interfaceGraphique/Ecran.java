@@ -10,7 +10,7 @@ abstract class Ecran extends ComposantVisible
 		super(enMarche);
 	}
 	
-	public Ecran() {};
+	public Ecran() {}
 	
 	protected GraphiqueACoeur graphAC = GraphiqueACoeurImpl.getInstance();
 	protected int pos;

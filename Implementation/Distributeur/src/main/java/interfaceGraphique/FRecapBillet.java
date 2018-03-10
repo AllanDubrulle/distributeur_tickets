@@ -10,7 +10,7 @@ import javafx.scene.text.*;
 
 class FRecapBillet extends Ecran 
 {    
-    public FRecapBillet(FBillet fenBillet) 
+    public FRecapBillet(FBillet fenBillet, double hauteur, double largeur) 
     {
         Rectangle rectangle = new Rectangle();
         VBox vBox = new VBox();
@@ -46,122 +46,136 @@ class FRecapBillet extends Ecran
         Button button0 = new Button();
         Text text17 = new Text();
 
-        setPrefHeight(400.0);
-        setPrefWidth(800.0);
+        setPrefHeight(400.0*hauteur);
+        setPrefWidth(800.0*largeur);
 
-        rectangle.setArcHeight(5.0);
-        rectangle.setArcWidth(5.0);
+        rectangle.setArcHeight(5.0*hauteur);
+        rectangle.setArcWidth(5.0*largeur);
         rectangle.setFill(javafx.scene.paint.Color.valueOf("#d3d3d3"));
-        rectangle.setHeight(400.0);
+        rectangle.setHeight(400.0*hauteur);
         rectangle.setStroke(javafx.scene.paint.Color.BLACK);
         rectangle.setStrokeType(javafx.scene.shape.StrokeType.INSIDE);
-        rectangle.setWidth(800.0);
+        rectangle.setWidth(800.0*largeur);
 
-        vBox.setLayoutX(80.0);
-        vBox.setLayoutY(78.0);
-        vBox.setPrefHeight(258.0);
-        vBox.setPrefWidth(377.0);
+        vBox.setLayoutX(80.0*largeur);
+        vBox.setLayoutY(78.0*hauteur);
+        vBox.setPrefHeight(258.0*hauteur);
+        vBox.setPrefWidth(377.0*largeur);
 
-        hBox.setPrefHeight(17.0);
-        hBox.setPrefWidth(244.0);
+        hBox.setPrefHeight(17.0*hauteur);
+        hBox.setPrefWidth(244.0*largeur);
 
         text.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text.setStrokeWidth(0.0);
         text.setText("Gare de départ :");
-        HBox.setMargin(text, new Insets(0.0, 70.0, 0.0, 0.0));
+        text.setWrappingWidth(130*largeur);
+        text.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(text, new Insets(0.0, 35.0*largeur, 0.0, 0.0));
 
         text0.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text0.setStrokeWidth(0.0);
         text0.setText(fenBillet.getGareDepart());
-        text0.setWrappingWidth(200.0);
-        text0.setFont(new Font("System Bold Italic", 15.0));
-        VBox.setMargin(hBox, new Insets(0.0, 0.0, 10.0, 0.0));
+        text0.setWrappingWidth(200.0*largeur);
+        text0.setFont(new Font("System Bold Italic", 15.0*hauteur));
+        VBox.setMargin(hBox, new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
 
-        hBox0.setPrefHeight(17.0);
-        hBox0.setPrefWidth(244.0);
+        hBox0.setPrefHeight(17.0*hauteur);
+        hBox0.setPrefWidth(244.0*largeur);
 
         text1.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1.setStrokeWidth(0.0);
         text1.setText("Gare d'arrivée :");
-        HBox.setMargin(text1, new Insets(0.0, 77.0, 0.0, 0.0));
+        text1.setWrappingWidth(130*largeur);
+        text1.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(text1, new Insets(0.0, 35.0*largeur, 0.0, 0.0));
 
         text2.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text2.setStrokeWidth(0.0);
         text2.setText(fenBillet.getGareArrivee());
-        text2.setWrappingWidth(200.0);
-        text2.setFont(new Font("System Bold Italic", 15.0));
-        VBox.setMargin(hBox0, new Insets(0.0, 0.0, 10.0, 0.0));
+        text2.setWrappingWidth(200.0*largeur);
+        text2.setFont(new Font("System Bold Italic", 15.0*hauteur));
+        VBox.setMargin(hBox0, new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
 
         hBox1.setPrefHeight(0.0);
-        hBox1.setPrefWidth(711.0);
+        hBox1.setPrefWidth(711.0*largeur);
 
-        hBox2.setPrefHeight(41.0);
-        hBox2.setPrefWidth(725.0);
+        hBox2.setPrefHeight(41.0*hauteur);
+        hBox2.setPrefWidth(725.0*largeur);
 
         text3.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text3.setStrokeWidth(0.0);
         text3.setText("Aller / Aller-retour :");
-        HBox.setMargin(text3, new Insets(0.0, 47.0, 0.0, 0.0));
+        text3.setWrappingWidth(130*largeur);
+        text3.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(text3, new Insets(0.0, 35.0*largeur, 0.0, 0.0));
 
         text4.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text4.setStrokeWidth(0.0);
         text4.setText(fenBillet.getAllerRetour());
-        text4.setWrappingWidth(200.0);
-        text4.setFont(new Font("System Bold Italic", 15.0));
-        HBox.setMargin(hBox2, new Insets(0.0, 0.0, 10.0, 0.0));
+        text4.setWrappingWidth(200.0*largeur);
+        text4.setFont(new Font("System Bold Italic", 15.0*hauteur));
+        HBox.setMargin(hBox2, new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
 
-        hBox3.setPrefHeight(17.0);
-        hBox3.setPrefWidth(244.0);
+        hBox3.setPrefHeight(17.0*hauteur);
+        hBox3.setPrefWidth(244.0*largeur);
 
         text5.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text5.setStrokeWidth(0.0);
         text5.setText("Classe :");
-        HBox.setMargin(text5, new Insets(0.0, 127.0, 0.0, 0.0));
+        text5.setWrappingWidth(130*largeur);
+        text5.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(text5, new Insets(0.0, 35.0*largeur, 0.0, 0.0));
 
         text6.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text6.setStrokeWidth(0.0);
         text6.setText(fenBillet.getClasse());
-        text6.setWrappingWidth(200.0);
-        text6.setFont(new Font("System Bold Italic", 15.0));
-        VBox.setMargin(hBox3, new Insets(0.0, 0.0, 10.0, 0.0));
+        text6.setWrappingWidth(200.0*largeur);
+        text6.setFont(new Font("System Bold Italic", 15.0*hauteur));
+        VBox.setMargin(hBox3, new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
 
-        hBox4.setPrefHeight(17.0);
-        hBox4.setPrefWidth(244.0);
+        hBox4.setPrefHeight(17.0*hauteur);
+        hBox4.setPrefWidth(244.0*largeur);
 
         text7.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text7.setStrokeWidth(0.0);
         text7.setText("Type de billet :");
-        HBox.setMargin(text7, new Insets(0.0, 77.0, 0.0, 0.0));
+        text7.setWrappingWidth(130*largeur);
+        text7.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(text7, new Insets(0.0, 35.0*largeur, 0.0, 0.0));
 
         text8.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text8.setStrokeWidth(0.0);
         text8.setText(fenBillet.getType());
-        text8.setWrappingWidth(200.0);
-        text8.setFont(new Font("System Bold Italic", 15.0));
-        VBox.setMargin(hBox4, new Insets(0.0, 0.0, 10.0, 0.0));
+        text8.setWrappingWidth(200.0*largeur);
+        text8.setFont(new Font("System Bold Italic", 15.0*hauteur));
+        VBox.setMargin(hBox4, new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
 
         hBox5.setPrefHeight(0.0);
-        hBox5.setPrefWidth(711.0);
+        hBox5.setPrefWidth(711.0*largeur);
 
         text9.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text9.setStrokeWidth(0.0);
         text9.setText("Réduction :");
-        HBox.setMargin(text9, new Insets(0.0, 100.0, 0.0, 0.0));
+        text9.setWrappingWidth(130*largeur);
+        text9.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(text9, new Insets(0.0, 35.0*largeur, 0.0, 0.0));
 
         text10.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text10.setStrokeWidth(0.0);
         text10.setText(fenBillet.getReduction());
-        text10.setWrappingWidth(200.0);
-        text10.setFont(new Font("System Bold Italic", 15.0));
-        VBox.setMargin(hBox5, new Insets(0.0, 0.0, 10.0, 0.0));
+        text10.setWrappingWidth(200.0*largeur);
+        text10.setFont(new Font("System Bold Italic", 15.0*hauteur));
+        VBox.setMargin(hBox5, new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
 
-        hBox6.setPrefHeight(12.0);
-        hBox6.setPrefWidth(711.0);
+        hBox6.setPrefHeight(12.0*hauteur);
+        hBox6.setPrefWidth(711.0*largeur);
 
         text11.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text11.setStrokeWidth(0.0);
         text11.setText("Nombre de billet(s) : ");
-        HBox.setMargin(text11, new Insets(0.0, 35.0, 0.0, 0.0));
+        text11.setWrappingWidth(130*largeur);
+        text11.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(text11, new Insets(0.0, 35.0*largeur, 0.0, 0.0));
 
         text12.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text12.setStrokeWidth(0.0);
@@ -170,46 +184,51 @@ class FRecapBillet extends Ecran
         	text12.setText(" 1");
         else
         	text12.setText(s);
-        text12.setWrappingWidth(200.0);
-        text12.setFont(new Font("System Bold Italic", 15.0));
-        VBox.setMargin(hBox6, new Insets(0.0, 0.0, 10.0, 0.0));
+        text12.setWrappingWidth(200.0*largeur);
+        text12.setFont(new Font("System Bold Italic", 15.0*hauteur));
+        VBox.setMargin(hBox6, new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
 
-        hBox7.setLayoutX(82.0);
-        hBox7.setPrefHeight(33.0);
-        hBox7.setPrefWidth(711.0);
+        hBox7.setLayoutX(82.0*largeur);
+        hBox7.setPrefHeight(33.0*hauteur);
+        hBox7.setPrefWidth(711.0*largeur);
 
         text13.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text13.setStrokeWidth(0.0);
         text13.setText("Jour de départ :");
-        HBox.setMargin(text13, new Insets(0.0, 70.0, 0.0, 0.0));
+        text13.setWrappingWidth(130*largeur);
+        text13.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(text13, new Insets(0.0, 35.0*largeur, 0.0, 0.0));
 
         text14.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text14.setStrokeWidth(0.0);
         text14.setText(fenBillet.getDate());
-        text14.setWrappingWidth(200.0);
-        text14.setFont(new Font("System Bold Italic", 15.0));
-        VBox.setMargin(hBox7, new Insets(0.0, 0.0, 10.0, 0.0));
+        text14.setWrappingWidth(200.0*largeur);
+        text14.setFont(new Font("System Bold Italic", 15.0*hauteur));
+        VBox.setMargin(hBox7, new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
 
-        hBox8.setPrefHeight(100.0);
-        hBox8.setPrefWidth(200.0);
+        hBox8.setPrefHeight(100.0*hauteur);
+        hBox8.setPrefWidth(200.0*largeur);
 
         text15.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text15.setStrokeWidth(0.0);
         text15.setText("Prix :");
+        text15.setWrappingWidth(130*largeur);
+        text15.setFont(new Font(15.0*hauteur));
 
         text16.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text16.setStrokeWidth(0.0);
         text16.setText(String.valueOf(Double.valueOf(fenBillet.getPrix())/100) + " €");
-        text16.setWrappingWidth(200.0);
-        text16.setFont(new Font("System Bold Italic", 15.0));
-        HBox.setMargin(text16, new Insets(0.0, 0.0, 0.0, 140.0));
+        text16.setWrappingWidth(200.0*largeur);
+        text16.setFont(new Font("System Bold Italic", 15.0*hauteur));
+        HBox.setMargin(text16, new Insets(0.0, 0.0, 0.0, 35.0*largeur));
 
-        button.setLayoutX(22.5);
-        button.setLayoutY(354.0);
+        button.setLayoutX(23.0*largeur);
+        button.setLayoutY(354.0*hauteur);
         button.setMnemonicParsing(false);
-        button.setPrefHeight(31.0);
-        button.setPrefWidth(75.0);
+        button.setPrefHeight(31.0*hauteur);
+        button.setPrefWidth(75.0*largeur);
         button.setText("Retour");
+        button.setFont(new Font(15.0*hauteur));
         button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button.setOnAction(new EventHandler<ActionEvent>() 
         {
@@ -219,12 +238,13 @@ class FRecapBillet extends Ecran
         	}
         });
 
-        button0.setLayoutX(679.0);
-        button0.setLayoutY(354.0);
+        button0.setLayoutX(679.0*largeur);
+        button0.setLayoutY(354.0*hauteur);
         button0.setMnemonicParsing(false);
-        button0.setPrefHeight(31.0);
-        button0.setPrefWidth(100.0);
+        button0.setPrefHeight(31.0*hauteur);
+        button0.setPrefWidth(100.0*largeur);
         button0.setText("Paiement");
+        button0.setFont(new Font(15.0*hauteur));
         button0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button0.setOnAction(new EventHandler<ActionEvent>() 
         {
@@ -235,13 +255,13 @@ class FRecapBillet extends Ecran
         });
 
         text17.setFontSmoothingType(javafx.scene.text.FontSmoothingType.LCD);
-        text17.setLayoutX(31.0);
-        text17.setLayoutY(54.5);
+        text17.setLayoutX(31.0*largeur);
+        text17.setLayoutY(54.5*hauteur);
         text17.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text17.setStrokeWidth(0.0);
         text17.setText("Achat d'un billet de train (récapitulatif de commande)");
         text17.setUnderline(true);
-        text17.setFont(new Font("System Bold", 22.0));
+        text17.setFont(new Font("System Bold", 22.0*hauteur));
 
         hBox.getChildren().addAll(text, text0);
         hBox0.getChildren().addAll(text1, text2);

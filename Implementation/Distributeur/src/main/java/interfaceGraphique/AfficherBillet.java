@@ -1,11 +1,7 @@
 package interfaceGraphique;
 
-import coeur.GraphiqueACoeurImpl;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.geometry.*;
 import javafx.scene.text.*;
-import javafx.scene.control.Button;
 import javafx.scene.layout.*;
 import javafx.scene.shape.Rectangle;
 
@@ -35,14 +31,13 @@ class AfficherBillet extends Pane
         Text text10 = new Text();
         Text text11 = new Text();
         Text text12 = new Text();
-        Button button = new Button();
         Rectangle rectangle = new Rectangle();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
         setMinHeight(USE_PREF_SIZE);
         setMinWidth(USE_PREF_SIZE);
-        setPrefHeight(300.0);
+        setPrefHeight(250.0);
         setPrefWidth(580.0);
 
         vBox.setAlignment(javafx.geometry.Pos.TOP_CENTER);
@@ -172,17 +167,7 @@ class AfficherBillet extends Pane
         text12.setFont(new Font("System Bold", 16.0));
         hBox5.setOpaqueInsets(new Insets(0.0));
         VBox.setMargin(hBox5, new Insets(10.0, 20.0, 0.0, 20.0));
-
-        button.setMnemonicParsing(false);
-        button.setText("Ok");
-        button.setOnAction(new EventHandler<ActionEvent>()
-        {
-            public void handle(ActionEvent event)
-            {
-            	GraphiqueACoeurImpl.getInstance().choixOk();
-            }
-        });
-        VBox.setMargin(button, new Insets(25.0, 0.0, 0.0, 0.0));
+        
         vBox.setPadding(new Insets(20.0, 0.0, 0.0, 0.0));
 
         rectangle.setArcHeight(5.0);
@@ -202,7 +187,7 @@ class AfficherBillet extends Pane
         hBox3.getChildren().addAll(text6, text7);
         hBox4.getChildren().addAll(text8, text9);
         hBox5.getChildren().addAll(text10, text11, text12);
-        vBox.getChildren().addAll(hBox, hBox0, hBox1, hBox2, hBox3, hBox4, hBox5, button);
+        vBox.getChildren().addAll(hBox, hBox0, hBox1, hBox2, hBox3, hBox4, hBox5);
         getChildren().addAll(vBox, rectangle);
     }
 }

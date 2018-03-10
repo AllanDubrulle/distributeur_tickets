@@ -8,7 +8,7 @@ import javafx.scene.text.*;
 
 class FCodePINIncor extends Ecran 
 {
-    public FCodePINIncor() 
+    public FCodePINIncor(double hauteur, double largeur) 
     {
         Rectangle rectangle = new Rectangle();
         Text text = new Text();
@@ -18,32 +18,33 @@ class FCodePINIncor extends Ecran
         setMaxWidth(USE_PREF_SIZE);
         setMinHeight(USE_PREF_SIZE);
         setMinWidth(USE_PREF_SIZE);
-        setPrefHeight(400.0);
-        setPrefWidth(800.0);
+        setPrefHeight(400.0*hauteur);
+        setPrefWidth(800.0*largeur);
 
-        rectangle.setArcHeight(5.0);
-        rectangle.setArcWidth(5.0);
+        rectangle.setArcHeight(5.0*hauteur);
+        rectangle.setArcWidth(5.0*largeur);
         rectangle.setFill(javafx.scene.paint.Color.valueOf("#d3d3d3"));
-        rectangle.setHeight(400.0);
+        rectangle.setHeight(400.0*hauteur);
         rectangle.setStroke(javafx.scene.paint.Color.BLACK);
         rectangle.setStrokeType(javafx.scene.shape.StrokeType.INSIDE);
-        rectangle.setWidth(800.0);
+        rectangle.setWidth(800.0*largeur);
 
-        text.setLayoutX(297.0);
-        text.setLayoutY(193.0);
+        text.setLayoutX(297.0*largeur);
+        text.setLayoutY(193.0*hauteur);
         text.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text.setStrokeWidth(0.0);
         text.setText("Code PIN incorrect. Veuillez rééssayer.");
         text.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        text.setWrappingWidth(205.841796875);
-        text.setFont(new Font("System Italic", 18.0));
+        text.setWrappingWidth(205.5*largeur);
+        text.setFont(new Font("System Italic", 18.0*hauteur));
         
-        button.setLayoutX(515.0);
-        button.setLayoutY(359.0);
+        button.setLayoutX(515.0*largeur);
+        button.setLayoutY(359.0*hauteur);
         button.setMnemonicParsing(false);
-        button.setPrefHeight(31.0);
-        button.setPrefWidth(75.0);
+        button.setPrefHeight(31.0*hauteur);
+        button.setPrefWidth(75.0*largeur);
         button.setText("Annuler");
+        button.setFont(new Font(15.0*hauteur));
         button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button.setOnAction(new EventHandler<ActionEvent>()
         {

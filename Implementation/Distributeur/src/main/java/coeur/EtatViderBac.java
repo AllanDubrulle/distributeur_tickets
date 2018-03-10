@@ -20,6 +20,9 @@ class EtatViderBac extends EtatAnnulable
 	public void choixOk()
 	{
 		Controleur.getInstance().modifEtat(EtatAfficherRecu.getInstance());
-		Controleur.getInstance().getCoeurAGraphique().getStage2().close();
+	}
+	public void apres5sec()
+	{
+		Controleur.getInstance().modifEtat(EtatAfficherRecu.getInstance());
 	}
 }

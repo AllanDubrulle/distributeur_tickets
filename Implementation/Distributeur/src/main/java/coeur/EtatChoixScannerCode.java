@@ -24,6 +24,7 @@ public class EtatChoixScannerCode extends EtatAnnulable
 	
 	public void choixAnnulerScanner() 
 	{
+		Controleur.getInstance().modifEtat(EtatChoixRenouvAbo.getInstance());
 		Controleur.getInstance().getCoeurAGraphique().getStage().close(); // a enlever si possible
 	}
 }
