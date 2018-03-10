@@ -19,7 +19,7 @@ class EtatParCarte extends EtatAnnulable
 	public void choixCarte() 
 	{
 		Controleur.getInstance().modifEtat(EtatAttenteInsertionCarte.getInstance());
-		Controleur.getInstance().getCoeurAGraphique().getStage().close();
+		Controleur.getInstance().getCoeurAGraphique().getStage().close(); // a éliminer
 	}
 	//cette dernière méthode est pour les tests, à modifier évidemment !
 	

@@ -19,9 +19,9 @@ class EtatImpression extends EtatAnnulable
 	public void entree() 
 	{
 		Controleur.getInstance().getCoeurAGraphique().afficherImpression();
-		PauseTransition delay = new PauseTransition(Duration.seconds(5));
-		delay.setOnFinished( event -> apres5sec());
-		delay.play();
+		PauseTransition delais = new PauseTransition(Duration.seconds(5));
+		delais.setOnFinished( event -> apres5sec());
+		delais.play();
 	}
 	
 	public void apres5sec()

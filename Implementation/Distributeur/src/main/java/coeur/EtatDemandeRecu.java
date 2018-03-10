@@ -1,6 +1,6 @@
 package coeur;
 
-class EtatDemandeRecu extends EtatAnnulable 
+public class EtatDemandeRecu extends EtatAnnulable 
 {	
 	private static EtatDemandeRecu instance;
 	private int codePIN;

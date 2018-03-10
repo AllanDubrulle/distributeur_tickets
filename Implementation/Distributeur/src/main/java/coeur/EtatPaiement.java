@@ -1,6 +1,6 @@
 package coeur;
 
-class EtatPaiement extends EtatAnnulable 
+public class EtatPaiement extends EtatAnnulable 
 {	
 	private static EtatPaiement instance;
 	public static EtatPaiement getInstance() 
