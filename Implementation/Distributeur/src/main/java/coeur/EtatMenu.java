@@ -41,6 +41,7 @@ public class EtatMenu extends ControleurEtat
 	{
 		Controleur.getInstance().getCoeurAGraphique().afficherMenu();
 		Controleur.getInstance().getEtatsPrecedents().clear();
+		Controleur.getInstance().ReinitialisationCommande();
 	}
 
 

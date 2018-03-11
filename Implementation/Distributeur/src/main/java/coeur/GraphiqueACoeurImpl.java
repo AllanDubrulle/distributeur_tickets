@@ -108,14 +108,7 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 		
 	}
 	
-	public void choixValiderBillet() 
-	{
-		controleur.getEtatActuel().valideBillet();
-	}
-	public void choixValiderAchatAbo() 
-	{
-		controleur.getEtatActuel().valideAchatAbo();
-	}
+	
 	public void choixValiderRenouvAbo() 
 	{
 		controleur.getEtatActuel().valideRenouvAbo();
@@ -123,18 +116,6 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 	public void choixValiderRenouvAboScanne() 
 	{
 		controleur.getEtatActuel().valideRenouvAboScanne();
-	}
-	public void choixValiderPassIllimite() 
-	{
-		controleur.getEtatActuel().validePassIllimite();
-	}
-	public void choixValiderPass10Trajets() 
-	{
-		controleur.getEtatActuel().validePass10Trajets();
-	}
-	public void choixValiderPass10Trajets2Gares() 
-	{
-		controleur.getEtatActuel().validePass10Trajets2Gares();
 	}
 
 	public void choixScannerCode() 
@@ -240,6 +221,11 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 	public void choixValiderNumCarte() 
 	{
 		controleur.getEtatActuel().choixCarte();
+	}
+	public void choixValider()
+	{
+		controleur.getEtatActuel().valider();
+		
 	}
 	
 }

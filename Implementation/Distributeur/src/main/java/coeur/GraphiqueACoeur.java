@@ -27,13 +27,9 @@ public interface GraphiqueACoeur
 	public void choixRechercheGDEtGA();
 	public void choixChangerHeure();
 	
-	public void choixValiderBillet();
-	public void choixValiderAchatAbo();
+	public void choixValider();
 	public void choixValiderRenouvAbo();
 	public void choixValiderRenouvAboScanne();
-	public void choixValiderPassIllimite();
-	public void choixValiderPass10Trajets();
-	public void choixValiderPass10Trajets2Gares();
 	
 	public void choixScannerCode();
 	public void choixTaperCodeAbo();

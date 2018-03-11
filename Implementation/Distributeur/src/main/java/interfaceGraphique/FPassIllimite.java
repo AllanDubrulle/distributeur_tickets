@@ -8,12 +8,13 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.layout.*;
 
-class FPass3 extends Ecran 
+class FPassIllimite extends Ecran 
 {
-    private TextField textField, textField0, textField1, textField2;
-    private RadioButton radioButton, radioButton0;
-
-    public FPass3(double hauteur, double largeur) 
+    private TextField textField, textField0, textField1, textField2, textField3;
+    private RadioButton radioButton, radioButton1;
+    private int pos = 0;
+    
+    public FPassIllimite(double hauteur, double largeur) 
     {
         Rectangle rectangle = new Rectangle();
         Text text = new Text();
@@ -24,17 +25,20 @@ class FPass3 extends Ecran
         textField = new TextField();
         HBox hBox1 = new HBox();
         Text text1 = new Text();
-        textField0 = new TextField();
+        textField1 = new TextField();
         HBox hBox2 = new HBox();
         Text text2 = new Text();
-        textField1 = new TextField();
+        textField2 = new TextField();
         HBox hBox3 = new HBox();
         Text text3 = new Text();
         radioButton = new RadioButton();
-        radioButton0 = new RadioButton();
+        radioButton1 = new RadioButton();
         HBox hBox4 = new HBox();
         Text text4 = new Text();
-        textField2 = new TextField();
+        textField3 = new TextField();
+        HBox hBox5 = new HBox();
+        Text text5 = new Text();
+        textField0 = new TextField();
         Button button = new Button();
         Button button0 = new Button();
 
@@ -54,16 +58,16 @@ class FPass3 extends Ecran
         rectangle.setWidth(800.0*largeur);
 
         text.setFontSmoothingType(javafx.scene.text.FontSmoothingType.LCD);
-        text.setLayoutX(24.0*largeur);
-        text.setLayoutY(64.0*hauteur);
+        text.setLayoutX(44.0*largeur);
+        text.setLayoutY(63.0*hauteur);
         text.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text.setStrokeWidth(0.0);
-        text.setText("Achat d'un pass dix trajets entre deux gares prédéfinies");
+        text.setText("Achat d'un pass avec choix du nombre de jours");
         text.setUnderline(true);
         text.setFont(new Font("System Bold", 22.0*hauteur));
 
-        vBox.setLayoutX(53.0*largeur);
-        vBox.setLayoutY(109.0*hauteur);
+        vBox.setLayoutX(78.0*largeur);
+        vBox.setLayoutY(98.0*hauteur);
         vBox.setPrefHeight(150.0*hauteur);
         vBox.setPrefWidth(711.0*largeur);
 
@@ -95,9 +99,9 @@ class FPass3 extends Ecran
         text1.setFont(new Font(15.0*hauteur));
         HBox.setMargin(text1, new Insets(0.0, 20.0*largeur, 0.0, 0.0));
 
-        textField0.setPrefWidth(300.0*largeur);
-        textField0.setPrefHeight(31.0*hauteur);
-        textField0.setFont(new Font(15.0*hauteur));
+        textField1.setPrefWidth(300.0*largeur);
+        textField1.setPrefHeight(31.0*hauteur);
+        textField1.setFont(new Font(15.0*hauteur));
         hBox1.setPadding(new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
 
         hBox2.setPrefHeight(17.0*hauteur);
@@ -110,9 +114,9 @@ class FPass3 extends Ecran
         text2.setFont(new Font(15.0*hauteur));
         HBox.setMargin(text2, new Insets(0.0, 20.0*largeur, 0.0, 0.0));
 
-        textField1.setPrefWidth(300.0*largeur);
-        textField1.setPrefHeight(31.0*hauteur);
-        textField1.setFont(new Font(15.0*hauteur));
+        textField2.setPrefWidth(300.0*largeur);
+        textField2.setPrefHeight(31.0*hauteur);
+        textField2.setFont(new Font(15.0*hauteur));
         hBox2.setPadding(new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
 
         hBox3.setPrefHeight(17.0*hauteur);
@@ -127,34 +131,48 @@ class FPass3 extends Ecran
 
         radioButton.setMnemonicParsing(false);
         radioButton.setText("1e classe");
-        radioButton.setFont(new Font(15.0*hauteur));
         radioButton.setSelected(true);
+        radioButton.setFont(new Font(15.0*hauteur));
 
-        radioButton0.setMnemonicParsing(false);
-        radioButton0.setText("2e classe");
-        radioButton0.setFont(new Font(15.0*hauteur));
-        HBox.setMargin(radioButton0, new Insets(0.0, 0.0, 0.0, 50.0*largeur));
+        radioButton1.setMnemonicParsing(false);
+        radioButton1.setText("2e classe");
+        radioButton1.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(radioButton1, new Insets(0.0, 0.0, 0.0, 50.0*largeur));
         hBox3.setPadding(new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
         
         ToggleGroup t = new ToggleGroup();
         radioButton.setToggleGroup(t);
-        radioButton0.setToggleGroup(t);
+        radioButton1.setToggleGroup(t);
 
         hBox4.setPrefHeight(17.0*hauteur);
-        hBox4.setPrefWidth(244.0*largeur);
+        hBox4.setPrefWidth(244.0);
 
         text4.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text4.setStrokeWidth(0.0);
         text4.setText("Réduction :");
-        text4.setWrappingWidth(180.0*largeur);
         text4.setFont(new Font(15.0*hauteur));
         HBox.setMargin(text4, new Insets(0.0));
 
-        textField2.setPrefWidth(250.0*largeur);
-        textField2.setPrefHeight(31.0*hauteur);
-        textField2.setFont(new Font(15.0*hauteur));
-        HBox.setMargin(textField2, new Insets(0.0, 0.0, 0.0, 20.0*largeur));
+        textField3.setPrefWidth(300.0*largeur);
+        textField3.setPrefHeight(31.0*hauteur);
+        textField3.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(textField3, new Insets(0.0, 0.0, 0.0, 132.0*largeur));
         hBox4.setPadding(new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
+
+        hBox5.setPrefHeight(12.0*hauteur);
+        hBox5.setPrefWidth(711.0*largeur);
+
+        text5.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        text5.setStrokeWidth(0.0);
+        text5.setText("Nombre de jours de validité : ");
+        text5.setWrappingWidth(180.0*largeur);
+        text5.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(text5, new Insets(0.0));
+
+        textField0.setPrefHeight(31.0*hauteur);
+        textField0.setPrefWidth(85.0*largeur);
+        textField0.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(textField0, new Insets(0.0, 0.0, 10.0*hauteur, 20.0*largeur));
 
         button.setLayoutX(23.0*largeur);
         button.setLayoutY(354.0*hauteur);
@@ -172,7 +190,7 @@ class FPass3 extends Ecran
             }
         });
 
-        button0.setLayoutX(703.0*largeur);
+        button0.setLayoutX(702.5*largeur);
         button0.setLayoutY(354.0*hauteur);
         button0.setMnemonicParsing(false);
         button0.setPrefHeight(31.0*hauteur);
@@ -184,16 +202,17 @@ class FPass3 extends Ecran
         {
             public void handle(ActionEvent event)
             {
-            	graphAC.choixValiderPass10Trajets2Gares();
+            	graphAC.choixValider();
             }
         });
 
         hBox0.getChildren().addAll(text0, textField);
-        hBox1.getChildren().addAll(text1, textField0);
-        hBox2.getChildren().addAll(text2, textField1);
-        hBox3.getChildren().addAll(text3, radioButton, radioButton0);
-        hBox4.getChildren().addAll(text4, textField2);
-        vBox.getChildren().addAll(hBox, hBox0, hBox1, hBox2, hBox3, hBox4);
+        hBox1.getChildren().addAll(text1, textField1);
+        hBox2.getChildren().addAll(text2, textField2);
+        hBox3.getChildren().addAll(text3, radioButton, radioButton1);
+        hBox4.getChildren().addAll(text4, textField3);
+        hBox5.getChildren().addAll(text5, textField0);
+        vBox.getChildren().addAll(hBox, hBox0, hBox1, hBox2, hBox3, hBox4, hBox5);
         getChildren().addAll(rectangle, text, vBox, button, button0);
     }
     
@@ -202,11 +221,11 @@ class FPass3 extends Ecran
     	if (pos == 0)
     		textField.setText(textField.getText() + a);
     	else if (pos == 1)
-    		textField0.setText(textField0.getText() + a);
-    	else if (pos == 2)
     		textField1.setText(textField1.getText() + a);
-    	else if (pos == 4)
+    	else if (pos == 2)
     		textField2.setText(textField2.getText() + a);
+    	else if (pos == 4)
+    		textField3.setText(textField3.getText() + a);
     }
 
 	public void actionClavier(int a) 
@@ -216,8 +235,10 @@ class FPass3 extends Ecran
 			if (a == 1)
 				radioButton.setSelected(true);
 			else if (a == 2)
-				radioButton0.setSelected(true);
+				radioButton1.setSelected(true);
 		}
+    	else if (pos == 5)
+    		textField0.setText(textField0.getText() + a);
 	}
 
 	public void actionRetour() 
@@ -230,20 +251,20 @@ class FPass3 extends Ecran
 		if (pos == 5)
 		{
 			pos = 0;
-			textField0.requestFocus();
+			textField.requestFocus();
 		}
 		else
 		{
 			if (pos == 0)
-				textField0.requestFocus();
-			else if (pos == 1)
 				textField1.requestFocus();
+			else if (pos == 1)
+				textField2.requestFocus();
 			else if (pos == 2)
 				radioButton.requestFocus();
 			else if (pos == 3)
-				textField2.requestFocus();
+				textField3.requestFocus();
 			else
-				textField.requestFocus();
+				textField0.requestFocus();
 			pos ++;
 		}
 	}
@@ -253,11 +274,11 @@ class FPass3 extends Ecran
     	if (pos == 0)
     		textField.setText(textField.getText() + " ");
     	else if (pos == 1)
-    		textField0.setText(textField0.getText() + " ");
-    	else if (pos == 2)
     		textField1.setText(textField1.getText() + " ");
-    	else if (pos == 4)
+    	else if (pos == 2)
     		textField2.setText(textField2.getText() + " ");
+    	else if (pos == 4)
+    		textField3.setText(textField3.getText() + " ");
     }
 
 	public void actionEffacer() 
@@ -270,30 +291,36 @@ class FPass3 extends Ecran
 		}
 		else if (pos == 1)
 		{
-			String s = textField0.getText();
-			if (s.length() > 0)
-				textField0.setText(s.substring(0, s.length()-1));
-		}
-		else if (pos == 2)
-		{
 			String s = textField1.getText();
 			if (s.length() > 0)
 				textField1.setText(s.substring(0, s.length()-1));
 		}
-		else if (pos == 4)
+		else if (pos == 2)
 		{
 			String s = textField2.getText();
 			if (s.length() > 0)
 				textField2.setText(s.substring(0, s.length()-1));
 		}
+		else if (pos == 4)
+		{
+			String s = textField3.getText();
+			if (s.length() > 0)
+				textField3.setText(s.substring(0, s.length()-1));
+		}
+		else if (pos == 5)
+		{
+			String s = textField0.getText();
+			if (s.length() > 0)
+				textField0.setText(s.substring(0, s.length()-1));
+		}
 	}
 	
 	public void actionEntrer() 
 	{
-		graphAC.choixValiderPass10Trajets2Gares();
+		graphAC.choixValider();
 	}
 	
-	public String getNom() 
+	public String getNom()
 	{
 		return textField.getText();
 	}
@@ -319,5 +346,10 @@ class FPass3 extends Ecran
 	public String getReduction()
 	{
 		return textField2.getText();
+	}
+	
+	public String getNbrJours()
+	{
+		return textField3.getText();
 	}
 }

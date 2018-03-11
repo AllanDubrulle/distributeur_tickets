@@ -8,13 +8,14 @@ import javafx.scene.text.*;
 import javafx.scene.shape.*;
 import javafx.scene.layout.*;
 
-class FRecapPass2 extends Ecran 
+class FRecapPassIllimite extends Ecran 
 {    
-    public FRecapPass2(FPass2 fenPass, double hauteur, double largeur) 
+    public FRecapPassIllimite(FPassIllimite fenPass, double hauteur, double largeur) 
     {
         Rectangle rectangle = new Rectangle();
         Text text = new Text();
         VBox vBox = new VBox();
+        HBox hBox = new HBox();
         HBox hBox0 = new HBox();
         Text text0 = new Text();
         Text text1 = new Text();
@@ -27,6 +28,15 @@ class FRecapPass2 extends Ecran
         HBox hBox3 = new HBox();
         Text text6 = new Text();
         Text text7 = new Text();
+        HBox hBox4 = new HBox();
+        Text text8 = new Text();
+        Text text9 = new Text();
+        HBox hBox5 = new HBox();
+        Text text10 = new Text();
+        Text text11 = new Text();
+        HBox hBox6 = new HBox();
+        Text text12 = new Text();
+        Text text13 = new Text();
         Button button = new Button();
         Button button0 = new Button();
 
@@ -46,18 +56,21 @@ class FRecapPass2 extends Ecran
         rectangle.setWidth(800.0*largeur);
 
         text.setFontSmoothingType(javafx.scene.text.FontSmoothingType.LCD);
-        text.setLayoutX(54.0*largeur);
-        text.setLayoutY(86.0*hauteur);
+        text.setLayoutX(32.0*largeur);
+        text.setLayoutY(62.0*hauteur);
         text.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text.setStrokeWidth(0.0);
-        text.setText("Achat d'un pass dix trajets sans gares prédéfinies (récapitulatif de commande)");
+        text.setText("Achat d'un pass avec choix du nombre de jours (récapitulatif de commande)");
         text.setUnderline(true);
         text.setFont(new Font("System Bold", 20.0*hauteur));
 
-        vBox.setLayoutX(78.0*largeur);
-        vBox.setLayoutY(129.0*hauteur);
-        vBox.setPrefHeight(150.0*hauteur);
-        vBox.setPrefWidth(711.0*largeur);
+        vBox.setLayoutX(86.0*largeur);
+        vBox.setLayoutY(105.0*hauteur);
+        vBox.setPrefHeight(207.0*hauteur);
+        vBox.setPrefWidth(470.0*largeur);
+
+        hBox.setPrefHeight(0.0);
+        hBox.setPrefWidth(711.0*largeur);
 
         hBox0.setPrefHeight(12.0*hauteur);
         hBox0.setPrefWidth(711.0*largeur);
@@ -77,59 +90,108 @@ class FRecapPass2 extends Ecran
         text1.setFont(new Font("System Bold Italic", 15.0*hauteur));
         VBox.setMargin(hBox0, new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
 
-        hBox1.setPrefHeight(17.0*hauteur);
-        hBox1.setPrefWidth(244.0*largeur);
+        hBox1.setPrefHeight(0.0);
+        hBox1.setPrefWidth(711.0*largeur);
 
         text2.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text2.setStrokeWidth(0.0);
-        text2.setText("Classe :");
+        text2.setText("Gare de départ :");
         text2.setWrappingWidth(180.0*largeur);
         text2.setFont(new Font(15.0*hauteur));
         HBox.setMargin(text2, new Insets(0.0, 20.0*largeur, 0.0, 0.0));
 
         text3.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text3.setStrokeWidth(0.0);
-        text3.setText(fenPass.getClasse());
+        text3.setText(fenPass.getDepart());
         text3.setWrappingWidth(200.0*largeur);
         text3.setFont(new Font("System Bold Italic", 15.0*hauteur));
-        HBox.setMargin(text3, new Insets(0.0));
-        hBox1.setPadding(new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
+        VBox.setMargin(hBox1, new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
 
         hBox2.setPrefHeight(17.0*hauteur);
         hBox2.setPrefWidth(244.0*largeur);
 
         text4.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text4.setStrokeWidth(0.0);
-        text4.setText("Réduction :");
+        text4.setText("Gare d'arrivée :");
         text4.setWrappingWidth(180.0*largeur);
         text4.setFont(new Font(15.0*hauteur));
-        HBox.setMargin(text4, new Insets(0.0));
+        HBox.setMargin(text4, new Insets(0.0, 20.0*largeur, 0.0, 0.0));
 
         text5.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text5.setStrokeWidth(0.0);
-        text5.setText(fenPass.getReduction());
+        text5.setText(fenPass.getArrivee());
         text5.setWrappingWidth(200.0*largeur);
         text5.setFont(new Font("System Bold Italic", 15.0*hauteur));
-        HBox.setMargin(text5, new Insets(0.0, 0.0, 0.0, 20.0*largeur));
-        hBox2.setPadding(new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
+        VBox.setMargin(hBox2, new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
 
         hBox3.setPrefHeight(17.0*hauteur);
         hBox3.setPrefWidth(244.0*largeur);
 
         text6.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text6.setStrokeWidth(0.0);
-        text6.setText("Prix :");
+        text6.setText("Classe :");
         text6.setWrappingWidth(180.0*largeur);
         text6.setFont(new Font(15.0*hauteur));
-        HBox.setMargin(text6, new Insets(0.0));
+        HBox.setMargin(text6, new Insets(0.0, 20.0*largeur, 0.0, 0.0));
 
         text7.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text7.setStrokeWidth(0.0);
-        text7.setText("(prix)");
+        text7.setText(fenPass.getClasse());
         text7.setWrappingWidth(200.0*largeur);
         text7.setFont(new Font("System Bold Italic", 15.0*hauteur));
-        HBox.setMargin(text7, new Insets(0.0, 0.0, 0.0, 20.0*largeur));
-        hBox3.setPadding(new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
+        VBox.setMargin(hBox3, new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
+
+        hBox4.setPrefHeight(17.0*hauteur);
+        hBox4.setPrefWidth(244.0*largeur);
+
+        text8.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        text8.setStrokeWidth(0.0);
+        text8.setText("Réduction :");
+        text8.setWrappingWidth(180.0*largeur);
+        text8.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(text8, new Insets(0.0, 20.0*largeur, 0.0, 0.0));
+
+        text9.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        text9.setStrokeWidth(0.0);
+        text9.setText(fenPass.getReduction());
+        text9.setWrappingWidth(200.0*largeur);
+        text9.setFont(new Font("System Bold Italic", 15.0*hauteur));
+        VBox.setMargin(hBox4, new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
+
+        hBox5.setPrefHeight(12.0*hauteur);
+        hBox5.setPrefWidth(711.0*largeur);
+
+        text10.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        text10.setStrokeWidth(0.0);
+        text10.setText("Nombre de jours de validité : ");
+        text10.setWrappingWidth(180.0*largeur);
+        text10.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(text10, new Insets(0.0));
+
+        text11.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        text11.setStrokeWidth(0.0);
+        text11.setText(fenPass.getNbrJours());
+        text11.setWrappingWidth(200.0*largeur);
+        text11.setFont(new Font("System Bold Italic", 15.0*hauteur));
+        HBox.setMargin(text11, new Insets(0.0, 0.0, 0.0, 20.0*largeur));
+        VBox.setMargin(hBox5, new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
+
+        hBox6.setPrefHeight(12.0*hauteur);
+        hBox6.setPrefWidth(711.0*largeur);
+
+        text12.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        text12.setStrokeWidth(0.0);
+        text12.setText("Prix :");
+        text12.setWrappingWidth(180.0*largeur);
+        text12.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(text12, new Insets(0.0));
+
+        text13.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        text13.setStrokeWidth(0.0);
+        text13.setText("(prix)");
+        text13.setWrappingWidth(200.0*largeur);
+        text13.setFont(new Font("System Bold Italic", 15.0*hauteur));
+        HBox.setMargin(text13, new Insets(0.0, 0.0, 0.0, 20.0*largeur));
 
         button.setLayoutX(23.0*largeur);
         button.setLayoutY(354.0*hauteur);
@@ -167,7 +229,10 @@ class FRecapPass2 extends Ecran
         hBox1.getChildren().addAll(text2, text3);
         hBox2.getChildren().addAll(text4, text5);
         hBox3.getChildren().addAll(text6, text7);
-        vBox.getChildren().addAll(hBox0, hBox1, hBox2, hBox3);
+        hBox4.getChildren().addAll(text8, text9);
+        hBox5.getChildren().addAll(text10, text11);
+        hBox6.getChildren().addAll(text12, text13);
+        vBox.getChildren().addAll(hBox, hBox0, hBox1, hBox2, hBox3, hBox4, hBox5, hBox6);
         getChildren().addAll(rectangle, text, vBox, button, button0);
     }
     

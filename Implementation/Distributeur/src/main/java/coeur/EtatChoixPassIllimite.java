@@ -1,6 +1,6 @@
 package coeur;
 
-public class EtatChoixPassIllimite extends EtatAnnulable 
+public class EtatChoixPassIllimite extends EtatChoixTitre 
 {
 	private static EtatChoixPassIllimite instance;
 	public static EtatChoixPassIllimite getInstance() 
@@ -10,13 +10,10 @@ public class EtatChoixPassIllimite extends EtatAnnulable
 		return (EtatChoixPassIllimite) instance;
 	}
 	
-	public void validePassIllimite() 
-	{
-		Controleur.getInstance().modifEtat(EtatCreationPassIllimite.getInstance());
-	}
 	
 	public void entree() 
 	{
-		Controleur.getInstance().getCoeurAGraphique().afficherChoixPassIllimite();
+		Controleur.getInstance().setCommande(Commande.PASSILLIMITE);
+		super.entree();
 	}
 }

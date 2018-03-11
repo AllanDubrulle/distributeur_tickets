@@ -245,7 +245,7 @@ class FAboAchat extends Ecran
         {
             public void handle(ActionEvent event)
             {
-            	graphAC.choixValiderAchatAbo();
+            	graphAC.choixValider();
             }
         });
 
@@ -419,7 +419,7 @@ class FAboAchat extends Ecran
 	
 	public void actionEntrer() 
 	{
-		graphAC.choixValiderAchatAbo();
+		graphAC.choixValider();
 	}
 	
 	public String getNom()

@@ -1,6 +1,6 @@
 package coeur;
 
-public class EtatChoixRenouvAbo extends EtatAnnulable 
+public class EtatChoixRenouvAbo extends EtatChoixTitre
 {
 	private static EtatChoixRenouvAbo instance;
 	
@@ -13,7 +13,8 @@ public class EtatChoixRenouvAbo extends EtatAnnulable
 	
 	public void entree() 
 	{
-		Controleur.getInstance().getCoeurAGraphique().afficherChoixRenouvAbo();
+		Controleur.getInstance().setCommande(Commande.REVOUVELLEMENTABO);
+		super.entree();
 	}
 	
 	public void scanneCode() 

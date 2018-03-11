@@ -16,8 +16,5 @@ public class EtatModificationAboScanne extends EtatCreationTitre
 	{
 		Controleur.getInstance().getCoeurAGraphique().afficherRecapRenouvAboScanne();
 	}
-	public void confirme()
-	{
-		Controleur.getInstance().modifEtat(EtatPaiement.getInstance());
-	}
+
 }

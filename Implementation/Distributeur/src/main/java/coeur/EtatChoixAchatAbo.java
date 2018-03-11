@@ -1,6 +1,6 @@
 package coeur;
 
-public class EtatChoixAchatAbo extends EtatAnnulable
+public class EtatChoixAchatAbo extends EtatChoixTitre
 {
 	private static EtatChoixAchatAbo instance;
 	public static EtatChoixAchatAbo getInstance() 
@@ -10,13 +10,10 @@ public class EtatChoixAchatAbo extends EtatAnnulable
 		return (EtatChoixAchatAbo) instance;
 	}
 	
-	public void valideAchatAbo() 
-	{
-		Controleur.getInstance().modifEtat(EtatCreationAbo.getInstance());
-	}
 	
 	public void entree() 
 	{
-		Controleur.getInstance().getCoeurAGraphique().afficherChoixAchatAbo();
+		Controleur.getInstance().setCommande(Commande.ACHATABO);
+		super.entree();
 	}
 }

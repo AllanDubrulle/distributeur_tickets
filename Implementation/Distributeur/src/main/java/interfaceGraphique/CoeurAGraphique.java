@@ -1,5 +1,7 @@
 package interfaceGraphique;
 
+import coeur.Commande;
+
 public interface CoeurAGraphique 
 {
 	public void afficherAccueil();
@@ -18,13 +20,10 @@ public interface CoeurAGraphique
 	public void afficherChoixDepart();
 	public void afficherChoixArrivee();
 	
-	public void afficherRecapBillet();
-	public void afficherRecapAchatAbo();
-	public void afficherRecapRenouvAbo();
+	public void afficherRecapCommande(Commande commande);
+	public void afficherRecapRenouvAbo(); // possible a eliminer 
 	public void afficherRecapRenouvAboScanne();
-	public void afficherRecapPassIllimite();
-	public void afficherRecapPass10Trajets();
-	public void afficherRecapPass10Trajets2Gares();
+
 	
 	public void afficherResultatsHoraires();
 	

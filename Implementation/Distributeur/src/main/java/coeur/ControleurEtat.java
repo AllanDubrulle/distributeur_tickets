@@ -57,4 +57,6 @@ abstract class ControleurEtat
 	{
 		return this.getClass().getName();
 	}
+
+	public void valider() {}
 }

@@ -14,7 +14,7 @@ public class EtatChoixScannerCode extends EtatAnnulable
 	public void valideNumAbo() 
 	{
 		Controleur.getInstance().modifEtat(EtatChoixScannerCode2.getInstance());
-		Controleur.getInstance().getCoeurAGraphique().getStage().close();
+		Controleur.getInstance().getCoeurAGraphique().getStage().close(); // a éliminer
 	}
 	
 	public void entree() 

@@ -1,6 +1,6 @@
 package coeur;
 
-public class EtatChoixPass10Trajets extends EtatAnnulable 
+public class EtatChoixPass10Trajets extends EtatChoixTitre 
 {
 	private static EtatChoixPass10Trajets instance;
 	public static EtatChoixPass10Trajets getInstance() 
@@ -10,13 +10,9 @@ public class EtatChoixPass10Trajets extends EtatAnnulable
 		return (EtatChoixPass10Trajets) instance;
 	}
 	
-	public void validePass10Trajets() 
-	{
-		Controleur.getInstance().modifEtat(EtatCreationPass10Trajets.getInstance());
-	}
-	
 	public void entree() 
 	{
-		Controleur.getInstance().getCoeurAGraphique().afficherChoixPass10Trajets();
+		Controleur.getInstance().setCommande(Commande.PASS10TRAJETS);
+		super.entree();
 	}
 }

@@ -8,13 +8,13 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.layout.*;
 
-class FPass2 extends Ecran 
+public class FPass10Trajets extends Ecran 
 {
     private TextField textField, textField1;
     private RadioButton radioButton, radioButton0;
     private int pos = 0;
 
-    public FPass2(double hauteur, double largeur) 
+    public FPass10Trajets(double hauteur, double largeur) 
     {
         Rectangle rectangle = new Rectangle();
         Text text = new Text();
@@ -150,7 +150,7 @@ class FPass2 extends Ecran
         {
             public void handle(ActionEvent event)
             {
-            	graphAC.choixValiderPass10Trajets();
+            	graphAC.choixValider();
             }
         });
 
@@ -228,7 +228,7 @@ class FPass2 extends Ecran
 	
 	public void actionEntrer() 
 	{
-		graphAC.choixValiderPass10Trajets();
+		graphAC.choixValider();
 	}
 	
 	public String getNom()

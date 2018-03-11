@@ -1,5 +1,6 @@
 package interfaceGraphique;
 
+import coeur.Commande;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
@@ -13,9 +14,9 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	private FBillet fenBillet;
 	private FAboRenouvScanne fenAboScanne;
 	private FChoixAbo choixAbo;
-	private FPass1 fenPass1;
-	private FPass2 fenPass2;
-	private FPass3 fenPass3;
+	private FPassIllimite fenPassIllimite;
+	private FPass10Trajets fenPass10Trajets;
+	private FPass10Trajets2Gares fen10Trajets2Gares;
 	
 	
 	public Stage getStage() 
@@ -37,7 +38,8 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 		}
 		return instance;
 		
-	}	
+	}
+	
 	
 	public void afficherAccueil() 
 	{
@@ -71,18 +73,18 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	}
 	public void afficherChoixPassIllimite() 
 	{
-		this.fenPass1=new FPass1(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg());
-		FenetreSimulation.getInstance().afficher(fenPass1);
+		this.fenPassIllimite=new FPassIllimite(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg());
+		FenetreSimulation.getInstance().afficher(fenPassIllimite);
 	}
 	public void afficherChoixPass10Trajets() 
 	{
-		this.fenPass2=new FPass2(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg());
-		FenetreSimulation.getInstance().afficher(fenPass2);
+		this.fenPass10Trajets=new FPass10Trajets(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg());
+		FenetreSimulation.getInstance().afficher(fenPass10Trajets);
 	}
 	public void afficherChoixPass10Trajets2Gares() 
 	{
-		this.fenPass3=new FPass3(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg());
-		FenetreSimulation.getInstance().afficher(fenPass3);
+		this.fen10Trajets2Gares=new FPass10Trajets2Gares(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg());
+		FenetreSimulation.getInstance().afficher(fen10Trajets2Gares);
 	}
 	public void afficherChoixHoraire() 
 	{
@@ -100,41 +102,7 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	{
 		FenetreSimulation.getInstance().afficher(new FHoraireDepart(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 	}
-	
-	public void afficherRecapBillet() 
-	{
-		FenetreSimulation.getInstance().afficher(new FRecapBillet(fenBillet, FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
-	}
-	public void afficherRecapAchatAbo() 
-	{
-		FenetreSimulation.getInstance().afficher(new FRecapAboAchat((FAboAchat)FenetreSimulation.getInstance().getEcran(), FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
-	}
-	public void afficherRecapRenouvAbo() 
-	{
-		FenetreSimulation.getInstance().afficher(new FRecapAboRenouv((FAboRenouv2)FenetreSimulation.getInstance().getEcran(), FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
-	}
-	public void afficherRecapRenouvAboScanne() 
-	{
-		FenetreSimulation.getInstance().afficher(new FRecapAboRenouvScanne(fenAboScanne, FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
-	}
-	public void afficherRenouvScanne()
-	{
-		this.fenAboScanne = new FAboRenouvScanne(choixAbo, FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg());
-		FenetreSimulation.getInstance().afficher(fenAboScanne);
-	}
-	public void afficherRecapPassIllimite() 
-	{
-		FenetreSimulation.getInstance().afficher(new FRecapPass1(fenPass1, FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
-	}
-	public void afficherRecapPass10Trajets() 
-	{
-		FenetreSimulation.getInstance().afficher(new FRecapPass2(fenPass2, FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
-	}
-	public void afficherRecapPass10Trajets2Gares() 
-	{
-		FenetreSimulation.getInstance().afficher(new FRecapPass3(fenPass3, FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
-	}
-	
+		
 	public void afficherResultatsHoraires() 
 	{
 		FenetreSimulation.getInstance().afficher(new FResultatsHoraires(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
@@ -215,17 +183,20 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	{
 		fLiquide.setMontantIntroduit(fLiquide.getMontantIntroduit() + i);
 	}
-	public void afficherBillet()
+	public void afficherTitre(Commande commande)
 	{
-		StackPane root2 = new StackPane();
-		AfficherBillet billet = new AfficherBillet(fenBillet);
-		Stage pStage4 = new Stage();
-		Scene sc = new Scene(root2, 580,300);
-		root2.getChildren().add(billet);
-		pStage4.setResizable(false);
-		pStage4.setScene(sc);
-		pStage4.setTitle("Billet");
-		pStage4.show();
+		if (commande == Commande.BILLET)
+		{
+			StackPane root2 = new StackPane();
+			AfficherBillet billet = new AfficherBillet(fenBillet);
+			Stage pStage4 = new Stage();
+			Scene sc = new Scene(root2, 580,300);
+			root2.getChildren().add(billet);
+			pStage4.setResizable(false);
+			pStage4.setScene(sc);
+			pStage4.setTitle("Billet");
+			pStage4.show();
+		}
 	}
 	public void afficherRecu()
 	{
@@ -260,6 +231,72 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 		FenetreSimulation.getInstance().afficher(new FDemandeRecu(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 		if (fLiquide != null)
 			fLiquide.setMontantIntroduit(0);
+		
+	}
+	public void afficherRecapCommande(Commande commande)
+	{
+		switch(commande)
+		{
+			case ACHATABO:
+				FenetreSimulation.getInstance().afficher(new FRecapAboAchat((FAboAchat)FenetreSimulation.getInstance().getEcran(), FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
+				break;
+			case BILLET:
+				FenetreSimulation.getInstance().afficher(new FRecapBillet(fenBillet, FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
+				break;
+			case PASS10TRAJETS:
+				FenetreSimulation.getInstance().afficher(new FRecapPass10Trajets(fenPass10Trajets, FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
+				break;
+			case PASS10TRAJETS2GARES:
+				FenetreSimulation.getInstance().afficher(new FRecapPass10Trajets2Gares(fen10Trajets2Gares, FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
+				break;
+			case PASSILLIMITE:
+				FenetreSimulation.getInstance().afficher(new FRecapPassIllimite(fenPassIllimite, FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
+				break;
+			case REVOUVELLEMENTABO:
+				FenetreSimulation.getInstance().afficher(new FRecapAboRenouv((FAboRenouv2)FenetreSimulation.getInstance().getEcran(), FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
+				break;
+		}
+	}
+	public void afficherRecapRenouvAbo() 
+	{
+		FenetreSimulation.getInstance().afficher(new FRecapAboRenouv((FAboRenouv2)FenetreSimulation.getInstance().getEcran(), FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
+	}
+	public void afficherRecapRenouvAboScanne() 
+	{
+		FenetreSimulation.getInstance().afficher(new FRecapAboRenouvScanne(fenAboScanne, FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
+	}
+	public void afficherRenouvScanne()
+	{
+		this.fenAboScanne = new FAboRenouvScanne(choixAbo, FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg());
+		FenetreSimulation.getInstance().afficher(fenAboScanne);
+	}
+	public void afficherChoixCommande(Commande commande)
+	{
+		switch(commande)
+		{
+			case ACHATABO:
+				FenetreSimulation.getInstance().afficher(new FAboAchat(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
+				break;
+			case BILLET:
+				this.fenBillet = new FBillet(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg());
+				FenetreSimulation.getInstance().afficher(fenBillet);
+				break;
+			case PASS10TRAJETS:
+				this.fenPass10Trajets=new FPass10Trajets(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg());
+				FenetreSimulation.getInstance().afficher(fenPass10Trajets);
+				break;
+			case PASS10TRAJETS2GARES:
+				this.fen10Trajets2Gares=new FPass10Trajets2Gares(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg());
+				FenetreSimulation.getInstance().afficher(fen10Trajets2Gares);
+				break;
+			case PASSILLIMITE:
+				this.fenPassIllimite=new FPassIllimite(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg());
+				FenetreSimulation.getInstance().afficher(fenPassIllimite);
+				break;
+			case REVOUVELLEMENTABO:
+				FenetreSimulation.getInstance().afficher(new FAboRenouv1(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
+				break;
+		}
 		
 	}
 }

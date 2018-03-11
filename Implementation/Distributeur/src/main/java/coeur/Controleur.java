@@ -12,7 +12,9 @@ class Controleur
 	private CoeurAGraphiqueImpl coeurAGraphique = CoeurAGraphiqueImpl.getInstance();
 	private CoeurAStockage coeurAStockage = new CoeurAStockageImpl(); // pourquoi pas de singleton ici
 	private static Controleur instance;
+	private Commande commande;
 	
+
 	private Controleur() {}
 	
 	public static Controleur getInstance()
@@ -49,5 +51,20 @@ class Controleur
 	public ControleurEtat getEtatActuel() 
 	{
 		return etatActuel;
+	}
+
+	public Commande getCommande()
+	{
+		return this.commande;
+	}
+	
+	public void setCommande(Commande commande)
+	{
+		this.commande = commande;
+	}
+	
+	public void ReinitialisationCommande()
+	{
+		this.commande = null;
 	}
 }

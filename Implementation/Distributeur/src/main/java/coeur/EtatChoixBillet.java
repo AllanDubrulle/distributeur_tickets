@@ -1,6 +1,6 @@
 package coeur;
 
-class EtatChoixBillet extends EtatAnnulable 
+class EtatChoixBillet extends EtatChoixTitre
 {	
 	private static EtatChoixBillet instance;
 	public static EtatChoixBillet getInstance() 
@@ -10,13 +10,9 @@ class EtatChoixBillet extends EtatAnnulable
 		return (EtatChoixBillet) instance;
 	}
 	
-	public void valideBillet() 
-	{
-		Controleur.getInstance().modifEtat(EtatCreationBillet.getInstance());
-	}
-	
 	public void entree() 
 	{
-		Controleur.getInstance().getCoeurAGraphique().afficherChoixBillet();
+		Controleur.getInstance().setCommande(Commande.BILLET);
+		super.entree();
 	}
 }

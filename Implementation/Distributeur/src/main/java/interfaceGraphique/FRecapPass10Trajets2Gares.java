@@ -8,9 +8,9 @@ import javafx.scene.text.*;
 import javafx.scene.shape.*;
 import javafx.scene.layout.*;
 
-class FRecapPass3 extends Ecran 
+class FRecapPass10Trajets2Gares extends Ecran 
 {    
-    public FRecapPass3(FPass3 fenPass, double hauteur, double largeur) 
+    public FRecapPass10Trajets2Gares(FPass10Trajets2Gares fenPass, double hauteur, double largeur) 
     {
         Rectangle rectangle = new Rectangle();
         Text text = new Text();
