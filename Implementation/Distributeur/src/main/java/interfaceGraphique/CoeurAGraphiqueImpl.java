@@ -185,8 +185,11 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	}
 	public void afficherTitre(Commande commande)
 	{
-		if (commande == Commande.BILLET)
+		switch(commande)
 		{
+		case ACHATABO:
+			break;
+		case BILLET:
 			StackPane root2 = new StackPane();
 			AfficherBillet billet = new AfficherBillet(fenBillet);
 			Stage pStage4 = new Stage();
@@ -196,6 +199,17 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 			pStage4.setScene(sc);
 			pStage4.setTitle("Billet");
 			pStage4.show();
+			break;
+		case PASS10TRAJETS:
+			break;
+		case PASS10TRAJETS2GARES:
+			break;
+		case PASSILLIMITE:
+			break;
+		case REVOUVELLEMENTABO:
+			break;
+		default:
+			break;
 		}
 	}
 	public void afficherRecu()

@@ -42,4 +42,10 @@ public interface CoeurAGraphique
 	
 	public void afficherImpression();
 	public void afficherViderBacRecep();
+	public void effacerPIN();
+	public void afficherChoixCommande(Commande commande);
+	public void afficherRenouvScanne();
+	public void afficherRecu();
+	public void afficherRendu();
+	public void afficherTitre(Commande commande);
 }
