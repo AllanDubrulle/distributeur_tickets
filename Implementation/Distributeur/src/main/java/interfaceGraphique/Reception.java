@@ -3,15 +3,13 @@ package interfaceGraphique;
 import javafx.scene.shape.*;
 
 class Reception extends ComposantVisible 
-{
-	private static Reception instance;
-	
+{	
 	public Reception(boolean enMarche) 
 	{
 		super(enMarche);
 	}
 	
-	private Reception(double hauteur, double largeur)
+	public Reception(double hauteur, double largeur)
 	{
         Rectangle rectangle = new Rectangle();
         
@@ -33,11 +31,4 @@ class Reception extends ComposantVisible
         
         getChildren().add(rectangle);
     }
-
-	public static Reception getInstance(double hauteur, double largeur) 
-	{
-		if (instance == null)
-			instance = new Reception(hauteur, largeur);
-		return instance;
-	}
 }

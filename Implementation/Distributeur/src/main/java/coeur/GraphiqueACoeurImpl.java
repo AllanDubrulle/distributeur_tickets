@@ -214,13 +214,9 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 	{
 		controleur.getEtatActuel().choixEnLiquide();
 	}
-	public void choixAnnulerChoixCarte()
-	{
-		controleur.getEtatActuel().choixAnnulerParCarte();
-	}
 	public void choixValiderNumCarte() 
 	{
-		controleur.getEtatActuel().choixCarte();
+		controleur.getEtatActuel().choixCarte("1235");     //valeur par défaut pour test
 	}
 	public void choixValider()
 	{

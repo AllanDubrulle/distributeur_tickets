@@ -8,7 +8,6 @@ import javafx.scene.text.Font;
 
 class FentePiece extends ComposantVisible
 {
-	private static FentePiece instance;
 	private Button button, button0, button1, button2, button3, button4, button5, button6;
 	
 	public FentePiece(boolean enMarche) 
@@ -16,7 +15,7 @@ class FentePiece extends ComposantVisible
 		super(enMarche);
 	}
 	
-	private FentePiece(double hauteur, double largeur) 
+	public FentePiece(double hauteur, double largeur) 
 	{
         Circle circle = new Circle();
         Rectangle rectangle = new Rectangle();
@@ -181,13 +180,6 @@ class FentePiece extends ComposantVisible
         });
         
         getChildren().addAll(circle, rectangle, button, button0, button1, button2, button3, button4, button5, button6);
-    }
-
-	public static FentePiece getInstance(double hauteur, double largeur) 
-	{
-    	if (instance == null)
-    		instance = new FentePiece(hauteur, largeur);
-    	return instance;
     }
 	
 	public Button getButton(int i)

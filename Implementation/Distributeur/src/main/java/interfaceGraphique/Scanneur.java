@@ -4,14 +4,12 @@ import javafx.scene.shape.Rectangle;
 
 class Scanneur extends ComposantVisible 
 {
-	private static Scanneur instance;
-
 	public Scanneur(boolean enMarche) 
 	{
 		super(enMarche);
 	}
 	
-	private Scanneur(double hauteur, double largeur)
+	public Scanneur(double hauteur, double largeur)
 	{
 		Rectangle rectangle = new Rectangle();
     
@@ -32,12 +30,5 @@ class Scanneur extends ComposantVisible
 		rectangle.setWidth(200.0*largeur);
 		
 		getChildren().add(rectangle);
-	}
-
-	public static Scanneur getInstance(double hauteur, double largeur) 
-	{
-		if (instance == null)
-			instance = new Scanneur(hauteur, largeur);
-		return instance;
 	}
 }

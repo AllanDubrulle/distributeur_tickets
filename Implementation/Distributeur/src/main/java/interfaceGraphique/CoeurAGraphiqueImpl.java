@@ -8,7 +8,6 @@ import javafx.stage.Stage;
 public class CoeurAGraphiqueImpl implements CoeurAGraphique
 {
 	private static CoeurAGraphiqueImpl instance;
-	private Stage pStage = new Stage();
 	private Stage pStage2 = new Stage();
 	private FChoixParLiquide fLiquide;
 	private FBillet fenBillet;
@@ -18,11 +17,7 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	private FPass10Trajets fenPass10Trajets;
 	private FPass10Trajets2Gares fen10Trajets2Gares;
 	
-	
-	public Stage getStage() 
-	{
-		return pStage;
-	}
+
 	public Stage getStage2() 
 	{
 		return pStage2;
@@ -111,7 +106,8 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	public void afficherNumAbo() 
 	{
 		StackPane root2 = new StackPane();
-		this.choixAbo = new FChoixAbo();
+		Stage pStage = new Stage();
+		this.choixAbo = new FChoixAbo(pStage);
 		FChoixAbo fen = choixAbo;
 		Scene sc = new Scene(root2, 400,200);
 		root2.getChildren().add(fen);
@@ -137,7 +133,8 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	public void afficherChoixParCarte() 
 	{
 		StackPane root2 = new StackPane();
-		FChoixParCarte fen = new FChoixParCarte();
+		Stage pStage = new Stage();
+		FChoixParCarte fen = new FChoixParCarte(pStage);
 		Scene sc = new Scene(root2, 400,200);
 		root2.getChildren().add(fen);
 		pStage.setResizable(false);
@@ -238,7 +235,7 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	}
 	public void effacerPIN()
 	{
-		LecteurCarte.getInstance(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()).getField().clear();
+		FenetreSimulation.getInstance().viderPIN();
 	}
 	public void afficherDemandeRecu()
 	{

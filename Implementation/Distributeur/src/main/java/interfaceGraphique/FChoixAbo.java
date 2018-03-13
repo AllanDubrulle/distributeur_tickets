@@ -1,6 +1,7 @@
 package interfaceGraphique;
 
 import javafx.scene.text.*;
+import javafx.stage.Stage;
 import coeur.GraphiqueACoeurImpl;
 //import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
@@ -11,9 +12,11 @@ import javafx.scene.layout.Pane;
 class FChoixAbo extends Pane 
 {
     private ChoiceBox<String> choiceBox;
+    private Stage stage;
 
-    public FChoixAbo() 
+    public FChoixAbo(Stage stage)
     {
+    	this.stage = stage;
         Button button = new Button();
         Button button0 = new Button();
         choiceBox = new ChoiceBox<String>();
@@ -40,6 +43,7 @@ class FChoixAbo extends Pane
             public void handle(ActionEvent event)
             {
             	GraphiqueACoeurImpl.getInstance().choixValiderNumAbo();
+            	stage.close();
             }
         });
 
@@ -56,6 +60,7 @@ class FChoixAbo extends Pane
             public void handle(ActionEvent event)
             {
             	GraphiqueACoeurImpl.getInstance().choixAnnulerScanner();
+            	stage.close();
             }
         });
 

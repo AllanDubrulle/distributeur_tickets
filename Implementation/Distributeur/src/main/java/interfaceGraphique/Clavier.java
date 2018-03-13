@@ -9,17 +9,19 @@ import javafx.scene.text.Font;
 import javafx.scene.layout.*;
 
 class Clavier extends ComposantVisible 
-{	
-	private static Clavier instance;	
+{		
 	private Ecran fenetre;
+	private double hauteur, largeur;
 	
 	public Clavier(boolean enMarche) 
 	{
 		super(enMarche);
 	}
 	
-	private Clavier(double hauteur, double largeur) 
+	public Clavier(double hauteur, double largeur) 
 	{
+		this.hauteur = hauteur;
+		this.largeur = largeur;
         Rectangle rectangle = new Rectangle();
         VBox vBox = new VBox();
         HBox hBox = new HBox();
@@ -717,13 +719,6 @@ class Clavier extends ComposantVisible
         hBox3.getChildren().addAll(button1117, button1118, button1119);
         vBox.getChildren().addAll(hBox, hBox0, hBox1, hBox2, hBox3);
         getChildren().addAll(rectangle, vBox);
-    }
-
-	public static Clavier getInstance(double hauteur, double largeur) 
-	{
-    	if (instance == null)
-    		instance = new Clavier(hauteur, largeur);
-    	return instance;
     }
 	
 	public void setFenetre(Ecran fen)

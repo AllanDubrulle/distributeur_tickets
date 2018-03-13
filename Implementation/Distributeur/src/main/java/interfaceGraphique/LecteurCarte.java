@@ -10,7 +10,6 @@ import javafx.scene.layout.*;
 
 class LecteurCarte extends ComposantVisible 
 {
-	private static LecteurCarte instance;
 	private PasswordField passwordField;
 	private Button button, button0, button1, button2, button3, button4, button5, button6, button7, button8, button9, button10, button11;
 	
@@ -19,7 +18,7 @@ class LecteurCarte extends ComposantVisible
 		super(enMarche);
 	}
 
-	private LecteurCarte(double hauteur, double largeur) 
+	public LecteurCarte(double hauteur, double largeur) 
 	{
         Rectangle rectangle = new Rectangle();
         VBox vBox = new VBox();
@@ -275,13 +274,6 @@ class LecteurCarte extends ComposantVisible
         vBox.getChildren().addAll(passwordField, hBox, hBox0, hBox1, hBox2, button11);
         getChildren().addAll(rectangle, vBox);
     }
-	
-	public static LecteurCarte getInstance(double hauteur, double largeur) 
-	{
-		if (instance == null)
-			instance = new LecteurCarte(hauteur, largeur);
-		return instance;
-	}
 	
 	public void actionScanneur(int a) 
 	{

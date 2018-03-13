@@ -22,7 +22,15 @@ class FenetreSimulation extends BorderPane
     private Ecran fenetre;
     private CheckMenuItem checkMenuItem, checkMenuItem0, checkMenuItem1, checkMenuItem2, checkMenuItem3, checkMenuItem4, checkMenuItem5; 
     private RadioMenuItem checkMenuItem6, checkMenuItem7, checkMenuItem8, checkMenuItem9, checkMenuItem10, checkMenuItem11;
+    
     private static FenetreSimulation instance;
+    
+    private Clavier clavier ;
+    private Reception reception;
+    private LecteurCarte lecteur;
+    private FenteBillet fenteBillet;
+    private FentePiece fentePiece;
+    private Scanneur scanneur;
     
     private double tVoulueHauteur = FenetreConfiguration.getInstance().getHauteur();
     private double tVoulueLargeur = FenetreConfiguration.getInstance().getLargeur();
@@ -31,6 +39,13 @@ class FenetreSimulation extends BorderPane
     
     private FenetreSimulation()
     {
+    	clavier = new Clavier(rapportHauteur, rapportLargeur);
+    	reception = new Reception(rapportHauteur, rapportLargeur);
+    	lecteur = new LecteurCarte(rapportHauteur, rapportLargeur);
+    	fenteBillet = new FenteBillet(rapportHauteur, rapportLargeur);
+    	fentePiece = new FentePiece(rapportHauteur, rapportLargeur);
+    	scanneur = new Scanneur(rapportHauteur, rapportLargeur);
+    	
     	pane = new Pane();
         MenuBar menuBar = new MenuBar();
         Menu menu = new Menu();
@@ -231,31 +246,23 @@ class FenetreSimulation extends BorderPane
         fenetre.setLayoutX(284.0*rapportLargeur);
         fenetre.setLayoutY(100.0*rapportHauteur);
 		getChildren().setAll(pane, fenetre, claRe, fentes, scanLect);
-		Clavier.getInstance(rapportHauteur, rapportLargeur).setFenetre(fen);
+		clavier.setFenetre(fen);
 	}
     
     public void setParametre()
     {
-    	fentes.getChildren().clear();
     	checkMenuItem8.setSelected(true);
         if (FenetreConfiguration.getInstance().deuxFentes())
         {
-        	fentes.getChildren().addAll(FenteBillet.getInstance(rapportHauteur, rapportLargeur), FentePiece.getInstance(rapportHauteur, rapportLargeur));
         	checkMenuItem6.setSelected(true);
         }
         else if (FenetreConfiguration.getInstance().fentePiece())
         {
-    		Text text = new Text();
-            text.setFont(new Font(15.0*rapportHauteur));
-            VBox.setMargin(text, new Insets(40.0*rapportHauteur, 0.0, 0.0, 0.0));
-        	fentes.getChildren().addAll(text, FentePiece.getInstance(rapportHauteur, rapportLargeur));
         	checkMenuItem7.setSelected(true);
         }
         
-        claRe.getChildren().clear();
         if (FenetreConfiguration.getInstance().ecranEtClavier() ||  FenetreConfiguration.getInstance().clavierEtNonEcran())
         {
-        	claRe.getChildren().addAll(Clavier.getInstance(rapportHauteur, rapportLargeur), Reception.getInstance(rapportHauteur, rapportLargeur));
         	if (FenetreConfiguration.getInstance().clavierEtNonEcran())
         		checkMenuItem10.setSelected(true);
         	else 
@@ -263,44 +270,30 @@ class FenetreSimulation extends BorderPane
         }
         else if (FenetreConfiguration.getInstance().ecranEtNonClavier())
         {
-    		Text text = new Text();
-            text.setFont(new Font(15.0*rapportHauteur));
-            VBox.setMargin(text, new Insets(97.0*rapportHauteur, 0.0, 100.0*rapportHauteur, 0.0));
-        	claRe.getChildren().addAll(text, Reception.getInstance(rapportHauteur, rapportLargeur));
         	checkMenuItem11.setSelected(true);
         }
         
-        scanLect.getChildren().clear();
         if (FenetreConfiguration.getInstance().scanneur())
         {
-        	scanLect.getChildren().add(Scanneur.getInstance(rapportHauteur, rapportLargeur));
         	checkMenuItem5.setSelected(true);
-        }
-        else if (!FenetreConfiguration.getInstance().scanneur())
-        {
-    		Text text = new Text();
-            text.setFont(new Font(15.0*rapportHauteur));
-            VBox.setMargin(text, new Insets(80.0*rapportHauteur, 0.0, 0.0, 0.0));
-            scanLect.getChildren().add(text);
-        }
-        scanLect.getChildren().add(LecteurCarte.getInstance(rapportHauteur, rapportLargeur));
+        }      
         
-        
-        VBox.setMargin(Clavier.getInstance(rapportHauteur, rapportLargeur), new Insets(0.0, 0.0, 20.0*rapportHauteur, 182.5*rapportLargeur));
-        VBox.setMargin(Reception.getInstance(rapportHauteur, rapportLargeur), new Insets(0.0, 0.0, 20.0*rapportHauteur, 0.0));
+        VBox.setMargin(clavier, new Insets(0.0, 0.0, 20.0*rapportHauteur, 182.5*rapportLargeur));
+        VBox.setMargin(reception, new Insets(0.0, 0.0, 20.0*rapportHauteur, 0.0));
         claRe.setLayoutY(550.0*rapportHauteur);
         claRe.setLayoutX(195.0*rapportLargeur);
         
-        VBox.setMargin(Scanneur.getInstance(rapportHauteur, rapportLargeur), new Insets(0.0, 0.0, 20.0*rapportHauteur, 0.0));
-        VBox.setMargin(LecteurCarte.getInstance(rapportHauteur, rapportLargeur), new Insets(20.0*rapportHauteur, 0.0, 20.0*rapportHauteur, 0.0));
+        VBox.setMargin(scanneur, new Insets(0.0, 0.0, 20.0*rapportHauteur, 0.0));
+        VBox.setMargin(lecteur, new Insets(20.0*rapportHauteur, 0.0, 20.0*rapportHauteur, 0.0));
         scanLect.setLayoutY(85.0*rapportHauteur);
         scanLect.setLayoutX(1130.0*rapportLargeur);
                 
         setMargin(fentes, new Insets(100.0*rapportHauteur, 0.0, 0.0, 10.0*rapportLargeur));
-        VBox.setMargin(FentePiece.getInstance(rapportHauteur, rapportLargeur), new Insets(50.0*rapportHauteur, 0.0, 0.0, 0.0));
+        VBox.setMargin(fentePiece, new Insets(50.0*rapportHauteur, 0.0, 0.0, 0.0));
         fentes.setLayoutX(10.0*rapportLargeur);
         fentes.setLayoutY(100.0*rapportHauteur);
         getChildren().setAll(pane, claRe, fentes, scanLect, fenetre);
+        mAJComposants();
     }
     
     public void mAJComposants()
@@ -310,28 +303,28 @@ class FenetreSimulation extends BorderPane
 		scanLect.getChildren().clear();
 		
     	if (checkMenuItem6.isSelected())
-    		fentes.getChildren().addAll(FenteBillet.getInstance(rapportHauteur, rapportLargeur), FentePiece.getInstance(rapportHauteur, rapportLargeur));
+    		fentes.getChildren().addAll(fenteBillet, fentePiece);
     	
     	if (checkMenuItem7.isSelected())
     	{
     		Text text = new Text();
             text.setFont(new Font(15.0*rapportHauteur));
             VBox.setMargin(text, new Insets(40.0*rapportHauteur, 0.0, 0.0, 0.0));
-    		fentes.getChildren().addAll(text, FentePiece.getInstance(rapportHauteur, rapportLargeur));
+    		fentes.getChildren().addAll(text, fentePiece);
     	}
     	
     	if (checkMenuItem9.isSelected())
-    		claRe.getChildren().addAll(Clavier.getInstance(rapportHauteur, rapportLargeur),Reception.getInstance(rapportHauteur, rapportLargeur));
+    		claRe.getChildren().addAll(clavier,reception);
     	
     	if (checkMenuItem10.isSelected())
-    		claRe.getChildren().addAll(Clavier.getInstance(rapportHauteur, rapportLargeur), Reception.getInstance(rapportHauteur, rapportLargeur));
+    		claRe.getChildren().addAll(clavier, reception);
 
     	if (checkMenuItem11.isSelected())
     	{
     		Text text = new Text();
             text.setFont(new Font(15.0*rapportHauteur));
             VBox.setMargin(text, new Insets(110.0*rapportHauteur, 0.0, 100.0*rapportHauteur, 182.5*rapportLargeur));
-    		claRe.getChildren().addAll(text, Reception.getInstance(rapportHauteur, rapportLargeur));
+    		claRe.getChildren().addAll(text, reception);
     	}
     	
     	if (!checkMenuItem5.isSelected())
@@ -339,48 +332,48 @@ class FenetreSimulation extends BorderPane
     		Text text = new Text();
             text.setFont(new Font(15.0*rapportHauteur));
             VBox.setMargin(text, new Insets(80.0*rapportHauteur, 0.0, 0.0, 0.0));
-    		scanLect.getChildren().addAll(text, LecteurCarte.getInstance(rapportHauteur, rapportLargeur));
+    		scanLect.getChildren().addAll(text, lecteur);
     	}
     	
     	if (checkMenuItem5.isSelected())
-    		scanLect.getChildren().addAll( Scanneur.getInstance(rapportHauteur, rapportLargeur), LecteurCarte.getInstance(rapportHauteur, rapportLargeur));
+    		scanLect.getChildren().addAll( scanneur, lecteur);
     	
     	if (checkMenuItem.isSelected()) 
     	{
     		for (int i = 0; i < 13; i++)
-    			LecteurCarte.getInstance(rapportHauteur, rapportLargeur).getButton(i).setDisable(true);
-    		LecteurCarte.getInstance(rapportHauteur, rapportLargeur).getField().setDisable(true);
+    			lecteur.getButton(i).setDisable(true);
+    		lecteur.getField().setDisable(true);
     	}
     	
     	if (checkMenuItem1.isSelected())
     	{
     		for (int i = 0; i < 8; i++)
-    			FentePiece.getInstance(rapportHauteur, rapportLargeur).getButton(i).setDisable(true);
+    			fentePiece.getButton(i).setDisable(true);
     	}
     	
     	if (checkMenuItem0.isSelected())
     	{
     		for (int i = 0; i < 4; i++)
-    			FenteBillet.getInstance(rapportHauteur, rapportLargeur).getButton(i).setDisable(true);
+    			fenteBillet.getButton(i).setDisable(true);
     	}
     	
     	if (!checkMenuItem.isSelected()) 
     	{
     		for (int i = 0; i < 13; i++)
-    			LecteurCarte.getInstance(rapportHauteur, rapportLargeur).getButton(i).setDisable(false);
-    		LecteurCarte.getInstance(rapportHauteur, rapportLargeur).getField().setDisable(false);
+    			lecteur.getButton(i).setDisable(false);
+    		lecteur.getField().setDisable(false);
     	}
     	
     	if (!checkMenuItem1.isSelected())
     	{
     		for (int i = 0; i < 8; i++)
-    			FentePiece.getInstance(rapportHauteur, rapportLargeur).getButton(i).setDisable(false);
+    			fentePiece.getButton(i).setDisable(false);
     	}
     	
     	if (!checkMenuItem0.isSelected())
     	{
     		for (int i = 0; i < 4; i++)
-    			FenteBillet.getInstance(rapportHauteur, rapportLargeur).getButton(i).setDisable(false);
+    			fenteBillet.getButton(i).setDisable(false);
     	}
     	
         getChildren().setAll(pane, claRe, fentes, scanLect, fenetre);
@@ -398,5 +391,9 @@ class FenetreSimulation extends BorderPane
     public double getRapportLarg()
     {
     	return rapportLargeur;
+    }
+    public void viderPIN()
+    {
+    	lecteur.getField().clear();
     }
 }

@@ -1,6 +1,9 @@
 package interfaceGraphique;
 
 import javafx.scene.text.*;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.scene.control.Button;
 import javafx.scene.shape.*;
 
 class FInsererCarte extends Ecran 
@@ -9,6 +12,7 @@ class FInsererCarte extends Ecran
     {
         Rectangle rectangle = new Rectangle();
         Text text = new Text();
+        Button button = new Button();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -33,8 +37,22 @@ class FInsererCarte extends Ecran
         text.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         text.setWrappingWidth(231.5*largeur);
         text.setFont(new Font("System Italic", 18.0*hauteur));
+        
+        button.setText("Retour");
+        button.setPrefHeight(31.0*hauteur);
+        button.setPrefWidth(75.0*largeur);
+        button.setLayoutX(362.5*largeur);
+        button.setLayoutY(339*hauteur);
+        button.setFont(new Font(15.0*hauteur));
+        button.setOnAction(new EventHandler<ActionEvent>() 
+        {
+        	public void handle(ActionEvent event) 
+        	{
+        		graphAC.choixRetour();
+        	}
+        });
 
-        getChildren().addAll(rectangle, text);
+        getChildren().addAll(rectangle, text, button);
     }
     
 	public void actionClavier(String a) {}

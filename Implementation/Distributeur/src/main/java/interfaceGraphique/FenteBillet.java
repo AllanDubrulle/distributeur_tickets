@@ -8,7 +8,6 @@ import javafx.scene.text.Font;
 
 class FenteBillet extends ComposantVisible 
 {
-	private static FenteBillet instance;
 	private Button button, button1, button0, button2;
 	
 	public FenteBillet(boolean enMarche) 
@@ -16,7 +15,7 @@ class FenteBillet extends ComposantVisible
 		super(enMarche);
 	}
 	
-	private FenteBillet(double hauteur, double largeur) 
+	public FenteBillet(double hauteur, double largeur) 
 	{
         Rectangle rectangle = new Rectangle();
         button = new Button();
@@ -105,13 +104,6 @@ class FenteBillet extends ComposantVisible
         });
 
         getChildren().addAll(rectangle, button, button0, button1, button2);
-    }
-
-	public static FenteBillet getInstance(double hauteur, double largeur) 
-	{
-    	if (instance == null)
-    		instance = new FenteBillet(hauteur, largeur);
-    	return instance;
     }
 	
 	public Button getButton(int i)

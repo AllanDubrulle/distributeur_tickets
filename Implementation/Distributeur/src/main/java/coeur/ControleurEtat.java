@@ -40,9 +40,8 @@ abstract class ControleurEtat
 	public void choixAnnulerScanner() {}
 	
 	public void choixParCarte() {}
-	public void choixCarte() {}
+	public void choixCarte(String carte) {}
 	public void choixInsererCarte() {}
-	public void choixAnnulerParCarte() {}
 	public void choixEnLiquide() {}
 	public void inserer(double i) {}
 	public void validePaiement() {}

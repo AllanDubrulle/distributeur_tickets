@@ -1,6 +1,7 @@
 package interfaceGraphique;
 
 import javafx.scene.text.*;
+import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.*;
@@ -8,9 +9,11 @@ import javafx.scene.control.*;
 class FChoixParCarte extends Ecran 
 {
     private static TextField textField;
+    private Stage stage;
     
-    public FChoixParCarte() 
+    public FChoixParCarte(Stage stage) 
     {
+    	this.stage = stage;
         Button button = new Button();
         Button button0 = new Button();
         textField = new TextField();
@@ -35,6 +38,7 @@ class FChoixParCarte extends Ecran
         	public void handle(ActionEvent event) 
         	{
         		graphAC.choixValiderNumCarte();
+        		stage.close();
         	}
         });
 
@@ -49,7 +53,7 @@ class FChoixParCarte extends Ecran
         {
         	public void handle(ActionEvent event) 
         	{
-        		graphAC.choixAnnulerChoixCarte();
+        		stage.close();
         	}
         });
 
