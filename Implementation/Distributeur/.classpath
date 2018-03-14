@@ -39,6 +39,5 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="librairie/sqlite-jdbc-3.21.0.jar"/>
-	<classpathentry kind="lib" path="librairie/BDDDistributeur.db"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
