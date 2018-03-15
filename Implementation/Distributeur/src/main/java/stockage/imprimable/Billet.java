@@ -2,35 +2,35 @@ package stockage.imprimable;
 
 import java.util.Date;
 
-class Billet extends TitreDeTransport
+public class Billet extends TitreDeTransport
 {
 	private boolean retour;
 
 	public Billet(Date dateValidite, Date dateExp, String gareDepart, String gareArrivee, Classe classe,
-			int montantAPayer,boolean retour)
+			boolean retour)
 	{
-		super(dateValidite, dateExp, gareDepart, gareArrivee, classe, montantAPayer);
+		super(dateValidite, dateExp, gareDepart, gareArrivee, classe);
 		this.retour=retour;
 	}
 
 	public Billet(Date dateValidite, Date dateExp, String gareDepart, String gareArrivee, Classe classe,
-			Reduction reduction, int montantAPayer,boolean retour)
+			Reduction reduction,boolean retour)
 	{
-		super(dateValidite, dateExp, gareDepart, gareArrivee, classe, reduction, montantAPayer);
+		super(dateValidite, dateExp, gareDepart, gareArrivee, classe, reduction);
 		this.retour=retour;
 	}
 
 	public Billet(Date dateValidite, Date dateExp, String gareDepart, String gareArrivee, Classe classe, TypeTitre type,
-			int montantAPayer,boolean retour)
+			boolean retour)
 	{
-		super(dateValidite, dateExp, gareDepart, gareArrivee, classe, type, montantAPayer);
+		super(dateValidite, dateExp, gareDepart, gareArrivee, classe, type);
 		this.retour=retour;
 	}
 
 	public Billet(Date dateValidite, Date dateExp, String gareDepart, String gareArrivee, Classe classe, TypeTitre type,
-			Reduction reduction, int montantAPayer,boolean retour)
+			Reduction reduction,boolean retour)
 	{
-		super(dateValidite, dateExp, gareDepart, gareArrivee, classe, type, reduction, montantAPayer);
+		super(dateValidite, dateExp, gareDepart, gareArrivee, classe, type, reduction);
 		this.retour=retour;
 	}
 	

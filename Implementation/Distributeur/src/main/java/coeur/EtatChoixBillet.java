@@ -15,4 +15,9 @@ class EtatChoixBillet extends EtatChoixTitre
 		Controleur.getInstance().setCommande(Commande.BILLET);
 		super.entree();
 	}
+	
+	/*public void valider()
+	{
+		
+	}*/
 }

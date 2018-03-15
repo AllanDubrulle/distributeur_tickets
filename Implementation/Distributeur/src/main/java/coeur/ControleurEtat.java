@@ -25,13 +25,9 @@ abstract class ControleurEtat
 	public void choixArrivees() {}
 	public void choixDeparts() {}
 	
-	public void valideBillet() {}
-	public void valideAchatAbo() {}
+	
 	public void valideRenouvAbo() {}
 	public void valideRenouvAboScanne() {}
-	public void validePassIllimite() {}
-	public void validePass10Trajets() {}
-	public void validePass10Trajets2Gares() {}
 	public void valideNumAbo() {}
 	public void valideNumAboScanne() {}
 

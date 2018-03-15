@@ -1,6 +1,6 @@
 package stockage;
 
-interface Valeur 
+public interface Valeur 
 {
 	public int valeur();
 }

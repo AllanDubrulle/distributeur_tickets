@@ -75,7 +75,7 @@ public class ConnexionBDD {
 	         
 	        return null;
 	    }
-	    public ResultSet prixTrajet(String gare1, String gare2)
+	    public int prixTrajet(String gare1, String gare2)
 	    {
 	        try
 	        {
@@ -86,14 +86,14 @@ public class ConnexionBDD {
 				declar.setString(3, gare2);
 				declar.setString(4, gare1);
 				ResultSet res = declar.executeQuery();
-	        	return res;
+	        	return res.getInt(0);
 	        }
 	        catch (SQLException e)
 	        {
 	            e.printStackTrace();
 	        }
 	         
-	        return null;
+	        return -1;
 	    }
 	    /*public ResultSet heureTrajet(String depart, String arrivee, String heure) A FINIR (PROBLEME AVEC HEURE)
 	    {

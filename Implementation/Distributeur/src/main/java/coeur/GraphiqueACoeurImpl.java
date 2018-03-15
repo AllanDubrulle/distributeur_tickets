@@ -1,5 +1,9 @@
 package coeur;
 
+import java.util.Date;
+
+import stockage.ErreurDEncodage;
+
 public class GraphiqueACoeurImpl implements GraphiqueACoeur 
 {	
 	private Controleur controleur = Controleur.getInstance();
@@ -221,6 +225,14 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 	public void choixValider()
 	{
 		controleur.getEtatActuel().valider();
+	}
+
+	
+	public void InfoBillet(Date dateValidite, int nbrBillet, int classe, String gareDepart,String gareArrivee,String typeBillet,
+			String reduction, boolean allerRetour) throws ErreurDEncodage
+	{
+		Controleur.getInstance().getCoeurAStockage().creerBillet(dateValidite,nbrBillet,classe, gareDepart, gareArrivee, typeBillet,
+					reduction, allerRetour);
 		
 	}
 	

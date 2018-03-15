@@ -1,6 +1,6 @@
 package stockage.imprimable;
 
-enum TypePass
+public enum TypePass
 {
 	PASSILLIMITE,
 	PASS10TRAJETS2GARES,

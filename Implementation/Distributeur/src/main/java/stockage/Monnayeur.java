@@ -5,9 +5,9 @@ import java.util.HashMap;
 class Monnayeur extends interfaceGraphique.ComposantVisible
 {
 	private HashMap<Pieces, Integer > StockPiece; 
-	private HashMap<Billet,Integer> StockBillet;
+	private HashMap<BilletMonnaie,Integer> StockBillet;
 	private Pieces[] ordrePieces= {Pieces.P200,Pieces.P100,Pieces.P50,Pieces.P20,Pieces.P10,Pieces.P5,Pieces.P2,Pieces.P1};;  
-	private Billet[] ordreBillets= {Billet.B50,Billet.B20,Billet.B10,Billet.B5};
+	private BilletMonnaie[] ordreBillets= {BilletMonnaie.B50,BilletMonnaie.B20,BilletMonnaie.B10,BilletMonnaie.B5};
 	
 	public Monnayeur(boolean enMarche)
 	{
@@ -21,7 +21,7 @@ class Monnayeur extends interfaceGraphique.ComposantVisible
 			throw new ComposantHorsService("Monnayeur hors service");
 		}
 		HashMap<Pieces,Integer> renduPiece = new HashMap<Pieces,Integer>();
-		HashMap<Billet,Integer> renduBillet = new HashMap<Billet,Integer>();
+		HashMap<BilletMonnaie,Integer> renduBillet = new HashMap<BilletMonnaie,Integer>();
 		for (int i =0;i< ordreBillets.length ;i++)
 		{
 			int nbr = 0;

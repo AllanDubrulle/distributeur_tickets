@@ -10,34 +10,34 @@ class Abonnement extends TitreDeTransport
 	private String registreNational;
 	
 	public Abonnement(Date dateValidite, Date dateExp, String gareDepart, String gareArrivee, Classe classe,
-			int montantAPayer,String codeBarre,String nom,String registreNational)
+			String codeBarre,String nom,String registreNational)
 	{
-		super(dateValidite, dateExp, gareDepart, gareArrivee, classe, montantAPayer);
+		super(dateValidite, dateExp, gareDepart, gareArrivee, classe);
 		this.codeBarre=codeBarre;
 		this.nom=nom;
 		this.registreNational=registreNational;
 	}
 	public Abonnement(Date dateValidite, Date dateExp, String gareDepart, String gareArrivee, Classe classe,
-			Reduction reduction, int montantAPayer,String codeBarre,String nom,String registreNational)
+			Reduction reduction,String codeBarre,String nom,String registreNational)
 	{
-		super(dateValidite, dateExp, gareDepart, gareArrivee, classe, reduction, montantAPayer);
+		super(dateValidite, dateExp, gareDepart, gareArrivee, classe, reduction);
 		this.codeBarre=codeBarre;
 		this.nom=nom;
 		this.registreNational=registreNational;
 	}
 	public Abonnement(Date dateValidite, Date dateExp, String gareDepart, String gareArrivee, Classe classe,
-			TypeTitre type, int montantAPayer,String codeBarre,String nom,String registreNational)
+			TypeTitre type,String codeBarre,String nom,String registreNational)
 	{
-		super(dateValidite, dateExp, gareDepart, gareArrivee, classe, type, montantAPayer);
+		super(dateValidite, dateExp, gareDepart, gareArrivee, classe, type);
 		this.codeBarre=codeBarre;
 		this.nom=nom;
 		this.registreNational=registreNational;
 	}
 	public Abonnement(Date dateValidite, Date dateExp, String gareDepart, String gareArrivee, Classe classe,
-			TypeTitre type, Reduction reduction, int montantAPayer,String codeBarre,
+			TypeTitre type, Reduction reduction,String codeBarre,
 			String nom,String registreNational)
 	{
-		super(dateValidite, dateExp, gareDepart, gareArrivee, classe, type, reduction, montantAPayer);
+		super(dateValidite, dateExp, gareDepart, gareArrivee, classe, type, reduction);
 		this.codeBarre=codeBarre;
 		this.nom=nom;
 		this.registreNational=registreNational;

@@ -1,5 +1,9 @@
 package coeur;
 
+import java.util.Date;
+
+import stockage.ErreurDEncodage;
+
 public interface GraphiqueACoeur 
 {	
 	public void choixDemarrerSimul();
@@ -57,4 +61,6 @@ public interface GraphiqueACoeur
 	public void choixPaiementParCarte();
 	public void choixPaiementLiquide();
 	public void choixValiderNumCarte();
+	public void InfoBillet(Date dateValidite, int nbrBillet, int jour, String gareDepart,String gareArrivee,String typeBillet,
+			String reduction, boolean allerRetour) throws ErreurDEncodage;
 }

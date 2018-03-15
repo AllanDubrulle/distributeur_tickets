@@ -1,5 +1,7 @@
 package interfaceGraphique;
 
+import java.sql.Date;
+
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.*;
@@ -7,6 +9,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.scene.shape.*;
 import javafx.scene.text.*;
+import stockage.ErreurDEncodage;
 
 class FBillet extends Ecran 
 {
@@ -253,7 +256,32 @@ class FBillet extends Ecran
         {
             public void handle(ActionEvent event)
             {
-            	graphAC.choixValider();
+            	//textField, textField0, textField1, textField2, textField3, textField4, textField5, textField6;
+            	try
+            	{
+            		int nbrBillet = Integer.parseInt(textField.getText());
+            		int jour = Integer.parseInt(textField0.getText());
+            		int mois = Integer.parseInt(textField1.getText());
+            		int annee = Integer.parseInt(textField2.getText());
+            		int classe;
+            		if (radioButton1.isSelected())
+            		{
+            			classe=1;
+            		}
+            		else
+            		{
+            			classe=0;
+            		}
+                    
+            		graphAC.InfoBillet(new Date(jour,mois,annee),nbrBillet,classe,textField3.getText(),textField4.getText(),textField5.getText(),textField6.getText(),radioButton1.isSelected());
+            		graphAC.choixValider();
+            	}
+            	catch (NumberFormatException | ErreurDEncodage e)
+            	{
+            		//méthode graphique pour dire qu'il y au n problème d'encodage
+            		System.out.println("problem");
+            	}
+            	
             }
         });
 

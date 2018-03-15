@@ -5,9 +5,9 @@ import java.util.HashMap;
 class Rendu 
 {	
 	private HashMap<Pieces,Integer> pieces;
-	private HashMap<Billet,Integer> billets;
+	private HashMap<BilletMonnaie,Integer> billets;
 	
-	public Rendu (HashMap<Pieces,Integer> pieces, HashMap<Billet,Integer> billets)
+	public Rendu (HashMap<Pieces,Integer> pieces, HashMap<BilletMonnaie,Integer> billets)
 	{
 		this.pieces = pieces;
 		this.billets = billets;
@@ -18,7 +18,7 @@ class Rendu
 		return pieces;
 	}
 
-	public HashMap<Billet,Integer> getBillets() 
+	public HashMap<BilletMonnaie,Integer> getBillets() 
 	{
 		return billets;
 	}
