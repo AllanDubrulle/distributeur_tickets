@@ -7,7 +7,7 @@ import javafx.scene.shape.Rectangle;
 
 class AfficherBillet extends Pane 
 {
-    public AfficherBillet(FBillet fen) 
+    public AfficherBillet(String gareDepart, String gareArrivee, String allerRetour, String classe, String type, String reduc, String nbr, String date, String prix) 
     {
         VBox vBox = new VBox();
         HBox hBox = new HBox();
@@ -49,17 +49,17 @@ class AfficherBillet extends Pane
 
         text.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text.setStrokeWidth(0.0);
-        text.setText("BILLET " + fen.getType().toUpperCase());
+        text.setText("BILLET " + type.toUpperCase());
         text.setWrappingWidth(200.0);
         text.setFont(new Font("System Bold Italic", 18.0));
 
         String format = "dd/MM/yy   HH:mm:ss"; 
         java.text.SimpleDateFormat formater = new java.text.SimpleDateFormat(format); 
-        java.util.Date date = new java.util.Date(); 
+        java.util.Date dateAchat = new java.util.Date(); 
         
         text0.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text0.setStrokeWidth(0.0);
-        text0.setText(formater.format(date));
+        text0.setText(formater.format(dateAchat));
         text0.setTextAlignment(javafx.scene.text.TextAlignment.RIGHT);
         text0.setWrappingWidth(150.0);
         HBox.setMargin(text0, new Insets(0.0, 0.0, 0.0, 180.0));
@@ -71,7 +71,7 @@ class AfficherBillet extends Pane
 
         text1.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1.setStrokeWidth(0.0);
-        text1.setText(fen.getAllerRetour().toUpperCase());
+        text1.setText(allerRetour.toUpperCase());
         text1.setWrappingWidth(200.0);
         text1.setFont(new Font("System Bold Italic", 18.0));
 
@@ -89,7 +89,7 @@ class AfficherBillet extends Pane
 
         text3.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text3.setStrokeWidth(0.0);
-        text3.setText(fen.getClasse());
+        text3.setText(classe);
         text3.setWrappingWidth(200.0);
         text3.setFont(new Font("System Bold", 18.0));
         hBox1.setOpaqueInsets(new Insets(0.0));
@@ -105,7 +105,7 @@ class AfficherBillet extends Pane
 
         text5.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text5.setStrokeWidth(0.0);
-        text5.setText(fen.getGareDepart());
+        text5.setText(gareDepart);
         text5.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         HBox.setMargin(text5, new Insets(0.0, 0.0, 0.0, 50.0));
         hBox2.setOpaqueInsets(new Insets(0.0));
@@ -121,7 +121,7 @@ class AfficherBillet extends Pane
 
         text7.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text7.setStrokeWidth(0.0);
-        text7.setText(fen.getGareArrivee());
+        text7.setText(gareArrivee);
         text7.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         HBox.setMargin(text7, new Insets(0.0, 0.0, 0.0, 50.0));
         hBox3.setOpaqueInsets(new Insets(0.0));
@@ -138,7 +138,7 @@ class AfficherBillet extends Pane
 
         text9.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text9.setStrokeWidth(0.0);
-        text9.setText(fen.getDate());
+        text9.setText(date);
         text9.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         HBox.setMargin(text9, new Insets(0.0, 0.0, 0.0, 50.0));
         hBox4.setOpaqueInsets(new Insets(0.0));
@@ -154,13 +154,13 @@ class AfficherBillet extends Pane
 
         text11.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text11.setStrokeWidth(0.0);
-        text11.setText(fen.getReduction());
+        text11.setText(reduc);
         text11.setWrappingWidth(175.0);
         HBox.setMargin(text11, new Insets(0.0, 0.0, 0.0, 44.0));
 
         text12.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text12.setStrokeWidth(0.0);
-        text12.setText(String.valueOf(Double.valueOf(fen.getPrix())/100) + "   EUR");
+        text12.setText(prix + "   EUR");
         text12.setTextAlignment(javafx.scene.text.TextAlignment.RIGHT);
         text12.setWrappingWidth(100.0);
         HBox.setMargin(text12, new Insets(0.0, 0.0, 0.0, 110.0));

@@ -5,7 +5,7 @@ abstract class EtatAnnulable extends ControleurEtat
 	
 	public void retour() 
 	{
-		Controleur.getInstance().modifEtat(Controleur.getInstance().getEtatsPrecedents().pop());
+		Controleur.getInstance().getCoeurAGraphique().afficherChoixCommande(Controleur.getInstance().getCommande());
 	}
 	
 	public void annule() 

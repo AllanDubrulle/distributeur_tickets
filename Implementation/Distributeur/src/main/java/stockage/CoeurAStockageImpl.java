@@ -99,7 +99,7 @@ public class CoeurAStockageImpl implements CoeurAStockage
 			throw new ErreurDEncodage ("problème d'encodage");
 		}
 		
-		setAchat( new Billet(dateValidite,new Date(), gareDepart, gareArrivee,  classeBillet, type,reduc,allerRetour));
+		setAchat(new Billet(dateValidite,new Date(), gareDepart, gareArrivee,  classeBillet, type,reduc,allerRetour));
 		setPrix(calculerPrix(gareDepart,gareArrivee,reduc,type,classeBillet)*nbrBillet);
 	}
 

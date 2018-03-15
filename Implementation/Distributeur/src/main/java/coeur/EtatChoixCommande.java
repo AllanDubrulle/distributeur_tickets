@@ -11,5 +11,4 @@ public abstract class EtatChoixCommande extends EtatAnnulable {
 	{
 		Controleur.getInstance().getCoeurAGraphique().afficherChoixCommande(Controleur.getInstance().getCommande());
 	}
-
 }

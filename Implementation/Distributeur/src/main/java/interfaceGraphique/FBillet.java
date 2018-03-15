@@ -54,6 +54,7 @@ class FBillet extends Ecran
         Button button = new Button();
         Button button0 = new Button();
         Text text9 = new Text();
+        Text text10 = new Text();
 
         setPrefHeight(400.0*hauteur);
         setPrefWidth(800.0*largeur);
@@ -278,8 +279,13 @@ class FBillet extends Ecran
             	}
             	catch (NumberFormatException | ErreurDEncodage e)
             	{
-            		//méthode graphique pour dire qu'il y au n problème d'encodage
-            		System.out.println("problem");
+            		text10.setText("Les données saisies sont incorrectes");
+            		text10.setFont(new Font("System Bold", 15.0*hauteur));
+            		text10.setWrappingWidth(250.0*largeur);
+            		text10.setFill(javafx.scene.paint.Color.RED);
+            		text10.setLayoutX(275.0*largeur);
+            		text10.setLayoutY(364.0*hauteur);
+            		//System.out.println("problem");
             	}
             	
             }
@@ -303,7 +309,7 @@ class FBillet extends Ecran
         hBox6.getChildren().addAll(text6, textField0, text7, textField1, text8, textField2);
         hBox5.getChildren().addAll(text5, textField, hBox6);
         vBox.getChildren().addAll(hBox, hBox0, hBox1, hBox3, hBox4, hBox5);
-        getChildren().addAll(rectangle, vBox, button, button0, text9);
+        getChildren().addAll(rectangle, vBox, button, button0, text9, text10);
     }
     
     public void actionClavier(String a) 

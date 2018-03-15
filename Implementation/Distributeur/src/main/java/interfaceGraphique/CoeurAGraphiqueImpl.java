@@ -11,6 +11,7 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	private Stage pStage2 = new Stage();
 	private FChoixParLiquide fLiquide;
 	private FBillet fenBillet;
+	private FAboAchat fenAboAchat;
 	private FAboRenouvScanne fenAboScanne;
 	private FChoixAbo choixAbo;
 	private FPassIllimite fenPassIllimite;
@@ -188,7 +189,7 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 			break;
 		case BILLET:
 			StackPane root2 = new StackPane();
-			AfficherBillet billet = new AfficherBillet(fenBillet);
+			AfficherBillet billet = new AfficherBillet(fenBillet.getGareDepart(), fenBillet.getGareArrivee(), fenBillet.getAllerRetour(), fenBillet.getClasse(), fenBillet.getType(), fenBillet.getReduction(), fenBillet.getNombre(), fenBillet.getDate(), String.valueOf(Double.valueOf(fenBillet.getPrix())/100));
 			Stage stage2 = new Stage();
 			Scene scene2 = new Scene(root2, 580,300);
 			root2.getChildren().add(billet);
@@ -276,10 +277,10 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 		switch(commande)
 		{
 			case ACHATABO:
-				FenetreSimulation.getInstance().afficher(new FRecapAboAchat((FAboAchat)FenetreSimulation.getInstance().getEcran(), FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
+				FenetreSimulation.getInstance().afficher(new FRecapAboAchat(fenAboAchat.getNom(), fenAboAchat.getNumRegNat(), fenAboAchat.getGareDepart(), fenAboAchat.getGareArrivee(),fenAboAchat.getValidite(), fenAboAchat.getClasse(), fenAboAchat.getReduction(), String.valueOf(Double.valueOf(fenAboAchat.getPrix())/100), FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 				break;
 			case BILLET:
-				FenetreSimulation.getInstance().afficher(new FRecapBillet(fenBillet, FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
+				FenetreSimulation.getInstance().afficher(new FRecapBillet(fenBillet.getGareDepart(), fenBillet.getGareArrivee(), fenBillet.getAllerRetour(), fenBillet.getClasse(), fenBillet.getType(), fenBillet.getReduction(), fenBillet.getNombre(), fenBillet.getDate(), String.valueOf(Double.valueOf(fenBillet.getPrix())/100), FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 				break;
 			case PASS10TRAJETS:
 				FenetreSimulation.getInstance().afficher(new FRecapPass10Trajets(fenPass10Trajets, FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
@@ -313,7 +314,8 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 		switch(commande)
 		{
 			case ACHATABO:
-				FenetreSimulation.getInstance().afficher(new FAboAchat(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
+				this.fenAboAchat = new FAboAchat(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg());
+				FenetreSimulation.getInstance().afficher(fenAboAchat);
 				break;
 			case BILLET:
 				this.fenBillet = new FBillet(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg());

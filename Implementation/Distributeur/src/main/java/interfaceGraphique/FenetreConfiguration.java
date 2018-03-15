@@ -40,6 +40,7 @@ public class FenetreConfiguration extends Pane
         textField = new TextField();
         textField0 = new TextField();
         Button button = new Button();
+        Text text4 = new Text();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -140,22 +141,34 @@ public class FenetreConfiguration extends Pane
         {
             public void handle(ActionEvent event)
             {
-            	StackPane root = new StackPane();
-            	Stage stage = new Stage();
-            	FenetreSimulation.getInstance().setParametre();
-            	root.getChildren().add(FenetreSimulation.getInstance());
-                Scene scene = new Scene(root, FenetreSimulation.getInstance().getRapportLarg()*1350, FenetreSimulation.getInstance().getRapportHaut()*850);
-                scene.setFill(javafx.scene.paint.Color.WHITE);
-                stage.setResizable(false);
-                stage.setScene(scene);
-                stage.setTitle("Fenêtre de simulation");
-                stage.show();
-                Main.getStage().close();
+                try
+            	{
+                	StackPane root = new StackPane();
+                	Stage stage = new Stage();
+                	FenetreSimulation.getInstance().setParametre();
+                	root.getChildren().add(FenetreSimulation.getInstance());
+                    Scene scene = new Scene(root, FenetreSimulation.getInstance().getRapportLarg()*1350, FenetreSimulation.getInstance().getRapportHaut()*850);
+                    scene.setFill(javafx.scene.paint.Color.WHITE);
+                    stage.setResizable(false);
+                    stage.setScene(scene);
+                    stage.setTitle("Fenêtre de simulation");
+                    stage.show();
+                    Main.getStage().close();
+            	}
+            	catch (NumberFormatException e)
+            	{
+            		text4.setText("Les données saisies sont incorrectes");
+            		text4.setFont(new Font("System Bold", 15.0*rapportHauteur));
+            		text4.setWrappingWidth(260.0*rapportLargeur);
+            		text4.setFill(javafx.scene.paint.Color.RED);
+            		text4.setLayoutX(175.0*rapportLargeur);
+            		text4.setLayoutY(379.0*rapportHauteur);
+            	}
             }
         });
 
         vBox.getChildren().addAll(text, text0, radioButton, radioButton0, radioButton1, text1, radioButton2, radioButton3, radioButton4, checkBox, hBox);
-        getChildren().addAll(vBox, button);
+        getChildren().addAll(vBox, button, text4);
     }
     
     public static FenetreConfiguration getInstance() 
@@ -225,7 +238,7 @@ public class FenetreConfiguration extends Pane
 	
 	public double getHauteur()
 	{
-		if (textField0.getText().length() == 0 || Double.valueOf(textField0.getText()) < 360)
+		if (Double.valueOf(textField0.getText()) < 360)
 		{
 			textField0.setText("720");
 		}
@@ -233,7 +246,7 @@ public class FenetreConfiguration extends Pane
 	}
 	public double getLargeur()
 	{
-		if (textField.getText().length() == 0 || Double.valueOf(textField.getText()) < 640)
+		if (Double.valueOf(textField.getText()) < 640)
 		{
 			textField.setText("1280");
 		}

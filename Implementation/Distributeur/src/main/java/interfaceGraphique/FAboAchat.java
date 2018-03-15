@@ -466,4 +466,8 @@ class FAboAchat extends Ecran
 	{
 		return textField3.getText();
 	}
+	public String getPrix()
+	{
+		return "10000";
+	}
 }

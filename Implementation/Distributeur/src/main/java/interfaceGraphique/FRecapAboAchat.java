@@ -10,11 +10,8 @@ import javafx.scene.layout.*;
 
 class FRecapAboAchat extends Ecran 
 {    
-	private FAboAchat fen;
-	
-    public FRecapAboAchat(FAboAchat fen, double hauteur, double largeur) 
+    public FRecapAboAchat(String nom, String registre, String gareDepart, String gareArrivee, String validite, String classe, String reduction, String prix, double hauteur, double largeur) 
     {
-    	this.fen=fen;
         Rectangle rectangle = new Rectangle();
         Text text = new Text();
         VBox vBox = new VBox();
@@ -90,7 +87,7 @@ class FRecapAboAchat extends Ecran
 
         text1.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1.setStrokeWidth(0.0);
-        text1.setText(fen.getNom());
+        text1.setText(nom);
         text1.setWrappingWidth(200.0*largeur);
         text1.setFont(new Font("System Bold Italic", 15.0*hauteur));
         HBox.setMargin(text1, new Insets(0.0, 0.0, 0.0, 20.0*largeur));
@@ -108,7 +105,7 @@ class FRecapAboAchat extends Ecran
 
         text3.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text3.setStrokeWidth(0.0);
-        text3.setText(fen.getNumRegNat());
+        text3.setText(registre);
         text3.setWrappingWidth(200.0*largeur);
         text3.setFont(new Font("System Bold Italic", 15.0*hauteur));
         HBox.setMargin(text3, new Insets(0.0, 0.0, 0.0, 20.0*largeur));
@@ -126,7 +123,7 @@ class FRecapAboAchat extends Ecran
 
         text5.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text5.setStrokeWidth(0.0);
-        text5.setText(fen.getGareDepart());
+        text5.setText(gareDepart);
         text5.setWrappingWidth(200.0*largeur);
         text5.setFont(new Font("System Bold Italic", 15.0*hauteur));
         HBox.setMargin(text5, new Insets(0.0, 0.0, 0.0, 0.0));
@@ -144,7 +141,7 @@ class FRecapAboAchat extends Ecran
 
         text7.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text7.setStrokeWidth(0.0);
-        text7.setText(fen.getGareArrivee());
+        text7.setText(gareArrivee);
         text7.setWrappingWidth(200.0*largeur);
         text7.setFont(new Font("System Bold Italic", 15.0*hauteur));
         HBox.setMargin(text7, new Insets(0.0, 0.0, 0.0, 0.0*largeur));
@@ -162,7 +159,7 @@ class FRecapAboAchat extends Ecran
 
         text9.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text9.setStrokeWidth(0.0);
-        text9.setText(fen.getValidite());
+        text9.setText(validite);
         text9.setWrappingWidth(200.0*largeur);
         text9.setFont(new Font("System Bold Italic", 15.0*hauteur));
         hBox4.setPadding(new Insets(0.0, 0.0, 10.0, 0.0));
@@ -179,7 +176,7 @@ class FRecapAboAchat extends Ecran
 
         text11.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text11.setStrokeWidth(0.0);
-        text11.setText(fen.getClasse());
+        text11.setText(classe);
         text11.setWrappingWidth(200.0*largeur);
         text11.setFont(new Font("System Bold Italic", 15.0*hauteur));
         hBox5.setPadding(new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
@@ -196,7 +193,7 @@ class FRecapAboAchat extends Ecran
 
         text13.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text13.setStrokeWidth(0.0);
-        text13.setText(fen.getReduction());
+        text13.setText(reduction);
         text13.setWrappingWidth(200.0);
         text13.setFont(new Font("System Bold Italic", 15.0*hauteur));
         HBox.setMargin(text13, new Insets(0.0, 0.0, 0.0, 20.0*largeur));
@@ -214,7 +211,7 @@ class FRecapAboAchat extends Ecran
 
         text15.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text15.setStrokeWidth(0.0);
-        text15.setText("(prix)");
+        text15.setText(prix);
         text15.setWrappingWidth(200.0);
         text15.setFont(new Font("System Bold Italic", 15.0*hauteur));
         HBox.setMargin(text15, new Insets(0.0, 0.0, 0.0, 20.0*largeur));

@@ -19,7 +19,12 @@ public class EtatChoixRenouvAbo extends EtatChoixTitre
 	
 	public void scanneCode() 
 	{
-		Controleur.getInstance().modifEtat(EtatChoixScannerCode.getInstance());
+		Controleur.getInstance().getCoeurAGraphique().afficherNumAbo();
+	}
+	
+	public void valideNumAbo() 
+	{
+		Controleur.getInstance().modifEtat(EtatChoixScannerCode2.getInstance());
 	}
 	
 	public void choixTaperCode() 
