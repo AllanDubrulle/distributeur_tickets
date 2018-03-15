@@ -15,7 +15,7 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	private FChoixAbo choixAbo;
 	private FPassIllimite fenPassIllimite;
 	private FPass10Trajets fenPass10Trajets;
-	private FPass10Trajets2Gares fen10Trajets2Gares;
+	private FPass10Trajets2Gares fenPass10Trajets2Gares;
 	
 
 	public Stage getStage2() 
@@ -78,8 +78,8 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	}
 	public void afficherChoixPass10Trajets2Gares() 
 	{
-		this.fen10Trajets2Gares=new FPass10Trajets2Gares(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg());
-		FenetreSimulation.getInstance().afficher(fen10Trajets2Gares);
+		this.fenPass10Trajets2Gares=new FPass10Trajets2Gares(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg());
+		FenetreSimulation.getInstance().afficher(fenPass10Trajets2Gares);
 	}
 	public void afficherChoixHoraire() 
 	{
@@ -189,19 +189,46 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 		case BILLET:
 			StackPane root2 = new StackPane();
 			AfficherBillet billet = new AfficherBillet(fenBillet);
-			Stage pStage4 = new Stage();
-			Scene sc = new Scene(root2, 580,300);
+			Stage stage2 = new Stage();
+			Scene scene2 = new Scene(root2, 580,300);
 			root2.getChildren().add(billet);
-			pStage4.setResizable(false);
-			pStage4.setScene(sc);
-			pStage4.setTitle("Billet");
-			pStage4.show();
+			stage2.setResizable(false);
+			stage2.setScene(scene2);
+			stage2.setTitle("Billet");
+			stage2.show();
 			break;
 		case PASS10TRAJETS:
+			StackPane root3 = new StackPane();
+			AfficherPass10Trajets pass10Trajets = new AfficherPass10Trajets(fenPass10Trajets);
+			Stage stage3 = new Stage();
+			Scene scene3 = new Scene(root3, 580,350);
+			root3.getChildren().add(pass10Trajets);
+			stage3.setResizable(false);
+			stage3.setScene(scene3);
+			stage3.setTitle("Pass");
+			stage3.show();
 			break;
 		case PASS10TRAJETS2GARES:
+			StackPane root4 = new StackPane();
+			AfficherPass10Trajets2Gares pass10Trajets2Gares = new AfficherPass10Trajets2Gares(fenPass10Trajets2Gares);
+			Stage stage4 = new Stage();
+			Scene scene4 = new Scene(root4, 580,350);
+			root4.getChildren().add(pass10Trajets2Gares);
+			stage4.setResizable(false);
+			stage4.setScene(scene4);
+			stage4.setTitle("Pass");
+			stage4.show();
 			break;
 		case PASSILLIMITE:
+			StackPane root5 = new StackPane();
+			AfficherPassIllimite passIllimite = new AfficherPassIllimite(fenPassIllimite);
+			Stage stage5 = new Stage();
+			Scene scene5 = new Scene(root5, 580,265);
+			root5.getChildren().add(passIllimite);
+			stage5.setResizable(false);
+			stage5.setScene(scene5);
+			stage5.setTitle("Pass");
+			stage5.show();
 			break;
 		case REVOUVELLEMENTABO:
 			break;
@@ -258,7 +285,7 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 				FenetreSimulation.getInstance().afficher(new FRecapPass10Trajets(fenPass10Trajets, FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 				break;
 			case PASS10TRAJETS2GARES:
-				FenetreSimulation.getInstance().afficher(new FRecapPass10Trajets2Gares(fen10Trajets2Gares, FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
+				FenetreSimulation.getInstance().afficher(new FRecapPass10Trajets2Gares(fenPass10Trajets2Gares, FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 				break;
 			case PASSILLIMITE:
 				FenetreSimulation.getInstance().afficher(new FRecapPassIllimite(fenPassIllimite, FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
@@ -297,8 +324,8 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 				FenetreSimulation.getInstance().afficher(fenPass10Trajets);
 				break;
 			case PASS10TRAJETS2GARES:
-				this.fen10Trajets2Gares=new FPass10Trajets2Gares(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg());
-				FenetreSimulation.getInstance().afficher(fen10Trajets2Gares);
+				this.fenPass10Trajets2Gares=new FPass10Trajets2Gares(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg());
+				FenetreSimulation.getInstance().afficher(fenPass10Trajets2Gares);
 				break;
 			case PASSILLIMITE:
 				this.fenPassIllimite=new FPassIllimite(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg());
