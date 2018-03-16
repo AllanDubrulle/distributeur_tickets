@@ -29,11 +29,11 @@ public class ConnexionBDD {
 	        this.connexion = null;
 	    }
 
-	    public boolean connect ()
+	    public boolean connexion()
 	    {
 	        try
 	        {
-	            connexion = DriverManager.getConnection("jdbc:sqlite:"+this.chemin);
+	            connexion = DriverManager.getConnection("jdbc:sqlite:"+ this.chemin);
 	            requete = connexion.createStatement();
 	            requete.executeUpdate("PRAGMA synchronous = OFF;");
 	            requete.setQueryTimeout(30);
@@ -46,7 +46,7 @@ public class ConnexionBDD {
 	        }
 	    }
 	     
-	    public boolean disconnect ()
+	    public boolean deconnexion()
 	    {
 	        try
 	        {
@@ -62,7 +62,7 @@ public class ConnexionBDD {
 	        }
 	    }
 	     
-	    public ResultSet getResultOf(String requete)
+	    public ResultSet resultatRequete(String requete)
 	    {
 	        try
 	        {
@@ -75,25 +75,28 @@ public class ConnexionBDD {
 	         
 	        return null;
 	    }
-	    public int prixTrajet(String gare1, String gare2)
+	    
+	    public ResultSet prixTrajet(String gare1, String gare2)
 	    {
-	        try
+	        String gare1bis = gare1.toUpperCase();
+	        String gare2bis = gare2.toUpperCase();
+	    	try
 	        {
 	            String requete = "SELECT Prix FROM PRIX WHERE (GARE1 = ? and GARE2 = ?) or (GARE2 = ? and GARE1 = ?)";
 	            PreparedStatement declar = this.connexion.prepareStatement(requete);
-	            declar.setString(1, gare1);
-				declar.setString(2, gare2);
-				declar.setString(3, gare2);
-				declar.setString(4, gare1);
+	            declar.setString(1, gare1bis);
+				declar.setString(2, gare2bis);
+				declar.setString(3, gare2bis);
+				declar.setString(4, gare1bis);
 				ResultSet res = declar.executeQuery();
-	        	return res.getInt(0);
+	        	return res;
 	        }
 	        catch (SQLException e)
 	        {
 	            e.printStackTrace();
 	        }
 	         
-	        return -1;
+	        return null;
 	    }
 	    /*public ResultSet heureTrajet(String depart, String arrivee, String heure) A FINIR (PROBLEME AVEC HEURE)
 	    {
