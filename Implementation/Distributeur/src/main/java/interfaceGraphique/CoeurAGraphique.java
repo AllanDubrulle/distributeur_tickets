@@ -48,5 +48,5 @@ public interface CoeurAGraphique
 	public void afficherRenouvScanne();
 	public void afficherRecu();
 	public void afficherRendu();
-	public void afficherTitre(Commande commande);
+	public void afficherTitre(Commande commande, TitreDeTransport titre, double prix);
 }

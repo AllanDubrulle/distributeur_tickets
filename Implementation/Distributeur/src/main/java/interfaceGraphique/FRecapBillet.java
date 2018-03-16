@@ -9,7 +9,6 @@ import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.scene.shape.*;
 import javafx.scene.text.*;
-import stockage.imprimable.Classe;
 
 class FRecapBillet extends Ecran 
 {    
@@ -116,11 +115,11 @@ class FRecapBillet extends Ecran
         text4.setStrokeWidth(0.0);
         if (allerRetour)
         {
-        	text4.setText("Aller");
+        	text4.setText("Aller-retour");
         }
         else
         {
-        	text4.setText("AllerRetour");
+        	text4.setText("Aller simple");
         }
         text4.setWrappingWidth(200.0*largeur);
         text4.setFont(new Font("System Bold Italic", 15.0*hauteur));
@@ -138,7 +137,7 @@ class FRecapBillet extends Ecran
 
         text6.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text6.setStrokeWidth(0.0);
-        text6.setText(Integer.toString(classe));
+        text6.setText(Integer.toString(classe) + "e classe");
         
         text6.setWrappingWidth(200.0*largeur);
         text6.setFont(new Font("System Bold Italic", 15.0*hauteur));

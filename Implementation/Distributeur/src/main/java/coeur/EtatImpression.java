@@ -31,7 +31,7 @@ class EtatImpression extends EtatAnnulable
 	public void choixOk()
 	{
 		Controleur.getInstance().getCoeurAGraphique().afficherRecu();
-		Controleur.getInstance().getCoeurAGraphique().afficherTitre(Controleur.getInstance().getCommande());
+		Controleur.getInstance().getCoeurAGraphique().afficherTitre(Controleur.getInstance().getCommande(),Controleur.getInstance().getCoeurAStockage().getTitre() ,0); //prix : 0 = valeur par défaut pour test!
 		Controleur.getInstance().modifEtat(EtatFin.getInstance());
 	}
 	

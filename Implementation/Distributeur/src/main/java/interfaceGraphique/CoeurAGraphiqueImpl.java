@@ -1,7 +1,5 @@
 package interfaceGraphique;
 
-import java.util.Date;
-
 import coeur.Commande;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
@@ -185,18 +183,19 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	{
 		fLiquide.setMontantIntroduit(fLiquide.getMontantIntroduit() + i);
 	}
-	public void afficherTitre(Commande commande)
+	public void afficherTitre(Commande commande, TitreDeTransport titre, double prix)
 	{
 		switch(commande)
 		{
 		case ACHATABO:
 			break;
 		case BILLET:
+			Billet billet = (Billet) titre;
 			StackPane root2 = new StackPane();
-			AfficherBillet billet = new AfficherBillet(fenBillet.getGareDepart(), fenBillet.getGareArrivee(), fenBillet.getAllerRetour(), fenBillet.getClasse(), fenBillet.getType(), fenBillet.getReduction(), fenBillet.getNombre(), fenBillet.getDate(), String.valueOf(Double.valueOf(fenBillet.getPrix())/100));
+			AfficherBillet afficheBillet = new AfficherBillet(billet.getGareDepart(), billet.getGareArrivee(), billet.isAllerRetour(), billet.getClasse().valeur(), billet.getType().toString(), billet.getReduction().toString(), billet.getDateValidite(), prix );
 			Stage stage2 = new Stage();
 			Scene scene2 = new Scene(root2, 580,300);
-			root2.getChildren().add(billet);
+			root2.getChildren().add(afficheBillet);
 			stage2.setResizable(false);
 			stage2.setScene(scene2);
 			stage2.setTitle("Billet");
@@ -346,6 +345,6 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 				FenetreSimulation.getInstance().afficher(new FAboRenouv1(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 				break;
 		}
-		
+
 	}
 }

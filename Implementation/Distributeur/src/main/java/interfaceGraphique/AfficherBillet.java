@@ -1,5 +1,7 @@
 package interfaceGraphique;
 
+import java.util.Date;
+
 import javafx.geometry.*;
 import javafx.scene.text.*;
 import javafx.scene.layout.*;
@@ -7,7 +9,7 @@ import javafx.scene.shape.Rectangle;
 
 class AfficherBillet extends Pane 
 {
-    public AfficherBillet(String gareDepart, String gareArrivee, String allerRetour, String classe, String type, String reduc, String nbr, String date, String prix) 
+    public AfficherBillet(String gareDepart, String gareArrivee, boolean allerRetour, int classe, String type, String reduc, Date date, double prix) 
     {
         VBox vBox = new VBox();
         HBox hBox = new HBox();
@@ -71,7 +73,14 @@ class AfficherBillet extends Pane
 
         text1.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1.setStrokeWidth(0.0);
-        text1.setText(allerRetour.toUpperCase());
+        if (allerRetour)
+        {
+        	text1.setText("Aller retour");	
+        }
+        else
+        {
+        	text1.setText("Aller simple");
+        }
         text1.setWrappingWidth(200.0);
         text1.setFont(new Font("System Bold Italic", 18.0));
 
@@ -89,7 +98,7 @@ class AfficherBillet extends Pane
 
         text3.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text3.setStrokeWidth(0.0);
-        text3.setText(classe);
+        text3.setText(Integer.toString(classe) +"e classe");
         text3.setWrappingWidth(200.0);
         text3.setFont(new Font("System Bold", 18.0));
         hBox1.setOpaqueInsets(new Insets(0.0));
@@ -138,7 +147,7 @@ class AfficherBillet extends Pane
 
         text9.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text9.setStrokeWidth(0.0);
-        text9.setText(date);
+        text9.setText(date.toString());
         text9.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         HBox.setMargin(text9, new Insets(0.0, 0.0, 0.0, 50.0));
         hBox4.setOpaqueInsets(new Insets(0.0));

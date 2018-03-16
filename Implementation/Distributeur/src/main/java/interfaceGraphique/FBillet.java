@@ -3,7 +3,6 @@ package interfaceGraphique;
 import java.sql.Date;
 
 import coeur.GraphiqueACoeurImpl;
-import coeur.StockageACoeurImpl;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -12,8 +11,6 @@ import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.scene.shape.*;
 import javafx.scene.text.*;
-import stockage.CoeurAStockage;
-import stockage.CoeurAStockageImpl;
 import stockage.ErreurDEncodage;
 
 class FBillet extends Ecran 
