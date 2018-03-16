@@ -3,6 +3,7 @@ package interfaceGraphique;
 import javafx.scene.text.*;
 import javafx.stage.Stage;
 import coeur.GraphiqueACoeurImpl;
+import javafx.collections.FXCollections;
 //import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -21,7 +22,7 @@ class FChoixAbo extends Pane
         Button button0 = new Button();
         choiceBox = new ChoiceBox<String>();
         Text text = new Text();
-        //choiceBox.setItems(FXCollections.observableArrayList("00001", "00002", "00003"));
+        choiceBox.setItems(FXCollections.observableArrayList("00001", "00002", "00003"));
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);

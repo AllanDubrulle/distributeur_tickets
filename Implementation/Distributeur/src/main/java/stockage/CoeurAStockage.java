@@ -16,7 +16,9 @@ public interface CoeurAStockage
 	public double calculerPrix(String gareDepart, String gareArrivee,Reduction reduc,TypeTitre typeBillet,Classe classe);
 	public boolean existenceTrajet(String gareDepart,String gareArrivee);
 	public String[] getListeReduction();
+	public String[] getListeType();
 	public TitreDeTransport getTitre();
 	public double getPrix();
 	public int getNbrTitre();
+
 }

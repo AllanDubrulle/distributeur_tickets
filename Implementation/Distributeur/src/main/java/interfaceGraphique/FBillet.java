@@ -2,6 +2,9 @@ package interfaceGraphique;
 
 import java.sql.Date;
 
+import coeur.GraphiqueACoeurImpl;
+import coeur.StockageACoeurImpl;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.*;
@@ -9,13 +12,16 @@ import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.scene.shape.*;
 import javafx.scene.text.*;
+import stockage.CoeurAStockage;
+import stockage.CoeurAStockageImpl;
 import stockage.ErreurDEncodage;
 
 class FBillet extends Ecran 
 {
-	private TextField textField, textField0, textField1, textField2, textField3, textField4, textField5, textField6;
+	private TextField textField, textField0, textField1, textField2, textField3, textField4;
 	private RadioButton radioButton, radioButton0, radioButton1, radioButton2;
 	private int pos = 0;
+	private ChoiceBox<String> choiceBox, choiceBox0;
 
     public FBillet(double hauteur, double largeur) 
     {
@@ -38,9 +44,7 @@ class FBillet extends Ecran
         radioButton2 = new RadioButton();
         HBox hBox4 = new HBox();
         Text text3 = new Text();
-        textField5 = new TextField();
         Text text4 = new Text();
-        textField6 = new TextField();
         HBox hBox5 = new HBox();
         Text text5 = new Text();
         textField = new TextField();
@@ -55,6 +59,9 @@ class FBillet extends Ecran
         Button button0 = new Button();
         Text text9 = new Text();
         Text text10 = new Text();
+        choiceBox = new ChoiceBox<String>();
+        choiceBox0 = new ChoiceBox<String>();
+        
 
         setPrefHeight(400.0*hauteur);
         setPrefWidth(800.0*largeur);
@@ -163,18 +170,20 @@ class FBillet extends Ecran
         text3.setFont(new Font(15.0*hauteur));
         HBox.setMargin(text3, new Insets(0.0, 20.0*largeur, 0.0, 0.0));
 
-        textField5.setPrefWidth(150.0*largeur);
-        textField5.setFont(new Font(15.0*hauteur));
+        choiceBox0.setPrefWidth(125.0*largeur);
+        choiceBox0.setPrefHeight(30.0*hauteur);
+        choiceBox0.setItems(FXCollections.observableArrayList(GraphiqueACoeurImpl.getInstance().getTypes()));
 
         text4.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text4.setStrokeWidth(0.0);
         text4.setText("Réduction :");
         text4.setFont(new Font(15.0*hauteur));
-        HBox.setMargin(text4, new Insets(0.0, 0.0, 0.0, 70.0*largeur));
+        HBox.setMargin(text4, new Insets(0.0, 0.0, 0.0, 50.0*largeur));
 
-        textField6.setPrefWidth(150.0*largeur);
-        textField6.setFont(new Font(15.0*hauteur));
-        HBox.setMargin(textField6, new Insets(0.0, 0.0, 0.0, 50.0*largeur));
+        choiceBox.setPrefWidth(225.0*largeur);
+        choiceBox.setPrefHeight(30.0*hauteur);
+        choiceBox.setItems(FXCollections.observableArrayList(GraphiqueACoeurImpl.getInstance().getReductions()));
+        HBox.setMargin(choiceBox, new Insets(0.0, 0.0, 0.0, 25.0*largeur));
         VBox.setMargin(hBox4, new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
 
         hBox5.setPrefHeight(12.0*hauteur);
@@ -257,7 +266,6 @@ class FBillet extends Ecran
         {
             public void handle(ActionEvent event)
             {
-            	//textField, textField0, textField1, textField2, textField3, textField4, textField5, textField6;
             	try
             	{
             		int nbrBillet = Integer.parseInt(textField.getText());
@@ -274,7 +282,7 @@ class FBillet extends Ecran
             			classe=0;
             		}
                     
-            		graphAC.InfoBillet(new Date(jour,mois,annee),nbrBillet,classe,textField3.getText(),textField4.getText(),textField5.getText(),textField6.getText(),radioButton1.isSelected());
+            		graphAC.InfoBillet(new Date(jour,mois,annee),nbrBillet,classe,textField3.getText(),textField4.getText(),choiceBox0.getValue(), choiceBox.getValue() ,radioButton1.isSelected());
             		graphAC.choixValider();
             	}
             	catch (NumberFormatException | ErreurDEncodage e)
@@ -285,7 +293,6 @@ class FBillet extends Ecran
             		text10.setFill(javafx.scene.paint.Color.RED);
             		text10.setLayoutX(275.0*largeur);
             		text10.setLayoutY(364.0*hauteur);
-            		//System.out.println("problem");
             	}
             	
             }
@@ -305,7 +312,7 @@ class FBillet extends Ecran
         hBox2.getChildren().addAll(text1, radioButton, radioButton0);
         hBox1.getChildren().add(hBox2);
         hBox3.getChildren().addAll(text2, radioButton1, radioButton2);
-        hBox4.getChildren().addAll(text3, textField5, text4, textField6);
+        hBox4.getChildren().addAll(text3, choiceBox0, text4, choiceBox);
         hBox6.getChildren().addAll(text6, textField0, text7, textField1, text8, textField2);
         hBox5.getChildren().addAll(text5, textField, hBox6);
         vBox.getChildren().addAll(hBox, hBox0, hBox1, hBox3, hBox4, hBox5);
@@ -318,10 +325,6 @@ class FBillet extends Ecran
     		textField3.setText(textField3.getText() + a);
     	else if (pos == 1)
     		textField4.setText(textField4.getText() + a);
-    	else if (pos == 4)
-    		textField5.setText(textField5.getText() + a);
-    	else if (pos == 5)
-    		textField6.setText(textField6.getText() + a);
     }
 
 	public void actionClavier(int a) 
@@ -340,6 +343,17 @@ class FBillet extends Ecran
 			else if (a == 2)
 				radioButton2.setSelected(true);
 		}
+		else if (pos == 4)
+		{
+			if (a < GraphiqueACoeurImpl.getInstance().getTypes().length && a > 0)
+				choiceBox0.setValue(GraphiqueACoeurImpl.getInstance().getTypes()[a-1]);
+		}
+		else if (pos == 5)
+		{
+			if (a <= GraphiqueACoeurImpl.getInstance().getReductions().length && a > 0)
+				choiceBox.setValue(GraphiqueACoeurImpl.getInstance().getReductions()[a-1]);
+		}
+		
 		else if (pos == 6)
 		{
 			String s = textField.getText();
@@ -434,9 +448,9 @@ class FBillet extends Ecran
 			else if (pos == 2)
 				radioButton1.requestFocus();
 			else if (pos == 3)
-				textField5.requestFocus();
+				choiceBox0.requestFocus();
 			else if (pos == 4)
-				textField6.requestFocus();
+				choiceBox.requestFocus();
 			else if (pos == 5)
 				textField.requestFocus();
 			else if (pos == 6)
@@ -455,11 +469,6 @@ class FBillet extends Ecran
 			textField3.setText(textField3.getText() + " ");
 		else if (pos == 1)
 			textField4.setText(textField4.getText() + " ");
-		else if (pos == 4)
-			textField5.setText(textField5.getText() + " ");
-		else if (pos == 5)
-			textField6.setText(textField6.getText() + " ");
-		
 	}
 
 	public void actionEffacer() 
@@ -475,18 +484,6 @@ class FBillet extends Ecran
 			String s = textField4.getText();
 			if (s.length() > 0)
 				textField4.setText(s.substring(0, s.length()-1));
-		}
-		else if (pos == 4)
-		{
-			String s = textField5.getText();
-			if (s.length() > 0)
-				textField5.setText(s.substring(0, s.length()-1));
-		}
-		else if (pos == 5)
-		{
-			String s = textField6.getText();
-			if (s.length() > 0)
-				textField6.setText(s.substring(0, s.length()-1));
 		}
 		else if (pos == 6) 
 		{
@@ -531,12 +528,12 @@ class FBillet extends Ecran
 	
 	public String getReduction()
 	{
-		return textField6.getText();
+		return choiceBox.getValue();
 	}
 	
 	public String getType()
 	{
-		return textField5.getText();
+		return choiceBox0.getValue();
 	}
 	
 	public String getNombre()

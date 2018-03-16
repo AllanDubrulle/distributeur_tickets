@@ -61,7 +61,16 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		}
 		return res;
 	}
-
+	public String[] getListeType()
+	{
+		TypeTitre[] types = TypeTitre.values();
+		String[] res = new String[types.length];
+		for (int i =0; i <types.length;i++) 
+		{
+			res[i] = types[i].toString();
+		}
+		return res;
+	}
 	
 	public void creerBillet(Date dateValidite ,int nbrBillet, int classe, String gareDepart,
 			String gareArrivee, String typeBillet, String reduction, boolean allerRetour) throws ErreurDEncodage

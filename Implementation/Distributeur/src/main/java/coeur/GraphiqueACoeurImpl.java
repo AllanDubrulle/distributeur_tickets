@@ -18,7 +18,6 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 			instance = new GraphiqueACoeurImpl();
 		}
 		return instance;
-		
 	}	
 	
 	public void choixDemarrerSimul() 
@@ -241,6 +240,14 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 			throw new ErreurDEncodage("gareInexistante"	);
 		}
 		
+	}
+	public String[] getReductions()
+	{
+		return Controleur.getInstance().getCoeurAStockage().getListeReduction();
+	}
+	public String[] getTypes()
+	{
+		return Controleur.getInstance().getCoeurAStockage().getListeType();
 	}
 	
 }
