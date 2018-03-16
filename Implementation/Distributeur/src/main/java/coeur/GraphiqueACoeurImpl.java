@@ -18,7 +18,6 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 			instance = new GraphiqueACoeurImpl();
 		}
 		return instance;
-		
 	}	
 	
 	public void choixDemarrerSimul() 
@@ -234,6 +233,14 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 		Controleur.getInstance().getCoeurAStockage().creerBillet(dateValidite,nbrBillet,classe, gareDepart, gareArrivee, typeBillet,
 					reduction, allerRetour);
 		
+	}
+	public String[] getReductions()
+	{
+		return Controleur.getInstance().getCoeurAStockage().getListeReduction();
+	}
+	public String[] getTypes()
+	{
+		return Controleur.getInstance().getCoeurAStockage().getListeType();
 	}
 	
 }

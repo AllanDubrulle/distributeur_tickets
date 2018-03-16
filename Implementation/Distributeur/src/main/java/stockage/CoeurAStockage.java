@@ -14,4 +14,5 @@ public interface CoeurAStockage
 	public void creerPass();
 	public double calculerPrix(String gareDepart, String gareArrivee,Reduction reduc,TypeTitre typeBillet,Classe classe);
 	public String[] getListeReduction();
+	public String[] getListeType();
 }

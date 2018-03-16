@@ -60,7 +60,16 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		}
 		return res;
 	}
-
+	public String[] getListeType()
+	{
+		TypeTitre[] types = TypeTitre.values();
+		String[] res = new String[types.length];
+		for (int i =0; i <types.length;i++) 
+		{
+			res[i] = types[i].toString();
+		}
+		return res;
+	}
 	
 	public void creerBillet(Date dateValidite ,int nbrBillet, int classe, String gareDepart,
 			String gareArrivee, String typeBillet, String reduction, boolean allerRetour) throws ErreurDEncodage
@@ -90,10 +99,6 @@ public class CoeurAStockageImpl implements CoeurAStockage
 				type = TypeTitre.values()[i];
 			}
 		}
-		System.out.println(reduc==null || type==null || classeBillet ==null);
-		System.out.println(reduc==null);
-		System.out.println(type==null);
-		System.out.println(classeBillet ==null);
 		if (reduc==null || type==null || classeBillet ==null )
 		{
 			throw new ErreurDEncodage ("problème d'encodage");
