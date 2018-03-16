@@ -4,6 +4,7 @@ import java.util.Date;
 
 import stockage.imprimable.Classe;
 import stockage.imprimable.Reduction;
+import stockage.imprimable.TitreDeTransport;
 import stockage.imprimable.TypeTitre;
 
 public interface CoeurAStockage 
@@ -13,5 +14,9 @@ public interface CoeurAStockage
 	public void creerAbonnement();
 	public void creerPass();
 	public double calculerPrix(String gareDepart, String gareArrivee,Reduction reduc,TypeTitre typeBillet,Classe classe);
+	public boolean existenceTrajet(String gareDepart,String gareArrivee);
 	public String[] getListeReduction();
+	public TitreDeTransport getTitre();
+	public double getPrix();
+	public int getNbrTitre();
 }

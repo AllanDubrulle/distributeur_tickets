@@ -238,7 +238,7 @@ public class FenetreConfiguration extends Pane
 	
 	public double getHauteur()
 	{
-		if (Double.valueOf(textField0.getText()) < 360)
+		if (textField0.getText().equals("")||Double.valueOf(textField0.getText()) < 360)
 		{
 			textField0.setText("720");
 		}
@@ -246,7 +246,7 @@ public class FenetreConfiguration extends Pane
 	}
 	public double getLargeur()
 	{
-		if (Double.valueOf(textField.getText()) < 640)
+		if (textField.getText().equals("")||Double.valueOf(textField.getText()) < 640)
 		{
 			textField.setText("1280");
 		}

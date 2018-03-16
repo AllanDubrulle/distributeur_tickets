@@ -9,6 +9,41 @@ public abstract class TitreDeTransport
 	protected String gareDepart;
 	protected String gareArrivee;
 	protected Classe classe;
+	public Date getDateValidite()
+	{
+		return dateValidite;
+	}
+
+	public Date getDateExp()
+	{
+		return dateExp;
+	}
+
+	public String getGareDepart()
+	{
+		return gareDepart;
+	}
+
+	public String getGareArrivee()
+	{
+		return gareArrivee;
+	}
+
+	public Classe getClasse()
+	{
+		return classe;
+	}
+
+	public TypeTitre getType()
+	{
+		return type;
+	}
+
+	public Reduction getReduction()
+	{
+		return reduction;
+	}
+
 	protected TypeTitre type = TypeTitre.STANDARD;
 	protected Reduction reduction = Reduction.AUCUNE;
 

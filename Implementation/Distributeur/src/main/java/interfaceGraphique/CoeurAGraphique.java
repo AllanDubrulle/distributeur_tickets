@@ -1,6 +1,7 @@
 package interfaceGraphique;
 
 import coeur.Commande;
+import stockage.imprimable.TitreDeTransport;
 
 public interface CoeurAGraphique 
 {
@@ -20,7 +21,7 @@ public interface CoeurAGraphique
 	public void afficherChoixDepart();
 	public void afficherChoixArrivee();
 	
-	public void afficherRecapCommande(Commande commande);
+	public void afficherRecapCommande(Commande commande,TitreDeTransport titre,double prix,int nbrTitre);
 	public void afficherRecapRenouvAbo(); // possible a eliminer 
 	public void afficherRecapRenouvAboScanne();
 

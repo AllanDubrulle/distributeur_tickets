@@ -1,9 +1,13 @@
 package interfaceGraphique;
 
+import java.util.Date;
+
 import coeur.Commande;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import stockage.imprimable.Billet;
+import stockage.imprimable.TitreDeTransport;
 
 public class CoeurAGraphiqueImpl implements CoeurAGraphique
 {
@@ -272,7 +276,7 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 			fLiquide.setMontantIntroduit(0);
 		
 	}
-	public void afficherRecapCommande(Commande commande)
+	public void afficherRecapCommande(Commande commande,TitreDeTransport titre,double prix,int nbrTitre)
 	{
 		switch(commande)
 		{
@@ -280,7 +284,12 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 				FenetreSimulation.getInstance().afficher(new FRecapAboAchat(fenAboAchat.getNom(), fenAboAchat.getNumRegNat(), fenAboAchat.getGareDepart(), fenAboAchat.getGareArrivee(),fenAboAchat.getValidite(), fenAboAchat.getClasse(), fenAboAchat.getReduction(), String.valueOf(Double.valueOf(fenAboAchat.getPrix())/100), FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 				break;
 			case BILLET:
-				FenetreSimulation.getInstance().afficher(new FRecapBillet(fenBillet.getGareDepart(), fenBillet.getGareArrivee(), fenBillet.getAllerRetour(), fenBillet.getClasse(), fenBillet.getType(), fenBillet.getReduction(), fenBillet.getNombre(), fenBillet.getDate(), String.valueOf(Double.valueOf(fenBillet.getPrix())/100), FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
+				Billet billet = (Billet) titre;
+				FenetreSimulation.getInstance().afficher(new FRecapBillet(billet.getGareDepart(), billet.getGareArrivee()
+						, billet.isAllerRetour(), billet.getClasse().valeur(),
+						billet.getType().toString(), billet.getReduction().toString(),
+						nbrTitre, billet.getDateValidite(),
+						prix , FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 				break;
 			case PASS10TRAJETS:
 				FenetreSimulation.getInstance().afficher(new FRecapPass10Trajets(fenPass10Trajets, FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));

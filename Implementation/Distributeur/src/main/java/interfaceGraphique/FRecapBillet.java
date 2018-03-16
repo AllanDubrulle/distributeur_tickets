@@ -1,5 +1,7 @@
 package interfaceGraphique;
 
+import java.util.Date;
+
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.*;
@@ -7,10 +9,11 @@ import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.scene.shape.*;
 import javafx.scene.text.*;
+import stockage.imprimable.Classe;
 
 class FRecapBillet extends Ecran 
 {    
-    public FRecapBillet(String gareDepart, String gareArrivee, String allerRetour, String classe, String type, String reduction, String nombre, String date, String prix, double hauteur, double largeur) 
+    public FRecapBillet(String gareDepart, String gareArrivee, boolean allerRetour, int classe, String type, String reduction, int nombre, Date date, double prix, double hauteur, double largeur) 
     {
         Rectangle rectangle = new Rectangle();
         VBox vBox = new VBox();
@@ -111,7 +114,14 @@ class FRecapBillet extends Ecran
 
         text4.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text4.setStrokeWidth(0.0);
-        text4.setText(allerRetour);
+        if (allerRetour)
+        {
+        	text4.setText("Aller");
+        }
+        else
+        {
+        	text4.setText("AllerRetour");
+        }
         text4.setWrappingWidth(200.0*largeur);
         text4.setFont(new Font("System Bold Italic", 15.0*hauteur));
         HBox.setMargin(hBox2, new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
@@ -128,7 +138,8 @@ class FRecapBillet extends Ecran
 
         text6.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text6.setStrokeWidth(0.0);
-        text6.setText(classe);
+        text6.setText(Integer.toString(classe));
+        
         text6.setWrappingWidth(200.0*largeur);
         text6.setFont(new Font("System Bold Italic", 15.0*hauteur));
         VBox.setMargin(hBox3, new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
@@ -179,7 +190,7 @@ class FRecapBillet extends Ecran
 
         text12.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text12.setStrokeWidth(0.0);
-        text12.setText(nombre);
+        text12.setText(Integer.toString(nombre));
         text12.setWrappingWidth(200.0*largeur);
         text12.setFont(new Font("System Bold Italic", 15.0*hauteur));
         VBox.setMargin(hBox6, new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
@@ -197,7 +208,7 @@ class FRecapBillet extends Ecran
 
         text14.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text14.setStrokeWidth(0.0);
-        text14.setText(date);
+        text14.setText(date.toString());
         text14.setWrappingWidth(200.0*largeur);
         text14.setFont(new Font("System Bold Italic", 15.0*hauteur));
         VBox.setMargin(hBox7, new Insets(0.0, 0.0, 10.0*hauteur, 0.0));

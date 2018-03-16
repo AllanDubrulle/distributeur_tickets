@@ -13,10 +13,11 @@ public class CoeurAStockageImpl implements CoeurAStockage
 {
 	private Carte carte;
 	private TitreDeTransport achat;
-	private int nbrCommande;
+	private int nbrTitre;
 	private double prix;
 	
-	public double getPrix() {
+	public double getPrix()
+	{
 		return prix;
 	}
 
@@ -90,30 +91,49 @@ public class CoeurAStockageImpl implements CoeurAStockage
 				type = TypeTitre.values()[i];
 			}
 		}
-		System.out.println(reduc==null || type==null || classeBillet ==null);
-		System.out.println(reduc==null);
-		System.out.println(type==null);
-		System.out.println(classeBillet ==null);
 		if (reduc==null || type==null || classeBillet ==null )
 		{
 			throw new ErreurDEncodage ("problème d'encodage");
 		}
-		
+		setNbrTitre(nbrBillet);
 		setAchat(new Billet(dateValidite,new Date(), gareDepart, gareArrivee,  classeBillet, type,reduc,allerRetour));
 		setPrix(calculerPrix(gareDepart,gareArrivee,reduc,type,classeBillet)*nbrBillet);
 	}
 
+	private void setNbrTitre(int nbrTitre)
+	{
+		this.nbrTitre=nbrTitre;
+		
+	}
+
 	public double calculerPrix(String gareDepart, String gareArrivee,Reduction reduc,TypeTitre typeBillet,Classe classe)
 	{
-		double prix=100;
-		prix = prix-prix*(reduc.valeur()/100);
-		prix = prix-prix*(typeBillet.valeur()/100);
-		prix = prix-prix*(classe.valeur()/100);
-		return prix;
+		double calculPrix=100;
+		calculPrix =  calculPrix- calculPrix*(reduc.valeur()/100);
+		calculPrix =  calculPrix- calculPrix*(typeBillet.valeur()/100);
+		calculPrix =  calculPrix*(3-classe.valeur());
+		return  calculPrix;
 	}
 
 	private void setAchat(TitreDeTransport billet)
 	{
 		this.achat = billet;
+	}
+
+	
+	public boolean existenceTrajet(String gareDepart, String gareArrivee)
+	{
+		return true;// a faire avec la bdd 
+	}
+
+	public TitreDeTransport getTitre()
+	{
+		return achat;
+	}
+
+	@Override
+	public int getNbrTitre()
+	{
+		return nbrTitre;
 	}
 }

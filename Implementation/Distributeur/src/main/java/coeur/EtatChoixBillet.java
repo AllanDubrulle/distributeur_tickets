@@ -16,8 +16,4 @@ class EtatChoixBillet extends EtatChoixTitre
 		super.entree();
 	}
 	
-	/*public void valider()
-	{
-		
-	}*/
 }

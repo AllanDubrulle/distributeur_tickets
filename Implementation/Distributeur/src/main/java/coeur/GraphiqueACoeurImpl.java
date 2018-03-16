@@ -231,8 +231,15 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 	public void InfoBillet(Date dateValidite, int nbrBillet, int classe, String gareDepart,String gareArrivee,String typeBillet,
 			String reduction, boolean allerRetour) throws ErreurDEncodage
 	{
-		Controleur.getInstance().getCoeurAStockage().creerBillet(dateValidite,nbrBillet,classe, gareDepart, gareArrivee, typeBillet,
-					reduction, allerRetour);
+		if(Controleur.getInstance().getCoeurAStockage().existenceTrajet(gareDepart, gareArrivee))
+		{
+			Controleur.getInstance().getCoeurAStockage().creerBillet(dateValidite,nbrBillet,classe, gareDepart, gareArrivee, typeBillet,
+						reduction, allerRetour);
+		}
+		else
+		{
+			throw new ErreurDEncodage("gareInexistante"	);
+		}
 		
 	}
 	

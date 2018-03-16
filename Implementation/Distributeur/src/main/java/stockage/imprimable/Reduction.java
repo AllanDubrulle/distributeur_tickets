@@ -6,7 +6,7 @@ public enum Reduction implements Valeur // changer les valeurs
 {
 	AUCUNE( "Aucune")
 	{ public int valeur()
-		{ return 100; }
+		{ return 0; }
 	},
 	FAMILLENOMBREUSE( "Famille nombreuses")
 	{ public int valeur()
@@ -14,11 +14,11 @@ public enum Reduction implements Valeur // changer les valeurs
 	},
 	PMR("Personne à mobilité réduite")
 	{ public int valeur()
-		{ return 100; }
+		{ return 40; }
 	}, 
 	PARENTEMPLOYE("Parent Employé")
 	{ public int valeur()
-		{ return 100; }
+		{ return 30; }
 	}; 
 	
 	private String name = "";
