@@ -147,7 +147,7 @@ class AfficherBillet extends Pane
 
         text9.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text9.setStrokeWidth(0.0);
-        text9.setText(date.toString());
+        text9.setText(date.getDate() + "/" + String.valueOf(date.getMonth()+1) + "/" + String.valueOf(date.getYear()+1900));
         text9.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         HBox.setMargin(text9, new Insets(0.0, 0.0, 0.0, 50.0));
         hBox4.setOpaqueInsets(new Insets(0.0));

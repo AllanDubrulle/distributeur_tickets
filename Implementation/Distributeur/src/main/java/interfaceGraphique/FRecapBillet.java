@@ -207,7 +207,7 @@ class FRecapBillet extends Ecran
 
         text14.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text14.setStrokeWidth(0.0);
-        text14.setText(date.toString());
+        text14.setText(date.getDate() + "/" + String.valueOf(date.getMonth()+1) + "/" + String.valueOf(date.getYear()+1900));
         text14.setWrappingWidth(200.0*largeur);
         text14.setFont(new Font("System Bold Italic", 15.0*hauteur));
         VBox.setMargin(hBox7, new Insets(0.0, 0.0, 10.0*hauteur, 0.0));

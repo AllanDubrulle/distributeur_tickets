@@ -278,8 +278,11 @@ class FBillet extends Ecran
             		{
             			classe=0;
             		}
-                    
-            		graphAC.InfoBillet(new Date(jour,mois,annee),nbrBillet,classe,textField3.getText(),textField4.getText(),choiceBox0.getValue(), choiceBox.getValue() ,radioButton1.isSelected());
+                    Date date = new Date(0,0,0);
+                    date.setYear(annee-1900);
+                    date.setDate(jour);
+                    date.setMonth(mois-1);
+            		graphAC.InfoBillet(date,nbrBillet,classe,textField3.getText(),textField4.getText(),choiceBox0.getValue(), choiceBox.getValue() ,radioButton1.isSelected());
             		graphAC.choixValider();
             	}
             	catch (NumberFormatException | ErreurDEncodage e)

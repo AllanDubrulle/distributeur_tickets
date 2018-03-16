@@ -11,7 +11,6 @@ import javafx.scene.layout.*;
 class Clavier extends ComposantVisible 
 {		
 	private Ecran fenetre;
-	private double hauteur, largeur;
 	
 	public Clavier(boolean enMarche) 
 	{
@@ -20,8 +19,6 @@ class Clavier extends ComposantVisible
 	
 	public Clavier(double hauteur, double largeur) 
 	{
-		this.hauteur = hauteur;
-		this.largeur = largeur;
         Rectangle rectangle = new Rectangle();
         VBox vBox = new VBox();
         HBox hBox = new HBox();
