@@ -57,7 +57,6 @@ public interface GraphiqueACoeur
 	public void choixScanneurInserer();
 	
 	public void choixPaiement();
-	public void paiementLiquideOk();
 	public void choixPaiementParCarte();
 	public void choixPaiementLiquide();
 	public void choixValiderNumCarte();

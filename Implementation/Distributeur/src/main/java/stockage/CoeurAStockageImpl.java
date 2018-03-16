@@ -15,6 +15,7 @@ public class CoeurAStockageImpl implements CoeurAStockage
 	private TitreDeTransport achat;
 	private int nbrTitre;
 	private double prix;
+	private Monnayeur monnayeur = new Monnayeur(); // a modifier si on modifie panne
 	
 	public double getPrix()
 	{
@@ -118,9 +119,9 @@ public class CoeurAStockageImpl implements CoeurAStockage
 	public double calculerPrix(String gareDepart, String gareArrivee,Reduction reduc,TypeTitre typeBillet,Classe classe)
 	{
 		double calculPrix=100;
-		calculPrix =  calculPrix- calculPrix*(reduc.valeur()/100);
-		calculPrix =  calculPrix- calculPrix*(typeBillet.valeur()/100);
-		calculPrix =  calculPrix*(3-classe.valeur());
+		calculPrix -=  calculPrix*  ((double)reduc.valeur()/100);
+		calculPrix =  calculPrix- calculPrix*((double)typeBillet.valeur()/100);
+		calculPrix =  calculPrix*((double)3-classe.valeur());
 		return  calculPrix;
 	}
 
@@ -140,9 +141,46 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		return achat;
 	}
 
-	@Override
+	
 	public int getNbrTitre()
 	{
 		return nbrTitre;
 	}
+
+	
+	public void ajoutMonnaie(int i)
+	{
+		switch(i)
+		{
+			case 1:
+				monnayeur.stockerPieces(Pieces.P1);
+			case 2:
+				monnayeur.stockerPieces(Pieces.P2);
+			case 5:
+				monnayeur.stockerPieces(Pieces.P5);
+			case 10:
+				monnayeur.stockerPieces(Pieces.P10);
+			case 20:
+				monnayeur.stockerPieces(Pieces.P20);
+			case 50:
+				monnayeur.stockerPieces(Pieces.P50);
+			case 100:
+				monnayeur.stockerPieces(Pieces.P100);
+			case 200:
+				monnayeur.stockerPieces(Pieces.P200);
+			case 500:
+				monnayeur.stockerBillets(BilletMonnaie.B5);
+			case 1000:
+				monnayeur.stockerBillets(BilletMonnaie.B10);
+			case 2000:
+				monnayeur.stockerBillets(BilletMonnaie.B20);
+			case 5000:
+				monnayeur.stockerBillets(BilletMonnaie.B50);
+				// cas général exception ??
+			
+		}
+		
+	}
+	
+	
 }

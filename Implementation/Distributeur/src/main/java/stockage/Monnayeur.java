@@ -2,18 +2,41 @@ package stockage;
 
 import java.util.HashMap;
 
-class Monnayeur extends interfaceGraphique.ComposantVisible
+class Monnayeur 
 {
 	private HashMap<Pieces, Integer > StockPiece; 
 	private HashMap<BilletMonnaie,Integer> StockBillet;
 	private Pieces[] ordrePieces= {Pieces.P200,Pieces.P100,Pieces.P50,Pieces.P20,Pieces.P10,Pieces.P5,Pieces.P2,Pieces.P1};;  
 	private BilletMonnaie[] ordreBillets= {BilletMonnaie.B50,BilletMonnaie.B20,BilletMonnaie.B10,BilletMonnaie.B5};
+	private boolean enMarche=true; // a changer
 	
-	public Monnayeur(boolean enMarche)
+	private boolean estEnMarche()
 	{
-		super(enMarche);
+		return enMarche;
 	}
-
+	public Monnayeur()
+	{
+		StockPiece = new HashMap<Pieces, Integer>();
+		for (Pieces piece : Pieces.values())
+		{
+			StockPiece.put(piece,10);
+		}
+		StockBillet = new HashMap<BilletMonnaie,Integer>();
+		for(BilletMonnaie billet : BilletMonnaie.values())
+		{
+			StockBillet.put(billet, 10);
+		}
+	}
+	
+	public void stockerPieces (Pieces piece)
+	{
+		StockPiece.put(piece,StockPiece.get(piece)+1);
+	}
+	public void stockerBillets (BilletMonnaie billet)
+	{
+		StockBillet.put(billet,StockBillet.get(billet)+1);
+	}
+	
 	public Rendu retournerArgent(int montant) throws PasAssezDeMonnaie,ComposantHorsService
 	{
 		if (!estEnMarche())

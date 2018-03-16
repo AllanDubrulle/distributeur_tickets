@@ -10,13 +10,10 @@ import javafx.scene.text.*;
 
 class FChoixParLiquide extends Ecran 
 {
-    private double montantIntroduit = 0;
     private Text text1, text3, text5;
-    private FBillet fenBillet;
 
-    public FChoixParLiquide(FBillet fenBillet, double hauteur, double largeur) 
+    public FChoixParLiquide(double prix, double hauteur, double largeur) 
     {
-    	this.fenBillet = fenBillet;
         Rectangle rectangle = new Rectangle();
         Text text = new Text();
         Button button = new Button();
@@ -83,11 +80,12 @@ class FChoixParLiquide extends Ecran
         text0.setFont(new Font(15.0*hauteur));
         HBox.setMargin(text0, new Insets(0.0, 50.0*largeur, 0.0, 0.0));
 
+        System.out.println(prix);
         text1.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1.setStrokeWidth(0.0);
         text1.setFont(new Font(15.0*hauteur));
-        text1.setText(String.valueOf(Double.valueOf(fenBillet.getPrix())/100) + " €");
-
+        text1.setText(String.valueOf(prix) + " €");
+        
         hBox0.setPrefHeight(0.0);
         hBox0.setPrefWidth(100.0*hauteur);
 
@@ -114,7 +112,7 @@ class FChoixParLiquide extends Ecran
 
         text5.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text5.setStrokeWidth(0.0);
-        text5.setText(String.valueOf(Double.valueOf(fenBillet.getPrix())/100) + " €");
+        text5.setText(String.valueOf(prix) + " €");
         text5.setFont(new Font(15.0*hauteur));
 
         hBox.getChildren().addAll(text0, text1);
@@ -141,25 +139,9 @@ class FChoixParLiquide extends Ecran
 	
 	public void actionEntrer() {}
 	
-	public double getMontantIntroduit()
+	public void actualiserMontant(double restant , double introduit)
 	{
-		return montantIntroduit;
-	}
-	public void setMontantIntroduit(double i)
-	{
-		montantIntroduit = i;
-        text3.setText(String.valueOf(montantIntroduit/100));
-        text5.setText(String.valueOf(getRestant()/100));
-        if (getRestant() <= 0)
-        	graphAC.paiementLiquideOk();
-	}
-	public double getRestant()
-	{
-		double res = Integer.parseInt(fenBillet.getPrix()) - montantIntroduit;
-		if (res < 0)
-			res = 0;
-		if (res<=0)
-			res=0;
-		return res;
+		text3.setText(String.valueOf(introduit));
+        text5.setText(String.valueOf(restant));
 	}
 }

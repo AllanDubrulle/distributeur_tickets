@@ -126,7 +126,7 @@ class AfficherRendu extends Pane
 
         text5.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text5.setStrokeWidth(0.0);
-        text5.setText(String.valueOf(fenLiquide.getMontantIntroduit()/100));
+        text5.setText(String.valueOf(0.0)); // valeur par défaut avant montant introduit
         text5.setWrappingWidth(60.0);
         VBox.setMargin(hBox2, new Insets(5.0, 0.0, 5.0, 0.0));
 
@@ -140,7 +140,7 @@ class AfficherRendu extends Pane
 
         text7.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text7.setStrokeWidth(0.0);
-        text7.setText(String.valueOf(Math.abs(fenLiquide.getRestant()/100)));
+        text7.setText(String.valueOf(0.0));// valeur par défaut avant montant restant
         text7.setWrappingWidth(60.0);
 
         hBox4.setPrefHeight(0.0);

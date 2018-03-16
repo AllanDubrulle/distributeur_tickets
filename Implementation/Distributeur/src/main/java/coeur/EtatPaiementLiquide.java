@@ -3,6 +3,7 @@ package coeur;
 class EtatPaiementLiquide extends EtatAnnulable
 {
 	private static EtatPaiementLiquide instance;
+	public double introduit;
 	public static EtatPaiementLiquide getInstance() 
 	{
 		if (instance ==null)
@@ -13,15 +14,26 @@ class EtatPaiementLiquide extends EtatAnnulable
 	}
 	public void entree()
 	{
-		Controleur.getInstance().getCoeurAGraphique().afficherChoixParLiquide();
+		reinitialisation();
+		Controleur.getInstance().getCoeurAGraphique().afficherChoixParLiquide(Controleur.getInstance().getCoeurAStockage().getPrix());
 	}
-	public void inserer(double i)
+	private void reinitialisation() //a réfléchir si on stocke dans stockage ou pas 
 	{
-		Controleur.getInstance().getCoeurAGraphique().insererMonnaie(i);
+		introduit=0.0;
 	}
-	public void validePaiement()
+	public void inserer(int i)
 	{
-		Controleur.getInstance().getCoeurAGraphique().afficherRendu();
-		Controleur.getInstance().modifEtat(EtatImpression.getInstance());
+		Controleur.getInstance().getCoeurAStockage().ajoutMonnaie(i);
+		introduit+=((double) i)/100;
+		double rendu = Controleur.getInstance().getCoeurAStockage().getPrix()-introduit;
+		if(rendu<=0.0)
+		{
+			Controleur.getInstance().getCoeurAGraphique().afficherRendu();
+			Controleur.getInstance().modifEtat(EtatImpression.getInstance());
+		}
+		else
+		{
+			Controleur.getInstance().getCoeurAGraphique().actualiserMontant(rendu, introduit);
+		}
 	}
 }

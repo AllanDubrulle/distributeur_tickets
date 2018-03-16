@@ -20,5 +20,6 @@ public interface CoeurAStockage
 	public TitreDeTransport getTitre();
 	public double getPrix();
 	public int getNbrTitre();
+	public void ajoutMonnaie(int i);
 
 }
