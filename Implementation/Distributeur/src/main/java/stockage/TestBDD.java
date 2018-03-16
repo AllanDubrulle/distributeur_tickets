@@ -8,9 +8,9 @@ import stockage.ConnexionBDD;
 public class TestBDD {
 	public static void main (String args[]) throws SQLException {
 		ConnexionBDD conn = new ConnexionBDD();
-		conn.connect();
-		ResultSet res = conn.heureTrajet("Tournai", "Bruxelles");
+		conn.connexion();
+		ResultSet res = conn.prixTrajet("tournai", "bruxelles");
 		ConnexionBDD.afficherResultat(res);
-		conn.disconnect();
+		conn.deconnexion();
 	}	
 }
