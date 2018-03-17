@@ -13,11 +13,9 @@ import javafx.scene.layout.Pane;
 class FChoixAbo extends Pane 
 {
     private ChoiceBox<String> choiceBox;
-    private Stage stage;
 
     public FChoixAbo(Stage stage)
     {
-    	this.stage = stage;
         Button button = new Button();
         Button button0 = new Button();
         choiceBox = new ChoiceBox<String>();

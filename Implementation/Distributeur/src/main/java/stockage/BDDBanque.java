@@ -1,6 +1,10 @@
 package stockage;
 
-class BDDBanque 
+class BDDBanque extends GestionBaseDeDonnees 
 {
+	public BDDBanque()
+    {
+        super();
+    }
 
 }

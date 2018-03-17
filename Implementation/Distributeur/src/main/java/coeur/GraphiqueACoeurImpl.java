@@ -237,17 +237,6 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 		}
 		
 	}
-	public void InfoAbo(Date dateValidite, Date dateExpiration, String gareDepart, String gareArrivee, int classe, String reduction, String type, String codeBarre, String nom, String registre) throws ErreurDEncodage
-	{
-		if(Controleur.getInstance().getCoeurAStockage().existenceTrajet(gareDepart, gareArrivee))
-		{
-			Controleur.getInstance().getCoeurAStockage().creerAbonnement(dateValidite, dateExpiration, gareDepart, gareArrivee, classe, reduction, type, codeBarre, nom, registre);
-		}
-		else
-		{
-			throw new ErreurDEncodage("gareInexistante"	);
-		}
-	}
 	public String[] getReductions()
 	{
 		return Controleur.getInstance().getCoeurAStockage().getListeReduction();

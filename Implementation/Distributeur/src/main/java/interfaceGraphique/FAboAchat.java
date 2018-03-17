@@ -1,25 +1,18 @@
 package interfaceGraphique;
-//pour test
+//pour test 222
 import javafx.geometry.*;
 import javafx.scene.control.*;
 import javafx.scene.text.*;
-import stockage.ErreurDEncodage;
 import javafx.scene.shape.*;
-
-import java.util.Date;
-
-import coeur.GraphiqueACoeurImpl;
-import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.layout.*;
 
 class FAboAchat extends Ecran 
 {
-    private TextField textField, textField0, textField1, textField2;
+    private TextField textField, textField0, textField1, textField2, textField3;
     private RadioButton radioButton, radioButton0, radioButton1, radioButton2, radioButton3, radioButton4;
     private int pos = 0;
-    private ChoiceBox<String> choiceBox, choiceBox0;
     
     public FAboAchat(double hauteur, double largeur) 
     {
@@ -51,12 +44,9 @@ class FAboAchat extends Ecran
         radioButton4 = new RadioButton();
         HBox hBox6 = new HBox();
         Text text6 = new Text();
+        textField3 = new TextField();
         Button button = new Button();
         Button button0 = new Button();
-        Text text7 = new Text();
-        choiceBox = new ChoiceBox<String>();
-        choiceBox0 = new ChoiceBox<String>();
-        Text text10 = new Text();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -75,7 +65,7 @@ class FAboAchat extends Ecran
 
         text.setFontSmoothingType(javafx.scene.text.FontSmoothingType.LCD);
         text.setLayoutX(54.0*largeur);
-        text.setLayoutY(55.0*hauteur);
+        text.setLayoutY(60.0*hauteur);
         text.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text.setStrokeWidth(0.0);
         text.setText("Achat d'un abonnement");
@@ -83,7 +73,7 @@ class FAboAchat extends Ecran
         text.setFont(new Font("System Bold", 22.0*hauteur));
 
         vBox.setLayoutX(60.0*largeur);
-        vBox.setLayoutY(70.0*hauteur);
+        vBox.setLayoutY(78.0*hauteur);
         vBox.setPrefHeight(219.0*hauteur);
         vBox.setPrefWidth(711.0*largeur);
 
@@ -215,27 +205,16 @@ class FAboAchat extends Ecran
         hBox6.setPrefHeight(17.0*hauteur);
         hBox6.setPrefWidth(244.0*largeur);
 
-        text7.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text7.setStrokeWidth(0.0);
-        text7.setText("Type d'abonnement :");
-        text7.setWrappingWidth(180*largeur);
-        text7.setFont(new Font(15.0*hauteur));
-        HBox.setMargin(text7, new Insets(0.0, 20.0*largeur, 0.0, 0.0));
-
-        choiceBox0.setPrefWidth(125.0*largeur);
-        choiceBox0.setPrefHeight(30.0*hauteur);
-        choiceBox0.setItems(FXCollections.observableArrayList(GraphiqueACoeurImpl.getInstance().getTypes()));
-        
         text6.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text6.setStrokeWidth(0.0);
         text6.setText("Réduction :");
+        text6.setWrappingWidth(180*largeur);
         text6.setFont(new Font(15.0*hauteur));
-        HBox.setMargin(text6, new Insets(0.0, 0.0, 0.0, 50.0*largeur));
+        HBox.setMargin(text6, new Insets(0.0));
 
-        choiceBox.setPrefWidth(225.0*largeur);
-        choiceBox.setPrefHeight(30.0*hauteur);
-        choiceBox.setItems(FXCollections.observableArrayList(GraphiqueACoeurImpl.getInstance().getReductions()));
-        HBox.setMargin(choiceBox, new Insets(0.0, 0.0, 0.0, 50.0*largeur));
+        textField3.setPrefWidth(300.0);
+        textField3.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(textField3, new Insets(0.0, 0.0, 0.0, 20.0*largeur));
         hBox6.setPadding(new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
 
         button.setLayoutX(23.0*largeur);
@@ -266,20 +245,7 @@ class FAboAchat extends Ecran
         {
             public void handle(ActionEvent event)
             {
-        		try
-        		{
-        			graphAC.InfoAbo(new Date(118, 2, 17), new Date(118, 2 + getValidite() ,17), textField1.getText(), textField2.getText(), getClasse(), choiceBox.getValue(), choiceBox0.getValue(),  "1010", textField.getText(), textField0.getText());
-        			graphAC.choixValider();
-        		}
-        		catch (NumberFormatException | ErreurDEncodage e)
-            	{
-            		text10.setText("Les données saisies sont incorrectes");
-            		text10.setFont(new Font("System Bold", 15.0*hauteur));
-            		text10.setWrappingWidth(250.0*largeur);
-            		text10.setFill(javafx.scene.paint.Color.RED);
-            		text10.setLayoutX(275.0*largeur);
-            		text10.setLayoutY(384.0*hauteur);
-            	}
+            	graphAC.choixValider();
             }
         });
 
@@ -289,9 +255,9 @@ class FAboAchat extends Ecran
         hBox3.getChildren().addAll(text3, textField2);
         hBox4.getChildren().addAll(text4, radioButton, radioButton0, radioButton1, radioButton2);
         hBox5.getChildren().addAll(text5, radioButton3, radioButton4);
-        hBox6.getChildren().addAll(text7, choiceBox0, text6, choiceBox);
+        hBox6.getChildren().addAll(text6, textField3);
         vBox.getChildren().addAll(hBox, hBox0, hBox1, hBox2, hBox3, hBox4, hBox5, hBox6);
-        getChildren().addAll(rectangle, text, vBox, button, button0, text10);
+        getChildren().addAll(rectangle, text, vBox, button, button0);
     }
     
     public void actionClavier(String a) 
@@ -312,6 +278,11 @@ class FAboAchat extends Ecran
     		s = textField2.getText();
     		textField2.setText(s + a);
     	}
+    	else if(pos == 6) 
+    	{
+    		s = textField3.getText();
+    		textField3.setText(s + a);
+    	}
     }
 
 	public void actionClavier(int a) 
@@ -319,8 +290,16 @@ class FAboAchat extends Ecran
 		if (pos == 1)
 		{
 			String s = textField0.getText();
-			textField0.setText(s + a);
-    		if (s.length() == 10)
+    		textField0.setText(s + a);
+    		if (s.length() == 2)
+    			textField0.setText(s + "." + a);
+    		else if (s.length() == 5)
+    			textField0.setText(s + "." + a);
+    		else if (s.length() == 8)
+    			textField0.setText(s + "-" + a);
+    		else if (s.length() == 12)
+    			textField0.setText(s + "." + a);
+    		else if (s.length() == 14)
     			actionSuivant();
 		}
 		if (pos == 4) 
@@ -341,16 +320,6 @@ class FAboAchat extends Ecran
 			else if (a == 2) 
 	    		radioButton4.setSelected(true);
 		}
-		else if (pos == 6)
-		{
-			if (a < GraphiqueACoeurImpl.getInstance().getTypes().length)
-				choiceBox0.setValue(GraphiqueACoeurImpl.getInstance().getTypes()[a]);
-		}
-		else if (pos == 7)
-		{
-			if (a < GraphiqueACoeurImpl.getInstance().getReductions().length)
-				choiceBox.setValue(GraphiqueACoeurImpl.getInstance().getReductions()[a]);
-		}
 	}
 
 	public void actionRetour() 
@@ -360,7 +329,7 @@ class FAboAchat extends Ecran
 
 	public void actionSuivant() 
 	{
-		if(pos == 7) 
+		if(pos == 6) 
 		{
 			pos = 0;
 			textField.requestFocus();
@@ -377,10 +346,8 @@ class FAboAchat extends Ecran
 				radioButton.requestFocus();
 			else if (pos == 4)
 				radioButton3.requestFocus();
-			else if (pos == 5)
-				choiceBox0.requestFocus();
 			else
-				choiceBox.requestFocus();
+				textField3.requestFocus();
 			pos++;
 		}
 	}
@@ -407,6 +374,11 @@ class FAboAchat extends Ecran
     	{
     		s = textField2.getText();
     		textField2.setText(s + " ");
+    	}
+    	else if(pos == 6) 
+    	{
+    		s = textField3.getText();
+    		textField3.setText(s + " ");
     	}
 	}
 
@@ -437,6 +409,12 @@ class FAboAchat extends Ecran
     		if (s.length()>0)
     			textField2.setText(s.substring(0, s.length()-1));
     	}
+    	else if(pos == 6) 
+    	{
+    		s = textField3.getText();
+    		if (s.length()>0)
+    			textField3.setText(s.substring(0, s.length()-1));
+    	}
 	}
 	
 	public void actionEntrer() 
@@ -464,33 +442,29 @@ class FAboAchat extends Ecran
 		return textField2.getText();
 	}
 	
-	public int getValidite()
+	public String getValidite()
 	{
 		if (radioButton.isSelected())
-			return 1;
+			return "1 mois";
 		else if (radioButton0.isSelected())
-			return 3;
+			return "3 mois";
 		else if (radioButton1.isSelected())
-			return 6;
+			return "6 mois";
 		else
-			return 12;
+			return "12 mois";
 	}
 	
-	public int getClasse()
+	public String getClasse()
 	{
 		if (radioButton3.isSelected())
-			return 1;
+			return "1e classe";
 		else
-			return 2;
+			return "2e classe";
 	}
 	
 	public String getReduction()
 	{
-		return choiceBox.getValue();
-	}
-	public String getType()
-	{
-		return choiceBox0.getValue();
+		return textField3.getText();
 	}
 	public String getPrix()
 	{

@@ -27,10 +27,10 @@ public class EtatDemandeRecu extends EtatAnnulable
 	}
 	public void choixOui()
 	{
-		Controleur.getInstance().modifEtat(EtatImpression.getInstance());
+		Controleur.getInstance().modifEtat(EtatImpressionRecu.getInstance());
 	}
 	public void choixNon()
 	{
-		Controleur.getInstance().modifEtat(EtatImpression.getInstance());
+		Controleur.getInstance().modifEtat(EtatFin.getInstance());
 	}
 }
