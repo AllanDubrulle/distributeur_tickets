@@ -4,6 +4,7 @@ import coeur.Commande;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import stockage.Rendu;
 import stockage.imprimable.Billet;
 import stockage.imprimable.TitreDeTransport;
 
@@ -223,7 +224,7 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 		pStage5.setTitle("Recu");
 		pStage5.show();
 	}
-	public void afficherRendu()
+	public void afficherRendu(Rendu rendu)
 	{
 		StackPane root2 = new StackPane();
 		AfficherRendu billet = new AfficherRendu(fLiquide, fenBillet);

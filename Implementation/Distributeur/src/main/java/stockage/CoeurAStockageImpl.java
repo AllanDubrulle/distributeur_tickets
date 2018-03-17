@@ -181,6 +181,17 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		}
 		
 	}
+
+	public Rendu rendreMonnaie(double rendu) throws PasAssezDeMonnaie
+	{
+		return monnayeur.retournerArgent((int)(rendu*100));
+	}
+
+	
+	public Rendu rendreIntroduit()
+	{
+		return monnayeur.rendreMontantEncours();
+	}
 	
 	
 }

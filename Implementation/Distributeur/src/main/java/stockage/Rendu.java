@@ -2,7 +2,7 @@ package stockage;
 
 import java.util.HashMap;
 
-class Rendu 
+public class Rendu 
 {	
 	private HashMap<Pieces,Integer> pieces;
 	private HashMap<BilletMonnaie,Integer> billets;

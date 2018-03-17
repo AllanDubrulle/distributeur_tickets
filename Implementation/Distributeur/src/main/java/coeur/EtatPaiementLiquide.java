@@ -1,9 +1,12 @@
 package coeur;
 
+import stockage.PasAssezDeMonnaie;
+
 class EtatPaiementLiquide extends EtatAnnulable
 {
 	private static EtatPaiementLiquide instance;
 	public double introduit;
+	private final double epsilon = 0.01;
 	public static EtatPaiementLiquide getInstance() 
 	{
 		if (instance ==null)
@@ -26,10 +29,22 @@ class EtatPaiementLiquide extends EtatAnnulable
 		Controleur.getInstance().getCoeurAStockage().ajoutMonnaie(i);
 		introduit+=((double) i)/100;
 		double rendu = Controleur.getInstance().getCoeurAStockage().getPrix()-introduit;
-		if(rendu<=0.0)
+		if(rendu<=epsilon)
 		{
-			Controleur.getInstance().getCoeurAGraphique().afficherRendu();
-			Controleur.getInstance().modifEtat(EtatImpression.getInstance());
+			try
+			{
+				Controleur.getInstance().getCoeurAGraphique().afficherRendu(Controleur.getInstance().getCoeurAStockage()
+						.rendreMonnaie(Math.abs(rendu)));
+				Controleur.getInstance().modifEtat(EtatImpression.getInstance());
+			}
+			catch(PasAssezDeMonnaie e)
+			{
+				Controleur.getInstance().getCoeurAGraphique().afficherRendu(Controleur.getInstance().getCoeurAStockage().rendreIntroduit());
+				//ajouter un message a l'utilisateur 
+				Controleur.getInstance().modifEtat(EtatPaiement.getInstance());
+			}
+			
+
 		}
 		else
 		{

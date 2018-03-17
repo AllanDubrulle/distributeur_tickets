@@ -1,6 +1,7 @@
 package interfaceGraphique;
 
 import coeur.Commande;
+import stockage.Rendu;
 import stockage.imprimable.TitreDeTransport;
 
 public interface CoeurAGraphique 
@@ -41,7 +42,7 @@ public interface CoeurAGraphique
 	public void afficherChoixCommande(Commande commande);
 	public void afficherRenouvScanne();
 	public void afficherRecu();
-	public void afficherRendu();
+	public void afficherRendu(Rendu rendu);
 	public void afficherTitre(Commande commande, TitreDeTransport titre, double prix);
 	
 }

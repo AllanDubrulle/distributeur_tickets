@@ -1,7 +1,6 @@
 package stockage;
 
 import java.util.Date;
-
 import stockage.imprimable.Classe;
 import stockage.imprimable.Reduction;
 import stockage.imprimable.TitreDeTransport;
@@ -21,5 +20,7 @@ public interface CoeurAStockage
 	public double getPrix();
 	public int getNbrTitre();
 	public void ajoutMonnaie(int i);
+	public Rendu rendreMonnaie(double rendu) throws PasAssezDeMonnaie;
+	public Rendu rendreIntroduit();
 
 }
