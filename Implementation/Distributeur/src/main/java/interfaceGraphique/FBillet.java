@@ -345,13 +345,13 @@ class FBillet extends Ecran
 		}
 		else if (pos == 4)
 		{
-			if (a < GraphiqueACoeurImpl.getInstance().getTypes().length && a > 0)
-				choiceBox0.setValue(GraphiqueACoeurImpl.getInstance().getTypes()[a-1]);
+			if (a < GraphiqueACoeurImpl.getInstance().getTypes().length)
+				choiceBox0.setValue(GraphiqueACoeurImpl.getInstance().getTypes()[a]);
 		}
 		else if (pos == 5)
 		{
-			if (a <= GraphiqueACoeurImpl.getInstance().getReductions().length && a > 0)
-				choiceBox.setValue(GraphiqueACoeurImpl.getInstance().getReductions()[a-1]);
+			if (a < GraphiqueACoeurImpl.getInstance().getReductions().length)
+				choiceBox.setValue(GraphiqueACoeurImpl.getInstance().getReductions()[a]);
 		}
 		
 		else if (pos == 6)
