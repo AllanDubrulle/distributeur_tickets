@@ -3,7 +3,6 @@ package stockage;
 import java.io.File;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
@@ -70,7 +69,7 @@ class GestionBaseDeDonnees {
 					for (int i = 1; i <= nbrColonnes; i++) {
 						if (i > 1) System.out.print(",  ");
 						String valeurColonne = res.getString(i);
-						System.out.print(valeurColonne /*+ " " + res2.getColumnName(i)*/);
+						System.out.print(valeurColonne + " " /*+ res2.getColumnName(i)*/);
 					}
 					System.out.println("");
 				}

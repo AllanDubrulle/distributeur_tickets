@@ -119,7 +119,10 @@ public class CoeurAStockageImpl implements CoeurAStockage
 
 	public double calculerPrix(String gareDepart, String gareArrivee,Reduction reduc,TypeTitre typeBillet,Classe classe)
 	{
-		double calculPrix=100;
+		BDDTitre bTitre = new BDDTitre();
+		bTitre.connexion();
+		double calculPrix= bTitre.calculerPrix(gareDepart, gareArrivee);
+		bTitre.deconnexion();
 		calculPrix -=  calculPrix*  ((double)reduc.valeur()/100);
 		calculPrix =  calculPrix- calculPrix*((double)typeBillet.valeur()/100);
 		calculPrix =  calculPrix*((double)3-classe.valeur());
@@ -134,7 +137,11 @@ public class CoeurAStockageImpl implements CoeurAStockage
 	
 	public boolean existenceTrajet(String gareDepart, String gareArrivee)
 	{
-		return true;// a faire avec la bdd 
+		HoraireTrains hTrains = new HoraireTrains();
+		hTrains.connexion();
+		boolean res = hTrains.existenceTrajet(gareDepart, gareArrivee);
+		hTrains.deconnexion();
+		return res;
 	}
 
 	public TitreDeTransport getTitre()

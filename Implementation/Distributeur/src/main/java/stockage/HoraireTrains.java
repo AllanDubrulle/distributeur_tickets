@@ -1,13 +1,9 @@
 package stockage;
 
-import java.io.File;
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 class HoraireTrains extends GestionBaseDeDonnees
 {
@@ -16,7 +12,7 @@ class HoraireTrains extends GestionBaseDeDonnees
         super();
     }
    
-    public ResultSet heureTrajet(String depart, String arrivee, int heure, int minute) //operationnel, retourne null si le trajet n'existe pas
+    public ResultSet calculItineraire(String depart, String arrivee, int heure, int minute) //operationnel, retourne null si le trajet n'existe pas
     {
         String departMaj = depart.toUpperCase();
         String arriveeMaj = arrivee.toUpperCase();
@@ -55,7 +51,7 @@ class HoraireTrains extends GestionBaseDeDonnees
         }
         return res;
     }
-    public boolean existenceTrajet(String gare1, String gare2) //operationnel
+    public boolean existenceTrajet(String gare1, String gare2)
     {
     	String gare1Maj = gare1.toUpperCase();
         String gare2Maj = gare2.toUpperCase();
@@ -67,6 +63,25 @@ class HoraireTrains extends GestionBaseDeDonnees
 			declar.setString(2, gare2Maj);
 			declar.setString(3, gare1Maj);
 			declar.setString(4, gare2Maj);
+			ResultSet res = declar.executeQuery();
+			return res.next();
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+        return false;
+    }
+    
+    public boolean existenceGare(String gare)
+    {
+    	String gareMaj = gare.toUpperCase();
+    	try
+        {
+            String requete = "SELECT GARE1 FROM PRIX WHERE (GARE1 = ? or GARE2 = ?)";
+            PreparedStatement declar = this.connexion.prepareStatement(requete);
+            declar.setString(1, gareMaj);
+			declar.setString(2, gareMaj);
 			ResultSet res = declar.executeQuery();
 			return res.next();
         }
@@ -96,6 +111,80 @@ class HoraireTrains extends GestionBaseDeDonnees
             e.printStackTrace();
         }
         return -1;
+    }
+    
+    public ResultSet calculToutesLesGaresArrivee(String depart, int heure, int minute)
+    {
+    	String departMaj = depart.toUpperCase();
+        ResultSet res = null;
+    	try
+    	{
+        	if (existenceGare(depart))
+        	{
+        		if (heure > 22)
+        		{
+        			System.out.println("Il n'y a plus de trajet à partir de cette heure-là ! Voici les trajets possibles demain matin : \n");
+        			String requete = "SELECT arrivee, Heure, minute FROM Horaire WHERE DEPART = ?";
+	        		PreparedStatement declar = this.connexion.prepareStatement(requete);
+	        		declar.setString(1, departMaj);
+	        		res = declar.executeQuery();	        		
+        		}
+        		else
+        		{
+        			System.out.println("Voici les prochains trajets possibles : \n");
+        			String requete = "SELECT arrivee, Heure, minute FROM Horaire WHERE DEPART = ? and ((Heure >= ? and Minute >= ?) or (Heure > ? and Minute < ?))";
+        			PreparedStatement declar = this.connexion.prepareStatement(requete);
+        			declar.setString(1, departMaj);
+        			declar.setInt(2, heure);
+        			declar.setInt(3, minute);
+        			declar.setInt(4, heure);
+        			declar.setInt(5, minute);
+        			res = declar.executeQuery();
+        		}
+        	}
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+        return res;
+    }
+    
+    public ResultSet calculToutesLesGaresDepart(String arrivee, int heure, int minute)
+    {
+    	String arriveeMaj = arrivee.toUpperCase();
+        ResultSet res = null;
+    	try
+    	{
+        	if (existenceGare(arrivee))
+        	{
+        		if (heure > 22)
+        		{
+        			System.out.println("Il n'y a plus de trajet à partir de cette heure-là ! Voici les trajets possibles demain matin : \n");
+        			String requete = "SELECT depart, Heure, minute FROM Horaire WHERE arrivee = ?";
+	        		PreparedStatement declar = this.connexion.prepareStatement(requete);
+	        		declar.setString(1, arriveeMaj);
+	        		res = declar.executeQuery();	        		
+        		}
+        		else
+        		{
+        			System.out.println("Voici les prochains trajets possibles : \n");
+        			String requete = "SELECT depart, Heure, minute FROM Horaire WHERE arrivee = ? and ((Heure >= ? and Minute >= ?) or (Heure > ? and Minute < ?))";
+        			PreparedStatement declar = this.connexion.prepareStatement(requete);
+        			declar.setString(1, arriveeMaj);
+        			declar.setInt(2, heure);
+        			declar.setInt(3, minute);
+        			declar.setInt(4, heure);
+        			declar.setInt(5, minute);
+        			res = declar.executeQuery();
+        		}
+        	}
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+        return res;
     }
     
     public static void afficherHeures(ResultSet res) throws SQLException //affiche au maximum les 5 prochaines heures d'un trajet

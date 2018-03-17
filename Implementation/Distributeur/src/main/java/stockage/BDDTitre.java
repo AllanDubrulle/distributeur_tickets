@@ -11,7 +11,7 @@ class BDDTitre extends GestionBaseDeDonnees
         super();
     }
 	
-	public double prixTrajet(String gare1, String gare2) //operationnel
+	public double calculerPrix(String gare1, String gare2) //operationnel
     {
         String gare1Maj = gare1.toUpperCase();
         String gare2Maj = gare2.toUpperCase();
