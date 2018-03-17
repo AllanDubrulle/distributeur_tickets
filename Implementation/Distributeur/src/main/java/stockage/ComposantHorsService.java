@@ -1,6 +1,6 @@
 package stockage;
 
-public class ComposantHorsService extends Exception 
+class ComposantHorsService extends Exception 
 {
 	public ComposantHorsService(String msg) 
 	{

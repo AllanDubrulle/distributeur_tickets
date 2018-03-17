@@ -1,6 +1,6 @@
 package stockage;
 
-public class PasAssezDeMonnaie extends Exception 
+class PasAssezDeMonnaie extends Exception 
 {
 	public PasAssezDeMonnaie(String msg) 
 	{
