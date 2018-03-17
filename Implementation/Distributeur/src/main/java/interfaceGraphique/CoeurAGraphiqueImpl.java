@@ -4,6 +4,8 @@ import coeur.Commande;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import stockage.BilletMonnaie;
+import stockage.Pieces;
 import stockage.Rendu;
 import stockage.imprimable.Billet;
 import stockage.imprimable.TitreDeTransport;
@@ -224,10 +226,21 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 		pStage5.setTitle("Recu");
 		pStage5.show();
 	}
-	public void afficherRendu(Rendu rendu)
+	public void afficherRendu(double prix , double introduit ,double rendu ,Rendu monnaieRendu)
 	{
 		StackPane root2 = new StackPane();
-		AfficherRendu billet = new AfficherRendu(fLiquide, fenBillet);
+		AfficherRendu billet = new AfficherRendu(prix,introduit,rendu, monnaieRendu.getBillets().get(BilletMonnaie.B50),
+				monnaieRendu.getBillets().get(BilletMonnaie.B20),
+				monnaieRendu.getBillets().get(BilletMonnaie.B10),
+				monnaieRendu.getBillets().get(BilletMonnaie.B5),
+				monnaieRendu.getPieces().get(Pieces.P200),
+				monnaieRendu.getPieces().get(Pieces.P100),
+				monnaieRendu.getPieces().get(Pieces.P50),
+				monnaieRendu.getPieces().get(Pieces.P20),
+				monnaieRendu.getPieces().get(Pieces.P10),
+				monnaieRendu.getPieces().get(Pieces.P5),
+				monnaieRendu.getPieces().get(Pieces.P2),
+				monnaieRendu.getPieces().get(Pieces.P1));
 		Stage pStage6 = new Stage();
 		Scene sc = new Scene(root2, 250, 560);
 		root2.getChildren().add(billet);

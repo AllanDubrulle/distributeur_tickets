@@ -42,7 +42,7 @@ public interface CoeurAGraphique
 	public void afficherChoixCommande(Commande commande);
 	public void afficherRenouvScanne();
 	public void afficherRecu();
-	public void afficherRendu(Rendu rendu);
+	public void afficherRendu(double prix , double introduit ,double rendu ,Rendu monnaieRendu);
 	public void afficherTitre(Commande commande, TitreDeTransport titre, double prix);
 	
 }

@@ -1,6 +1,6 @@
 package stockage;
 
-enum BilletMonnaie implements Valeur 
+public enum BilletMonnaie implements Valeur 
 {
 	
 	B50 { public int valeur()
