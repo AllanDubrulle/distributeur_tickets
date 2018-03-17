@@ -7,7 +7,8 @@ import javafx.scene.layout.*;
 
 class AfficherRendu extends Pane 
 {
-    public AfficherRendu(FChoixParLiquide fenLiquide,FBillet fenBillet) 
+	// supprimer gare heure , prix , introduit ,rendu
+    public AfficherRendu(int b50,int b20,int b10,int b5,int p200,int p100,int p50,int p20,int p10, int p5, int p2, int p1) 
     {
         VBox vBox = new VBox();
         HBox hBox = new HBox();
@@ -112,7 +113,7 @@ class AfficherRendu extends Pane
 
         text3.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text3.setStrokeWidth(0.0);
-        text3.setText(String.valueOf(Double.valueOf(fenBillet.getPrix())/100));
+        text3.setText(String.valueOf(0.0)); // a supprimer
         text3.setWrappingWidth(60.0);
 
         hBox2.setPrefHeight(0.0);
@@ -126,7 +127,7 @@ class AfficherRendu extends Pane
 
         text5.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text5.setStrokeWidth(0.0);
-        text5.setText(String.valueOf(0.0)); // valeur par défaut avant montant introduit
+        text5.setText(String.valueOf(0.0)); // a supprimer
         text5.setWrappingWidth(60.0);
         VBox.setMargin(hBox2, new Insets(5.0, 0.0, 5.0, 0.0));
 
@@ -140,7 +141,7 @@ class AfficherRendu extends Pane
 
         text7.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text7.setStrokeWidth(0.0);
-        text7.setText(String.valueOf(0.0));// valeur par défaut avant montant restant
+        text7.setText(String.valueOf( 0.0)); // a supprimer
         text7.setWrappingWidth(60.0);
 
         hBox4.setPrefHeight(0.0);
@@ -155,7 +156,7 @@ class AfficherRendu extends Pane
 
         text9.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text9.setStrokeWidth(0.0);
-        text9.setText("(50)");
+        text9.setText(String.valueOf(b50));
         text9.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         text9.setWrappingWidth(75.0);
         VBox.setMargin(hBox4, new Insets(10.0, 0.0, 0.0, 30.0));
@@ -172,7 +173,7 @@ class AfficherRendu extends Pane
 
         text11.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text11.setStrokeWidth(0.0);
-        text11.setText("(20)");
+        text11.setText(String.valueOf(b20));
         text11.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         text11.setWrappingWidth(75.0);
         VBox.setMargin(hBox5, new Insets(5.0, 0.0, 5.0, 30.0));
@@ -189,7 +190,7 @@ class AfficherRendu extends Pane
 
         text13.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text13.setStrokeWidth(0.0);
-        text13.setText("(10)");
+        text13.setText(String.valueOf(b10));
         text13.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         text13.setWrappingWidth(75.0);
         VBox.setMargin(hBox6, new Insets(0.0, 0.0, 0.0, 30.0));
@@ -206,7 +207,7 @@ class AfficherRendu extends Pane
 
         text15.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text15.setStrokeWidth(0.0);
-        text15.setText("(5)");
+        text15.setText(String.valueOf(b5));
         text15.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         text15.setWrappingWidth(75.0);
         VBox.setMargin(hBox7, new Insets(5.0, 0.0, 5.0, 30.0));
@@ -223,7 +224,7 @@ class AfficherRendu extends Pane
 
         text17.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text17.setStrokeWidth(0.0);
-        text17.setText("(2)");
+        text17.setText(String.valueOf(p200));
         text17.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         text17.setWrappingWidth(75.0);
         VBox.setMargin(hBox8, new Insets(0.0, 0.0, 0.0, 30.0));
@@ -240,7 +241,7 @@ class AfficherRendu extends Pane
 
         text19.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text19.setStrokeWidth(0.0);
-        text19.setText("(1)");
+        text19.setText(String.valueOf(p100));
         text19.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         text19.setWrappingWidth(75.0);
         VBox.setMargin(hBox9, new Insets(0.0, 0.0, 0.0, 30.0));
@@ -257,7 +258,7 @@ class AfficherRendu extends Pane
 
         text111.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text111.setStrokeWidth(0.0);
-        text111.setText("(0.50)");
+        text111.setText(String.valueOf(p50));
         text111.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         text111.setWrappingWidth(75.0);
         VBox.setMargin(hBox10, new Insets(5.0, 0.0, 5.0, 30.0));
@@ -274,7 +275,7 @@ class AfficherRendu extends Pane
 
         text113.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text113.setStrokeWidth(0.0);
-        text113.setText("(0.20)");
+        text113.setText(String.valueOf(p20));
         text113.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         text113.setWrappingWidth(75.0);
         VBox.setMargin(hBox11, new Insets(0.0, 0.0, 0.0, 30.0));
@@ -291,7 +292,7 @@ class AfficherRendu extends Pane
 
         text115.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text115.setStrokeWidth(0.0);
-        text115.setText("(0.10)");
+        text115.setText(String.valueOf(p10));
         text115.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         text115.setWrappingWidth(75.0);
         VBox.setMargin(hBox12, new Insets(5.0, 0.0, 5.0, 30.0));
@@ -308,7 +309,7 @@ class AfficherRendu extends Pane
 
         text117.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text117.setStrokeWidth(0.0);
-        text117.setText("(0.05)");
+        text117.setText(String.valueOf(p5));
         text117.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         text117.setWrappingWidth(75.0);
         VBox.setMargin(hBox13, new Insets(0.0, 0.0, 0.0, 30.0));
@@ -325,7 +326,7 @@ class AfficherRendu extends Pane
 
         text119.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text119.setStrokeWidth(0.0);
-        text119.setText("(0.02)");
+        text119.setText(String.valueOf(p2));
         text119.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         text119.setWrappingWidth(75.0);
         VBox.setMargin(hBox14, new Insets(5.0, 0.0, 5.0, 30.0));
@@ -342,7 +343,7 @@ class AfficherRendu extends Pane
 
         text1111.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1111.setStrokeWidth(0.0);
-        text1111.setText("(0.01)");
+        text1111.setText(String.valueOf(p1));
         text1111.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         text1111.setWrappingWidth(75.0);
         VBox.setMargin(hBox15, new Insets(0.0, 0.0, 0.0, 30.0));

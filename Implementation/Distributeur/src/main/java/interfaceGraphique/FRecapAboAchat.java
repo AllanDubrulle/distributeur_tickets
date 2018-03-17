@@ -10,7 +10,7 @@ import javafx.scene.layout.*;
 
 class FRecapAboAchat extends Ecran 
 {    
-    public FRecapAboAchat(String nom, String registre, String gareDepart, String gareArrivee, int validite, int classe, String reduction, String type, double prix, double hauteur, double largeur) 
+    public FRecapAboAchat(String nom, String registre, String gareDepart, String gareArrivee, String validite, String classe, String reduction, String prix, double hauteur, double largeur) 
     {
         Rectangle rectangle = new Rectangle();
         Text text = new Text();
@@ -42,9 +42,6 @@ class FRecapAboAchat extends Ecran
         Text text15 = new Text();
         Button button = new Button();
         Button button0 = new Button();
-        HBox hBox8 = new HBox();
-        Text text16 = new Text();
-        Text text17 = new Text();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -162,7 +159,7 @@ class FRecapAboAchat extends Ecran
 
         text9.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text9.setStrokeWidth(0.0);
-        text9.setText(Integer.toString(validite) + " mois");
+        text9.setText(validite);
         text9.setWrappingWidth(200.0*largeur);
         text9.setFont(new Font("System Bold Italic", 15.0*hauteur));
         hBox4.setPadding(new Insets(0.0, 0.0, 10.0, 0.0));
@@ -179,7 +176,7 @@ class FRecapAboAchat extends Ecran
 
         text11.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text11.setStrokeWidth(0.0);
-        text11.setText(classe + "e classe");
+        text11.setText(classe);
         text11.setWrappingWidth(200.0*largeur);
         text11.setFont(new Font("System Bold Italic", 15.0*hauteur));
         hBox5.setPadding(new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
@@ -201,21 +198,6 @@ class FRecapAboAchat extends Ecran
         text13.setFont(new Font("System Bold Italic", 15.0*hauteur));
         HBox.setMargin(text13, new Insets(0.0, 0.0, 0.0, 20.0*largeur));
         hBox6.setPadding(new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
-        
-        text16.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text16.setStrokeWidth(0.0);
-        text16.setText("Type d'abonnement :");
-        text16.setWrappingWidth(180.0*largeur);
-        text16.setFont(new Font(15.0*hauteur));
-        HBox.setMargin(text16, new Insets(0.0));
-
-        text17.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text17.setStrokeWidth(0.0);
-        text17.setText(type);
-        text17.setWrappingWidth(200.0);
-        text17.setFont(new Font("System Bold Italic", 15.0*hauteur));
-        HBox.setMargin(text17, new Insets(0.0, 0.0, 0.0, 20.0*largeur));
-        hBox8.setPadding(new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
 
         hBox7.setPrefHeight(17.0*hauteur);
         hBox7.setPrefWidth(244.0*largeur);
@@ -229,7 +211,7 @@ class FRecapAboAchat extends Ecran
 
         text15.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text15.setStrokeWidth(0.0);
-        text15.setText(prix + " €");
+        text15.setText(prix);
         text15.setWrappingWidth(200.0);
         text15.setFont(new Font("System Bold Italic", 15.0*hauteur));
         HBox.setMargin(text15, new Insets(0.0, 0.0, 0.0, 20.0*largeur));
@@ -275,8 +257,7 @@ class FRecapAboAchat extends Ecran
         hBox5.getChildren().addAll(text10, text11);
         hBox6.getChildren().addAll(text12, text13);
         hBox7.getChildren().addAll(text14, text15);
-        hBox8.getChildren().addAll(text16, text17);
-        vBox.getChildren().addAll(hBox0, hBox1, hBox2, hBox3, hBox4, hBox5, hBox6, hBox8, hBox7);
+        vBox.getChildren().addAll(hBox0, hBox1, hBox2, hBox3, hBox4, hBox5, hBox6, hBox7);
         getChildren().addAll(rectangle, text, vBox, button, button0);
     }
     

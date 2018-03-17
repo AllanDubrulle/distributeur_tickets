@@ -9,11 +9,9 @@ import javafx.scene.control.*;
 class FChoixParCarte extends Ecran 
 {
     private static TextField textField;
-    private Stage stage;
     
     public FChoixParCarte(Stage stage) 
     {
-    	this.stage = stage;
         Button button = new Button();
         Button button0 = new Button();
         textField = new TextField();

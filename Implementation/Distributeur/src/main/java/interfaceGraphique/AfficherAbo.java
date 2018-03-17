@@ -1,16 +1,13 @@
 package interfaceGraphique;
 
 import javafx.scene.shape.*;
-
-import java.util.Date;
-
 import javafx.geometry.*;
 import javafx.scene.text.*;
 import javafx.scene.layout.*;
 
 class AfficherAbo extends Pane 
 {
-	public AfficherAbo(int numero, String nom, int classe, String gareDepart, String gareArrivee, Date dateVal, Date dateExp, String reduction, double prix) 
+	public AfficherAbo(FAboRenouv2 fen) 
     {
         VBox vBox = new VBox();
         HBox hBox = new HBox();
@@ -54,7 +51,7 @@ class AfficherAbo extends Pane
 
         text.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text.setStrokeWidth(0.0);
-        text.setText("ABONNEMENT N°" + numero);
+        text.setText("ABONNEMENT N°" + fen.getNumAbo());
         text.setWrappingWidth(250.0);
         text.setFont(new Font("System Bold Italic", 18.0));
 
@@ -76,7 +73,7 @@ class AfficherAbo extends Pane
 
         text1.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1.setStrokeWidth(0.0);
-        text1.setText(nom);
+        text1.setText("(nom)");
         text1.setWrappingWidth(200.0);
         text1.setFont(new Font("System Bold Italic", 18.0));
 
@@ -94,7 +91,7 @@ class AfficherAbo extends Pane
 
         text3.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text3.setStrokeWidth(0.0);
-        text3.setText(Integer.toString(classe));
+        text3.setText("2e classe");
         text3.setWrappingWidth(200.0);
         text3.setFont(new Font("System Bold", 18.0));
         hBox1.setOpaqueInsets(new Insets(0.0));
@@ -110,7 +107,7 @@ class AfficherAbo extends Pane
 
         text5.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text5.setStrokeWidth(0.0);
-        text5.setText(gareDepart);
+        text5.setText("(gared)");
         text5.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         HBox.setMargin(text5, new Insets(0.0, 0.0, 0.0, 50.0));
         hBox2.setOpaqueInsets(new Insets(0.0));
@@ -126,7 +123,7 @@ class AfficherAbo extends Pane
 
         text7.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text7.setStrokeWidth(0.0);
-        text7.setText(gareArrivee);
+        text7.setText("(garea)");
         text7.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         HBox.setMargin(text7, new Insets(0.0, 0.0, 0.0, 50.0));
         hBox3.setOpaqueInsets(new Insets(0.0));
@@ -143,7 +140,7 @@ class AfficherAbo extends Pane
 
         text9.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text9.setStrokeWidth(0.0);
-        text9.setText(dateVal.getDate() + "/" + String.valueOf(dateVal.getMonth()+1) + "/" + String.valueOf(dateVal.getYear()+1900));
+        text9.setText("(date)");
         text9.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         text9.setWrappingWidth(100.0);
         HBox.setMargin(text9, new Insets(0.0, 0.0, 0.0, 50.0));
@@ -156,7 +153,7 @@ class AfficherAbo extends Pane
 
         text11.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text11.setStrokeWidth(0.0);
-        text11.setText(dateExp.getDate() + "/" + String.valueOf(dateExp.getMonth()+1) + "/" + String.valueOf(dateExp.getYear()+1900));
+        text11.setText("(date)");
         text11.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         text11.setWrappingWidth(100.0);
         hBox4.setOpaqueInsets(new Insets(0.0));
@@ -172,13 +169,13 @@ class AfficherAbo extends Pane
 
         text13.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text13.setStrokeWidth(0.0);
-        text13.setText(reduction);
+        text13.setText("FAMILLENOMBREUSE");
         text13.setWrappingWidth(175.0);
         HBox.setMargin(text13, new Insets(0.0, 0.0, 0.0, 44.0));
 
         text14.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text14.setStrokeWidth(0.0);
-        text14.setText(prix +"   EUR");
+        text14.setText("10.02   EUR");
         text14.setTextAlignment(javafx.scene.text.TextAlignment.RIGHT);
         text14.setWrappingWidth(100.0);
         HBox.setMargin(text14, new Insets(0.0, 0.0, 0.0, 110.0));
