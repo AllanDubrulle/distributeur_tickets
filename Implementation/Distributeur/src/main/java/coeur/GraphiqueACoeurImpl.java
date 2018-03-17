@@ -191,11 +191,7 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 	{
 		controleur.getEtatActuel().inserer(20);
 	}
-	public void paiementLiquideOk()
-	{
-		controleur.getEtatActuel().validePaiement();
-	}
-	
+
 	public void choixScanneurOK() 
 	{
 		controleur.getEtatActuel().choixPINOk();

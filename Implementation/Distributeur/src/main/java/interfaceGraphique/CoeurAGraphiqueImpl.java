@@ -52,38 +52,12 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 		FenetreSimulation.getInstance().afficher(new FFin(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 	}
 	
-	public void afficherChoixBillet() 
-	{
-		this.fenBillet = new FBillet(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg());
-		FenetreSimulation.getInstance().afficher(fenBillet);
-	}
-	public void afficherChoixAchatAbo() 
-	{
-		FenetreSimulation.getInstance().afficher(new FAboAchat(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
-	}
-	public void afficherChoixRenouvAbo() 
-	{
-		FenetreSimulation.getInstance().afficher(new FAboRenouv1(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
-	}
+
 	public void afficherChoixPass() 
 	{
 		FenetreSimulation.getInstance().afficher(new FPassMenu(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 	}
-	public void afficherChoixPassIllimite() 
-	{
-		this.fenPassIllimite=new FPassIllimite(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg());
-		FenetreSimulation.getInstance().afficher(fenPassIllimite);
-	}
-	public void afficherChoixPass10Trajets() 
-	{
-		this.fenPass10Trajets=new FPass10Trajets(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg());
-		FenetreSimulation.getInstance().afficher(fenPass10Trajets);
-	}
-	public void afficherChoixPass10Trajets2Gares() 
-	{
-		this.fenPass10Trajets2Gares=new FPass10Trajets2Gares(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg());
-		FenetreSimulation.getInstance().afficher(fenPass10Trajets2Gares);
-	}
+
 	public void afficherChoixHoraire() 
 	{
 		FenetreSimulation.getInstance().afficher(new FHoraireMenu(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
@@ -128,9 +102,9 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	{
 		FenetreSimulation.getInstance().afficher(new FChoixPaiement(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 	}
-	public void afficherChoixParLiquide() 
+	public void afficherChoixParLiquide(double prix) 
 	{
-		fLiquide = new FChoixParLiquide(fenBillet, FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg());
+		fLiquide = new FChoixParLiquide(prix, FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg());
 		FenetreSimulation.getInstance().afficher(fLiquide);
 	}
 	public void afficherChoixParCarte() 
@@ -179,10 +153,7 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	{
 		FenetreSimulation.getInstance().afficher(new FBacReception(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 	}
-	public void insererMonnaie(double i)
-	{
-		fLiquide.setMontantIntroduit(fLiquide.getMontantIntroduit() + i);
-	}
+
 	public void afficherTitre(Commande commande, TitreDeTransport titre, double prix)
 	{
 		switch(commande)
@@ -268,11 +239,9 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	{
 		FenetreSimulation.getInstance().viderPIN();
 	}
-	public void afficherDemandeRecu()
+	public void afficherDemandeRecu() // modifié pas encore fini bug possible 
 	{
 		FenetreSimulation.getInstance().afficher(new FDemandeRecu(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
-		if (fLiquide != null)
-			fLiquide.setMontantIntroduit(0);
 		
 	}
 	public void afficherRecapCommande(Commande commande,TitreDeTransport titre,double prix,int nbrTitre)
@@ -346,5 +315,11 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 				break;
 		}
 
+	}
+
+	public void actualiserMontant(double restant, double introduit)
+	{
+		fLiquide.actualiserMontant(restant, introduit);
+		
 	}
 }
