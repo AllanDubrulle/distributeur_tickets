@@ -5,8 +5,6 @@ import stockage.PasAssezDeMonnaie;
 class EtatPaiementLiquide extends EtatAnnulable
 {
 	private static EtatPaiementLiquide instance;
-	public double introduit;
-	private final double epsilon = 0.01;
 	public static EtatPaiementLiquide getInstance() 
 	{
 		if (instance ==null)
@@ -17,31 +15,25 @@ class EtatPaiementLiquide extends EtatAnnulable
 	}
 	public void entree()
 	{
-		reinitialisation();
+		Controleur.getInstance().getCoeurAStockage().reinitialisation();
 		Controleur.getInstance().getCoeurAGraphique().afficherChoixParLiquide(Controleur.getInstance().getCoeurAStockage().getPrix());
-	}
-	private void reinitialisation() //a réfléchir si on stocke dans stockage ou pas 
-	{
-		introduit=0.0;
 	}
 	public void inserer(int i)
 	{
 		Controleur.getInstance().getCoeurAStockage().ajoutMonnaie(i);
-		introduit+=((double) i)/100;
-		double rendu = Controleur.getInstance().getCoeurAStockage().getPrix()-introduit;
-		if(rendu<=epsilon)
+		if(Controleur.getInstance().getCoeurAStockage().getPrix()<=Controleur.getInstance().getCoeurAStockage().getIntroduit())
 		{
 			try
 			{
-				Controleur.getInstance().getCoeurAGraphique().afficherRendu(Controleur.getInstance().getCoeurAStockage().getPrix(),
-						introduit,Math.abs(rendu),
-						Controleur.getInstance().getCoeurAStockage().rendreMonnaie(Math.abs(rendu)));
-				Controleur.getInstance().modifEtat(EtatImpression.getInstance());
+				double rendu = Controleur.getInstance().getCoeurAStockage().getRendu();
+				Controleur.getInstance().getCoeurAGraphique().afficherRendu(Controleur.getInstance().getCoeurAStockage()
+						.rendreMonnaie(rendu));
+				Controleur.getInstance().modifEtat(EtatImpressionTitre.getInstance());
 			}
 			
 			catch(PasAssezDeMonnaie e)
 			{
-				Controleur.getInstance().getCoeurAGraphique().afficherRendu(Controleur.getInstance().getCoeurAStockage().getPrix(),Controleur.getInstance().getCoeurAStockage().getPrix(),Controleur.getInstance().getCoeurAStockage().getPrix(),Controleur.getInstance().getCoeurAStockage().rendreIntroduit());
+				Controleur.getInstance().getCoeurAGraphique().afficherRendu(Controleur.getInstance().getCoeurAStockage().rendreIntroduit());
 				//ajouter un message a l'utilisateur  
 				Controleur.getInstance().modifEtat(EtatPaiement.getInstance());
 			}
@@ -50,7 +42,9 @@ class EtatPaiementLiquide extends EtatAnnulable
 		}
 		else
 		{
-			Controleur.getInstance().getCoeurAGraphique().actualiserMontant(rendu, introduit);
+			Controleur.getInstance().getCoeurAGraphique().actualiserMontant(
+					Controleur.getInstance().getCoeurAStockage().getRendu(),
+					Controleur.getInstance().getCoeurAStockage().getIntroduit());
 		}
 	}
 }

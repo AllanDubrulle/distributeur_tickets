@@ -3,17 +3,15 @@ package coeur;
 import javafx.animation.PauseTransition;
 import javafx.util.Duration;
 
-class EtatImpression extends EtatAnnulable 
-{	
-	private static EtatImpression instance;
+public class EtatImpressionRecu extends ControleurEtat
+{
+	private static  EtatImpressionRecu instance;
 	
-	public static EtatImpression getInstance() 
+	public static  EtatImpressionRecu getInstance() 
 	{
-		if (instance ==null)
-		{
-			instance = new EtatImpression();
-		}
-		return (EtatImpression) instance;
+		if (instance == null)
+			instance = new  EtatImpressionRecu();
+		return ( EtatImpressionRecu) instance;
 	}
 	
 	public void entree() 
@@ -28,11 +26,14 @@ class EtatImpression extends EtatAnnulable
 	{
 		Controleur.getInstance().getCoeurAGraphique().afficherViderBacRecep();
 	}
+	
 	public void choixOk()
 	{
-		Controleur.getInstance().getCoeurAGraphique().afficherRecu();
-		Controleur.getInstance().getCoeurAGraphique().afficherTitre(Controleur.getInstance().getCommande(),Controleur.getInstance().getCoeurAStockage().getTitre() ,0); //prix : 0 = valeur par défaut pour test!
+		Controleur.getInstance().getCoeurAGraphique().afficherRecu(Controleur.getInstance().getCoeurAStockage().getPrix(),
+				Controleur.getInstance().getCoeurAStockage().getIntroduit(),
+				Controleur.getInstance().getCoeurAStockage().getRendu()); 
 		Controleur.getInstance().modifEtat(EtatFin.getInstance());
 	}
 	
+
 }

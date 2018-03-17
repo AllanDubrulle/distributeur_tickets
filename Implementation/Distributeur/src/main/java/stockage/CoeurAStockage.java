@@ -22,5 +22,8 @@ public interface CoeurAStockage
 	public void ajoutMonnaie(int i);
 	public Rendu rendreMonnaie(double rendu) throws PasAssezDeMonnaie;
 	public Rendu rendreIntroduit();
+	public double getIntroduit();
+	public void reinitialisation();
+	public double getRendu();
 
 }

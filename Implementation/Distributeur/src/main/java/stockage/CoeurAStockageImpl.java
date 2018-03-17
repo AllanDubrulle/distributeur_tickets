@@ -15,6 +15,7 @@ public class CoeurAStockageImpl implements CoeurAStockage
 	private TitreDeTransport achat;
 	private int nbrTitre;
 	private double prix;
+	private double introduit;
 	private Monnayeur monnayeur = new Monnayeur(); // a modifier si on modifie panne
 	
 	public double getPrix()
@@ -177,8 +178,8 @@ public class CoeurAStockageImpl implements CoeurAStockage
 			case 5000:
 				monnayeur.stockerBillets(BilletMonnaie.B50);
 				// cas général exception ??
-			
 		}
+		introduit+=((double)i/100);
 		
 	}
 
@@ -191,6 +192,26 @@ public class CoeurAStockageImpl implements CoeurAStockage
 	public Rendu rendreIntroduit()
 	{
 		return monnayeur.rendreMontantEncours();
+	}
+
+	public double getIntroduit()
+	{
+		return introduit;
+	}
+
+	public void reinitialisation()
+	{
+		setIntroduit(0.0);
+	}
+
+	private void setIntroduit(double introduit)
+	{
+		this.introduit=introduit;
+	}
+
+	public double getRendu()
+	{
+		return Math.abs(introduit-prix);
 	}
 	
 	

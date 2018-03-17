@@ -38,11 +38,11 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 	}
 	public void choixOui() 
 	{
-		controleur.getEtatActuel().choixNon();
+		controleur.getEtatActuel().choixOui();
 	}
 	public void choixNon() 
 	{
-		controleur.getEtatActuel().choixOui();
+		controleur.getEtatActuel().choixNon();
 	}
 	public void choixRetourEcranPrinc() 
 	{

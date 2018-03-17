@@ -134,7 +134,7 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	{
 		FenetreSimulation.getInstance().afficher(new FCodePINIncor(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 	}
-	public void afficherRendreMonnaie() 
+	public void afficherRendreMonnaie() // encore utile ??
 	{
 		/*StackPane root2 = new StackPane();
 		FRendreMonnaie fen = new FRendreMonnaie();
@@ -214,10 +214,10 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 			break;
 		}
 	}
-	public void afficherRecu()
+	public void afficherRecu(double prix , double introduit , double rendu)
 	{
 		StackPane root2 = new StackPane();
-		AfficherRecu billet = new AfficherRecu(fLiquide, fenBillet);
+		AfficherRecu billet = new AfficherRecu(prix ,introduit ,rendu);
 		Stage pStage5 = new Stage();
 		Scene sc = new Scene(root2, 250, 300);
 		root2.getChildren().add(billet);
@@ -226,10 +226,10 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 		pStage5.setTitle("Recu");
 		pStage5.show();
 	}
-	public void afficherRendu(double prix , double introduit ,double rendu ,Rendu monnaieRendu)
+	public void afficherRendu(Rendu monnaieRendu)
 	{
 		StackPane root2 = new StackPane();
-		AfficherRendu billet = new AfficherRendu(prix,introduit,rendu, monnaieRendu.getBillets().get(BilletMonnaie.B50),
+		AfficherRendu billet = new AfficherRendu(monnaieRendu.getBillets().get(BilletMonnaie.B50),
 				monnaieRendu.getBillets().get(BilletMonnaie.B20),
 				monnaieRendu.getBillets().get(BilletMonnaie.B10),
 				monnaieRendu.getBillets().get(BilletMonnaie.B5),

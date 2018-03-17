@@ -7,7 +7,8 @@ import javafx.scene.layout.*;
 
 class AfficherRendu extends Pane 
 {
-    public AfficherRendu(double prix , double introduit ,double rendu , int b50,int b20,int b10,int b5,int p200,int p100,int p50,int p20,int p10, int p5, int p2, int p1) // supprimer gare heure 
+	// supprimer gare heure , prix , introduit ,rendu
+    public AfficherRendu(int b50,int b20,int b10,int b5,int p200,int p100,int p50,int p20,int p10, int p5, int p2, int p1) 
     {
         VBox vBox = new VBox();
         HBox hBox = new HBox();
@@ -112,7 +113,7 @@ class AfficherRendu extends Pane
 
         text3.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text3.setStrokeWidth(0.0);
-        text3.setText(String.valueOf(prix));
+        text3.setText(String.valueOf(0.0)); // a supprimer
         text3.setWrappingWidth(60.0);
 
         hBox2.setPrefHeight(0.0);
@@ -126,7 +127,7 @@ class AfficherRendu extends Pane
 
         text5.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text5.setStrokeWidth(0.0);
-        text5.setText(String.valueOf(introduit));
+        text5.setText(String.valueOf(0.0)); // a supprimer
         text5.setWrappingWidth(60.0);
         VBox.setMargin(hBox2, new Insets(5.0, 0.0, 5.0, 0.0));
 
@@ -140,7 +141,7 @@ class AfficherRendu extends Pane
 
         text7.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text7.setStrokeWidth(0.0);
-        text7.setText(String.valueOf(rendu));
+        text7.setText(String.valueOf( 0.0)); // a supprimer
         text7.setWrappingWidth(60.0);
 
         hBox4.setPrefHeight(0.0);
