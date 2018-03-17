@@ -242,7 +242,7 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 	{
 		if(Controleur.getInstance().getCoeurAStockage().existenceTrajet(gareDepart, gareArrivee))	
 		{	
-			//Controleur.getInstance().getCoeurAStockage().creerAbonnement(dateValidite, dateExpiration, gareDepart, gareArrivee, classe, reduction, type, codeBarre, nom, registre);	
+			Controleur.getInstance().getCoeurAStockage().creerAbonnement(dateValidite, dateExpiration, gareDepart, gareArrivee, classe, reduction, type, codeBarre, nom, registre);	
 		}	
 		else	
 		{	

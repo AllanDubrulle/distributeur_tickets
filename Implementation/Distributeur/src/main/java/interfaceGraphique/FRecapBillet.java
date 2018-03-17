@@ -137,7 +137,7 @@ class FRecapBillet extends Ecran
 
         text6.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text6.setStrokeWidth(0.0);
-        text6.setText(Integer.toString(classe) + "e classe");
+        text6.setText(classe + "e classe");
         
         text6.setWrappingWidth(200.0*largeur);
         text6.setFont(new Font("System Bold Italic", 15.0*hauteur));
@@ -223,7 +223,7 @@ class FRecapBillet extends Ecran
 
         text16.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text16.setStrokeWidth(0.0);
-        text16.setText(String.valueOf(prix + " €"));
+        text16.setText(prix + " €");
         text16.setWrappingWidth(200.0*largeur);
         text16.setFont(new Font("System Bold Italic", 15.0*hauteur));
         HBox.setMargin(text16, new Insets(0.0, 0.0, 0.0, 35.0*largeur));

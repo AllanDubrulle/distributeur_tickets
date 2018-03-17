@@ -4,15 +4,18 @@ import javafx.geometry.*;
 import javafx.scene.control.*;
 import javafx.scene.text.*;
 import javafx.scene.shape.*;
+import coeur.GraphiqueACoeurImpl;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.layout.*;
 
 public class FPass10Trajets extends Ecran 
 {
-    private TextField textField, textField1;
+    private TextField textField;
     private RadioButton radioButton, radioButton0;
     private int pos = 0;
+    private ChoiceBox<String> choiceBox, choiceBox0;
 
     public FPass10Trajets(double hauteur, double largeur) 
     {
@@ -29,9 +32,11 @@ public class FPass10Trajets extends Ecran
         radioButton0 = new RadioButton();
         HBox hBox2 = new HBox();
         Text text2 = new Text();
-        textField1 = new TextField();
         Button button = new Button();
         Button button0 = new Button();
+        choiceBox = new ChoiceBox<String>();	
+        choiceBox0 = new ChoiceBox<String>();	
+        Text text3 = new Text();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -71,7 +76,7 @@ public class FPass10Trajets extends Ecran
         text0.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text0.setStrokeWidth(0.0);
         text0.setText("Nom : ");
-        text0.setWrappingWidth(180.0*largeur);
+        text0.setWrappingWidth(150.0*largeur);
         text0.setFont(new Font(15.0*hauteur));
         HBox.setMargin(text0, new Insets(0.0));
 
@@ -87,7 +92,7 @@ public class FPass10Trajets extends Ecran
         text1.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1.setStrokeWidth(0.0);
         text1.setText("Classe :");
-        text1.setWrappingWidth(180.0*largeur);
+        text1.setWrappingWidth(150.0*largeur);
         text1.setFont(new Font(15.0*hauteur));
         HBox.setMargin(text1, new Insets(0.0, 20.0*largeur, 0.0, 0.0));
 
@@ -108,18 +113,29 @@ public class FPass10Trajets extends Ecran
         
         hBox2.setPrefHeight(17.0*hauteur);
         hBox2.setPrefWidth(244.0*largeur);
+        
+        text3.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);	
+        text3.setStrokeWidth(0.0);	
+        text3.setText("Type du pass :");	
+        text3.setWrappingWidth(150.0*largeur);	
+        text3.setFont(new Font(15.0*hauteur));	
+        HBox.setMargin(text3, new Insets(0.0, 20.0*largeur, 0.0, 0.0));	
+        
+        choiceBox0.setPrefWidth(125.0*largeur);	
+        choiceBox0.setPrefHeight(30.0*hauteur);	
+        choiceBox0.setItems(FXCollections.observableArrayList(GraphiqueACoeurImpl.getInstance().getTypes()));	
+        hBox2.setPadding(new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
 
         text2.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text2.setStrokeWidth(0.0);
         text2.setText("Réduction :");
-        text2.setWrappingWidth(180.0*largeur);
         text2.setFont(new Font(15.0*hauteur));
-        HBox.setMargin(text2, new Insets(0.0));
+        HBox.setMargin(text2, new Insets(0.0, 0.0, 0.0, 50.0*largeur));
 
-        textField1.setPrefWidth(300.0*largeur);
-        textField1.setPrefHeight(31.0*hauteur);
-        textField1.setFont(new Font(15.0*hauteur));
-        HBox.setMargin(textField1, new Insets(0.0, 0.0, 0.0, 20.0*largeur));
+        choiceBox.setPrefWidth(300.0*largeur);
+        choiceBox.setPrefHeight(31.0*hauteur);
+        choiceBox.setItems(FXCollections.observableArrayList(GraphiqueACoeurImpl.getInstance().getReductions()));
+        HBox.setMargin(choiceBox, new Insets(0.0, 0.0, 0.0, 20.0*largeur));
         hBox2.setPadding(new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
 
         button.setLayoutX(22.5*largeur);
@@ -156,7 +172,7 @@ public class FPass10Trajets extends Ecran
 
         hBox0.getChildren().addAll(text0, textField);
         hBox1.getChildren().addAll(text1, radioButton, radioButton0);
-        hBox2.getChildren().addAll(text2, textField1);
+        hBox2.getChildren().addAll(text3, choiceBox0, text2, choiceBox);
         vBox.getChildren().addAll(hBox, hBox0, hBox1, hBox2);
         getChildren().addAll(rectangle, text, vBox, button, button0);
     }
@@ -165,8 +181,6 @@ public class FPass10Trajets extends Ecran
     {
     	if (pos == 0)
     		textField.setText(textField.getText() + a);
-    	else if (pos == 2)
-    		textField1.setText(textField.getText() + a);
     }
 
 	public void actionClavier(int a) 
@@ -178,6 +192,16 @@ public class FPass10Trajets extends Ecran
 			else if (a == 2)
 				radioButton0.setSelected(true);
 		}
+		else if (pos == 2)	
+		{	
+			if (a < GraphiqueACoeurImpl.getInstance().getTypes().length)	
+				choiceBox0.setValue(GraphiqueACoeurImpl.getInstance().getTypes()[a]);	
+		}	
+		else if (pos == 3)	
+		{	
+			if (a < GraphiqueACoeurImpl.getInstance().getReductions().length)	
+				choiceBox.setValue(GraphiqueACoeurImpl.getInstance().getReductions()[a]);	
+		}
 	}
 
 	public void actionRetour() 
@@ -187,7 +211,7 @@ public class FPass10Trajets extends Ecran
 
 	public void actionSuivant() 
 	{
-		if (pos == 2)
+		if (pos == 3)
 		{
 			textField.requestFocus();
 			pos = 0;
@@ -197,7 +221,9 @@ public class FPass10Trajets extends Ecran
 			if (pos == 0)
 				radioButton.requestFocus();
 			else if (pos == 1)
-				textField1.requestFocus();
+				choiceBox0.requestFocus();
+			else if (pos == 2)
+				choiceBox.requestFocus();
 			pos++;
 		}
 	}
@@ -206,23 +232,15 @@ public class FPass10Trajets extends Ecran
 	{
 		if (pos == 0)
 			textField.setText(textField.getText() + " ");
-		if (pos == 2)
-			textField.setText(textField.getText() + " ");
 	}
 
 	public void actionEffacer() 
 	{
-		if (pos == 1)
+		if (pos == 0)
 		{
 			String s = textField.getText();
 			if (s.length() > 0)
 				textField.setText(s.substring(0, s.length()-1));
-		}
-		else if (pos == 2)
-		{
-			String s = textField1.getText();
-			if (s.length() > 0)
-				textField1.setText(s.substring(0, s.length()-1));
 		}
 	}
 	
@@ -246,6 +264,10 @@ public class FPass10Trajets extends Ecran
 	
 	public String getReduction()
 	{
-		return textField1.getText();
+		return choiceBox.getValue();
+	}
+	public String getType()
+	{
+		return choiceBox0.getValue();
 	}
 }

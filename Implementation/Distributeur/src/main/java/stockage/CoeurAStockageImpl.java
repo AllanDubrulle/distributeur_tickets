@@ -2,6 +2,7 @@ package stockage;
 
 import java.util.Date;
 
+import stockage.imprimable.Abonnement;
 import stockage.imprimable.Billet;
 import stockage.imprimable.Classe;
 import stockage.imprimable.Reduction;
@@ -37,14 +38,50 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		return carte;
 	}
 	
-	public void creerBillet() 
+	private void setNbrTitre(int nbrTitre)
 	{
-		
+		this.nbrTitre = nbrTitre;
 	}
 
-	public void creerAbonnement() 
-	{
-		
+	public void creerAbonnement(Date dateValidite, Date dateExp, String gareDepart, String gareArrivee, int classe,
+			String reduction, String type, String codeBarre, String nom, String registreNational) throws ErreurDEncodage
+	{	
+		Reduction reduc = null;	
+		Classe classeAbo = null;	
+		TypeTitre typeAbo = null;	
+		int validite = dateExp.getMonth()-dateValidite.getMonth();	
+		if (classe == 1)	
+			classeAbo = Classe.C1;	
+		if (classe == 2)	
+			classeAbo = Classe.C2;	
+		for (int i = 0 ; i< Reduction.values().length;i++)	
+		{	
+			if(Reduction.values()[i].toString().equals(reduction))	
+			{	
+				reduc = Reduction.values()[i];	
+			}	
+		}	
+		for (int i = 0 ; i< TypeTitre.values().length;i++)	
+		{	
+			if(TypeTitre.values()[i].toString().equals(type))	
+			{	
+				typeAbo = TypeTitre.values()[i];	
+			}	
+		}	
+		if (validite == 0)	
+			validite = 12;	
+		if (validite == 2)	
+			validite = 1;	
+		if (validite == 4)	
+			validite = 3;	
+		if (validite == 7)	
+			validite = 6;	
+		if (reduc==null || typeAbo == null || classeAbo ==null )	
+		{	
+			throw new ErreurDEncodage ("problème d'encodage");	
+		}	
+		setAchat(new Abonnement(dateValidite, dateExp, gareDepart, gareArrivee,  classeAbo, reduc, typeAbo, codeBarre, nom, registreNational));	
+		setPrix(calculerPrixAbo(gareDepart, gareArrivee, reduc, typeAbo, classeAbo, validite));	
 	}
 
 	public void creerPass() 
@@ -80,11 +117,11 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		Reduction reduc = null;
 		TypeTitre type=null;
 		Classe classeBillet = null;
-		if (classe==0)
+		if (classe==1)
 		{
 			classeBillet = Classe.C1;
 		}
-		if(classe==1)
+		if(classe==2)
 		{
 			classeBillet = Classe.C2;
 		}
@@ -111,12 +148,6 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		setPrix(calculerPrix(gareDepart,gareArrivee,reduc,type,classeBillet)*nbrBillet);
 	}
 
-	private void setNbrTitre(int nbrTitre)
-	{
-		this.nbrTitre=nbrTitre;
-		
-	}
-
 	public double calculerPrix(String gareDepart, String gareArrivee,Reduction reduc,TypeTitre typeBillet,Classe classe)
 	{
 		BDDTitre bTitre = new BDDTitre();
@@ -127,6 +158,15 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		calculPrix =  calculPrix- calculPrix*((double)typeBillet.valeur()/100);
 		calculPrix =  calculPrix*((double)3-classe.valeur());
 		return  calculPrix;
+	}
+	public double calculerPrixAbo(String gareDepart, String gareArrivee, Reduction reduc, TypeTitre type, Classe classe, int validite)	
+	{	
+		double calculPrix=100;	
+		calculPrix -= calculPrix*  ((double)reduc.valeur()/100);	
+		calculPrix =  calculPrix- calculPrix*((double)type.valeur()/100);	
+		calculPrix = calculPrix*((double)3-classe.valeur());	
+		calculPrix = calculPrix*validite;	
+		return  calculPrix;	
 	}
 
 	private void setAchat(TitreDeTransport billet)
@@ -220,6 +260,4 @@ public class CoeurAStockageImpl implements CoeurAStockage
 	{
 		return Math.abs(introduit-prix);
 	}
-	
-	
 }

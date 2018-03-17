@@ -8,6 +8,7 @@ import stockage.BilletMonnaie;
 import stockage.Pieces;
 import stockage.Rendu;
 import stockage.imprimable.Billet;
+import stockage.imprimable.Abonnement;
 import stockage.imprimable.TitreDeTransport;
 
 public class CoeurAGraphiqueImpl implements CoeurAGraphique
@@ -263,8 +264,12 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 		switch(commande)
 		{
 			case ACHATABO:
-				FenetreSimulation.getInstance().afficher(new FRecapAboAchat(fenAboAchat.getNom(), fenAboAchat.getNumRegNat(), fenAboAchat.getGareDepart(), fenAboAchat.getGareArrivee(),fenAboAchat.getValidite(), fenAboAchat.getClasse(), fenAboAchat.getReduction(), String.valueOf(Double.valueOf(fenAboAchat.getPrix())/100), FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
-				break;
+				Abonnement abonnement = (Abonnement) titre;
+				FenetreSimulation.getInstance().afficher(new FRecapAboAchat(abonnement.getNom(), abonnement.getRegNat(), abonnement.getGareDepart(), 	
+						abonnement.getGareArrivee(), abonnement.getValidite(abonnement.getDateValidite(), abonnement.getDateExp()), 	
+						abonnement.getClasse().valeur(), abonnement.getReduction().toString(), abonnement.getType().toString(), prix, 	
+						FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
+			break;
 			case BILLET:
 				Billet billet = (Billet) titre;
 				FenetreSimulation.getInstance().afficher(new FRecapBillet(billet.getGareDepart(), billet.getGareArrivee()

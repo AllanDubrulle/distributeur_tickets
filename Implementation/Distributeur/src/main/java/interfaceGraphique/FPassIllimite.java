@@ -4,15 +4,18 @@ import javafx.geometry.*;
 import javafx.scene.control.*;
 import javafx.scene.text.*;
 import javafx.scene.shape.*;
+import coeur.GraphiqueACoeurImpl;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.layout.*;
 
 class FPassIllimite extends Ecran 
 {
-    private TextField textField, textField0, textField1, textField2, textField3;
+    private TextField textField, textField0, textField1, textField2;
     private RadioButton radioButton, radioButton1;
     private int pos = 0;
+    private ChoiceBox<String> choiceBox, choiceBox0;
     
     public FPassIllimite(double hauteur, double largeur) 
     {
@@ -35,12 +38,14 @@ class FPassIllimite extends Ecran
         radioButton1 = new RadioButton();
         HBox hBox4 = new HBox();
         Text text4 = new Text();
-        textField3 = new TextField();
         HBox hBox5 = new HBox();
         Text text5 = new Text();
         textField0 = new TextField();
         Button button = new Button();
         Button button0 = new Button();
+        Text text6 = new Text();	
+        choiceBox = new ChoiceBox<String>();	
+        choiceBox0 = new ChoiceBox<String>();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -151,12 +156,25 @@ class FPassIllimite extends Ecran
         text4.setStrokeWidth(0.0);
         text4.setText("Réduction :");
         text4.setFont(new Font(15.0*hauteur));
-        HBox.setMargin(text4, new Insets(0.0));
+        HBox.setMargin(text4, new Insets(0.0, 0.0, 0.0, 50.0*largeur));
 
-        textField3.setPrefWidth(300.0*largeur);
-        textField3.setPrefHeight(31.0*hauteur);
-        textField3.setFont(new Font(15.0*hauteur));
-        HBox.setMargin(textField3, new Insets(0.0, 0.0, 0.0, 132.0*largeur));
+        choiceBox.setPrefWidth(225.0*largeur);
+        choiceBox.setPrefHeight(31.0*hauteur);
+        choiceBox.setItems(FXCollections.observableArrayList(GraphiqueACoeurImpl.getInstance().getReductions()));
+        HBox.setMargin(choiceBox, new Insets(0.0, 0.0, 0.0, 132.0*largeur));
+        hBox4.setPadding(new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
+        
+        text6.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);	
+        text6.setStrokeWidth(0.0);	
+        text6.setText("Type du pass :");	
+        text6.setWrappingWidth(180.0*largeur);	
+        text6.setFont(new Font(15.0*hauteur));	
+        HBox.setMargin(text5, new Insets(0.0));	
+        
+        choiceBox0.setPrefWidth(125.0*largeur);	
+        choiceBox0.setPrefHeight(31.0*hauteur);	
+        choiceBox0.setItems(FXCollections.observableArrayList(GraphiqueACoeurImpl.getInstance().getTypes()));	
+        HBox.setMargin(choiceBox0, new Insets(0.0, 0.0, 0.0, 20.0*largeur));	
         hBox4.setPadding(new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
 
         hBox5.setPrefHeight(12.0*hauteur);
@@ -210,7 +228,7 @@ class FPassIllimite extends Ecran
         hBox1.getChildren().addAll(text1, textField1);
         hBox2.getChildren().addAll(text2, textField2);
         hBox3.getChildren().addAll(text3, radioButton, radioButton1);
-        hBox4.getChildren().addAll(text4, textField3);
+        hBox4.getChildren().addAll(text6, choiceBox0, text4, choiceBox);
         hBox5.getChildren().addAll(text5, textField0);
         vBox.getChildren().addAll(hBox, hBox0, hBox1, hBox2, hBox3, hBox4, hBox5);
         getChildren().addAll(rectangle, text, vBox, button, button0);
@@ -224,13 +242,11 @@ class FPassIllimite extends Ecran
     		textField1.setText(textField1.getText() + a);
     	else if (pos == 2)
     		textField2.setText(textField2.getText() + a);
-    	else if (pos == 4)
-    		textField3.setText(textField3.getText() + a);
     }
 
 	public void actionClavier(int a) 
 	{
-		if (pos == 3)
+		if (pos == 6)
 		{
 			if (a == 1)
 				radioButton.setSelected(true);
@@ -262,7 +278,9 @@ class FPassIllimite extends Ecran
 			else if (pos == 2)
 				radioButton.requestFocus();
 			else if (pos == 3)
-				textField3.requestFocus();
+				choiceBox0.requestFocus();
+			else if (pos == 4)	
+				choiceBox.requestFocus();
 			else
 				textField0.requestFocus();
 			pos ++;
@@ -277,8 +295,6 @@ class FPassIllimite extends Ecran
     		textField1.setText(textField1.getText() + " ");
     	else if (pos == 2)
     		textField2.setText(textField2.getText() + " ");
-    	else if (pos == 4)
-    		textField3.setText(textField3.getText() + " ");
     }
 
 	public void actionEffacer() 
@@ -301,12 +317,6 @@ class FPassIllimite extends Ecran
 			if (s.length() > 0)
 				textField2.setText(s.substring(0, s.length()-1));
 		}
-		else if (pos == 4)
-		{
-			String s = textField3.getText();
-			if (s.length() > 0)
-				textField3.setText(s.substring(0, s.length()-1));
-		}
 		else if (pos == 5)
 		{
 			String s = textField0.getText();
@@ -327,12 +337,12 @@ class FPassIllimite extends Ecran
 	
 	public String getDepart()
 	{
-		return textField0.getText();
+		return textField1.getText();
 	}
 	
 	public String getArrivee()
 	{
-		return textField1.getText();
+		return textField2.getText();
 	}
 	
 	public String getClasse()
@@ -345,11 +355,14 @@ class FPassIllimite extends Ecran
 	
 	public String getReduction()
 	{
-		return textField2.getText();
+		return choiceBox.getValue();
+	}	
+	public String getType()	
+	{	
+		return choiceBox0.getValue();
 	}
-	
 	public String getNbrJours()
 	{
-		return textField3.getText();
+		return textField0.getText();
 	}
 }
