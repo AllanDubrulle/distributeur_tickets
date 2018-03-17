@@ -4,10 +4,11 @@ import coeur.Commande;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import stockage.imprimable.Billet;
 import stockage.BilletMonnaie;
 import stockage.Pieces;
 import stockage.Rendu;
-import stockage.imprimable.Billet;
+import stockage.imprimable.Abonnement;
 import stockage.imprimable.TitreDeTransport;
 
 public class CoeurAGraphiqueImpl implements CoeurAGraphique
@@ -214,10 +215,10 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 			break;
 		}
 	}
-	public void afficherRecu(double prix , double introduit , double rendu)
+	public void afficherRecu(double prix, double introduit, double rendu)
 	{
 		StackPane root2 = new StackPane();
-		AfficherRecu billet = new AfficherRecu(prix ,introduit ,rendu);
+		AfficherRecu billet = new AfficherRecu(prix, introduit, rendu);
 		Stage pStage5 = new Stage();
 		Scene sc = new Scene(root2, 250, 300);
 		root2.getChildren().add(billet);
@@ -229,18 +230,7 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	public void afficherRendu(Rendu monnaieRendu)
 	{
 		StackPane root2 = new StackPane();
-		AfficherRendu billet = new AfficherRendu(monnaieRendu.getBillets().get(BilletMonnaie.B50),
-				monnaieRendu.getBillets().get(BilletMonnaie.B20),
-				monnaieRendu.getBillets().get(BilletMonnaie.B10),
-				monnaieRendu.getBillets().get(BilletMonnaie.B5),
-				monnaieRendu.getPieces().get(Pieces.P200),
-				monnaieRendu.getPieces().get(Pieces.P100),
-				monnaieRendu.getPieces().get(Pieces.P50),
-				monnaieRendu.getPieces().get(Pieces.P20),
-				monnaieRendu.getPieces().get(Pieces.P10),
-				monnaieRendu.getPieces().get(Pieces.P5),
-				monnaieRendu.getPieces().get(Pieces.P2),
-				monnaieRendu.getPieces().get(Pieces.P1));
+		AfficherRendu billet = new AfficherRendu(monnaieRendu.getBillets().get(BilletMonnaie.B50), monnaieRendu.getBillets().get(BilletMonnaie.B20), monnaieRendu.getBillets().get(BilletMonnaie.B10), monnaieRendu.getBillets().get(BilletMonnaie.B5), monnaieRendu.getPieces().get(Pieces.P200), monnaieRendu.getPieces().get(Pieces.P100), monnaieRendu.getPieces().get(Pieces.P50), monnaieRendu.getPieces().get(Pieces.P20), monnaieRendu.getPieces().get(Pieces.P10), monnaieRendu.getPieces().get(Pieces.P5), monnaieRendu.getPieces().get(Pieces.P2), monnaieRendu.getPieces().get(Pieces.P1));
 		Stage pStage6 = new Stage();
 		Scene sc = new Scene(root2, 250, 560);
 		root2.getChildren().add(billet);
@@ -263,15 +253,19 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 		switch(commande)
 		{
 			case ACHATABO:
-				FenetreSimulation.getInstance().afficher(new FRecapAboAchat(fenAboAchat.getNom(), fenAboAchat.getNumRegNat(), fenAboAchat.getGareDepart(), fenAboAchat.getGareArrivee(),fenAboAchat.getValidite(), fenAboAchat.getClasse(), fenAboAchat.getReduction(), String.valueOf(Double.valueOf(fenAboAchat.getPrix())/100), FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
+				Abonnement abonnement = (Abonnement) titre;
+				FenetreSimulation.getInstance().afficher(new FRecapAboAchat(abonnement.getNom(), abonnement.getRegNat(), abonnement.getGareDepart(), 
+						abonnement.getGareArrivee(), abonnement.getValidite(abonnement.getDateValidite(), abonnement.getDateExp()), 
+						abonnement.getClasse().valeur(), abonnement.getReduction().toString(), abonnement.getType().toString(), prix, 
+						FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
+				
 				break;
 			case BILLET:
 				Billet billet = (Billet) titre;
-				FenetreSimulation.getInstance().afficher(new FRecapBillet(billet.getGareDepart(), billet.getGareArrivee()
-						, billet.isAllerRetour(), billet.getClasse().valeur(),
-						billet.getType().toString(), billet.getReduction().toString(),
-						nbrTitre, billet.getDateValidite(),
-						prix , FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
+				FenetreSimulation.getInstance().afficher(new FRecapBillet(billet.getGareDepart(), billet.getGareArrivee(), 
+						billet.isAllerRetour(), billet.getClasse().valeur(), billet.getType().toString(), 
+						billet.getReduction().toString(), nbrTitre, billet.getDateValidite(), prix, 
+						FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 				break;
 			case PASS10TRAJETS:
 				FenetreSimulation.getInstance().afficher(new FRecapPass10Trajets(fenPass10Trajets, FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));

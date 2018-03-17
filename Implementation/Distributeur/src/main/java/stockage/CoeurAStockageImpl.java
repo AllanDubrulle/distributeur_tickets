@@ -2,6 +2,7 @@ package stockage;
 
 import java.util.Date;
 
+import stockage.imprimable.Abonnement;
 import stockage.imprimable.Billet;
 import stockage.imprimable.Classe;
 import stockage.imprimable.Reduction;
@@ -15,8 +16,13 @@ public class CoeurAStockageImpl implements CoeurAStockage
 	private TitreDeTransport achat;
 	private int nbrTitre;
 	private double prix;
-	private double introduit;
 	private Monnayeur monnayeur = new Monnayeur(); // a modifier si on modifie panne
+	
+	private void setNbrTitre(int nbrTitre)
+	{
+		this.nbrTitre=nbrTitre;
+		
+	}
 	
 	public double getPrix()
 	{
@@ -36,23 +42,6 @@ public class CoeurAStockageImpl implements CoeurAStockage
 	{
 		return carte;
 	}
-	
-	public void creerBillet() 
-	{
-		
-	}
-
-	public void creerAbonnement() 
-	{
-		
-	}
-
-	public void creerPass() 
-	{
-		
-	}
-
-	
 	public String[] getListeReduction()
 	{
 		Reduction[] reducs = Reduction.values();
@@ -110,14 +99,52 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		setAchat(new Billet(dateValidite,new Date(), gareDepart, gareArrivee,  classeBillet, type,reduc,allerRetour));
 		setPrix(calculerPrix(gareDepart,gareArrivee,reduc,type,classeBillet)*nbrBillet);
 	}
-
-	private void setNbrTitre(int nbrTitre)
+	public void creerAbonnement(Date dateValidite, Date dateExp, String gareDepart, String gareArrivee, int classe,
+			String reduction, String type, String codeBarre, String nom, String registreNational) throws ErreurDEncodage
 	{
-		this.nbrTitre=nbrTitre;
+		Reduction reduc = null;
+		Classe classeAbo = null;
+		TypeTitre typeAbo = null;
+		int validite = dateExp.getMonth()-dateValidite.getMonth();
+		if (classe == 1)
+			classeAbo = Classe.C1;
+		if (classe == 2)
+			classeAbo = Classe.C2;
+		for (int i = 0 ; i< Reduction.values().length;i++)
+		{
+			if(Reduction.values()[i].toString().equals(reduction))
+			{
+				reduc = Reduction.values()[i];
+			}
+		}
+		for (int i = 0 ; i< TypeTitre.values().length;i++)
+		{
+			if(TypeTitre.values()[i].toString().equals(type))
+			{
+				typeAbo = TypeTitre.values()[i];
+			}
+		}
+		if (validite == 0)
+			validite = 12;
+		if (validite == 2)
+			validite = 1;
+		if (validite == 4)
+			validite = 3;
+		if (validite == 7)
+			validite = 6;
+		if (reduc==null || typeAbo == null || classeAbo ==null )
+		{
+			throw new ErreurDEncodage ("problème d'encodage");
+		}
+		setAchat(new Abonnement(dateValidite, dateExp, gareDepart, gareArrivee,  classeAbo, reduc, typeAbo, codeBarre, nom, registreNational));
+		setPrix(calculerPrixAbo(gareDepart, gareArrivee, reduc, typeAbo, classeAbo, validite));
+	}
+	public void creerPass() 
+	{
 		
 	}
 
-	public double calculerPrix(String gareDepart, String gareArrivee,Reduction reduc,TypeTitre typeBillet,Classe classe)
+	public double calculerPrix(String gareDepart, String gareArrivee, Reduction reduc, TypeTitre typeBillet, Classe classe)
 	{
 		double calculPrix=100;
 		calculPrix -=  calculPrix*  ((double)reduc.valeur()/100);
@@ -125,9 +152,19 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		calculPrix =  calculPrix*((double)3-classe.valeur());
 		return  calculPrix;
 	}
+	public double calculerPrixAbo(String gareDepart, String gareArrivee, Reduction reduc, TypeTitre type, Classe classe, int validite)
+	{
+		double calculPrix=100;
+		calculPrix -= calculPrix*  ((double)reduc.valeur()/100);
+		calculPrix =  calculPrix- calculPrix*((double)type.valeur()/100);
+		calculPrix = calculPrix*((double)3-classe.valeur());
+		calculPrix = calculPrix*validite;
+		return  calculPrix;
+	}
 
 	private void setAchat(TitreDeTransport billet)
 	{
+		System.out.println(billet == null);
 		this.achat = billet;
 	}
 
@@ -147,7 +184,6 @@ public class CoeurAStockageImpl implements CoeurAStockage
 	{
 		return nbrTitre;
 	}
-
 	
 	public void ajoutMonnaie(int i)
 	{
@@ -178,40 +214,9 @@ public class CoeurAStockageImpl implements CoeurAStockage
 			case 5000:
 				monnayeur.stockerBillets(BilletMonnaie.B50);
 				// cas général exception ??
+			
 		}
-		introduit+=((double)i/100);
 		
-	}
-
-	public Rendu rendreMonnaie(double rendu) throws PasAssezDeMonnaie
-	{
-		return monnayeur.retournerArgent((int)(rendu*100));
-	}
-
-	
-	public Rendu rendreIntroduit()
-	{
-		return monnayeur.rendreMontantEncours();
-	}
-
-	public double getIntroduit()
-	{
-		return introduit;
-	}
-
-	public void reinitialisation()
-	{
-		setIntroduit(0.0);
-	}
-
-	private void setIntroduit(double introduit)
-	{
-		this.introduit=introduit;
-	}
-
-	public double getRendu()
-	{
-		return Math.abs(introduit-prix);
 	}
 	
 	
