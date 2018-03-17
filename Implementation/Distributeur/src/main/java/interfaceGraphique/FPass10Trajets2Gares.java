@@ -4,14 +4,17 @@ import javafx.geometry.*;
 import javafx.scene.control.*;
 import javafx.scene.text.*;
 import javafx.scene.shape.*;
+import coeur.GraphiqueACoeurImpl;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.layout.*;
 
 class FPass10Trajets2Gares extends Ecran 
 {
-    private TextField textField, textField0, textField1, textField2;
+    private TextField textField, textField0, textField1;
     private RadioButton radioButton, radioButton0;
+    private ChoiceBox<String> choiceBox, choiceBox0;
 
     public FPass10Trajets2Gares(double hauteur, double largeur) 
     {
@@ -34,10 +37,12 @@ class FPass10Trajets2Gares extends Ecran
         radioButton0 = new RadioButton();
         HBox hBox4 = new HBox();
         Text text4 = new Text();
-        textField2 = new TextField();
         Button button = new Button();
         Button button0 = new Button();
-
+        Text text5 = new Text();
+        choiceBox = new ChoiceBox<String>();
+        choiceBox0 = new ChoiceBox<String>();
+        
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
         setMinHeight(USE_PREF_SIZE);
@@ -146,16 +151,28 @@ class FPass10Trajets2Gares extends Ecran
         text4.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text4.setStrokeWidth(0.0);
         text4.setText("Réduction :");
-        text4.setWrappingWidth(180.0*largeur);
         text4.setFont(new Font(15.0*hauteur));
-        HBox.setMargin(text4, new Insets(0.0));
+        HBox.setMargin(text4, new Insets(0.0, 0.0, 0.0, 50.0*largeur));
 
-        textField2.setPrefWidth(250.0*largeur);
-        textField2.setPrefHeight(31.0*hauteur);
-        textField2.setFont(new Font(15.0*hauteur));
-        HBox.setMargin(textField2, new Insets(0.0, 0.0, 0.0, 20.0*largeur));
+        choiceBox.setPrefWidth(225.0*largeur);
+        choiceBox.setPrefHeight(30.0*hauteur);
+        choiceBox.setItems(FXCollections.observableArrayList(GraphiqueACoeurImpl.getInstance().getReductions()));
+        HBox.setMargin(choiceBox, new Insets(0.0, 0.0, 0.0, 20.0*largeur));
         hBox4.setPadding(new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
 
+        text5.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        text5.setStrokeWidth(0.0);
+        text5.setText("Type du pass :");
+        text5.setWrappingWidth(180.0*largeur);
+        text5.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(text5, new Insets(0.0));
+
+        choiceBox0.setPrefWidth(125.0*largeur);
+        choiceBox0.setPrefHeight(30.0*hauteur);
+        choiceBox0.setItems(FXCollections.observableArrayList(GraphiqueACoeurImpl.getInstance().getTypes()));
+        HBox.setMargin(choiceBox0, new Insets(0.0, 0.0, 0.0, 20.0*largeur));
+        hBox4.setPadding(new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
+        
         button.setLayoutX(23.0*largeur);
         button.setLayoutY(354.0*hauteur);
         button.setMnemonicParsing(false);
@@ -192,7 +209,7 @@ class FPass10Trajets2Gares extends Ecran
         hBox1.getChildren().addAll(text1, textField0);
         hBox2.getChildren().addAll(text2, textField1);
         hBox3.getChildren().addAll(text3, radioButton, radioButton0);
-        hBox4.getChildren().addAll(text4, textField2);
+        hBox4.getChildren().addAll(text5, choiceBox0, text4, choiceBox);
         vBox.getChildren().addAll(hBox, hBox0, hBox1, hBox2, hBox3, hBox4);
         getChildren().addAll(rectangle, text, vBox, button, button0);
     }
@@ -205,8 +222,6 @@ class FPass10Trajets2Gares extends Ecran
     		textField0.setText(textField0.getText() + a);
     	else if (pos == 2)
     		textField1.setText(textField1.getText() + a);
-    	else if (pos == 4)
-    		textField2.setText(textField2.getText() + a);
     }
 
 	public void actionClavier(int a) 
@@ -217,6 +232,16 @@ class FPass10Trajets2Gares extends Ecran
 				radioButton.setSelected(true);
 			else if (a == 2)
 				radioButton0.setSelected(true);
+		}
+		else if (pos == 4)
+		{
+			if (a < GraphiqueACoeurImpl.getInstance().getTypes().length)
+				choiceBox0.setValue(GraphiqueACoeurImpl.getInstance().getTypes()[a]);
+		}
+		else if (pos == 5)
+		{
+			if (a < GraphiqueACoeurImpl.getInstance().getReductions().length)
+				choiceBox.setValue(GraphiqueACoeurImpl.getInstance().getReductions()[a]);
 		}
 	}
 
@@ -230,7 +255,7 @@ class FPass10Trajets2Gares extends Ecran
 		if (pos == 5)
 		{
 			pos = 0;
-			textField0.requestFocus();
+			textField.requestFocus();
 		}
 		else
 		{
@@ -241,7 +266,9 @@ class FPass10Trajets2Gares extends Ecran
 			else if (pos == 2)
 				radioButton.requestFocus();
 			else if (pos == 3)
-				textField2.requestFocus();
+				choiceBox0.requestFocus();
+			else if (pos == 4)
+				choiceBox.requestFocus();
 			else
 				textField.requestFocus();
 			pos ++;
@@ -256,8 +283,6 @@ class FPass10Trajets2Gares extends Ecran
     		textField0.setText(textField0.getText() + " ");
     	else if (pos == 2)
     		textField1.setText(textField1.getText() + " ");
-    	else if (pos == 4)
-    		textField2.setText(textField2.getText() + " ");
     }
 
 	public void actionEffacer() 
@@ -279,12 +304,6 @@ class FPass10Trajets2Gares extends Ecran
 			String s = textField1.getText();
 			if (s.length() > 0)
 				textField1.setText(s.substring(0, s.length()-1));
-		}
-		else if (pos == 4)
-		{
-			String s = textField2.getText();
-			if (s.length() > 0)
-				textField2.setText(s.substring(0, s.length()-1));
 		}
 	}
 	
@@ -318,6 +337,10 @@ class FPass10Trajets2Gares extends Ecran
 	
 	public String getReduction()
 	{
-		return textField2.getText();
+		return choiceBox.getValue();
+	}
+	public String getType()
+	{
+		return choiceBox0.getValue();
 	}
 }
