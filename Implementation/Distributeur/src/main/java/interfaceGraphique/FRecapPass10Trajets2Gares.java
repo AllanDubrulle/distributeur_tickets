@@ -180,7 +180,7 @@ class FRecapPass10Trajets2Gares extends Ecran
         button.setOnAction(new EventHandler<ActionEvent>() 
         {
         	public void handle(ActionEvent event) {
-        		graphAC.choixRetour();
+        		graphAC.choixRetourTitre();
         	}
         });
 
@@ -216,7 +216,7 @@ class FRecapPass10Trajets2Gares extends Ecran
 
 	public void actionRetour() 
 	{
-		graphAC.choixRetour();
+		graphAC.choixRetourTitre();
 	}
 
 	public void actionSuivant() {}

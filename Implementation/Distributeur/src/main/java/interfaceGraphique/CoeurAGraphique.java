@@ -35,6 +35,7 @@ public interface CoeurAGraphique
 	public void afficherDemandeRecu();
 	public void actualiserMontant(double restant , double introduit);
 	public void afficherRendreMonnaie();
+	public void afficherRendreMonnaieInseree();
 	
 	public void afficherImpression();
 	public void afficherViderBacRecep();

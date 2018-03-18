@@ -161,7 +161,7 @@ class FPassIllimite extends Ecran
         choiceBox.setPrefWidth(225.0*largeur);
         choiceBox.setPrefHeight(31.0*hauteur);
         choiceBox.setItems(FXCollections.observableArrayList(GraphiqueACoeurImpl.getInstance().getReductions()));
-        HBox.setMargin(choiceBox, new Insets(0.0, 0.0, 0.0, 132.0*largeur));
+        HBox.setMargin(choiceBox, new Insets(0.0, 0.0, 0.0, 20.0*largeur));
         hBox4.setPadding(new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
         
         text6.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);	

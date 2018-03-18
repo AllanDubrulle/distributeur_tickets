@@ -8,6 +8,7 @@ public interface GraphiqueACoeur
 {	
 	public void choixDemarrerSimul();
 	public void choixAnnuler();
+	public void choixRetourTitre();
 	public void choixRetour();
 	public void choixOk();
 	public void choixOui();

@@ -162,7 +162,7 @@ class FRecapAboAchat extends Ecran
 
         text9.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text9.setStrokeWidth(0.0);
-        text9.setText(Integer.toString(validite));
+        text9.setText(validite + " mois");
         text9.setWrappingWidth(200.0*largeur);
         text9.setFont(new Font("System Bold Italic", 15.0*hauteur));
         hBox4.setPadding(new Insets(0.0, 0.0, 10.0, 0.0));
@@ -247,7 +247,7 @@ class FRecapAboAchat extends Ecran
         {
         	public void handle(ActionEvent event) 
         	{
-        		graphAC.choixRetour();
+        		graphAC.choixRetourTitre();
         	}
         });
 
@@ -276,7 +276,7 @@ class FRecapAboAchat extends Ecran
         hBox6.getChildren().addAll(text12, text13);
         hBox7.getChildren().addAll(text14, text15);
         hBox8.getChildren().addAll(text16, text17);
-        vBox.getChildren().addAll(hBox0, hBox1, hBox2, hBox3, hBox4, hBox5, hBox6, hBox8, hBox7, hBox8);
+        vBox.getChildren().addAll(hBox0, hBox1, hBox2, hBox3, hBox4, hBox5, hBox6, hBox8, hBox7);
         getChildren().addAll(rectangle, text, vBox, button, button0);
     }
     
@@ -286,7 +286,7 @@ class FRecapAboAchat extends Ecran
 
 	public void actionRetour() 
 	{
-		graphAC.choixRetour();
+		graphAC.choixRetourTitre();
 	}
 
 	public void actionSuivant() {}

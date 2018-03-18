@@ -243,13 +243,18 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 				monnaieRendu.getPieces().get(Pieces.P2),
 				monnaieRendu.getPieces().get(Pieces.P1));
 		Stage pStage6 = new Stage();
-		Scene sc = new Scene(root2, 250, 560);
+		Scene sc = new Scene(root2, 250, 385);
 		root2.getChildren().add(billet);
 		pStage6.setResizable(false);
 		pStage6.setScene(sc);
 		pStage6.setTitle("Monnaie rendue");
 		pStage6.show();
 	}
+	public void afficherRendreMonnaieInseree()
+	{
+		FenetreSimulation.getInstance().afficher(new FRendreMonnaieInseree(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
+	}
+	
 	public void effacerPIN()
 	{
 		FenetreSimulation.getInstance().viderPIN();

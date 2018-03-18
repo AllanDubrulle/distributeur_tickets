@@ -10,6 +10,7 @@ abstract class ControleurEtat
 	
 	public void entree() {}
 	public void annule() {}
+	public void retourTitre() {}
 	public void retour() {}
 	public void confirme() {}
 	

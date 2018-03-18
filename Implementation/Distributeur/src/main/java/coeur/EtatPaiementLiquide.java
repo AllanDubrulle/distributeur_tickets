@@ -1,5 +1,7 @@
 package coeur;
 
+import javafx.animation.PauseTransition;
+import javafx.util.Duration;
 import stockage.PasAssezDeMonnaie;
 
 class EtatPaiementLiquide extends EtatAnnulable
@@ -34,11 +36,11 @@ class EtatPaiementLiquide extends EtatAnnulable
 			catch(PasAssezDeMonnaie e)
 			{
 				Controleur.getInstance().getCoeurAGraphique().afficherRendu(Controleur.getInstance().getCoeurAStockage().rendreIntroduit());
-				//ajouter un message a l'utilisateur  
-				Controleur.getInstance().modifEtat(EtatPaiement.getInstance());
+				Controleur.getInstance().getCoeurAGraphique().afficherRendreMonnaieInseree();
+				PauseTransition delais = new PauseTransition(Duration.seconds(5));
+				delais.setOnFinished( event -> apres5sec());
+				delais.play();
 			}
-			
-
 		}
 		else
 		{
@@ -46,5 +48,9 @@ class EtatPaiementLiquide extends EtatAnnulable
 					Controleur.getInstance().getCoeurAStockage().getRendu(),
 					Controleur.getInstance().getCoeurAStockage().getIntroduit());
 		}
+	}
+	public void apres5sec()
+	{
+		Controleur.getInstance().modifEtat(EtatPaiement.getInstance());
 	}
 }

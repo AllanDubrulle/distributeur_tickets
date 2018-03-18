@@ -132,7 +132,7 @@ public class FPass10Trajets extends Ecran
         text2.setFont(new Font(15.0*hauteur));
         HBox.setMargin(text2, new Insets(0.0, 0.0, 0.0, 50.0*largeur));
 
-        choiceBox.setPrefWidth(300.0*largeur);
+        choiceBox.setPrefWidth(225.0*largeur);
         choiceBox.setPrefHeight(31.0*hauteur);
         choiceBox.setItems(FXCollections.observableArrayList(GraphiqueACoeurImpl.getInstance().getReductions()));
         HBox.setMargin(choiceBox, new Insets(0.0, 0.0, 0.0, 20.0*largeur));

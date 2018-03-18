@@ -28,6 +28,10 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 	{
 		controleur.getEtatActuel().annule();
 	}
+	public void choixRetourTitre() 
+	{
+		controleur.getEtatActuel().retourTitre();
+	}
 	public void choixRetour() 
 	{
 		controleur.getEtatActuel().retour();
@@ -228,8 +232,7 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 	{
 		if(Controleur.getInstance().getCoeurAStockage().existenceTrajet(gareDepart, gareArrivee))
 		{
-			Controleur.getInstance().getCoeurAStockage().creerBillet(dateValidite,nbrBillet,classe, gareDepart, gareArrivee, typeBillet,
-						reduction, allerRetour);
+			Controleur.getInstance().getCoeurAStockage().creerBillet(dateValidite,nbrBillet,classe, gareDepart, gareArrivee, typeBillet, reduction, allerRetour);
 		}
 		else
 		{

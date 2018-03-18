@@ -205,7 +205,7 @@ class FRecapPassIllimite extends Ecran
         {
         	public void handle(ActionEvent event) 
         	{
-        		graphAC.choixRetour();
+        		graphAC.choixRetourTitre();
         	}
         });
 
@@ -242,7 +242,7 @@ class FRecapPassIllimite extends Ecran
 
 	public void actionRetour() 
 	{
-		graphAC.choixRetour();
+		graphAC.choixRetourTitre();
 	}
 
 	public void actionSuivant() {}
