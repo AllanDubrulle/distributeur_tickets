@@ -6,7 +6,7 @@ public class Billet extends TitreDeTransport
 {
 	private boolean allerRetour;
 
-	public boolean isAllerRetour()
+	public boolean estAllerRetour()
 	{
 		return allerRetour;
 	}

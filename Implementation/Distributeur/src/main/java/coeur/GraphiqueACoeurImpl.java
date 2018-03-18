@@ -1,5 +1,6 @@
 package coeur;
 
+import java.sql.SQLException;
 import java.util.Date;
 
 import stockage.Composant;
@@ -82,34 +83,34 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 	{
 		controleur.getEtatActuel().choixPass10Trajets2Gares();
 	}
-	public void choixHoraire() 
+	public void choixHoraire() //pour afficher menu trois horaires
 	{
 		controleur.getEtatActuel().choixHoraire();
 	}
-	public void choixHoraireArrivee() 
+	public void choixHoraireArrivee() //afficher menu recherche arrivee
 	{
 		controleur.getEtatActuel().choixArrivees();
 	}
-	public void choixHoraireDepart() 
+	public void choixHoraireDepart() //afficher menu recherche depart
 	{
 		controleur.getEtatActuel().choixDeparts();
 	}
-	public void choixHoraireItineraire() 
+	public void choixHoraireItineraire() //afficher menu itineraire depart arrivee
 	{
 		controleur.getEtatActuel().choixItineraire();
 	}
 
-	public void choixRechercheGD() 
+	public void choixRechercheGD(String gareDepart, int heure, int minute) throws SQLException 
 	{
-		
+		controleur.getEtatActuel().valideRechercheGD(gareDepart, heure, minute);
 	}
-	public void choixRechercheGA() 
+	public void choixRechercheGA(String gareArrivee, int heure, int minute) throws SQLException 
 	{
-		
+		controleur.getEtatActuel().valideRechercheGA(gareArrivee, heure, minute);
 	}
-	public void choixRechercheGDEtGA() 
+	public void choixRechercheGDEtGA(String gareDepart, String gareArrivee, int heure, int minute) throws SQLException 
 	{
-		
+		controleur.getEtatActuel().valideRecherche(gareDepart, gareArrivee, heure, minute);
 	}
 	public void choixChangerHeure() 
 	{
@@ -228,7 +229,7 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 	}
 
 	
-	public void InfoBillet(Date dateValidite, int nbrBillet, int classe, String gareDepart,String gareArrivee,String typeBillet,
+	public void infoBillet(Date dateValidite, int nbrBillet, int classe, String gareDepart,String gareArrivee,String typeBillet,
 			String reduction, boolean allerRetour) throws ErreurDEncodage
 	{
 		if(Controleur.getInstance().getCoeurAStockage().existenceTrajet(gareDepart, gareArrivee))
@@ -241,12 +242,12 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 		}
 		
 	}
-	public void InfoAbo(Date dateValidite, Date dateExpiration, String gareDepart, String gareArrivee, int classe,
+	public void infoAbo(int validite, String gareDepart, String gareArrivee, int classe,
 			String reduction, String type, String codeBarre, String nom, String registre) throws ErreurDEncodage 
 	{
 		if(Controleur.getInstance().getCoeurAStockage().existenceTrajet(gareDepart, gareArrivee))	
 		{	
-			Controleur.getInstance().getCoeurAStockage().creerAbonnement(dateValidite, dateExpiration, gareDepart, gareArrivee, classe, reduction, type, codeBarre, nom, registre);	
+			Controleur.getInstance().getCoeurAStockage().creerAbonnement(validite, gareDepart, gareArrivee, classe, reduction, type, codeBarre, nom, registre);	
 		}	
 		else	
 		{	

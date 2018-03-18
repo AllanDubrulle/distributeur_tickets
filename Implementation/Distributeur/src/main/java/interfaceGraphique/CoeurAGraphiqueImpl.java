@@ -80,9 +80,9 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 		FenetreSimulation.getInstance().afficher(new FHoraireDepart(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 	}
 		
-	public void afficherResultatsHoraires() 
+	public void afficherResultatsHoraires(String[] tab) 
 	{
-		FenetreSimulation.getInstance().afficher(new FResultatsHoraires(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
+		FenetreSimulation.getInstance().afficher(new FResultatsHoraires(tab, FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 	}
 	
 	public void afficherNumAbo() 
@@ -168,7 +168,7 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 		case BILLET:
 			Billet billet = (Billet) titre;
 			StackPane root2 = new StackPane();
-			AfficherBillet afficheBillet = new AfficherBillet(billet.getGareDepart(), billet.getGareArrivee(), billet.isAllerRetour(), billet.getClasse().valeur(), billet.getType().toString(), billet.getReduction().toString(), billet.getDateValidite(), prix );
+			AfficherBillet afficheBillet = new AfficherBillet(billet.getGareDepart(), billet.getGareArrivee(), billet.estAllerRetour(), billet.getClasse().valeur(), billet.getType().toString(), billet.getReduction().toString(), billet.getDateValidite(), prix );
 			Stage stage2 = new Stage();
 			Scene scene2 = new Scene(root2, 580,300);
 			root2.getChildren().add(afficheBillet);
@@ -279,7 +279,7 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 			case BILLET:
 				Billet billet = (Billet) titre;
 				FenetreSimulation.getInstance().afficher(new FRecapBillet(billet.getGareDepart(), billet.getGareArrivee()
-						, billet.isAllerRetour(), billet.getClasse().valeur(),
+						, billet.estAllerRetour(), billet.getClasse().valeur(),
 						billet.getType().toString(), billet.getReduction().toString(),
 						nbrTitre, billet.getDateValidite(),
 						prix , FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));

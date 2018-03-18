@@ -1,5 +1,8 @@
 package stockage;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.HashMap;
 
@@ -57,13 +60,20 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		this.nbrTitre = nbrTitre;
 	}
 
-	public void creerAbonnement(Date dateValidite, Date dateExp, String gareDepart, String gareArrivee, int classe,
+	public void creerAbonnement(int validite, String gareDepart, String gareArrivee, int classe,
 			String reduction, String type, String codeBarre, String nom, String registreNational) throws ErreurDEncodage
 	{	
+		
+		LocalDate dateExpiration = LocalDate.now();
+		Date dateValidite = java.sql.Date.valueOf(dateExpiration);
+		dateExpiration.plusMonths(validite);
+		Date dateExp = java.sql.Date.valueOf(dateExpiration);
+		String annee = String.valueOf(dateExpiration.getYear());
+		String mois = String.valueOf(dateExpiration.getMonthValue());
+		String jour = String.valueOf(dateExpiration.getDayOfMonth());
 		Reduction reduc = null;	
 		Classe classeAbo = null;	
-		TypeTitre typeAbo = null;	
-		int validite = dateExp.getMonth()-dateValidite.getMonth();	
+		TypeTitre typeAbo = null;		
 		if (classe == 1)	
 			classeAbo = Classe.C1;	
 		if (classe == 2)	
@@ -81,21 +91,17 @@ public class CoeurAStockageImpl implements CoeurAStockage
 			{	
 				typeAbo = TypeTitre.values()[i];	
 			}	
-		}	
-		if (validite == 0)	
-			validite = 12;	
-		if (validite == 2)	
-			validite = 1;	
-		if (validite == 4)	
-			validite = 3;	
-		if (validite == 7)	
-			validite = 6;	
+		}		
 		if (reduc==null || typeAbo == null || classeAbo ==null )	
 		{	
 			throw new ErreurDEncodage ("problème d'encodage");	
 		}	
 		setAchat(new Abonnement(dateValidite, dateExp, gareDepart, gareArrivee,  classeAbo, reduc, typeAbo, codeBarre, nom, registreNational));	
 		setPrix(calculerPrixAbo(gareDepart, gareArrivee, reduc, typeAbo, classeAbo, validite));	
+		BDDTitre bTitre = new BDDTitre();
+		bTitre.connexion();
+		bTitre.ajouterAbonnement(nom, registreNational, gareDepart, gareArrivee, annee, mois, jour);
+		bTitre.deconnexion();
 	}
 
 	public void creerPass() 
@@ -257,7 +263,34 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		introduit+=((double)i/100);
 		
 	}
-
+	
+	public String[] rechercherHoraireDepart(String gareDepart, int heure, int minute) throws SQLException
+	{
+		HoraireTrains hTrains = new HoraireTrains();
+		hTrains.connexion();
+		ResultSet res = hTrains.calculToutesLesGaresArrivee(gareDepart, heure, minute);
+		String[] tab = hTrains.conversionRequeteEnTableau(res);
+		return tab;
+	}
+	
+	public String[] rechercherHoraireItineraire(String gareDepart, String gareArrivee, int heure, int minute) throws SQLException
+	{
+		HoraireTrains hTrains = new HoraireTrains();
+		hTrains.connexion();
+		ResultSet res = hTrains.calculItineraire(gareDepart, gareArrivee, heure, minute);
+		String[] tab = hTrains.conversionRequeteEnTableau(res);
+		return tab;
+	}
+	
+	public String[] rechercherHoraireArrivee(String gareArrivee, int heure, int minute) throws SQLException
+	{
+		HoraireTrains hTrains = new HoraireTrains();
+		hTrains.connexion();
+		ResultSet res = hTrains.calculToutesLesGaresDepart(gareArrivee, heure, minute);
+		String[] tab = hTrains.conversionRequeteEnTableau(res);
+		return tab;
+	}
+	
 	public Rendu rendreMonnaie(double rendu) throws PasAssezDeMonnaie
 	{
 		return monnayeur.retournerArgent((int)(rendu*100));

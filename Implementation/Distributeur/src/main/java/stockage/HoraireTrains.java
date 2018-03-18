@@ -23,8 +23,7 @@ class HoraireTrains extends GestionBaseDeDonnees
         	{
         		if ((minuteTrajet(depart, arrivee) < minute && heure >= 22) || (heure > 22))
         		{
-        			System.out.println("Il n'y a plus de trajet à partir de cette heure-là ! Voici les trajets possibles demain matin : \n");
-        			String requete = "SELECT Heure, minute FROM Horaire WHERE DEPART = ? and ARRIVEE = ?";
+        			String requete = "SELECT depart, arrivee, Heure, minute FROM Horaire WHERE DEPART = ? and ARRIVEE = ?";
 	        		PreparedStatement declar = this.connexion.prepareStatement(requete);
 	        		declar.setString(1, departMaj);
 	        		declar.setString(2, arriveeMaj);
@@ -32,8 +31,7 @@ class HoraireTrains extends GestionBaseDeDonnees
         		}
         		else
         		{
-        			System.out.println("Voici les prochains trajets possibles : \n");
-        			String requete = "SELECT Heure, minute FROM Horaire WHERE DEPART = ? and ARRIVEE = ? and ((Heure >= ? and Minute >= ?) or (Heure > ? and Minute < ?))";
+        			String requete = "SELECT depart, arrivee, Heure, minute FROM Horaire WHERE DEPART = ? and ARRIVEE = ? and ((Heure >= ? and Minute >= ?) or (Heure > ? and Minute < ?))";
         			PreparedStatement declar = this.connexion.prepareStatement(requete);
         			declar.setString(1, departMaj);
         			declar.setString(2, arriveeMaj);
@@ -123,16 +121,14 @@ class HoraireTrains extends GestionBaseDeDonnees
         	{
         		if (heure > 22)
         		{
-        			System.out.println("Il n'y a plus de trajet à partir de cette heure-là ! Voici les trajets possibles demain matin depuis " + departMaj + " : \n");
-        			String requete = "SELECT arrivee, Heure, minute FROM Horaire WHERE DEPART = ? order by heure, minute";
+        			String requete = "SELECT depart, arrivee, Heure, minute FROM Horaire WHERE DEPART = ? order by heure, minute";
 	        		PreparedStatement declar = this.connexion.prepareStatement(requete);
 	        		declar.setString(1, departMaj);
 	        		res = declar.executeQuery();	        		
         		}
         		else
         		{
-        			System.out.println("Voici les prochains trajets possibles depuis " + departMaj + " : \n");
-        			String requete = "SELECT arrivee, Heure, minute FROM Horaire WHERE DEPART = ? and ((Heure >= ? and Minute >= ?) or (Heure > ? and Minute < ?)) order by heure, minute";
+        			String requete = "SELECT depart, arrivee, Heure, minute FROM Horaire WHERE DEPART = ? and ((Heure >= ? and Minute >= ?) or (Heure > ? and Minute < ?)) order by heure, minute";
         			PreparedStatement declar = this.connexion.prepareStatement(requete);
         			declar.setString(1, departMaj);
         			declar.setInt(2, heure);
@@ -160,16 +156,14 @@ class HoraireTrains extends GestionBaseDeDonnees
         	{
         		if (heure > 22)
         		{
-        			System.out.println("Il n'y a plus de trajet à partir de cette heure-là ! Voici les trajets possibles demain matin vers" + arriveeMaj + " :" +  "\n");
-        			String requete = "SELECT depart, Heure, minute FROM Horaire WHERE arrivee = ? order by heure, minute";
+        			String requete = "SELECT depart, arrivee, Heure, minute FROM Horaire WHERE arrivee = ? order by heure, minute";
 	        		PreparedStatement declar = this.connexion.prepareStatement(requete);
 	        		declar.setString(1, arriveeMaj);
 	        		res = declar.executeQuery();	        		
         		}
         		else
         		{
-        			System.out.println("Voici les prochains trajets possibles vers " + arriveeMaj + " :" +  "\n");
-        			String requete = "SELECT depart, Heure, minute FROM Horaire WHERE arrivee = ? and ((Heure >= ? and Minute >= ?) or (Heure > ? and Minute < ?)) order by heure, minute";
+        			String requete = "SELECT depart, arrivee, Heure, minute FROM Horaire WHERE arrivee = ? and ((Heure >= ? and Minute >= ?) or (Heure > ? and Minute < ?)) order by heure, minute";
         			PreparedStatement declar = this.connexion.prepareStatement(requete);
         			declar.setString(1, arriveeMaj);
         			declar.setInt(2, heure);
@@ -185,6 +179,25 @@ class HoraireTrains extends GestionBaseDeDonnees
             e.printStackTrace();
         }
         return res;
+    }
+    
+    public String[] conversionRequeteEnTableau(ResultSet res) throws SQLException
+    {
+    	String[] tabHor = new String[20];
+    	ResultSetMetaData resBis = res.getMetaData();
+		int nbrColonnes = resBis.getColumnCount();
+    	int compteur = 0;
+    	int position = 0;
+		while (res.next() && compteur <= 4) 
+		{
+			for (int i = 1; i <= nbrColonnes; i++) {
+				String valeurColonne = res.getString(i);
+				tabHor[position] = valeurColonne;
+				position += 1;
+			}
+			compteur+=1;
+		}
+    	return tabHor;
     }
     
     public static void afficherHeures(ResultSet res) throws SQLException //affiche au maximum les 5 prochaines heures d'un trajet

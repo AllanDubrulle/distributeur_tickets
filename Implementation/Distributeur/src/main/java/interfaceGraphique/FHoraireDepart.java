@@ -1,5 +1,7 @@
 package interfaceGraphique;
 
+import java.sql.SQLException;
+
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.*;
@@ -116,7 +118,14 @@ class FHoraireDepart extends Ecran
         {
         	public void handle(ActionEvent event) 
         	{
-        		graphAC.choixRechercheGD();
+        		try 
+        		{
+					graphAC.choixRechercheGD(textField.getText(), Integer.parseInt(textField0.getText()), Integer.parseInt(textField1.getText()));
+				} 
+        		catch (NumberFormatException | SQLException e) 
+        		{
+					e.printStackTrace();
+				}
         	}
         });
         VBox.setMargin(button, new Insets(20.0*hauteur, 0.0, 0.0, 0.0));
@@ -232,6 +241,13 @@ class FHoraireDepart extends Ecran
 	
 	public void actionEntrer() 
 	{
-		graphAC.choixRechercheGD();
+		try 
+		{
+			graphAC.choixRechercheGD(textField.getText(), Integer.parseInt(textField0.getText()), Integer.parseInt(textField1.getText()));
+		} 
+		catch (NumberFormatException | SQLException e) 
+		{
+			e.printStackTrace();
+		}
 	}
 }

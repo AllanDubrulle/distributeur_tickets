@@ -12,7 +12,7 @@ class Controleur
 	private ControleurEtat etatActuel = EtatAccueil.getInstance();
 	private Stack<ControleurEtat> etatsPrecedents = new Stack<ControleurEtat>();
 	private CoeurAGraphique coeurAGraphique = CoeurAGraphiqueImpl.getInstance();
-	private CoeurAStockage coeurAStockage = new CoeurAStockageImpl(); // pourquoi pas de singleton ici
+	private CoeurAStockage coeurAStockage = new CoeurAStockageImpl(); // pourquoi pas de singleton ici AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH
 	private static Controleur instance;
 	private Commande commande;
 	

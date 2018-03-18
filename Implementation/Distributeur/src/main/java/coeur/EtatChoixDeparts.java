@@ -1,5 +1,7 @@
 package coeur;
 
+import java.sql.SQLException;
+
 public class EtatChoixDeparts extends EtatAnnulable 
 {
 	private static EtatChoixDeparts instance;
@@ -10,9 +12,10 @@ public class EtatChoixDeparts extends EtatAnnulable
 		return (EtatChoixDeparts) instance;
 	}
 	
-	public void valideRecherche() 
+	public void valideRechercheGD(String gareDepart, int heure, int minute) throws SQLException
 	{
-		
+		String[] tab = Controleur.getInstance().getCoeurAStockage().rechercherHoraireDepart(gareDepart, heure, minute);
+		Controleur.getInstance().getCoeurAGraphique().afficherResultatsHoraires(tab);
 	}
 	
 	public void entree() 

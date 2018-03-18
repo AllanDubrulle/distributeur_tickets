@@ -1,5 +1,6 @@
 package coeur;
 
+import java.sql.SQLException;
 import java.util.Date;
 
 import stockage.Composant;
@@ -28,9 +29,9 @@ public interface GraphiqueACoeur
 	public void choixHoraireDepart();
 	public void choixHoraireItineraire();
 	
-	public void choixRechercheGD();
-	public void choixRechercheGA();
-	public void choixRechercheGDEtGA();
+	public void choixRechercheGD(String gareDepart, int heure, int minute) throws SQLException;
+	public void choixRechercheGA(String gareArrivee, int heure, int minute) throws SQLException;
+	public void choixRechercheGDEtGA(String gareDepart, String gareArrivee, int heure, int minute) throws SQLException;
 	public void choixChangerHeure();
 	
 	public void choixValider();
@@ -62,8 +63,8 @@ public interface GraphiqueACoeur
 	public void choixPaiementParCarte();
 	public void choixPaiementLiquide();
 	public void choixValiderNumCarte();
-	public void InfoBillet(Date dateValidite, int nbrBillet, int jour, String gareDepart, String gareArrivee, String type, String reduction, boolean allerRetour) throws ErreurDEncodage;
-	public void InfoAbo(Date dateValidite, Date dateExpiration, String gareDepart, String gareArrivee, int classe, String reduction, String type, String codeBarre, String nom, String registre) throws ErreurDEncodage;
+	public void infoBillet(Date dateValidite, int nbrBillet, int jour, String gareDepart, String gareArrivee, String type, String reduction, boolean allerRetour) throws ErreurDEncodage;
+	public void infoAbo(int validite, String gareDepart, String gareArrivee, int classe, String reduction, String type, String codeBarre, String nom, String registre) throws ErreurDEncodage;
 
 	public void viderCaisse();
 	public void TombeEnPanne(Composant composant); // pas sur que ce soit la solution 

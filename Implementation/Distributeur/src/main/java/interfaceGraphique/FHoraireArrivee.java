@@ -1,5 +1,7 @@
 package interfaceGraphique;
 
+import java.sql.SQLException;
+
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.*;
@@ -119,7 +121,14 @@ class FHoraireArrivee extends Ecran
         {
         	public void handle(ActionEvent event) 
         	{
-        		graphAC.choixRechercheGA();
+        		try 
+        		{
+        			graphAC.choixRechercheGA(textField.getText(), Integer.parseInt(textField0.getText()), Integer.parseInt(textField1.getText()));
+        		} 
+        		catch (NumberFormatException | SQLException e) 
+        		{
+        			e.printStackTrace();
+        		}
         	}
         });
 
@@ -233,6 +242,13 @@ class FHoraireArrivee extends Ecran
 	
 	public void actionEntrer() 
 	{
-		graphAC.choixRechercheGA();
+		try 
+		{
+			graphAC.choixRechercheGA(textField.getText(), Integer.parseInt(textField0.getText()), Integer.parseInt(textField1.getText()));
+		} 
+		catch (NumberFormatException | SQLException e) 
+		{
+			e.printStackTrace();
+		}
 	}
 }

@@ -22,7 +22,7 @@ public interface CoeurAGraphique
 	public void afficherRecapRenouvAboScanne();
 
 	
-	public void afficherResultatsHoraires();
+	public void afficherResultatsHoraires(String[] tab);
 	
 	public void afficherNumAbo();
 	public void afficherChoixTaperCode();

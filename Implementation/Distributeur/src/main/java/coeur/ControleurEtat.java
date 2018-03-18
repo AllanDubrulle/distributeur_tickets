@@ -1,5 +1,7 @@
 package coeur;
 
+import java.sql.SQLException;
+
 import stockage.Composant;
 
 abstract class ControleurEtat 
@@ -28,7 +30,9 @@ abstract class ControleurEtat
 	public void choixArrivees() {}
 	public void choixDeparts() {}
 	
-	
+	public void valideRecherche(String gareDepart, String gareArrivee, int heure, int minute) throws SQLException {}
+	public void valideRechercheGA(String gareDepart, int heure, int minute) throws SQLException {}
+	public void valideRechercheGD(String gareDepart, int heure, int minute) throws SQLException {}
 	public void valideRenouvAbo() {}
 	public void valideRenouvAboScanne() {}
 	public void valideNumAbo() {}
@@ -61,4 +65,5 @@ abstract class ControleurEtat
 	}
 
 	public void valider() {}
+
 }

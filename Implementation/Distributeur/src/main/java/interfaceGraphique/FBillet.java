@@ -282,7 +282,7 @@ class FBillet extends Ecran
                     date.setYear(annee-1900);
                     date.setDate(jour);
                     date.setMonth(mois-1);
-                    graphAC.InfoBillet(date,nbrBillet,classe,textField3.getText(),textField4.getText(),choiceBox0.getValue(), choiceBox.getValue() ,radioButton1.isSelected());
+                    graphAC.infoBillet(date,nbrBillet,classe,textField3.getText(),textField4.getText(),choiceBox0.getValue(), choiceBox.getValue() ,radioButton1.isSelected());
             		graphAC.choixValider();
             	}
             	catch (NumberFormatException | ErreurDEncodage e)
