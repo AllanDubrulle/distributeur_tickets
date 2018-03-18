@@ -12,7 +12,7 @@ public interface CoeurAStockage
 	public void creerBillet(Date dateValidite, int nbrBillet, int classe, String gareDepart, String gareArrivee, String typeBillet, String reduction, boolean allerRetour) throws ErreurDEncodage;
 	public void creerAbonnement(Date dateValidite, Date dateExp, String gareDepart, String gareArrivee, int classe, String reduction, String type, String codeBarre, String nom, String registreNational) throws ErreurDEncodage;
 	public void creerPass();
-	public double calculerPrix(String gareDepart, String gareArrivee,Reduction reduc,TypeTitre typeBillet,Classe classe);
+	public double calculerPrixBillet(String gareDepart, String gareArrivee,Reduction reduc,TypeTitre typeBillet,Classe classe);
 	public boolean existenceTrajet(String gareDepart,String gareArrivee);
 	public String[] getListeReduction();
 	public String[] getListeType();

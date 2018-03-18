@@ -145,14 +145,14 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		}
 		setNbrTitre(nbrBillet);
 		setAchat(new Billet(dateValidite,new Date(), gareDepart, gareArrivee,  classeBillet, type,reduc,allerRetour));
-		setPrix(calculerPrix(gareDepart,gareArrivee,reduc,type,classeBillet)*nbrBillet);
+		setPrix(calculerPrixBillet(gareDepart,gareArrivee,reduc,type,classeBillet)*nbrBillet);
 	}
 
-	public double calculerPrix(String gareDepart, String gareArrivee,Reduction reduc,TypeTitre typeBillet,Classe classe)
+	public double calculerPrixBillet(String gareDepart, String gareArrivee,Reduction reduc,TypeTitre typeBillet,Classe classe)
 	{
 		BDDTitre bTitre = new BDDTitre();
 		bTitre.connexion();
-		double calculPrix= bTitre.calculerPrix(gareDepart, gareArrivee);
+		double calculPrix= bTitre.calculerPrixBillet(gareDepart, gareArrivee);
 		bTitre.deconnexion();
 		calculPrix -=  calculPrix*  ((double)reduc.valeur()/100);
 		calculPrix =  calculPrix- calculPrix*((double)typeBillet.valeur()/100);
@@ -161,7 +161,10 @@ public class CoeurAStockageImpl implements CoeurAStockage
 	}
 	public double calculerPrixAbo(String gareDepart, String gareArrivee, Reduction reduc, TypeTitre type, Classe classe, int validite)	
 	{	
-		double calculPrix=100;	
+		BDDTitre bTitre = new BDDTitre();
+		bTitre.connexion();
+		double calculPrix = bTitre.calculerPrixAbo(gareDepart, gareArrivee);	
+		bTitre.deconnexion();
 		calculPrix -= calculPrix*  ((double)reduc.valeur()/100);	
 		calculPrix =  calculPrix- calculPrix*((double)type.valeur()/100);	
 		calculPrix = calculPrix*((double)3-classe.valeur());	
