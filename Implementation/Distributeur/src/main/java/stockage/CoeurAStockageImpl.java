@@ -1,6 +1,7 @@
 package stockage;
 
 import java.util.Date;
+import java.util.HashMap;
 
 import stockage.imprimable.Abonnement;
 import stockage.imprimable.Billet;
@@ -17,7 +18,20 @@ public class CoeurAStockageImpl implements CoeurAStockage
 	private int nbrTitre;
 	private double prix;
 	private double introduit;
-	private Monnayeur monnayeur = new Monnayeur(); // a modifier si on modifie panne
+	private Monnayeur monnayeur;  // a modifier si on modifie panne
+	private HashMap<Composant,Boolean> composantEnMarche;
+	private Imprimante imprimante;
+	
+	public CoeurAStockageImpl()
+	{
+		monnayeur = new Monnayeur();
+		imprimante = new Imprimante(this);
+		composantEnMarche = new HashMap<Composant,Boolean>();
+		for(Composant composant : Composant.values())
+		{
+			composantEnMarche.put(composant, true);
+		}
+	}
 	
 	public double getPrix()
 	{
@@ -275,9 +289,31 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		return Math.abs(introduit-prix);
 	}
 
-	@Override
 	public void viderCaisse()
 	{
 		monnayeur.vider();
 	}
+
+	public boolean estEnMarche(Composant composant)
+	{
+		
+		return composantEnMarche.get(composant);
+	}
+
+	public void impression() throws ComposantHorsService, PlusDePapier
+	{
+		imprimante.imprimer();
+	}
+
+	
+	public void tombeEnPanne(Composant composant)
+	{
+		composantEnMarche.put(composant, false);
+	}
+
+	public void composantRepare(Composant composant)
+	{
+		composantEnMarche.put(composant, true);
+	}
+	
 }

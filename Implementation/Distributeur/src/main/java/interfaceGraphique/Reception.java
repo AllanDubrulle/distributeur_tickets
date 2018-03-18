@@ -1,13 +1,11 @@
 package interfaceGraphique;
 
+import javafx.scene.layout.Pane;
 import javafx.scene.shape.*;
 
-class Reception extends ComposantVisible 
+class Reception extends Pane 
 {	
-	public Reception(boolean enMarche) 
-	{
-		super(enMarche);
-	}
+
 	
 	public Reception(double hauteur, double largeur)
 	{

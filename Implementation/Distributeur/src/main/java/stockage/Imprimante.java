@@ -1,9 +1,14 @@
 package stockage;
 
-class Imprimante extends interfaceGraphique.ComposantVisible
+class Imprimante 
 {
 	private int nbrImpressions = 250;
-
+	private CoeurAStockage cAStock;
+	
+	public Imprimante(CoeurAStockage cAStock)
+	{
+		this.cAStock = cAStock;
+	}	
 	public int getNbrImpressions() 
 	{
 		return nbrImpressions;
@@ -16,14 +21,16 @@ class Imprimante extends interfaceGraphique.ComposantVisible
 	
 	public void imprimer() throws ComposantHorsService, PlusDePapier
 	{
-		if(!estEnMarche())
+		if(!cAStock.estEnMarche(Composant.IMPRIMANTE))
 		{
 			throw new ComposantHorsService("Imprimante hors service");
 		}
-		if(getNbrImpressions() == 0)
+		else if(getNbrImpressions() == 0)
 		{
 			throw new PlusDePapier("Plus de papier en réserve");
 		}
 		setNbrImpressions(getNbrImpressions()-1);
-	}	
+	}
+
+
 }

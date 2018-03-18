@@ -1,6 +1,5 @@
 package interfaceGraphique;
 
-import coeur.GraphiqueACoeur;
 import coeur.GraphiqueACoeurImpl;
 import interfaceGraphique.Clavier;
 import interfaceGraphique.FenteBillet;
@@ -106,6 +105,7 @@ class FenetreSimulation extends BorderPane
         checkMenuItem0.setText("Fente ра billets");
         checkMenuItem0.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
+            	
             	mAJComposants();
             }
         });

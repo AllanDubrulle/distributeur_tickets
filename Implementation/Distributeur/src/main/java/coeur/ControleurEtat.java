@@ -1,5 +1,7 @@
 package coeur;
 
+import stockage.Composant;
+
 abstract class ControleurEtat 
 {	
 	protected ControleurEtat() {}
@@ -46,6 +48,11 @@ abstract class ControleurEtat
 	public void choixOui() {}
 	public void choixNon() {}
 	public void choixOk() {}
+	public void tombeEnPanne(Composant composant)
+	{
+		Controleur.getInstance().getCoeurAStockage().tombeEnPanne(composant);
+		Controleur.getInstance().getCoeurAGraphique().actualiserComposant(composant);
+	}
 	
 	
 	public String toString() 

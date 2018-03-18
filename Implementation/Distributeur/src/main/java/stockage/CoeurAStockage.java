@@ -26,5 +26,9 @@ public interface CoeurAStockage
 	public void reinitialisation();
 	public double getRendu();
 	public void viderCaisse();
+	public boolean estEnMarche(Composant composant);
+	public void impression() throws ComposantHorsService, PlusDePapier;
+	public void tombeEnPanne(Composant composant);
+	public void composantRepare(Composant composant);
 
 }

@@ -1,5 +1,7 @@
 package interfaceGraphique;
 
+import coeur.GraphiqueACoeur;
+import coeur.GraphiqueACoeurImpl;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.*;
@@ -8,15 +10,12 @@ import javafx.scene.shape.*;
 import javafx.scene.text.Font;
 import javafx.scene.layout.*;
 
-class LecteurCarte extends ComposantVisible 
+class LecteurCarte extends Pane 
 {
 	private PasswordField passwordField;
 	private Button button, button0, button1, button2, button3, button4, button5, button6, button7, button8, button9, button10, button11;
-	
-	public LecteurCarte(boolean enMarche) 
-	{
-		super(enMarche);
-	}
+	private GraphiqueACoeur graphAC = GraphiqueACoeurImpl.getInstance();
+
 
 	public LecteurCarte(double hauteur, double largeur) 
 	{

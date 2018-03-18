@@ -1,13 +1,10 @@
 package interfaceGraphique;
 
+import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
 
-class Scanneur extends ComposantVisible 
+class Scanneur extends Pane 
 {
-	public Scanneur(boolean enMarche) 
-	{
-		super(enMarche);
-	}
 	
 	public Scanneur(double hauteur, double largeur)
 	{

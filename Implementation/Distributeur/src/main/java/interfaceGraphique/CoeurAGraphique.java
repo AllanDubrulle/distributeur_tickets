@@ -1,6 +1,7 @@
 package interfaceGraphique;
 
 import coeur.Commande;
+import stockage.Composant;
 import stockage.Rendu;
 import stockage.imprimable.TitreDeTransport;
 
@@ -45,5 +46,6 @@ public interface CoeurAGraphique
 	public void afficherRecu(double prix , double introduit , double rendu);
 	public void afficherRendu(Rendu monnaieRendu);
 	public void afficherTitre(Commande commande, TitreDeTransport titre, double prix);
+	public void actualiserComposant(Composant composant);
 	
 }

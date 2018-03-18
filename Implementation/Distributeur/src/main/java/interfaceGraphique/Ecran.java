@@ -2,13 +2,14 @@ package interfaceGraphique;
 
 import coeur.GraphiqueACoeur;
 import coeur.GraphiqueACoeurImpl;
+import javafx.scene.layout.Pane;
 
-abstract class Ecran extends ComposantVisible 
+abstract class Ecran extends Pane 
 {
-	public Ecran(boolean enMarche) 
+	/*public Ecran(boolean enMarche) 
 	{
 		super(enMarche);
-	}
+	}*/
 	
 	public Ecran() {}
 	

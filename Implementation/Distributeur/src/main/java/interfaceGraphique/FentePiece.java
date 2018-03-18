@@ -1,19 +1,19 @@
 package interfaceGraphique;
 
+import coeur.GraphiqueACoeur;
+import coeur.GraphiqueACoeurImpl;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.*;
+import javafx.scene.layout.Pane;
 import javafx.scene.shape.*;
 import javafx.scene.text.Font;
 
-class FentePiece extends ComposantVisible
+class FentePiece extends Pane
 {
 	private Button button, button0, button1, button2, button3, button4, button5, button6;
-	
-	public FentePiece(boolean enMarche) 
-	{
-		super(enMarche);
-	}
+	private GraphiqueACoeur graphAC = GraphiqueACoeurImpl.getInstance();
+
 	
 	public FentePiece(double hauteur, double largeur) 
 	{

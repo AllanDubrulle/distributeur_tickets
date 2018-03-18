@@ -1,8 +1,9 @@
 package interfaceGraphique;
 
+import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
 
-class EcranContour extends ComposantVisible
+class EcranContour extends Pane
 {
 	private double hauteur = FenetreConfiguration.getInstance().getHauteur()/850;
 	private double largeur = FenetreConfiguration.getInstance().getLargeur()/1350;

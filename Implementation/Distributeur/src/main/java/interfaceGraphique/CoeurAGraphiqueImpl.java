@@ -5,6 +5,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import stockage.BilletMonnaie;
+import stockage.Composant;
 import stockage.Pieces;
 import stockage.Rendu;
 import stockage.imprimable.Billet;
@@ -345,5 +346,11 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	{
 		fLiquide.actualiserMontant(restant, introduit);
 		
+	}
+
+	
+	public void actualiserComposant(Composant composant)
+	{
+		//similaire a maj composant 
 	}
 }

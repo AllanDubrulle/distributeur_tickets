@@ -8,14 +8,10 @@ import javafx.scene.shape.*;
 import javafx.scene.text.Font;
 import javafx.scene.layout.*;
 
-class Clavier extends ComposantVisible 
+class Clavier extends Pane 
 {		
 	private Ecran fenetre;
 	
-	public Clavier(boolean enMarche) 
-	{
-		super(enMarche);
-	}
 	
 	public Clavier(double hauteur, double largeur) 
 	{

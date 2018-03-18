@@ -1,6 +1,6 @@
 package stockage;
 
-class PlusDePapier extends Exception
+public class PlusDePapier extends Exception
 {
 	public PlusDePapier(String msg)
 	{

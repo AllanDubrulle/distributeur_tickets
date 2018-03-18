@@ -2,6 +2,7 @@ package coeur;
 
 import java.util.Date;
 
+import stockage.Composant;
 import stockage.ErreurDEncodage;
 
 public class GraphiqueACoeurImpl implements GraphiqueACoeur 
@@ -265,6 +266,12 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 	public void viderCaisse()
 	{
 		Controleur.getInstance().getCoeurAStockage().viderCaisse();		
+	}
+
+	
+	public void TombeEnPanne(Composant composant)
+	{
+		Controleur.getInstance().getEtatActuel().tombeEnPanne(composant);
 	}
 
 	

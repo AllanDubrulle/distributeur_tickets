@@ -2,6 +2,7 @@ package coeur;
 
 import java.util.Date;
 
+import stockage.Composant;
 import stockage.ErreurDEncodage;
 
 public interface GraphiqueACoeur 
@@ -65,4 +66,5 @@ public interface GraphiqueACoeur
 	public void InfoAbo(Date dateValidite, Date dateExpiration, String gareDepart, String gareArrivee, int classe, String reduction, String type, String codeBarre, String nom, String registre) throws ErreurDEncodage;
 
 	public void viderCaisse();
+	public void TombeEnPanne(Composant composant); // pas sur que ce soit la solution 
 }
