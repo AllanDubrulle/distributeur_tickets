@@ -12,7 +12,7 @@ class HoraireTrains extends GestionBaseDeDonnees
         super();
     }
    
-    public ResultSet calculItineraire(String depart, String arrivee, int heure, int minute) //operationnel, retourne null si le trajet n'existe pas
+    public ResultSet calculItineraire(String depart, String arrivee, int heure, int minute) //ATTENTION LES PRINT POSERONT PROBLEME LORS DE L'INSERTION DANS LA FENETRE
     {
         String departMaj = depart.toUpperCase();
         String arriveeMaj = arrivee.toUpperCase();
@@ -123,16 +123,16 @@ class HoraireTrains extends GestionBaseDeDonnees
         	{
         		if (heure > 22)
         		{
-        			System.out.println("Il n'y a plus de trajet à partir de cette heure-là ! Voici les trajets possibles demain matin : \n");
-        			String requete = "SELECT arrivee, Heure, minute FROM Horaire WHERE DEPART = ?";
+        			System.out.println("Il n'y a plus de trajet à partir de cette heure-là ! Voici les trajets possibles demain matin depuis " + departMaj + " : \n");
+        			String requete = "SELECT arrivee, Heure, minute FROM Horaire WHERE DEPART = ? order by heure, minute";
 	        		PreparedStatement declar = this.connexion.prepareStatement(requete);
 	        		declar.setString(1, departMaj);
 	        		res = declar.executeQuery();	        		
         		}
         		else
         		{
-        			System.out.println("Voici les prochains trajets possibles : \n");
-        			String requete = "SELECT arrivee, Heure, minute FROM Horaire WHERE DEPART = ? and ((Heure >= ? and Minute >= ?) or (Heure > ? and Minute < ?))";
+        			System.out.println("Voici les prochains trajets possibles depuis " + departMaj + " : \n");
+        			String requete = "SELECT arrivee, Heure, minute FROM Horaire WHERE DEPART = ? and ((Heure >= ? and Minute >= ?) or (Heure > ? and Minute < ?)) order by heure, minute";
         			PreparedStatement declar = this.connexion.prepareStatement(requete);
         			declar.setString(1, departMaj);
         			declar.setInt(2, heure);
@@ -160,16 +160,16 @@ class HoraireTrains extends GestionBaseDeDonnees
         	{
         		if (heure > 22)
         		{
-        			System.out.println("Il n'y a plus de trajet à partir de cette heure-là ! Voici les trajets possibles demain matin : \n");
-        			String requete = "SELECT depart, Heure, minute FROM Horaire WHERE arrivee = ?";
+        			System.out.println("Il n'y a plus de trajet à partir de cette heure-là ! Voici les trajets possibles demain matin vers" + arriveeMaj + " :" +  "\n");
+        			String requete = "SELECT depart, Heure, minute FROM Horaire WHERE arrivee = ? order by heure, minute";
 	        		PreparedStatement declar = this.connexion.prepareStatement(requete);
 	        		declar.setString(1, arriveeMaj);
 	        		res = declar.executeQuery();	        		
         		}
         		else
         		{
-        			System.out.println("Voici les prochains trajets possibles : \n");
-        			String requete = "SELECT depart, Heure, minute FROM Horaire WHERE arrivee = ? and ((Heure >= ? and Minute >= ?) or (Heure > ? and Minute < ?))";
+        			System.out.println("Voici les prochains trajets possibles vers " + arriveeMaj + " :" +  "\n");
+        			String requete = "SELECT depart, Heure, minute FROM Horaire WHERE arrivee = ? and ((Heure >= ? and Minute >= ?) or (Heure > ? and Minute < ?)) order by heure, minute";
         			PreparedStatement declar = this.connexion.prepareStatement(requete);
         			declar.setString(1, arriveeMaj);
         			declar.setInt(2, heure);
@@ -202,7 +202,43 @@ class HoraireTrains extends GestionBaseDeDonnees
 						System.out.print(":");
 					}
 					String valeurColonne = res.getString(i);
-					System.out.print(valeurColonne /*+ " " + res0.getColumnName(i)*/);
+					System.out.print(valeurColonne);
+				}
+				System.out.println("");
+				compteur+=1;
+			}
+    	}
+    	else
+    	{
+    		System.out.println("Ce trajet n'existe pas !");
+    	}
+    	
+	}
+    
+    public static void afficherHeuresSpecial(ResultSet res) throws SQLException //affiche au maximum les 5 prochaines heures d'un trajet
+    { 
+    	if (res != null)
+    	{
+    		ResultSetMetaData resBis = res.getMetaData();
+			int nbrColonnes = resBis.getColumnCount();
+			int compteur = 0;
+			while (res.next() && compteur <= 4) 
+			{
+				for (int i = 1; i <= nbrColonnes; i++) {
+					if (i == 1)
+					{
+						String valeurColonne = res.getString(i);
+						System.out.print(valeurColonne + " ");
+					}
+					if (i > 2) 
+					{							
+						System.out.print(":");
+					}
+					if (i >= 2)
+					{
+					String valeurColonne = res.getString(i);
+					System.out.print(valeurColonne);
+					}
 				}
 				System.out.println("");
 				compteur+=1;

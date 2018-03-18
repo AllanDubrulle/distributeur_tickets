@@ -69,7 +69,7 @@ class GestionBaseDeDonnees {
 					for (int i = 1; i <= nbrColonnes; i++) {
 						if (i > 1) System.out.print(",  ");
 						String valeurColonne = res.getString(i);
-						System.out.print(valeurColonne + " " /*+ res2.getColumnName(i)*/);
+						System.out.print(valeurColonne + " ");
 					}
 					System.out.println("");
 				}

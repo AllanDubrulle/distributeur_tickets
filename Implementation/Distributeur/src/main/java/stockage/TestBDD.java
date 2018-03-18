@@ -7,7 +7,7 @@ public class TestBDD {
 	public static void main (String args[]) throws SQLException {
 		HoraireTrains gest = new HoraireTrains();
 		gest.connexion();
-		ResultSet res = gest.calculToutesLesGaresDepart("bruxelles", 4, 50);
+		ResultSet res = gest.resultatRequete("select * from horaire");
 		HoraireTrains.afficherResultat(res);
 		//System.out.print(res);
 		gest.deconnexion();
