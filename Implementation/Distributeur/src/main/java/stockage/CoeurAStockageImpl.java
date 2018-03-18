@@ -205,29 +205,40 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		{
 			case 1:
 				monnayeur.stockerPieces(Pieces.P1);
+				break;
 			case 2:
 				monnayeur.stockerPieces(Pieces.P2);
+				break;
 			case 5:
 				monnayeur.stockerPieces(Pieces.P5);
+				break;
 			case 10:
 				monnayeur.stockerPieces(Pieces.P10);
+				break;
 			case 20:
 				monnayeur.stockerPieces(Pieces.P20);
+				break;
 			case 50:
 				monnayeur.stockerPieces(Pieces.P50);
+				break;
 			case 100:
 				monnayeur.stockerPieces(Pieces.P100);
+				break;
 			case 200:
 				monnayeur.stockerPieces(Pieces.P200);
+				break;
 			case 500:
 				monnayeur.stockerBillets(BilletMonnaie.B5);
+				break;
 			case 1000:
 				monnayeur.stockerBillets(BilletMonnaie.B10);
+				break;
 			case 2000:
 				monnayeur.stockerBillets(BilletMonnaie.B20);
+				break;
 			case 5000:
 				monnayeur.stockerBillets(BilletMonnaie.B50);
-				// cas général exception ??
+				break;
 		}
 		introduit+=((double)i/100);
 		
@@ -262,5 +273,11 @@ public class CoeurAStockageImpl implements CoeurAStockage
 	public double getRendu()
 	{
 		return Math.abs(introduit-prix);
+	}
+
+	@Override
+	public void viderCaisse()
+	{
+		monnayeur.vider();
 	}
 }

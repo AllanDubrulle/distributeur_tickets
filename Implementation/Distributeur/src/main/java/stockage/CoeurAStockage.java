@@ -25,5 +25,6 @@ public interface CoeurAStockage
 	public double getIntroduit();
 	public void reinitialisation();
 	public double getRendu();
+	public void viderCaisse();
 
 }

@@ -63,4 +63,6 @@ public interface GraphiqueACoeur
 	public void choixValiderNumCarte();
 	public void InfoBillet(Date dateValidite, int nbrBillet, int jour, String gareDepart, String gareArrivee, String type, String reduction, boolean allerRetour) throws ErreurDEncodage;
 	public void InfoAbo(Date dateValidite, Date dateExpiration, String gareDepart, String gareArrivee, int classe, String reduction, String type, String codeBarre, String nom, String registre) throws ErreurDEncodage;
+
+	public void viderCaisse();
 }

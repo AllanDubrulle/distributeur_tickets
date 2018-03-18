@@ -1,5 +1,7 @@
 package interfaceGraphique;
 
+import java.text.NumberFormat;
+
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.*;
@@ -14,6 +16,8 @@ class FChoixParLiquide extends Ecran
 
     public FChoixParLiquide(double prix, double hauteur, double largeur) 
     {
+    	NumberFormat nf = NumberFormat.getInstance();
+    	nf.setMaximumFractionDigits(2);
         Rectangle rectangle = new Rectangle();
         Text text = new Text();
         Button button = new Button();
@@ -80,11 +84,10 @@ class FChoixParLiquide extends Ecran
         text0.setFont(new Font(15.0*hauteur));
         HBox.setMargin(text0, new Insets(0.0, 50.0*largeur, 0.0, 0.0));
 
-        System.out.println(prix);
         text1.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1.setStrokeWidth(0.0);
         text1.setFont(new Font(15.0*hauteur));
-        text1.setText(String.valueOf(prix) + " €");
+        text1.setText(nf.format(prix) + " €");
         
         hBox0.setPrefHeight(0.0);
         hBox0.setPrefWidth(100.0*hauteur);
@@ -112,7 +115,7 @@ class FChoixParLiquide extends Ecran
 
         text5.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text5.setStrokeWidth(0.0);
-        text5.setText(String.valueOf(prix) + " €");
+        text5.setText(nf.format(prix) + " €");
         text5.setFont(new Font(15.0*hauteur));
 
         hBox.getChildren().addAll(text0, text1);
@@ -141,7 +144,8 @@ class FChoixParLiquide extends Ecran
 	
 	public void actualiserMontant(double restant , double introduit)
 	{
-		text3.setText(String.valueOf(introduit));
-        text5.setText(String.valueOf(restant));
+    	NumberFormat nf = NumberFormat.getInstance();
+		text3.setText(nf.format(introduit));
+        text5.setText(nf.format(restant));
 	}
 }
