@@ -139,7 +139,8 @@ class FHoraireArEtDep extends Ecran
         	{
         		try 
         		{
-        			graphAC.choixRechercheGDEtGA(textField.getText(),textField0.getText(), Integer.parseInt(textField1.getText()), Integer.parseInt(textField2.getText()));
+        			if (graphAC.existanceTrajet(textField.getText(),textField0.getText()))
+        				graphAC.choixRechercheGDEtGA(textField.getText(),textField0.getText(), Integer.parseInt(textField1.getText()), Integer.parseInt(textField2.getText()));
         		} 
         		catch (NumberFormatException | SQLException e) 
         		{

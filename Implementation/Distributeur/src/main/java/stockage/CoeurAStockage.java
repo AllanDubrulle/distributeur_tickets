@@ -15,6 +15,7 @@ public interface CoeurAStockage
 	public void creerPass();
 	public double calculerPrixBillet(String gareDepart, String gareArrivee,Reduction reduc,TypeTitre typeBillet,Classe classe);
 	public boolean existenceTrajet(String gareDepart,String gareArrivee);
+	public boolean existenceGare(String gare);
 	public String[] rechercherHoraireDepart(String gareDepart, int heure, int minute) throws SQLException;
 	public String[] getListeReduction();
 	public String[] getListeType();

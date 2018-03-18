@@ -18,6 +18,11 @@ public class EtatChoixDeparts extends EtatAnnulable
 		Controleur.getInstance().getCoeurAGraphique().afficherResultatsHoraires(tab);
 	}
 	
+	public void retourRecherche()
+	{
+		entree();
+	}
+	
 	public void entree() 
 	{
 		Controleur.getInstance().getCoeurAGraphique().afficherChoixDepart();

@@ -120,7 +120,8 @@ class FHoraireDepart extends Ecran
         	{
         		try 
         		{
-					graphAC.choixRechercheGD(textField.getText(), Integer.parseInt(textField0.getText()), Integer.parseInt(textField1.getText()));
+					if(graphAC.existanceGare(textField.getText()))
+						graphAC.choixRechercheGD(textField.getText(), Integer.parseInt(textField0.getText()), Integer.parseInt(textField1.getText()));
 				} 
         		catch (NumberFormatException | SQLException e) 
         		{

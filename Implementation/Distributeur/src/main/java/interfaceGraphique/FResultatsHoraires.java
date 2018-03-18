@@ -218,7 +218,7 @@ class FResultatsHoraires extends Ecran
         {
         	public void handle(ActionEvent event) 
         	{
-        		graphAC.choixChangerHeure();
+        		graphAC.choixRetourRecherche();
         	}
         });
 

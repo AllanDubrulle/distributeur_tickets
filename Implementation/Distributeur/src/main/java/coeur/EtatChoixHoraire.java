@@ -24,7 +24,10 @@ class EtatChoixHoraire extends EtatAnnulable
 	{
 		Controleur.getInstance().modifEtat(EtatChoixArrivees.getInstance());
 	}
-	
+	public void retourRecherche()
+	{
+		entree();
+	}
 	public void entree() 
 	{
 		Controleur.getInstance().getCoeurAGraphique().afficherChoixHoraire();

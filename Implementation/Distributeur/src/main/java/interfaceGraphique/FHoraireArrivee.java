@@ -123,11 +123,12 @@ class FHoraireArrivee extends Ecran
         	{
         		try 
         		{
-        			graphAC.choixRechercheGA(textField.getText(), Integer.parseInt(textField0.getText()), Integer.parseInt(textField1.getText()));
+        			if(graphAC.existanceGare(textField.getText()))
+        				graphAC.choixRechercheGA(textField.getText(), Integer.parseInt(textField0.getText()), Integer.parseInt(textField1.getText()));
         		} 
         		catch (NumberFormatException | SQLException e) 
         		{
-        			e.printStackTrace();
+        			System.out.println("Probleme");
         		}
         	}
         });

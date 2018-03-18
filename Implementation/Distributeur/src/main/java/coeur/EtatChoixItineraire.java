@@ -17,7 +17,10 @@ public class EtatChoixItineraire extends EtatAnnulable
 		String[] tab = Controleur.getInstance().getCoeurAStockage().rechercherHoraireItineraire(gareDepart, gareArrivee, heure, minute);
 		Controleur.getInstance().getCoeurAGraphique().afficherResultatsHoraires(tab);
 	}
-	
+	public void retourRecherche()
+	{
+		entree();
+	}
 	public void entree() 
 	{
 		Controleur.getInstance().getCoeurAGraphique().afficherChoixItineraire();

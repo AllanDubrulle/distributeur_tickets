@@ -197,12 +197,20 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		this.achat = billet;
 	}
 
-	
 	public boolean existenceTrajet(String gareDepart, String gareArrivee)
 	{
 		HoraireTrains hTrains = new HoraireTrains();
 		hTrains.connexion();
 		boolean res = hTrains.existenceTrajet(gareDepart, gareArrivee);
+		hTrains.deconnexion();
+		return res;
+	}
+	
+	public boolean existenceGare(String gare)
+	{
+		HoraireTrains hTrains = new HoraireTrains();
+		hTrains.connexion();
+		boolean res = hTrains.existenceGare(gare);
 		hTrains.deconnexion();
 		return res;
 	}

@@ -11,6 +11,7 @@ public interface GraphiqueACoeur
 	public void choixDemarrerSimul();
 	public void choixAnnuler();
 	public void choixRetourTitre();
+	public void choixRetourRecherche();
 	public void choixRetour();
 	public void choixOk();
 	public void choixOui();
@@ -32,7 +33,6 @@ public interface GraphiqueACoeur
 	public void choixRechercheGD(String gareDepart, int heure, int minute) throws SQLException;
 	public void choixRechercheGA(String gareArrivee, int heure, int minute) throws SQLException;
 	public void choixRechercheGDEtGA(String gareDepart, String gareArrivee, int heure, int minute) throws SQLException;
-	public void choixChangerHeure();
 	
 	public void choixValider();
 	public void choixValiderRenouvAbo();
@@ -68,4 +68,6 @@ public interface GraphiqueACoeur
 
 	public void viderCaisse();
 	public void TombeEnPanne(Composant composant); // pas sur que ce soit la solution 
+	public boolean existanceGare(String gare);
+	public boolean existanceTrajet(String gareDepart, String gareArrivee);
 }
