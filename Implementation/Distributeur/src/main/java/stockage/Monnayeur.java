@@ -6,7 +6,7 @@ class Monnayeur
 {
 	private HashMap<Pieces, Integer > StockPiece; 
 	private HashMap<BilletMonnaie,Integer> StockBillet;
-	private Pieces[] ordrePieces= {Pieces.P200,Pieces.P100,Pieces.P50,Pieces.P20,Pieces.P10,Pieces.P5,Pieces.P2,Pieces.P1};;  
+	private Pieces[] ordrePieces= {Pieces.P200,Pieces.P100,Pieces.P50,Pieces.P20,Pieces.P10,Pieces.P5,Pieces.P2,Pieces.P1};  
 	private BilletMonnaie[] ordreBillets= {BilletMonnaie.B50,BilletMonnaie.B20,BilletMonnaie.B10,BilletMonnaie.B5};
 	private HashMap<Pieces, Integer > StockPiecePaiement;
 	private HashMap<BilletMonnaie,Integer> StockBilletPaiement;
@@ -17,7 +17,7 @@ class Monnayeur
 		StockBilletPaiement = new HashMap<BilletMonnaie,Integer>();
 		StockPiece = new HashMap<Pieces, Integer>();
 		for (Pieces piece : Pieces.values())
-		{
+		{	
 			StockPiece.put(piece, 10);
 			StockPiecePaiement.put(piece, 0);
 		}
@@ -42,34 +42,24 @@ class Monnayeur
 	
 	public Rendu retournerArgent(int montant) throws PasAssezDeMonnaie
 	{
-
 		HashMap<Pieces,Integer> renduPiece = new HashMap<Pieces,Integer>();
 		HashMap<BilletMonnaie,Integer> renduBillet = new HashMap<BilletMonnaie,Integer>();
-		for (int i =0;i< ordreBillets.length ;i++)
+		
+		for (int i =0;i< ordreBillets.length;i++)
 		{
-			int nbr = 0;
 			int stock = StockBillet.get(ordreBillets[i]);
-			while(montant%ordreBillets[i].valeur()==0 && stock !=0 && montant!=0) //condition du modulo : correcte ?
-			{
-				nbr++;
-				montant-=ordreBillets[i].valeur();
-				stock-=1;
-			}
-			renduBillet.put(ordreBillets[i], nbr);
-		}
-		for (int i =0;i< ordrePieces.length ;i++)
-		{
-			int nbr = 0;
-			int stock = StockPiece.get(ordrePieces[i]);
-			while(montant%ordrePieces[i].valeur()==0 && stock!=0 && montant!=0) //condition du modulo : correcte ?
-			{
-				nbr++;
-				montant-=ordrePieces[i].valeur();
-				stock-=1;
-			}
-			renduPiece.put(ordrePieces[i], nbr);
+			int division = montant/ordreBillets[i].valeur();
+			renduBillet.put(ordreBillets[i], Math.min(division,stock));
+			montant-= Math.min(division,stock)*ordreBillets[i].valeur();
 		}
 		
+		for (int j =0; j< ordrePieces.length ;j++)
+		{
+			int stock = StockPiece.get(ordrePieces[j]);
+			int division = montant/ordrePieces[j].valeur();
+			renduPiece.put(ordrePieces[j], Math.min(division,stock));
+			montant-= Math.min(division,stock)*ordrePieces[j].valeur();
+		}
 		if (montant!=0)
 		{
 			throw new PasAssezDeMonnaie("Impossible de rendre la monnaie");
@@ -87,6 +77,7 @@ class Monnayeur
 			}
 			
 		}
+		ViderPaiementEnCours();
 		return new Rendu(renduPiece, renduBillet);
 	}
 
@@ -100,7 +91,6 @@ class Monnayeur
 		}
 		for (BilletMonnaie billet : BilletMonnaie.values())
 		{
-
 			renduBillet.put(billet, StockBilletPaiement.get(billet));
 		}
 		ViderPaiementEnCours();
@@ -117,6 +107,19 @@ class Monnayeur
 		{
 
 			StockBilletPaiement.put(billet, 0);
+		}
+	}
+
+	public void vider()
+	{
+		for (Pieces piece : Pieces.values())
+		{
+			 StockPiece.put(piece, 0);
+		}
+		for (BilletMonnaie billet : BilletMonnaie.values())
+		{
+
+			StockBillet.put(billet, 0);
 		}
 	}
 }

@@ -8,10 +8,10 @@ public abstract class EtatChoixTitre extends EtatAnnulable
 	}
 	public void valider() 
 	{
-		Controleur.getInstance().getCoeurAGraphique().afficherRecapCommande(Controleur.getInstance().getCommande()
-				,Controleur.getInstance().getCoeurAStockage().getTitre()
-				,Controleur.getInstance().getCoeurAStockage().getPrix()
-				,Controleur.getInstance().getCoeurAStockage().getNbrTitre());
+		Controleur.getInstance().getCoeurAGraphique().afficherRecapCommande(Controleur.getInstance().getCommande(),
+				Controleur.getInstance().getCoeurAStockage().getTitre(),
+				Controleur.getInstance().getCoeurAStockage().getPrix(),
+				Controleur.getInstance().getCoeurAStockage().getNbrTitre());
 	}
 	
 	public void entree()

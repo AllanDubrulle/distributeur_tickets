@@ -1,5 +1,7 @@
 package interfaceGraphique;
 
+import coeur.GraphiqueACoeur;
+import coeur.GraphiqueACoeurImpl;
 import interfaceGraphique.Clavier;
 import interfaceGraphique.FenteBillet;
 import interfaceGraphique.FentePiece;
@@ -133,6 +135,12 @@ class FenetreSimulation extends BorderPane
 
         menuItem0.setMnemonicParsing(false);
         menuItem0.setText("Vider caisse");
+        menuItem0.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent e) {
+            	GraphiqueACoeurImpl.getInstance().viderCaisse();
+            }
+        });
+
 
         menu1.setMnemonicParsing(false);
         menu1.setText("Impression");

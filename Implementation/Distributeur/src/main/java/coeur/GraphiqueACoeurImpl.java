@@ -262,6 +262,11 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 		return Controleur.getInstance().getCoeurAStockage().getListeType();
 	}
 
+	public void viderCaisse()
+	{
+		Controleur.getInstance().getCoeurAStockage().viderCaisse();		
+	}
+
 	
 	
 }
