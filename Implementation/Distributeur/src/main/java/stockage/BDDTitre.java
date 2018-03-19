@@ -5,6 +5,7 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class BDDTitre extends GestionBaseDeDonnees 
 {
@@ -57,6 +58,25 @@ public class BDDTitre extends GestionBaseDeDonnees
         }
         return -1;
     }
+	
+	public double calculerPrixPass(String typePass)
+	{
+		try
+        {
+            String requete = "SELECT Prix FROM PRIXPASSSPECIAUX WHERE (pass = ?)";
+            PreparedStatement declar = this.connexion.prepareStatement(requete);
+            declar.setString(1, typePass);
+			ResultSet res = declar.executeQuery();
+			double prix = res.getDouble(1);
+        	return prix;
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+        return -1;
+	}
+	
 	
 	public int numeroAbonnementSuivant()
 	{
@@ -173,5 +193,26 @@ public class BDDTitre extends GestionBaseDeDonnees
             e.printStackTrace();
         }
         return false;
+	}
+	
+	public ArrayList<String> listeDesAbonnements()
+	{
+		ArrayList<String> res = new ArrayList<String>();
+		try
+        {
+			String requete = "SELECT distinct numeroabo FROM abosexistants";
+            PreparedStatement declar = this.connexion.prepareStatement(requete);
+			ResultSet resSQL = declar.executeQuery();
+			while (resSQL.next())
+			{
+				res.add(resSQL.getString(1));
+			}
+			return res;
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+        return res;
 	}
 }
