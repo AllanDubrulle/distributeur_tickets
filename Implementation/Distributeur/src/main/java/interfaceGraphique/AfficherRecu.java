@@ -10,7 +10,7 @@ import javafx.scene.layout.*;
 
 class AfficherRecu extends Pane 
 {	
-    public AfficherRecu(double prix , double introduit , double rendu) 
+    public AfficherRecu(double prix , double introduit , double rendu, String modePaiement) 
     {
     	NumberFormat nf = NumberFormat.getInstance();
     	nf.setMaximumFractionDigits(2);
@@ -119,7 +119,7 @@ class AfficherRecu extends Pane
 
         text8.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text8.setStrokeWidth(0.0);
-        text8.setText("(carte / liquide)");
+        text8.setText(modePaiement);
         text8.setWrappingWidth(150.0);
         HBox.setMargin(text8, new Insets(0.0));
         VBox.setMargin(hBox4, new Insets(20.0, 0.0, 5.0, 0.0));

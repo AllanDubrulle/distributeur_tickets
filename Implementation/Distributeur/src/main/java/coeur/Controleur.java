@@ -15,6 +15,7 @@ class Controleur
 	private CoeurAStockage coeurAStockage = new CoeurAStockageImpl(); // pourquoi pas de singleton ici AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH
 	private static Controleur instance;
 	private Commande commande;
+	private ControleurEtat modePaiement;
 	
 
 	private Controleur() {}
@@ -68,5 +69,16 @@ class Controleur
 	public void ReinitialisationCommande()
 	{
 		this.commande = null;
+	}
+
+	public void setModePaiement(ControleurEtat modePaiement)
+	{
+		this.modePaiement = modePaiement;
+		
+	}
+
+	public ControleurEtat getModePaiement()
+	{
+		return modePaiement;
 	}
 }

@@ -42,7 +42,7 @@ public interface CoeurAGraphique
 	public void effacerPIN();
 	public void afficherChoixCommande(Commande commande);
 	public void afficherRenouvScanne();
-	public void afficherRecu(double prix , double introduit , double rendu);
+	public void afficherRecu(double prix , double introduit , double rendu, String modePaiement);
 	public void afficherRendu(Rendu monnaieRendu);
 	public void afficherTitre(Commande commande, TitreDeTransport titre, double prix);
 	public void actualiserComposant(Composant composant);

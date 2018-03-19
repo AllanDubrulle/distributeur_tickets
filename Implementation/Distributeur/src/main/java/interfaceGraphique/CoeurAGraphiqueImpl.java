@@ -237,10 +237,10 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 			break;
 		}
 	}
-	public void afficherRecu(double prix , double introduit , double rendu)
+	public void afficherRecu(double prix , double introduit , double rendu,String modePaiement)
 	{
 		StackPane root2 = new StackPane();
-		AfficherRecu billet = new AfficherRecu(prix ,introduit ,rendu);
+		AfficherRecu billet = new AfficherRecu(prix ,introduit ,rendu,modePaiement);
 		Stage pStage5 = new Stage();
 		Scene sc = new Scene(root2, 250, 300);
 		root2.getChildren().add(billet);

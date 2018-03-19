@@ -18,6 +18,7 @@ class EtatPaiementLiquide extends EtatAnnulable
 	}
 	public void entree()
 	{
+		Controleur.getInstance().setModePaiement(this);
 		Controleur.getInstance().getCoeurAStockage().reinitialisation();
 		Controleur.getInstance().getCoeurAGraphique().afficherChoixParLiquide(Controleur.getInstance().getCoeurAStockage().prixAffichable());
 	}
