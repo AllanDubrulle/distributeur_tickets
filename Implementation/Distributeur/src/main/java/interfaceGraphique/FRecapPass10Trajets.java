@@ -10,7 +10,7 @@ import javafx.scene.layout.*;
 
 public class FRecapPass10Trajets extends Ecran 
 {    
-    public FRecapPass10Trajets(FPass10Trajets fenPass, double hauteur, double largeur) 
+    public FRecapPass10Trajets(String nom, int classe, String reduction, String type, double prix, double hauteur, double largeur) 
     {
         Rectangle rectangle = new Rectangle();
         Text text = new Text();
@@ -71,7 +71,7 @@ public class FRecapPass10Trajets extends Ecran
 
         text1.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1.setStrokeWidth(0.0);
-        text1.setText(fenPass.getNom());
+        text1.setText(nom);
         text1.setWrappingWidth(200.0*largeur);
         HBox.setMargin(text1, new Insets(0.0, 0.0, 0.0, 20.0*largeur));
         text1.setFont(new Font("System Bold Italic", 15.0*hauteur));
@@ -89,7 +89,7 @@ public class FRecapPass10Trajets extends Ecran
 
         text3.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text3.setStrokeWidth(0.0);
-        text3.setText(fenPass.getClasse());
+        text3.setText(classe + "e classe");
         text3.setWrappingWidth(200.0*largeur);
         text3.setFont(new Font("System Bold Italic", 15.0*hauteur));
         HBox.setMargin(text3, new Insets(0.0));
@@ -107,7 +107,7 @@ public class FRecapPass10Trajets extends Ecran
 
         text5.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text5.setStrokeWidth(0.0);
-        text5.setText(fenPass.getReduction());
+        text5.setText(reduction);
         text5.setWrappingWidth(200.0*largeur);
         text5.setFont(new Font("System Bold Italic", 15.0*hauteur));
         HBox.setMargin(text5, new Insets(0.0, 0.0, 0.0, 20.0*largeur));
@@ -125,7 +125,7 @@ public class FRecapPass10Trajets extends Ecran
 
         text7.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text7.setStrokeWidth(0.0);
-        text7.setText("(prix)");
+        text7.setText(prix + " €");
         text7.setWrappingWidth(200.0*largeur);
         text7.setFont(new Font("System Bold Italic", 15.0*hauteur));
         HBox.setMargin(text7, new Insets(0.0, 0.0, 0.0, 20.0*largeur));

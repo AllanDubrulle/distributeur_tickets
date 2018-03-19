@@ -1,6 +1,6 @@
 package coeur;
 
-public class EtatChoixTaperCode extends EtatAnnulable 
+public class EtatChoixTaperCode extends EtatChoixTitre 
 {
 	private static EtatChoixTaperCode instance;
 	
@@ -13,11 +13,15 @@ public class EtatChoixTaperCode extends EtatAnnulable
 	
 	public void valideRenouvAbo() 
 	{
-		Controleur.getInstance().modifEtat(EtatModificationAbo.getInstance());
+		super.valider();
 	}
 	
 	public void entree() 
 	{
 		Controleur.getInstance().getCoeurAGraphique().afficherChoixTaperCode();
+	}
+	public void retourTitre()
+	{
+		super.retour();
 	}
 }

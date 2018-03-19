@@ -121,13 +121,13 @@ public class CoeurAStockageImpl implements CoeurAStockage
 	}
 
 	public void creerAbonnement(int validite, String gareDepart, String gareArrivee, int classe,
-			String reduction, String type, String codeBarre, String nom, String registreNational) throws ErreurDEncodage
+			String reduction, String type, String nom, String registreNational) throws ErreurDEncodage
 	{	
 		
-		LocalDate dateExpiration = LocalDate.now();
-		Date dateValidite = java.sql.Date.valueOf(dateExpiration);
+		LocalDate dateValidite = LocalDate.now();
+		LocalDate dateExpiration = dateValidite.plusMonths(validite);
 		Date dateExp = java.sql.Date.valueOf(dateExpiration);
-		dateExp.setMonth(dateExp.getMonth() + validite);
+		Date dateValid = java.sql.Date.valueOf(dateValidite);
 		String annee = String.valueOf(dateExpiration.getYear());
 		String mois = String.valueOf(dateExpiration.getMonthValue());
 		String jour = String.valueOf(dateExpiration.getDayOfMonth());
@@ -156,12 +156,14 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		{	
 			throw new ErreurDEncodage ("problème d'encodage");	
 		}	
-		setAchat(new Abonnement(dateValidite, dateExp, gareDepart, gareArrivee,  classeAbo, reduc, typeAbo, codeBarre, nom, registreNational));	
-		setPrix(calculerPrix(gareDepart, gareArrivee, reduc, typeAbo, classeAbo, validite));	
 		BDDTitre bTitre = new BDDTitre();
 		bTitre.connexion();
-		bTitre.ajouterAbonnement(nom, registreNational, gareDepart, gareArrivee, annee, mois, jour);
+		int num = bTitre.numeroAbonnementSuivant();
+		bTitre.ajouterAbonnement(num, nom, registreNational, gareDepart, gareArrivee, annee, mois, jour, type, reduction, Integer.toString(classe));
 		bTitre.deconnexion();
+		setNbrTitre(1);
+		setAchat(new Abonnement(num, dateValid, dateExp, gareDepart, gareArrivee,  classeAbo, reduc, typeAbo, nom, registreNational));	
+		setPrix(calculerPrix(gareDepart, gareArrivee, reduc, typeAbo, classeAbo, validite));	
 	}
 
 	public void modifierAbo(int validite, String numAbo) throws ErreurDEncodage
@@ -170,13 +172,13 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		bTitre.connexion();
 		String[] infos = bTitre.infoAbonnement(numAbo);
 		bTitre.deconnexion();
-		LocalDate dateExpiration = LocalDate.now();
-		Date dateValidite = java.sql.Date.valueOf(dateExpiration);
+		LocalDate dateValidite = LocalDate.now();
+		LocalDate dateExpiration = dateValidite.plusMonths(validite);
 		Date dateExp = java.sql.Date.valueOf(dateExpiration);
-		dateExp.setMonth(dateExp.getMonth() + validite);
-		int classe = 1;
-		String reduction = "Aucune";
-		String type = "Standard";
+		Date dateValid = java.sql.Date.valueOf(dateValidite);
+		int classe = Integer.parseInt(infos[9]);
+		String reduction = infos[8];
+		String type = infos[7];
 		Reduction reduc = null;	
 		Classe classeAbo = null;	
 		TypeTitre typeAbo = null;		
@@ -202,7 +204,9 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		{	
 			throw new ErreurDEncodage ("problème d'encodage");	
 		}
-		setAchat(new Abonnement(dateValidite, dateExp, infos[2], infos[3], classeAbo, reduc, typeAbo, numAbo, infos[0], infos[1]));	
+		setNbrTitre(1);
+		setAchat(new Abonnement(Integer.parseInt(numAbo), dateValid, dateExp, infos[2], infos[3], classeAbo, reduc, typeAbo, infos[0], infos[1]));	
+		setPrix(calculerPrix(infos[2], infos[3], reduc, typeAbo, classeAbo, validite));	
 	}
 	
 	public void creerPass() 

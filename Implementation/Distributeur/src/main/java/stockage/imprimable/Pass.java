@@ -4,9 +4,10 @@ import java.util.Date;
 
 import stockage.imprimable.TitreDeTransport;
 
-class Pass extends TitreDeTransport
+public class Pass extends TitreDeTransport
 {
 	private TypePass typePass;
+	private String nom;
 	
 	public Pass(Date dateValidite, Date dateExp, String gareDepart, String gareArrivee, Classe classe,
 			TypePass typePass)
@@ -31,16 +32,20 @@ class Pass extends TitreDeTransport
 		this.typePass=typePass;
 	}
 	
-	public Pass(Date dateValidite, Date dateExp, String gareDepart, String gareArrivee, Classe classe, TypeTitre type, Reduction reduction,
-			TypePass typePass)
+	public Pass(Date dateValidite, Date dateExp, String gareDepart, String gareArrivee, Classe classe, TypeTitre type, Reduction reduction)
 	{
 		super(dateValidite, dateExp, gareDepart, gareArrivee, classe, type, reduction);
-		this.typePass=typePass;
+		this.nom = nom;
 	}
 
 	
 	public TypePass getTypePass()
 	{
 		return typePass;
+	}
+
+	public String getNom() 
+	{
+		return nom;
 	}
 }

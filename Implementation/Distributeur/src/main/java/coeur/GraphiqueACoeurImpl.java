@@ -242,11 +242,11 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 		
 	}
 	public void infoAbo(int validite, String gareDepart, String gareArrivee, int classe,
-			String reduction, String type, String codeBarre, String nom, String registre) throws ErreurDEncodage 
+			String reduction, String type, String nom, String registre) throws ErreurDEncodage 
 	{
 		if(Controleur.getInstance().getCoeurAStockage().existenceTrajet(gareDepart, gareArrivee))	
 		{	
-			Controleur.getInstance().getCoeurAStockage().creerAbonnement(validite, gareDepart, gareArrivee, classe, reduction, type, codeBarre, nom, registre);	
+			Controleur.getInstance().getCoeurAStockage().creerAbonnement(validite, gareDepart, gareArrivee, classe, reduction, type, nom, registre);	
 		}	
 		else	
 		{	

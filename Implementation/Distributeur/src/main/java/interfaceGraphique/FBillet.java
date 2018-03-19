@@ -269,20 +269,11 @@ class FBillet extends Ecran
             		int jour = Integer.parseInt(textField0.getText());
             		int mois = Integer.parseInt(textField1.getText());
             		int annee = Integer.parseInt(textField2.getText());
-            		int classe;
-            		if (radioButton1.isSelected())
-            		{
-            			classe=1;
-            		}
-            		else
-            		{
-            			classe=2;
-            		}
                     Date date = new Date(0,0,0);
                     date.setYear(annee-1900);
                     date.setDate(jour);
                     date.setMonth(mois-1);
-                    graphAC.infoBillet(date,nbrBillet,classe,textField3.getText(),textField4.getText(),choiceBox0.getValue(), choiceBox.getValue() ,radioButton1.isSelected());
+                    graphAC.infoBillet(date,nbrBillet, getClasse(),textField3.getText(),textField4.getText(),choiceBox0.getValue(), choiceBox.getValue() ,radioButton1.isSelected());
             		graphAC.choixValider();
             	}
             	catch (NumberFormatException | ErreurDEncodage e)
@@ -546,12 +537,12 @@ class FBillet extends Ecran
 		return textField0.getText() + "/" + textField1.getText() + "/" + textField2.getText();
 	}
 	
-	public String getClasse()
+	public int getClasse()
 	{
 		if (radioButton1.isSelected())
-			return "1e classe";
+			return 1;
 		else
-			return "2e classe";
+			return 2;
 	}
 	
 	public String getAllerRetour()

@@ -11,7 +11,7 @@ public interface CoeurAStockage
 {
 	public void creerCarte(String id, int codePIN);
 	public void creerBillet(Date dateValidite, int nbrBillet, int classe, String gareDepart, String gareArrivee, String typeBillet, String reduction, boolean allerRetour) throws ErreurDEncodage;
-	public void creerAbonnement(int validite, String gareDepart, String gareArrivee, int classe, String reduction, String type, String codeBarre, String nom, String registreNational) throws ErreurDEncodage;
+	public void creerAbonnement(int validite, String gareDepart, String gareArrivee, int classe, String reduction, String type, String nom, String registreNational) throws ErreurDEncodage;
 	public void modifierAbo(int validite, String numAbo) throws ErreurDEncodage;
 	public void creerPass();
 	public int calculerPrix(String gareDepart, String gareArrivee,Reduction reduc,TypeTitre type,Classe classe);
