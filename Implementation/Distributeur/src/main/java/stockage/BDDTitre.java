@@ -75,7 +75,7 @@ public class BDDTitre extends GestionBaseDeDonnees
         return -1;
 	}
 	
-	public void ajouterAbonnement(String nom, String reg, String source, String destination, String annee, String mois, String jour)
+	public void ajouterAbonnement(String nom, String reg, String source, String destination, String annee, String mois, String jour, String type, String reduction, String classe)
 	{
 		try
         {
@@ -84,14 +84,19 @@ public class BDDTitre extends GestionBaseDeDonnees
 			String destinationMaj = destination.toUpperCase();
 			int numeroAbo = numeroAbonnementSuivant();
 			String numeroAboStr = String.valueOf(numeroAbo);
-			String requete = "insert into abosexistants values (?, ?, ?, ?, ?, ?)";
+			String requete = "insert into abosexistants values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement declar = this.connexion.prepareStatement(requete);
-            declar.setString(1, nomMaj);
-			declar.setString(2, reg);
-			declar.setString(3, sourceMaj);
-			declar.setString(4, destinationMaj);
-			declar.setString(5, annee+"-"+mois+"-"+jour);
-			declar.setString(6, numeroAboStr);
+            declar.setString(1, numeroAboStr);
+			declar.setString(2, nomMaj);
+			declar.setString(3, reg);
+			declar.setString(4, sourceMaj);
+			declar.setString(5, destinationMaj);
+			declar.setString(6, annee);
+			declar.setString(7, mois);
+			declar.setString(8, jour);
+			declar.setString(9, type);
+			declar.setString(10, reduction);
+			declar.setString(11, classe);
 			declar.executeUpdate();
         }
         catch (SQLException e)
@@ -104,14 +109,16 @@ public class BDDTitre extends GestionBaseDeDonnees
 		try
         {
 			LocalDate date = LocalDate.now();
-			date.plusMonths(validite);
-			String annee = String.valueOf(date.getYear());
-			String mois = String.valueOf(date.getMonthValue());
-			String jour = String.valueOf(date.getDayOfMonth());
-			String requete = "update abosexistants set validite = ? where numeroabo = ?";
+			LocalDate dateExp = date.plusMonths(validite);
+			String annee = String.valueOf(dateExp.getYear());
+			String mois = String.valueOf(dateExp.getMonthValue());
+			String jour = String.valueOf(dateExp.getDayOfMonth());
+			String requete = "update abosexistants set annee = ?, mois = ?, jour = ? where numeroabo = ?";
             PreparedStatement declar = this.connexion.prepareStatement(requete);
-            declar.setString(1, annee+"-"+mois+"-"+jour);
-			declar.setString(2, numeroAbo);
+            declar.setString(1, annee);
+            declar.setString(2, mois);
+            declar.setString(3, jour);
+			declar.setString(4, numeroAbo);
 			declar.executeUpdate();
 			
         }
@@ -123,12 +130,12 @@ public class BDDTitre extends GestionBaseDeDonnees
 	
 	public String[] infoAbonnement(String numeroAbo)
 	{
-        String[] res = new String[7]; 
+        String[] res = new String[10]; 
 		try
         {
 			if (existenceAbonnement(numeroAbo))
 			{
-				String requete = "SELECT nom, regnat, source, destination, EXTRACT(YEAR FROM validite), EXTRACT(MONTH FROM validite), EXTRACT(DAY FROM validite) FROM abosexistants WHERE (numeroabo = ?)";
+				String requete = "SELECT nom, regnat, source, destination, annee, mois, jour, type, reduction, classe FROM abosexistants WHERE (numeroabo = ?)";
 	            PreparedStatement declar = this.connexion.prepareStatement(requete);
 	            declar.setString(1, numeroAbo);
 				ResultSet resSQL = declar.executeQuery();

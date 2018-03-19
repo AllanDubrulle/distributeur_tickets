@@ -8,7 +8,7 @@ public enum Reduction implements Valeur // changer les valeurs
 	{ public int valeur()
 		{ return 0; }
 	},
-	FAMILLENOMBREUSE( "Famille nombreuses")
+	FAMILLENOMBREUSE( "Famille nombreuse")
 	{ public int valeur()
 		{ return 50; }
 	},
@@ -16,7 +16,7 @@ public enum Reduction implements Valeur // changer les valeurs
 	{ public int valeur()
 		{ return 40; }
 	}, 
-	PARENTEMPLOYE("Parent Employé")
+	PARENTEMPLOYE("Parent employé")
 	{ public int valeur()
 		{ return 30; }
 	}; 
