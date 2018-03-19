@@ -65,9 +65,11 @@ public interface GraphiqueACoeur
 	public void choixValiderNumCarte();
 	public void infoBillet(Date dateValidite, int nbrBillet, int jour, String gareDepart, String gareArrivee, String type, String reduction, boolean allerRetour) throws ErreurDEncodage;
 	public void infoAbo(int validite, String gareDepart, String gareArrivee, int classe, String reduction, String type, String codeBarre, String nom, String registre) throws ErreurDEncodage;
-
+	public void infoAboRen(int validite, String numAbo) throws ErreurDEncodage;
+	
 	public void viderCaisse();
 	public void TombeEnPanne(Composant composant); // pas sur que ce soit la solution 
 	public boolean existanceGare(String gare);
 	public boolean existanceTrajet(String gareDepart, String gareArrivee);
+	public String[] listeNumeroAbonnement();
 }

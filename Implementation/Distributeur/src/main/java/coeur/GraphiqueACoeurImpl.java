@@ -2,7 +2,6 @@ package coeur;
 
 import java.sql.SQLException;
 import java.util.Date;
-
 import stockage.Composant;
 import stockage.ErreurDEncodage;
 
@@ -255,6 +254,18 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 		}	
 	}
 	
+	public void infoAboRen(int validite, String numAbo) throws ErreurDEncodage
+	{
+		if(Controleur.getInstance().getCoeurAStockage().existenceAbo(numAbo))
+		{
+			Controleur.getInstance().getCoeurAStockage().modifierAbo(validite, numAbo);
+		}
+		else 
+		{
+			throw new ErreurDEncodage("abonnementInexistant");
+		}
+	}
+	
 	public String[] getReductions()
 	{
 		return Controleur.getInstance().getCoeurAStockage().getListeReduction();
@@ -283,6 +294,12 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 	public boolean existanceTrajet(String gareDepart, String gareArrivee) 
 	{
 		return Controleur.getInstance().getCoeurAStockage().existenceTrajet(gareDepart, gareArrivee);
+	}
+
+	public String[] listeNumeroAbonnement() 
+	{
+		String[] res = new String[0];
+		return res;
 	}
 
 	

@@ -2,6 +2,7 @@ package interfaceGraphique;
 
 import javafx.scene.text.*;
 import javafx.stage.Stage;
+import coeur.GraphiqueACoeur;
 import coeur.GraphiqueACoeurImpl;
 import javafx.collections.FXCollections;
 //import javafx.collections.FXCollections;
@@ -22,7 +23,7 @@ class FChoixAbo extends Pane
         Button button0 = new Button();
         choiceBox = new ChoiceBox<String>();
         Text text = new Text();
-        choiceBox.setItems(FXCollections.observableArrayList("00001", "00002", "00003"));
+        choiceBox.setItems(FXCollections.observableArrayList(GraphiqueACoeurImpl.getInstance().listeNumeroAbonnement()));
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -82,6 +83,6 @@ class FChoixAbo extends Pane
 	
 	public String getNumAbo()
 	{
-		return choiceBox.getSelectionModel().getSelectedItem();	
+		return choiceBox.getValue();	
 	}
 }

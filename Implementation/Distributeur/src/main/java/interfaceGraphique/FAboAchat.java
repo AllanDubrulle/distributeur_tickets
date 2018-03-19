@@ -5,9 +5,6 @@ import javafx.scene.control.*;
 import javafx.scene.text.*;
 import stockage.ErreurDEncodage;
 import javafx.scene.shape.*;
-
-import java.util.Date;
-
 import coeur.GraphiqueACoeurImpl;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;

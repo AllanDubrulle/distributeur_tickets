@@ -3,6 +3,7 @@ package interfaceGraphique;
 import javafx.geometry.*;
 import javafx.scene.control.*;
 import javafx.scene.text.*;
+import stockage.ErreurDEncodage;
 import javafx.scene.shape.*;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -31,6 +32,7 @@ class FAboRenouv2 extends Ecran
         Text text1 = new Text();
         Button button = new Button();
         Button button0 = new Button();
+        Text text10 = new Text();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -143,14 +145,28 @@ class FAboRenouv2 extends Ecran
         {
             public void handle(ActionEvent event)
             {
-            	graphAC.choixValiderRenouvAbo();
+            	try 
+            	{
+            		int verifAbo = Integer.parseInt(getNumAbo());
+					graphAC.infoAboRen(getValidite(), String.valueOf(verifAbo));
+	            	graphAC.choixValiderRenouvAbo();
+				} 
+            	catch (NumberFormatException | ErreurDEncodage e) 
+            	{
+            		text10.setText("Les données saisies sont incorrectes");	
+        			text10.setFont(new Font("System Bold", 15.0*hauteur));	
+        			text10.setWrappingWidth(250.0*largeur);	
+        			text10.setFill(javafx.scene.paint.Color.RED);	
+        			text10.setLayoutX(275.0*largeur);	
+        			text10.setLayoutY(304.0*hauteur);	
+				}
             }
         });
 
         hBox0.getChildren().addAll(text, textField);
         hBox1.getChildren().addAll(text0, radioButton, radioButton0, radioButton1, radioButton2);
         vBox.getChildren().addAll(hBox, hBox0, hBox1);
-        getChildren().addAll(rectangle, vBox, text1, button, button0);
+        getChildren().addAll(rectangle, vBox, text1, button, button0, text10);
     }
     
     public void actionClavier(String a) {}
@@ -217,15 +233,15 @@ class FAboRenouv2 extends Ecran
 		return textField.getText();
 	}
 	
-	public String getValidite()
+	public int getValidite()
 	{
 		if (radioButton.isSelected())
-			return "1 mois";
+			return 1;
 		else if (radioButton0.isSelected())
-			return "3 mois";
+			return 3;
 		else if (radioButton1.isSelected())
-			return "6 mois";
+			return 6;
 		else
-			return "12 mois";
+			return 12;
 	}
 }

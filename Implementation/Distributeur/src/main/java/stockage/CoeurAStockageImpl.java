@@ -60,54 +60,6 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		this.nbrTitre = nbrTitre;
 	}
 
-	public void creerAbonnement(int validite, String gareDepart, String gareArrivee, int classe,
-			String reduction, String type, String codeBarre, String nom, String registreNational) throws ErreurDEncodage
-	{	
-		
-		LocalDate dateExpiration = LocalDate.now();
-		Date dateValidite = java.sql.Date.valueOf(dateExpiration);
-		dateExpiration.plusMonths(validite);
-		Date dateExp = java.sql.Date.valueOf(dateExpiration);
-		String annee = String.valueOf(dateExpiration.getYear());
-		String mois = String.valueOf(dateExpiration.getMonthValue());
-		String jour = String.valueOf(dateExpiration.getDayOfMonth());
-		Reduction reduc = null;	
-		Classe classeAbo = null;	
-		TypeTitre typeAbo = null;		
-		if (classe == 1)	
-			classeAbo = Classe.C1;	
-		if (classe == 2)	
-			classeAbo = Classe.C2;	
-		for (int i = 0 ; i< Reduction.values().length;i++)	
-		{	
-			if(Reduction.values()[i].toString().equals(reduction))	
-			{	
-				reduc = Reduction.values()[i];	
-			}	
-		}	
-		for (int i = 0 ; i< TypeTitre.values().length;i++)	
-		{	
-			if(TypeTitre.values()[i].toString().equals(type))	
-			{	
-				typeAbo = TypeTitre.values()[i];	
-			}	
-		}		
-		if (reduc==null || typeAbo == null || classeAbo ==null )	
-		{	
-			throw new ErreurDEncodage ("problème d'encodage");	
-		}	
-		setAchat(new Abonnement(dateValidite, dateExp, gareDepart, gareArrivee,  classeAbo, reduc, typeAbo, codeBarre, nom, registreNational));	
-		setPrix(calculerPrixAbo(gareDepart, gareArrivee, reduc, typeAbo, classeAbo, validite));	
-		BDDTitre bTitre = new BDDTitre();
-		bTitre.connexion();
-		bTitre.ajouterAbonnement(nom, registreNational, gareDepart, gareArrivee, annee, mois, jour);
-		bTitre.deconnexion();
-	}
-
-	public void creerPass() 
-	{
-		
-	}
 
 	
 	public String[] getListeReduction()
@@ -168,6 +120,96 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		setPrix(calculerPrixBillet(gareDepart,gareArrivee,reduc,type,classeBillet)*nbrBillet);
 	}
 
+	public void creerAbonnement(int validite, String gareDepart, String gareArrivee, int classe,
+			String reduction, String type, String codeBarre, String nom, String registreNational) throws ErreurDEncodage
+	{	
+		
+		LocalDate dateExpiration = LocalDate.now();
+		Date dateValidite = java.sql.Date.valueOf(dateExpiration);
+		Date dateExp = java.sql.Date.valueOf(dateExpiration);
+		dateExp.setMonth(dateExp.getMonth() + validite);
+		String annee = String.valueOf(dateExpiration.getYear());
+		String mois = String.valueOf(dateExpiration.getMonthValue());
+		String jour = String.valueOf(dateExpiration.getDayOfMonth());
+		Reduction reduc = null;	
+		Classe classeAbo = null;	
+		TypeTitre typeAbo = null;		
+		if (classe == 1)	
+			classeAbo = Classe.C1;	
+		if (classe == 2)	
+			classeAbo = Classe.C2;	
+		for (int i = 0 ; i< Reduction.values().length;i++)	
+		{	
+			if(Reduction.values()[i].toString().equals(reduction))	
+			{	
+				reduc = Reduction.values()[i];	
+			}	
+		}	
+		for (int i = 0 ; i< TypeTitre.values().length;i++)	
+		{	
+			if(TypeTitre.values()[i].toString().equals(type))	
+			{	
+				typeAbo = TypeTitre.values()[i];	
+			}	
+		}		
+		if (reduc==null || typeAbo == null || classeAbo ==null )	
+		{	
+			throw new ErreurDEncodage ("problème d'encodage");	
+		}	
+		setAchat(new Abonnement(dateValidite, dateExp, gareDepart, gareArrivee,  classeAbo, reduc, typeAbo, codeBarre, nom, registreNational));	
+		setPrix(calculerPrixAbo(gareDepart, gareArrivee, reduc, typeAbo, classeAbo, validite));	
+		BDDTitre bTitre = new BDDTitre();
+		bTitre.connexion();
+		bTitre.ajouterAbonnement(nom, registreNational, gareDepart, gareArrivee, annee, mois, jour);
+		bTitre.deconnexion();
+	}
+
+	public void modifierAbo(int validite, String numAbo) throws ErreurDEncodage
+	{
+		BDDTitre bTitre = new BDDTitre();
+		bTitre.connexion();
+		String[] infos = bTitre.infoAbonnement(numAbo);
+		bTitre.deconnexion();
+		LocalDate dateExpiration = LocalDate.now();
+		Date dateValidite = java.sql.Date.valueOf(dateExpiration);
+		Date dateExp = java.sql.Date.valueOf(dateExpiration);
+		dateExp.setMonth(dateExp.getMonth() + validite);
+		int classe = 1;
+		String reduction = "Aucune";
+		String type = "Standard";
+		Reduction reduc = null;	
+		Classe classeAbo = null;	
+		TypeTitre typeAbo = null;		
+		if (classe == 1)	
+			classeAbo = Classe.C1;	
+		if (classe == 2)	
+			classeAbo = Classe.C2;	
+		for (int i = 0 ; i< Reduction.values().length;i++)	
+		{	
+			if(Reduction.values()[i].toString().equals(reduction))	
+			{	
+				reduc = Reduction.values()[i];	
+			}	
+		}	
+		for (int i = 0 ; i< TypeTitre.values().length;i++)	
+		{	
+			if(TypeTitre.values()[i].toString().equals(type))	
+			{	
+				typeAbo = TypeTitre.values()[i];	
+			}	
+		}		
+		if (reduc==null || typeAbo == null || classeAbo ==null )	
+		{	
+			throw new ErreurDEncodage ("problème d'encodage");	
+		}
+		setAchat(new Abonnement(dateValidite, dateExp, infos[2], infos[3], classeAbo, reduc, typeAbo, numAbo, infos[0], infos[1]));	
+	}
+	
+	public void creerPass() 
+	{
+		
+	}
+
 	public double calculerPrixBillet(String gareDepart, String gareArrivee,Reduction reduc,TypeTitre typeBillet,Classe classe)
 	{
 		BDDTitre bTitre = new BDDTitre();
@@ -212,6 +254,15 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		hTrains.connexion();
 		boolean res = hTrains.existenceGare(gare);
 		hTrains.deconnexion();
+		return res;
+	}
+	
+	public boolean existenceAbo(String numAbo)
+	{
+		BDDTitre titre = new BDDTitre();
+		titre.connexion();
+		boolean res = titre.existenceAbonnement(numAbo);
+		titre.deconnexion();
 		return res;
 	}
 
@@ -356,5 +407,4 @@ public class CoeurAStockageImpl implements CoeurAStockage
 	{
 		composantEnMarche.put(composant, true);
 	}
-	
 }

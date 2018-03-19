@@ -167,14 +167,24 @@ class FResultatsHoraires extends Ecran
         text12.setStrokeWidth(0.0);
         text12.setWrappingWidth(100.0*largeur);
         if (tab[2] != null)
-        	text12.setText(tab[2]+":"+tab[3]);
+        {
+        	if (tab[3].length() == 1)
+        		text12.setText(tab[2]+":0"+tab[3]);
+        	else
+        		text12.setText(tab[2]+":"+tab[3]);
+        }
         text12.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
 
         text13.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text13.setStrokeWidth(0.0);
         text13.setWrappingWidth(100.0*largeur);
         if (tab[6] != null)
-        	text13.setText(tab[6]+":"+tab[7]);
+        {
+        	if (tab[7].length() == 1)
+        		text13.setText(tab[6]+":0"+tab[7]);
+        	else
+        		text13.setText(tab[6]+":"+tab[7]);
+        }
         text13.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         VBox.setMargin(text13, new Insets(10.0*hauteur, 0.0, 10.0*hauteur, 0.0));
 
@@ -182,14 +192,24 @@ class FResultatsHoraires extends Ecran
         text14.setStrokeWidth(0.0);
         text14.setWrappingWidth(100.0*largeur);
         if (tab[10] != null)
-        	text14.setText(tab[10]+":"+tab[11]);
+        {
+        	if (tab[11].length() == 1)
+        		text14.setText(tab[10]+":0"+tab[11]);
+        	else
+        		text14.setText(tab[10]+":"+tab[11]);
+        }
         text14.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
 
         text15.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text15.setStrokeWidth(0.0);
         text15.setWrappingWidth(100.0*largeur);
         if (tab[14] != null)
-        	text15.setText(tab[14]+":"+tab[15]);
+        {
+        	if (tab[15].length() == 1)
+        		text15.setText(tab[14]+":0"+tab[15]);
+        	else
+        		text15.setText(tab[14]+":"+tab[15]);
+        }
         text15.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         VBox.setMargin(text15, new Insets(10.0*hauteur, 0.0, 10.0*hauteur, 0.0));
 
@@ -197,7 +217,12 @@ class FResultatsHoraires extends Ecran
         text16.setStrokeWidth(0.0);
         text16.setWrappingWidth(100.0*largeur);
         if (tab[18] != null)
-        	text16.setText(tab[18]+":"+tab[19]);
+        {
+        	if (tab[19].length() == 1)
+        		text16.setText(tab[18]+":0"+tab[19]);
+        	else
+        		text16.setText(tab[18]+":"+tab[19]);
+        }
         text16.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
 
         text17.setLayoutX(35.0*largeur);

@@ -10,7 +10,7 @@ import javafx.scene.layout.*;
 
 class AfficherAbo extends Pane 
 {
-	public AfficherAbo(int numero, String nom, int classe, String gareDepart, String gareArrivee, Date dateVal, Date dateExp, String reduction, double prix) 
+	public AfficherAbo(int numero, String nom, int classe, String gareDepart, String gareArrivee, Date dateVal, Date dateExp, String reduction, String type, double prix) 
 	{
         VBox vBox = new VBox();
         HBox hBox = new HBox();
@@ -143,7 +143,10 @@ class AfficherAbo extends Pane
 
         text9.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text9.setStrokeWidth(0.0);
-        text9.setText(dateVal.getDate() + "/" + String.valueOf(dateVal.getMonth()+1) + "/" + String.valueOf(dateVal.getYear()+1900));
+        if(dateVal.getMonth() == 9 || dateVal.getMonth() == 10 || dateVal.getMonth() == 11)
+        	text9.setText(dateVal.getDate() + "/" + String.valueOf(dateVal.getMonth()+1) + "/" + String.valueOf(dateVal.getYear()+1900));
+        else
+        	text9.setText(dateVal.getDate() + "/0" + String.valueOf(dateVal.getMonth()+1) + "/" + String.valueOf(dateVal.getYear()+1900));
         text9.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         text9.setWrappingWidth(100.0);
         HBox.setMargin(text9, new Insets(0.0, 0.0, 0.0, 50.0));
@@ -156,7 +159,10 @@ class AfficherAbo extends Pane
 
         text11.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text11.setStrokeWidth(0.0);
-        text11.setText(dateExp.getDate() + "/" + String.valueOf(dateExp.getMonth()+1) + "/" + String.valueOf(dateExp.getYear()+1900));
+        if(dateExp.getMonth() == 9 || dateExp.getMonth() == 10 || dateExp.getMonth() == 11)
+        	text11.setText(dateExp.getDate() + "/" + String.valueOf(dateExp.getMonth()+1) + "/" + String.valueOf(dateExp.getYear()+1900));
+        else
+        	text11.setText(dateExp.getDate() + "/0" + String.valueOf(dateExp.getMonth()+1) + "/" + String.valueOf(dateExp.getYear()+1900));
         text11.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         text11.setWrappingWidth(100.0);
         hBox4.setOpaqueInsets(new Insets(0.0));

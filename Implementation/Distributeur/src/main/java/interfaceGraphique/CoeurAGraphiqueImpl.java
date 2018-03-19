@@ -164,6 +164,16 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 		switch(commande)
 		{
 		case ACHATABO:
+			Abonnement abonnement = (Abonnement) titre;
+			StackPane root1 = new StackPane();
+			AfficherAbo afficheAbo = new AfficherAbo(1, abonnement.getNom(), abonnement.getClasse().valeur(), abonnement.getGareDepart(), abonnement.getGareArrivee(), abonnement.getDateValidite(), abonnement.getDateExp(), abonnement.getReduction().toString(), abonnement.getType().toString(), prix );
+			Stage stage1 = new Stage();
+			Scene scene1 = new Scene(root1, 580,300);
+			root1.getChildren().add(afficheAbo);
+			stage1.setResizable(false);
+			stage1.setScene(scene1);
+			stage1.setTitle("Abonnement");
+			stage1.show();
 			break;
 		case BILLET:
 			Billet billet = (Billet) titre;
@@ -294,13 +304,12 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 				FenetreSimulation.getInstance().afficher(new FRecapPassIllimite(fenPassIllimite, FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 				break;
 			case REVOUVELLEMENTABO:
-				FenetreSimulation.getInstance().afficher(new FRecapAboRenouv((FAboRenouv2)FenetreSimulation.getInstance().getEcran(), FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
+				Abonnement abonnementRen = (Abonnement) titre;
+				FenetreSimulation.getInstance().afficher(new FRecapAboRenouv(abonnementRen.getNum(), 
+						abonnementRen.getValidite(abonnementRen.getDateValidite(), abonnementRen.getDateExp()), prix, 
+						FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 				break;
 		}
-	}
-	public void afficherRecapRenouvAbo() 
-	{
-		FenetreSimulation.getInstance().afficher(new FRecapAboRenouv((FAboRenouv2)FenetreSimulation.getInstance().getEcran(), FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 	}
 	public void afficherRecapRenouvAboScanne() 
 	{

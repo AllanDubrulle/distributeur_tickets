@@ -14,7 +14,9 @@ public class EtatModificationAbo extends EtatCreationTitre
 	
 	public void entree() 
 	{
-		Controleur.getInstance().getCoeurAGraphique().afficherRecapRenouvAbo();
+		Controleur.getInstance().getCoeurAGraphique().afficherRecapCommande(Controleur.getInstance().getCommande(),
+				Controleur.getInstance().getCoeurAStockage().getTitre(),
+				Controleur.getInstance().getCoeurAStockage().getPrix(),
+				Controleur.getInstance().getCoeurAStockage().getNbrTitre());
 	}
-
 }

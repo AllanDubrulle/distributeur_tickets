@@ -6,7 +6,7 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.time.LocalDate;
 
-class BDDTitre extends GestionBaseDeDonnees 
+public class BDDTitre extends GestionBaseDeDonnees 
 {
 	public BDDTitre()
     {
@@ -90,7 +90,7 @@ class BDDTitre extends GestionBaseDeDonnees
 			declar.setString(2, reg);
 			declar.setString(3, sourceMaj);
 			declar.setString(4, destinationMaj);
-			declar.setString(5, annee+mois+jour);
+			declar.setString(5, annee+"-"+mois+"-"+jour);
 			declar.setString(6, numeroAboStr);
 			declar.executeUpdate();
         }
@@ -108,12 +108,10 @@ class BDDTitre extends GestionBaseDeDonnees
 			String annee = String.valueOf(date.getYear());
 			String mois = String.valueOf(date.getMonthValue());
 			String jour = String.valueOf(date.getDayOfMonth());
-			String requete = "update abosexistants set annee = ?, mois = ?, jour = ? where numeroabo = ?";
+			String requete = "update abosexistants set validite = ? where numeroabo = ?";
             PreparedStatement declar = this.connexion.prepareStatement(requete);
-            declar.setString(1, annee);
-			declar.setString(2, mois);
-			declar.setString(3, jour);
-			declar.setString(4, numeroAbo);
+            declar.setString(1, annee+"-"+mois+"-"+jour);
+			declar.setString(2, numeroAbo);
 			declar.executeUpdate();
 			
         }
@@ -128,21 +126,24 @@ class BDDTitre extends GestionBaseDeDonnees
         String[] res = new String[7]; 
 		try
         {
-			String requete = "SELECT nom, regnat, source, destination, year(validite), month(validite), day(validite) FROM abosexistants WHERE (numeroabo = ?)";
-            PreparedStatement declar = this.connexion.prepareStatement(requete);
-            declar.setString(1, numeroAbo);
-			ResultSet resSQL = declar.executeQuery();
-			ResultSetMetaData resBis = resSQL.getMetaData();
-			int nbrColonnes = resBis.getColumnCount();
-			int position = 0;
-			resSQL.next();
-			for (int i = 1; i <= nbrColonnes; i++) 
+			if (existenceAbonnement(numeroAbo))
 			{
-				String valeurColonne = resSQL.getString(i);
-				res[position] = valeurColonne;
-				position += 1;
-			}			
-        	return res; //retourne les infos dans ordre : nom, registre, source, destination, annee, mois, jour
+				String requete = "SELECT nom, regnat, source, destination, EXTRACT(YEAR FROM validite), EXTRACT(MONTH FROM validite), EXTRACT(DAY FROM validite) FROM abosexistants WHERE (numeroabo = ?)";
+	            PreparedStatement declar = this.connexion.prepareStatement(requete);
+	            declar.setString(1, numeroAbo);
+				ResultSet resSQL = declar.executeQuery();
+				ResultSetMetaData resBis = resSQL.getMetaData();
+				int nbrColonnes = resBis.getColumnCount();
+				int position = 0;
+				resSQL.next();
+				for (int i = 1; i <= nbrColonnes; i++) 
+				{
+					String valeurColonne = resSQL.getString(i);
+					res[position] = valeurColonne;
+					position += 1;
+				}			
+	        	return res; //retourne les infos dans ordre : nom, registre, source, destination, annee, mois, jour
+			}
         }
         catch (SQLException e)
         {

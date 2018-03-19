@@ -10,11 +10,8 @@ import javafx.scene.layout.*;
 
 class FRecapAboRenouv extends Ecran 
 {
-	private FAboRenouv2 fen;
-	
-	public FRecapAboRenouv(FAboRenouv2 fen, double hauteur, double largeur) 
+	public FRecapAboRenouv(int numAbo, int validite, double prix, double hauteur, double largeur) 
     {
-		this.fen = fen;
         Rectangle rectangle = new Rectangle();
         VBox vBox = new VBox();
         HBox hBox = new HBox();
@@ -66,7 +63,7 @@ class FRecapAboRenouv extends Ecran
 
         text0.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text0.setStrokeWidth(0.0);
-        text0.setText(fen.getNumAbo());
+        text0.setText(Integer.toString(numAbo));
         text0.setWrappingWidth(200.0*largeur);
         text0.setFont(new Font("System Bold Italic", 15.0*hauteur));
         HBox.setMargin(text0, new Insets(0.0, 0.0, 0.0, 20.0*largeur));
@@ -84,7 +81,7 @@ class FRecapAboRenouv extends Ecran
 
         text2.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text2.setStrokeWidth(0.0);
-        text2.setText(fen.getValidite());
+        text2.setText(validite + " mois");
         text2.setWrappingWidth(200.0*largeur);
         text2.setFont(new Font("System Bold Italic", 15.0*hauteur));
         hBox1.setPadding(new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
@@ -101,7 +98,7 @@ class FRecapAboRenouv extends Ecran
 
         text4.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text4.setStrokeWidth(0.0);
-        text4.setText("(prix)");
+        text4.setText(prix + " €");
         text4.setWrappingWidth(200.0*largeur);
         text4.setFont(new Font("System Bold Italic", 15.0*hauteur));
         hBox2.setPadding(new Insets(0.0, 0.0, 10.0*hauteur, 0.0));

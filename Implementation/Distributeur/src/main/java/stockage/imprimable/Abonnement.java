@@ -8,6 +8,7 @@ public class Abonnement extends TitreDeTransport
 	private String codeBarre;
 	private String nom;
 	private String registreNational;
+	private int num;
 	
 	public Abonnement(Date dateValidite, Date dateExp, String gareDepart, String gareArrivee, Classe classe,
 			Reduction reduction, TypeTitre type,String codeBarre,
@@ -29,5 +30,9 @@ public class Abonnement extends TitreDeTransport
 	public int getValidite(Date dateVal, Date dateExp)
 	{
 		return dateExp.getMonth() - dateVal.getMonth();
+	}
+	public int getNum()
+	{
+		return num;
 	}
 }

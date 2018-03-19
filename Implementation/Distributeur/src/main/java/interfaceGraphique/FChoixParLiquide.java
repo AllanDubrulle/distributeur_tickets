@@ -145,7 +145,7 @@ class FChoixParLiquide extends Ecran
 	public void actualiserMontant(double restant , double introduit)
 	{
     	NumberFormat nf = NumberFormat.getInstance();
-		text3.setText(nf.format(introduit));
-        text5.setText(nf.format(restant));
+		text3.setText(nf.format(introduit) + " €");
+        text5.setText(nf.format(restant) + " €");
 	}
 }
