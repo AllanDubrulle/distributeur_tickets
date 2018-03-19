@@ -35,6 +35,7 @@ class FHoraireArEtDep extends Ecran
         VBox vBox1 = new VBox();
         Button button = new Button();
         Button button0 = new Button();
+        Text text10 = new Text();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -139,15 +140,23 @@ class FHoraireArEtDep extends Ecran
         	{
         		try 
         		{
-        			if (graphAC.existanceTrajet(textField.getText(),textField0.getText()))
+        			if (graphAC.existanceTrajet(textField.getText(),textField0.getText()) && Integer.parseInt(textField1.getText()) < 24 && Integer.parseInt(textField2.getText()) < 60)
         				graphAC.choixRechercheGDEtGA(textField.getText(),textField0.getText(), Integer.parseInt(textField1.getText()), Integer.parseInt(textField2.getText()));
-        		} 
-        		catch (NumberFormatException | SQLException e) 
+        			else 
+        				text10.setText("Les données saisies sont incorrectes");
+        		}
+        		catch (NumberFormatException | SQLException e)
         		{
-        			e.printStackTrace();
+        			text10.setText("Les données saisies sont incorrectes");
         		}
         	}
         });
+        ;
+		text10.setFont(new Font("System Bold", 15.0*hauteur));
+		text10.setWrappingWidth(250.0*largeur);
+		text10.setFill(javafx.scene.paint.Color.RED);
+		text10.setLayoutX(275.0*largeur);
+		text10.setLayoutY(324.0*hauteur);
 
         button0.setLayoutX(359.0*largeur);
         button0.setLayoutY(349.0*hauteur);
@@ -169,7 +178,7 @@ class FHoraireArEtDep extends Ecran
         vBox0.getChildren().addAll(hBox0, hBox1);
         vBox1.getChildren().add(button);
         hBox.getChildren().addAll(vBox, vBox0,vBox1);
-        getChildren().addAll(rectangle, text, hBox, button0);
+        getChildren().addAll(rectangle, text, hBox, button0, text10);
     }
     
     public void actionClavier(String a) 
