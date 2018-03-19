@@ -16,7 +16,7 @@ public class EtatModificationAbo extends EtatCreationTitre
 	{
 		Controleur.getInstance().getCoeurAGraphique().afficherRecapCommande(Controleur.getInstance().getCommande(),
 				Controleur.getInstance().getCoeurAStockage().getTitre(),
-				Controleur.getInstance().getCoeurAStockage().getPrix(),
+				Controleur.getInstance().getCoeurAStockage().prixAffichable(),
 				Controleur.getInstance().getCoeurAStockage().getNbrTitre());
 	}
 }

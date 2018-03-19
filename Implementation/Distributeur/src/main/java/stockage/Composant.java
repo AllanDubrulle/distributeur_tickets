@@ -3,7 +3,7 @@ package stockage;
 public enum Composant
 {
 	LECTEURCARTE,
-	SCANNER,
+	SCANNEUR,
 	FENTEPIECE,
 	FENTEBILLET,
 	IMPRIMANTE;

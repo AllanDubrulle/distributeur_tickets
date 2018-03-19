@@ -45,9 +45,9 @@ public class EtatImpressionRecu extends ControleurEtat
 	
 	public void choixOk()
 	{
-		Controleur.getInstance().getCoeurAGraphique().afficherRecu(Controleur.getInstance().getCoeurAStockage().getPrix(),
-				Controleur.getInstance().getCoeurAStockage().getIntroduit(),
-				Controleur.getInstance().getCoeurAStockage().getRendu()); 
+		Controleur.getInstance().getCoeurAGraphique().afficherRecu(Controleur.getInstance().getCoeurAStockage().prixAffichable(),
+				Controleur.getInstance().getCoeurAStockage().introduitAffichable(),
+				Controleur.getInstance().getCoeurAStockage().renduAffichable()); 
 		Controleur.getInstance().modifEtat(EtatFin.getInstance());
 	}
 	

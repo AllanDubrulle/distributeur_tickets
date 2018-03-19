@@ -19,8 +19,8 @@ public class CoeurAStockageImpl implements CoeurAStockage
 	private Carte carte;
 	private TitreDeTransport achat;
 	private int nbrTitre;
-	private double prix;
-	private double introduit;
+	private int prix;
+	private int introduit;
 	private Monnayeur monnayeur;  // a modifier si on modifie panne
 	private HashMap<Composant,Boolean> composantEnMarche;
 	private Imprimante imprimante;
@@ -36,12 +36,12 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		}
 	}
 	
-	public double getPrix()
+	public int getPrix()
 	{
 		return prix;
 	}
 
-	public void setPrix(double prix) {
+	public void setPrix(int prix) {
 		this.prix = prix;
 	}
 
@@ -117,7 +117,7 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		}
 		setNbrTitre(nbrBillet);
 		setAchat(new Billet(dateValidite,new Date(), gareDepart, gareArrivee,  classeBillet, type,reduc,allerRetour));
-		setPrix(calculerPrixBillet(gareDepart,gareArrivee,reduc,type,classeBillet)*nbrBillet);
+		setPrix(calculerPrix(gareDepart,gareArrivee,reduc,type,classeBillet)*nbrBillet);
 	}
 
 	public void creerAbonnement(int validite, String gareDepart, String gareArrivee, int classe,
@@ -157,7 +157,7 @@ public class CoeurAStockageImpl implements CoeurAStockage
 			throw new ErreurDEncodage ("problème d'encodage");	
 		}	
 		setAchat(new Abonnement(dateValidite, dateExp, gareDepart, gareArrivee,  classeAbo, reduc, typeAbo, codeBarre, nom, registreNational));	
-		setPrix(calculerPrixAbo(gareDepart, gareArrivee, reduc, typeAbo, classeAbo, validite));	
+		setPrix(calculerPrix(gareDepart, gareArrivee, reduc, typeAbo, classeAbo, validite));	
 		BDDTitre bTitre = new BDDTitre();
 		bTitre.connexion();
 		bTitre.ajouterAbonnement(nom, registreNational, gareDepart, gareArrivee, annee, mois, jour);
@@ -210,28 +210,35 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		
 	}
 
-	public double calculerPrixBillet(String gareDepart, String gareArrivee,Reduction reduc,TypeTitre typeBillet,Classe classe)
+	public int calculerPrix(String gareDepart, String gareArrivee,Reduction reduc,TypeTitre type,Classe classe)
 	{
 		BDDTitre bTitre = new BDDTitre();
 		bTitre.connexion();
 		double calculPrix= bTitre.calculerPrixBillet(gareDepart, gareArrivee);
 		bTitre.deconnexion();
-		calculPrix -=  calculPrix*  ((double)reduc.valeur()/100);
-		calculPrix =  calculPrix- calculPrix*((double)typeBillet.valeur()/100);
-		calculPrix =  calculPrix*((double)3-classe.valeur());
-		return  calculPrix;
+		calculPrix *=100;
+		int res = ajusterPrix((int) calculPrix ,reduc, type, classe);
+		return  res;
 	}
-	public double calculerPrixAbo(String gareDepart, String gareArrivee, Reduction reduc, TypeTitre type, Classe classe, int validite)	
+	public int calculerPrix(String gareDepart, String gareArrivee, Reduction reduc, TypeTitre type, Classe classe, int validite)	
 	{	
 		BDDTitre bTitre = new BDDTitre();
 		bTitre.connexion();
 		double calculPrix = bTitre.calculerPrixAbo(gareDepart, gareArrivee);	
 		bTitre.deconnexion();
-		calculPrix -= calculPrix*  ((double)reduc.valeur()/100);	
-		calculPrix =  calculPrix- calculPrix*((double)type.valeur()/100);	
-		calculPrix = calculPrix*((double)3-classe.valeur());	
-		calculPrix = calculPrix*validite;	
-		return  calculPrix;	
+		calculPrix *=100;
+		int res = ajusterPrix((int) calculPrix ,reduc, type, classe);
+		res *= validite;	
+		return  res;	
+	}
+	
+	private int ajusterPrix(int prix ,Reduction reduc, TypeTitre type, Classe classe)
+	{
+		int res = (int)prix;
+		res -= res * reduc.valeur();	
+		res -= res * type.valeur();	
+		res *= (3-classe.valeur());	
+		return res;
 	}
 
 	private void setAchat(TitreDeTransport billet)
@@ -278,8 +285,12 @@ public class CoeurAStockageImpl implements CoeurAStockage
 	}
 
 	
-	public void ajoutMonnaie(int i)
+	public void ajoutMonnaie(int i) throws ComposantHorsService
 	{
+		if(!(estEnMarche(Composant.FENTEBILLET)&&estEnMarche(Composant.FENTEPIECE)))
+		{
+			throw new ComposantHorsService("piece ou billet refuse");
+		}
 		switch(i)
 		{
 			case 1:
@@ -319,7 +330,7 @@ public class CoeurAStockageImpl implements CoeurAStockage
 				monnayeur.stockerBillets(BilletMonnaie.B50);
 				break;
 		}
-		introduit+=((double)i/100);
+		introduit+=i;
 		
 	}
 	
@@ -350,9 +361,9 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		return tab;
 	}
 	
-	public Rendu rendreMonnaie(double rendu) throws PasAssezDeMonnaie
+	public Rendu rendreMonnaie() throws PasAssezDeMonnaie
 	{
-		return monnayeur.retournerArgent((int)(rendu*100));
+		return monnayeur.retournerArgent(introduit-prix);
 	}
 
 	
@@ -361,24 +372,19 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		return monnayeur.rendreMontantEncours();
 	}
 
-	public double getIntroduit()
+	/*public int getIntroduit()
 	{
 		return introduit;
-	}
+	}*/
 
 	public void reinitialisation()
 	{
-		setIntroduit(0.0);
+		setIntroduit(0);
 	}
 
-	private void setIntroduit(double introduit)
+	private void setIntroduit(int introduit)
 	{
 		this.introduit=introduit;
-	}
-
-	public double getRendu()
-	{
-		return Math.abs(introduit-prix);
 	}
 
 	public void viderCaisse()
@@ -406,5 +412,25 @@ public class CoeurAStockageImpl implements CoeurAStockage
 	public void composantRepare(Composant composant)
 	{
 		composantEnMarche.put(composant, true);
+	}
+
+	public boolean depassementPrix()
+	{
+		return prix<=introduit;
+	}
+
+	public double prixAffichable()
+	{
+		return (double) prix /100;
+	}
+
+	public double renduAffichable()
+	{
+		return Math.abs((double) (introduit-prix) /100);
+	}
+
+	public double introduitAffichable()
+	{
+		return (double) introduit /100;
 	}
 }

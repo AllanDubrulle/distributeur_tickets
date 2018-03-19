@@ -47,7 +47,7 @@ public class EtatImpressionTitre extends EtatAnnulable
 	public void choixOk()
 	{
 		Controleur.getInstance().getCoeurAGraphique().afficherTitre(Controleur.getInstance().getCommande(),Controleur.getInstance().getCoeurAStockage().getTitre() 
-				,Controleur.getInstance().getCoeurAStockage().getPrix()); 
+				,Controleur.getInstance().getCoeurAStockage().prixAffichable()); 
 		Controleur.getInstance().modifEtat(EtatDemandeRecu.getInstance());
 	}
 	
