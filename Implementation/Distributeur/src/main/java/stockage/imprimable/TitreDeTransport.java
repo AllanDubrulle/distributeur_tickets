@@ -87,4 +87,13 @@ public abstract class TitreDeTransport
 		this.type = type;
 		this.reduction = reduction;
 	}
+	public TitreDeTransport(Date dateValidite, String gareDepart, String gareArrivee, Classe classe, TypeTitre type, Reduction reduction)
+	{
+		this.dateValidite = dateValidite;
+		this.gareDepart = gareDepart;
+		this.gareArrivee = gareArrivee;
+		this.classe = classe;
+		this.type = type;
+		this.reduction = reduction;
+	}
 }

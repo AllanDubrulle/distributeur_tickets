@@ -4,20 +4,17 @@ import java.util.Date;
 
 public class Abonnement extends TitreDeTransport
 {
-
-	private String codeBarre;
 	private String nom;
 	private String registreNational;
 	private int num;
 	
-	public Abonnement(Date dateValidite, Date dateExp, String gareDepart, String gareArrivee, Classe classe,
-			Reduction reduction, TypeTitre type,String codeBarre,
-			String nom,String registreNational)
+	public Abonnement(int num, Date dateValidite, Date dateExp, String gareDepart, String gareArrivee, Classe classe,
+			Reduction reduction, TypeTitre type, String nom,String registreNational)
 	{
 		super(dateValidite, dateExp, gareDepart, gareArrivee, classe, type, reduction);
-		this.codeBarre=codeBarre;
 		this.nom=nom;
 		this.registreNational=registreNational;
+		this.num = num;
 	}
 	public String getNom() 
 	{
@@ -29,7 +26,16 @@ public class Abonnement extends TitreDeTransport
 	}
 	public int getValidite(Date dateVal, Date dateExp)
 	{
-		return dateExp.getMonth() - dateVal.getMonth();
+		int val = dateExp.getMonth() - dateVal.getMonth();
+		if (val == 4)
+			val = 3;
+		else if (val == 7)
+			val = 6;
+		else if (val == 2)
+			val = 1;
+		else if (val == 0)
+			val = 12;
+		return val;
 	}
 	public int getNum()
 	{

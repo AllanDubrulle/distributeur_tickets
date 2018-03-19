@@ -264,7 +264,7 @@ class FAboAchat extends Ecran
             {
             	try
     			{	
-    				graphAC.infoAbo(getValidite(), textField1.getText(), textField2.getText(), getClasse(), choiceBox.getValue(), choiceBox0.getValue(),  "1010", textField.getText(), textField0.getText());	//valeur pour test
+    				graphAC.infoAbo(getValidite(), textField1.getText(), textField2.getText(), getClasse(), choiceBox.getValue(), choiceBox0.getValue(), textField.getText(), textField0.getText());	//valeur pour test
     				graphAC.choixValider();	
         		}	
 		    		catch (NumberFormatException | ErreurDEncodage e)	

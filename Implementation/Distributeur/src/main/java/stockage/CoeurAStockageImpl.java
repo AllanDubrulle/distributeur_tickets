@@ -116,12 +116,12 @@ public class CoeurAStockageImpl implements CoeurAStockage
 			throw new ErreurDEncodage ("problème d'encodage");
 		}
 		setNbrTitre(nbrBillet);
-		setAchat(new Billet(dateValidite,new Date(), gareDepart, gareArrivee,  classeBillet, type,reduc,allerRetour));
+		setAchat(new Billet(dateValidite, gareDepart, gareArrivee,  classeBillet, type,reduc,allerRetour));
 		setPrix(calculerPrixBillet(gareDepart,gareArrivee,reduc,type,classeBillet)*nbrBillet);
 	}
 
 	public void creerAbonnement(int validite, String gareDepart, String gareArrivee, int classe,
-			String reduction, String type, String codeBarre, String nom, String registreNational) throws ErreurDEncodage
+			String reduction, String type, String nom, String registreNational) throws ErreurDEncodage
 	{	
 		
 		LocalDate dateValidite = LocalDate.now();
@@ -155,13 +155,15 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		if (reduc==null || typeAbo == null || classeAbo ==null )	
 		{	
 			throw new ErreurDEncodage ("problème d'encodage");	
-		}	
-		setAchat(new Abonnement(dateValid, dateExp, gareDepart, gareArrivee,  classeAbo, reduc, typeAbo, codeBarre, nom, registreNational));	
-		setPrix(calculerPrixAbo(gareDepart, gareArrivee, reduc, typeAbo, classeAbo, validite));	
+		}
 		BDDTitre bTitre = new BDDTitre();
 		bTitre.connexion();
-		bTitre.ajouterAbonnement(nom, registreNational, gareDepart, gareArrivee, annee, mois, jour, type, reduction, Integer.toString(classe));
+		int num = bTitre.numeroAbonnementSuivant();
+		bTitre.ajouterAbonnement(num, nom, registreNational, gareDepart, gareArrivee, annee, mois, jour, type, reduction, Integer.toString(classe));
 		bTitre.deconnexion();
+		setNbrTitre(1);
+		setAchat(new Abonnement(num, dateValid, dateExp, gareDepart, gareArrivee,  classeAbo, reduc, typeAbo, nom, registreNational));	
+		setPrix(calculerPrixAbo(gareDepart, gareArrivee, reduc, typeAbo, classeAbo, validite));	
 	}
 
 	public void modifierAbo(int validite, String numAbo) throws ErreurDEncodage
@@ -202,7 +204,9 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		{	
 			throw new ErreurDEncodage ("problème d'encodage");	
 		}
-		setAchat(new Abonnement(dateValid, dateExp, infos[2], infos[3], classeAbo, reduc, typeAbo, numAbo, infos[0], infos[1]));	
+		setNbrTitre(1);
+		setAchat(new Abonnement(Integer.parseInt(numAbo), dateValid, dateExp, infos[2], infos[3], classeAbo, reduc, typeAbo, infos[0], infos[1]));	
+		setPrix(calculerPrixAbo(infos[2], infos[3], reduc, typeAbo, classeAbo, validite));	
 	}
 	
 	public void creerPass() 

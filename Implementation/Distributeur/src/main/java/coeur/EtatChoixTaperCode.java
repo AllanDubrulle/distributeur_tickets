@@ -20,4 +20,8 @@ public class EtatChoixTaperCode extends EtatChoixTitre
 	{
 		Controleur.getInstance().getCoeurAGraphique().afficherChoixTaperCode();
 	}
+	public void retourTitre()
+	{
+		super.retour();
+	}
 }

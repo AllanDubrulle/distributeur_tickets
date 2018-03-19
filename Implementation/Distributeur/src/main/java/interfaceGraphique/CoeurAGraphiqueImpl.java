@@ -10,6 +10,7 @@ import stockage.Pieces;
 import stockage.Rendu;
 import stockage.imprimable.Billet;
 import stockage.imprimable.Abonnement;
+import stockage.imprimable.Pass;
 import stockage.imprimable.TitreDeTransport;
 
 public class CoeurAGraphiqueImpl implements CoeurAGraphique
@@ -166,7 +167,7 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 		case ACHATABO:
 			Abonnement abonnement = (Abonnement) titre;
 			StackPane root1 = new StackPane();
-			AfficherAbo afficheAbo = new AfficherAbo(1, abonnement.getNom(), abonnement.getClasse().valeur(), abonnement.getGareDepart(), abonnement.getGareArrivee(), abonnement.getDateValidite(), abonnement.getDateExp(), abonnement.getReduction().toString(), abonnement.getType().toString(), prix );
+			AfficherAbo afficheAbo = new AfficherAbo(abonnement.getNum(), abonnement.getNom(), abonnement.getClasse().valeur(), abonnement.getGareDepart(), abonnement.getGareArrivee(), abonnement.getDateValidite(), abonnement.getDateExp(), abonnement.getReduction().toString(), abonnement.getType().toString(), prix );
 			Stage stage1 = new Stage();
 			Scene scene1 = new Scene(root1, 580,300);
 			root1.getChildren().add(afficheAbo);
@@ -221,6 +222,16 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 			stage5.show();
 			break;
 		case REVOUVELLEMENTABO:
+			Abonnement abonnementRen = (Abonnement) titre;
+			StackPane root6 = new StackPane();
+			AfficherAbo afficheAboRen = new AfficherAbo(abonnementRen.getNum(), abonnementRen.getNom(), abonnementRen.getClasse().valeur(), abonnementRen.getGareDepart(), abonnementRen.getGareArrivee(), abonnementRen.getDateValidite(), abonnementRen.getDateExp(), abonnementRen.getReduction().toString(), abonnementRen.getType().toString(), prix );
+			Stage stage6 = new Stage();
+			Scene scene6 = new Scene(root6, 580,300);
+			root6.getChildren().add(afficheAboRen);
+			stage6.setResizable(false);
+			stage6.setScene(scene6);
+			stage6.setTitle("Abonnement");
+			stage6.show();
 			break;
 		default:
 			break;
@@ -295,10 +306,16 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 						prix , FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 				break;
 			case PASS10TRAJETS:
-				FenetreSimulation.getInstance().afficher(new FRecapPass10Trajets(fenPass10Trajets, FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
+				Pass pass1 = (Pass) titre;
+				FenetreSimulation.getInstance().afficher(new FRecapPass10Trajets(pass1.getNom(), pass1.getClasse().valeur(), 
+						pass1.getReduction().toString(), pass1.getType().toString(), prix, 
+						FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 				break;
 			case PASS10TRAJETS2GARES:
-				FenetreSimulation.getInstance().afficher(new FRecapPass10Trajets2Gares(fenPass10Trajets2Gares, FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
+				Pass pass2 = (Pass) titre;
+				FenetreSimulation.getInstance().afficher(new FRecapPass10Trajets2Gares(pass2.getNom(), pass2.getGareDepart(), 
+						pass2.getGareArrivee(), pass2.getClasse().valeur(), pass2.getReduction().toString(), pass2.getType().toString(), prix, 
+						FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 				break;
 			case PASSILLIMITE:
 				FenetreSimulation.getInstance().afficher(new FRecapPassIllimite(fenPassIllimite, FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));

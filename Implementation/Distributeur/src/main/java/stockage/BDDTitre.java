@@ -75,15 +75,14 @@ public class BDDTitre extends GestionBaseDeDonnees
         return -1;
 	}
 	
-	public void ajouterAbonnement(String nom, String reg, String source, String destination, String annee, String mois, String jour, String type, String reduction, String classe)
+	public void ajouterAbonnement(int num, String nom, String reg, String source, String destination, String annee, String mois, String jour, String type, String reduction, String classe)
 	{
 		try
         {
 			String nomMaj = nom.toUpperCase();
 			String sourceMaj = source.toUpperCase();
 			String destinationMaj = destination.toUpperCase();
-			int numeroAbo = numeroAbonnementSuivant();
-			String numeroAboStr = String.valueOf(numeroAbo);
+			String numeroAboStr = String.valueOf(num);
 			String requete = "insert into abosexistants values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement declar = this.connexion.prepareStatement(requete);
             declar.setString(1, numeroAboStr);
