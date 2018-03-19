@@ -2,6 +2,7 @@ package stockage;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.time.LocalDate;
 
@@ -98,7 +99,7 @@ class BDDTitre extends GestionBaseDeDonnees
             e.printStackTrace();
         }
 	}
-	public void actualiserDate(String numeroAbo, int validite)
+	public void actualiserDateAbo(String numeroAbo, int validite)
 	{
 		try
         {
@@ -120,5 +121,50 @@ class BDDTitre extends GestionBaseDeDonnees
         {
             e.printStackTrace();
         }
+	}
+	
+	public String[] infoAbonnement(String numeroAbo)
+	{
+        String[] res = new String[7]; 
+		try
+        {
+			String requete = "SELECT nom, regnat, source, destination, year(validite), month(validite), day(validite) FROM abosexistants WHERE (numeroabo = ?)";
+            PreparedStatement declar = this.connexion.prepareStatement(requete);
+            declar.setString(1, numeroAbo);
+			ResultSet resSQL = declar.executeQuery();
+			ResultSetMetaData resBis = resSQL.getMetaData();
+			int nbrColonnes = resBis.getColumnCount();
+			int position = 0;
+			resSQL.next();
+			for (int i = 1; i <= nbrColonnes; i++) 
+			{
+				String valeurColonne = resSQL.getString(i);
+				res[position] = valeurColonne;
+				position += 1;
+			}			
+        	return res; //retourne les infos dans ordre : nom, registre, source, destination, annee, mois, jour
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+        return res;
+	}
+	
+	public boolean existenceAbonnement(String numeroabo)
+	{
+		try
+        {
+			String requete = "SELECT nom FROM abosexistants WHERE (numeroabo = ?)";
+            PreparedStatement declar = this.connexion.prepareStatement(requete);
+            declar.setString(1, numeroabo);
+			ResultSet resSQL = declar.executeQuery();
+			return resSQL.next();
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+        return false;
 	}
 }

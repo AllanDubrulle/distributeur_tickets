@@ -190,7 +190,8 @@ class HoraireTrains extends GestionBaseDeDonnees
     	int position = 0;
 		while (res.next() && compteur <= 4) 
 		{
-			for (int i = 1; i <= nbrColonnes; i++) {
+			for (int i = 1; i <= nbrColonnes; i++) 
+			{
 				String valeurColonne = res.getString(i);
 				tabHor[position] = valeurColonne;
 				position += 1;
