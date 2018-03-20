@@ -2,10 +2,8 @@ package interfaceGraphique;
 
 import javafx.scene.text.*;
 import javafx.stage.Stage;
-import coeur.GraphiqueACoeur;
 import coeur.GraphiqueACoeurImpl;
 import javafx.collections.FXCollections;
-//import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.*;

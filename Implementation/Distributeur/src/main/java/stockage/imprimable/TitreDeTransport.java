@@ -9,6 +9,8 @@ public abstract class TitreDeTransport
 	protected String gareDepart;
 	protected String gareArrivee;
 	protected Classe classe;
+	protected int nbrJours;
+	
 	public Date getDateValidite()
 	{
 		return dateValidite;
@@ -43,39 +45,13 @@ public abstract class TitreDeTransport
 	{
 		return reduction;
 	}
-
-	protected TypeTitre type = TypeTitre.STANDARD;
-	protected Reduction reduction = Reduction.AUCUNE;
-
-	
-	public TitreDeTransport(Date dateValidite, Date dateExp, String gareDepart, String gareArrivee,Classe classe, TypeTitre type)
+	public int getNbrJours() 
 	{
-		this.dateValidite = dateValidite;
-		this.dateExp = dateExp;
-		this.gareDepart = gareDepart;
-		this.gareArrivee = gareArrivee;
-		this.classe = classe;
-		this.type = type;
+		return nbrJours;
 	}
 
-	public TitreDeTransport(Date dateValidite, Date dateExp, String gareDepart, String gareArrivee, Classe classe, Reduction reduction)
-	{
-		this.dateValidite = dateValidite;
-		this.dateExp = dateExp;
-		this.gareDepart = gareDepart;
-		this.gareArrivee = gareArrivee;
-		this.classe = classe;
-		this.reduction = reduction;
-	}
-
-	public TitreDeTransport(Date dateValidite, Date dateExp, String gareDepart, String gareArrivee, Classe classe)
-	{
-		this.dateValidite = dateValidite;
-		this.dateExp = dateExp;
-		this.gareDepart = gareDepart;
-		this.gareArrivee = gareArrivee;
-		this.classe = classe;
-	}
+	protected TypeTitre type;
+	protected Reduction reduction;
 
 	public TitreDeTransport(Date dateValidite, Date dateExp, String gareDepart, String gareArrivee, Classe classe, TypeTitre type, Reduction reduction)
 	{
@@ -92,6 +68,28 @@ public abstract class TitreDeTransport
 		this.dateValidite = dateValidite;
 		this.gareDepart = gareDepart;
 		this.gareArrivee = gareArrivee;
+		this.classe = classe;
+		this.type = type;
+		this.reduction = reduction;
+	}
+
+	public TitreDeTransport(int nbrJours, Classe classe, TypeTitre type, Reduction reduction)
+	{
+		this.nbrJours = nbrJours;
+		this.classe = classe;
+		this.type = type;
+		this.reduction = reduction;
+	}
+	public TitreDeTransport(Classe classe, TypeTitre type, Reduction reduction)
+	{
+		this.classe = classe;
+		this.type = type;
+		this.reduction = reduction;
+	}
+	public TitreDeTransport(String gareDepart, String gareArrivee, Classe classe, TypeTitre type, Reduction reduction)
+	{
+		this.gareArrivee = gareArrivee;
+		this.gareDepart = gareDepart;
 		this.classe = classe;
 		this.type = type;
 		this.reduction = reduction;

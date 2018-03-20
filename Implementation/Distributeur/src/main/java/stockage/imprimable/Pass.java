@@ -1,7 +1,5 @@
 package stockage.imprimable;
 
-import java.util.Date;
-
 import stockage.imprimable.TitreDeTransport;
 
 public class Pass extends TitreDeTransport
@@ -9,35 +7,25 @@ public class Pass extends TitreDeTransport
 	private TypePass typePass;
 	private String nom;
 	
-	public Pass(Date dateValidite, Date dateExp, String gareDepart, String gareArrivee, Classe classe,
-			TypePass typePass)
+	public Pass(String nom, String gareDepart, String gareArrivee, Classe classe, TypeTitre type, Reduction reduction, TypePass typePass)	//10Trajets2Gares
 	{
-		super(dateValidite, dateExp, gareDepart, gareArrivee, classe);
-		this.typePass=typePass;
-		
+		super(gareDepart, gareArrivee, classe, type, reduction);
+		this.nom = nom;
+		this.typePass = typePass;
 	}
-
-	public Pass(Date dateValidite, Date dateExp, String gareDepart, String gareArrivee, Classe classe,
-			Reduction reduction,TypePass typePass)
+	public Pass(String nom, int nbrJours, Classe classe, TypeTitre type, Reduction reduction, TypePass typePass)		//Illimite
 	{
-		super(dateValidite, dateExp, gareDepart, gareArrivee, classe, reduction);
-		this.typePass=typePass;
-	}
-
-
-	public Pass(Date dateValidite, Date dateExp, String gareDepart, String gareArrivee, Classe classe, TypeTitre type,
-			TypePass typePass)
-	{
-		super(dateValidite, dateExp, gareDepart, gareArrivee, classe, type);
-		this.typePass=typePass;
+		super(nbrJours, classe, type, reduction);
+		this.nom = nom;
+		this.typePass = typePass;
 	}
 	
-	public Pass(Date dateValidite, Date dateExp, String gareDepart, String gareArrivee, Classe classe, TypeTitre type, Reduction reduction)
+	public Pass(String nom, Classe classe, TypeTitre type, Reduction reduction, TypePass typePass)		//10Trajets
 	{
-		super(dateValidite, dateExp, gareDepart, gareArrivee, classe, type, reduction);
+		super(classe, type, reduction);
 		this.nom = nom;
+		this.typePass = typePass;
 	}
-
 	
 	public TypePass getTypePass()
 	{

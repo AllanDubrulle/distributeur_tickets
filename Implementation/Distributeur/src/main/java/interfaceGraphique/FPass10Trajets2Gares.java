@@ -3,6 +3,7 @@ package interfaceGraphique;
 import javafx.geometry.*;
 import javafx.scene.control.*;
 import javafx.scene.text.*;
+import stockage.ErreurDEncodage;
 import javafx.scene.shape.*;
 import coeur.GraphiqueACoeurImpl;
 import javafx.collections.FXCollections;
@@ -42,6 +43,7 @@ class FPass10Trajets2Gares extends Ecran
         Text text5 = new Text();
         choiceBox = new ChoiceBox<String>();	
         choiceBox0 = new ChoiceBox<String>();
+        Text text10 = new Text();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -198,9 +200,22 @@ class FPass10Trajets2Gares extends Ecran
         button0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button0.setOnAction(new EventHandler<ActionEvent>()
         {
-            public void handle(ActionEvent event)
+        	public void handle(ActionEvent event)
             {
-            	graphAC.choixValider();
+            	try 
+            	{
+					graphAC.infoPass10Trajets2Gares(textField.getText(), textField0.getText(), textField1.getText(), getClasse(), getReduction(), getType());
+	            	graphAC.choixValider();
+				} 
+            	catch (NumberFormatException | ErreurDEncodage e) 
+            	{
+            		text10.setText("Les données saisies sont incorrectes");
+            		text10.setFont(new Font("System Bold", 15.0*hauteur));
+            		text10.setWrappingWidth(250.0*largeur);
+            		text10.setFill(javafx.scene.paint.Color.RED);
+            		text10.setLayoutX(275.0*largeur);
+            		text10.setLayoutY(364.0*hauteur);
+				}
             }
         });
 
@@ -210,7 +225,7 @@ class FPass10Trajets2Gares extends Ecran
         hBox3.getChildren().addAll(text3, radioButton, radioButton0);
         hBox4.getChildren().addAll(text5, choiceBox0, text4, choiceBox);
         vBox.getChildren().addAll(hBox, hBox0, hBox1, hBox2, hBox3, hBox4);
-        getChildren().addAll(rectangle, text, vBox, button, button0);
+        getChildren().addAll(rectangle, text, vBox, button, button0, text10);
     }
     
     public void actionClavier(String a) 
@@ -326,12 +341,12 @@ class FPass10Trajets2Gares extends Ecran
 		return textField1.getText();
 	}
 	
-	public String getClasse()
+	public int getClasse()
 	{
 		if (radioButton.isSelected())
-			return "1e classe";
+			return 1;
 		else
-			return "2e classe";
+			return 2;
 	}
 	
 	public String getReduction()

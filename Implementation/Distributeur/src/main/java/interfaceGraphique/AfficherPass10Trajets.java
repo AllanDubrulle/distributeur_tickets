@@ -7,7 +7,7 @@ import javafx.scene.layout.*;
 
 class AfficherPass10Trajets extends Pane 
 {
-    public AfficherPass10Trajets(FPass10Trajets fen) 
+    public AfficherPass10Trajets(String nom, int classe, String reduction, String type, double prix) 
     {
         VBox vBox = new VBox();
         HBox hBox = new HBox();
@@ -66,11 +66,6 @@ class AfficherPass10Trajets extends Pane
         Text text1117 = new Text();
         Text text1118 = new Text();
         Text text1119 = new Text();
-        HBox hBox14 = new HBox();
-        Text text11110 = new Text();
-        Text text11111 = new Text();
-        Text text11112 = new Text();
-        Text text11113 = new Text();
         Rectangle rectangle = new Rectangle();
         Line line = new Line();
         Line line0 = new Line();
@@ -113,7 +108,7 @@ class AfficherPass10Trajets extends Pane
 
         text1.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1.setStrokeWidth(0.0);
-        text1.setText(fen.getNom());
+        text1.setText(nom);
         text1.setWrappingWidth(200.0);
         text1.setFont(new Font("System Bold Italic", 18.0));
 
@@ -131,7 +126,7 @@ class AfficherPass10Trajets extends Pane
 
         text3.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text3.setStrokeWidth(0.0);
-        text3.setText(fen.getClasse());
+        text3.setText(classe + "e classe (" + type.toUpperCase() + ")" );
         text3.setWrappingWidth(200.0);
         text3.setFont(new Font("System Bold Italic", 18.0));
         hBox1.setOpaqueInsets(new Insets(0.0));
@@ -441,50 +436,19 @@ class AfficherPass10Trajets extends Pane
 
         text1118.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1118.setStrokeWidth(0.0);
-        text1118.setText(fen.getReduction());
+        text1118.setText(reduction);
         text1118.setWrappingWidth(175.0);
         HBox.setMargin(text1118, new Insets(0.0, 0.0, 0.0, 44.0));
 
         text1119.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1119.setStrokeWidth(0.0);
-        text1119.setText("10.02   EUR");
+        text1119.setText(prix +"   EUR");
         text1119.setTextAlignment(javafx.scene.text.TextAlignment.RIGHT);
         text1119.setWrappingWidth(100.0);
         HBox.setMargin(text1119, new Insets(0.0, 0.0, 0.0, 110.0));
         text1119.setFont(new Font("System Bold", 16.0));
         hBox13.setOpaqueInsets(new Insets(0.0));
         VBox.setMargin(hBox13, new Insets(10.0, 20.0, 0.0, 20.0));
-
-        hBox14.setPrefHeight(0.0);
-        hBox14.setPrefWidth(580.0);
-
-        text11110.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text11110.setStrokeWidth(0.0);
-        text11110.setText("Valable du ");
-        text11110.setWrappingWidth(75.0);
-        HBox.setMargin(text11110, new Insets(0.0));
-
-        text11111.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text11111.setStrokeWidth(0.0);
-        text11111.setText("(date)");
-        text11111.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        text11111.setWrappingWidth(100.0);
-        HBox.setMargin(text11111, new Insets(0.0, 0.0, 0.0, 50.0));
-
-        text11112.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text11112.setStrokeWidth(0.0);
-        text11112.setText("au");
-        text11112.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        text11112.setWrappingWidth(50.0);
-
-        text11113.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text11113.setStrokeWidth(0.0);
-        text11113.setText("(date)");
-        text11113.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        text11113.setWrappingWidth(100.0);
-        hBox14.setOpaqueInsets(new Insets(0.0));
-        VBox.setMargin(hBox14, new Insets(0.0, 20.0, 20.0, 20.0));
-        vBox.setPadding(new Insets(20.0, 0.0, 0.0, 0.0));
 
         rectangle.setArcHeight(5.0);
         rectangle.setArcWidth(5.0);
@@ -519,8 +483,7 @@ class AfficherPass10Trajets extends Pane
         hBox11.getChildren().addAll(text1111, text1112, text1113);
         hBox12.getChildren().addAll(text1114, text1115, text1116);
         hBox13.getChildren().addAll(text1117, text1118, text1119);
-        hBox14.getChildren().addAll(text11110, text11111, text11112, text11113);
-        vBox.getChildren().addAll(hBox, hBox0, hBox1, hBox2, hBox3, hBox4, hBox5, hBox6, hBox7, hBox8, hBox9, hBox10, hBox11, hBox12, hBox13, hBox14);
+        vBox.getChildren().addAll(hBox, hBox0, hBox1, hBox2, hBox3, hBox4, hBox5, hBox6, hBox7, hBox8, hBox9, hBox10, hBox11, hBox12, hBox13);
         getChildren().addAll(vBox, rectangle, line, line0);
 
     }

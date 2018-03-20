@@ -142,14 +142,14 @@ class FRecapPass10Trajets2Gares extends Ecran
 
         text8.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text8.setStrokeWidth(0.0);
-        text8.setText("Type :");
+        text8.setText("Réduction :");
         text8.setWrappingWidth(180.0*largeur);
         text8.setFont(new Font(15.0*hauteur));
         HBox.setMargin(text8, new Insets(0.0));
 
         text9.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text9.setStrokeWidth(0.0);
-        text9.setText(type);
+        text9.setText(reduction);
         text9.setWrappingWidth(200.0*largeur);
         text9.setFont(new Font("System Bold Italic", 15.0*hauteur));
         HBox.setMargin(text9, new Insets(0.0, 0.0, 0.0, 20.0*largeur));
@@ -157,18 +157,18 @@ class FRecapPass10Trajets2Gares extends Ecran
         
         text12.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text12.setStrokeWidth(0.0);
-        text12.setText("Réduction :");
+        text12.setText("Type du pass :");
         text12.setWrappingWidth(180.0*largeur);
         text12.setFont(new Font(15.0*hauteur));
         HBox.setMargin(text12, new Insets(0.0));
 
         text13.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text13.setStrokeWidth(0.0);
-        text13.setText(reduction);
+        text13.setText(type);
         text13.setWrappingWidth(200.0*largeur);
         text13.setFont(new Font("System Bold Italic", 15.0*hauteur));
         HBox.setMargin(text13, new Insets(0.0, 0.0, 0.0, 20.0*largeur));
-        VBox.setMargin(hBox4, new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
+        VBox.setMargin(hBox6, new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
 
         hBox5.setPrefHeight(17.0*hauteur);
         hBox5.setPrefWidth(244.0*largeur);
@@ -225,7 +225,7 @@ class FRecapPass10Trajets2Gares extends Ecran
         hBox4.getChildren().addAll(text8, text9);
         hBox5.getChildren().addAll(text10, text11);
         hBox6.getChildren().addAll(text12, text13);
-        vBox.getChildren().addAll(hBox0, hBox1, hBox2, hBox3, hBox4, hBox6, hBox5);
+        vBox.getChildren().addAll(hBox0, hBox1, hBox2, hBox3, hBox6, hBox4, hBox5);
         getChildren().addAll(rectangle, text, vBox, button, button0);
     }
     

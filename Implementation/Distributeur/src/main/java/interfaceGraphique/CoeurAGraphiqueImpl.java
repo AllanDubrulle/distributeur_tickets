@@ -20,7 +20,7 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	private FChoixParLiquide fLiquide;
 	private FBillet fenBillet;
 	private FAboAchat fenAboAchat;
-	private FAboRenouvScanne fenAboScanne;
+	private FAboRenouveler fenAboRenouv;
 	private FChoixAbo choixAbo;
 	private FPassIllimite fenPassIllimite;
 	private FPass10Trajets fenPass10Trajets;
@@ -189,8 +189,9 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 			stage2.show();
 			break;
 		case PASS10TRAJETS:
+			Pass pass1 = (Pass) titre;
 			StackPane root3 = new StackPane();
-			AfficherPass10Trajets pass10Trajets = new AfficherPass10Trajets(fenPass10Trajets);
+			AfficherPass10Trajets pass10Trajets = new AfficherPass10Trajets(pass1.getNom(), pass1.getClasse().valeur(), pass1.getReduction().toString(), pass1.getType().toString(), prix);
 			Stage stage3 = new Stage();
 			Scene scene3 = new Scene(root3, 580,350);
 			root3.getChildren().add(pass10Trajets);
@@ -200,8 +201,9 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 			stage3.show();
 			break;
 		case PASS10TRAJETS2GARES:
+			Pass pass2 = (Pass) titre;
 			StackPane root4 = new StackPane();
-			AfficherPass10Trajets2Gares pass10Trajets2Gares = new AfficherPass10Trajets2Gares(fenPass10Trajets2Gares);
+			AfficherPass10Trajets2Gares pass10Trajets2Gares = new AfficherPass10Trajets2Gares(pass2.getNom(), pass2.getGareDepart(), pass2.getGareArrivee(), pass2.getClasse().valeur(), pass2.getReduction().toString(), pass2.getType().toString(), prix);
 			Stage stage4 = new Stage();
 			Scene scene4 = new Scene(root4, 580,350);
 			root4.getChildren().add(pass10Trajets2Gares);
@@ -211,8 +213,9 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 			stage4.show();
 			break;
 		case PASSILLIMITE:
+			Pass pass3 = (Pass) titre;
 			StackPane root5 = new StackPane();
-			AfficherPassIllimite passIllimite = new AfficherPassIllimite(fenPassIllimite);
+			AfficherPassIllimite passIllimite = new AfficherPassIllimite(pass3.getNom(), pass3.getClasse().valeur(), pass3.getReduction().toString(), pass3.getType().toString(), pass3.getNbrJours(), prix);
 			Stage stage5 = new Stage();
 			Scene scene5 = new Scene(root5, 580,265);
 			root5.getChildren().add(passIllimite);
@@ -318,7 +321,10 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 						FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 				break;
 			case PASSILLIMITE:
-				FenetreSimulation.getInstance().afficher(new FRecapPassIllimite(fenPassIllimite, FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
+				Pass pass3 = (Pass) titre;
+				FenetreSimulation.getInstance().afficher(new FRecapPassIllimite(pass3.getNom(), pass3.getClasse().valeur(), 
+						pass3.getType().toString(), pass3.getReduction().toString(), pass3.getNbrJours(), prix , 
+						FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 				break;
 			case REVOUVELLEMENTABO:
 				Abonnement abonnementRen = (Abonnement) titre;
@@ -330,12 +336,12 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	}
 	public void afficherRecapRenouvAboScanne() 
 	{
-		FenetreSimulation.getInstance().afficher(new FRecapAboRenouvScanne(fenAboScanne, FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
+		//FenetreSimulation.getInstance().afficher(new FRecapAboRenouvScanne(fenAboScanne, FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 	}
 	public void afficherRenouvScanne()
 	{
-		this.fenAboScanne = new FAboRenouvScanne(choixAbo, FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg());
-		FenetreSimulation.getInstance().afficher(fenAboScanne);
+		//this.fenAboScan = new FAboRenouvScanne(choixAbo, FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg());
+		//FenetreSimulation.getInstance().afficher(fenAboScanne);
 	}
 	public void afficherChoixCommande(Commande commande)
 	{
@@ -362,7 +368,8 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 				FenetreSimulation.getInstance().afficher(fenPassIllimite);
 				break;
 			case REVOUVELLEMENTABO:
-				FenetreSimulation.getInstance().afficher(new FAboRenouv1(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
+				this.fenAboRenouv = new FAboRenouveler(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg());
+				FenetreSimulation.getInstance().afficher(fenAboRenouv);
 				break;
 		}
 

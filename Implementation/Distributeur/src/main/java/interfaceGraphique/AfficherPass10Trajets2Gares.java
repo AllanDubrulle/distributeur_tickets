@@ -7,7 +7,7 @@ import javafx.scene.layout.*;
 
 class AfficherPass10Trajets2Gares extends Pane 
 {
-    public AfficherPass10Trajets2Gares(FPass10Trajets2Gares fen) 
+    public AfficherPass10Trajets2Gares(String nom, String gareDepart, String gareArrivee, int classe, String reduction, String type, double prix) 
     {
         VBox vBox = new VBox();
         HBox hBox = new HBox();
@@ -66,11 +66,6 @@ class AfficherPass10Trajets2Gares extends Pane
         Text text1117 = new Text();
         Text text1118 = new Text();
         Text text1119 = new Text();
-        HBox hBox14 = new HBox();
-        Text text11110 = new Text();
-        Text text11111 = new Text();
-        Text text11112 = new Text();
-        Text text11113 = new Text();
         Rectangle rectangle = new Rectangle();
         Line line = new Line();
         Line line0 = new Line();
@@ -113,7 +108,7 @@ class AfficherPass10Trajets2Gares extends Pane
 
         text1.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1.setStrokeWidth(0.0);
-        text1.setText(fen.getNom());
+        text1.setText(nom);
         text1.setWrappingWidth(200.0);
         text1.setFont(new Font("System Bold Italic", 18.0));
 
@@ -131,7 +126,7 @@ class AfficherPass10Trajets2Gares extends Pane
 
         text3.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text3.setStrokeWidth(0.0);
-        text3.setText(fen.getClasse());
+        text3.setText(classe + "e classe (" + type.toUpperCase() + ")");
         text3.setWrappingWidth(200.0);
         text3.setFont(new Font("System Bold Italic", 18.0));
         hBox1.setOpaqueInsets(new Insets(0.0));
@@ -176,14 +171,14 @@ class AfficherPass10Trajets2Gares extends Pane
 
         text8.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text8.setStrokeWidth(0.0);
-        text8.setText(fen.getDepart());
+        text8.setText(gareDepart);
         text8.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         text8.setWrappingWidth(170.0);
         text8.setFont(new Font(10.0));
 
         text9.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text9.setStrokeWidth(0.0);
-        text9.setText(fen.getArrivee());
+        text9.setText(gareArrivee);
         text9.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         text9.setWrappingWidth(170.0);
         text9.setFont(new Font(10.0));
@@ -203,14 +198,14 @@ class AfficherPass10Trajets2Gares extends Pane
 
         text11.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text11.setStrokeWidth(0.0);
-        text11.setText(fen.getDepart());
+        text11.setText(gareDepart);
         text11.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         text11.setWrappingWidth(170.0);
         text11.setFont(new Font(10.0));
 
         text12.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text12.setStrokeWidth(0.0);
-        text12.setText(fen.getArrivee());
+        text12.setText(gareArrivee);
         text12.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         text12.setWrappingWidth(170.0);
         text12.setFont(new Font(10.0));
@@ -230,14 +225,14 @@ class AfficherPass10Trajets2Gares extends Pane
 
         text14.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text14.setStrokeWidth(0.0);
-        text14.setText(fen.getDepart());
+        text14.setText(gareDepart);
         text14.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         text14.setWrappingWidth(170.0);
         text14.setFont(new Font(10.0));
 
         text15.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text15.setStrokeWidth(0.0);
-        text15.setText(fen.getArrivee());
+        text15.setText(gareArrivee);
         text15.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         text15.setWrappingWidth(170.0);
         text15.setFont(new Font(10.0));
@@ -257,14 +252,14 @@ class AfficherPass10Trajets2Gares extends Pane
 
         text17.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text17.setStrokeWidth(0.0);
-        text17.setText(fen.getDepart());
+        text17.setText(gareDepart);
         text17.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         text17.setWrappingWidth(170.0);
         text17.setFont(new Font(10.0));
 
         text18.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text18.setStrokeWidth(0.0);
-        text18.setText(fen.getArrivee());
+        text18.setText(gareArrivee);
         text18.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         text18.setWrappingWidth(170.0);
         text18.setFont(new Font(10.0));
@@ -284,14 +279,14 @@ class AfficherPass10Trajets2Gares extends Pane
 
         text110.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text110.setStrokeWidth(0.0);
-        text110.setText(fen.getDepart());
+        text110.setText(gareDepart);
         text110.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         text110.setWrappingWidth(170.0);
         text110.setFont(new Font(10.0));
 
         text111.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text111.setStrokeWidth(0.0);
-        text111.setText(fen.getArrivee());
+        text111.setText(gareArrivee);
         text111.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         text111.setWrappingWidth(170.0);
         text111.setFont(new Font(10.0));
@@ -311,14 +306,14 @@ class AfficherPass10Trajets2Gares extends Pane
 
         text113.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text113.setStrokeWidth(0.0);
-        text113.setText(fen.getDepart());
+        text113.setText(gareDepart);
         text113.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         text113.setWrappingWidth(170.0);
         text113.setFont(new Font(10.0));
 
         text114.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text114.setStrokeWidth(0.0);
-        text114.setText(fen.getArrivee());
+        text114.setText(gareArrivee);
         text114.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         text114.setWrappingWidth(170.0);
         text114.setFont(new Font(10.0));
@@ -338,14 +333,14 @@ class AfficherPass10Trajets2Gares extends Pane
 
         text116.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text116.setStrokeWidth(0.0);
-        text116.setText(fen.getDepart());
+        text116.setText(gareDepart);
         text116.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         text116.setWrappingWidth(170.0);
         text116.setFont(new Font(10.0));
 
         text117.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text117.setStrokeWidth(0.0);
-        text117.setText(fen.getArrivee());
+        text117.setText(gareArrivee);
         text117.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         text117.setWrappingWidth(170.0);
         text117.setFont(new Font(10.0));
@@ -365,14 +360,14 @@ class AfficherPass10Trajets2Gares extends Pane
 
         text119.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text119.setStrokeWidth(0.0);
-        text119.setText(fen.getDepart());
+        text119.setText(gareDepart);
         text119.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         text119.setWrappingWidth(170.0);
         text119.setFont(new Font(10.0));
 
         text1110.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1110.setStrokeWidth(0.0);
-        text1110.setText(fen.getArrivee());
+        text1110.setText(gareArrivee);
         text1110.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         text1110.setWrappingWidth(170.0);
         text1110.setFont(new Font(10.0));
@@ -392,14 +387,14 @@ class AfficherPass10Trajets2Gares extends Pane
 
         text1112.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1112.setStrokeWidth(0.0);
-        text1112.setText(fen.getDepart());
+        text1112.setText(gareDepart);
         text1112.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         text1112.setWrappingWidth(170.0);
         text1112.setFont(new Font(10.0));
 
         text1113.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1113.setStrokeWidth(0.0);
-        text1113.setText(fen.getArrivee());
+        text1113.setText(gareArrivee);
         text1113.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         text1113.setWrappingWidth(170.0);
         text1113.setFont(new Font(10.0));
@@ -419,14 +414,14 @@ class AfficherPass10Trajets2Gares extends Pane
 
         text1115.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1115.setStrokeWidth(0.0);
-        text1115.setText(fen.getDepart());
+        text1115.setText(gareDepart);
         text1115.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         text1115.setWrappingWidth(170.0);
         text1115.setFont(new Font(10.0));
 
         text1116.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1116.setStrokeWidth(0.0);
-        text1116.setText(fen.getArrivee());
+        text1116.setText(gareArrivee);
         text1116.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         text1116.setWrappingWidth(170.0);
         text1116.setFont(new Font(10.0));
@@ -443,50 +438,19 @@ class AfficherPass10Trajets2Gares extends Pane
 
         text1118.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1118.setStrokeWidth(0.0);
-        text1118.setText("FAMILLENOMBREUSE");
+        text1118.setText(reduction);
         text1118.setWrappingWidth(175.0);
         HBox.setMargin(text1118, new Insets(0.0, 0.0, 0.0, 44.0));
 
         text1119.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1119.setStrokeWidth(0.0);
-        text1119.setText("10.02   EUR");
+        text1119.setText(prix + "   EUR");
         text1119.setTextAlignment(javafx.scene.text.TextAlignment.RIGHT);
         text1119.setWrappingWidth(100.0);
         HBox.setMargin(text1119, new Insets(0.0, 0.0, 0.0, 110.0));
         text1119.setFont(new Font("System Bold", 16.0));
         hBox13.setOpaqueInsets(new Insets(0.0));
         VBox.setMargin(hBox13, new Insets(10.0, 20.0, 0.0, 20.0));
-
-        hBox14.setPrefHeight(0.0);
-        hBox14.setPrefWidth(580.0);
-
-        text11110.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text11110.setStrokeWidth(0.0);
-        text11110.setText("Valable du ");
-        text11110.setWrappingWidth(75.0);
-        HBox.setMargin(text11110, new Insets(0.0));
-
-        text11111.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text11111.setStrokeWidth(0.0);
-        text11111.setText("(date)");
-        text11111.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        text11111.setWrappingWidth(100.0);
-        HBox.setMargin(text11111, new Insets(0.0, 0.0, 0.0, 50.0));
-
-        text11112.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text11112.setStrokeWidth(0.0);
-        text11112.setText("au");
-        text11112.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        text11112.setWrappingWidth(50.0);
-
-        text11113.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text11113.setStrokeWidth(0.0);
-        text11113.setText("(date)");
-        text11113.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        text11113.setWrappingWidth(100.0);
-        hBox14.setOpaqueInsets(new Insets(0.0));
-        VBox.setMargin(hBox14, new Insets(0.0, 20.0, 0.0, 20.0));
-        vBox.setPadding(new Insets(20.0, 0.0, 0.0, 0.0));
 
         rectangle.setArcHeight(5.0);
         rectangle.setArcWidth(5.0);
@@ -521,8 +485,7 @@ class AfficherPass10Trajets2Gares extends Pane
         hBox11.getChildren().addAll(text1111, text1112, text1113);
         hBox12.getChildren().addAll(text1114, text1115, text1116);
         hBox13.getChildren().addAll(text1117, text1118, text1119);
-        hBox14.getChildren().addAll(text11110, text11111, text11112, text11113);
-        vBox.getChildren().addAll(hBox, hBox0, hBox1, hBox2, hBox3, hBox4, hBox5, hBox6, hBox7, hBox8, hBox9, hBox10, hBox11, hBox12, hBox13, hBox14);
+        vBox.getChildren().addAll(hBox, hBox0, hBox1, hBox2, hBox3, hBox4, hBox5, hBox6, hBox7, hBox8, hBox9, hBox10, hBox11, hBox12, hBox13);
         getChildren().addAll(vBox, rectangle, line, line0);
 
     }

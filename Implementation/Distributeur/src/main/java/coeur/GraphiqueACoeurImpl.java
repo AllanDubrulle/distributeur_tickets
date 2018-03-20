@@ -1,9 +1,13 @@
 package coeur;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Date;
+
+import stockage.BDDTitre;
 import stockage.Composant;
 import stockage.ErreurDEncodage;
+import stockage.imprimable.TypePass;
 
 public class GraphiqueACoeurImpl implements GraphiqueACoeur 
 {	
@@ -266,6 +270,42 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 		}
 	}
 	
+	public void infoPassIllimite(String nom, int classe, String reduction, String type, int nbrJours) throws ErreurDEncodage
+	{
+		try 
+		{
+			Controleur.getInstance().getCoeurAStockage().creerPassIllimite(nom, classe, reduction, type, nbrJours, TypePass.PASSILLIMITE.toString());
+		}
+		catch (ErreurDEncodage e) 
+		{
+			throw new ErreurDEncodage("probleme");
+		}			
+	}
+	
+	public void infoPass10Trajets(String nom, int classe, String reduction, String type) throws ErreurDEncodage
+	{
+		try 
+		{
+			Controleur.getInstance().getCoeurAStockage().creerPass10Trajets(nom, classe, reduction, type, TypePass.PASS10TRAJETS.toString());
+		}
+		catch (ErreurDEncodage e) 
+		{
+			throw new ErreurDEncodage("probleme");
+		}			
+	}
+	
+	public void infoPass10Trajets2Gares(String nom, String gareDepart, String gareArrivee, int classe, String reduction, String type) throws ErreurDEncodage
+	{
+		if(Controleur.getInstance().getCoeurAStockage().existenceTrajet(gareDepart, gareArrivee))	
+		{
+			Controleur.getInstance().getCoeurAStockage().creerPass10Trajets2Gares(nom, gareDepart, gareArrivee, classe, reduction, type, TypePass.PASS10TRAJETS2GARES.toString());
+		}
+		else 
+		{
+			throw new ErreurDEncodage("probleme");
+		}			
+	}
+	
 	public String[] getReductions()
 	{
 		return Controleur.getInstance().getCoeurAStockage().getListeReduction();
@@ -296,9 +336,11 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 		return Controleur.getInstance().getCoeurAStockage().existenceTrajet(gareDepart, gareArrivee);
 	}
 
-	public String[] listeNumeroAbonnement() 
+	public ArrayList<String> listeNumeroAbonnement() 
 	{
-		String[] res = new String[0];
+		BDDTitre bTitre = new BDDTitre();
+		bTitre.connexion();
+		ArrayList<String> res = bTitre.listeDesAbonnements();
 		return res;
 	}
 

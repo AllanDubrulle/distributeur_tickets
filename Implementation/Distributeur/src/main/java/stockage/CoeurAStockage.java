@@ -13,7 +13,9 @@ public interface CoeurAStockage
 	public void creerBillet(Date dateValidite, int nbrBillet, int classe, String gareDepart, String gareArrivee, String typeBillet, String reduction, boolean allerRetour) throws ErreurDEncodage;
 	public void creerAbonnement(int validite, String gareDepart, String gareArrivee, int classe, String reduction, String type, String nom, String registreNational) throws ErreurDEncodage;
 	public void modifierAbo(int validite, String numAbo) throws ErreurDEncodage;
-	public void creerPass();
+	public void creerPassIllimite(String nom, int classe, String reduction, String type, int nbrJours, String typePass) throws ErreurDEncodage;
+	public void creerPass10Trajets(String nom, int classe, String reduction, String type, String typePass) throws ErreurDEncodage;
+	public void creerPass10Trajets2Gares(String nom, String gareDepart, String gareArrivee, int classe, String reduction, String type, String typePass) throws ErreurDEncodage;
 	public int calculerPrix(String gareDepart, String gareArrivee,Reduction reduc,TypeTitre type,Classe classe);
 	public int calculerPrix(String gareDepart, String gareArrivee, Reduction reduc, TypeTitre type, Classe classe, int validite);
 	public boolean existenceTrajet(String gareDepart,String gareArrivee);

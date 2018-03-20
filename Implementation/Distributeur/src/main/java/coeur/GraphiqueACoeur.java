@@ -1,6 +1,7 @@
 package coeur;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Date;
 
 import stockage.Composant;
@@ -71,5 +72,8 @@ public interface GraphiqueACoeur
 	public void TombeEnPanne(Composant composant); // pas sur que ce soit la solution 
 	public boolean existanceGare(String gare);
 	public boolean existanceTrajet(String gareDepart, String gareArrivee);
-	public String[] listeNumeroAbonnement();
+	public ArrayList<String> listeNumeroAbonnement();
+	public void infoPassIllimite(String nom, int classe, String reduction, String type, int nbrJours) throws ErreurDEncodage;
+	public void infoPass10Trajets(String nom, int classe, String reduction, String type) throws ErreurDEncodage;
+	public void infoPass10Trajets2Gares(String nom, String gareDepart, String gareArrivee, int classe, String reduction, String type) throws ErreurDEncodage;
 }

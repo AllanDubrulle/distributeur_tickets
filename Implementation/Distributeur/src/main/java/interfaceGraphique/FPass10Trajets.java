@@ -3,6 +3,7 @@ package interfaceGraphique;
 import javafx.geometry.*;
 import javafx.scene.control.*;
 import javafx.scene.text.*;
+import stockage.ErreurDEncodage;
 import javafx.scene.shape.*;
 import coeur.GraphiqueACoeurImpl;
 import javafx.collections.FXCollections;
@@ -37,6 +38,7 @@ public class FPass10Trajets extends Ecran
         choiceBox = new ChoiceBox<String>();	
         choiceBox0 = new ChoiceBox<String>();	
         Text text3 = new Text();
+        Text text10 = new Text();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -166,7 +168,20 @@ public class FPass10Trajets extends Ecran
         {
             public void handle(ActionEvent event)
             {
-            	graphAC.choixValider();
+            	try 
+            	{
+					graphAC.infoPass10Trajets(textField.getText(), getClasse(), getReduction(), getType());
+	            	graphAC.choixValider();
+				} 
+            	catch (NumberFormatException | ErreurDEncodage e) 
+            	{
+            		text10.setText("Les données saisies sont incorrectes");
+            		text10.setFont(new Font("System Bold", 15.0*hauteur));
+            		text10.setWrappingWidth(250.0*largeur);
+            		text10.setFill(javafx.scene.paint.Color.RED);
+            		text10.setLayoutX(275.0*largeur);
+            		text10.setLayoutY(364.0*hauteur);
+				}
             }
         });
 
@@ -174,7 +189,7 @@ public class FPass10Trajets extends Ecran
         hBox1.getChildren().addAll(text1, radioButton, radioButton0);
         hBox2.getChildren().addAll(text3, choiceBox0, text2, choiceBox);
         vBox.getChildren().addAll(hBox, hBox0, hBox1, hBox2);
-        getChildren().addAll(rectangle, text, vBox, button, button0);
+        getChildren().addAll(rectangle, text, vBox, button, button0, text10);
     }
     
     public void actionClavier(String a) 
@@ -254,12 +269,12 @@ public class FPass10Trajets extends Ecran
 		return textField.getText();
 	}
 	
-	public String getClasse()
+	public int getClasse()
 	{
 		if (radioButton.isSelected())
-			return "1e classe";
+			return 1;
 		else 
-			return "2e classe";
+			return 2;
 	}
 	
 	public String getReduction()

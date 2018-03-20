@@ -10,7 +10,7 @@ import javafx.scene.layout.*;
 
 class FRecapPassIllimite extends Ecran 
 {    
-    public FRecapPassIllimite(FPassIllimite fenPass, double hauteur, double largeur) 
+    public FRecapPassIllimite(String nom, int classe, String type, String reduction, int nbrJours, double prix, double hauteur, double largeur) 
     {
         Rectangle rectangle = new Rectangle();
         Text text = new Text();
@@ -22,9 +22,6 @@ class FRecapPassIllimite extends Ecran
         HBox hBox1 = new HBox();
         Text text2 = new Text();
         Text text3 = new Text();
-        HBox hBox2 = new HBox();
-        Text text4 = new Text();
-        Text text5 = new Text();
         HBox hBox3 = new HBox();
         Text text6 = new Text();
         Text text7 = new Text();
@@ -84,7 +81,7 @@ class FRecapPassIllimite extends Ecran
 
         text1.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1.setStrokeWidth(0.0);
-        text1.setText(fenPass.getNom());
+        text1.setText(nom);
         text1.setWrappingWidth(200.0*largeur);
         HBox.setMargin(text1, new Insets(0.0, 0.0, 0.0, 20.0*largeur));
         text1.setFont(new Font("System Bold Italic", 15.0*hauteur));
@@ -95,34 +92,17 @@ class FRecapPassIllimite extends Ecran
 
         text2.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text2.setStrokeWidth(0.0);
-        text2.setText("Gare de départ :");
+        text2.setText("Type du pass :");
         text2.setWrappingWidth(180.0*largeur);
         text2.setFont(new Font(15.0*hauteur));
         HBox.setMargin(text2, new Insets(0.0, 20.0*largeur, 0.0, 0.0));
 
         text3.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text3.setStrokeWidth(0.0);
-        text3.setText(fenPass.getDepart());
+        text3.setText(type);
         text3.setWrappingWidth(200.0*largeur);
         text3.setFont(new Font("System Bold Italic", 15.0*hauteur));
         VBox.setMargin(hBox1, new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
-
-        hBox2.setPrefHeight(17.0*hauteur);
-        hBox2.setPrefWidth(244.0*largeur);
-
-        text4.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text4.setStrokeWidth(0.0);
-        text4.setText("Gare d'arrivée :");
-        text4.setWrappingWidth(180.0*largeur);
-        text4.setFont(new Font(15.0*hauteur));
-        HBox.setMargin(text4, new Insets(0.0, 20.0*largeur, 0.0, 0.0));
-
-        text5.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text5.setStrokeWidth(0.0);
-        text5.setText(fenPass.getArrivee());
-        text5.setWrappingWidth(200.0*largeur);
-        text5.setFont(new Font("System Bold Italic", 15.0*hauteur));
-        VBox.setMargin(hBox2, new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
 
         hBox3.setPrefHeight(17.0*hauteur);
         hBox3.setPrefWidth(244.0*largeur);
@@ -136,7 +116,7 @@ class FRecapPassIllimite extends Ecran
 
         text7.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text7.setStrokeWidth(0.0);
-        text7.setText(fenPass.getClasse());
+        text7.setText(classe + "e classe");
         text7.setWrappingWidth(200.0*largeur);
         text7.setFont(new Font("System Bold Italic", 15.0*hauteur));
         VBox.setMargin(hBox3, new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
@@ -153,7 +133,7 @@ class FRecapPassIllimite extends Ecran
 
         text9.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text9.setStrokeWidth(0.0);
-        text9.setText(fenPass.getReduction());
+        text9.setText(reduction);
         text9.setWrappingWidth(200.0*largeur);
         text9.setFont(new Font("System Bold Italic", 15.0*hauteur));
         VBox.setMargin(hBox4, new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
@@ -170,7 +150,7 @@ class FRecapPassIllimite extends Ecran
 
         text11.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text11.setStrokeWidth(0.0);
-        text11.setText(fenPass.getNbrJours());
+        text11.setText(Integer.toString(nbrJours));
         text11.setWrappingWidth(200.0*largeur);
         text11.setFont(new Font("System Bold Italic", 15.0*hauteur));
         HBox.setMargin(text11, new Insets(0.0, 0.0, 0.0, 20.0*largeur));
@@ -188,7 +168,7 @@ class FRecapPassIllimite extends Ecran
 
         text13.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text13.setStrokeWidth(0.0);
-        text13.setText("(prix)");
+        text13.setText(Double.toString(prix));
         text13.setWrappingWidth(200.0*largeur);
         text13.setFont(new Font("System Bold Italic", 15.0*hauteur));
         HBox.setMargin(text13, new Insets(0.0, 0.0, 0.0, 20.0*largeur));
@@ -227,12 +207,11 @@ class FRecapPassIllimite extends Ecran
 
         hBox0.getChildren().addAll(text0, text1);
         hBox1.getChildren().addAll(text2, text3);
-        hBox2.getChildren().addAll(text4, text5);
         hBox3.getChildren().addAll(text6, text7);
         hBox4.getChildren().addAll(text8, text9);
         hBox5.getChildren().addAll(text10, text11);
         hBox6.getChildren().addAll(text12, text13);
-        vBox.getChildren().addAll(hBox, hBox0, hBox1, hBox2, hBox3, hBox4, hBox5, hBox6);
+        vBox.getChildren().addAll(hBox, hBox0, hBox3, hBox1, hBox4, hBox5, hBox6);
         getChildren().addAll(rectangle, text, vBox, button, button0);
     }
     
