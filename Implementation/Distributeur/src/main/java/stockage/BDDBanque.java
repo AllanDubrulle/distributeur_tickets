@@ -60,22 +60,24 @@ class BDDBanque extends GestionBaseDeDonnees
 		String[] res = new String[3];
 		try
         {
-			String requete = "SELECT numero, code, solde FROM CARTE WHERE (NUMERO = ?)";
-            PreparedStatement declar = this.connexion.prepareStatement(requete);
-            declar.setString(1, numero);
-			ResultSet resSQL = declar.executeQuery();
-			resSQL.next();
-			res[0] = numero;
-			res[1] = resSQL.getString("code");
-			res[2] = resSQL.getString("solde");
-			return res;
+			if (existenceCarte(numero))
+			{	
+				String requete = "SELECT numero, code, solde FROM CARTE WHERE (NUMERO = ?)";
+	            PreparedStatement declar = this.connexion.prepareStatement(requete);
+	            declar.setString(1, numero);
+				ResultSet resSQL = declar.executeQuery();
+				resSQL.next();
+				res[0] = numero;
+				res[1] = resSQL.getString("code");
+				res[2] = resSQL.getString("solde");
+				return res;
+			}
         }
         catch (SQLException e)
         {
             e.printStackTrace();
         }
         return res;
-		
 	}
 	
 	public boolean verifPaiementPlusGrandQue5(String numero, int PIN, double montant)
