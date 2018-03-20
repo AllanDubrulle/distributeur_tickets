@@ -38,14 +38,14 @@ abstract class ControleurEtat
 	public void valideRenouvAboScanne() {}
 	public void valideNumAbo() {}
 	public void valideNumAboScanne() {}
-	public void validePIN(int codePIN, double montant) {}
+	public void validePIN(int codePIN) {}
 
 	public void scanneCode() {}
 	public void choixTaperCode() {}
 	public void choixAnnulerScanner() {}
 	
 	public void choixParCarte() {}
-	public void choixCarte(String carte) {}
+	public void choixCarte() {}
 	
 	public void choixInsererCarte() {}
 	public void choixEnLiquide() {}

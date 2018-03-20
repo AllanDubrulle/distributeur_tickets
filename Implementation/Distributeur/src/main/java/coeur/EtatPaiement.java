@@ -12,8 +12,6 @@ public class EtatPaiement extends EtatAnnulable
 	
 	public void choixParCarte() 
 	{
-		double montant = Controleur.getInstance().getCoeurAStockage().prixAffichable();
-		Controleur.getInstance().getCoeurAGraphique().setMontant(montant);
 		Controleur.getInstance().modifEtat(EtatParCarte.getInstance());
 	}
 	public void choixEnLiquide() 

@@ -41,12 +41,13 @@ class FChoixParCarte extends Ecran
         		try 
         		{
 					graphAC.infoCarte(textField.getText());
-	        		graphAC.choixValiderNumCarte(textField.getText());
+	        		graphAC.choixValider();
 	        		stage.close();
 				} 
         		catch (ErreurDEncodage e) 
         		{
-					e.printStackTrace();
+					//e.printStackTrace();
+					// affichage d'un message 
 				}
         	}
         });
@@ -104,6 +105,6 @@ class FChoixParCarte extends Ecran
 	
 	public void actionEntrer() 
 	{
-		graphAC.choixValiderNumCarte(textField.getText());
+		graphAC.choixValider();
 	}
 }

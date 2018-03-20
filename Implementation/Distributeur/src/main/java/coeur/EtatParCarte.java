@@ -10,14 +10,14 @@ class EtatParCarte extends EtatAnnulable
 		return (EtatParCarte) instance;
 	}
 	
-	public void choixCarte(String carteBancaire) 
+	public void valider() 
 	{
-		EtatAttentePIN.getInstance().setCarteBancaire(carteBancaire);
 		Controleur.getInstance().modifEtat(EtatAttentePIN.getInstance());
 	}
 	
 	public void entree() 
 	{
+		Controleur.getInstance().setModePaiement(this);
 		Controleur.getInstance().getCoeurAGraphique().afficherInsertionCarte();
 	}
 	

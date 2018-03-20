@@ -4,24 +4,34 @@ public class Carte
 {
 	private String id;
 	private int codePIN;
-	private double solde;
+	private int solde;
 
-	public Carte(String id, int codePIN, double solde) 
+	public Carte(String id, int codePIN, int solde) 
 	{
 		this.id = id;
 		this.codePIN = codePIN;
-		this.solde = solde;
+		this.solde = solde; 
 	}
-	public boolean soldeSuffisant(double montant)
+	private boolean soldeSuffisant(double montant)
 	{
 		return (this.solde >= montant);
 	}
-	public boolean verifCodePIN(int code)
+	private boolean verifCodePIN(int code)
 	{
 		return (this.codePIN == code);
 	}
 	public boolean verifPaiement(int code, double montant)
 	{ 
 		return (soldeSuffisant(montant) && verifCodePIN(code));
+	}
+	
+	public int getSolde()
+	{
+		return solde;
+	}
+	
+	public String getID()
+	{
+		return id;
 	}
 }

@@ -3,7 +3,6 @@ package coeur;
 class EtatAttentePIN extends EtatAnnulable 
 {	
 	private static EtatAttentePIN instance;
-	private String carteBancaire;
 	
 	public static EtatAttentePIN getInstance() 
 	{
@@ -14,26 +13,17 @@ class EtatAttentePIN extends EtatAnnulable
 		return (EtatAttentePIN) instance;
 	}
 	
-	public void setCarteBancaire(String carteBancaire) 
-	{
-		this.carteBancaire = carteBancaire;
-	}
-	
-	public String getCarteBancaire() 
-	{
-		return carteBancaire;
-	}
 	
 	public void entree() 
 	{
 		Controleur.getInstance().getCoeurAGraphique().afficherAttentePIN();
-		Controleur.getInstance().getCoeurAGraphique().effacerPIN(); // utilité ??
+		Controleur.getInstance().getCoeurAGraphique().effacerPIN(); // utilité ?? c'est graphique a enlever
 	}
 	
-	public void validePIN(int codePIN, double montant) 
+	public void validePIN(int codePIN) 
 	{
-		Controleur.getInstance().getCoeurAGraphique().setMontant(montant);
-		boolean ok = Controleur.getInstance().getCoeurAStockage().getCarte().verifPaiement(codePIN, montant);
+		boolean ok = Controleur.getInstance().getCoeurAStockage().verifPaiement(codePIN);
+		
 		if (!ok)
 		{
 			infosIncorrectes();
@@ -45,10 +35,18 @@ class EtatAttentePIN extends EtatAnnulable
 	}
 	public void infosIncorrectes()
 	{
-		Controleur.getInstance().modifEtat(EtatPINIncorrect.getInstance());
+		Controleur.getInstance().getCoeurAGraphique().afficherCodePINIncor();
+		Controleur.getInstance().getCoeurAGraphique().effacerPIN();
+		Controleur.getInstance().getCoeurAStockage().mauvaisPing();
+		if(Controleur.getInstance().getCoeurAStockage().tropDErreur())
+		{
+			// afficher message trop d'erreur 
+			Controleur.getInstance().modifEtat(EtatPaiement.getInstance());
+		}
 	}
 	public void infosCorrectes()
 	{
-		Controleur.getInstance().modifEtat(EtatDemandeRecu.getInstance());
+		Controleur.getInstance().getCoeurAStockage().actualiserSolde();
+		Controleur.getInstance().modifEtat(EtatImpressionTitre.getInstance());
 	}
 }

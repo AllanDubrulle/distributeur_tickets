@@ -45,4 +45,8 @@ public interface CoeurAStockage
 	public boolean verifPaiementCarte(String numero, int codePIN, double montant);
 	public boolean existenceCarte(String numero);
 	public Carte getCarte();
+	public boolean verifPaiement(int codePIN);
+	public void mauvaisPing();
+	public boolean tropDErreur();
+	public void actualiserSolde();
 }

@@ -200,9 +200,9 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 		controleur.getEtatActuel().inserer(20);
 	}
 
-	public void choixLecteurOK(int PIN, double montant) 
+	public void choixLecteurOK(int PIN) 
 	{
-		controleur.getEtatActuel().validePIN(PIN, montant);
+		controleur.getEtatActuel().validePIN(PIN);
 	}
 	public void choixLecteurInserer() 
 	{
@@ -213,18 +213,18 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 	{
 		controleur.getEtatActuel().confirme();
 	}
+	
 	public void choixPaiementParCarte() 
 	{
 		controleur.getEtatActuel().choixParCarte();
 	}
+	
 	public void choixPaiementLiquide() 
 	{
 		controleur.getEtatActuel().choixEnLiquide();
 	}
-	public void choixValiderNumCarte(String numero) 
-	{
-		controleur.getEtatActuel().choixCarte(numero);
-	}
+	
+	
 	public void infoCarte(String numero) throws ErreurDEncodage
 	{
 		if (Controleur.getInstance().getCoeurAStockage().existenceCarte(numero))
@@ -347,7 +347,7 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 		return Controleur.getInstance().getCoeurAStockage().existenceTrajet(gareDepart, gareArrivee);
 	}
 
-	public ArrayList<String> listeNumeroAbonnement() 
+	public ArrayList<String> listeNumeroAbonnement() // wtf a modifier 
 	{
 		BDDTitre bTitre = new BDDTitre();
 		bTitre.connexion();
