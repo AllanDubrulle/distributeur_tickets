@@ -21,7 +21,7 @@ public class EtatDemandeRecu extends EtatAnnulable
 
 	public void entree() 
 	{
-		Controleur.getInstance().getCoeurAStockage().creerCarte(carteBancaire, codePIN);
+		Controleur.getInstance().getCoeurAStockage().creerCarte(carteBancaire);
 		Controleur.getInstance().getCoeurAGraphique().effacerPIN();
 		Controleur.getInstance().getCoeurAGraphique().afficherDemandeRecu();
 	}

@@ -2,6 +2,7 @@ package interfaceGraphique;
 
 import javafx.scene.text.*;
 import javafx.stage.Stage;
+import stockage.ErreurDEncodage;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.*;
@@ -37,8 +38,16 @@ class FChoixParCarte extends Ecran
         {
         	public void handle(ActionEvent event) 
         	{
-        		graphAC.choixValiderNumCarte();
-        		stage.close();
+        		try 
+        		{
+					graphAC.infoCarte(textField.getText());
+	        		graphAC.choixValiderNumCarte(textField.getText());
+	        		stage.close();
+				} 
+        		catch (ErreurDEncodage e) 
+        		{
+					e.printStackTrace();
+				}
         	}
         });
 
@@ -95,6 +104,6 @@ class FChoixParCarte extends Ecran
 	
 	public void actionEntrer() 
 	{
-		graphAC.choixValiderNumCarte();
+		graphAC.choixValiderNumCarte(textField.getText());
 	}
 }

@@ -32,6 +32,11 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 		return pStage2;
 	}
 	
+	public void setMontant(double montant)
+	{
+		FenetreSimulation.getInstance().getLecteur().setMontant(montant);
+	}
+	
 	private CoeurAGraphiqueImpl(){}
 	
 	public static CoeurAGraphiqueImpl getInstance()

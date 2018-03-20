@@ -120,7 +120,6 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 		controleur.getEtatActuel().valideRecherche(gareDepart, gareArrivee, heure, minute);
 	}
 	
-	
 	public void choixValiderRenouvAbo() 
 	{
 		controleur.getEtatActuel().valideRenouvAbo();
@@ -201,11 +200,11 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 		controleur.getEtatActuel().inserer(20);
 	}
 
-	public void choixScanneurOK() 
+	public void choixLecteurOK(int PIN, double montant) 
 	{
-		controleur.getEtatActuel().choixPINOk();
+		controleur.getEtatActuel().validePIN(PIN, montant);
 	}
-	public void choixScanneurInserer() 
+	public void choixLecteurInserer() 
 	{
 		controleur.getEtatActuel().choixInsererCarte();
 	}
@@ -222,9 +221,20 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 	{
 		controleur.getEtatActuel().choixEnLiquide();
 	}
-	public void choixValiderNumCarte() 
+	public void choixValiderNumCarte(String numero) 
 	{
-		controleur.getEtatActuel().choixCarte("1235");     //valeur par défaut pour test
+		controleur.getEtatActuel().choixCarte(numero);     //valeur par défaut pour test
+	}
+	public void infoCarte(String numero) throws ErreurDEncodage
+	{
+		if (Controleur.getInstance().getCoeurAStockage().existenceCarte(numero))
+		{
+			Controleur.getInstance().getCoeurAStockage().creerCarte(numero);
+		}
+		else
+		{
+			throw new ErreurDEncodage("carteNonExistente");
+		}
 	}
 	public void choixValider()
 	{

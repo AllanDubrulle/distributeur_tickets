@@ -57,13 +57,14 @@ public interface GraphiqueACoeur
 	public void choix50cts();
 	public void choix20cts();
 	
-	public void choixScanneurOK();
-	public void choixScanneurInserer();
+	public void choixLecteurOK(int PIN, double montant);
+	public void choixLecteurInserer();
+	public void infoCarte(String numero) throws ErreurDEncodage;
 	
 	public void choixPaiement();
 	public void choixPaiementParCarte();
 	public void choixPaiementLiquide();
-	public void choixValiderNumCarte();
+	public void choixValiderNumCarte(String numero);
 	public void infoBillet(Date dateValidite, int nbrBillet, int jour, String gareDepart, String gareArrivee, String type, String reduction, boolean allerRetour) throws ErreurDEncodage;
 	public void infoAbo(int validite, String gareDepart, String gareArrivee, int classe, String reduction, String type, String nom, String registre) throws ErreurDEncodage;
 	public void infoAboRen(int validite, String numAbo) throws ErreurDEncodage;
@@ -76,4 +77,5 @@ public interface GraphiqueACoeur
 	public void infoPassIllimite(String nom, int classe, String reduction, String type, int nbrJours) throws ErreurDEncodage;
 	public void infoPass10Trajets(String nom, int classe, String reduction, String type) throws ErreurDEncodage;
 	public void infoPass10Trajets2Gares(String nom, String gareDepart, String gareArrivee, int classe, String reduction, String type) throws ErreurDEncodage;
+	
 }

@@ -404,4 +404,8 @@ class FenetreSimulation extends BorderPane
     {
     	lecteur.getField().clear();
     }
+    public LecteurCarte getLecteur()
+    {
+    	return lecteur;
+    }
 }

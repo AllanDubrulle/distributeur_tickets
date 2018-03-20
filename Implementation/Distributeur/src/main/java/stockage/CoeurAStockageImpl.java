@@ -43,13 +43,27 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		return prix;
 	}
 
-	public void setPrix(int prix) {
+	public void setPrix(int prix) 
+	{
 		this.prix = prix;
 	}
 
-	public void creerCarte(String id, int codePIN) 
+	public void creerCarte(String id) 
 	{
-		carte = new Carte(id, codePIN);
+		BDDBanque bBanque = new BDDBanque();
+		bBanque.connexion();
+		String[] infoCarte = bBanque.infoCarte(id);
+		bBanque.deconnexion();
+		carte = new Carte(id, Integer.parseInt(infoCarte[1]), Double.valueOf(infoCarte[2]));
+	}
+	
+	public boolean existenceCarte(String numero)
+	{
+		BDDBanque bBanque = new BDDBanque();
+		bBanque.connexion();
+		boolean res = bBanque.existenceCarte(numero);
+		bBanque.deconnexion();
+		return res;
 	}
 	
 	public Carte getCarte()
@@ -249,6 +263,31 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		setNbrTitre(1);
 		setAchat(new Pass(nom, nbrJours, classePass, typeTitre, reduc, typePass));
 		setPrix(calculerPrix(classePass, reduc, typeTitre, nbrJours));
+	}
+	
+	public boolean verifPaiementCarte(String numero, int codePIN, double montant)
+	{
+		BDDBanque bBanque = new BDDBanque();
+		bBanque.connexion();
+		boolean res;
+		if (montant >= 5)
+		{
+			res = bBanque.verifPaiementPlusGrandQue5(numero, codePIN, montant);
+		}
+		else
+		{
+			res = bBanque.verifPaiementPlusPetitQue5(numero, montant);
+		}
+		bBanque.deconnexion();
+		return res;
+	}
+	
+	public void modifierSoldeCarte(String numero, double montant)
+	{
+		BDDBanque bBanque = new BDDBanque();
+		bBanque.connexion();
+		bBanque.actualiserSolde(numero, montant);
+		bBanque.deconnexion();
 	}
 	
 	public void creerPass10Trajets(String nom, int classe, String reduction, String type, String typePassStr) throws ErreurDEncodage

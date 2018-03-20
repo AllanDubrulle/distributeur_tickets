@@ -38,6 +38,7 @@ abstract class ControleurEtat
 	public void valideRenouvAboScanne() {}
 	public void valideNumAbo() {}
 	public void valideNumAboScanne() {}
+	public void validePIN(int codePIN, double montant) {}
 
 	public void scanneCode() {}
 	public void choixTaperCode() {}
@@ -45,10 +46,13 @@ abstract class ControleurEtat
 	
 	public void choixParCarte() {}
 	public void choixCarte(String carte) {}
+	public String getCarteBancaire() 
+	{
+		return "";
+	}
 	public void choixInsererCarte() {}
 	public void choixEnLiquide() {}
 	public void inserer(int i) {}
-	public void choixPINOk() {}
 	
 	public void choixOui() {}
 	public void choixNon() {}

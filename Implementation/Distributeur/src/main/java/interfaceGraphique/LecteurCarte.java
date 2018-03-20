@@ -15,7 +15,7 @@ class LecteurCarte extends Pane
 	private PasswordField passwordField;
 	private Button button, button0, button1, button2, button3, button4, button5, button6, button7, button8, button9, button10, button11;
 	private GraphiqueACoeur graphAC = GraphiqueACoeurImpl.getInstance();
-
+	private double montant;
 
 	public LecteurCarte(double hauteur, double largeur) 
 	{
@@ -247,7 +247,7 @@ class LecteurCarte extends Pane
         button10.setOnAction(new EventHandler<ActionEvent>(){
             public void handle(ActionEvent event)
             {
-            	graphAC.choixScanneurOK();
+            	graphAC.choixLecteurOK(Integer.parseInt(passwordField.getText()), montant);
             }
         });
 
@@ -262,7 +262,7 @@ class LecteurCarte extends Pane
         {
             public void handle(ActionEvent event)
             {
-            	graphAC.choixScanneurInserer();
+            	graphAC.choixLecteurInserer();
             }
         });
         
@@ -319,5 +319,14 @@ class LecteurCarte extends Pane
 	public PasswordField getField()
 	{
 		return passwordField;
+	}
+	public void setMontant(double montant) 
+	{
+		this.montant = montant;
+	}
+	
+	public double getMontant()
+	{
+		return montant;
 	}
 }

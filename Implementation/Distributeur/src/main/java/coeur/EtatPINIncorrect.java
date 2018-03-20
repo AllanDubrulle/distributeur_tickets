@@ -3,7 +3,6 @@ package coeur;
 class EtatPINIncorrect extends EtatAnnulable 
 {	
 	private static EtatPINIncorrect instance;
-	private String carteBancaire;
 	
 	public static EtatPINIncorrect getInstance() 
 	{
@@ -14,23 +13,31 @@ class EtatPINIncorrect extends EtatAnnulable
 		return (EtatPINIncorrect) instance;
 	}
 	
-	public void setCarteBancaire(String carteBancaire) 
-	{
-		this.carteBancaire = carteBancaire;
-	}
-	
 	public void entree() 
 	{
 		Controleur.getInstance().getCoeurAGraphique().afficherCodePINIncor();
 		Controleur.getInstance().getCoeurAGraphique().effacerPIN();
 	}
 	
-	public void validePIN(int codePIN) 
+	public void validePIN(int codePIN, double montant) 
 	{
-		((EtatDemandeRecu) EtatDemandeRecu.getInstance()).setParametres(codePIN, carteBancaire);
-		Controleur.getInstance().modifEtat(EtatDemandeRecu.getInstance());
+		boolean ok = Controleur.getInstance().getCoeurAStockage().getCarte().verifPaiement(codePIN, montant);
+		//((EtatDemandeRecu) EtatDemandeRecu.getInstance()).setParametres(codePIN, carteBancaire);
+		System.out.println(Controleur.getInstance().getCoeurAStockage().getCarte().getSolde());
+		if (!ok)
+		{
+			infosIncorrectes();
+		}
+		else
+		{
+			infosCorrectes();
+		}
 	}
-	public void choixPINOk()
+	public void infosIncorrectes()
+	{
+		Controleur.getInstance().modifEtat(EtatPINIncorrect.getInstance());
+	}
+	public void infosCorrectes()
 	{
 		Controleur.getInstance().modifEtat(EtatDemandeRecu.getInstance());
 	}

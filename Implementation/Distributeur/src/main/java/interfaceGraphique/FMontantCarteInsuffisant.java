@@ -6,9 +6,9 @@ import javafx.scene.control.*;
 import javafx.scene.shape.*;
 import javafx.scene.text.*;
 
-class FCodePINIncor extends Ecran 
+class FMontantCarteInsuffisant extends Ecran 
 {
-    public FCodePINIncor(double hauteur, double largeur) 
+    public FMontantCarteInsuffisant(double hauteur, double largeur) 
     {
         Rectangle rectangle = new Rectangle();
         Text text = new Text();
@@ -33,7 +33,7 @@ class FCodePINIncor extends Ecran
         text.setLayoutY(193.0*hauteur);
         text.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text.setStrokeWidth(0.0);
-        text.setText("Les informations de la carte sont fausses. Veuillez rééssayer.");
+        text.setText("Le solde de la carte est insuffisant. Veuillez récupé0rer votre carte.");
         text.setTextAlignment(javafx.scene.text.TextAlignment.CENTER); 
         text.setWrappingWidth(205.5*largeur);
         text.setFont(new Font("System Italic", 18.0*hauteur));

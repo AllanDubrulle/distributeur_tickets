@@ -19,19 +19,37 @@ class EtatAttentePIN extends EtatAnnulable
 		this.carteBancaire = carteBancaire;
 	}
 	
+	public String getCarteBancaire() 
+	{
+		return carteBancaire;
+	}
+	
 	public void entree() 
 	{
 		Controleur.getInstance().getCoeurAGraphique().afficherAttentePIN();
 		Controleur.getInstance().getCoeurAGraphique().effacerPIN(); // utilité ??
 	}
 	
-	public void validePIN(int codePIN) 
+	public void validePIN(int codePIN, double montant) 
 	{
-		((EtatDemandeRecu) EtatDemandeRecu.getInstance()).setParametres(codePIN, carteBancaire);
-		Controleur.getInstance().modifEtat(EtatDemandeRecu.getInstance());
+		Controleur.getInstance().getCoeurAGraphique().setMontant(montant);
+		boolean ok = Controleur.getInstance().getCoeurAStockage().getCarte().verifPaiement(codePIN, montant);
+		System.out.println(ok);
+		if (!ok)
+		{
+			infosIncorrectes();
+		}
+		else
+		{
+			infosCorrectes();
+		}
 	}
-	public void choixPINOk()
+	public void infosIncorrectes()
 	{
 		Controleur.getInstance().modifEtat(EtatPINIncorrect.getInstance());
+	}
+	public void infosCorrectes()
+	{
+		Controleur.getInstance().modifEtat(EtatDemandeRecu.getInstance());
 	}
 }

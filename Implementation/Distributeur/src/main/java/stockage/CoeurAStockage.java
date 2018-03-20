@@ -9,7 +9,7 @@ import stockage.imprimable.TypeTitre;
 
 public interface CoeurAStockage 
 {
-	public void creerCarte(String id, int codePIN);
+	public void creerCarte(String id);
 	public void creerBillet(Date dateValidite, int nbrBillet, int classe, String gareDepart, String gareArrivee, String typeBillet, String reduction, boolean allerRetour) throws ErreurDEncodage;
 	public void creerAbonnement(int validite, String gareDepart, String gareArrivee, int classe, String reduction, String type, String nom, String registreNational) throws ErreurDEncodage;
 	public void modifierAbo(int validite, String numAbo) throws ErreurDEncodage;
@@ -38,7 +38,11 @@ public interface CoeurAStockage
 	public String[] rechercherHoraireItineraire(String gareDepart, String gareArrivee, int heure, int minute) throws SQLException;
 	public String[] rechercherHoraireArrivee(String gareArrivee, int heure, int minute) throws SQLException;
 	public boolean depassementPrix();
+	public int getPrix();
 	public double prixAffichable();
 	public double renduAffichable();
 	public double introduitAffichable();
+	public boolean verifPaiementCarte(String numero, int codePIN, double montant);
+	public boolean existenceCarte(String numero);
+	public Carte getCarte();
 }
