@@ -7,7 +7,6 @@ import stockage.imprimable.TitreDeTransport;
 
 public interface CoeurAGraphique 
 {
-	public void setMontant(double montant);
 	
 	public void afficherAccueil();
 	public void afficherMenu();

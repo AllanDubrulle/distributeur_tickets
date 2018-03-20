@@ -57,14 +57,13 @@ public interface GraphiqueACoeur
 	public void choix50cts();
 	public void choix20cts();
 	
-	public void choixLecteurOK(int PIN, double montant);
+	public void choixLecteurOK(int PIN);
 	public void choixLecteurInserer();
 	public void infoCarte(String numero) throws ErreurDEncodage;
 	
 	public void choixPaiement();
 	public void choixPaiementParCarte();
 	public void choixPaiementLiquide();
-	public void choixValiderNumCarte(String numero);
 	public void infoBillet(Date dateValidite, int nbrBillet, int jour, String gareDepart, String gareArrivee, String type, String reduction, boolean allerRetour) throws ErreurDEncodage;
 	public void infoAbo(int validite, String gareDepart, String gareArrivee, int classe, String reduction, String type, String nom, String registre) throws ErreurDEncodage;
 	public void infoAboRen(int validite, String numAbo) throws ErreurDEncodage;

@@ -26,6 +26,7 @@ public class CoeurAStockageImpl implements CoeurAStockage
 	private Monnayeur monnayeur;  // a modifier si on modifie panne
 	private HashMap<Composant,Boolean> composantEnMarche;
 	private Imprimante imprimante;
+	private int essai;
 	
 	public CoeurAStockageImpl()
 	{
@@ -55,6 +56,7 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		String[] infoCarte = bBanque.infoCarte(id);
 		bBanque.deconnexion();
 		carte = new Carte(id, Integer.parseInt(infoCarte[1]), Double.valueOf(infoCarte[2]));
+		essai = 0;
 	}
 	
 	public boolean existenceCarte(String numero)
@@ -627,6 +629,23 @@ public class CoeurAStockageImpl implements CoeurAStockage
 	public double introduitAffichable()
 	{
 		return (double) introduit /100;
+	}
+
+	public boolean verifPaiement(int codePIN) 
+	{
+		return carte.verifPaiement(codePIN, prix);
+	}
+
+	public void mauvaisPing()
+	{
+		essai++;
+		
+	}
+
+	@Override
+	public boolean tropDErreur()
+	{
+		return essai>2;
 	}
 
 }
