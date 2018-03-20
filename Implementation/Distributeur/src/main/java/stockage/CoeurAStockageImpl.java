@@ -409,11 +409,11 @@ public class CoeurAStockageImpl implements CoeurAStockage
 	
 	private int ajusterPrix(int prix ,Reduction reduc, TypeTitre type, Classe classe)
 	{
-		int res = (int)prix;
-		res -= res * reduc.valeur();	
-		res -= res * type.valeur();	
+		double res= prix;
+		res -= res * (double)reduc.valeur()/100;	
+		res -= res * (double)type.valeur()/100;	
 		res *= (3-classe.valeur());	
-		return res;
+		return (int) res;
 	}
 
 	private void setAchat(TitreDeTransport billet)
