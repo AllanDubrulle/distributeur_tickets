@@ -55,7 +55,7 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		bBanque.connexion();
 		String[] infoCarte = bBanque.infoCarte(id);
 		bBanque.deconnexion();
-		carte = new Carte(id, Integer.parseInt(infoCarte[1]), Double.valueOf(infoCarte[2]));
+		carte = new Carte(id, Integer.parseInt(infoCarte[1]), Integer.parseInt(infoCarte[2]));
 		essai = 0;
 	}
 	
@@ -646,6 +646,11 @@ public class CoeurAStockageImpl implements CoeurAStockage
 	public boolean tropDErreur()
 	{
 		return essai>2;
+	}
+
+	public void actualiserSolde() // victor c'est pour toi tu dois récupérer la carte et actualiser en faisant solde-prix
+	{
+		
 	}
 
 }

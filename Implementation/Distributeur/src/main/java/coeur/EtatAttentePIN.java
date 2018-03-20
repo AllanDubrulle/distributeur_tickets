@@ -46,6 +46,7 @@ class EtatAttentePIN extends EtatAnnulable
 	}
 	public void infosCorrectes()
 	{
+		Controleur.getInstance().getCoeurAStockage().actualiserSolde();
 		Controleur.getInstance().modifEtat(EtatImpressionTitre.getInstance());
 	}
 }

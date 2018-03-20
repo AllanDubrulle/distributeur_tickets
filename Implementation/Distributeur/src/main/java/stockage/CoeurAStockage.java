@@ -48,4 +48,5 @@ public interface CoeurAStockage
 	public boolean verifPaiement(int codePIN);
 	public void mauvaisPing();
 	public boolean tropDErreur();
+	public void actualiserSolde();
 }
