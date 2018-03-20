@@ -394,17 +394,37 @@ public class CoeurAStockageImpl implements CoeurAStockage
 	
 	public int calculerPrix(Classe classe, Reduction reduction, TypeTitre type, int nbrJours)		//PassIllimite
 	{
-		return 0;
+		BDDTitre bTitre = new BDDTitre();
+		bTitre.connexion();
+		double calculPrix = bTitre.calculerPrixPass("SansRestriction");	
+		bTitre.deconnexion();
+		calculPrix *=100;
+		int res = ajusterPrix((int) calculPrix ,reduction, type, classe);
+		res *= nbrJours;	
+		return  res;
 	}
 	
 	public int calculerPrix(Classe classe, Reduction reduction, TypeTitre type)			//Pass10Trajets
 	{
-		return 0;
+		BDDTitre bTitre = new BDDTitre();
+		bTitre.connexion();
+		double calculPrix = bTitre.calculerPrixPass("10Trajets");	
+		bTitre.deconnexion();
+		calculPrix *=100;
+		int res = ajusterPrix((int) calculPrix ,reduction, type, classe);	
+		return  res;
 	}
 	
 	public int calculerPrix(String gareDepart, String gareArrivee, Classe classe, Reduction reduction, TypeTitre type)		//Pass10Trajets2Gares
 	{
-		return 0;
+		BDDTitre bTitre = new BDDTitre();
+		bTitre.connexion();
+		double calculPrix = bTitre.calculerPrixBillet(gareDepart, gareArrivee);	
+		System.out.println(calculPrix);
+		bTitre.deconnexion();
+		calculPrix *=800;
+		int res = ajusterPrix((int) calculPrix ,reduction, type, classe);	
+		return  res;
 	}
 	
 	private int ajusterPrix(int prix ,Reduction reduc, TypeTitre type, Classe classe)
