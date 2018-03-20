@@ -26,7 +26,6 @@ public interface CoeurAGraphique
 	public void afficherResultatsHoraires(String[] tab);
 	
 	public void afficherNumAbo();
-	public void afficherChoixTaperCode();
 	
 	public void afficherPaiement();
 	public void afficherChoixParLiquide(double prix);

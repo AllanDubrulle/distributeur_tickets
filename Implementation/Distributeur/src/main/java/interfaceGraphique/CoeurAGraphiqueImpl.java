@@ -94,7 +94,7 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	{
 		StackPane root2 = new StackPane();
 		Stage pStage = new Stage();
-		this.choixAbo = new FChoixAbo(pStage);
+		this.choixAbo = new FChoixAbo(pStage,fenAboRenouv);
 		FChoixAbo fen = choixAbo;
 		Scene sc = new Scene(root2, 400,200);
 		root2.getChildren().add(fen);
@@ -103,10 +103,7 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 		pStage.setTitle("Choix du numéro d'abonnement");
 		pStage.show();
 	}
-	public void afficherChoixTaperCode() 
-	{
-		FenetreSimulation.getInstance().afficher(new FAboRenouv2(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
-	}
+
 	
 	public void afficherPaiement() 
 	{

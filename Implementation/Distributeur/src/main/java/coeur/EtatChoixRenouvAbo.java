@@ -21,14 +21,4 @@ public class EtatChoixRenouvAbo extends EtatChoixTitre
 	{
 		Controleur.getInstance().getCoeurAGraphique().afficherNumAbo();
 	}
-	
-	public void valideNumAbo() 
-	{
-		Controleur.getInstance().modifEtat(EtatChoixScannerCode2.getInstance());
-	}
-	
-	public void choixTaperCode() 
-	{
-		Controleur.getInstance().modifEtat(EtatChoixTaperCode.getInstance());
-	}
 }

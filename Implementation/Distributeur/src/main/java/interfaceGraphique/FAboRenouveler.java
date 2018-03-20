@@ -169,7 +169,7 @@ public class FAboRenouveler extends Ecran
             	{
             		int verifAbo = Integer.parseInt(getNumAbo());
 					graphAC.infoAboRen(getValidite(), String.valueOf(verifAbo));
-	            	graphAC.choixValiderRenouvAbo();
+	            	graphAC.choixValider();
 				} 
             	catch (NumberFormatException | ErreurDEncodage e) 
             	{
@@ -263,5 +263,9 @@ public class FAboRenouveler extends Ecran
 			return 6;
 		else
 			return 12;
+	}
+	public void setNumAbo(String numAbo)
+	{
+		textField.setText(numAbo);
 	}
 }

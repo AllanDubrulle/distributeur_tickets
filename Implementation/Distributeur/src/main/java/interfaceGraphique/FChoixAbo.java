@@ -13,8 +13,9 @@ class FChoixAbo extends Pane
 {
     private ChoiceBox<String> choiceBox;
     private Stage stage;
+    private FAboRenouveler aboRenouv;
 
-    public FChoixAbo(Stage stage)
+    public FChoixAbo(Stage stage, FAboRenouveler aboRenouv)
     {
     	this.stage = stage;
         Button button = new Button();
@@ -42,7 +43,7 @@ class FChoixAbo extends Pane
         {
             public void handle(ActionEvent event)
             {
-            	GraphiqueACoeurImpl.getInstance().choixValiderNumAbo();
+            	aboRenouv.setNumAbo(choiceBox.getValue());	
             	stage.close();
             }
         });
