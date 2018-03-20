@@ -106,14 +106,13 @@ class BDDBanque extends GestionBaseDeDonnees
         return false;
 	}
 	
-	public void actualiserSolde(String numero, double montant)
+	public void actualiserSolde(String numero, int somme)
 	{
 		try
         {
-			Double solde = soldeCarte(numero);
 			String requete = "UPDATE carte SET solde = ? WHERE numero = ?";
             PreparedStatement declar = this.connexion.prepareStatement(requete);
-            declar.setDouble(1, solde - montant);
+            declar.setString(1, Integer.toString(somme));
 			declar.setString(2, numero);
 			declar.executeUpdate();
         }

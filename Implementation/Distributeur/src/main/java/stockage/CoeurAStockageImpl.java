@@ -284,14 +284,6 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		return res;
 	}
 	
-	public void modifierSoldeCarte(String numero, double montant)
-	{
-		BDDBanque bBanque = new BDDBanque();
-		bBanque.connexion();
-		bBanque.actualiserSolde(numero, montant);
-		bBanque.deconnexion();
-	}
-	
 	public void creerPass10Trajets(String nom, int classe, String reduction, String type, String typePassStr) throws ErreurDEncodage
 	{
 		Reduction reduc = null;	
@@ -648,9 +640,14 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		return essai>2;
 	}
 
-	public void actualiserSolde() // victor c'est pour toi tu dois récupérer la carte et actualiser en faisant solde-prix
+	public void actualiserSolde()
 	{
-		
+		String numero = carte.getID();
+		int somme = carte.getSolde() - prix;
+		BDDBanque bBanque = new BDDBanque();
+		bBanque.connexion();
+		bBanque.actualiserSolde(numero, somme);
+		bBanque.deconnexion();
 	}
 
 }
