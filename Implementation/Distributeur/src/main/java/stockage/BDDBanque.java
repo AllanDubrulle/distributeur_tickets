@@ -64,17 +64,11 @@ class BDDBanque extends GestionBaseDeDonnees
             PreparedStatement declar = this.connexion.prepareStatement(requete);
             declar.setString(1, numero);
 			ResultSet resSQL = declar.executeQuery();
-			ResultSetMetaData resBis = resSQL.getMetaData();
-			int nbrColonnes = resBis.getColumnCount();
-			int position = 0;
 			resSQL.next();
-			for (int i = 1; i <= nbrColonnes; i++) 
-			{
-				String valeurColonne = resSQL.getString(i);
-				res[position] = valeurColonne;
-				position += 1;
-			}			
-        	return res;
+			res[0] = numero;
+			res[1] = resSQL.getString("code");
+			res[2] = resSQL.getString("solde");
+			return res;
         }
         catch (SQLException e)
         {

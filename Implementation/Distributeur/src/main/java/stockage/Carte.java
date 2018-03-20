@@ -21,11 +21,7 @@ public class Carte
 		return (this.codePIN == code);
 	}
 	public boolean verifPaiement(int code, double montant)
-	{
+	{ 
 		return (soldeSuffisant(montant) && verifCodePIN(code));
-	}
-	public double getSolde() 
-	{
-		return this.solde;
 	}
 }

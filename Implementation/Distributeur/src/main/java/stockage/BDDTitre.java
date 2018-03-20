@@ -168,7 +168,7 @@ public class BDDTitre extends GestionBaseDeDonnees
 					res[position] = valeurColonne;
 					position += 1;
 				}			
-	        	return res; //retourne les infos dans ordre : nom, registre, source, destination, annee, mois, jour
+	        	return res;
 			}
         }
         catch (SQLException e)

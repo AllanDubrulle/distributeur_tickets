@@ -46,10 +46,7 @@ abstract class ControleurEtat
 	
 	public void choixParCarte() {}
 	public void choixCarte(String carte) {}
-	public String getCarteBancaire() 
-	{
-		return "";
-	}
+	
 	public void choixInsererCarte() {}
 	public void choixEnLiquide() {}
 	public void inserer(int i) {}

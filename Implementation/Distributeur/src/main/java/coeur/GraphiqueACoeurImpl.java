@@ -223,7 +223,7 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 	}
 	public void choixValiderNumCarte(String numero) 
 	{
-		controleur.getEtatActuel().choixCarte(numero);     //valeur par défaut pour test
+		controleur.getEtatActuel().choixCarte(numero);
 	}
 	public void infoCarte(String numero) throws ErreurDEncodage
 	{
@@ -236,6 +236,7 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 			throw new ErreurDEncodage("carteNonExistente");
 		}
 	}
+	
 	public void choixValider()
 	{
 		controleur.getEtatActuel().valider();

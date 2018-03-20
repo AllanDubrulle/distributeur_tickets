@@ -46,7 +46,6 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 			instance = new CoeurAGraphiqueImpl();
 		}
 		return instance;
-		
 	}
 	
 	

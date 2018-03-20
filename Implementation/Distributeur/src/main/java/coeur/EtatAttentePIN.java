@@ -34,7 +34,6 @@ class EtatAttentePIN extends EtatAnnulable
 	{
 		Controleur.getInstance().getCoeurAGraphique().setMontant(montant);
 		boolean ok = Controleur.getInstance().getCoeurAStockage().getCarte().verifPaiement(codePIN, montant);
-		System.out.println(ok);
 		if (!ok)
 		{
 			infosIncorrectes();

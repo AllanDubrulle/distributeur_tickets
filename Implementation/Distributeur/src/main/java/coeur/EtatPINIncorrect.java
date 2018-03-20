@@ -22,8 +22,6 @@ class EtatPINIncorrect extends EtatAnnulable
 	public void validePIN(int codePIN, double montant) 
 	{
 		boolean ok = Controleur.getInstance().getCoeurAStockage().getCarte().verifPaiement(codePIN, montant);
-		//((EtatDemandeRecu) EtatDemandeRecu.getInstance()).setParametres(codePIN, carteBancaire);
-		System.out.println(Controleur.getInstance().getCoeurAStockage().getCarte().getSolde());
 		if (!ok)
 		{
 			infosIncorrectes();
