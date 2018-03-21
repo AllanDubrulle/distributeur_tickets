@@ -364,4 +364,9 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 	{
 		controleur.getEtatActuel().apres15sec();
 	}
+	
+	public void apres5secondesOk()
+	{
+		controleur.getEtatActuel().apres5secOk();
+	}
 }

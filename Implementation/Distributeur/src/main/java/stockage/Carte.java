@@ -12,17 +12,14 @@ public class Carte
 		this.codePIN = codePIN;
 		this.solde = solde; 
 	}
-	private boolean soldeSuffisant(double montant)
+	public boolean soldeSuffisant(double montant)
 	{
+		System.out.println(solde);
 		return (this.solde >= montant);
 	}
-	private boolean verifCodePIN(int code)
+	public boolean verifCodePIN(int code)
 	{
 		return (this.codePIN == code);
-	}
-	public boolean verifPaiement(int code, double montant)
-	{ 
-		return (soldeSuffisant(montant) && verifCodePIN(code));
 	}
 	
 	public int getSolde()

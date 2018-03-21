@@ -37,6 +37,12 @@ class FAfficherMessage extends Ecran
         text.setFont(new Font("System Italic", 18.0*hauteur));
 
         getChildren().addAll(rectangle, text);
+        if (message.equals("Impression ...") || message.equals("Veuillez récupérer votre carte.") || message.equals("Paiement effectué avec succès. Ejection de la carte dans un instant."))
+        {
+        	PauseTransition delais = new PauseTransition(Duration.seconds(5));
+    		delais.setOnFinished( event -> apres5secOk());
+    		delais.play();
+        }
         if (!message.equals("Code PIN incorrect. Veuillez rééssayer.") && !message.equals("Veuillez entrer votre code PIN."))
         {
         	PauseTransition delais = new PauseTransition(Duration.seconds(5));
@@ -48,6 +54,10 @@ class FAfficherMessage extends Ecran
     private void apres5sec() 
     {
 		graphAC.apres5secondes();
+	}
+    private void apres5secOk() 
+    {
+		graphAC.apres5secondesOk();
 	}
 
 	public void actionClavier(String a) {}

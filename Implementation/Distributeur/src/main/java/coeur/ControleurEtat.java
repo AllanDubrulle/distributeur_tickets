@@ -69,7 +69,7 @@ abstract class ControleurEtat
 	public void valider() {}
 
 	public void apres5sec() {}
-	
 	public void apres15sec() {}
+	public void apres5secOk() {}
 
 }

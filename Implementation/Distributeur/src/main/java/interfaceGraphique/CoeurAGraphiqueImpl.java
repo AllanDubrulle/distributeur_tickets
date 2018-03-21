@@ -141,7 +141,7 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	{
 		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Code PIN incorrect. Veuillez rééssayer.", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 	}
-	public void afficherSoleInsuffisant() 
+	public void afficherSoldeInsuffisant() 
 	{
 		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Solde de la carte insuffisant. Ejection de la carte dans un instant.", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 	}

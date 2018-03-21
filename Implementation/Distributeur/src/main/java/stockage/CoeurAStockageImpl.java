@@ -623,9 +623,14 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		return (double) introduit /100;
 	}
 
-	public boolean verifPaiement(int codePIN) 
+	public boolean verifSolde() 
 	{
-		return carte.verifPaiement(codePIN, prix);
+		return carte.soldeSuffisant(prix);
+	}
+	
+	public boolean verifCode(int codePIN)
+	{
+		return carte.verifCodePIN(codePIN);
 	}
 
 	public void mauvaisPing()
@@ -634,7 +639,6 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		
 	}
 
-	@Override
 	public boolean tropDErreur()
 	{
 		return essai>2;
