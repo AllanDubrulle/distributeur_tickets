@@ -167,8 +167,8 @@ class AfficherBillet extends Pane
         text11.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text11.setStrokeWidth(0.0);
         text11.setText(reduc);
-        text11.setWrappingWidth(175.0);
-        HBox.setMargin(text11, new Insets(0.0, 0.0, 0.0, 44.0));
+        text11.setWrappingWidth(200.0);
+        HBox.setMargin(text11, new Insets(0.0, 0.0, 0.0, 19.0));
 
         text12.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text12.setStrokeWidth(0.0);

@@ -437,8 +437,8 @@ class AfficherPass10Trajets extends Pane
         text1118.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1118.setStrokeWidth(0.0);
         text1118.setText(reduction);
-        text1118.setWrappingWidth(175.0);
-        HBox.setMargin(text1118, new Insets(0.0, 0.0, 0.0, 44.0));
+        text1118.setWrappingWidth(200.0);
+        HBox.setMargin(text1118, new Insets(0.0, 0.0, 0.0, 19.0));
 
         text1119.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1119.setStrokeWidth(0.0);

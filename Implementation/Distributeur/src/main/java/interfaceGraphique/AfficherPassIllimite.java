@@ -140,8 +140,8 @@ class AfficherPassIllimite extends Pane
         text9.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text9.setStrokeWidth(0.0);
         text9.setText(reduction);
-        text9.setWrappingWidth(175.0);
-        HBox.setMargin(text9, new Insets(0.0, 0.0, 0.0, 44.0));
+        text9.setWrappingWidth(200.0);
+        HBox.setMargin(text9, new Insets(0.0, 0.0, 0.0, 19.0));
 
         text10.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text10.setStrokeWidth(0.0);

@@ -113,26 +113,23 @@ class Controleur
 				if (jour > 28)
 					res = false;
 		}
+		LocalDate date = LocalDate.now();
+		if (annee < date.getYear())
+			res = false;
+		else if (annee > date.getYear())
+			res = true;
 		else
 		{
-			LocalDate date = LocalDate.now();
-			if (annee < date.getYear())
+			if (mois < date.getMonth().getValue())
 				res = false;
-			else if (annee > date.getYear())
+			else if (mois > date.getMonth().getValue())
 				res = true;
 			else
 			{
-				if (mois < date.getMonth().getValue())
+				if (jour < date.getDayOfMonth())
 					res = false;
-				else if (mois > date.getMonth().getValue())
-					res = true;
 				else
-				{
-					if (jour < date.getDayOfMonth())
-						res = false;
-					else
-						res = true;
-				}
+					res = true;
 			}
 		}
 		return res;

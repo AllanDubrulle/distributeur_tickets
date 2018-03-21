@@ -179,8 +179,8 @@ class AfficherAbo extends Pane
         text13.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text13.setStrokeWidth(0.0);
         text13.setText(reduction);
-        text13.setWrappingWidth(175.0);
-        HBox.setMargin(text13, new Insets(0.0, 0.0, 0.0, 44.0));
+        text13.setWrappingWidth(200.0);
+        HBox.setMargin(text13, new Insets(0.0, 0.0, 0.0, 19.0));
 
         text14.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text14.setStrokeWidth(0.0);
