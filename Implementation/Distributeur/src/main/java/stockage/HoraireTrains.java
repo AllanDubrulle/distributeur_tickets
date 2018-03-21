@@ -216,7 +216,6 @@ class HoraireTrains extends GestionBaseDeDonnees
 			}
 		}
 		int l = tab.size();
-		System.out.println(l);
 		if (l <= 30)
 		{
 			for (int i = 0; i < l; i++)
