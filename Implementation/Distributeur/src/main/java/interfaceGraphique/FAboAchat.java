@@ -264,7 +264,7 @@ class FAboAchat extends Ecran
             {
             	try
     			{	
-    				if (textField0.getText().trim().length() == 11 && graphAC.verifNom(textField.getText().trim()))
+    				if (textField0.getText().trim().length() == 11 && verifierNom(textField.getText().trim()))
     				{	
     					graphAC.infoAbo(getValidite(), textField1.getText().trim(), textField2.getText().trim(), getClasse(), choiceBox.getValue(), choiceBox0.getValue(), textField.getText(), textField0.getText().trim());
     					graphAC.choixValider();	

@@ -170,7 +170,7 @@ public class FPass10Trajets extends Ecran
             {
             	try 
             	{
-            		if (graphAC.verifNom(textField.getText().trim()))
+            		if (verifierNom(textField.getText().trim()))
             		{
     					graphAC.infoPass10Trajets(textField.getText(), getClasse(), getReduction(), getType());
     	            	graphAC.choixValider();

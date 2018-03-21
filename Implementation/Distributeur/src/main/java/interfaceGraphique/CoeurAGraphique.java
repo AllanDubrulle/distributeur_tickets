@@ -32,6 +32,7 @@ public interface CoeurAGraphique
 	public void afficherEjectionCarte();
 	public void afficherAttentePIN();
 	public void afficherCodePINIncor();
+	public void afficherSoleInsuffisant() ;
 	public void afficherTropDeTentatives();
 	public void afficherValidationPaiement();
 	public void afficherDemandeRecu();

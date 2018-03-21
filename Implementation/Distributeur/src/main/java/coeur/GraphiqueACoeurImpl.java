@@ -364,14 +364,4 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 	{
 		controleur.getEtatActuel().apres15sec();
 	}
-	public boolean verifNom(String nom)
-	{
-		return controleur.verifierNom(nom);
-	}
-	public boolean verifDate(int jour, int mois, int annee)
-	{
-		return controleur.verifierDate(jour, mois, annee);
-	}
-	
-	
 }

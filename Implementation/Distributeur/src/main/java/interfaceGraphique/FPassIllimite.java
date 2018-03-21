@@ -188,7 +188,7 @@ class FPassIllimite extends Ecran
             {
             	try 
             	{
-            		if (graphAC.verifNom(textField.getText().trim()))
+            		if (verifierNom(textField.getText().trim()))
 					{
             			graphAC.infoPassIllimite(textField.getText(), getClasse(), getReduction(), getType(), Integer.parseInt(getNbrJours()));
     	            	graphAC.choixValider();

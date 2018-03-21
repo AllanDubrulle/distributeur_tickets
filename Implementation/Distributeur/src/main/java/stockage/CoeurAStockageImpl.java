@@ -546,7 +546,7 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		HoraireTrains hTrains = new HoraireTrains();
 		hTrains.connexion();
 		ResultSet res = hTrains.calculToutesLesGaresDepart(gareArrivee, heure, minute);
-		String[] tab = hTrains.conversionRequeteEnTableau(res);
+		String[] tab = hTrains.conversionRequeteEnTableauArriv(res);
 		return tab;
 	}
 	

@@ -78,7 +78,5 @@ public interface GraphiqueACoeur
 	public void infoPass10Trajets2Gares(String nom, String gareDepart, String gareArrivee, int classe, String reduction, String type) throws ErreurDEncodage;
 	public void apres5secondes();
 	public void apres15secondes();
-	public boolean verifNom(String nom);
-	public boolean verifDate(int jour, int mois, int annee);
 	
 }

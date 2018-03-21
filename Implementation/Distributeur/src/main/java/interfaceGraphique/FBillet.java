@@ -273,7 +273,7 @@ class FBillet extends Ecran
                     date.setYear(annee-1900);
                     date.setDate(jour);
                     date.setMonth(mois-1);
-                    if (graphAC.verifDate(jour, mois, annee))
+                    if (verifierDate(jour, mois, annee))
                     {
                     	graphAC.infoBillet(date,nbrBillet, getClasse(),textField3.getText().trim(),textField4.getText().trim(),choiceBox0.getValue(), choiceBox.getValue() ,radioButton1.isSelected());
                     	graphAC.choixValider();

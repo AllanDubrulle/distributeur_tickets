@@ -204,7 +204,7 @@ class FPass10Trajets2Gares extends Ecran
             {
             	try 
             	{
-            		if (graphAC.verifNom(textField.getText().trim()))
+            		if (verifierNom(textField.getText().trim()))
 					{
             			graphAC.infoPass10Trajets2Gares(textField.getText(), textField0.getText(), textField1.getText(), getClasse(), getReduction(), getType());
             			graphAC.choixValider();

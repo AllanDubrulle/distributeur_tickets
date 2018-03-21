@@ -8,9 +8,9 @@ import javafx.scene.text.*;
 import javafx.scene.shape.*;
 import javafx.scene.layout.*;
 
-class FRecapAboAchat extends Ecran 
+class FRecapAboRenouveler extends Ecran 
 {    
-	public FRecapAboAchat(String numero, String nom, String registre, String gareDepart, String gareArrivee, int validite, int classe, String reduction, String type, double prix, double hauteur, double largeur)
+	public FRecapAboRenouveler(String numero, String nom, String registre, String gareDepart, String gareArrivee, int validite, int classe, String reduction, String type, double prix, double hauteur, double largeur)
 	{
         Rectangle rectangle = new Rectangle();
         Text text = new Text();
@@ -67,7 +67,7 @@ class FRecapAboAchat extends Ecran
         text.setLayoutY(60.0*hauteur);
         text.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text.setStrokeWidth(0.0);
-        text.setText("Achat d'un abonnement (récapitulatif de commande)");
+        text.setText("Renouvelement d'un abonnement (récapitulatif de commande)");
         text.setUnderline(true);
         text.setFont(new Font("System Bold", 22.0*hauteur));
 
@@ -129,7 +129,7 @@ class FRecapAboAchat extends Ecran
 
         text4.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text4.setStrokeWidth(0.0);
-        text4.setText("Itinéraire :");
+        text4.setText("Gares :");
         text4.setWrappingWidth(180.0*largeur);
         text4.setFont(new Font(15.0*hauteur));
         HBox.setMargin(text4, new Insets(0.0, 20.0*largeur, 0.0, 0.0));
