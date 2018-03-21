@@ -1,26 +1,28 @@
 package stockage;
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class TestBDD {
 	public static void main (String args[]) throws SQLException {
 		//BDDTitre gest = new BDDTitre();
-		GestionBaseDeDonnees gest = new GestionBaseDeDonnees();
+		HoraireTrains gest = new HoraireTrains();
+		//GestionBaseDeDonnees gest = new GestionBaseDeDonnees();
 		//BDDBanque gest = new BDDBanque();
 		gest.connexion();
-		//gest.mettreAJour("update carte set solde = '500000' where code = '4567'");
-		ResultSet res = gest.resultatRequete("select * from carte");
+		ResultSet res = gest.calculItineraire("TOURNAI", "MONS", 4, 50);
 		//ArrayList<String> res = gest.listeDesAbonnements();
-		//String[] res = gest.infoCarte("67030615781202136");
+		String[] res1 = gest.conversionRequeteEnTableau(res);
 		//double res = gest.calculerPrixPass("10Trajets");
+		//gest.mettreAJour("update horaire set heurearrivee = 0 where heurearrivee = 24");
 		//boolean res = gest.verifPaiement("0000000000000000000000000", 1234, 500);
 		//int res = gest.numeroAbonnementSuivant();
-		HoraireTrains.afficherResultat(res);
-		//for (int i = 0; i < res.length; i++)
-		//{
-			//System.out.println(res[i]);
-		//}
+		//HoraireTrains.afficherResultat(res);
+		for (int i = 0; i < res1.length; i++)
+		{
+			System.out.println(res1[i]);
+		}
 		gest.deconnexion();
 		
 	}	

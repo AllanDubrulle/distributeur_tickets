@@ -23,7 +23,7 @@ class HoraireTrains extends GestionBaseDeDonnees
         	{
         		if ((minuteTrajet(depart, arrivee) < minute && heure >= 22) || (heure > 22))
         		{
-        			String requete = "SELECT depart, arrivee, Heure, minute FROM Horaire WHERE DEPART = ? and ARRIVEE = ?";
+        			String requete = "SELECT depart, arrivee, Heure, minute, heurearrivee, minutearrivee FROM Horaire WHERE DEPART = ? and ARRIVEE = ?";
 	        		PreparedStatement declar = this.connexion.prepareStatement(requete);
 	        		declar.setString(1, departMaj);
 	        		declar.setString(2, arriveeMaj);
@@ -31,7 +31,7 @@ class HoraireTrains extends GestionBaseDeDonnees
         		}
         		else
         		{
-        			String requete = "SELECT depart, arrivee, Heure, minute FROM Horaire WHERE DEPART = ? and ARRIVEE = ? and ((Heure >= ? and Minute >= ?) or (Heure > ? and Minute < ?))";
+        			String requete = "SELECT depart, arrivee, Heure, minute, heurearrivee, minutearrivee FROM Horaire WHERE DEPART = ? and ARRIVEE = ? and ((Heure >= ? and Minute >= ?) or (Heure > ? and Minute < ?))";
         			PreparedStatement declar = this.connexion.prepareStatement(requete);
         			declar.setString(1, departMaj);
         			declar.setString(2, arriveeMaj);
@@ -121,14 +121,14 @@ class HoraireTrains extends GestionBaseDeDonnees
         	{
         		if (heure > 22)
         		{
-        			String requete = "SELECT depart, arrivee, Heure, minute FROM Horaire WHERE DEPART = ? order by heure, minute";
+        			String requete = "SELECT depart, arrivee, Heure, minute, heurearrivee, minutearrivee FROM Horaire WHERE DEPART = ? order by heure, minute";
 	        		PreparedStatement declar = this.connexion.prepareStatement(requete);
 	        		declar.setString(1, departMaj);
 	        		res = declar.executeQuery();	        		
         		}
         		else
         		{
-        			String requete = "SELECT depart, arrivee, Heure, minute FROM Horaire WHERE DEPART = ? and ((Heure >= ? and Minute >= ?) or (Heure > ? and Minute < ?)) order by heure, minute";
+        			String requete = "SELECT depart, arrivee, Heure, minute, heurearrivee, minutearrivee FROM Horaire WHERE DEPART = ? and ((Heure >= ? and Minute >= ?) or (Heure > ? and Minute < ?)) order by heure, minute";
         			PreparedStatement declar = this.connexion.prepareStatement(requete);
         			declar.setString(1, departMaj);
         			declar.setInt(2, heure);
@@ -156,14 +156,14 @@ class HoraireTrains extends GestionBaseDeDonnees
         	{
         		if (heure > 22)
         		{
-        			String requete = "SELECT depart, arrivee, Heure, minute FROM Horaire WHERE arrivee = ? order by heure, minute";
+        			String requete = "SELECT depart, arrivee, Heure, minute, heurearrivee, minutearrivee FROM Horaire WHERE arrivee = ? order by heure, minute";
 	        		PreparedStatement declar = this.connexion.prepareStatement(requete);
 	        		declar.setString(1, arriveeMaj);
 	        		res = declar.executeQuery();	        		
         		}
         		else
         		{
-        			String requete = "SELECT depart, arrivee, Heure, minute FROM Horaire WHERE arrivee = ? and ((Heure >= ? and Minute >= ?) or (Heure > ? and Minute < ?)) order by heure, minute";
+        			String requete = "SELECT depart, arrivee, Heure, minute, heurearrivee, minutearrivee FROM Horaire WHERE arrivee = ? and ((Heure >= ? and Minute >= ?) or (Heure > ? and Minute < ?)) order by heure, minute";
         			PreparedStatement declar = this.connexion.prepareStatement(requete);
         			declar.setString(1, arriveeMaj);
         			declar.setInt(2, heure);
@@ -183,7 +183,7 @@ class HoraireTrains extends GestionBaseDeDonnees
     
     public String[] conversionRequeteEnTableau(ResultSet res) throws SQLException
     {
-    	String[] tabHor = new String[20];
+    	String[] tabHor = new String[30];
     	ResultSetMetaData resBis = res.getMetaData();
 		int nbrColonnes = resBis.getColumnCount();
     	int compteur = 0;
