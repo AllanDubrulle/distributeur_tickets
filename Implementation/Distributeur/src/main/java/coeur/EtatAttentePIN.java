@@ -55,6 +55,7 @@ class EtatAttentePIN extends EtatAnnulable
 	{
 		Controleur.getInstance().getCoeurAGraphique().afficherRetraitCarte();
 	}
+	
 	public void apres5sec()
 	{
 		Controleur.getInstance().modifEtat(EtatPaiement.getInstance());
