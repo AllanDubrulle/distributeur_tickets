@@ -21,7 +21,7 @@ class EtatParCarte extends EtatAnnulable
 		Controleur.getInstance().getCoeurAGraphique().afficherInsertionCarte();
 	}
 	
-	public void choixInsererCarte()
+	public void choixInsererRetirerCarte()
 	{
 		Controleur.getInstance().getCoeurAGraphique().afficherChoixParCarte();
 	}

@@ -8,6 +8,7 @@ import javafx.geometry.*;
 import javafx.scene.control.*;
 import javafx.scene.shape.*;
 import javafx.scene.text.Font;
+import stockage.ErreurDEncodage;
 import javafx.scene.layout.*;
 
 class LecteurCarte extends Pane 
@@ -71,7 +72,7 @@ class LecteurCarte extends Pane
         {
             public void handle(ActionEvent event)
             {
-            	actionScanneur(1);
+            	actionLecteur(1);
             }
         });
 
@@ -86,7 +87,7 @@ class LecteurCarte extends Pane
         {
             public void handle(ActionEvent event)
             {
-            	actionScanneur(2);
+            	actionLecteur(2);
             }
         });
 
@@ -102,7 +103,7 @@ class LecteurCarte extends Pane
         {
             public void handle(ActionEvent event)
             {
-            	actionScanneur(3);
+            	actionLecteur(3);
             }
         });
 
@@ -120,7 +121,7 @@ class LecteurCarte extends Pane
         {
             public void handle(ActionEvent event)
             {
-            	actionScanneur(4);
+            	actionLecteur(4);
             }
         });
 
@@ -136,7 +137,7 @@ class LecteurCarte extends Pane
             
             public void handle(ActionEvent event)
             {
-            	actionScanneur(5);
+            	actionLecteur(5);
             }
         });
 
@@ -151,7 +152,7 @@ class LecteurCarte extends Pane
         {
             public void handle(ActionEvent event)
             {
-            	actionScanneur(6);
+            	actionLecteur(6);
             }
         });
 
@@ -169,7 +170,7 @@ class LecteurCarte extends Pane
         {
             public void handle(ActionEvent event)
             {
-            	actionScanneur(7);
+            	actionLecteur(7);
             }
         });
 
@@ -184,7 +185,7 @@ class LecteurCarte extends Pane
         {
             public void handle(ActionEvent event)
             {
-            	actionScanneur(8);
+            	actionLecteur(8);
             }
         });
 
@@ -199,7 +200,7 @@ class LecteurCarte extends Pane
         {
             public void handle(ActionEvent event)
             {
-            	actionScanneur(9);
+            	actionLecteur(9);
             }
         });
 
@@ -216,7 +217,7 @@ class LecteurCarte extends Pane
         {
             public void handle(ActionEvent event)
             {
-            	actionScanneurEff();
+            	actionLecteurEff();
             }
         });
 
@@ -231,7 +232,7 @@ class LecteurCarte extends Pane
         {
             public void handle(ActionEvent event)
             {
-            	actionScanneur(0);
+            	actionLecteur(0);
             }
         });
 
@@ -246,22 +247,26 @@ class LecteurCarte extends Pane
         button10.setOnAction(new EventHandler<ActionEvent>(){
             public void handle(ActionEvent event)
             {
-            	graphAC.choixLecteurOK(Integer.parseInt(passwordField.getText()));
+            	try
+            	{
+            		graphAC.choixLecteurOK(Integer.parseInt(passwordField.getText()));
+            	}
+            	catch(NumberFormatException e) {}
             }
         });
 
         button11.setMnemonicParsing(false);
         button11.setPrefHeight(31.0*hauteur);
-        button11.setPrefWidth(102.0*largeur);
-        button11.setText("Insérer carte");
+        button11.setPrefWidth(140.0*largeur);
+        button11.setText("Insérer/Retirer carte");
         button11.setFont(new Font(15.0*hauteur));
         button11.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        VBox.setMargin(button11, new Insets(0.0, 0.0, 0.0, 47.0*largeur));
+        VBox.setMargin(button11, new Insets(0.0, 0.0, 0.0, 26.0*largeur));
         button11.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
-            	graphAC.choixLecteurInserer();
+            	graphAC.choixLecteurInsererRetirer();
             }
         });
         
@@ -273,13 +278,13 @@ class LecteurCarte extends Pane
         getChildren().addAll(rectangle, vBox);
     }
 	
-	public void actionScanneur(int a) 
+	public void actionLecteur(int a) 
 	{
 		if (passwordField.getText().length() < 4)
 			passwordField.setText(passwordField.getText() + a);
 	}
 	
-	public void actionScanneurEff() 
+	public void actionLecteurEff() 
 	{
 		if (passwordField.getText().length() > 0)
 			passwordField.setText(passwordField.getText().substring(0, passwordField.getText().length()-1));

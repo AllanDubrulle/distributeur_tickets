@@ -188,8 +188,20 @@ class FPassIllimite extends Ecran
             {
             	try 
             	{
-					graphAC.infoPassIllimite(textField.getText(), getClasse(), getReduction(), getType(), Integer.parseInt(getNbrJours()));
-	            	graphAC.choixValider();
+            		if (graphAC.verifNom(textField.getText().trim()))
+					{
+            			graphAC.infoPassIllimite(textField.getText(), getClasse(), getReduction(), getType(), Integer.parseInt(getNbrJours()));
+    	            	graphAC.choixValider();
+					}
+            		else
+            		{
+            			text10.setText("Les données saisies sont incorrectes");
+                		text10.setFont(new Font("System Bold", 15.0*hauteur));
+                		text10.setWrappingWidth(250.0*largeur);
+                		text10.setFill(javafx.scene.paint.Color.RED);
+                		text10.setLayoutX(275.0*largeur);
+                		text10.setLayoutY(364.0*hauteur);
+            		}
 				} 
             	catch (NumberFormatException | ErreurDEncodage e) 
             	{

@@ -19,8 +19,6 @@ public interface CoeurAGraphique
 	public void afficherChoixArrivee();
 	
 	public void afficherRecapCommande(Commande commande,TitreDeTransport titre,double prix,int nbrTitre);
-	public void afficherRecapRenouvAboScanne();
-
 	
 	public void afficherResultatsHoraires(String[] tab);
 	
@@ -30,18 +28,19 @@ public interface CoeurAGraphique
 	public void afficherChoixParLiquide(double prix);
 	public void afficherChoixParCarte();
 	public void afficherInsertionCarte();
+	public void afficherRetraitCarte();
+	public void afficherEjectionCarte();
 	public void afficherAttentePIN();
 	public void afficherCodePINIncor();
+	public void afficherTropDeTentatives();
 	public void afficherDemandeRecu();
 	public void actualiserMontant(double restant , double introduit);
-	public void afficherRendreMonnaie();
 	public void afficherRendreMonnaieInseree();
 	
 	public void afficherImpression();
 	public void afficherViderBacRecep();
 	public void effacerPIN();
 	public void afficherChoixCommande(Commande commande);
-	public void afficherRenouvScanne();
 	public void afficherRecu(double prix , double introduit , double rendu, String modePaiement);
 	public void afficherRendu(Rendu monnaieRendu);
 	public void afficherTitre(Commande commande, TitreDeTransport titre, double prix);

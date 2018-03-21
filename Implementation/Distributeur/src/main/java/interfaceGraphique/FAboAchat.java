@@ -264,8 +264,20 @@ class FAboAchat extends Ecran
             {
             	try
     			{	
-    				graphAC.infoAbo(getValidite(), textField1.getText().trim(), textField2.getText().trim(), getClasse(), choiceBox.getValue(), choiceBox0.getValue(), textField.getText(), textField0.getText().trim());	//valeur pour test
-    				graphAC.choixValider();	
+    				if (textField0.getText().trim().length() == 11 && graphAC.verifNom(textField.getText().trim()))
+    				{	
+    					graphAC.infoAbo(getValidite(), textField1.getText().trim(), textField2.getText().trim(), getClasse(), choiceBox.getValue(), choiceBox0.getValue(), textField.getText(), textField0.getText().trim());
+    					graphAC.choixValider();	
+    				}
+    				else 
+    				{
+    					text10.setText("Les données saisies sont incorrectes");	
+            			text10.setFont(new Font("System Bold", 15.0*hauteur));	
+            			text10.setWrappingWidth(250.0*largeur);	
+            			text10.setFill(javafx.scene.paint.Color.RED);	
+            			text10.setLayoutX(275.0*largeur);	
+            			text10.setLayoutY(384.0*hauteur);
+    				}
         		}	
 		    		catch (NumberFormatException | ErreurDEncodage e)	
     		   	{	
@@ -487,9 +499,5 @@ class FAboAchat extends Ecran
 	public String getType()
 	{
 		return choiceBox0.getValue();
-	}
-	public String getPrix()
-	{
-		return "10000";
 	}
 }

@@ -1,8 +1,5 @@
 package coeur;
 
-import javafx.animation.PauseTransition;
-import javafx.util.Duration;
-
 class EtatFin extends EtatAnnulable 
 {	
 	private static EtatFin instance;
@@ -19,9 +16,6 @@ class EtatFin extends EtatAnnulable
 	public void entree() 
 	{
 		Controleur.getInstance().getCoeurAGraphique().afficherFin();
-		PauseTransition delay = new PauseTransition(Duration.seconds(15));
-		delay.setOnFinished( event -> apres15sec());
-		delay.play();
 	}
 	public void retourMenuPrincipal()
 	{

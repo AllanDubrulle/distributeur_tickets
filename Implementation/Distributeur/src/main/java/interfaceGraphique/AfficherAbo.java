@@ -94,7 +94,7 @@ class AfficherAbo extends Pane
 
         text3.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text3.setStrokeWidth(0.0);
-        text3.setText(Integer.toString(classe) + "e classe");
+        text3.setText(Integer.toString(classe) + "e classe (" + type.toUpperCase() + ")");
         text3.setWrappingWidth(200.0);
         text3.setFont(new Font("System Bold", 18.0));
         hBox1.setOpaqueInsets(new Insets(0.0));
@@ -110,7 +110,7 @@ class AfficherAbo extends Pane
 
         text5.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text5.setStrokeWidth(0.0);
-        text5.setText(gareDepart);
+        text5.setText(gareDepart.toUpperCase());
         text5.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         HBox.setMargin(text5, new Insets(0.0, 0.0, 0.0, 50.0));
         hBox2.setOpaqueInsets(new Insets(0.0));
@@ -126,7 +126,7 @@ class AfficherAbo extends Pane
 
         text7.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text7.setStrokeWidth(0.0);
-        text7.setText(gareArrivee);
+        text7.setText(gareArrivee.toUpperCase());
         text7.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         HBox.setMargin(text7, new Insets(0.0, 0.0, 0.0, 50.0));
         hBox3.setOpaqueInsets(new Insets(0.0));

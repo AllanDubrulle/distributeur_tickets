@@ -80,7 +80,7 @@ class FRecapPass10Trajets2Gares extends Ecran
 
         text1.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1.setStrokeWidth(0.0);
-        text1.setText(nom);
+        text1.setText(nom.toUpperCase());
         text1.setWrappingWidth(200.0*largeur);
         text1.setFont(new Font("System Bold Italic", 15.0*hauteur));
         HBox.setMargin(text1, new Insets(0.0, 0.0, 0.0, 20.0*largeur));
@@ -98,7 +98,7 @@ class FRecapPass10Trajets2Gares extends Ecran
 
         text3.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text3.setStrokeWidth(0.0);
-        text3.setText(gareDepart);
+        text3.setText(gareDepart.toUpperCase());
         text3.setWrappingWidth(200.0*largeur);
         text3.setFont(new Font("System Bold Italic", 15.0*hauteur));
         VBox.setMargin(hBox1, new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
@@ -115,7 +115,7 @@ class FRecapPass10Trajets2Gares extends Ecran
 
         text5.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text5.setStrokeWidth(0.0);
-        text5.setText(gareArrivee);
+        text5.setText(gareArrivee.toUpperCase());
         text5.setWrappingWidth(200.0*largeur);
         text5.setFont(new Font("System Bold Italic", 15.0*hauteur));
         VBox.setMargin(hBox2, new Insets(0.0, 0.0, 10.0*hauteur, 0.0));

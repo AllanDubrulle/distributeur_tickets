@@ -40,13 +40,23 @@ class EtatAttentePIN extends EtatAnnulable
 		Controleur.getInstance().getCoeurAStockage().mauvaisPing();
 		if(Controleur.getInstance().getCoeurAStockage().tropDErreur())
 		{
-			// afficher message trop d'erreur 
+			Controleur.getInstance().getCoeurAGraphique().afficherTropDeTentatives();
 			Controleur.getInstance().modifEtat(EtatPaiement.getInstance());
 		}
 	}
 	public void infosCorrectes()
 	{
 		Controleur.getInstance().getCoeurAStockage().actualiserSolde();
+		Controleur.getInstance().getCoeurAGraphique().afficherEjectionCarte();
 		Controleur.getInstance().modifEtat(EtatImpressionTitre.getInstance());
+	}
+	
+	public void choixInsererRetirerCarte()
+	{
+		Controleur.getInstance().getCoeurAGraphique().afficherRetraitCarte();
+	}
+	public void apres5sec()
+	{
+		Controleur.getInstance().modifEtat(EtatPaiement.getInstance());
 	}
 }

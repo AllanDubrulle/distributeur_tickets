@@ -1,11 +1,13 @@
 package interfaceGraphique;
 
-import javafx.scene.text.*;
+import javafx.animation.PauseTransition;
 import javafx.scene.shape.*;
+import javafx.scene.text.*;
+import javafx.util.Duration;
 
-class FImpression extends Ecran 
+class FAfficherMessage extends Ecran 
 {
-    public FImpression(double hauteur, double largeur) 
+    public FAfficherMessage(String message, double hauteur, double largeur) 
     {
         Rectangle rectangle = new Rectangle();
         Text text = new Text();
@@ -26,17 +28,28 @@ class FImpression extends Ecran
         rectangle.setWidth(800.0*largeur);
 
         text.setLayoutX(284.0*largeur);
-        text.setLayoutY(144.0*hauteur);
+        text.setLayoutY(193.0*hauteur);
         text.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text.setStrokeWidth(0.0);
-        text.setText("Impression en cours ...");
+        text.setText(message);
         text.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        text.setWrappingWidth(231.5*largeur);
+        text.setWrappingWidth(232.0*largeur);
         text.setFont(new Font("System Italic", 18.0*hauteur));
 
         getChildren().addAll(rectangle, text);
+        if (!message.equals("Code PIN incorrect. Veuillez rééssayer.") && !message.equals("Veuillez rentrer votre code PIN."))
+        {
+        	PauseTransition delais = new PauseTransition(Duration.seconds(5));
+    		delais.setOnFinished( event -> apres5sec());
+    		delais.play();
+        }
     }
     
+    private void apres5sec() 
+    {
+		graphAC.apres5secondes();
+	}
+
 	public void actionClavier(String a) {}
 
 	public void actionClavier(int a) {}

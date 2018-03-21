@@ -108,7 +108,7 @@ class AfficherPass10Trajets2Gares extends Pane
 
         text1.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1.setStrokeWidth(0.0);
-        text1.setText(nom);
+        text1.setText(nom.toUpperCase());
         text1.setWrappingWidth(200.0);
         text1.setFont(new Font("System Bold Italic", 18.0));
 
@@ -171,14 +171,14 @@ class AfficherPass10Trajets2Gares extends Pane
 
         text8.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text8.setStrokeWidth(0.0);
-        text8.setText(gareDepart);
+        text8.setText(gareDepart.toUpperCase());
         text8.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         text8.setWrappingWidth(170.0);
         text8.setFont(new Font(10.0));
 
         text9.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text9.setStrokeWidth(0.0);
-        text9.setText(gareArrivee);
+        text9.setText(gareArrivee.toUpperCase());
         text9.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         text9.setWrappingWidth(170.0);
         text9.setFont(new Font(10.0));
@@ -198,14 +198,14 @@ class AfficherPass10Trajets2Gares extends Pane
 
         text11.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text11.setStrokeWidth(0.0);
-        text11.setText(gareDepart);
+        text11.setText(gareDepart.toUpperCase());
         text11.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         text11.setWrappingWidth(170.0);
         text11.setFont(new Font(10.0));
 
         text12.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text12.setStrokeWidth(0.0);
-        text12.setText(gareArrivee);
+        text12.setText(gareArrivee.toUpperCase());
         text12.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         text12.setWrappingWidth(170.0);
         text12.setFont(new Font(10.0));
@@ -225,14 +225,14 @@ class AfficherPass10Trajets2Gares extends Pane
 
         text14.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text14.setStrokeWidth(0.0);
-        text14.setText(gareDepart);
+        text14.setText(gareDepart.toUpperCase());
         text14.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         text14.setWrappingWidth(170.0);
         text14.setFont(new Font(10.0));
 
         text15.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text15.setStrokeWidth(0.0);
-        text15.setText(gareArrivee);
+        text15.setText(gareArrivee.toUpperCase());
         text15.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         text15.setWrappingWidth(170.0);
         text15.setFont(new Font(10.0));
@@ -252,14 +252,14 @@ class AfficherPass10Trajets2Gares extends Pane
 
         text17.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text17.setStrokeWidth(0.0);
-        text17.setText(gareDepart);
+        text17.setText(gareDepart.toUpperCase());
         text17.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         text17.setWrappingWidth(170.0);
         text17.setFont(new Font(10.0));
 
         text18.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text18.setStrokeWidth(0.0);
-        text18.setText(gareArrivee);
+        text18.setText(gareArrivee.toUpperCase());
         text18.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         text18.setWrappingWidth(170.0);
         text18.setFont(new Font(10.0));
@@ -279,14 +279,14 @@ class AfficherPass10Trajets2Gares extends Pane
 
         text110.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text110.setStrokeWidth(0.0);
-        text110.setText(gareDepart);
+        text110.setText(gareDepart.toUpperCase());
         text110.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         text110.setWrappingWidth(170.0);
         text110.setFont(new Font(10.0));
 
         text111.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text111.setStrokeWidth(0.0);
-        text111.setText(gareArrivee);
+        text111.setText(gareArrivee.toUpperCase());
         text111.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         text111.setWrappingWidth(170.0);
         text111.setFont(new Font(10.0));
@@ -306,14 +306,14 @@ class AfficherPass10Trajets2Gares extends Pane
 
         text113.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text113.setStrokeWidth(0.0);
-        text113.setText(gareDepart);
+        text113.setText(gareDepart.toUpperCase());
         text113.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         text113.setWrappingWidth(170.0);
         text113.setFont(new Font(10.0));
 
         text114.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text114.setStrokeWidth(0.0);
-        text114.setText(gareArrivee);
+        text114.setText(gareArrivee.toUpperCase());
         text114.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         text114.setWrappingWidth(170.0);
         text114.setFont(new Font(10.0));
@@ -333,14 +333,14 @@ class AfficherPass10Trajets2Gares extends Pane
 
         text116.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text116.setStrokeWidth(0.0);
-        text116.setText(gareDepart);
+        text116.setText(gareDepart.toUpperCase());
         text116.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         text116.setWrappingWidth(170.0);
         text116.setFont(new Font(10.0));
 
         text117.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text117.setStrokeWidth(0.0);
-        text117.setText(gareArrivee);
+        text117.setText(gareArrivee.toUpperCase());
         text117.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         text117.setWrappingWidth(170.0);
         text117.setFont(new Font(10.0));
@@ -360,14 +360,14 @@ class AfficherPass10Trajets2Gares extends Pane
 
         text119.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text119.setStrokeWidth(0.0);
-        text119.setText(gareDepart);
+        text119.setText(gareDepart.toUpperCase());
         text119.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         text119.setWrappingWidth(170.0);
         text119.setFont(new Font(10.0));
 
         text1110.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1110.setStrokeWidth(0.0);
-        text1110.setText(gareArrivee);
+        text1110.setText(gareArrivee.toUpperCase());
         text1110.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         text1110.setWrappingWidth(170.0);
         text1110.setFont(new Font(10.0));
@@ -387,14 +387,14 @@ class AfficherPass10Trajets2Gares extends Pane
 
         text1112.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1112.setStrokeWidth(0.0);
-        text1112.setText(gareDepart);
+        text1112.setText(gareDepart.toUpperCase());
         text1112.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         text1112.setWrappingWidth(170.0);
         text1112.setFont(new Font(10.0));
 
         text1113.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1113.setStrokeWidth(0.0);
-        text1113.setText(gareArrivee);
+        text1113.setText(gareArrivee.toUpperCase());
         text1113.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         text1113.setWrappingWidth(170.0);
         text1113.setFont(new Font(10.0));
@@ -414,14 +414,14 @@ class AfficherPass10Trajets2Gares extends Pane
 
         text1115.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1115.setStrokeWidth(0.0);
-        text1115.setText(gareDepart);
+        text1115.setText(gareDepart.toUpperCase());
         text1115.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         text1115.setWrappingWidth(170.0);
         text1115.setFont(new Font(10.0));
 
         text1116.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1116.setStrokeWidth(0.0);
-        text1116.setText(gareArrivee);
+        text1116.setText(gareArrivee.toUpperCase());
         text1116.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         text1116.setWrappingWidth(170.0);
         text1116.setFont(new Font(10.0));

@@ -1,10 +1,12 @@
 package interfaceGraphique;
 
+import javafx.animation.PauseTransition;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.*;
 import javafx.scene.shape.*;
 import javafx.scene.text.*;
+import javafx.util.Duration;
 
 class FFin extends Ecran 
 {
@@ -43,6 +45,14 @@ class FFin extends Ecran
         });
 
         getChildren().addAll(rectangle, button);
+        PauseTransition delais = new PauseTransition(Duration.seconds(15));
+		delais.setOnFinished( event -> apres15sec());
+		delais.play();
+    }
+    
+    private void apres15sec() 
+    {
+		graphAC.apres15secondes();
     }
     
 	public void actionClavier(String a) {}

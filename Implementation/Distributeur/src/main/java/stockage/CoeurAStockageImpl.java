@@ -398,7 +398,7 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		return  res;
 	}
 	
-	public int calculerPrix(Classe classe, Reduction reduction, TypeTitre type)			//Pass10Trajets
+	public int calculerPrix(Classe classe, Reduction reduction, TypeTitre type)		//Pass10Trajets
 	{
 		BDDTitre bTitre = new BDDTitre();
 		bTitre.connexion();

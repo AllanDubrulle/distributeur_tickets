@@ -273,8 +273,20 @@ class FBillet extends Ecran
                     date.setYear(annee-1900);
                     date.setDate(jour);
                     date.setMonth(mois-1);
-                    graphAC.infoBillet(date,nbrBillet, getClasse(),textField3.getText().trim(),textField4.getText().trim(),choiceBox0.getValue(), choiceBox.getValue() ,radioButton1.isSelected());
-            		graphAC.choixValider();
+                    if (graphAC.verifDate(jour, mois, annee))
+                    {
+                    	graphAC.infoBillet(date,nbrBillet, getClasse(),textField3.getText().trim(),textField4.getText().trim(),choiceBox0.getValue(), choiceBox.getValue() ,radioButton1.isSelected());
+                    	graphAC.choixValider();
+                    }
+                    else
+                    {
+                		text10.setText("Les données saisies sont incorrectes");
+                		text10.setFont(new Font("System Bold", 15.0*hauteur));
+                		text10.setWrappingWidth(250.0*largeur);
+                		text10.setFill(javafx.scene.paint.Color.RED);
+                		text10.setLayoutX(275.0*largeur);
+                		text10.setLayoutY(364.0*hauteur);
+                    }
             	}
             	catch (NumberFormatException | ErreurDEncodage e)
             	{

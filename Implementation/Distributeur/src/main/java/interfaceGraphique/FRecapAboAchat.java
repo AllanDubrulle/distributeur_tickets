@@ -90,7 +90,7 @@ class FRecapAboAchat extends Ecran
 
         text1.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1.setStrokeWidth(0.0);
-        text1.setText(nom);
+        text1.setText(nom.toUpperCase());
         text1.setWrappingWidth(200.0*largeur);
         text1.setFont(new Font("System Bold Italic", 15.0*hauteur));
         HBox.setMargin(text1, new Insets(0.0, 0.0, 0.0, 20.0*largeur));
@@ -126,7 +126,7 @@ class FRecapAboAchat extends Ecran
 
         text5.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text5.setStrokeWidth(0.0);
-        text5.setText(gareDepart);
+        text5.setText(gareDepart.toUpperCase());
         text5.setWrappingWidth(200.0*largeur);
         text5.setFont(new Font("System Bold Italic", 15.0*hauteur));
         HBox.setMargin(text5, new Insets(0.0, 0.0, 0.0, 0.0));
@@ -144,7 +144,7 @@ class FRecapAboAchat extends Ecran
 
         text7.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text7.setStrokeWidth(0.0);
-        text7.setText(gareArrivee);
+        text7.setText(gareArrivee.toUpperCase());
         text7.setWrappingWidth(200.0*largeur);
         text7.setFont(new Font("System Bold Italic", 15.0*hauteur));
         HBox.setMargin(text7, new Insets(0.0, 0.0, 0.0, 0.0*largeur));

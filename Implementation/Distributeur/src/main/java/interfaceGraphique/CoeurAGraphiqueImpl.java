@@ -125,31 +125,31 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	{
 		FenetreSimulation.getInstance().afficher(new FInsererCarte(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 	}
+	public void afficherRetraitCarte()
+	{
+		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Carte éjectée.", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
+	}
+	public void afficherEjectionCarte()
+	{
+		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Veuillez récupérer votre carte.", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
+	}
 	public void afficherAttentePIN() 
 	{
-		FenetreSimulation.getInstance().afficher(new FAttenteCodePIN(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
+		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Veuillez rentrer votre code PIN.", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 	}	
 	public void afficherCodePINIncor() 
 	{
-		FenetreSimulation.getInstance().afficher(new FCodePINIncor(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
+		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Code PIN incorrect. Veuillez rééssayer.", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 	}
-	public void afficherRendreMonnaie() // encore utile ??
+	
+	public void afficherTropDeTentatives() 
 	{
-		/*StackPane root2 = new StackPane();
-		FRendreMonnaie fen = new FRendreMonnaie();
-		Stage pStage3 = new Stage();
-		Scene sc = new Scene(root2, 400,200);
-		root2.getChildren().add(fen);
-		pStage3.setResizable(false);
-		pStage3.setScene(sc);
-		pStage3.setTitle("Vider le bac de réception");
-		pStage3.show();
-		afficherRendu();*/
+		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Code PIN incorrect. Veuillez récuperer votre carte.", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 	}
-
+	
 	public void afficherImpression() 
 	{
-		FenetreSimulation.getInstance().afficher(new FImpression(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
+		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Impression en cours ...", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 	}
 	public void afficherViderBacRecep() 
 	{
@@ -273,7 +273,7 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	}
 	public void afficherRendreMonnaieInseree()
 	{
-		FenetreSimulation.getInstance().afficher(new FRendreMonnaieInseree(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
+		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Problème monnayeur, veuillez récuperer votre monnaie", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 	}
 	
 	public void effacerPIN()
@@ -329,15 +329,6 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 						FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 				break;
 		}
-	}
-	public void afficherRecapRenouvAboScanne() 
-	{
-		//FenetreSimulation.getInstance().afficher(new FRecapAboRenouvScanne(fenAboScanne, FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
-	}
-	public void afficherRenouvScanne()
-	{
-		//this.fenAboScan = new FAboRenouvScanne(choixAbo, FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg());
-		//FenetreSimulation.getInstance().afficher(fenAboScanne);
 	}
 	public void afficherChoixCommande(Commande commande)
 	{

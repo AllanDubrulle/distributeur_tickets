@@ -202,11 +202,12 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 
 	public void choixLecteurOK(int PIN) 
 	{
-		controleur.getEtatActuel().validePIN(PIN);
+		if(PIN != 0)
+			controleur.getEtatActuel().validePIN(PIN);
 	}
-	public void choixLecteurInserer() 
+	public void choixLecteurInsererRetirer() 
 	{
-		controleur.getEtatActuel().choixInsererCarte();
+		controleur.getEtatActuel().choixInsererRetirerCarte();
 	}
 	
 	public void choixPaiement() 
@@ -354,7 +355,23 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 		ArrayList<String> res = bTitre.listeDesAbonnements();
 		return res;
 	}
-
+	public void apres5secondes()
+	{
+		controleur.getEtatActuel().apres5sec();
+	}
+	
+	public void apres15secondes()
+	{
+		controleur.getEtatActuel().apres15sec();
+	}
+	public boolean verifNom(String nom)
+	{
+		return controleur.verifierNom(nom);
+	}
+	public boolean verifDate(int jour, int mois, int annee)
+	{
+		return controleur.verifierDate(jour, mois, annee);
+	}
 	
 	
 }

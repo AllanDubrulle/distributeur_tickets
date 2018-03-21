@@ -47,7 +47,7 @@ abstract class ControleurEtat
 	public void choixParCarte() {}
 	public void choixCarte() {}
 	
-	public void choixInsererCarte() {}
+	public void choixInsererRetirerCarte() {}
 	public void choixEnLiquide() {}
 	public void inserer(int i) {}
 	
@@ -67,5 +67,9 @@ abstract class ControleurEtat
 	}
 
 	public void valider() {}
+
+	public void apres5sec() {}
+	
+	public void apres15sec() {}
 
 }

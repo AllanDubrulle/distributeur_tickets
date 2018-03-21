@@ -75,11 +75,11 @@ class AfficherBillet extends Pane
         text1.setStrokeWidth(0.0);
         if (allerRetour)
         {
-        	text1.setText("Aller retour");	
+        	text1.setText("ALLER-RETOUR");	
         }
         else
         {
-        	text1.setText("Aller simple");
+        	text1.setText("ALLER SIMPLE");
         }
         text1.setWrappingWidth(200.0);
         text1.setFont(new Font("System Bold Italic", 18.0));
@@ -114,7 +114,7 @@ class AfficherBillet extends Pane
 
         text5.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text5.setStrokeWidth(0.0);
-        text5.setText(gareDepart);
+        text5.setText(gareDepart.toUpperCase());
         text5.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         HBox.setMargin(text5, new Insets(0.0, 0.0, 0.0, 50.0));
         hBox2.setOpaqueInsets(new Insets(0.0));
@@ -130,7 +130,7 @@ class AfficherBillet extends Pane
 
         text7.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text7.setStrokeWidth(0.0);
-        text7.setText(gareArrivee);
+        text7.setText(gareArrivee.toUpperCase());
         text7.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         HBox.setMargin(text7, new Insets(0.0, 0.0, 0.0, 50.0));
         hBox3.setOpaqueInsets(new Insets(0.0));
@@ -147,7 +147,10 @@ class AfficherBillet extends Pane
 
         text9.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text9.setStrokeWidth(0.0);
-        text9.setText(date.getDate() + "/" + String.valueOf(date.getMonth()+1) + "/" + String.valueOf(date.getYear()+1900));
+        if(date.getMonth() == 9 || date.getMonth() == 10 || date.getMonth() == 11)
+        	text9.setText(date.getDate() + "/" + String.valueOf(date.getMonth()+1) + "/" + String.valueOf(date.getYear()+1900));
+        else
+        	text9.setText(date.getDate() + "/0" + String.valueOf(date.getMonth()+1) + "/" + String.valueOf(date.getYear()+1900));
         text9.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         HBox.setMargin(text9, new Insets(0.0, 0.0, 0.0, 50.0));
         hBox4.setOpaqueInsets(new Insets(0.0));

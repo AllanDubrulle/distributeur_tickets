@@ -204,8 +204,20 @@ class FPass10Trajets2Gares extends Ecran
             {
             	try 
             	{
-					graphAC.infoPass10Trajets2Gares(textField.getText(), textField0.getText(), textField1.getText(), getClasse(), getReduction(), getType());
-	            	graphAC.choixValider();
+            		if (graphAC.verifNom(textField.getText().trim()))
+					{
+            			graphAC.infoPass10Trajets2Gares(textField.getText(), textField0.getText(), textField1.getText(), getClasse(), getReduction(), getType());
+            			graphAC.choixValider();
+					}
+            		else
+	            	{
+            			text10.setText("Les données saisies sont incorrectes");
+                		text10.setFont(new Font("System Bold", 15.0*hauteur));
+                		text10.setWrappingWidth(250.0*largeur);
+                		text10.setFill(javafx.scene.paint.Color.RED);
+                		text10.setLayoutX(275.0*largeur);
+                		text10.setLayoutY(364.0*hauteur);
+	            	}
 				} 
             	catch (NumberFormatException | ErreurDEncodage e) 
             	{

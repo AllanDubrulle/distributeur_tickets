@@ -76,7 +76,7 @@ class FRecapBillet extends Ecran
 
         text0.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text0.setStrokeWidth(0.0);
-        text0.setText(gareDepart);
+        text0.setText(gareDepart.toUpperCase());
         text0.setWrappingWidth(200.0*largeur);
         text0.setFont(new Font("System Bold Italic", 15.0*hauteur));
         VBox.setMargin(hBox, new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
@@ -93,7 +93,7 @@ class FRecapBillet extends Ecran
 
         text2.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text2.setStrokeWidth(0.0);
-        text2.setText(gareArrivee);
+        text2.setText(gareArrivee.toUpperCase());
         text2.setWrappingWidth(200.0*largeur);
         text2.setFont(new Font("System Bold Italic", 15.0*hauteur));
         VBox.setMargin(hBox0, new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
@@ -207,7 +207,10 @@ class FRecapBillet extends Ecran
 
         text14.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text14.setStrokeWidth(0.0);
-        text14.setText(date.getDate() + "/" + String.valueOf(date.getMonth()+1) + "/" + String.valueOf(date.getYear()+1900));
+        if(date.getMonth() == 9 || date.getMonth() == 10 || date.getMonth() == 11)
+        	text14.setText(date.getDate() + "/" + String.valueOf(date.getMonth()+1) + "/" + String.valueOf(date.getYear()+1900));
+        else
+        	text14.setText(date.getDate() + "/0" + String.valueOf(date.getMonth()+1) + "/" + String.valueOf(date.getYear()+1900));
         text14.setWrappingWidth(200.0*largeur);
         text14.setFont(new Font("System Bold Italic", 15.0*hauteur));
         VBox.setMargin(hBox7, new Insets(0.0, 0.0, 10.0*hauteur, 0.0));

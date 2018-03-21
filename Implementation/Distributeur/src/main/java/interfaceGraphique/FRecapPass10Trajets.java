@@ -71,7 +71,7 @@ public class FRecapPass10Trajets extends Ecran
 
         text1.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1.setStrokeWidth(0.0);
-        text1.setText(nom);
+        text1.setText(nom.toUpperCase());
         text1.setWrappingWidth(200.0*largeur);
         HBox.setMargin(text1, new Insets(0.0, 0.0, 0.0, 20.0*largeur));
         text1.setFont(new Font("System Bold Italic", 15.0*hauteur));
