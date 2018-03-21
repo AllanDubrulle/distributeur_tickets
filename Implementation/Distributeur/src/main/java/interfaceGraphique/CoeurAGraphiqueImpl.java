@@ -135,7 +135,7 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	}
 	public void afficherAttentePIN() 
 	{
-		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Veuillez rentrer votre code PIN.", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
+		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Veuillez entrer votre code PIN.", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 	}	
 	public void afficherCodePINIncor() 
 	{
@@ -145,6 +145,11 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	public void afficherTropDeTentatives() 
 	{
 		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Code PIN incorrect. Veuillez récuperer votre carte.", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
+	}
+	
+	public void afficherValidationPaiement() 
+	{
+		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Paiement effectué avec succès, éjection de la carte dans un instant.", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 	}
 	
 	public void afficherImpression() 

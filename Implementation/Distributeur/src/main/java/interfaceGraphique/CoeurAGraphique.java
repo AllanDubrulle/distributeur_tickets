@@ -33,6 +33,7 @@ public interface CoeurAGraphique
 	public void afficherAttentePIN();
 	public void afficherCodePINIncor();
 	public void afficherTropDeTentatives();
+	public void afficherValidationPaiement();
 	public void afficherDemandeRecu();
 	public void actualiserMontant(double restant , double introduit);
 	public void afficherRendreMonnaieInseree();

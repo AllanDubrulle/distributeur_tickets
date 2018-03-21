@@ -8,7 +8,6 @@ import javafx.geometry.*;
 import javafx.scene.control.*;
 import javafx.scene.shape.*;
 import javafx.scene.text.Font;
-import stockage.ErreurDEncodage;
 import javafx.scene.layout.*;
 
 class LecteurCarte extends Pane 
