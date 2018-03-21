@@ -648,6 +648,7 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		bBanque.connexion();
 		bBanque.actualiserSolde(numero, somme);
 		bBanque.deconnexion();
+		introduit = prix;
 	}
 
 }

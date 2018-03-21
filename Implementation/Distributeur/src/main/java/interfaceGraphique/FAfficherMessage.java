@@ -37,7 +37,7 @@ class FAfficherMessage extends Ecran
         text.setFont(new Font("System Italic", 18.0*hauteur));
 
         getChildren().addAll(rectangle, text);
-        if (!message.equals("Code PIN incorrect. Veuillez rééssayer.") && !message.equals("Veuillez rentrer votre code PIN."))
+        if (!message.equals("Code PIN incorrect. Veuillez rééssayer.") && !message.equals("Veuillez entrer votre code PIN."))
         {
         	PauseTransition delais = new PauseTransition(Duration.seconds(5));
     		delais.setOnFinished( event -> apres5sec());
