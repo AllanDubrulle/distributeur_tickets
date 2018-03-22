@@ -382,6 +382,7 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	
 	public void actualiserComposant(Composant composant)
 	{
+		// TODO Auto-generated method stub
 		//similaire a maj composant 
 	}
 }

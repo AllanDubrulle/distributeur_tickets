@@ -305,8 +305,8 @@ class FenetreSimulation extends BorderPane
         mAJComposants();
     }
     
-    public void mAJComposants()
-    {
+    public void mAJComposants() // enlever celles qui concernent les pannes et les mettres dans des methodes a part
+    {							// ajouter des actions sur les boutons pannes pour informer le coeur avec coeur a graphique et tombeEnpanne(composant) 
 		fentes.getChildren().clear();
 		claRe.getChildren().clear();
 		scanLect.getChildren().clear();
