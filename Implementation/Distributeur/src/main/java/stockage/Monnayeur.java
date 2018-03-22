@@ -2,6 +2,11 @@ package stockage;
 
 import java.util.HashMap;
 
+/**
+ * Classe Carte
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
 class Monnayeur 
 {
 	private HashMap<Pieces, Integer > StockPiece; 
@@ -11,6 +16,9 @@ class Monnayeur
 	private HashMap<Pieces, Integer > StockPiecePaiement;
 	private HashMap<BilletMonnaie,Integer> StockBilletPaiement;
 	
+	/**
+	 * 	Constructeur de Monnayeur qui initialise le stock de pièce et le stock de billets
+	 */
 	public Monnayeur()
 	{
 		StockPiecePaiement= new HashMap<Pieces, Integer>();
@@ -29,17 +37,32 @@ class Monnayeur
 		}
 	}
 	
+	/**
+	 * 	Permet de stocker des pièces en plus dans les stocks de pièces
+	 * 	@param piece une piece à stocker
+	 */
 	public void stockerPieces (Pieces piece)
 	{
 		StockPiecePaiement.put(piece,StockPiecePaiement.get(piece)+1);
 		StockPiece.put(piece,StockPiece.get(piece)+1);
 	}
+	
+	/**
+	 * 	Permet de stocker des billet en plus dans les stocks de billets
+	 * 	@param piece un billet à stocker
+	 */
 	public void stockerBillets (BilletMonnaie billet)
 	{
 		StockBilletPaiement.put(billet,StockBilletPaiement.get(billet)+1);
 		StockBillet.put(billet,StockBillet.get(billet)+1);
 	}
 	
+	/**
+	 * 	Permet de rendre un montant avec le moins de pièces et/ou de billet possible
+	 * 	@param montant un montant (en cents) à rendre
+	 * 	@return	rendu un rendu avec le détail de ce qui a été donné
+	 * 	@throws PasAssezDeMonnaie (s'il n'y a pas assez de monnaie pour rendre)
+	 */
 	public Rendu retournerArgent(int montant) throws PasAssezDeMonnaie
 	{
 		HashMap<Pieces,Integer> renduPiece = new HashMap<Pieces,Integer>();
@@ -77,10 +100,14 @@ class Monnayeur
 			}
 			
 		}
-		ViderPaiementEnCours();
+		viderPaiementEnCours();
 		return new Rendu(renduPiece, renduBillet);
 	}
-
+	
+	/**
+	 * 	A voir avec Allan
+	 * 	@return rendu un rendu avec le détail de ce qui a été rendu
+	 */
 	public Rendu rendreMontantEncours()
 	{
 		HashMap<Pieces,Integer> renduPiece = new HashMap<Pieces,Integer>();
@@ -93,11 +120,14 @@ class Monnayeur
 		{
 			renduBillet.put(billet, StockBilletPaiement.get(billet));
 		}
-		ViderPaiementEnCours();
+		viderPaiementEnCours();
 		return new Rendu(renduPiece, renduBillet);
 	}
-
-	private void ViderPaiementEnCours()
+	
+	/**
+	 * 	A voir avec Allan
+	 */
+	private void viderPaiementEnCours()
 	{
 		for (Pieces piece : Pieces.values())
 		{
@@ -110,6 +140,10 @@ class Monnayeur
 		}
 	}
 
+	/**
+	 * 	Permet de vider la caisse (si l'utilisateur déclanche la panne "Vider caisse" par
+	 * 	exemple)
+	 */
 	public void vider()
 	{
 		for (Pieces piece : Pieces.values())

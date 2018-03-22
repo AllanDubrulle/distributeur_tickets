@@ -3,7 +3,12 @@ package coeur;
 import stockage.ComposantHorsService;
 import stockage.PlusDePapier;
 
-public class EtatImpressionTitre extends EtatAnnulable 
+/**
+ * Classe EtatImpressionTitre
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
+class EtatImpressionTitre extends EtatAnnulable 
 {	
 	private static EtatImpressionTitre instance;
 	

@@ -1,6 +1,11 @@
 package coeur;
 
-public class EtatMenu extends ControleurEtat 
+/**
+ * Classe EtatMenu
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
+class EtatMenu extends ControleurEtat 
 {	
 	private static EtatMenu instance;
 	public static EtatMenu getInstance() 

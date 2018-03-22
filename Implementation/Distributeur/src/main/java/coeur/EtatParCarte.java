@@ -1,5 +1,10 @@
 package coeur;
 
+/**
+ * Classe EtatParCarte
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
 class EtatParCarte extends EtatAnnulable 
 {	
 	private static EtatParCarte instance;

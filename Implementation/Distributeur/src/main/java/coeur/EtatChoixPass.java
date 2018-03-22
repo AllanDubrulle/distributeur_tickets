@@ -1,5 +1,10 @@
 package coeur;
 
+/**
+ * Classe EtatChoixPass
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
 class EtatChoixPass extends EtatAnnulable 
 {	
 	private static EtatChoixPass instance;

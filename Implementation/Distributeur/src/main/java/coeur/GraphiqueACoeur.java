@@ -7,7 +7,7 @@ import java.util.Date;
 import stockage.Composant;
 import stockage.ErreurDEncodage;
 /**
- * Interface GraphiqueACoeur (permet à l'interface graphique de communiquer avec le coeur)
+ * Interface GraphiqueACoeur
  * @author TheoDaix, AllanDubrulle, VictorVerhoye
  * @version 1.0
  */

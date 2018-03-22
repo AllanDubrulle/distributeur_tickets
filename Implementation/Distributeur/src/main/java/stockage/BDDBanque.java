@@ -4,27 +4,30 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+/**
+ * Classe BBDBanque (gestion de base de données pour toute les données bancaires)
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
 class BDDBanque extends GestionBaseDeDonnees 
-{
-	
+{	
 	/**
-     * 
-     * @author TheoDaix, AllanDubrulle, VictorVerhoye
-     * 
-     */
-	
+	 * 	Constructeur de BDDBanque
+	 */
 	public BDDBanque()
     {
         super();
     }
 	
 	/**
-     *
-     * Vérification du paiement si le prix à payer est inférieur à 5
-     * Vérifie dans la base de données si le solde sur une certaine carte bancaire (numero) est supérieure au prix de sa commande 
-     * dans le distributeur 
-     * Si la carte n'existe pas, la méthode retourne faux
-     * 
+     * 	Vérification du paiement si le prix à payer est inférieur à 5 euros
+     * 	Vérifie dans la base de données si le solde sur une certaine carte bancaire est 
+     * 	supérieure au prix de sa commande dans le distributeur 
+     * 	Si la carte n'existe pas, la méthode retourne faux
+     * 	@param numero un numéro de carte
+     * 	@param montant un montant
+     * 	@return verification qui retourne si le solde correspondant au numéro de la carte 
+     * 	est supérieur ou égal au montant. Si la carte n'existe pas, la méthode retourne faux
      */
 	public boolean verifPaiementPlusPetitQue5(String numero, double montant)
 	{
@@ -52,9 +55,9 @@ class BDDBanque extends GestionBaseDeDonnees
 	}
 	
 	/**
-     * 
-     * Vérifie l'existence d'une certaine carte bancaire dans la base de données
-     * 
+     * 	Vérifie l'existence d'une certaine carte bancaire dans la base de données
+     * 	@param numero le numero de carte
+     * 	@return carte retourne si la carte est présente dans la base de données
      */
 	public boolean existenceCarte(String numero)
 	{
@@ -75,10 +78,11 @@ class BDDBanque extends GestionBaseDeDonnees
 	}
 	
 	/**
-     * 
-     * Va chercher dans la base de données les informations d'une carte bancaire à partir de son numéro de carte (numero)
-     * Retourne un tableau contenant ces informations
-     * 
+     * 	Va chercher dans la base de données les informations d'une carte bancaire à partir de son numéro de carte (numero)
+     * 	Retourne un tableau contenant ces informations
+     * 	@param numero un numéro de carte bancaire
+     * 	@return liste une liste d'informations sur la carte dans l'ordre :
+     * 	Numéro, Code, Solde
      */
 	public String[] infoCarte(String numero)
 	{
@@ -106,13 +110,16 @@ class BDDBanque extends GestionBaseDeDonnees
 	}
 	
 	/**
-    *
-    * Vérification du paiement si le prix à payer est supérieur à 5
-    * Vérifie dans la base de données si le solde sur une certaine carte bancaire (numero) est supérieure au prix de sa commande 
-    * dans le distributeur et si le code PIN inséré est correct
-    * Si la carte n'existe pas, la méthode retourne faux
-    * 
-    */
+	 * 	Vérification du paiement si le prix à payer est supérieur à 5 euros
+	 * 	Vérifie dans la base de données si le solde sur une certaine carte bancaire est 
+	 * 	supérieure au prix de sa commande dans le distributeur et si le code PIN inséré 
+	 * 	est correct
+	 * 	@param numero un numéro de carte bancaire
+	 * 	@param PIN un code PIN
+	 * 	@param montant un montant à payer
+	 * 	@return verification qui retourne si le solde correspondant au numéro de la carte 
+     * 	est supérieur ou égal au montant. Si la carte n'existe pas, la méthode retourne faux
+	 */
 	public boolean verifPaiementPlusGrandQue5(String numero, int PIN, double montant)
 	{
 		try
@@ -140,10 +147,10 @@ class BDDBanque extends GestionBaseDeDonnees
 	}
 	
 	/**
-    *
-    * Permet de modifier le solde d'une certaine carte bancaire dans la base de données après un paiement
-    * 
-    */
+	 * 	Permet de modifier le solde d'une certaine carte bancaire dans la base de données après un paiement
+	 * 	@param numero un numero de carte bancaire
+	 * 	@param somme le montant à mettre au solde de la carte bancaire
+	 */
 	public void actualiserSolde(String numero, int somme)
 	{
 		try

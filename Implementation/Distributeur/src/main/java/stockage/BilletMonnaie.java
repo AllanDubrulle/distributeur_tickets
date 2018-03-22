@@ -1,5 +1,10 @@
 package stockage;
 
+/**
+ * Enumération BilletMonnaie (différents billets utilisés lors de l'application)
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
 public enum BilletMonnaie implements Valeur 
 {
 	

@@ -3,10 +3,11 @@ package coeur;
 import stockage.imprimable.Classe;
 import stockage.imprimable.Reduction;
 import stockage.imprimable.TypeTitre;
+
 /**
- * Interface StockageACoeur (permet au stockage de communiquer avec le coeur)
- * @author TheoDaix, AllanDubrulle, VictorVerhoye
- * @version 1.0
+ * 	Interface StockageACoeur (permet au stockage de communiquer avec le coeur)
+ * 	@author TheoDaix, AllanDubrulle, VictorVerhoye
+ * 	@version 1.0
  */
 public interface StockageACoeur //ATTENTION SUREMENT A SUPPRIMER CAR STOCKAKE N A RIEN A DIRE A COEUR !!!! =====>> Plus maintenant :D
 {

@@ -7,6 +7,11 @@ import stockage.Composant;
 import stockage.ErreurDEncodage;
 import stockage.imprimable.TypePass;
 
+/**
+ * Classe GraphiqueACoeurImpl (permet à l'interface graphique de communiquer avec le coeur)
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
 public class GraphiqueACoeurImpl implements GraphiqueACoeur 
 {	
 	private Controleur controleur = Controleur.getInstance();

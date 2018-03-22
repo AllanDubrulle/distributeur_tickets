@@ -1,6 +1,11 @@
 package coeur;
 
-public class EtatChoixPassIllimite extends EtatChoixTitre 
+/**
+ * Classe EtatChoixPassIllimite
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
+class EtatChoixPassIllimite extends EtatChoixTitre 
 {
 	private static EtatChoixPassIllimite instance;
 	public static EtatChoixPassIllimite getInstance() 

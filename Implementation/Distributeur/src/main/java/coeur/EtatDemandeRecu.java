@@ -1,6 +1,11 @@
 package coeur;
 
-public class EtatDemandeRecu extends EtatAnnulable 
+/**
+ * Classe EtatDemandeRecu
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
+class EtatDemandeRecu extends EtatAnnulable 
 {	
 	private static EtatDemandeRecu instance;
 	

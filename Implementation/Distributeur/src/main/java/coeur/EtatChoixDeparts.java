@@ -2,7 +2,12 @@ package coeur;
 
 import java.sql.SQLException;
 
-public class EtatChoixDeparts extends EtatAnnulable 
+/**
+ * Classe EtatChoixDepart
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
+class EtatChoixDeparts extends EtatAnnulable 
 {
 	private static EtatChoixDeparts instance;
 	public static EtatChoixDeparts getInstance() 

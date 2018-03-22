@@ -8,6 +8,12 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+/**
+ * Classe Gestion base de données (classe parent des classes BDDTitre, BDDBanque et
+ * HoraireTrains)
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
 class GestionBaseDeDonnees {
 
 	    protected String chemin;
@@ -15,11 +21,8 @@ class GestionBaseDeDonnees {
 	    protected Statement requete;
 	    
 	    /**
-	     * 
-	     * @author TheoDaix, AllanDubrulle, VictorVerhoye
-	     * 
+	     * Constructeur de GestionBaseDeDonnees
 	     */
-
 	    public GestionBaseDeDonnees()
 	    {
 	        try
@@ -36,9 +39,8 @@ class GestionBaseDeDonnees {
 	    }
 	    
 	    /**
-	     * 
-	     * Permet à une instance de GestionBaseDeDonnees de se connecter à la base de données
-	     * 
+	     * 	Permet à une instance de GestionBaseDeDonnees de se connecter à la base de données
+	     *	@return connexion vrai si la connexion a pu être établie, faux sinon
 	     */
 	    public boolean connexion()
 	    {
@@ -57,9 +59,8 @@ class GestionBaseDeDonnees {
 	    
 
 	    /**
-	     * 
-	     * Permet à une instance de GestionBaseDeDonnees de se déconnecter de la base de données
-	     * 
+	     * 	Permet à une instance de GestionBaseDeDonnees de se déconnecter de la base de données
+	     * 	@return deconnexion vrai si la deconnexion a pu être établie, faux sinon
 	     */
 	    public boolean deconnexion()
 	    {
@@ -77,6 +78,11 @@ class GestionBaseDeDonnees {
 	        }
 	    }
 	    
+	    /**
+	     * 	Permet d'afficher les résultats d'une requête
+	     * 	@param res un resultat d'une requête de type SQL
+	     * 	@throws SQLException (peut être déclanchée si il y a une erreur dans le résultat)
+	     */
 	    public static void afficherResultat(ResultSet res) throws SQLException { //A SUPPRIMER
 			if (res != null)
 			{	ResultSetMetaData res2 = res.getMetaData();
@@ -96,6 +102,10 @@ class GestionBaseDeDonnees {
 			}
 	    }   
 	    
+	    /**
+	     * 	Permet de retourner un résultat à partir d'une requête de type SQL
+	     * 	@param requete une requête de type SQL
+	     */
 	    public ResultSet resultatRequete(String requete) //A SUPPRIMER
 	    {
 	        try
@@ -110,6 +120,10 @@ class GestionBaseDeDonnees {
 	        return null;
 	    }
 	    
+	    /**
+	     * 	Permet de mettre à jour une donnée à partir d'une requête de type SQL
+	     * 	@param requete une requête de type SQL
+	     */
 	    public void mettreAJour(String requete) //A SUPPRIMER
 	    {
 	        try
