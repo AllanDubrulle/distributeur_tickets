@@ -48,11 +48,12 @@ class FAfficherMessage extends Ecran
         }
         if (!message.equals("Code PIN incorrect. Veuillez rééssayer.") && !message.equals("Veuillez entrer votre code PIN."))
         {
-        	lecteur = true;
+        	lecteur = false;
         	PauseTransition delais = new PauseTransition(Duration.seconds(5));
     		delais.setOnFinished( event -> apres5sec());
     		delais.play();
         }
+        lecteur = true;
         FenetreSimulation.getInstance().getLecteur().getField().clear();
     }
     

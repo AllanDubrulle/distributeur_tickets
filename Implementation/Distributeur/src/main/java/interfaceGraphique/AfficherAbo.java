@@ -76,7 +76,7 @@ class AfficherAbo extends Pane
 
         text1.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1.setStrokeWidth(0.0);
-        text1.setText(nom);
+        text1.setText(nom.toUpperCase());
         text1.setWrappingWidth(200.0);
         text1.setFont(new Font("System Bold Italic", 18.0));
 

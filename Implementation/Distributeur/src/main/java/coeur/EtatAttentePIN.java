@@ -44,21 +44,21 @@ class EtatAttentePIN extends EtatAnnulable
 		if(Controleur.getInstance().getCoeurAStockage().tropDErreur())
 		{
 			Controleur.getInstance().getCoeurAGraphique().afficherTropDeTentatives();
-			ejecteCarte();
+			//ejecteCarte();
 			Controleur.getInstance().modifEtat(EtatPaiement.getInstance());
 		}
 	}
 	public void soldeInsuffisant()
 	{
 		Controleur.getInstance().getCoeurAGraphique().afficherSoldeInsuffisant();
-		ejecteCarte();
+		//ejecteCarte();
 		Controleur.getInstance().modifEtat(EtatPaiement.getInstance());
 	}
 	public void infosCorrectes()
 	{
 		Controleur.getInstance().getCoeurAStockage().actualiserSolde();
 		Controleur.getInstance().getCoeurAGraphique().afficherValidationPaiement();
-		ejecteCarte();
+		//ejecteCarte();
 	}
 	public void ejecteCarte()
 	{

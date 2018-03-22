@@ -6,7 +6,7 @@ import coeur.GraphiqueACoeur;
 import coeur.GraphiqueACoeurImpl;
 import javafx.scene.layout.Pane;
 
-class Ecran extends Pane 
+abstract class Ecran extends Pane 
 {
 	/*public Ecran(boolean enMarche) 
 	{
