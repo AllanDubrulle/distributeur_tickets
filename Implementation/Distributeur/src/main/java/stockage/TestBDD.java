@@ -12,7 +12,7 @@ public class TestBDD {
 		BDDBanque gest = new BDDBanque();
 		gest.connexion();
 		gest.actualiserSolde("67030615781202136", 1000000);
-		System.out.println(gest.soldeCarte("67030615781202136"));
+		//System.out.println(gest.soldeCarte("67030615781202136"));
 		//ResultSet res = gest.calculItineraire("TOURNAI", "MONS", 4, 50);
 		//ArrayList<String> res = gest.listeDesAbonnements();
 		//String[] res1 = gest.conversionRequeteEnTableau(res);

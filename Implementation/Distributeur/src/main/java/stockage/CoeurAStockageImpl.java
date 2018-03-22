@@ -592,7 +592,7 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		return carte.verifCodePIN(codePIN);
 	}
 
-	public void mauvaisPing()
+	public void mauvaisPin()
 	{
 		essai++;
 		

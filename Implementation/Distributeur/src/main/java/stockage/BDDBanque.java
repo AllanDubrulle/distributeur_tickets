@@ -6,11 +6,26 @@ import java.sql.SQLException;
 
 class BDDBanque extends GestionBaseDeDonnees 
 {
+	
+	/**
+     * 
+     * @author TheoDaix, AllanDubrulle, VictorVerhoye
+     * 
+     */
+	
 	public BDDBanque()
     {
         super();
     }
 	
+	/**
+     *
+     * Vérification du paiement si le prix à payer est inférieur à 5
+     * Vérifie dans la base de données si le solde sur une certaine carte bancaire (numero) est supérieure au prix de sa commande 
+     * dans le distributeur 
+     * Si la carte n'existe pas, la méthode retourne faux
+     * 
+     */
 	public boolean verifPaiementPlusPetitQue5(String numero, double montant)
 	{
 		try
@@ -36,6 +51,11 @@ class BDDBanque extends GestionBaseDeDonnees
         return false;
 	}
 	
+	/**
+     * 
+     * Vérifie l'existence d'une certaine carte bancaire dans la base de données
+     * 
+     */
 	public boolean existenceCarte(String numero)
 	{
 		try
@@ -54,6 +74,12 @@ class BDDBanque extends GestionBaseDeDonnees
         return false;
 	}
 	
+	/**
+     * 
+     * Va chercher dans la base de données les informations d'une carte bancaire à partir de son numéro de carte (numero)
+     * Retourne un tableau contenant ces informations
+     * 
+     */
 	public String[] infoCarte(String numero)
 	{
 		String[] res = new String[3];
@@ -79,6 +105,14 @@ class BDDBanque extends GestionBaseDeDonnees
         return res;
 	}
 	
+	/**
+    *
+    * Vérification du paiement si le prix à payer est supérieur à 5
+    * Vérifie dans la base de données si le solde sur une certaine carte bancaire (numero) est supérieure au prix de sa commande 
+    * dans le distributeur et si le code PIN inséré est correct
+    * Si la carte n'existe pas, la méthode retourne faux
+    * 
+    */
 	public boolean verifPaiementPlusGrandQue5(String numero, int PIN, double montant)
 	{
 		try
@@ -91,7 +125,6 @@ class BDDBanque extends GestionBaseDeDonnees
 			boolean ok = res.next();
 			if (ok && res.getDouble(1) >= montant)
 			{
-        		System.out.println("bli");
 				return true;
 			}
 			else
@@ -106,6 +139,11 @@ class BDDBanque extends GestionBaseDeDonnees
         return false;
 	}
 	
+	/**
+    *
+    * Permet de modifier le solde d'une certaine carte bancaire dans la base de données après un paiement
+    * 
+    */
 	public void actualiserSolde(String numero, int somme)
 	{
 		try
@@ -121,23 +159,4 @@ class BDDBanque extends GestionBaseDeDonnees
             e.printStackTrace();
         }
 	}
-	
-	public double soldeCarte(String numero)
-	{
-		try
-        {
-			String requete = "select solde from carte where numero = ?";
-            PreparedStatement declar = this.connexion.prepareStatement(requete);
-            declar.setString(1, numero);
-			ResultSet res = declar.executeQuery();
-			double solde = res.getDouble(1);
-			return solde;
-        }
-        catch (SQLException e)
-        {
-            e.printStackTrace();
-        }
-		return -1;
-	}
-	
 }
