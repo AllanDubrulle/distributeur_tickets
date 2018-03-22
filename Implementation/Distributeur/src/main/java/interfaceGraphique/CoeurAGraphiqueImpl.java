@@ -302,7 +302,7 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 			case ACHATABO:
 				Abonnement abonnement = (Abonnement) titre;
 				FenetreSimulation.getInstance().afficher(new FRecapAboAchat(Integer.toString(abonnement.getNum()), abonnement.getNom(), abonnement.getRegNat(), 
-						abonnement.getGareDepart(), abonnement.getGareArrivee(), abonnement.getValidite(abonnement.getDateValidite(), abonnement.getDateExp()), 	
+						abonnement.getGareDepart(), abonnement.getGareArrivee(), abonnement.getValidite(), 	
 						abonnement.getClasse().valeur(), abonnement.getReduction().toString(), abonnement.getType().toString(), prix, 	
 						FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 			break;
@@ -335,7 +335,7 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 			case REVOUVELLEMENTABO:
 				Abonnement abonnementRen = (Abonnement) titre;
 				FenetreSimulation.getInstance().afficher(new FRecapAboRenouveler(Integer.toString(abonnementRen.getNum()), abonnementRen.getNom(), abonnementRen.getRegNat(), 
-						abonnementRen.getGareDepart(), abonnementRen.getGareArrivee(), abonnementRen.getValidite(abonnementRen.getDateValidite(), abonnementRen.getDateExp()), 	
+						abonnementRen.getGareDepart(), abonnementRen.getGareArrivee(), abonnementRen.getValidite(), 	
 						abonnementRen.getClasse().valeur(), abonnementRen.getReduction().toString(), abonnementRen.getType().toString(), prix, 	
 						FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 				break;

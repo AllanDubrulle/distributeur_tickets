@@ -5,7 +5,8 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.Date;
 import java.util.HashMap;
-import coeur.StockageACoeurImpl;
+
+import coeur.Commande;
 import stockage.imprimable.Abonnement;
 import stockage.imprimable.Billet;
 import stockage.imprimable.Classe;
@@ -105,38 +106,11 @@ public class CoeurAStockageImpl implements CoeurAStockage
 	public void creerBillet(Date dateValidite ,int nbrBillet, int classe, String gareDepart,
 			String gareArrivee, String typeBillet, String reduction, boolean allerRetour) throws ErreurDEncodage
 	{
-		Reduction reduc = null;
-		TypeTitre type=null;
-		Classe classeBillet = null;
-		if (classe==1)
-		{
-			classeBillet = Classe.C1;
-		}
-		if(classe==2)
-		{
-			classeBillet = Classe.C2;
-		}
-		for (int i = 0 ; i< Reduction.values().length;i++)
-		{
-			if(Reduction.values()[i].toString().equals(reduction))
-			{
-				reduc = Reduction.values()[i];
-			}
-		}
-		for (int i = 0 ; i< TypeTitre.values().length;i++)
-		{
-			if(TypeTitre.values()[i].toString().equals(typeBillet))
-			{
-				type = TypeTitre.values()[i];
-			}
-		}
-		if (reduc==null || type==null || classeBillet ==null )
-		{
-			throw new ErreurDEncodage ("problème d'encodage");
-		}
+		Reduction reduc = conversionReduction(reduction);
+		Classe classeBillet = conversionClasse(classe);
+		TypeTitre type = conversionType(typeBillet);
 		setNbrTitre(nbrBillet);
 		setAchat(new Billet(dateValidite, gareDepart, gareArrivee,  classeBillet, type,reduc,allerRetour));
-		setPrix(rechercherPrix(gareDepart,gareArrivee,reduc,type,classeBillet)*nbrBillet);
 	}
 
 	public void creerAbonnement(int validite, String gareDepart, String gareArrivee, int classe,
@@ -150,31 +124,9 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		String annee = String.valueOf(dateExpiration.getYear());
 		String mois = String.valueOf(dateExpiration.getMonthValue());
 		String jour = String.valueOf(dateExpiration.getDayOfMonth());
-		Reduction reduc = null;	
-		Classe classeAbo = null;	
-		TypeTitre typeAbo = null;		
-		if (classe == 1)	
-			classeAbo = Classe.C1;	
-		if (classe == 2)	
-			classeAbo = Classe.C2;	
-		for (int i = 0 ; i< Reduction.values().length;i++)	
-		{	
-			if(Reduction.values()[i].toString().equals(reduction))	
-			{	
-				reduc = Reduction.values()[i];	
-			}	
-		}	
-		for (int i = 0 ; i< TypeTitre.values().length;i++)	
-		{	
-			if(TypeTitre.values()[i].toString().equals(type))	
-			{	
-				typeAbo = TypeTitre.values()[i];	
-			}	
-		}		
-		if (reduc==null || typeAbo == null || classeAbo ==null )	
-		{	
-			throw new ErreurDEncodage ("problème d'encodage");	
-		}	
+		Reduction reduc = conversionReduction(reduction);
+		Classe classeAbo = conversionClasse(classe);
+		TypeTitre typeAbo = conversionType(type);
 		BDDTitre bTitre = new BDDTitre();
 		bTitre.connexion();
 		int num = bTitre.numeroAbonnementSuivant();
@@ -182,7 +134,6 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		bTitre.deconnexion();
 		setNbrTitre(1);
 		setAchat(new Abonnement(num, dateValid, dateExp, gareDepart, gareArrivee,  classeAbo, reduc, typeAbo, nom, registreNational));	
-		setPrix(rechercherPrix(gareDepart, gareArrivee, reduc, typeAbo, classeAbo, validite));	
 	}
 
 	public void modifierAbo(int validite, String numAbo) throws ErreurDEncodage
@@ -198,74 +149,21 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		int classe = Integer.parseInt(infos[9]);
 		String reduction = infos[8];
 		String type = infos[7];
-		Reduction reduc = null;	
-		Classe classeAbo = null;	
-		TypeTitre typeAbo = null;		
-		if (classe == 1)	
-			classeAbo = Classe.C1;	
-		if (classe == 2)	
-			classeAbo = Classe.C2;	
-		for (int i = 0 ; i< Reduction.values().length;i++)	
-		{	
-			if(Reduction.values()[i].toString().equals(reduction))	
-			{	
-				reduc = Reduction.values()[i];	
-			}	
-		}	
-		for (int i = 0 ; i< TypeTitre.values().length;i++)	
-		{	
-			if(TypeTitre.values()[i].toString().equals(type))	
-			{	
-				typeAbo = TypeTitre.values()[i];	
-			}	
-		}		
-		if (reduc==null || typeAbo == null || classeAbo ==null )	
-		{	
-			throw new ErreurDEncodage ("problème d'encodage");	
-		}
+		Reduction reduc = conversionReduction(reduction);
+		Classe classeAbo = conversionClasse(classe);
+		TypeTitre typeAbo = conversionType(type);
 		setNbrTitre(1);
-		setAchat(new Abonnement(Integer.parseInt(numAbo), dateValid, dateExp, infos[2], infos[3], classeAbo, reduc, typeAbo, infos[0], infos[1]));	
-		setPrix(rechercherPrix(infos[2], infos[3], reduc, typeAbo, classeAbo, validite));	
+		setAchat(new Abonnement(Integer.parseInt(numAbo), dateValid, dateExp, infos[2], infos[3], classeAbo, reduc, typeAbo, infos[0], infos[1]));		
 	}
 	
 	public void creerPassIllimite(String nom, int classe, String reduction, String type, int nbrJours, String typePassStr) throws ErreurDEncodage
 	{
-		Reduction reduc = null;	
-		Classe classePass = null;	
-		TypeTitre typeTitre = null;	
-		TypePass typePass = null;
-		if (classe == 1)	
-			classePass = Classe.C1;	
-		if (classe == 2)	
-			classePass = Classe.C2;	
-		for (int i = 0 ; i < Reduction.values().length; i++)	
-		{	
-			if(Reduction.values()[i].toString().equals(reduction))	
-			{	
-				reduc = Reduction.values()[i];	
-			}	
-		}	
-		for (int i = 0 ; i < TypeTitre.values().length; i++)	
-		{	
-			if(TypeTitre.values()[i].toString().equals(type))	
-			{	
-				typeTitre = TypeTitre.values()[i];	
-			}	
-		}	
-		for (int i = 0; i < TypePass.values().length; i++)
-		{
-			if(TypePass.values()[i].toString().equals(typePassStr))
-			{
-				typePass = TypePass.values()[i];
-			}
-		}
-		if (reduc==null || typeTitre == null || classePass ==null)	
-		{	
-			throw new ErreurDEncodage ("problème d'encodage");	
-		}
+		Reduction reduc = conversionReduction(reduction);
+		Classe classePass = conversionClasse(classe);
+		TypeTitre typeTitre = conversionType(type);
+		TypePass typePass = conversionTypePass(typePassStr);
 		setNbrTitre(1);
 		setAchat(new Pass(nom, nbrJours, classePass, typeTitre, reduc, typePass));
-		setPrix(rechercherPrix(classePass, reduc, typeTitre, nbrJours));
 	}
 	
 	public boolean verifPaiementCarte(String numero, int codePIN, double montant)
@@ -287,107 +185,24 @@ public class CoeurAStockageImpl implements CoeurAStockage
 	
 	public void creerPass10Trajets(String nom, int classe, String reduction, String type, String typePassStr) throws ErreurDEncodage
 	{
-		Reduction reduc = null;	
-		Classe classePass = null;	
-		TypeTitre typeTitre = null;	
-		TypePass typePass = null;
-		if (classe == 1)	
-			classePass = Classe.C1;	
-		if (classe == 2)	
-			classePass = Classe.C2;	
-		for (int i = 0 ; i < Reduction.values().length; i++)	
-		{	
-			if(Reduction.values()[i].toString().equals(reduction))	
-			{	
-				reduc = Reduction.values()[i];	
-			}	
-		}	
-		for (int i = 0 ; i < TypeTitre.values().length; i++)	
-		{	
-			if(TypeTitre.values()[i].toString().equals(type))	
-			{	
-				typeTitre = TypeTitre.values()[i];	
-			}	
-		}	
-		for (int i = 0; i < TypePass.values().length; i++)
-		{
-			if(TypePass.values()[i].toString().equals(typePassStr))
-			{
-				typePass = TypePass.values()[i];
-			}
-		}
-		if (reduc==null || typeTitre == null || classePass ==null)	
-		{	
-			throw new ErreurDEncodage ("problème d'encodage");	
-		}
+		Reduction reduc = conversionReduction(reduction);
+		Classe classePass = conversionClasse(classe);
+		TypeTitre typeTitre = conversionType(type);
+		TypePass typePass = conversionTypePass(typePassStr);
 		setNbrTitre(1);
 		setAchat(new Pass(nom, classePass, typeTitre, reduc, typePass));
-		setPrix(rechercherPrix(classePass, reduc, typeTitre));
 	}
 	
 	public void creerPass10Trajets2Gares(String nom, String gareDepart, String gareArrivee, int classe, String reduction, String type, String typePassStr) throws ErreurDEncodage
 	{
-		Reduction reduc = null;	
-		Classe classePass = null;	
-		TypeTitre typeTitre = null;	
-		TypePass typePass = null;
-		if (classe == 1)	
-			classePass = Classe.C1;	
-		if (classe == 2)	
-			classePass = Classe.C2;	
-		for (int i = 0 ; i < Reduction.values().length; i++)	
-		{	
-			if(Reduction.values()[i].toString().equals(reduction))	
-			{	
-				reduc = Reduction.values()[i];	
-			}	
-		}	
-		for (int i = 0 ; i < TypeTitre.values().length; i++)	
-		{	
-			if(TypeTitre.values()[i].toString().equals(type))	
-			{	
-				typeTitre = TypeTitre.values()[i];	
-			}	
-		}	
-		for (int i = 0; i < TypePass.values().length; i++)
-		{
-			if(TypePass.values()[i].toString().equals(typePassStr))
-			{
-				typePass = TypePass.values()[i];
-			}
-		}
-		if (reduc==null || typeTitre == null || classePass ==null)	
-		{	
-			throw new ErreurDEncodage ("problème d'encodage");	
-		}
+		Reduction reduc = conversionReduction(reduction);
+		Classe classePass = conversionClasse(classe);
+		TypeTitre typeTitre = conversionType(type);
+		TypePass typePass = conversionTypePass(typePassStr);
 		setNbrTitre(1);
 		setAchat(new Pass(nom, gareDepart, gareArrivee, classePass, typeTitre, reduc, typePass));
-		setPrix(rechercherPrix(gareDepart, gareArrivee, classePass, reduc, typeTitre));
-	}
-
-	public int rechercherPrix(String gareDepart, String gareArrivee,Reduction reduc,TypeTitre type,Classe classe) 	//Billet
-	{
-		return StockageACoeurImpl.getInstance().calculerPrix(gareDepart, gareArrivee, reduc, type, classe);
-	}
-	public int rechercherPrix(String gareDepart, String gareArrivee, Reduction reduc, TypeTitre type, Classe classe, int validite)	//Abonnement
-	{	
-		return StockageACoeurImpl.getInstance().calculerPrix(gareDepart, gareArrivee, reduc, type, classe, validite);
 	}
 	
-	public int rechercherPrix(Classe classe, Reduction reduction, TypeTitre type, int nbrJours)		//PassIllimite
-	{
-		return StockageACoeurImpl.getInstance().calculerPrix(classe, reduction, type, nbrJours);
-	}
-	
-	public int rechercherPrix(Classe classe, Reduction reduction, TypeTitre type)		//Pass10Trajets
-	{
-		return StockageACoeurImpl.getInstance().calculerPrix(classe, reduction, type);
-	}
-	
-	public int rechercherPrix(String gareDepart, String gareArrivee, Classe classe, Reduction reduction, TypeTitre type)		//Pass10Trajets2Gares
-	{
-		return StockageACoeurImpl.getInstance().calculerPrix(gareDepart, gareArrivee, classe, reduction, type);
-	}
 
 	private void setAchat(TitreDeTransport billet)
 	{
@@ -620,5 +435,79 @@ public class CoeurAStockageImpl implements CoeurAStockage
 			instance = new CoeurAStockageImpl();
 		return instance;
 	}
+	
+	public Reduction conversionReduction(String reduction ) throws ErreurDEncodage
+	{
+		for (int i = 0 ; i < Reduction.values().length; i++)	
+		{	
+			if(Reduction.values()[i].toString().equals(reduction))	
+			{	
+				return Reduction.values()[i];	
+			}	
+		}
+		throw new ErreurDEncodage("reduction inexistant");
+	}
+	public Classe conversionClasse(int classe) throws ErreurDEncodage
+	{
+		if (classe == 1)	
+			return Classe.C1;	
+		if (classe == 2)	
+			return Classe.C2;
+		throw new ErreurDEncodage("classe inexistant");
+		
+	}
+	public TypeTitre conversionType(String type ) throws ErreurDEncodage
+	{
+		for (int i = 0 ; i < TypeTitre.values().length; i++)	
+		{	
+			if(TypeTitre.values()[i].toString().equals(type))	
+			{	
+				return TypeTitre.values()[i];	
+			}	
+		}
+		throw new ErreurDEncodage("type inexistant");
+	}
+	
+	public TypePass conversionTypePass(String typePassStr) throws ErreurDEncodage
+	{
+		for (int i = 0; i < TypePass.values().length; i++)
+		{
+			if(TypePass.values()[i].toString().equals(typePassStr))
+			{
+				return TypePass.values()[i];
+			}
+		}
+		throw new ErreurDEncodage("typePass inexistant");
+	}
 
+	public double rechercherPrix(Commande commande ,String gareDepart, String gareArrivee)
+	{
+		BDDTitre db = new BDDTitre();
+		db.connexion();
+		double res;
+		switch(commande)
+		{
+		case BILLET:
+			res = db.calculerPrixBillet(gareDepart, gareArrivee);
+			break;
+		case PASS10TRAJETS2GARES:
+			res = db.calculerPrixBillet(gareDepart, gareArrivee)*8;
+			break;
+		default:
+			res = db.calculerPrixAbo(gareDepart, gareArrivee);
+			break;
+		
+		}
+		db.deconnexion();
+		return res;
+	}
+
+	public double rechercherPrix(TypePass typePass)
+	{
+		BDDTitre db = new BDDTitre();
+		db.connexion();
+		double res = db.calculerPrixPass(typePass);
+		db.deconnexion();
+		return res;
+	}
 }

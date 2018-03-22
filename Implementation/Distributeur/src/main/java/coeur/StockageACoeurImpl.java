@@ -1,14 +1,12 @@
 package coeur;
 
-import stockage.imprimable.Classe;
-import stockage.imprimable.Reduction;
-import stockage.imprimable.TypeTitre;
+
 
 public class StockageACoeurImpl implements StockageACoeur 
 {
 	public static StockageACoeurImpl instance;
 	private StockageACoeurImpl() {}
-	public void Impression() 
+	/*public void Impression() 
 	{
 		
 	}
@@ -31,7 +29,7 @@ public class StockageACoeurImpl implements StockageACoeur
 	public int calculerPrix(String gareDepart, String gareArrivee, Classe classe, Reduction reduction, TypeTitre type)
 	{
 		return Controleur.getInstance().calculerPrix(gareDepart, gareArrivee, classe, reduction, type);
-	}
+	}*/
 	
 	public static StockageACoeurImpl getInstance() 
 	{	

@@ -24,9 +24,9 @@ public class Abonnement extends TitreDeTransport
 	{
 		return registreNational;
 	}
-	public int getValidite(Date dateVal, Date dateExp)
+	public int getValidite()
 	{
-		int val = dateExp.getMonth() - dateVal.getMonth();
+		int val = dateExp.getMonth() - dateValidite.getMonth();
 		if (val == 4)
 			val = 3;
 		else if (val == 7)

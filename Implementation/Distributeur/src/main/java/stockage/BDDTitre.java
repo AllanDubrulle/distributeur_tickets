@@ -7,6 +7,8 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+import stockage.imprimable.TypePass;
+
 public class BDDTitre extends GestionBaseDeDonnees 
 {
 	public BDDTitre()
@@ -14,7 +16,7 @@ public class BDDTitre extends GestionBaseDeDonnees
         super();
     }
 	
-	public double calculerPrixBillet(String gare1, String gare2) //operationnel
+	public double calculerPrixBillet(String gare1, String gare2)
     {
         String gare1Maj = gare1.toUpperCase();
         String gare2Maj = gare2.toUpperCase();
@@ -59,7 +61,7 @@ public class BDDTitre extends GestionBaseDeDonnees
         return -1;
     }
 	
-	public double calculerPrixPass(String typePass)
+	private double calculerPrixPass(String typePass)
 	{
 		try
         {
@@ -214,5 +216,22 @@ public class BDDTitre extends GestionBaseDeDonnees
             e.printStackTrace();
         }
         return res;
+	}
+
+	public double calculerPrixPass(TypePass typePass)
+	{
+		switch (typePass)
+		{
+		case PASS10TRAJETS:
+			calculerPrixPass("10TRAJETS");
+			break;
+		case PASSILLIMITE:
+			calculerPrixPass("SansRestriction");
+			break;
+		default:
+			break;
+		
+		}
+		return 0;
 	}
 }

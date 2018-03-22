@@ -3,10 +3,12 @@ package coeur;
 import java.util.Stack;
 import interfaceGraphique.CoeurAGraphique;
 import interfaceGraphique.CoeurAGraphiqueImpl;
-import stockage.BDDTitre;
 import stockage.CoeurAStockage;
 import stockage.CoeurAStockageImpl;
+import stockage.imprimable.Abonnement;
+import stockage.imprimable.Billet;
 import stockage.imprimable.Classe;
+import stockage.imprimable.Pass;
 import stockage.imprimable.Reduction;
 import stockage.imprimable.TypeTitre;
 /**
@@ -138,16 +140,12 @@ class Controleur
 	 * 	@param classe une classe (Classe)
 	 * 	@return le prix du billet
 	 */
-	public int calculerPrix(String gareDepart, String gareArrivee, Reduction reduc, 
-			TypeTitre type, Classe classe)
+	public void calculerPrix(Billet billet)
 	{
-		BDDTitre bTitre = new BDDTitre();
-		bTitre.connexion();
-		double calculPrix= bTitre.calculerPrixBillet(gareDepart, gareArrivee);
-		bTitre.deconnexion();
-		calculPrix *=100;
-		int res = ajusterPrix((int) calculPrix ,reduc, type, classe);
-		return  res;
+		double calculPrix = getCoeurAStockage().rechercherPrix(commande,billet.getGareDepart(),billet.getGareArrivee());
+		System.out.println(calculPrix);
+		int res = ajusterPrix((int) calculPrix ,billet.getReduction(), billet.getType(), billet.getClasse())* getCoeurAStockage().getNbrTitre();
+		getCoeurAStockage().setPrix(res);
 	}
 	
 	/**
@@ -161,17 +159,12 @@ class Controleur
 	 * 	@param validite une validité (1, 3, 6 ou 12 mois)
 	 * 	@return le prix de l'abonnement
 	 */
-	public int calculerPrix(String gareDepart, String gareArrivee, Reduction reduc, 
-			TypeTitre type, Classe classe, int validite)
+	public void calculerPrix(Abonnement abo)
 	{	
-		BDDTitre bTitre = new BDDTitre();
-		bTitre.connexion();
-		double calculPrix = bTitre.calculerPrixAbo(gareDepart, gareArrivee);	
-		bTitre.deconnexion();
-		calculPrix *=100;
-		int res = ajusterPrix((int) calculPrix ,reduc, type, classe);
-		res *= validite;	
-		return  res;	
+		double calculPrix = getCoeurAStockage().rechercherPrix(commande,abo.getGareDepart(), abo.getGareArrivee());	
+		int res = ajusterPrix((int) calculPrix ,abo.getReduction(), abo.getType(), abo.getClasse());
+		res *= abo.getValidite();	
+		getCoeurAStockage().setPrix(res);
 	}
 	
 	/**
@@ -183,16 +176,12 @@ class Controleur
 	 * 	@param nbrJours le nombre de jour de validité
 	 * 	@return le prix du pass
 	 */
-	public int calculerPrix(Classe classe, Reduction reduction, TypeTitre type, int nbrJours)
+	public void calculerPrixIllimite(Pass pass)
 	{
-		BDDTitre bTitre = new BDDTitre();
-		bTitre.connexion();
-		double calculPrix = bTitre.calculerPrixPass("SansRestriction");	
-		bTitre.deconnexion();
-		calculPrix *=100;
-		int res = ajusterPrix((int) calculPrix ,reduction, type, classe);
-		res *= nbrJours;	
-		return  res;
+		double calculPrix = getCoeurAStockage().rechercherPrix(pass.getTypePass());
+		int res = ajusterPrix((int) calculPrix ,pass.getReduction(), pass.getType(), pass.getClasse());
+		res *= pass.getNbrJours();	
+		getCoeurAStockage().setPrix(res);
 	}
 
 	/**
@@ -203,15 +192,11 @@ class Controleur
 	 * 	@param type un type d'abonnement (TypeTitre)
 	 * 	@return le prix du pass
 	 */
-	public int calculerPrix(Classe classe, Reduction reduction, TypeTitre type)
+	public void calculerPrixPass10trajet(Pass pass)
 	{
-		BDDTitre bTitre = new BDDTitre();
-		bTitre.connexion();
-		double calculPrix = bTitre.calculerPrixPass("10Trajets");	
-		bTitre.deconnexion();
-		calculPrix *=100;
-		int res = ajusterPrix((int) calculPrix ,reduction, type, classe);	
-		return  res;
+		double calculPrix = getCoeurAStockage().rechercherPrix(pass.getTypePass());
+		int res = ajusterPrix((int) calculPrix ,pass.getReduction(), pass.getType(), pass.getClasse());	
+		getCoeurAStockage().setPrix(res);
 	}
 	/**
 	 * 	Permet de calculer le prix d'un Pass 10 trajets entre deux gares à partir d'une gare
@@ -223,17 +208,11 @@ class Controleur
 	 * 	@param type un type de pass (TypeTitre)
 	 * 	@return le prix du pass
 	 */
-	public int calculerPrix(String gareDepart, String gareArrivee, Classe classe, 
-			Reduction reduction, TypeTitre type)
-	{
-		BDDTitre bTitre = new BDDTitre();
-		bTitre.connexion();
-		double calculPrix = bTitre.calculerPrixBillet(gareDepart, gareArrivee);	
-		System.out.println(calculPrix);
-		bTitre.deconnexion();
-		calculPrix *=800;
-		int res = ajusterPrix((int) calculPrix ,reduction, type, classe);	
-		return  res;
+	public void calculerPrixPass10Trajets2Gares(Pass pass)
+	{	
+		double calculPrix = getCoeurAStockage().rechercherPrix(commande,pass.getGareDepart(),pass.getGareArrivee());
+		int res = ajusterPrix((int) calculPrix ,pass.getReduction(), pass.getType(), pass.getClasse());		
+		getCoeurAStockage().setPrix(res);
 	}
 	
 	/**
@@ -248,6 +227,7 @@ class Controleur
 	private int ajusterPrix(int prix ,Reduction reduc, TypeTitre type, Classe classe)
 	{
 		double res= prix;
+		res*=100;
 		res -= res * (double)reduc.valeur()/100;	
 		res -= res * (double)type.valeur()/100;	
 		res *= (3-classe.valeur());	
