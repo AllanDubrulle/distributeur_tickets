@@ -11,8 +11,7 @@ import javafx.scene.layout.*;
 class Clavier extends Pane 
 {		
 	private Ecran fenetre;
-	
-	
+
 	public Clavier(double hauteur, double largeur) 
 	{
         Rectangle rectangle = new Rectangle();

@@ -54,18 +54,6 @@ class FFin extends Ecran
     {
 		graphAC.apres15secondes();
     }
-    
-	public void actionClavier(String a) {}
-
-	public void actionClavier(int a) {}
-
-	public void actionRetour() {}
-
-	public void actionSuivant() {}
-
-	public void actionEspace() {}
-
-	public void actionEffacer() {}
 	
 	public void actionEntrer() 
 	{

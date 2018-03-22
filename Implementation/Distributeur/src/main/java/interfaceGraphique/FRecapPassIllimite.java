@@ -168,7 +168,7 @@ class FRecapPassIllimite extends Ecran
 
         text13.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text13.setStrokeWidth(0.0);
-        text13.setText(Double.toString(prix));
+        text13.setText(prix + " €");
         text13.setWrappingWidth(200.0*largeur);
         text13.setFont(new Font("System Bold Italic", 15.0*hauteur));
         HBox.setMargin(text13, new Insets(0.0, 0.0, 0.0, 20.0*largeur));
@@ -214,21 +214,11 @@ class FRecapPassIllimite extends Ecran
         vBox.getChildren().addAll(hBox, hBox0, hBox3, hBox1, hBox4, hBox5, hBox6);
         getChildren().addAll(rectangle, text, vBox, button, button0);
     }
-    
-    public void actionClavier(String a) {}
-
-	public void actionClavier(int a) {}
 
 	public void actionRetour() 
 	{
 		graphAC.choixRetourTitre();
 	}
-
-	public void actionSuivant() {}
-
-	public void actionEspace() {}
-
-	public void actionEffacer() {}
 	
 	public void actionEntrer() 
 	{

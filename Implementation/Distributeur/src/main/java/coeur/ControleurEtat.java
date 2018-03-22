@@ -15,7 +15,6 @@ abstract class ControleurEtat
 	public void entree() {}
 	public void annule() {}
 	public void retourTitre() {}
-	public void retourRecherche() {}
 	public void retour() {}
 	public void confirme() {}
 	
@@ -34,8 +33,6 @@ abstract class ControleurEtat
 	public void valideRecherche(String gareDepart, String gareArrivee, int heure, int minute) throws SQLException {}
 	public void valideRechercheGA(String gareDepart, int heure, int minute) throws SQLException {}
 	public void valideRechercheGD(String gareDepart, int heure, int minute) throws SQLException {}
-	public void valideRenouvAbo() {}
-	public void valideRenouvAboScanne() {}
 	public void valideNumAbo() {}
 	public void valideNumAboScanne() {}
 	public void validePIN(int codePIN) {}

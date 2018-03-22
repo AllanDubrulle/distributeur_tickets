@@ -15,6 +15,8 @@ class LecteurCarte extends Pane
 	private PasswordField passwordField;
 	private Button button, button0, button1, button2, button3, button4, button5, button6, button7, button8, button9, button10, button11;
 	private GraphiqueACoeur graphAC = GraphiqueACoeurImpl.getInstance();
+	
+	private Ecran fenetre;
 
 	public LecteurCarte(double hauteur, double largeur) 
 	{
@@ -71,7 +73,7 @@ class LecteurCarte extends Pane
         {
             public void handle(ActionEvent event)
             {
-            	actionLecteur(1);
+            	fenetre.actionLecteur(1);
             }
         });
 
@@ -86,7 +88,7 @@ class LecteurCarte extends Pane
         {
             public void handle(ActionEvent event)
             {
-            	actionLecteur(2);
+            	fenetre.actionLecteur(2);
             }
         });
 
@@ -102,7 +104,7 @@ class LecteurCarte extends Pane
         {
             public void handle(ActionEvent event)
             {
-            	actionLecteur(3);
+            	fenetre.actionLecteur(3);
             }
         });
 
@@ -120,7 +122,7 @@ class LecteurCarte extends Pane
         {
             public void handle(ActionEvent event)
             {
-            	actionLecteur(4);
+            	fenetre.actionLecteur(4);
             }
         });
 
@@ -136,7 +138,7 @@ class LecteurCarte extends Pane
             
             public void handle(ActionEvent event)
             {
-            	actionLecteur(5);
+            	fenetre.actionLecteur(5);
             }
         });
 
@@ -151,7 +153,7 @@ class LecteurCarte extends Pane
         {
             public void handle(ActionEvent event)
             {
-            	actionLecteur(6);
+            	fenetre.actionLecteur(6);
             }
         });
 
@@ -169,7 +171,7 @@ class LecteurCarte extends Pane
         {
             public void handle(ActionEvent event)
             {
-            	actionLecteur(7);
+            	fenetre.actionLecteur(7);
             }
         });
 
@@ -184,7 +186,7 @@ class LecteurCarte extends Pane
         {
             public void handle(ActionEvent event)
             {
-            	actionLecteur(8);
+            	fenetre.actionLecteur(8);
             }
         });
 
@@ -199,7 +201,7 @@ class LecteurCarte extends Pane
         {
             public void handle(ActionEvent event)
             {
-            	actionLecteur(9);
+            	fenetre.actionLecteur(9);
             }
         });
 
@@ -216,7 +218,7 @@ class LecteurCarte extends Pane
         {
             public void handle(ActionEvent event)
             {
-            	actionLecteurEff();
+            	fenetre.actionLecteurEff();
             }
         });
 
@@ -231,7 +233,7 @@ class LecteurCarte extends Pane
         {
             public void handle(ActionEvent event)
             {
-            	actionLecteur(0);
+            	fenetre.actionLecteur(0);
             }
         });
 
@@ -269,6 +271,8 @@ class LecteurCarte extends Pane
             }
         });
         
+        passwordField.setOnMousePressed(e -> {passwordField.clear();});
+        
         hBox.getChildren().addAll(button, button0, button1);
         hBox0.getChildren().addAll(button2, button3, button4);
         hBox1.getChildren().addAll(button5, button6, button7);
@@ -276,18 +280,6 @@ class LecteurCarte extends Pane
         vBox.getChildren().addAll(passwordField, hBox, hBox0, hBox1, hBox2, button11);
         getChildren().addAll(rectangle, vBox);
     }
-	
-	public void actionLecteur(int a) 
-	{
-		if (passwordField.getText().length() < 4)
-			passwordField.setText(passwordField.getText() + a);
-	}
-	
-	public void actionLecteurEff() 
-	{
-		if (passwordField.getText().length() > 0)
-			passwordField.setText(passwordField.getText().substring(0, passwordField.getText().length()-1));
-	}
 	
 	public Button getButton(int i)
 	{
@@ -322,5 +314,10 @@ class LecteurCarte extends Pane
 	public PasswordField getField()
 	{
 		return passwordField;
+	}
+	
+	public void setFenetre(Ecran fen)
+	{
+		fenetre = fen;
 	}
 }

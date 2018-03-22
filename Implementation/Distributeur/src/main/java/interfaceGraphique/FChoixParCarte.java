@@ -19,6 +19,7 @@ class FChoixParCarte extends Ecran
         Button button0 = new Button();
         textField = new TextField();
         Text text = new Text();
+        Text text0 = new Text();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -46,12 +47,18 @@ class FChoixParCarte extends Ecran
 				} 
         		catch (ErreurDEncodage e) 
         		{
-					//e.printStackTrace();
-					// affichage d'un message 
+					text0.setText("Le numéro de carte saisi est incorrect");
 				}
         	}
         });
 
+        text0.setFont(new Font("System Bold", 15.0));
+        text0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+		text0.setWrappingWidth(200.0);
+		text0.setFill(javafx.scene.paint.Color.RED);
+		text0.setLayoutX(100.0);
+		text0.setLayoutY(160.0);
+        
         button0.setLayoutX(10.0);
         button0.setLayoutY(160.0);
         button0.setMnemonicParsing(false);
@@ -78,10 +85,8 @@ class FChoixParCarte extends Ecran
         text.setText("Choisissez un numéro de carte :");
         text.setFont(new Font("System Bold", 15.0));
 
-        getChildren().addAll(button, button0, textField, text);
+        getChildren().addAll(button, button0, textField, text, text0);
     }
-    
-    public void actionClavier(String a) {}
 
 	public void actionClavier(int a) 
 	{
@@ -92,10 +97,6 @@ class FChoixParCarte extends Ecran
 	{
 		graphAC.choixAnnuler();
 	}
-
-	public void actionSuivant() {}
-
-	public void actionEspace() {}
 
 	public void actionEffacer() 
 	{

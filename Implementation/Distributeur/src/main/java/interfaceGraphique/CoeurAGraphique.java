@@ -41,7 +41,6 @@ public interface CoeurAGraphique
 	
 	public void afficherImpression();
 	public void afficherViderBacRecep();
-	public void effacerPIN();
 	public void afficherChoixCommande(Commande commande);
 	public void afficherRecu(double prix , double introduit , double rendu, String modePaiement);
 	public void afficherRendu(Rendu monnaieRendu);

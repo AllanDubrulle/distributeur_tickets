@@ -151,16 +151,14 @@ class FHoraireMenu extends Ecran
         hBox.getChildren().addAll(vBox, vBox0);
         getChildren().addAll(rectangle, text, text0, hBox, button2);
     }
-    
-    public void actionClavier(String a) {}
 
 	public void actionClavier(int a) 
 	{
-		if (a == 1)
+		if (a == 3)
 			graphAC.choixHoraireItineraire();
-		else if (a == 2)
+		else if (a == 1)
 			graphAC.choixHoraireDepart();
-		else if (a == 3)
+		else if (a == 2)
 			graphAC.choixHoraireArrivee();
 	}
 
@@ -168,12 +166,4 @@ class FHoraireMenu extends Ecran
 	{
 		graphAC.choixAnnuler();
 	}
-
-	public void actionSuivant() {}
-
-	public void actionEspace() {}
-
-	public void actionEffacer() {}
-	
-	public void actionEntrer() {}
 }

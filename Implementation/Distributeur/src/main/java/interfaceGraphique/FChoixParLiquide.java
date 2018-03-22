@@ -124,23 +124,11 @@ class FChoixParLiquide extends Ecran
         vBox.getChildren().addAll(hBox, hBox0, hBox1);
         getChildren().addAll(rectangle, text, button, vBox);
     }
-    
-	public void actionClavier(String a) {}
-
-	public void actionClavier(int a) {}
 
 	public void actionRetour() 
 	{
 		graphAC.choixAnnuler();
 	}
-
-	public void actionSuivant() {}
-
-	public void actionEspace() {}
-
-	public void actionEffacer() {}
-	
-	public void actionEntrer() {}
 	
 	public void actualiserMontant(double restant , double introduit)
 	{

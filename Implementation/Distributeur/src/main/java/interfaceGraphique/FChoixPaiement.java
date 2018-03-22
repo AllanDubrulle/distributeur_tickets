@@ -88,8 +88,6 @@ class FChoixPaiement extends Ecran
 
         getChildren().addAll(rectangle, text, button, button0, button1);
     }
-    
-    public void actionClavier(String a) {}
 
 	public void actionClavier(int a) 
 	{
@@ -103,12 +101,4 @@ class FChoixPaiement extends Ecran
 	{
 		graphAC.choixAnnuler();
 	}
-
-	public void actionSuivant() {}
-
-	public void actionEspace() {}
-
-	public void actionEffacer() {}
-	
-	public void actionEntrer() {}
 }

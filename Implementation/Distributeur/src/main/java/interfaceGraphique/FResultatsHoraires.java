@@ -325,7 +325,7 @@ class FResultatsHoraires extends Ecran
         {
         	public void handle(ActionEvent event) 
         	{
-        		graphAC.choixRetourRecherche();
+        		graphAC.choixRetour();
         	}
         });
 
@@ -351,21 +351,11 @@ class FResultatsHoraires extends Ecran
         hBox.getChildren().addAll(vBox, vBox0, vBox1, vBox2);
         getChildren().addAll(rectangle, hBox, text17, button, button0);
     }
-    
-    public void actionClavier(String a) {}
-
-	public void actionClavier(int a) {}
 
 	public void actionRetour() 
 	{
 		graphAC.choixRetour();
 	}
-
-	public void actionSuivant() {}
-
-	public void actionEspace() {}
-
-	public void actionEffacer() {}
 	
 	public void actionEntrer()
 	{

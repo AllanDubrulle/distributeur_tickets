@@ -6,7 +6,7 @@ import coeur.GraphiqueACoeur;
 import coeur.GraphiqueACoeurImpl;
 import javafx.scene.layout.Pane;
 
-abstract class Ecran extends Pane 
+class Ecran extends Pane 
 {
 	/*public Ecran(boolean enMarche) 
 	{
@@ -18,13 +18,16 @@ abstract class Ecran extends Pane
 	protected GraphiqueACoeur graphAC = GraphiqueACoeurImpl.getInstance();
 	protected int pos;
 	
-	public abstract void actionClavier(String a);
-	public abstract void actionClavier(int a);
-	public abstract void actionRetour();
-	public abstract void actionSuivant();
-	public abstract void actionEspace();
-	public abstract void actionEffacer();
-	public abstract void actionEntrer();
+	public void actionClavier(String a) {}
+	public void actionClavier(int a) {}
+	public void actionRetour() {}
+	public void actionSuivant() {}
+	public void actionEspace() {}
+	public void actionEffacer() {}
+	public void actionEntrer() {}
+	
+	public void actionLecteur(int a) {}
+	public void actionLecteurEff() {}
 	
 	public boolean verifierNom(String nom) 
 	{

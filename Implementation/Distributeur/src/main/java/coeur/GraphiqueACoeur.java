@@ -12,7 +12,6 @@ public interface GraphiqueACoeur
 	public void choixDemarrerSimul();
 	public void choixAnnuler();
 	public void choixRetourTitre();
-	public void choixRetourRecherche();
 	public void choixRetour();
 	public void choixOk();
 	public void choixOui();
@@ -36,8 +35,6 @@ public interface GraphiqueACoeur
 	public void choixRechercheGDEtGA(String gareDepart, String gareArrivee, int heure, int minute) throws SQLException;
 	
 	public void choixValider();
-	public void choixValiderRenouvAbo();
-	public void choixValiderRenouvAboScanne();
 	
 	public void choixScannerCode();
 	public void choixTaperCodeAbo();

@@ -17,7 +17,6 @@ class EtatAttentePIN extends EtatAnnulable
 	public void entree() 
 	{
 		Controleur.getInstance().getCoeurAGraphique().afficherAttentePIN();
-		Controleur.getInstance().getCoeurAGraphique().effacerPIN(); // utilité ?? c'est graphique a enlever
 	}
 	
 	public void validePIN(int codePIN) 
@@ -41,7 +40,6 @@ class EtatAttentePIN extends EtatAnnulable
 	public void infosIncorrectes()
 	{
 		Controleur.getInstance().getCoeurAGraphique().afficherCodePINIncor();
-		Controleur.getInstance().getCoeurAGraphique().effacerPIN();
 		Controleur.getInstance().getCoeurAStockage().mauvaisPing();
 		if(Controleur.getInstance().getCoeurAStockage().tropDErreur())
 		{

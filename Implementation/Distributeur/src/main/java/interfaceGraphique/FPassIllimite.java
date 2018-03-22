@@ -17,6 +17,7 @@ class FPassIllimite extends Ecran
     private RadioButton radioButton, radioButton1;
     private int pos = 0;
     private ChoiceBox<String> choiceBox, choiceBox0;
+    private Text text10;
     
     public FPassIllimite(double hauteur, double largeur) 
     {
@@ -41,7 +42,7 @@ class FPassIllimite extends Ecran
         Text text6 = new Text();	
         choiceBox = new ChoiceBox<String>();	
         choiceBox0 = new ChoiceBox<String>();
-        Text text10 = new Text();
+        text10 = new Text();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -188,32 +189,38 @@ class FPassIllimite extends Ecran
             {
             	try 
             	{
+            		if (Integer.parseInt(textField0.getText()) == 0)
+            			textField0.setText("1");
             		if (verifierNom(textField.getText().trim()))
 					{
-            			graphAC.infoPassIllimite(textField.getText(), getClasse(), getReduction(), getType(), Integer.parseInt(getNbrJours()));
+            			graphAC.infoPassIllimite(textField.getText(), getClasse(), choiceBox.getValue(), choiceBox0.getValue(), Integer.parseInt(textField0.getText()));
     	            	graphAC.choixValider();
 					}
             		else
             		{
             			text10.setText("Les données saisies sont incorrectes");
-                		text10.setFont(new Font("System Bold", 15.0*hauteur));
-                		text10.setWrappingWidth(250.0*largeur);
-                		text10.setFill(javafx.scene.paint.Color.RED);
-                		text10.setLayoutX(275.0*largeur);
-                		text10.setLayoutY(364.0*hauteur);
             		}
 				} 
             	catch (NumberFormatException | ErreurDEncodage e) 
             	{
             		text10.setText("Les données saisies sont incorrectes");
-            		text10.setFont(new Font("System Bold", 15.0*hauteur));
-            		text10.setWrappingWidth(250.0*largeur);
-            		text10.setFill(javafx.scene.paint.Color.RED);
-            		text10.setLayoutX(275.0*largeur);
-            		text10.setLayoutY(364.0*hauteur);
 				}
             }
         });
+
+		text10.setFont(new Font("System Bold", 15.0*hauteur));
+		text10.setWrappingWidth(250.0*largeur);
+		text10.setFill(javafx.scene.paint.Color.RED);
+		text10.setLayoutX(275.0*largeur);
+		text10.setLayoutY(364.0*hauteur);
+		
+
+		textField.setOnMouseClicked(e -> {pos = 0;});
+		radioButton.setOnMouseClicked(e -> {pos = 1;});
+		radioButton1.setOnMouseClicked(e -> {pos = 1;});
+		choiceBox0.setOnMouseClicked(e -> {pos = 2;});
+		choiceBox.setOnMouseClicked(e -> {pos = 2;});
+		textField0.setOnMouseClicked(e -> {pos = 3;});
 
         hBox0.getChildren().addAll(text0, textField);
         hBox3.getChildren().addAll(text3, radioButton, radioButton1);
@@ -302,32 +309,29 @@ class FPassIllimite extends Ecran
 	
 	public void actionEntrer() 
 	{
-		graphAC.choixValider();
+		try 
+    	{
+    		if (verifierNom(textField.getText().trim()))
+			{
+    			graphAC.infoPassIllimite(textField.getText(), getClasse(), choiceBox.getValue(), choiceBox0.getValue(), Integer.parseInt(textField0.getText()));
+            	graphAC.choixValider();
+			}
+    		else
+    		{
+    			text10.setText("Les données saisies sont incorrectes");
+    		}
+		} 
+    	catch (NumberFormatException | ErreurDEncodage e) 
+    	{
+    		text10.setText("Les données saisies sont incorrectes");
+		}
 	}
-	
-	public String getNom()
-	{
-		return textField.getText();
-	}
-	
-	public int getClasse()
+
+	private int getClasse()
 	{
 		if (radioButton.isSelected())
 			return 1;
 		else
 			return 2;
-	}
-	
-	public String getReduction()
-	{
-		return choiceBox.getValue();
-	}	
-	public String getType()	
-	{	
-		return choiceBox0.getValue();
-	}
-	public String getNbrJours()
-	{
-		return textField0.getText();
 	}
 }

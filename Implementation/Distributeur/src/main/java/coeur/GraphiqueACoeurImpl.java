@@ -37,10 +37,6 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 	{
 		controleur.getEtatActuel().retourTitre();
 	}
-	public void choixRetourRecherche() 
-	{
-		controleur.getEtatActuel().retourRecherche();
-	}
 	public void choixRetour() 
 	{
 		controleur.getEtatActuel().retour();
@@ -118,15 +114,6 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 	public void choixRechercheGDEtGA(String gareDepart, String gareArrivee, int heure, int minute) throws SQLException 
 	{
 		controleur.getEtatActuel().valideRecherche(gareDepart, gareArrivee, heure, minute);
-	}
-	
-	public void choixValiderRenouvAbo() 
-	{
-		controleur.getEtatActuel().valideRenouvAbo();
-	}
-	public void choixValiderRenouvAboScanne() 
-	{
-		controleur.getEtatActuel().valideRenouvAboScanne();
 	}
 
 	public void choixScannerCode() 

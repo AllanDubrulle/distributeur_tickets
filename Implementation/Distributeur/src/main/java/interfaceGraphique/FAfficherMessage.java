@@ -7,6 +7,8 @@ import javafx.util.Duration;
 
 class FAfficherMessage extends Ecran 
 {
+	private boolean lecteur; 
+	
     public FAfficherMessage(String message, double hauteur, double largeur) 
     {
         Rectangle rectangle = new Rectangle();
@@ -39,16 +41,19 @@ class FAfficherMessage extends Ecran
         getChildren().addAll(rectangle, text);
         if (message.equals("Impression ...") || message.equals("Veuillez récupérer votre carte.") || message.equals("Paiement effectué avec succès. Ejection de la carte dans un instant."))
         {
+        	lecteur = false;
         	PauseTransition delais = new PauseTransition(Duration.seconds(5));
     		delais.setOnFinished( event -> apres5secOk());
     		delais.play();
         }
         if (!message.equals("Code PIN incorrect. Veuillez rééssayer.") && !message.equals("Veuillez entrer votre code PIN."))
         {
+        	lecteur = true;
         	PauseTransition delais = new PauseTransition(Duration.seconds(5));
     		delais.setOnFinished( event -> apres5sec());
     		delais.play();
         }
+        FenetreSimulation.getInstance().getLecteur().getField().clear();
     }
     
     private void apres5sec() 
@@ -60,17 +65,17 @@ class FAfficherMessage extends Ecran
 		graphAC.apres5secondesOk();
 	}
 
-	public void actionClavier(String a) {}
-
-	public void actionClavier(int a) {}
-
-	public void actionRetour() {}
-
-	public void actionSuivant() {}
-
-	public void actionEspace() {}
-
-	public void actionEffacer() {}
+    public void actionLecteur(int a) 
+	{
+    	if(lecteur)
+    		if(FenetreSimulation.getInstance().getLecteur().getField().getText().length() < 4)
+    			FenetreSimulation.getInstance().getLecteur().getField().setText(FenetreSimulation.getInstance().getLecteur().getField().getText() + a);
+	}
 	
-	public void actionEntrer() {}
+	public void actionLecteurEff() 
+	{
+		if(lecteur)
+			if(FenetreSimulation.getInstance().getLecteur().getField().getText().length() > 0)
+				FenetreSimulation.getInstance().getLecteur().getField().setText(FenetreSimulation.getInstance().getLecteur().getField().getText().substring(0, FenetreSimulation.getInstance().getLecteur().getField().getText().length()-1));
+	}
 }

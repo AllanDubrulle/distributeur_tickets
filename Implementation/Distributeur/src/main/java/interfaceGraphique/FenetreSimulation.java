@@ -255,6 +255,7 @@ class FenetreSimulation extends BorderPane
         fenetre.setLayoutY(100.0*rapportHauteur);
 		getChildren().setAll(pane, fenetre, claRe, fentes, scanLect);
 		clavier.setFenetre(fen);
+		lecteur.setFenetre(fen);
 	}
     
     public void setParametre()
@@ -400,10 +401,7 @@ class FenetreSimulation extends BorderPane
     {
     	return rapportLargeur;
     }
-    public void viderPIN()
-    {
-    	lecteur.getField().clear();
-    }
+    
     public LecteurCarte getLecteur()
     {
     	return lecteur;

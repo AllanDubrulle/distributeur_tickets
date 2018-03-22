@@ -228,21 +228,11 @@ class FRecapPass10Trajets2Gares extends Ecran
         vBox.getChildren().addAll(hBox0, hBox1, hBox2, hBox3, hBox6, hBox4, hBox5);
         getChildren().addAll(rectangle, text, vBox, button, button0);
     }
-    
-    public void actionClavier(String a) {}
-
-	public void actionClavier(int a) {}
 
 	public void actionRetour() 
 	{
 		graphAC.choixRetourTitre();
 	}
-
-	public void actionSuivant() {}
-
-	public void actionEspace() {}
-
-	public void actionEffacer() {}
 	
 	public void actionEntrer() 
 	{
