@@ -23,13 +23,13 @@ public class EtatImpressionRecu extends ControleurEtat
 		}
 		catch(PlusDePapier e)
 		{
-			System.out.println("bli");
-			// a faire 
+			Controleur.getInstance().getCoeurAGraphique().afficherMessageDErreur();
+			Controleur.getInstance().modifEtat(EtatMenu.getInstance());
 		} 
 		catch (ComposantHorsService e)
 		{
-			System.out.println("bli2");
-			// a faire 
+			Controleur.getInstance().getCoeurAGraphique().afficherMessageDErreur(); 
+			Controleur.getInstance().modifEtat(EtatMenu.getInstance());
 		}	
 	}
 	

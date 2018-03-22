@@ -54,7 +54,7 @@ class FAfficherMessage extends Ecran
     		delais.play();
         }
         lecteur = true;
-        FenetreSimulation.getInstance().getLecteur().getField().clear();
+        FenetreSimulation.getInstance().getLecteur().getMDP().clear();
     }
     
     private void apres5sec() 
@@ -69,14 +69,14 @@ class FAfficherMessage extends Ecran
     public void actionLecteur(int a) 
 	{
     	if(lecteur)
-    		if(FenetreSimulation.getInstance().getLecteur().getField().getText().length() < 4)
-    			FenetreSimulation.getInstance().getLecteur().getField().setText(FenetreSimulation.getInstance().getLecteur().getField().getText() + a);
+    		if(FenetreSimulation.getInstance().getLecteur().getMDP().getText().length() < 4)
+    			FenetreSimulation.getInstance().getLecteur().getMDP().setText(FenetreSimulation.getInstance().getLecteur().getMDP().getText() + a);
 	}
 	
 	public void actionLecteurEff() 
 	{
 		if(lecteur)
-			if(FenetreSimulation.getInstance().getLecteur().getField().getText().length() > 0)
-				FenetreSimulation.getInstance().getLecteur().getField().setText(FenetreSimulation.getInstance().getLecteur().getField().getText().substring(0, FenetreSimulation.getInstance().getLecteur().getField().getText().length()-1));
+			if(FenetreSimulation.getInstance().getLecteur().getMDP().getText().length() > 0)
+				FenetreSimulation.getInstance().getLecteur().getMDP().setText(FenetreSimulation.getInstance().getLecteur().getMDP().getText().substring(0, FenetreSimulation.getInstance().getLecteur().getMDP().getText().length()-1));
 	}
 }

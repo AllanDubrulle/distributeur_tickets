@@ -13,7 +13,6 @@ class EtatAttentePIN extends EtatAnnulable
 		return (EtatAttentePIN) instance;
 	}
 	
-	
 	public void entree() 
 	{
 		Controleur.getInstance().getCoeurAGraphique().afficherAttentePIN();

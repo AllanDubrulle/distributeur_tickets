@@ -350,8 +350,8 @@ class FenetreSimulation extends BorderPane
     	if (checkMenuItem.isSelected()) 
     	{
     		for (int i = 0; i < 13; i++)
-    			lecteur.getButton(i).setDisable(true);
-    		lecteur.getField().setDisable(true);
+    			lecteur.getBouton(i).setDisable(true);
+    		lecteur.getMDP().setDisable(true);
     	}
     	
     	if (checkMenuItem1.isSelected())
@@ -369,8 +369,8 @@ class FenetreSimulation extends BorderPane
     	if (!checkMenuItem.isSelected()) 
     	{
     		for (int i = 0; i < 13; i++)
-    			lecteur.getButton(i).setDisable(false);
-    		lecteur.getField().setDisable(false);
+    			lecteur.getBouton(i).setDisable(false);
+    		lecteur.getMDP().setDisable(false);
     	}
     	
     	if (!checkMenuItem1.isSelected())

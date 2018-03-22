@@ -125,17 +125,9 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 	{
 		controleur.getEtatActuel().choixAnnulerScanner();
 	}
-	public void choixTaperCodeAbo() 
-	{
-		controleur.getEtatActuel().choixTaperCode();	
-	}
 	public void choixValiderNumAbo() 
 	{
 		controleur.getEtatActuel().valideNumAbo();
-	}
-	public void choixValiderNumAboScanne() 
-	{
-		controleur.getEtatActuel().valideNumAboScanne();
 	}
 	
 	public void choix5eur() 

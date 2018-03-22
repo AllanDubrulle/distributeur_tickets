@@ -67,13 +67,13 @@ class Clavier extends Pane
         setMaxWidth(USE_PREF_SIZE);
         setMinHeight(USE_PREF_SIZE);
         setMinWidth(USE_PREF_SIZE);
-        setPrefHeight(210.0*hauteur);
+        setPrefHeight(215.0*hauteur);
         setPrefWidth(625.0*largeur);
 
         rectangle.setArcHeight(5.0*hauteur);
         rectangle.setArcWidth(5.0*largeur);
         rectangle.setFill(javafx.scene.paint.Color.valueOf("#0000007d"));
-        rectangle.setHeight(210.0*hauteur);
+        rectangle.setHeight(215.0*hauteur);
         rectangle.setStroke(javafx.scene.paint.Color.BLACK);
         rectangle.setStrokeType(javafx.scene.shape.StrokeType.INSIDE);
         rectangle.setWidth(625.0*largeur);
