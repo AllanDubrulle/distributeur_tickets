@@ -10,7 +10,7 @@ import javafx.scene.layout.*;
 
 class FRecapAboAchat extends Ecran 
 {    
-	public FRecapAboAchat(String nom, String registre, String gareDepart, String gareArrivee, int validite, int classe, String reduction, String type, double prix, double hauteur, double largeur)
+	public FRecapAboAchat(String numero, String nom, String registre, String gareDepart, String gareArrivee, int validite, int classe, String reduction, String type, double prix, double hauteur, double largeur)
 	{
         Rectangle rectangle = new Rectangle();
         Text text = new Text();
@@ -25,7 +25,6 @@ class FRecapAboAchat extends Ecran
         HBox hBox2 = new HBox();
         Text text4 = new Text();
         Text text5 = new Text();
-        HBox hBox3 = new HBox();
         Text text6 = new Text();
         Text text7 = new Text();
         HBox hBox4 = new HBox();
@@ -45,6 +44,8 @@ class FRecapAboAchat extends Ecran
         HBox hBox8 = new HBox();	
         Text text16 = new Text();	
         Text text17 = new Text();
+        Text text18 = new Text();
+        Text text19 = new Text();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -60,7 +61,7 @@ class FRecapAboAchat extends Ecran
         rectangle.setStroke(javafx.scene.paint.Color.BLACK);
         rectangle.setStrokeType(javafx.scene.shape.StrokeType.INSIDE);
         rectangle.setWidth(800.0*largeur);
-
+        
         text.setFontSmoothingType(javafx.scene.text.FontSmoothingType.LCD);
         text.setLayoutX(54.0*largeur);
         text.setLayoutY(60.0*hauteur);
@@ -75,8 +76,17 @@ class FRecapAboAchat extends Ecran
         vBox.setPrefHeight(169.0*hauteur);
         vBox.setPrefWidth(490.0*largeur);
 
-        hBox.setPrefHeight(0.0);
+        hBox.setPrefHeight(12.0*hauteur);
         hBox.setPrefWidth(711.0*largeur);
+        
+        text18.setText("Numéro de l'abonnement :");
+        text18.setWrappingWidth(180.0*largeur);
+        text18.setFont(new Font(15.0*hauteur));
+        
+        text19.setText(numero);
+        text19.setFont(new Font("System Bold Italic", 15.0*hauteur));
+        HBox.setMargin(text19, new Insets(0.0, 0.0, 0.0, 20.0*largeur));
+        VBox.setMargin(hBox, new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
 
         hBox0.setPrefHeight(12.0*hauteur);
         hBox0.setPrefWidth(711.0*largeur);
@@ -94,7 +104,7 @@ class FRecapAboAchat extends Ecran
         text1.setWrappingWidth(200.0*largeur);
         text1.setFont(new Font("System Bold Italic", 15.0*hauteur));
         HBox.setMargin(text1, new Insets(0.0, 0.0, 0.0, 20.0*largeur));
-        hBox0.setPadding(new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
+        VBox.setMargin(hBox0, new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
 
         hBox1.setPrefHeight(12.0*hauteur);
         hBox1.setPrefWidth(711.0*largeur);
@@ -119,7 +129,7 @@ class FRecapAboAchat extends Ecran
 
         text4.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text4.setStrokeWidth(0.0);
-        text4.setText("Gare de départ :");
+        text4.setText("Itinéraire :");
         text4.setWrappingWidth(180.0*largeur);
         text4.setFont(new Font(15.0*hauteur));
         HBox.setMargin(text4, new Insets(0.0, 20.0*largeur, 0.0, 0.0));
@@ -127,28 +137,20 @@ class FRecapAboAchat extends Ecran
         text5.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text5.setStrokeWidth(0.0);
         text5.setText(gareDepart.toUpperCase());
-        text5.setWrappingWidth(200.0*largeur);
         text5.setFont(new Font("System Bold Italic", 15.0*hauteur));
         HBox.setMargin(text5, new Insets(0.0, 0.0, 0.0, 0.0));
         hBox2.setPadding(new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
 
-        hBox3.setPrefHeight(31.0*hauteur);
-        hBox3.setPrefWidth(729.0*largeur);
-
         text6.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text6.setStrokeWidth(0.0);
-        text6.setText("Gare d'arrivée :");
-        text6.setWrappingWidth(180.0*largeur);
+        text6.setText("    -    ");
         text6.setFont(new Font(15.0*hauteur));
-        HBox.setMargin(text6, new Insets(0.0, 20.0*largeur, 0.0, 0.0));
+        HBox.setMargin(text6, new Insets(0.0, 20.0*largeur, 0.0, 20.0*largeur));
 
         text7.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text7.setStrokeWidth(0.0);
         text7.setText(gareArrivee.toUpperCase());
-        text7.setWrappingWidth(200.0*largeur);
         text7.setFont(new Font("System Bold Italic", 15.0*hauteur));
-        HBox.setMargin(text7, new Insets(0.0, 0.0, 0.0, 0.0*largeur));
-        hBox3.setPadding(new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
 
         hBox4.setPrefHeight(41.0*hauteur);
         hBox4.setPrefWidth(725.0*largeur);
@@ -267,33 +269,23 @@ class FRecapAboAchat extends Ecran
         	}
         });
 
+        hBox.getChildren().addAll(text18, text19);
         hBox0.getChildren().addAll(text0, text1);
         hBox1.getChildren().addAll(text2, text3);
-        hBox2.getChildren().addAll(text4, text5);
-        hBox3.getChildren().addAll(text6, text7);
+        hBox2.getChildren().addAll(text4, text5, text6, text7);
         hBox4.getChildren().addAll(text8, text9);
         hBox5.getChildren().addAll(text10, text11);
         hBox6.getChildren().addAll(text12, text13);
         hBox7.getChildren().addAll(text14, text15);
         hBox8.getChildren().addAll(text16, text17);
-        vBox.getChildren().addAll(hBox0, hBox1, hBox2, hBox3, hBox4, hBox5, hBox6, hBox8, hBox7);
+        vBox.getChildren().addAll(hBox, hBox0, hBox1, hBox2, hBox4, hBox5, hBox6, hBox8, hBox7);
         getChildren().addAll(rectangle, text, vBox, button, button0);
     }
-    
-    public void actionClavier(String a) {}
-
-	public void actionClavier(int a) {}
 
 	public void actionRetour() 
 	{
 		graphAC.choixRetourTitre();
 	}
-
-	public void actionSuivant() {}
-
-	public void actionEspace() {}
-
-	public void actionEffacer() {}
 	
 	public void actionEntrer() 
 	{

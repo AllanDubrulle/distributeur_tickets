@@ -131,8 +131,6 @@ class FMenu extends Ecran
         vBox.getChildren().addAll(button, button0, button1, button2, button3);
         getChildren().addAll(rectangle, vBox, text);
     }
-    
-	public void actionClavier(String a) {}
 
 	public void actionClavier(int a) 
 	{
@@ -147,14 +145,4 @@ class FMenu extends Ecran
 		else if (a == 5)
 			graphAC.choixHoraire();
 	}
-
-	public void actionRetour() {}
-
-	public void actionSuivant() {}
-
-	public void actionEspace() {}
-
-	public void actionEffacer() {}
-	
-	public void actionEntrer() {}
 }

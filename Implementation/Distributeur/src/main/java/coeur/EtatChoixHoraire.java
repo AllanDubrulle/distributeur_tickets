@@ -24,7 +24,7 @@ class EtatChoixHoraire extends EtatAnnulable
 	{
 		Controleur.getInstance().modifEtat(EtatChoixArrivees.getInstance());
 	}
-	public void retourRecherche()
+	public void retour()
 	{
 		entree();
 	}

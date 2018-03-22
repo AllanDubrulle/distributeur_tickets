@@ -12,10 +12,11 @@ class EtatParCarte extends EtatAnnulable
 	
 	public void valider() 
 	{
-		if(Controleur.getInstance().getCoeurAStockage().getPrix()<=500) // paiement en dessous de 5€
+		if(Controleur.getInstance().getCoeurAStockage().getPrix()<=500 && Controleur.getInstance().getCoeurAStockage().verifSolde()) // paiement en dessous de 5€
 		{
 			Controleur.getInstance().getCoeurAStockage().actualiserSolde();
-			Controleur.getInstance().getCoeurAGraphique().afficherEjectionCarte();
+			Controleur.getInstance().getCoeurAGraphique().afficherValidationPaiement();
+			ejecteCarte();
 			Controleur.getInstance().modifEtat(EtatImpressionTitre.getInstance());
 		}
 		else
@@ -23,6 +24,11 @@ class EtatParCarte extends EtatAnnulable
 			Controleur.getInstance().modifEtat(EtatAttentePIN.getInstance());
 		}
 		
+	}
+
+	public void ejecteCarte()
+	{
+		Controleur.getInstance().getCoeurAGraphique().afficherEjectionCarte();
 	}
 	
 	public void entree() 

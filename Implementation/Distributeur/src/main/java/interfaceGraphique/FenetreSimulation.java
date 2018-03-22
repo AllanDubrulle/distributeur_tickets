@@ -255,6 +255,7 @@ class FenetreSimulation extends BorderPane
         fenetre.setLayoutY(100.0*rapportHauteur);
 		getChildren().setAll(pane, fenetre, claRe, fentes, scanLect);
 		clavier.setFenetre(fen);
+		lecteur.setFenetre(fen);
 	}
     
     public void setParametre()
@@ -349,8 +350,8 @@ class FenetreSimulation extends BorderPane
     	if (checkMenuItem.isSelected()) 
     	{
     		for (int i = 0; i < 13; i++)
-    			lecteur.getButton(i).setDisable(true);
-    		lecteur.getField().setDisable(true);
+    			lecteur.getBouton(i).setDisable(true);
+    		lecteur.getMDP().setDisable(true);
     	}
     	
     	if (checkMenuItem1.isSelected())
@@ -368,8 +369,8 @@ class FenetreSimulation extends BorderPane
     	if (!checkMenuItem.isSelected()) 
     	{
     		for (int i = 0; i < 13; i++)
-    			lecteur.getButton(i).setDisable(false);
-    		lecteur.getField().setDisable(false);
+    			lecteur.getBouton(i).setDisable(false);
+    		lecteur.getMDP().setDisable(false);
     	}
     	
     	if (!checkMenuItem1.isSelected())
@@ -400,10 +401,7 @@ class FenetreSimulation extends BorderPane
     {
     	return rapportLargeur;
     }
-    public void viderPIN()
-    {
-    	lecteur.getField().clear();
-    }
+    
     public LecteurCarte getLecteur()
     {
     	return lecteur;

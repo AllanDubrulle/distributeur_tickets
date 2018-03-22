@@ -54,18 +54,9 @@ class FInsererCarte extends Ecran
 
         getChildren().addAll(rectangle, text, button);
     }
-    
-	public void actionClavier(String a) {}
 
-	public void actionClavier(int a) {}
-
-	public void actionRetour() {}
-
-	public void actionSuivant() {}
-
-	public void actionEspace() {}
-
-	public void actionEffacer() {}
-	
-	public void actionEntrer() {}
+	public void actionRetour() 
+	{
+		graphAC.choixRetour();
+	}
 }

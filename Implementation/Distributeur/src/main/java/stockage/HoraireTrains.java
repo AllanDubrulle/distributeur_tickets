@@ -4,6 +4,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 class HoraireTrains extends GestionBaseDeDonnees
 {
@@ -163,7 +164,7 @@ class HoraireTrains extends GestionBaseDeDonnees
         		}
         		else
         		{
-        			String requete = "SELECT depart, arrivee, Heure, minute, heurearrivee, minutearrivee FROM Horaire WHERE arrivee = ? and ((Heure >= ? and Minute >= ?) or (Heure > ? and Minute < ?)) order by heure, minute";
+        			String requete = "SELECT depart, arrivee, Heure, minute, heurearrivee, minutearrivee FROM Horaire WHERE arrivee = ? and ((heurearrivee <= ? and minutearrivee <= ?) or (heurearrivee < ? and minutearrivee > ?)) order by heure, minute";
         			PreparedStatement declar = this.connexion.prepareStatement(requete);
         			declar.setString(1, arriveeMaj);
         			declar.setInt(2, heure);
@@ -197,6 +198,37 @@ class HoraireTrains extends GestionBaseDeDonnees
 				position += 1;
 			}
 			compteur+=1;
+		}
+    	return tabHor;
+    }
+    public String[] conversionRequeteEnTableauArriv(ResultSet res) throws SQLException
+    {
+    	String[] tabHor = new String[30];
+    	ArrayList<String> tab = new ArrayList<String>();
+    	ResultSetMetaData resBis = res.getMetaData();
+		int nbrColonnes = resBis.getColumnCount();
+		while (res.next()) 
+		{
+			for (int i = 1; i <= nbrColonnes; i++) 
+			{
+				String valeurColonne = res.getString(i);
+				tab.add(valeurColonne);
+			}
+		}
+		int l = tab.size();
+		if (l <= 30)
+		{
+			for (int i = 0; i < l; i++)
+				tabHor[i] = tab.get(i);
+		}
+		else 
+		{
+			int compteur = 0;
+			for(int i = l-30; i < l; i++)
+			{
+				tabHor[compteur] = tab.get(i);
+				compteur++;
+			}
 		}
     	return tabHor;
     }

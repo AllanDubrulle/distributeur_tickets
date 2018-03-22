@@ -12,7 +12,6 @@ public interface GraphiqueACoeur
 	public void choixDemarrerSimul();
 	public void choixAnnuler();
 	public void choixRetourTitre();
-	public void choixRetourRecherche();
 	public void choixRetour();
 	public void choixOk();
 	public void choixOui();
@@ -36,11 +35,8 @@ public interface GraphiqueACoeur
 	public void choixRechercheGDEtGA(String gareDepart, String gareArrivee, int heure, int minute) throws SQLException;
 	
 	public void choixValider();
-	public void choixValiderRenouvAbo();
-	public void choixValiderRenouvAboScanne();
 	
 	public void choixScannerCode();
-	public void choixTaperCodeAbo();
 	public void choixAnnulerScanner();
 	public void choixValiderNumAbo();
 	
@@ -78,7 +74,6 @@ public interface GraphiqueACoeur
 	public void infoPass10Trajets2Gares(String nom, String gareDepart, String gareArrivee, int classe, String reduction, String type) throws ErreurDEncodage;
 	public void apres5secondes();
 	public void apres15secondes();
-	public boolean verifNom(String nom);
-	public boolean verifDate(int jour, int mois, int annee);
+	public void apres5secondesOk();
 	
 }

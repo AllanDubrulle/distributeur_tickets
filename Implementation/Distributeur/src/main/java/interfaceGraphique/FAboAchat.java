@@ -17,6 +17,7 @@ class FAboAchat extends Ecran
     private RadioButton radioButton, radioButton0, radioButton1, radioButton2, radioButton3, radioButton4;
     private int pos = 0;
 	private ChoiceBox<String> choiceBox, choiceBox0;
+	private Text text10;
     
     public FAboAchat(double hauteur, double largeur) 
     {
@@ -53,7 +54,7 @@ class FAboAchat extends Ecran
 		Text text7 = new Text();	
         choiceBox = new ChoiceBox<String>();	
         choiceBox0 = new ChoiceBox<String>();	
-        Text text10 = new Text();
+        text10 = new Text();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -264,33 +265,42 @@ class FAboAchat extends Ecran
             {
             	try
     			{	
-    				if (textField0.getText().trim().length() == 11 && graphAC.verifNom(textField.getText().trim()))
+    				if (textField0.getText().trim().length() == 11 && verifierNom(textField.getText().trim()))
     				{	
     					graphAC.infoAbo(getValidite(), textField1.getText().trim(), textField2.getText().trim(), getClasse(), choiceBox.getValue(), choiceBox0.getValue(), textField.getText(), textField0.getText().trim());
     					graphAC.choixValider();	
     				}
     				else 
     				{
-    					text10.setText("Les données saisies sont incorrectes");	
-            			text10.setFont(new Font("System Bold", 15.0*hauteur));	
-            			text10.setWrappingWidth(250.0*largeur);	
-            			text10.setFill(javafx.scene.paint.Color.RED);	
-            			text10.setLayoutX(275.0*largeur);	
-            			text10.setLayoutY(384.0*hauteur);
+    					text10.setText("Les données saisies sont incorrectes");
     				}
         		}	
 		    		catch (NumberFormatException | ErreurDEncodage e)	
     		   	{	
-        			text10.setText("Les données saisies sont incorrectes");	
-        			text10.setFont(new Font("System Bold", 15.0*hauteur));	
-        			text10.setWrappingWidth(250.0*largeur);	
-        			text10.setFill(javafx.scene.paint.Color.RED);	
-        			text10.setLayoutX(275.0*largeur);	
-        			text10.setLayoutY(384.0*hauteur);	
+        			text10.setText("Les données saisies sont incorrectes");
         		}
             }
         });
-
+        
+		text10.setFont(new Font("System Bold", 15.0*hauteur));	
+		text10.setWrappingWidth(250.0*largeur);	
+		text10.setFill(javafx.scene.paint.Color.RED);	
+		text10.setLayoutX(275.0*largeur);	
+		text10.setLayoutY(384.0*hauteur);
+		
+		textField.setOnMouseClicked(e -> {pos = 0;});
+		textField0.setOnMouseClicked(e -> {pos = 1;});
+		textField1.setOnMouseClicked(e -> {pos = 2;});
+		textField2.setOnMouseClicked(e -> {pos = 3;});
+		radioButton.setOnMouseClicked(e -> {pos = 4;});
+		radioButton0.setOnMouseClicked(e -> {pos = 4;});
+		radioButton1.setOnMouseClicked(e -> {pos = 4;});
+		radioButton2.setOnMouseClicked(e -> {pos = 4;});
+		radioButton3.setOnMouseClicked(e -> {pos = 5;});
+		radioButton4.setOnMouseClicked(e -> {pos = 5;});
+		choiceBox0.setOnMouseClicked(e -> {pos = 6;});
+		choiceBox.setOnMouseClicked(e -> {pos = 7;});
+		
         hBox0.getChildren().addAll(text0, textField);
         hBox1.getChildren().addAll(text1, textField0);
         hBox2.getChildren().addAll(text2, textField1);
@@ -449,30 +459,25 @@ class FAboAchat extends Ecran
 	
 	public void actionEntrer() 
 	{
-		graphAC.choixValider();
+		try
+		{	
+			if (textField0.getText().trim().length() == 11 && verifierNom(textField.getText().trim()))
+			{	
+				graphAC.infoAbo(getValidite(), textField1.getText().trim(), textField2.getText().trim(), getClasse(), choiceBox.getValue(), choiceBox0.getValue(), textField.getText(), textField0.getText().trim());
+				graphAC.choixValider();	
+			}
+			else 
+			{
+				text10.setText("Les données saisies sont incorrectes");
+			}
+		}	
+    		catch (NumberFormatException | ErreurDEncodage e)	
+	   	{	
+			text10.setText("Les données saisies sont incorrectes");
+		}
 	}
 	
-	public String getNom()
-	{
-		return textField.getText();
-	}
-	
-	public String getNumRegNat()
-	{
-		return textField0.getText();
-	}
-	
-	public String getGareDepart()
-	{
-		return textField1.getText();
-	}
-	
-	public String getGareArrivee()
-	{
-		return textField2.getText();
-	}
-	
-	public int getValidite()
+	private int getValidite()
 	{
 		if (radioButton.isSelected())
 			return 1;
@@ -484,20 +489,11 @@ class FAboAchat extends Ecran
 			return 12;
 	}
 	
-	public int getClasse()
+	private int getClasse()
 	{
 		if (radioButton3.isSelected())
 			return 1;
 		else
 			return 2;
-	}
-	
-	public String getReduction()
-	{
-		return choiceBox.getValue();
-	}
-	public String getType()
-	{
-		return choiceBox0.getValue();
 	}
 }

@@ -17,6 +17,7 @@ public class FPass10Trajets extends Ecran
     private RadioButton radioButton, radioButton0;
     private int pos = 0;
     private ChoiceBox<String> choiceBox, choiceBox0;
+    private Text text10;
 
     public FPass10Trajets(double hauteur, double largeur) 
     {
@@ -38,7 +39,7 @@ public class FPass10Trajets extends Ecran
         choiceBox = new ChoiceBox<String>();	
         choiceBox0 = new ChoiceBox<String>();	
         Text text3 = new Text();
-        Text text10 = new Text();
+        text10 = new Text();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -170,33 +171,35 @@ public class FPass10Trajets extends Ecran
             {
             	try 
             	{
-            		if (graphAC.verifNom(textField.getText().trim()))
+            		if (verifierNom(textField.getText().trim()))
             		{
-    					graphAC.infoPass10Trajets(textField.getText(), getClasse(), getReduction(), getType());
+    					graphAC.infoPass10Trajets(textField.getText(), getClasse(), choiceBox.getValue(), choiceBox0.getValue());
     	            	graphAC.choixValider();
             		}
             		else 
             		{
             			text10.setText("Les données saisies sont incorrectes");
-                		text10.setFont(new Font("System Bold", 15.0*hauteur));
-                		text10.setWrappingWidth(250.0*largeur);
-                		text10.setFill(javafx.scene.paint.Color.RED);
-                		text10.setLayoutX(275.0*largeur);
-                		text10.setLayoutY(364.0*hauteur);
             		}
 				} 
             	catch (NumberFormatException | ErreurDEncodage e) 
             	{
             		text10.setText("Les données saisies sont incorrectes");
-            		text10.setFont(new Font("System Bold", 15.0*hauteur));
-            		text10.setWrappingWidth(250.0*largeur);
-            		text10.setFill(javafx.scene.paint.Color.RED);
-            		text10.setLayoutX(275.0*largeur);
-            		text10.setLayoutY(364.0*hauteur);
 				}
             }
         });
 
+		text10.setFont(new Font("System Bold", 15.0*hauteur));
+		text10.setWrappingWidth(250.0*largeur);
+		text10.setFill(javafx.scene.paint.Color.RED);
+		text10.setLayoutX(275.0*largeur);
+		text10.setLayoutY(364.0*hauteur);
+		
+		textField.setOnMouseClicked(e -> {pos = 0;});
+		radioButton.setOnMouseClicked(e -> {pos = 1;});
+		radioButton0.setOnMouseClicked(e -> {pos = 1;});
+		choiceBox0.setOnMouseClicked(e -> {pos = 2;});
+		choiceBox.setOnMouseClicked(e -> {pos = 3;});
+		
         hBox0.getChildren().addAll(text0, textField);
         hBox1.getChildren().addAll(text1, radioButton, radioButton0);
         hBox2.getChildren().addAll(text3, choiceBox0, text2, choiceBox);
@@ -233,7 +236,22 @@ public class FPass10Trajets extends Ecran
 
 	public void actionRetour() 
 	{
-		graphAC.choixAnnuler();
+		try 
+    	{
+    		if (verifierNom(textField.getText().trim()))
+    		{
+				graphAC.infoPass10Trajets(textField.getText(), getClasse(), choiceBox.getValue(), choiceBox0.getValue());
+            	graphAC.choixValider();
+    		}
+    		else 
+    		{
+    			text10.setText("Les données saisies sont incorrectes");
+    		}
+		} 
+    	catch (NumberFormatException | ErreurDEncodage e) 
+    	{
+    		text10.setText("Les données saisies sont incorrectes");
+		}
 	}
 
 	public void actionSuivant() 
@@ -276,25 +294,11 @@ public class FPass10Trajets extends Ecran
 		graphAC.choixValider();
 	}
 	
-	public String getNom()
-	{
-		return textField.getText();
-	}
-	
-	public int getClasse()
+	private int getClasse()
 	{
 		if (radioButton.isSelected())
 			return 1;
 		else 
 			return 2;
-	}
-	
-	public String getReduction()
-	{
-		return choiceBox.getValue();
-	}
-	public String getType()
-	{
-		return choiceBox0.getValue();
 	}
 }

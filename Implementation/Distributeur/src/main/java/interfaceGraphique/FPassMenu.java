@@ -151,8 +151,6 @@ class FPassMenu extends Ecran
         hBox.getChildren().addAll(vBox, vBox0);
         getChildren().addAll(rectangle, text, text0, hBox, button2);
     }
-    
-    public void actionClavier(String a) {}
 
 	public void actionClavier(int a) 
 	{
@@ -168,12 +166,4 @@ class FPassMenu extends Ecran
 	{
 		graphAC.choixAnnuler();
 	}
-
-	public void actionSuivant() {}
-
-	public void actionEspace() {}
-
-	public void actionEffacer() {}
-	
-	public void actionEntrer() {}
 }

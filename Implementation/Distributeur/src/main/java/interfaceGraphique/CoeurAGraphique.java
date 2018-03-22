@@ -32,15 +32,16 @@ public interface CoeurAGraphique
 	public void afficherEjectionCarte();
 	public void afficherAttentePIN();
 	public void afficherCodePINIncor();
+	public void afficherSoldeInsuffisant() ;
 	public void afficherTropDeTentatives();
 	public void afficherValidationPaiement();
 	public void afficherDemandeRecu();
 	public void actualiserMontant(double restant , double introduit);
 	public void afficherRendreMonnaieInseree();
+	public void afficherMessageDErreur();
 	
 	public void afficherImpression();
 	public void afficherViderBacRecep();
-	public void effacerPIN();
 	public void afficherChoixCommande(Commande commande);
 	public void afficherRecu(double prix , double introduit , double rendu, String modePaiement);
 	public void afficherRendu(Rendu monnaieRendu);

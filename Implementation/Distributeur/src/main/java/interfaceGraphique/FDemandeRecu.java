@@ -71,24 +71,12 @@ class FDemandeRecu extends Ecran
 
         getChildren().addAll(rectangle, text, button, button0);
     }
-    
-    public void actionClavier(String a) {}
 
 	public void actionClavier(int a) 
 	{
 		if (a == 1)
-			graphAC.choixNon();
-		else if (a == 2)
 			graphAC.choixOui();
+		else if (a == 2)
+			graphAC.choixNon();
 	}
-
-	public void actionRetour() {}
-
-	public void actionSuivant() {}
-
-	public void actionEspace() {}
-
-	public void actionEffacer() {}
-	
-	public void actionEntrer() {}
 }

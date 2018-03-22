@@ -16,11 +16,11 @@ public interface CoeurAStockage
 	public void creerPassIllimite(String nom, int classe, String reduction, String type, int nbrJours, String typePass) throws ErreurDEncodage;
 	public void creerPass10Trajets(String nom, int classe, String reduction, String type, String typePass) throws ErreurDEncodage;
 	public void creerPass10Trajets2Gares(String nom, String gareDepart, String gareArrivee, int classe, String reduction, String type, String typePass) throws ErreurDEncodage;
-	public int calculerPrix(String gareDepart, String gareArrivee, Reduction reduction, TypeTitre type, Classe classe);
-	public int calculerPrix(Classe classe, Reduction reduction, TypeTitre type, int nbrJours);
-	public int calculerPrix(Classe classe, Reduction reduction, TypeTitre type);
-	public int calculerPrix(String gareDepart, String gareArrivee, Classe classe, Reduction reduction, TypeTitre type);
-	public int calculerPrix(String gareDepart, String gareArrivee, Reduction reduc, TypeTitre type, Classe classe, int validite);
+	public int rechercherPrix(String gareDepart, String gareArrivee, Reduction reduction, TypeTitre type, Classe classe);
+	public int rechercherPrix(Classe classe, Reduction reduction, TypeTitre type, int nbrJours);
+	public int rechercherPrix(Classe classe, Reduction reduction, TypeTitre type);
+	public int rechercherPrix(String gareDepart, String gareArrivee, Classe classe, Reduction reduction, TypeTitre type);
+	public int rechercherPrix(String gareDepart, String gareArrivee, Reduction reduc, TypeTitre type, Classe classe, int validite);
 	public boolean existenceTrajet(String gareDepart,String gareArrivee);
 	public boolean existenceGare(String gare);
 	public boolean existenceAbo(String numAbo);
@@ -48,7 +48,8 @@ public interface CoeurAStockage
 	public boolean verifPaiementCarte(String numero, int codePIN, double montant);
 	public boolean existenceCarte(String numero);
 	public Carte getCarte();
-	public boolean verifPaiement(int codePIN);
+	public boolean verifCode(int codePIN);
+	public boolean verifSolde();
 	public void mauvaisPing();
 	public boolean tropDErreur();
 	public void actualiserSolde();

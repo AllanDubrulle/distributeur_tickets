@@ -37,10 +37,6 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 	{
 		controleur.getEtatActuel().retourTitre();
 	}
-	public void choixRetourRecherche() 
-	{
-		controleur.getEtatActuel().retourRecherche();
-	}
 	public void choixRetour() 
 	{
 		controleur.getEtatActuel().retour();
@@ -119,15 +115,6 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 	{
 		controleur.getEtatActuel().valideRecherche(gareDepart, gareArrivee, heure, minute);
 	}
-	
-	public void choixValiderRenouvAbo() 
-	{
-		controleur.getEtatActuel().valideRenouvAbo();
-	}
-	public void choixValiderRenouvAboScanne() 
-	{
-		controleur.getEtatActuel().valideRenouvAboScanne();
-	}
 
 	public void choixScannerCode() 
 	{
@@ -138,17 +125,9 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 	{
 		controleur.getEtatActuel().choixAnnulerScanner();
 	}
-	public void choixTaperCodeAbo() 
-	{
-		controleur.getEtatActuel().choixTaperCode();	
-	}
 	public void choixValiderNumAbo() 
 	{
 		controleur.getEtatActuel().valideNumAbo();
-	}
-	public void choixValiderNumAboScanne() 
-	{
-		controleur.getEtatActuel().valideNumAboScanne();
 	}
 	
 	public void choix5eur() 
@@ -364,14 +343,9 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 	{
 		controleur.getEtatActuel().apres15sec();
 	}
-	public boolean verifNom(String nom)
-	{
-		return controleur.verifierNom(nom);
-	}
-	public boolean verifDate(int jour, int mois, int annee)
-	{
-		return controleur.verifierDate(jour, mois, annee);
-	}
 	
-	
+	public void apres5secondesOk()
+	{
+		controleur.getEtatActuel().apres5secOk();
+	}
 }

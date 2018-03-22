@@ -1,6 +1,9 @@
 package interfaceGraphique;
 
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -33,6 +36,7 @@ class FHoraireArrivee extends Ecran
         Button button = new Button();
         Button button0 = new Button();
         Text text10 = new Text();
+        Button button1 = new Button();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -75,7 +79,7 @@ class FHoraireArrivee extends Ecran
 
         text1.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text1.setStrokeWidth(0.0);
-        text1.setText("Heure :");
+        text1.setText("Heure d'arrivée :");
         text1.setWrappingWidth(180.0*largeur);
         text1.setFont(new Font(15.0*hauteur));
         VBox.setMargin(text1, new Insets(10.0*hauteur, 0.0, 0.0, 0.0));
@@ -135,14 +139,42 @@ class FHoraireArrivee extends Ecran
         		}
         	}
         });
-        ;
+        
+        button1.setMnemonicParsing(false);
+        button1.setPrefHeight(31.0*hauteur);
+        button1.setPrefWidth(185.0*largeur);
+        button1.setText("Heure courrante");
+        button1.setFont(new Font(15.0*hauteur));
+        button1.setLayoutX(307.5*largeur);
+        button1.setLayoutY(350.0*hauteur);
+        button1.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        button1.setOnAction(new EventHandler<ActionEvent>() 
+        {
+        	public void handle(ActionEvent event) 
+        	{
+        		DateFormat format = new SimpleDateFormat("yyyy/MM/dd  HH:mm");
+        		Date date = new Date();
+        		format.format(date);
+        		int heure = date.getHours();
+        		int minute = date.getMinutes();
+        		if(Integer.toString(heure).length() == 1)
+        			textField0.setText("0" + heure);
+        		else
+        			textField0.setText(Integer.toString(heure));
+        		if(Integer.toString(minute).length() == 1)
+        			textField1.setText("0" + minute);
+        		else
+        			textField1.setText(Integer.toString(minute));
+        	}
+        });
+        
 		text10.setFont(new Font("System Bold", 15.0*hauteur));
 		text10.setWrappingWidth(250.0*largeur);
 		text10.setFill(javafx.scene.paint.Color.RED);
 		text10.setLayoutX(275.0*largeur);
 		text10.setLayoutY(324.0*hauteur);
 
-        button0.setLayoutX(359.0*largeur);
+        button0.setLayoutX(22.5*largeur);
         button0.setLayoutY(349.0*hauteur);
         button0.setMnemonicParsing(false);
         button0.setText("Annuler");
@@ -156,12 +188,16 @@ class FHoraireArrivee extends Ecran
         	}
         });
 
+		textField.setOnMouseClicked(e -> {pos = 0;});
+		textField0.setOnMouseClicked(e -> {pos = 1;});
+		textField1.setOnMouseClicked(e -> {pos = 2;});
+		
         vBox.getChildren().addAll(text0, text1);
         hBox0.getChildren().addAll(textField0, text2, textField1);
         vBox0.getChildren().addAll(textField, hBox0);
         vBox1.getChildren().add(button);
         hBox.getChildren().addAll(vBox, vBox0, vBox1);
-        getChildren().addAll(rectangle, text, hBox, button0, text10);
+        getChildren().addAll(rectangle, text, hBox, button0, text10, button1);
     }
     
     public void actionClavier(String a) 

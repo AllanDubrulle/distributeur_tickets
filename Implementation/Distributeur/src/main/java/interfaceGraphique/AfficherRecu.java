@@ -103,16 +103,19 @@ class AfficherRecu extends Pane
 
         hBox3.setPrefHeight(0.0);
         hBox3.setPrefWidth(300.0);
-
-        text6.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text6.setStrokeWidth(0.0);
-        text6.setText("Rendu :");
-        text6.setWrappingWidth(150.0);
-
-        text7.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text7.setStrokeWidth(0.0);
-        text7.setText(nf.format(rendu) + " €");
-        text7.setWrappingWidth(60.0);
+        
+        if (modePaiement.equals("Liquide"))
+        {
+        	text6.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        	text6.setStrokeWidth(0.0);
+        	text6.setText("Rendu :");
+        	text6.setWrappingWidth(150.0);
+        	
+        	text7.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        	text7.setStrokeWidth(0.0);
+        	text7.setText(nf.format(rendu) + " €");
+        	text7.setWrappingWidth(60.0);
+        }
 
         hBox4.setPrefHeight(0.0);
         hBox4.setPrefWidth(300.0);

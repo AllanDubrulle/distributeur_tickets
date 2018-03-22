@@ -1,12 +1,50 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+ <project
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
   <modelVersion>4.0.0</modelVersion>
-  <groupId>Umons.Math.Group2</groupId>
-  <artifactId>Distributeur</artifactId>
-  <packaging>jar</packaging>
+
+  <groupId>be.ac.umons.gl.group1</groupId>
+  <artifactId>distributor</artifactId>
   <version>1.8</version>
-  <name>Distributeur</name>
+  <packaging>jar</packaging>
+  <name>Train Ticket distributor</name>
+
+  <!-- Configure 'build' cycle -->
+  <properties>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
   <build>
-  	<plugins>
-  	</plugins>
+    <!-- Configure plugins in 'build' cycle.
+         The plugins provides goals for each phase -->
+
+    <plugins>
+      <plugin>
+      <!-- Build an executable JAR
+           We configure the 'maven-jar-plugin' -->
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-jar-plugin</artifactId>
+      <configuration>
+        <archive>
+          <manifest>
+            <addClasspath>true</addClasspath>
+            <classpathPrefix>lib</classpathPrefix>
+            <mainClass>Main.Main</mainClass>
+          </manifest>
+        </archive>
+      </configuration>
+      </plugin>
+    </plugins>
   </build>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.8.2</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
 </project>

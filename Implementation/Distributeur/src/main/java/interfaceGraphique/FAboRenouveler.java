@@ -18,6 +18,7 @@ public class FAboRenouveler extends Ecran
 {
 	private TextField textField;
 	private RadioButton radioButton, radioButton0, radioButton1, radioButton2;
+	private Text text10;
 	
 	public FAboRenouveler(double hauteur, double largeur)
 	{
@@ -36,7 +37,7 @@ public class FAboRenouveler extends Ecran
         Text text1 = new Text();
         Button button = new Button();
         Button button0 = new Button();
-        Text text10 = new Text();
+        text10 = new Text();
         Button button1 = new Button();
 
         setMaxHeight(USE_PREF_SIZE);
@@ -167,29 +168,34 @@ public class FAboRenouveler extends Ecran
             {
             	try 
             	{
-            		int verifAbo = Integer.parseInt(getNumAbo());
+            		int verifAbo = Integer.parseInt(textField.getText());
 					graphAC.infoAboRen(getValidite(), String.valueOf(verifAbo));
 	            	graphAC.choixValider();
 				} 
             	catch (NumberFormatException | ErreurDEncodage e) 
             	{
-            		text10.setText("Les données saisies sont incorrectes");	
-        			text10.setFont(new Font("System Bold", 15.0*hauteur));	
-        			text10.setWrappingWidth(250.0*largeur);	
-        			text10.setFill(javafx.scene.paint.Color.RED);	
-        			text10.setLayoutX(275.0*largeur);	
-        			text10.setLayoutY(304.0*hauteur);	
+            		text10.setText("Les données saisies sont incorrectes");		
 				}
             }
         });
 
+		text10.setFont(new Font("System Bold", 15.0*hauteur));	
+		text10.setWrappingWidth(250.0*largeur);	
+		text10.setFill(javafx.scene.paint.Color.RED);	
+		text10.setLayoutX(275.0*largeur);	
+		text10.setLayoutY(304.0*hauteur);
+		
+		textField.setOnMouseClicked(e -> {pos = 0;});
+		radioButton.setOnMouseClicked(e -> {pos = 1;});
+		radioButton0.setOnMouseClicked(e -> {pos = 1;});
+		radioButton1.setOnMouseClicked(e -> {pos = 1;});
+		radioButton2.setOnMouseClicked(e -> {pos = 1;});
+        
         hBox0.getChildren().addAll(text, textField);
         hBox1.getChildren().addAll(text0, radioButton, radioButton0, radioButton1, radioButton2);
         vBox.getChildren().addAll(hBox, hBox0, hBox1);
         getChildren().addAll(rectangle, vBox, text1, button, button0, text10, button1);
     }
-    
-    public void actionClavier(String a) {}
 
 	public void actionClavier(int a) 
 	{
@@ -231,8 +237,6 @@ public class FAboRenouveler extends Ecran
 		}
 	}
 
-	public void actionEspace() {}
-
 	public void actionEffacer() 
 	{
 		if (pos == 0)
@@ -245,12 +249,16 @@ public class FAboRenouveler extends Ecran
 	
 	public void actionEntrer() 
 	{
-		graphAC.choixValiderRenouvAbo();
-	}
-	
-	public String getNumAbo()
-	{
-		return textField.getText();
+		try 
+    	{
+    		int verifAbo = Integer.parseInt(textField.getText());
+			graphAC.infoAboRen(getValidite(), String.valueOf(verifAbo));
+        	graphAC.choixValider();
+		} 
+    	catch (NumberFormatException | ErreurDEncodage e) 
+    	{
+    		text10.setText("Les données saisies sont incorrectes");		
+		}
 	}
 	
 	public int getValidite()

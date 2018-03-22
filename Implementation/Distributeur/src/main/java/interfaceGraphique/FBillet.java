@@ -1,6 +1,7 @@
 package interfaceGraphique;
 
 import java.sql.Date;
+import java.time.LocalDate;
 
 import coeur.GraphiqueACoeurImpl;
 import javafx.collections.FXCollections;
@@ -19,6 +20,7 @@ class FBillet extends Ecran
 	private RadioButton radioButton, radioButton0, radioButton1, radioButton2;
 	private int pos = 0;
 	private ChoiceBox<String> choiceBox, choiceBox0;
+	private Text text10;
 
     public FBillet(double hauteur, double largeur) 
     {
@@ -55,9 +57,10 @@ class FBillet extends Ecran
         Button button = new Button();
         Button button0 = new Button();
         Text text9 = new Text();
-        Text text10 = new Text();
+        text10 = new Text();
         choiceBox = new ChoiceBox<String>();
         choiceBox0 = new ChoiceBox<String>();
+        Button button1 = new Button();
         
 
         setPrefHeight(400.0*hauteur);
@@ -250,6 +253,31 @@ class FBillet extends Ecran
             	graphAC.choixAnnuler();
             }
         });
+        
+        button1.setLayoutX(450.0*largeur);
+        button1.setLayoutY(354.0*hauteur);
+        button1.setMnemonicParsing(false);
+        button1.setPrefHeight(31.0*hauteur);
+        button1.setPrefWidth(150.0*largeur);
+        button1.setText("Départ aujourd'hui");
+        button1.setFont(new Font(15.0*hauteur));
+        button1.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        button1.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
+            	LocalDate date = LocalDate.now();
+            	if(Integer.toString(date.getDayOfMonth()).length() == 1)
+            		textField0.setText("0" + date.getDayOfMonth());
+            	else
+            		textField0.setText(Integer.toString(date.getDayOfMonth()));
+            	if(Integer.toString(date.getMonth().getValue()).length() == 1)
+            		textField1.setText("0" + date.getMonthValue());
+            	else
+            		textField1.setText(Integer.toString(date.getMonth().getValue()));
+            	textField2.setText(Integer.toString(date.getYear()));
+            }
+        });
 
         button0.setLayoutX(702.5*largeur);
         button0.setLayoutY(354.0*hauteur);
@@ -273,7 +301,9 @@ class FBillet extends Ecran
                     date.setYear(annee-1900);
                     date.setDate(jour);
                     date.setMonth(mois-1);
-                    if (graphAC.verifDate(jour, mois, annee))
+                    if (nbrBillet == 0)
+                    	nbrBillet = 1;
+                    if (verifierDate(jour, mois, annee))
                     {
                     	graphAC.infoBillet(date,nbrBillet, getClasse(),textField3.getText().trim(),textField4.getText().trim(),choiceBox0.getValue(), choiceBox.getValue() ,radioButton1.isSelected());
                     	graphAC.choixValider();
@@ -281,21 +311,11 @@ class FBillet extends Ecran
                     else
                     {
                 		text10.setText("Les données saisies sont incorrectes");
-                		text10.setFont(new Font("System Bold", 15.0*hauteur));
-                		text10.setWrappingWidth(250.0*largeur);
-                		text10.setFill(javafx.scene.paint.Color.RED);
-                		text10.setLayoutX(275.0*largeur);
-                		text10.setLayoutY(364.0*hauteur);
                     }
             	}
             	catch (NumberFormatException | ErreurDEncodage e)
             	{
             		text10.setText("Les données saisies sont incorrectes");
-            		text10.setFont(new Font("System Bold", 15.0*hauteur));
-            		text10.setWrappingWidth(250.0*largeur);
-            		text10.setFill(javafx.scene.paint.Color.RED);
-            		text10.setLayoutX(275.0*largeur);
-            		text10.setLayoutY(364.0*hauteur);
             	}
             	
             }
@@ -309,6 +329,25 @@ class FBillet extends Ecran
         text9.setText("Achat d'un billet de train");
         text9.setUnderline(true);
         text9.setFont(new Font("System Bold", 22.0*hauteur));
+        
+        text10.setFont(new Font("System Bold", 15.0*hauteur));
+		text10.setWrappingWidth(250.0*largeur);
+		text10.setFill(javafx.scene.paint.Color.RED);
+		text10.setLayoutX(175.0*largeur);
+		text10.setLayoutY(364.0*hauteur);
+
+		textField3.setOnMouseClicked(e -> {pos = 0;});
+		textField4.setOnMouseClicked(e -> {pos = 1;});
+		radioButton.setOnMouseClicked(e -> {pos = 2;});
+		radioButton0.setOnMouseClicked(e -> {pos = 2;});
+		radioButton1.setOnMouseClicked(e -> {pos = 3;});
+		radioButton2.setOnMouseClicked(e -> {pos = 3;});
+		choiceBox0.setOnMouseClicked(e -> {pos = 4;});
+		choiceBox.setOnMouseClicked(e -> {pos = 5;});
+		textField.setOnMouseClicked(e -> {pos = 6;});
+		textField0.setOnMouseClicked(e -> {pos = 7;});
+		textField1.setOnMouseClicked(e -> {pos = 8;});
+		textField2.setOnMouseClicked(e -> {pos = 9;});
 
         hBox.getChildren().addAll(text, textField3);
         hBox0.getChildren().addAll(text0, textField4);
@@ -319,7 +358,7 @@ class FBillet extends Ecran
         hBox6.getChildren().addAll(text6, textField0, text7, textField1, text8, textField2);
         hBox5.getChildren().addAll(text5, textField, hBox6);
         vBox.getChildren().addAll(hBox, hBox0, hBox1, hBox3, hBox4, hBox5);
-        getChildren().addAll(rectangle, vBox, button, button0, text9, text10);
+        getChildren().addAll(rectangle, vBox, button, button0, text9, text10, button1);
     }
     
     public void actionClavier(String a) 
@@ -516,57 +555,37 @@ class FBillet extends Ecran
 	
 	public void actionEntrer() 
 	{
-		graphAC.choixValider();
+		try
+    	{
+    		int nbrBillet = Integer.parseInt(textField.getText());
+    		int jour = Integer.parseInt(textField0.getText());
+    		int mois = Integer.parseInt(textField1.getText());
+    		int annee = Integer.parseInt(textField2.getText());
+            Date date = new Date(0,0,0);
+            date.setYear(annee-1900);
+            date.setDate(jour);
+            date.setMonth(mois-1);
+            if (verifierDate(jour, mois, annee))
+            {
+            	graphAC.infoBillet(date,nbrBillet, getClasse(),textField3.getText().trim(),textField4.getText().trim(),choiceBox0.getValue(), choiceBox.getValue() ,radioButton1.isSelected());
+            	graphAC.choixValider();
+            }
+            else
+            {
+        		text10.setText("Les données saisies sont incorrectes");
+            }
+    	}
+    	catch (NumberFormatException | ErreurDEncodage e)
+    	{
+    		text10.setText("Les données saisies sont incorrectes");
+    	}
 	}
 	
-	public String getGareDepart()
-	{
-		return textField3.getText();
-	}
-	
-	public String getGareArrivee()
-	{
-		return textField4.getText();
-	}
-	
-	public String getReduction()
-	{
-		return choiceBox.getValue();
-	}
-	
-	public String getType()
-	{
-		return choiceBox0.getValue();
-	}
-	
-	public String getNombre()
-	{
-		return textField.getText();
-	}
-
-	public String getDate()
-	{
-		return textField0.getText() + "/" + textField1.getText() + "/" + textField2.getText();
-	}
-	
-	public int getClasse()
+	private int getClasse()
 	{
 		if (radioButton1.isSelected())
 			return 1;
 		else
 			return 2;
-	}
-	
-	public String getAllerRetour()
-	{
-		if (radioButton.isSelected())
-			return "Aller simple";
-		else
-			return "Aller-retour";
-	}
-	
-	public String getPrix()
-	{
-		return "10000";
 	}
 }

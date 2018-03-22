@@ -5,7 +5,7 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.Date;
 import java.util.HashMap;
-
+import coeur.StockageACoeurImpl;
 import stockage.imprimable.Abonnement;
 import stockage.imprimable.Billet;
 import stockage.imprimable.Classe;
@@ -27,8 +27,9 @@ public class CoeurAStockageImpl implements CoeurAStockage
 	private HashMap<Composant,Boolean> composantEnMarche;
 	private Imprimante imprimante;
 	private int essai;
+	private static CoeurAStockageImpl instance;
 	
-	public CoeurAStockageImpl()
+	private CoeurAStockageImpl()
 	{
 		monnayeur = new Monnayeur();
 		imprimante = new Imprimante(this);
@@ -135,7 +136,7 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		}
 		setNbrTitre(nbrBillet);
 		setAchat(new Billet(dateValidite, gareDepart, gareArrivee,  classeBillet, type,reduc,allerRetour));
-		setPrix(calculerPrix(gareDepart,gareArrivee,reduc,type,classeBillet)*nbrBillet);
+		setPrix(rechercherPrix(gareDepart,gareArrivee,reduc,type,classeBillet)*nbrBillet);
 	}
 
 	public void creerAbonnement(int validite, String gareDepart, String gareArrivee, int classe,
@@ -181,7 +182,7 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		bTitre.deconnexion();
 		setNbrTitre(1);
 		setAchat(new Abonnement(num, dateValid, dateExp, gareDepart, gareArrivee,  classeAbo, reduc, typeAbo, nom, registreNational));	
-		setPrix(calculerPrix(gareDepart, gareArrivee, reduc, typeAbo, classeAbo, validite));	
+		setPrix(rechercherPrix(gareDepart, gareArrivee, reduc, typeAbo, classeAbo, validite));	
 	}
 
 	public void modifierAbo(int validite, String numAbo) throws ErreurDEncodage
@@ -224,7 +225,7 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		}
 		setNbrTitre(1);
 		setAchat(new Abonnement(Integer.parseInt(numAbo), dateValid, dateExp, infos[2], infos[3], classeAbo, reduc, typeAbo, infos[0], infos[1]));	
-		setPrix(calculerPrix(infos[2], infos[3], reduc, typeAbo, classeAbo, validite));	
+		setPrix(rechercherPrix(infos[2], infos[3], reduc, typeAbo, classeAbo, validite));	
 	}
 	
 	public void creerPassIllimite(String nom, int classe, String reduction, String type, int nbrJours, String typePassStr) throws ErreurDEncodage
@@ -264,7 +265,7 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		}
 		setNbrTitre(1);
 		setAchat(new Pass(nom, nbrJours, classePass, typeTitre, reduc, typePass));
-		setPrix(calculerPrix(classePass, reduc, typeTitre, nbrJours));
+		setPrix(rechercherPrix(classePass, reduc, typeTitre, nbrJours));
 	}
 	
 	public boolean verifPaiementCarte(String numero, int codePIN, double montant)
@@ -321,7 +322,7 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		}
 		setNbrTitre(1);
 		setAchat(new Pass(nom, classePass, typeTitre, reduc, typePass));
-		setPrix(calculerPrix(classePass, reduc, typeTitre));
+		setPrix(rechercherPrix(classePass, reduc, typeTitre));
 	}
 	
 	public void creerPass10Trajets2Gares(String nom, String gareDepart, String gareArrivee, int classe, String reduction, String type, String typePassStr) throws ErreurDEncodage
@@ -361,73 +362,31 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		}
 		setNbrTitre(1);
 		setAchat(new Pass(nom, gareDepart, gareArrivee, classePass, typeTitre, reduc, typePass));
-		setPrix(calculerPrix(gareDepart, gareArrivee, classePass, reduc, typeTitre));
+		setPrix(rechercherPrix(gareDepart, gareArrivee, classePass, reduc, typeTitre));
 	}
 
-	public int calculerPrix(String gareDepart, String gareArrivee,Reduction reduc,TypeTitre type,Classe classe) 	//Billet
+	public int rechercherPrix(String gareDepart, String gareArrivee,Reduction reduc,TypeTitre type,Classe classe) 	//Billet
 	{
-		BDDTitre bTitre = new BDDTitre();
-		bTitre.connexion();
-		double calculPrix= bTitre.calculerPrixBillet(gareDepart, gareArrivee);
-		bTitre.deconnexion();
-		calculPrix *=100;
-		int res = ajusterPrix((int) calculPrix ,reduc, type, classe);
-		return  res;
+		return StockageACoeurImpl.getInstance().calculerPrix(gareDepart, gareArrivee, reduc, type, classe);
 	}
-	public int calculerPrix(String gareDepart, String gareArrivee, Reduction reduc, TypeTitre type, Classe classe, int validite)	//Abonnement
+	public int rechercherPrix(String gareDepart, String gareArrivee, Reduction reduc, TypeTitre type, Classe classe, int validite)	//Abonnement
 	{	
-		BDDTitre bTitre = new BDDTitre();
-		bTitre.connexion();
-		double calculPrix = bTitre.calculerPrixAbo(gareDepart, gareArrivee);	
-		bTitre.deconnexion();
-		calculPrix *=100;
-		int res = ajusterPrix((int) calculPrix ,reduc, type, classe);
-		res *= validite;	
-		return  res;	
+		return StockageACoeurImpl.getInstance().calculerPrix(gareDepart, gareArrivee, reduc, type, classe, validite);
 	}
 	
-	public int calculerPrix(Classe classe, Reduction reduction, TypeTitre type, int nbrJours)		//PassIllimite
+	public int rechercherPrix(Classe classe, Reduction reduction, TypeTitre type, int nbrJours)		//PassIllimite
 	{
-		BDDTitre bTitre = new BDDTitre();
-		bTitre.connexion();
-		double calculPrix = bTitre.calculerPrixPass("SansRestriction");	
-		bTitre.deconnexion();
-		calculPrix *=100;
-		int res = ajusterPrix((int) calculPrix ,reduction, type, classe);
-		res *= nbrJours;	
-		return  res;
+		return StockageACoeurImpl.getInstance().calculerPrix(classe, reduction, type, nbrJours);
 	}
 	
-	public int calculerPrix(Classe classe, Reduction reduction, TypeTitre type)		//Pass10Trajets
+	public int rechercherPrix(Classe classe, Reduction reduction, TypeTitre type)		//Pass10Trajets
 	{
-		BDDTitre bTitre = new BDDTitre();
-		bTitre.connexion();
-		double calculPrix = bTitre.calculerPrixPass("10Trajets");	
-		bTitre.deconnexion();
-		calculPrix *=100;
-		int res = ajusterPrix((int) calculPrix ,reduction, type, classe);	
-		return  res;
+		return StockageACoeurImpl.getInstance().calculerPrix(classe, reduction, type);
 	}
 	
-	public int calculerPrix(String gareDepart, String gareArrivee, Classe classe, Reduction reduction, TypeTitre type)		//Pass10Trajets2Gares
+	public int rechercherPrix(String gareDepart, String gareArrivee, Classe classe, Reduction reduction, TypeTitre type)		//Pass10Trajets2Gares
 	{
-		BDDTitre bTitre = new BDDTitre();
-		bTitre.connexion();
-		double calculPrix = bTitre.calculerPrixBillet(gareDepart, gareArrivee);	
-		System.out.println(calculPrix);
-		bTitre.deconnexion();
-		calculPrix *=800;
-		int res = ajusterPrix((int) calculPrix ,reduction, type, classe);	
-		return  res;
-	}
-	
-	private int ajusterPrix(int prix ,Reduction reduc, TypeTitre type, Classe classe)
-	{
-		double res= prix;
-		res -= res * (double)reduc.valeur()/100;	
-		res -= res * (double)type.valeur()/100;	
-		res *= (3-classe.valeur());	
-		return (int) res;
+		return StockageACoeurImpl.getInstance().calculerPrix(gareDepart, gareArrivee, classe, reduction, type);
 	}
 
 	private void setAchat(TitreDeTransport billet)
@@ -546,7 +505,7 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		HoraireTrains hTrains = new HoraireTrains();
 		hTrains.connexion();
 		ResultSet res = hTrains.calculToutesLesGaresDepart(gareArrivee, heure, minute);
-		String[] tab = hTrains.conversionRequeteEnTableau(res);
+		String[] tab = hTrains.conversionRequeteEnTableauArriv(res);
 		return tab;
 	}
 	
@@ -623,9 +582,14 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		return (double) introduit /100;
 	}
 
-	public boolean verifPaiement(int codePIN) 
+	public boolean verifSolde() 
 	{
-		return carte.verifPaiement(codePIN, prix);
+		return carte.soldeSuffisant(prix);
+	}
+	
+	public boolean verifCode(int codePIN)
+	{
+		return carte.verifCodePIN(codePIN);
 	}
 
 	public void mauvaisPing()
@@ -634,7 +598,6 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		
 	}
 
-	@Override
 	public boolean tropDErreur()
 	{
 		return essai>2;
@@ -649,6 +612,13 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		bBanque.actualiserSolde(numero, somme);
 		bBanque.deconnexion();
 		introduit = prix;
+	}
+
+	public static CoeurAStockage getInstance() 
+	{
+		if(instance == null)
+			instance = new CoeurAStockageImpl();
+		return instance;
 	}
 
 }

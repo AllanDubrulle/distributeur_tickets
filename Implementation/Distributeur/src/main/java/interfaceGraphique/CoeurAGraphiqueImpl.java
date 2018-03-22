@@ -141,6 +141,10 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	{
 		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Code PIN incorrect. Veuillez rééssayer.", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 	}
+	public void afficherSoldeInsuffisant() 
+	{
+		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Solde de la carte insuffisant. Ejection de la carte dans un instant.", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
+	}
 	
 	public void afficherTropDeTentatives() 
 	{
@@ -149,7 +153,7 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	
 	public void afficherValidationPaiement() 
 	{
-		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Paiement effectué avec succès, éjection de la carte dans un instant.", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
+		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Paiement effectué avec succès. Ejection de la carte dans un instant.", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 	}
 	
 	public void afficherImpression() 
@@ -278,13 +282,14 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	}
 	public void afficherRendreMonnaieInseree()
 	{
-		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Problème monnayeur, veuillez récuperer votre monnaie", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
+		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Problème monnayeur, veuillez récuperer votre monnaie.", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 	}
 	
-	public void effacerPIN()
+	public void afficherMessageDErreur()
 	{
-		FenetreSimulation.getInstance().viderPIN();
-	}
+		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Problème technique. Veuillez prendre contact avec un technicien pour tout rembouserment.", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
+		}
+	
 	public void afficherDemandeRecu() // modifié pas encore fini bug possible 
 	{
 		FenetreSimulation.getInstance().afficher(new FDemandeRecu(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
@@ -296,8 +301,8 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 		{
 			case ACHATABO:
 				Abonnement abonnement = (Abonnement) titre;
-				FenetreSimulation.getInstance().afficher(new FRecapAboAchat(abonnement.getNom(), abonnement.getRegNat(), abonnement.getGareDepart(), 	
-						abonnement.getGareArrivee(), abonnement.getValidite(abonnement.getDateValidite(), abonnement.getDateExp()), 	
+				FenetreSimulation.getInstance().afficher(new FRecapAboAchat(Integer.toString(abonnement.getNum()), abonnement.getNom(), abonnement.getRegNat(), 
+						abonnement.getGareDepart(), abonnement.getGareArrivee(), abonnement.getValidite(abonnement.getDateValidite(), abonnement.getDateExp()), 	
 						abonnement.getClasse().valeur(), abonnement.getReduction().toString(), abonnement.getType().toString(), prix, 	
 						FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 			break;
@@ -329,8 +334,9 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 				break;
 			case REVOUVELLEMENTABO:
 				Abonnement abonnementRen = (Abonnement) titre;
-				FenetreSimulation.getInstance().afficher(new FRecapAboRenouv(abonnementRen.getNum(), 
-						abonnementRen.getValidite(abonnementRen.getDateValidite(), abonnementRen.getDateExp()), prix, 
+				FenetreSimulation.getInstance().afficher(new FRecapAboRenouveler(Integer.toString(abonnementRen.getNum()), abonnementRen.getNom(), abonnementRen.getRegNat(), 
+						abonnementRen.getGareDepart(), abonnementRen.getGareArrivee(), abonnementRen.getValidite(abonnementRen.getDateValidite(), abonnementRen.getDateExp()), 	
+						abonnementRen.getClasse().valeur(), abonnementRen.getReduction().toString(), abonnementRen.getType().toString(), prix, 	
 						FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 				break;
 		}

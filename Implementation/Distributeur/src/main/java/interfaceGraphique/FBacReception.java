@@ -56,46 +56,8 @@ class FBacReception extends Ecran
 
         getChildren().addAll(rectangle, text, button);
     }
-
-	@Override
-	public void actionClavier(String a) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void actionClavier(int a) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void actionRetour() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void actionSuivant() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void actionEspace() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void actionEffacer() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void actionEntrer() {
-		// TODO Auto-generated method stub
-		
+	public void actionEntrer()
+	{
+		graphAC.choixOk();
 	}
 }
