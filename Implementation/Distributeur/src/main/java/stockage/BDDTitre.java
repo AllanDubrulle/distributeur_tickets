@@ -9,12 +9,24 @@ import java.util.ArrayList;
 
 public class BDDTitre extends GestionBaseDeDonnees 
 {
+	
+	/**
+     * 
+     * @author TheoDaix, AllanDubrulle, VictorVerhoye
+     * 
+     */
+	
 	public BDDTitre()
     {
         super();
     }
 	
-	public double calculerPrixBillet(String gare1, String gare2) //operationnel
+	/**
+     * 
+     * Va chercher dans la base de données le prix d'un billet pour un trajet entre deux gares (gare1 et gare2)
+     * 
+     */
+	public double calculerPrixBillet(String gare1, String gare2) 
     {
         String gare1Maj = gare1.toUpperCase();
         String gare2Maj = gare2.toUpperCase();
@@ -36,6 +48,12 @@ public class BDDTitre extends GestionBaseDeDonnees
         }
         return -1;
     }
+	
+	/**
+     * 
+     * Va chercher dans la base de données le prix d'un mois d'abonnement pour un trajet entre deux gares (source et destination)
+     * 
+     */
 	public double calculerPrixAbo(String source, String destination) 
     {
         String sourceMaj = source.toUpperCase();
@@ -59,6 +77,11 @@ public class BDDTitre extends GestionBaseDeDonnees
         return -1;
     }
 	
+	/**
+     * 
+     * Va chercher dans la base de données le prix pour un jour d'un pass illimité ou le prix d'un pass 10 trajets
+     * 
+     */
 	public double calculerPrixPass(String typePass)
 	{
 		try
@@ -77,7 +100,12 @@ public class BDDTitre extends GestionBaseDeDonnees
         return -1;
 	}
 	
-	
+	/**
+     * 
+     * Va chercher dans la base de données le numéro qui suit le dernier abonnement stocké dans la base de données
+     * Sert typiquement lors de la création d'un nouvel abonnement afin de savoir quel sera son numéro
+     * 
+     */
 	public int numeroAbonnementSuivant()
 	{
 		try
@@ -95,6 +123,11 @@ public class BDDTitre extends GestionBaseDeDonnees
         return -1;
 	}
 	
+	/**
+     * 
+     * Permet l'ajout dans la base de données d'un nouvel abonnement
+     * 
+     */
 	public void ajouterAbonnement(int num, String nom, String reg, String source, String destination, String annee, String mois, String jour, String type, String reduction, String classe)
 	{
 		try
@@ -123,6 +156,13 @@ public class BDDTitre extends GestionBaseDeDonnees
             e.printStackTrace();
         }
 	}
+	
+	/**
+     * 
+     * Va modifier dans la base de données la date d'expiration d'un certain abonnement (numeroAbo)
+     * en fonction de la validité passée en paramètres (représente le nombre de mois en plus)
+     * 
+     */
 	public void actualiserDateAbo(String numeroAbo, int validite)
 	{
 		try
@@ -147,6 +187,12 @@ public class BDDTitre extends GestionBaseDeDonnees
         }
 	}
 	
+	/**
+     * 
+     * Va chercher dans la base de données les informations d'un certain abonnement (numeroAbo) 
+     * et les retourne sous forme de tableau 
+     * 
+     */
 	public String[] infoAbonnement(String numeroAbo)
 	{
         String[] res = new String[10]; 
@@ -178,6 +224,11 @@ public class BDDTitre extends GestionBaseDeDonnees
         return res;
 	}
 	
+	/**
+     * 
+     * Vérifie l'existence d'un abonnement dans la base de données
+     * 
+     */
 	public boolean existenceAbonnement(String numeroabo)
 	{
 		try
@@ -195,6 +246,11 @@ public class BDDTitre extends GestionBaseDeDonnees
         return false;
 	}
 	
+	/**
+     * 
+     * Va chercher l'ensemble des abonnements présents dans la base de données
+     * 
+     */
 	public ArrayList<String> listeDesAbonnements()
 	{
 		ArrayList<String> res = new ArrayList<String>();

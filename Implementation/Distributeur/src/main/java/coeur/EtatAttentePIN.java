@@ -50,7 +50,7 @@ class EtatAttentePIN extends EtatAnnulable
 	private void infosIncorrectes()
 	{
 		Controleur.getInstance().getCoeurAGraphique().afficherCodePINIncor();
-		Controleur.getInstance().getCoeurAStockage().mauvaisPing();
+		Controleur.getInstance().getCoeurAStockage().mauvaisPin();
 		if(Controleur.getInstance().getCoeurAStockage().tropDErreur())
 		{
 			Controleur.getInstance().getCoeurAGraphique().afficherTropDeTentatives();

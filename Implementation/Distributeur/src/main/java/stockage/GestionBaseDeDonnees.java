@@ -13,6 +13,12 @@ class GestionBaseDeDonnees {
 	    protected String chemin;
 	    protected Connection connexion;
 	    protected Statement requete;
+	    
+	    /**
+	     * 
+	     * @author TheoDaix, AllanDubrulle, VictorVerhoye
+	     * 
+	     */
 
 	    public GestionBaseDeDonnees()
 	    {
@@ -24,18 +30,22 @@ class GestionBaseDeDonnees {
 	        {
 	            System.err.println(e1.getMessage());
 	        }
-	        String sep = File.separator;
-	        this.chemin = "src"+ sep + "main" + sep + "resources" + sep + "BDDDistributeur.db";
+	        String separation = File.separator;
+	        this.chemin = "src"+ separation + "main" + separation + "resources" + separation + "BDDDistributeur.db";
 	        this.connexion = null;
 	    }
-
+	    
+	    /**
+	     * 
+	     * Permet à une instance de GestionBaseDeDonnees de se connecter à la base de données
+	     * 
+	     */
 	    public boolean connexion()
 	    {
 	        try
 	        {
 	            connexion = DriverManager.getConnection("jdbc:sqlite:"+ this.chemin);
 	            requete = connexion.createStatement();
-	            requete.setQueryTimeout(30); //pour que le temps de la requete n'excede pas 30 secondes
 	            return true;
 	        }
 	        catch(SQLException e)
@@ -44,7 +54,13 @@ class GestionBaseDeDonnees {
 	            return false;
 	        }
 	    }
-	     
+	    
+
+	    /**
+	     * 
+	     * Permet à une instance de GestionBaseDeDonnees de se déconnecter de la base de données
+	     * 
+	     */
 	    public boolean deconnexion()
 	    {
 	        try
@@ -61,7 +77,7 @@ class GestionBaseDeDonnees {
 	        }
 	    }
 	    
-	    public static void afficherResultat(ResultSet res) throws SQLException { //affiche les resultats d'une requete
+	    public static void afficherResultat(ResultSet res) throws SQLException { //A SUPPRIMER
 			if (res != null)
 			{	ResultSetMetaData res2 = res.getMetaData();
 				int nbrColonnes = res2.getColumnCount();
@@ -80,7 +96,7 @@ class GestionBaseDeDonnees {
 			}
 	    }   
 	    
-	    public ResultSet resultatRequete(String requete)
+	    public ResultSet resultatRequete(String requete) //A SUPPRIMER
 	    {
 	        try
 	        {
@@ -94,7 +110,7 @@ class GestionBaseDeDonnees {
 	        return null;
 	    }
 	    
-	    public void mettreAJour(String requete)
+	    public void mettreAJour(String requete) //A SUPPRIMER
 	    {
 	        try
 	        {

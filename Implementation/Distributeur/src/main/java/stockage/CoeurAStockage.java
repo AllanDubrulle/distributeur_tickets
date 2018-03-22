@@ -46,12 +46,11 @@ public interface CoeurAStockage
 	public double prixAffichable();
 	public double renduAffichable();
 	public double introduitAffichable();
-	public boolean verifPaiementCarte(String numero, int codePIN, double montant);
 	public boolean existenceCarte(String numero);
 	public Carte getCarte();
 	public boolean verifCode(int codePIN);
 	public boolean verifSolde();
-	public void mauvaisPing();
+	public void mauvaisPin();
 	public boolean tropDErreur();
 	public void actualiserSolde();
 	public ArrayList<String> getListeAbonnement();
