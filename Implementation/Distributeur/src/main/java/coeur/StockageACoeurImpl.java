@@ -2,6 +2,11 @@ package coeur;
 
 
 
+/**
+ *	Classe StockageACoeurImpl (permet au stockage de communiquer avec le coeur)
+ * 	@author TheoDaix, AllanDubrulle, VictorVerhoye
+ * 	@version 1.0
+ */
 public class StockageACoeurImpl implements StockageACoeur 
 {
 	public static StockageACoeurImpl instance;

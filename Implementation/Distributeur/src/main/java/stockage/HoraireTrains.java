@@ -1,5 +1,10 @@
 package stockage;
 
+/**
+ * Classe HoraireTrains
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
@@ -8,12 +13,22 @@ import java.util.ArrayList;
 
 class HoraireTrains extends GestionBaseDeDonnees
 {
+	
     public HoraireTrains()
     {
         super();
     }
    
-    public ResultSet calculItineraire(String depart, String arrivee, int heure, int minute) //ATTENTION LES PRINT POSERONT PROBLEME LORS DE L'INSERTION DANS LA FENETRE
+    /**
+     * 	Va chercher dans la base de données les itinéraires de trains entre deux 
+     * 	gares à partir d'une certaine heure
+     * 	@param depart une gare de départ
+     * 	@param arrivee une gare d'arrivée
+     * 	@param heure l'heure de l'heure de départ
+     *	@param minute les minutes de l'heure départ
+     *	@return res un résultat de type SQL contenant les horaires de l'itinéraire choisi
+     */
+    public ResultSet calculItineraire(String depart, String arrivee, int heure, int minute)
     {
         String departMaj = depart.toUpperCase();
         String arriveeMaj = arrivee.toUpperCase();
@@ -50,6 +65,13 @@ class HoraireTrains extends GestionBaseDeDonnees
         }
         return res;
     }
+    
+    /**
+     * 	Va regarder dans la base de données si un couple de gares apparaît bien
+     *	@param gare1 une gare
+     *	@param gare2 une autre gare
+     *	@return res vrai si il existe un trajet entre les deux gares, faux sinon
+     */
     public boolean existenceTrajet(String gare1, String gare2)
     {
     	String gare1Maj = gare1.toUpperCase();
@@ -72,6 +94,11 @@ class HoraireTrains extends GestionBaseDeDonnees
         return false;
     }
     
+    /**
+     * 	Va regarder dans la base de données si une gare apparait bien
+     * 	@param gare une gare
+     *	@return res vrai si la gare existe, faux sinon
+     */	
     public boolean existenceGare(String gare)
     {
     	String gareMaj = gare.toUpperCase();
@@ -91,6 +118,14 @@ class HoraireTrains extends GestionBaseDeDonnees
         return false;
     }
     
+    /**
+     * 	Va chercher dans la base de données la minute à laquelle un train part d'une certaine 
+     * 	gare et va vers une certaine autre gare
+     * 	@param depart une gare de départ
+     * 	@param arrivee une gare d'arrivée
+     * 	@return min le nombre de minutes entre les deux gares, si le trajet existe, une erreur
+     * 	est générée dans le cas contraire
+     */
     public int minuteTrajet(String depart, String arrivee)
     {
     	String departMaj = depart.toUpperCase();
@@ -112,6 +147,15 @@ class HoraireTrains extends GestionBaseDeDonnees
         return -1;
     }
     
+    /**
+     * 	Va chercher dans la base de données tous les itinéraires de trains à partir d'une 
+     * 	certaine gare de départ et à partir d'une certaine heure
+     * 	@param depart une gare de départ
+     * 	@param heure l'heure de l'heure de départ minimale
+     * 	@param minute les minutes de l'heure de départ minimale
+     * 	@return result un résultat de type SQL qui contient toutes les arrivées au départ 
+     * 	d'une certaine gare à partir d'une certaine heure
+     */
     public ResultSet calculToutesLesGaresArrivee(String depart, int heure, int minute)
     {
     	String departMaj = depart.toUpperCase();
@@ -147,6 +191,15 @@ class HoraireTrains extends GestionBaseDeDonnees
         return res;
     }
     
+    /**
+     * 	Va chercher dans la base de données tous les itinéraires de trains ayant pour gare 
+     * 	d'arrivée une certaine gare et ce avant une certaine heure
+     * 	@param arrivée une gare d'arrivée
+     * 	@param heure l'heure de l'heure d'arrivée maximale
+     * 	@param minute les minutes de l'heure d'arrivée maximale
+     * 	@return result un résultat de type SQL qui contient toutes les arrivées au départ 
+     * 	d'une certaine gare à partir d'une certaine heure
+     */
     public ResultSet calculToutesLesGaresDepart(String arrivee, int heure, int minute)
     {
     	String arriveeMaj = arrivee.toUpperCase();
@@ -182,6 +235,12 @@ class HoraireTrains extends GestionBaseDeDonnees
         return res;
     }
     
+    /**
+     * 	Permet de prendre les 5 premières lignes d'un résultat d'une requête SQL et de 
+     * 	les rassembler dans un tableau afin de l'utiliser dans le reste de l'application
+     * 	@param res un résultat d'une requête SQL
+     * 	@return tab un tableau contenant les 5 premières lignes d'un résultat de type SQL
+     */
     public String[] conversionRequeteEnTableau(ResultSet res) throws SQLException
     {
     	String[] tabHor = new String[30];
@@ -201,6 +260,16 @@ class HoraireTrains extends GestionBaseDeDonnees
 		}
     	return tabHor;
     }
+    
+    /**
+     * 	Permet de prendre les 5 dernières lignes d'un résultat d'une requête SQL et de les 
+     * 	rassembler dans un tableau afin de l'utiliser dans le reste de l'application. C'est 
+     * 	ici pour le cas particulier où on ne doit pas prendre les heures après une certaine 
+     * 	heure mais les heures avant une certaine heure (typiquement pour les arrivées dans 
+     * 	une gare)
+     * 	@param res un résultat d'une requête de type SQL
+     * 	@return un tableau contenant les 5 dernières lignes d'un résultat de type SQL
+     */
     public String[] conversionRequeteEnTableauArriv(ResultSet res) throws SQLException
     {
     	String[] tabHor = new String[30];
@@ -231,69 +300,5 @@ class HoraireTrains extends GestionBaseDeDonnees
 			}
 		}
     	return tabHor;
-    }
-    
-    public static void afficherHeures(ResultSet res) throws SQLException //affiche au maximum les 5 prochaines heures d'un trajet
-    { 
-    	if (res != null)
-    	{
-    		ResultSetMetaData resBis = res.getMetaData();
-			int nbrColonnes = resBis.getColumnCount();
-			int compteur = 0;
-			while (res.next() && compteur <= 4) 
-			{
-				for (int i = 1; i <= nbrColonnes; i++) {
-					if (i > 1) 
-					{							
-						System.out.print(":");
-					}
-					String valeurColonne = res.getString(i);
-					System.out.print(valeurColonne);
-				}
-				System.out.println("");
-				compteur+=1;
-			}
-    	}
-    	else
-    	{
-    		System.out.println("Ce trajet n'existe pas !");
-    	}
-    	
-	}
-    
-    public static void afficherHeuresSpecial(ResultSet res) throws SQLException //affiche au maximum les 5 prochaines heures d'un trajet
-    { 
-    	if (res != null)
-    	{
-    		ResultSetMetaData resBis = res.getMetaData();
-			int nbrColonnes = resBis.getColumnCount();
-			int compteur = 0;
-			while (res.next() && compteur <= 4) 
-			{
-				for (int i = 1; i <= nbrColonnes; i++) {
-					if (i == 1)
-					{
-						String valeurColonne = res.getString(i);
-						System.out.print(valeurColonne + " ");
-					}
-					if (i > 2) 
-					{							
-						System.out.print(":");
-					}
-					if (i >= 2)
-					{
-					String valeurColonne = res.getString(i);
-					System.out.print(valeurColonne);
-					}
-				}
-				System.out.println("");
-				compteur+=1;
-			}
-    	}
-    	else
-    	{
-    		System.out.println("Ce trajet n'existe pas !");
-    	}
-    	
 	}
 }

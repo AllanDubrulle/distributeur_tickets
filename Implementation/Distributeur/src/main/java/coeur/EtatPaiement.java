@@ -1,6 +1,11 @@
 package coeur;
 
-public class EtatPaiement extends EtatAnnulable 
+/**
+ * Classe EtatPaiement
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
+class EtatPaiement extends EtatAnnulable 
 {	
 	private static EtatPaiement instance;
 	public static EtatPaiement getInstance() 

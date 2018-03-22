@@ -1,6 +1,11 @@
 package coeur;
 
-public class EtatChoixPass10Trajets2Gares extends EtatChoixTitre 
+/**
+ * Classe EtatChoixPass10Trajets2Gares
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
+class EtatChoixPass10Trajets2Gares extends EtatChoixTitre 
 {
 	private static EtatChoixPass10Trajets2Gares instance;
 	public static EtatChoixPass10Trajets2Gares getInstance() 

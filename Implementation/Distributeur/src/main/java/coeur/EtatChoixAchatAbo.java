@@ -1,6 +1,11 @@
 package coeur;
 
-public class EtatChoixAchatAbo extends EtatChoixTitre
+/**
+ * Classe EtatChoixAchatAbo
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
+class EtatChoixAchatAbo extends EtatChoixTitre
 {
 	private static EtatChoixAchatAbo instance;
 	public static EtatChoixAchatAbo getInstance() 

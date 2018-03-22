@@ -1,6 +1,11 @@
 package coeur;
 
-public abstract class EtatChoixTitre extends EtatAnnulable
+/**
+ * Classe abstraite EtatChoixTitre
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
+abstract class EtatChoixTitre extends EtatAnnulable
 {
 	public void confirme() 
 	{

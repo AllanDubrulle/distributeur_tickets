@@ -5,6 +5,11 @@ import javafx.util.Duration;
 import stockage.ComposantHorsService;
 import stockage.PasAssezDeMonnaie;
 
+/**
+ * Classe EtatPaiementLiquide
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
 class EtatPaiementLiquide extends EtatAnnulable
 {
 	private static EtatPaiementLiquide instance;

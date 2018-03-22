@@ -1,5 +1,10 @@
 package stockage;
 
+/**
+ * Enumération Pieces (différents pièces utilisés lors de l'application)
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
 public enum Pieces implements Valeur 
 {
 	P1 { public int valeur()

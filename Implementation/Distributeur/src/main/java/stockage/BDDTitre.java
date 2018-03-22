@@ -9,14 +9,30 @@ import java.util.ArrayList;
 
 import stockage.imprimable.TypePass;
 
+/**
+ * Classe BBDTitre (gestion de base de données pour tout les données des titres de transport)
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
+
 public class BDDTitre extends GestionBaseDeDonnees 
 {
+	/**
+	 * Constructeur de BDDTitre
+	 */
 	public BDDTitre()
     {
         super();
     }
 	
-	public double calculerPrixBillet(String gare1, String gare2)
+	/**
+     * 	Va chercher dans la base de données le prix d'un billet pour un trajet entre deux 
+     * 	gares
+     * 	@param gare1 une gare
+     * 	@param gare2 une autre gare
+     * 	@return prix le prix du billet
+     */
+	public double calculerPrixBillet(String gare1, String gare2) 
     {
         String gare1Maj = gare1.toUpperCase();
         String gare2Maj = gare2.toUpperCase();
@@ -38,6 +54,14 @@ public class BDDTitre extends GestionBaseDeDonnees
         }
         return -1;
     }
+	
+	/**
+     * 	Va chercher dans la base de données le prix d'un mois d'abonnement pour un trajet 
+     * 	entre deux gares
+     * 	@param source une gare source
+     * 	@param destination une gare destination
+     * 	@return prix le prix d'un mois de l'abonnement
+     */
 	public double calculerPrixAbo(String source, String destination) 
     {
         String sourceMaj = source.toUpperCase();
@@ -61,7 +85,13 @@ public class BDDTitre extends GestionBaseDeDonnees
         return -1;
     }
 	
-	private double calculerPrixPass(String typePass)
+	/**
+     * 	Va chercher dans la base de données le prix pour un jour d'un pass illimité ou 
+     * 	le prix d'un pass 10 trajets
+     * 	@param typePass un type de pass (TypePass)
+     * 	@return prix le prix d'un pass
+     */
+	public double calculerPrixPass(String typePass)
 	{
 		try
         {
@@ -79,7 +109,14 @@ public class BDDTitre extends GestionBaseDeDonnees
         return -1;
 	}
 	
-	
+	/**
+     * 	Va chercher dans la base de données le numéro qui suit le dernier abonnement stocké 
+     * 	dans la base de données
+     * 	Sert typiquement lors de la création d'un nouvel abonnement afin de savoir quel sera
+     * 	son numéro
+     * 	@return num le numéro de l'abonnement suivant le denier enregistré dans la base de 
+     * 	données
+     */
 	public int numeroAbonnementSuivant()
 	{
 		try
@@ -97,6 +134,20 @@ public class BDDTitre extends GestionBaseDeDonnees
         return -1;
 	}
 	
+	/**
+	 * 	Permet l'ajout dans la base de données d'un nouvel abonnement
+	 * 	@param num le numéro de l'abonnement
+	 * 	@param nom le nom auquel sera enregistré l'abonnement
+	 * 	@param reg le numéro de registre national du client
+	 * 	@param source la gare source de l'abonnement
+	 * 	@param destination la gare de destination de l'abonnement
+	 * 	@param annee l'année de la date d'expiration
+	 * 	@param mois le mois de la date d'expiration
+	 * 	@param jour le jour de la date d'expiration
+	 * 	@param type le type de l'abonnement
+	 * 	@param reduction la reduction
+	 * 	@param classe la classe
+	 */
 	public void ajouterAbonnement(int num, String nom, String reg, String source, String destination, String annee, String mois, String jour, String type, String reduction, String classe)
 	{
 		try
@@ -125,6 +176,13 @@ public class BDDTitre extends GestionBaseDeDonnees
             e.printStackTrace();
         }
 	}
+	
+	/**
+     * 	Va modifier dans la base de données la date d'expiration d'un certain abonnement 
+     * 	en fonction de la validité passée en paramètres
+     * 	@param numeroAbo le numéro de l'abonnement dont on doit modifier la date d'expiration
+     * 	@param validite le nombre de mois à ajouter à la date de validité de l'abonnement
+     */
 	public void actualiserDateAbo(String numeroAbo, int validite)
 	{
 		try
@@ -149,6 +207,14 @@ public class BDDTitre extends GestionBaseDeDonnees
         }
 	}
 	
+	/**
+     * 	Va chercher dans la base de données les informations d'un certain abonnement 
+     * 	et les retourne sous forme de tableau 
+     * 	@param numeroAbo le numéro de l'abonnement dont on veut les données
+     *	@return tab un tableau contenant dans l'ordre les informations suivantes :
+     *	Nom, Registre national, Source, Destination, Année, Mois, Jour, Type, Reduction,
+     *	Classe
+     */
 	public String[] infoAbonnement(String numeroAbo)
 	{
         String[] res = new String[10]; 
@@ -180,13 +246,18 @@ public class BDDTitre extends GestionBaseDeDonnees
         return res;
 	}
 	
-	public boolean existenceAbonnement(String numeroabo)
+	/**
+     * 	Vérifie l'existence d'un abonnement dans la base de données
+     * 	@param numeroAbo le numéro d'abonnement
+     * 	@return existance qui est vrai si l'abonnement est dans la base de donnée, faux sinon 
+     */
+	public boolean existenceAbonnement(String numeroAbo)
 	{
 		try
         {
-			String requete = "SELECT nom FROM abosexistants WHERE (numeroabo = ?)";
+			String requete = "SELECT nom FROM abosexistants WHERE (numeroAbo = ?)";
             PreparedStatement declar = this.connexion.prepareStatement(requete);
-            declar.setString(1, numeroabo);
+            declar.setString(1, numeroAbo);
 			ResultSet resSQL = declar.executeQuery();
 			return resSQL.next();
         }
@@ -197,6 +268,11 @@ public class BDDTitre extends GestionBaseDeDonnees
         return false;
 	}
 	
+	/**
+     * 	Va chercher l'ensemble des abonnements présents dans la base de données
+     * 	@return liste une liste contenant tout les numéros d'abonnement existant dans la 
+     * 	base de données
+     */
 	public ArrayList<String> listeDesAbonnements()
 	{
 		ArrayList<String> res = new ArrayList<String>();

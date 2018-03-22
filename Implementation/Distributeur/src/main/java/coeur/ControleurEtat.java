@@ -5,13 +5,18 @@ import java.sql.SQLException;
 import stockage.Composant;
 
 /**
- * Classe abstraite ControleurEtat
- * @author TheoDaix, AllanDubrulle, VictorVerhoye
- * @version 1.0
+ * 	Classe abstraite ControleurEtat (classe parent de tout les différents états dans lesquels
+ * 	nous pouvons voyager)
+ * 	@author TheoDaix, AllanDubrulle, VictorVerhoye
+ * 	@version 1.0
  */
 abstract class ControleurEtat 
 {	
+	/**
+	 * 	Constructeur de ControleurEtat
+	 */
 	protected ControleurEtat() {}
+	
 	/**
 	 *	Permet de valider les choix séléctionnés dans la fenêtre de configuration
 	 */
@@ -66,38 +71,38 @@ abstract class ControleurEtat
 	public void valider() {}
 	
 	/**
-	 * 	Permet de passer de menu vers la fenêtre de Billet
+	 * 	Permet de passer de menu vers la fenêtre de billet
 	 */
 	public void choixBillet() {}
 	
 	/**
-	 * 	Permet de passer de menu vers la fenêtre d'achat d'un Abonnement
+	 * 	Permet de passer de menu vers la fenêtre d'achat d'un abonnement
 	 */
 	public void choixAchatAbo() {}
 	
 	/**
-	 * 	Permet de passer de menu vers la fenêtre de renouvellement d'un Abonnement
+	 * 	Permet de passer de menu vers la fenêtre de renouvellement d'un abonnement
 	 */
 	public void choixRenouvAbo() {}
 	
 	/**
 	 * 	Permet de passer de menu vers la fenêtre de menu des Pass qui permet de choisir le
-	 * 	type de Pass voulu
+	 * 	type de pass voulu
 	 */
 	public void choixPass() {}
 	
 	/**
-	 * 	Permet de passer de menu des Pass vers la fenêtre de PassIllimite
+	 * 	Permet de passer de menu des Pass vers la fenêtre de pass illimité
 	 */
 	public void choixPassIllimite() {}
 
 	/**
-	 * 	Permet de passer de menu des Pass vers la fenêtre de Pass10Trajets
+	 * 	Permet de passer de menu des Pass vers la fenêtre de pass 10 trajets
 	 */
 	public void choixPass10Trajets() {}
 
 	/**
-	 * 	Permet de passer de menu des Pass vers la fenêtre de Pass10Trajets2Gares (10 trajets 
+	 * 	Permet de passer de menu des Pass vers la fenêtre de pass 10 trajets 2 gares (10 trajets 
 	 * 	entre deux gares)
 	 */
 	public void choixPass10Trajets2Gares() {}
@@ -129,20 +134,34 @@ abstract class ControleurEtat
 	/**
 	 * 	Permet de passer de la fenêtre des recherches des horaires d'itinéraires vers la 
 	 * 	fenêtre des résultats
+	 * 	@param gareDepart une gare de départ
+	 * 	@param gareArrivee une gare d'arrivée
+	 * 	@param heure l'heure de l'heure du départ
+	 * 	@param minute la minute de l'heure du départ
+	 * 	@throws SQLException (peut générer une exception lors de l'envoi de la requête) 
 	 */
-	public void valideRecherche(String gareDepart, String gareArrivee, int heure, int minute) throws SQLException {}
+	public void valideRechercheItineraire(String gareDepart, String gareArrivee, int heure, int minute) 
+			throws SQLException {}
 	
 	/**
 	 * 	Permet de passer de la fenêtre des recherches des horaires des départs vers la 
 	 * 	fenêtre des résultats
+	 * 	@param gareDepart une gare de départ
+	 * 	@param heure l'heure de l'heure du départ
+	 * 	@param minute la minute de l'heure du départ
+	 * 	@throws SQLException (peut générer une exception lors de l'envoi de la requête)
 	 */
 	public void valideRechercheGA(String gareDepart, int heure, int minute) throws SQLException {}
 	
 	/**
 	 * 	Permet de passer de la fenêtre des recherches des horaires des arrivées vers la 
 	 * 	fenêtre des résultats
+	 * 	@param gareArrivee une gare d'arrivée
+	 * 	@param heure l'heure de l'heure d'arrivée
+	 * 	@param minute la minute de l'heure d'arrivée
+	 * 	@throws SQLException (peut générer une exception lors de l'envoi de la requête) 
 	 */
-	public void valideRechercheGD(String gareDepart, int heure, int minute) throws SQLException {}
+	public void valideRechercheGD(String gareArrivee, int heure, int minute) throws SQLException {}
 	
 	/**
 	 * 	Permet de valider le numéro de l'abonnement séléctionné
@@ -151,6 +170,7 @@ abstract class ControleurEtat
 	
 	/**
 	 * 	Permet de valider le code PIN entré et de lancer la vérification
+	 * 	@param codePIN le code PIN entré par l'utilisateur
 	 */
 	public void validePIN(int codePIN) {}
 	
@@ -236,9 +256,12 @@ abstract class ControleurEtat
 	
 	/**
 	 * 	Permet d'écrire le nom de l'état
+	 * 	@return nom le nom de l'état
 	 */
 	public String toString() 
 	{
 		return this.getClass().getName();
 	}
+	
+	//regarder à ejecteCarte si utile ou pas
 }

@@ -3,12 +3,15 @@ package coeur;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
-
-import stockage.BDDTitre;
 import stockage.Composant;
 import stockage.ErreurDEncodage;
 import stockage.imprimable.TypePass;
 
+/**
+ * Classe GraphiqueACoeurImpl (permet à l'interface graphique de communiquer avec le coeur)
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
 public class GraphiqueACoeurImpl implements GraphiqueACoeur 
 {	
 	private Controleur controleur = Controleur.getInstance();
@@ -103,17 +106,17 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 		controleur.getEtatActuel().choixItineraire();
 	}
 
-	public void choixRechercheGD(String gareDepart, int heure, int minute) throws SQLException 
+	public void choixRechercheGD(String gareArrivee, int heure, int minute) throws SQLException 
 	{
-		controleur.getEtatActuel().valideRechercheGD(gareDepart, heure, minute);
+		controleur.getEtatActuel().valideRechercheGD(gareArrivee, heure, minute);
 	}
-	public void choixRechercheGA(String gareArrivee, int heure, int minute) throws SQLException 
+	public void choixRechercheGA(String gareDepart, int heure, int minute) throws SQLException 
 	{
-		controleur.getEtatActuel().valideRechercheGA(gareArrivee, heure, minute);
+		controleur.getEtatActuel().valideRechercheGA(gareDepart, heure, minute);
 	}
 	public void choixRechercheGDEtGA(String gareDepart, String gareArrivee, int heure, int minute) throws SQLException 
 	{
-		controleur.getEtatActuel().valideRecherche(gareDepart, gareArrivee, heure, minute);
+		controleur.getEtatActuel().valideRechercheItineraire(gareDepart, gareArrivee, heure, minute);
 	}
 
 	public void choixScannerCode() 
@@ -327,12 +330,9 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 		return Controleur.getInstance().getCoeurAStockage().existenceTrajet(gareDepart, gareArrivee);
 	}
 
-	public ArrayList<String> listeNumeroAbonnement() // wtf a modifier 
+	public ArrayList<String> listeNumeroAbonnement()
 	{
-		BDDTitre bTitre = new BDDTitre();
-		bTitre.connexion();
-		ArrayList<String> res = bTitre.listeDesAbonnements();
-		return res;
+		return Controleur.getInstance().getCoeurAStockage().getListeAbonnement();
 	}
 	public void apres5secondes()
 	{

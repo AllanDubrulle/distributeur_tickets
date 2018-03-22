@@ -8,12 +8,21 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+/**
+ * Classe Gestion base de données (classe parent des classes BDDTitre, BDDBanque et
+ * HoraireTrains)
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
 class GestionBaseDeDonnees {
 
 	    protected String chemin;
 	    protected Connection connexion;
 	    protected Statement requete;
-
+	    
+	    /**
+	     * Constructeur de GestionBaseDeDonnees
+	     */
 	    public GestionBaseDeDonnees()
 	    {
 	        try
@@ -24,18 +33,21 @@ class GestionBaseDeDonnees {
 	        {
 	            System.err.println(e1.getMessage());
 	        }
-	        String sep = File.separator;
-	        this.chemin = "src"+ sep + "main" + sep + "resources" + sep + "BDDDistributeur.db";
+	        String separation = File.separator;
+	        this.chemin = "src"+ separation + "main" + separation + "resources" + separation + "BDDDistributeur.db";
 	        this.connexion = null;
 	    }
-
+	    
+	    /**
+	     * 	Permet à une instance de GestionBaseDeDonnees de se connecter à la base de données
+	     *	@return connexion vrai si la connexion a pu être établie, faux sinon
+	     */
 	    public boolean connexion()
 	    {
 	        try
 	        {
 	            connexion = DriverManager.getConnection("jdbc:sqlite:"+ this.chemin);
 	            requete = connexion.createStatement();
-	            requete.setQueryTimeout(30); //pour que le temps de la requete n'excede pas 30 secondes
 	            return true;
 	        }
 	        catch(SQLException e)
@@ -44,7 +56,12 @@ class GestionBaseDeDonnees {
 	            return false;
 	        }
 	    }
-	     
+	    
+
+	    /**
+	     * 	Permet à une instance de GestionBaseDeDonnees de se déconnecter de la base de données
+	     * 	@return deconnexion vrai si la deconnexion a pu être établie, faux sinon
+	     */
 	    public boolean deconnexion()
 	    {
 	        try
@@ -61,7 +78,12 @@ class GestionBaseDeDonnees {
 	        }
 	    }
 	    
-	    public static void afficherResultat(ResultSet res) throws SQLException { //affiche les resultats d'une requete
+	    /**
+	     * 	Permet d'afficher les résultats d'une requête
+	     * 	@param res un resultat d'une requête de type SQL
+	     * 	@throws SQLException (peut être déclanchée si il y a une erreur dans le résultat)
+	     */
+	    public static void afficherResultat(ResultSet res) throws SQLException { //A SUPPRIMER
 			if (res != null)
 			{	ResultSetMetaData res2 = res.getMetaData();
 				int nbrColonnes = res2.getColumnCount();
@@ -80,7 +102,11 @@ class GestionBaseDeDonnees {
 			}
 	    }   
 	    
-	    public ResultSet resultatRequete(String requete)
+	    /**
+	     * 	Permet de retourner un résultat à partir d'une requête de type SQL
+	     * 	@param requete une requête de type SQL
+	     */
+	    public ResultSet resultatRequete(String requete) //A SUPPRIMER
 	    {
 	        try
 	        {
@@ -94,7 +120,11 @@ class GestionBaseDeDonnees {
 	        return null;
 	    }
 	    
-	    public void mettreAJour(String requete)
+	    /**
+	     * 	Permet de mettre à jour une donnée à partir d'une requête de type SQL
+	     * 	@param requete une requête de type SQL
+	     */
+	    public void mettreAJour(String requete) //A SUPPRIMER
 	    {
 	        try
 	        {

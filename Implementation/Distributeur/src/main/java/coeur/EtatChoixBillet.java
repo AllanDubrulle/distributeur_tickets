@@ -2,6 +2,12 @@ package coeur;
 
 import stockage.imprimable.Billet;
 
+/**
+ * Classe EtatChoiBillet
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
+
 class EtatChoixBillet extends EtatChoixTitre
 {	
 	private static EtatChoixBillet instance;

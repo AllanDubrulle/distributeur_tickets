@@ -1,6 +1,7 @@
 package stockage;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Date;
 
 import coeur.Commande;
@@ -33,18 +34,11 @@ public interface CoeurAStockage
 	public String[] rechercherHoraireDepart(String gareDepart, int heure, int minute) throws SQLException;
 	public String[] getListeReduction();
 	public String[] getListeType();
-	public String[] rechercherHoraireItineraire(String gareDepart, String gareArrivee, int heure, int minute) throws SQLException;
-	public String[] rechercherHoraireArrivee(String gareArrivee, int heure, int minute) throws SQLException;
 	
 	public TitreDeTransport getTitre();
 	public int getNbrTitre();
 	public void setPrix(int prix);
 	
-	public boolean depassementPrix();
-	public int getPrix();
-	public double prixAffichable();
-	public double renduAffichable();
-	public double introduitAffichable();
 	public void ajoutMonnaie(int i) throws ComposantHorsService;
 	public Rendu rendreMonnaie() throws PasAssezDeMonnaie;
 	public Rendu rendreIntroduit();
@@ -59,11 +53,19 @@ public interface CoeurAStockage
 
 
 	public boolean verifPaiementCarte(String numero, int codePIN, double montant);
+	public String[] rechercherHoraireItineraire(String gareDepart, String gareArrivee, int heure, int minute) throws SQLException;
+	public String[] rechercherHoraireArrivee(String gareArrivee, int heure, int minute) throws SQLException;
+	public boolean depassementPrix();
+	public int getPrix();
+	public double prixAffichable();
+	public double renduAffichable();
+	public double introduitAffichable();
 	public boolean existenceCarte(String numero);
 	public Carte getCarte();
 	public boolean verifCode(int codePIN);
 	public boolean verifSolde();
-	public void mauvaisPing();
+	public void mauvaisPin();
 	public boolean tropDErreur();
 	public void actualiserSolde();
+	public ArrayList<String> getListeAbonnement();
 }

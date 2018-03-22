@@ -2,7 +2,12 @@ package coeur;
 
 import java.sql.SQLException;
 
-public class EtatChoixItineraire extends EtatAnnulable 
+/**
+ * Classe EtatChoixItineraire
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
+class EtatChoixItineraire extends EtatAnnulable 
 {
 	private static EtatChoixItineraire instance;
 	public static EtatChoixItineraire getInstance() 
@@ -12,7 +17,7 @@ public class EtatChoixItineraire extends EtatAnnulable
 		return (EtatChoixItineraire) instance;
 	}
 	
-	public void valideRecherche(String gareDepart, String gareArrivee, int heure, int minute) throws SQLException
+	public void valideRechercheItineraire(String gareDepart, String gareArrivee, int heure, int minute) throws SQLException
 	{
 		String[] tab = Controleur.getInstance().getCoeurAStockage().rechercherHoraireItineraire(gareDepart, gareArrivee, heure, minute);
 		Controleur.getInstance().getCoeurAGraphique().afficherResultatsHoraires(tab);

@@ -1,5 +1,11 @@
 package coeur;
 
+/**
+ * Classe EtatAnnulable (parent de tout les états dont nous pouvons revenir en arrière)
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
+
 abstract class EtatAnnulable extends ControleurEtat 
 {	
 	

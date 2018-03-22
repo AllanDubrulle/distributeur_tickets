@@ -3,7 +3,12 @@ package coeur;
 import stockage.ComposantHorsService;
 import stockage.PlusDePapier;
 
-public class EtatImpressionRecu extends ControleurEtat
+/**
+ * Classe EtatImpressionRecu
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
+class EtatImpressionRecu extends ControleurEtat
 {
 	private static  EtatImpressionRecu instance;
 	

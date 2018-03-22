@@ -1,8 +1,13 @@
 package coeur;
 
+/**
+ * Classe EtatChoixArrivee
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
 import java.sql.SQLException;
 
-public class EtatChoixArrivees extends EtatAnnulable 
+class EtatChoixArrivees extends EtatAnnulable 
 {
 	private static EtatChoixArrivees instance;
 	public static EtatChoixArrivees getInstance() 
@@ -12,9 +17,9 @@ public class EtatChoixArrivees extends EtatAnnulable
 		return (EtatChoixArrivees) instance;
 	}
 	
-	public void valideRechercheGA(String gareArrivee, int heure, int minute) throws SQLException
+	public void valideRechercheGA(String gareDepart, int heure, int minute) throws SQLException
 	{
-		String[] tab = Controleur.getInstance().getCoeurAStockage().rechercherHoraireArrivee(gareArrivee, heure, minute);
+		String[] tab = Controleur.getInstance().getCoeurAStockage().rechercherHoraireArrivee(gareDepart, heure, minute);
 		Controleur.getInstance().getCoeurAGraphique().afficherResultatsHoraires(tab);
 	}
 	public void retour()

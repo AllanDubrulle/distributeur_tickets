@@ -3,6 +3,7 @@ package stockage;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
@@ -324,6 +325,14 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		return tab;
 	}
 	
+	public ArrayList<String> getListeAbonnement()
+	{
+		BDDTitre bTitre = new BDDTitre();
+		bTitre.connexion();
+		ArrayList<String> res = bTitre.listeDesAbonnements();
+		return res;
+	}
+	
 	public Rendu rendreMonnaie() throws PasAssezDeMonnaie
 	{
 		return monnayeur.retournerArgent(introduit-prix);
@@ -407,7 +416,7 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		return carte.verifCodePIN(codePIN);
 	}
 
-	public void mauvaisPing()
+	public void mauvaisPin()
 	{
 		essai++;
 		
