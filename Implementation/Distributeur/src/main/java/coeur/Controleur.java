@@ -31,6 +31,7 @@ class Controleur
 	
 	/**
 	 *	Permet de récuperérer l'instance unique de Controleur (Singleton Design Pattern)
+	 *	@return instance l'instance de Controleur
 	 */
 	public static Controleur getInstance()
 	{
@@ -42,8 +43,8 @@ class Controleur
 	}
 	
 	/**
-	 *	Permet de modifier les états au fur et à mesure de l'exécution : ajout à la pile
-	 *	et mise à jour de etatActuel
+	 *	Permet de modifier les états au fur et à mesure de l'exécution (ajout à la pile
+	 *	et mise à jour de etatActuel)
 	 *	@param etat un état de type ControleurEtat
 	 */
 	public void modifEtat(ControleurEtat etat) 
@@ -56,6 +57,7 @@ class Controleur
 	
 	/**
 	 *	Permet de récupérer la pile contenant les état dans lesquels nous sommes passés
+	 *	@return etatPrecedents la pile des états précédents
 	 */
 	public Stack<ControleurEtat> getEtatsPrecedents() 
 	{
@@ -64,6 +66,7 @@ class Controleur
 	
 	/**
 	 *	Permet de récupérer cette instance de CoeurAGraphiqueImpl
+	 *	@return coeurAGraphqique l'instance de coeurAGraphiqueImpl
 	 */
 	public CoeurAGraphique getCoeurAGraphique() 
 	{
@@ -72,6 +75,7 @@ class Controleur
 
 	/**
 	 *	Permet de récupérer cette instance de CoeurAStockageImpl
+	 *	@return coeurAStockage l'instance de coeurAStockageImpl
 	 */
 	public CoeurAStockage getCoeurAStockage() 
 	{
@@ -80,6 +84,7 @@ class Controleur
 
 	/**
 	 *	Permet de récupérer l'état dans lequel nous nous trouvons (etatActuel)
+	 *	@return etatActuel etat dans lequel nous nous trouvons
 	 */
 	public ControleurEtat getEtatActuel() 
 	{
@@ -88,6 +93,7 @@ class Controleur
 
 	/**
 	 *	Permet de récupérer la commande en cours (billet, abonnement, pass, ...)
+	 *	@return commande la commande en cours d'achat
 	 */
 	public Commande getCommande()
 	{
@@ -122,6 +128,7 @@ class Controleur
 	
 	/**
 	 *	Permet de récuperer le mode de paiement
+	 *	@return modePaiement le mode de paiement utilisé
 	 */
 	public ControleurEtat getModePaiement()
 	{
@@ -175,11 +182,11 @@ class Controleur
 	}
 	
 	/**
-	 *  Permet de calculer le prix d'un Pass illimité à partir d'une classe, d'une réduction,
+	 *  Permet de calculer le prix d'un pass illimité à partir d'une classe, d'une réduction,
 	 *	d'un type et un nombre de jours
 	 * 	@param classe une classe (Classe)
 	 * 	@param reduction une réduction (Reduction)
-	 * 	@param type un type d'abonement (TypeTitre)
+	 * 	@param type un type de titre (TypeTitre)
 	 * 	@param nbrJours le nombre de jour de validité
 	 * 	@return le prix du pass
 	 */
@@ -196,11 +203,11 @@ class Controleur
 	}
 
 	/**
-	 * 	Permet de calculer le prix d'un Pass 10 trajets à partir d'une classe, d'une réduction
+	 * 	Permet de calculer le prix d'un pass dix trajets à partir d'une classe, d'une réduction
 	 *	et d'un type
 	 * 	@param classe une classe (Classe)
 	 * 	@param reduction une réduction (Reduction)
-	 * 	@param type un type d'abonnement (TypeTitre)
+	 * 	@param type un type de titre (TypeTitre)
 	 * 	@return le prix du pass
 	 */
 	public int calculerPrix(Classe classe, Reduction reduction, TypeTitre type)
@@ -214,7 +221,7 @@ class Controleur
 		return  res;
 	}
 	/**
-	 * 	Permet de calculer le prix d'un Pass 10 trajets entre deux gares à partir d'une gare
+	 * 	Permet de calculer le prix d'un pass dix trajets entre deux gares à partir d'une gare
 	 *	de départ, d'une gare d'arrivée, d'une classe, d'une réduction et d'un type
 	 * 	@param gareDepart une gare de départ
 	 * 	@param gareArrivee une gare d'arrivée
@@ -241,7 +248,7 @@ class Controleur
 	 *	(le prix de base du titre, la réduction, le type et la classe)
 	 * 	@param prix un prix à ajuster (en cents)
 	 * 	@param reduc une réduction (Reduction)
-	 * 	@param type un type (TypeTitre)
+	 * 	@param type un type de titre (TypeTitre)
 	 * 	@param classe une classe (Classe)
 	 * 	@return le prix du titre calculé en fonction des données introduites
 	 */

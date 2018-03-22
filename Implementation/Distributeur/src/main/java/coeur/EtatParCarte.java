@@ -16,7 +16,7 @@ class EtatParCarte extends EtatAnnulable
 		{
 			Controleur.getInstance().getCoeurAStockage().actualiserSolde();
 			Controleur.getInstance().getCoeurAGraphique().afficherValidationPaiement();
-			ejecteCarte();
+			Controleur.getInstance().getCoeurAGraphique().afficherEjectionCarte();
 			Controleur.getInstance().modifEtat(EtatImpressionTitre.getInstance());
 		}
 		else
@@ -24,11 +24,6 @@ class EtatParCarte extends EtatAnnulable
 			Controleur.getInstance().modifEtat(EtatAttentePIN.getInstance());
 		}
 		
-	}
-
-	public void ejecteCarte()
-	{
-		Controleur.getInstance().getCoeurAGraphique().afficherEjectionCarte();
 	}
 	
 	public void entree() 

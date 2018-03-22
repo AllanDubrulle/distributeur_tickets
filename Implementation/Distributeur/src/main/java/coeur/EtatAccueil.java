@@ -1,5 +1,10 @@
 package coeur;
 
+/**
+ * Classe EtatAcceuil
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
 class EtatAccueil extends ControleurEtat
 {
 	private static EtatAccueil instance;

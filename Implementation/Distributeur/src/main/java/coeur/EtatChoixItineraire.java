@@ -12,7 +12,7 @@ public class EtatChoixItineraire extends EtatAnnulable
 		return (EtatChoixItineraire) instance;
 	}
 	
-	public void valideRecherche(String gareDepart, String gareArrivee, int heure, int minute) throws SQLException
+	public void valideRechercheItineraire(String gareDepart, String gareArrivee, int heure, int minute) throws SQLException
 	{
 		String[] tab = Controleur.getInstance().getCoeurAStockage().rechercherHoraireItineraire(gareDepart, gareArrivee, heure, minute);
 		Controleur.getInstance().getCoeurAGraphique().afficherResultatsHoraires(tab);

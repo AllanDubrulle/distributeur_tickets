@@ -1,6 +1,7 @@
 package stockage;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Date;
 import stockage.imprimable.Classe;
 import stockage.imprimable.Reduction;
@@ -53,4 +54,5 @@ public interface CoeurAStockage
 	public void mauvaisPing();
 	public boolean tropDErreur();
 	public void actualiserSolde();
+	public ArrayList<String> getListeAbonnement();
 }
