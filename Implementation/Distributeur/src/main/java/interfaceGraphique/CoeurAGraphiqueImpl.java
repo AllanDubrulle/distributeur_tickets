@@ -400,9 +400,23 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	}
 
 	
-	public void actualiserComposant(Composant composant)
+	public void actualiserComposant(Composant composant,boolean enMarche)
 	{
-		// TODO Auto-generated method stub
-		//similaire a maj composant 
+		System.out.println(composant);
+		switch(composant)
+		{
+		case FENTEBILLET:
+			FenetreSimulation.getInstance().actualiserFenteBillet(enMarche);
+			break;
+		case FENTEPIECE:
+			FenetreSimulation.getInstance().actualiserFentePiece(enMarche);
+			break;
+		case LECTEURCARTE:
+			FenetreSimulation.getInstance().actualiserLecteurCarte(enMarche);
+			break;
+		default:
+			break;
+		
+		}
 	}
 }

@@ -1,5 +1,7 @@
 package coeur;
 
+import stockage.imprimable.Pass;
+
 /**
  * Classe EtatChoixPassIllimite
  * @author TheoDaix, AllanDubrulle, VictorVerhoye
@@ -20,5 +22,11 @@ class EtatChoixPassIllimite extends EtatChoixTitre
 	{
 		Controleur.getInstance().setCommande(Commande.PASSILLIMITE);
 		super.entree();
+	}
+	
+	public void valider()
+	{
+		Controleur.getInstance().calculerPrixIllimite((Pass) Controleur.getInstance().getCoeurAStockage().getTitre());
+		super.valider();
 	}
 }

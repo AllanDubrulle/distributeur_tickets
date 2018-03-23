@@ -307,17 +307,6 @@ public interface GraphiqueACoeur
 	public void infoAboRen(int validite, String numAbo) throws ErreurDEncodage;
 	
 	/**
-	 * 	Communique le fait que l'utilisateur active la panne "Vider caisse"
-	 */
-	public void viderCaisse();
-	
-	/**
-	 * 	Communique le fait que l'utilisateur active la panne d'un composant en particulier
-	 * 	@param composant un composant
-	 */
-	public void TombeEnPanne(Composant composant); // pas sur que ce soit la solution 
-	
-	/**
 	 * 	Retourne si une gare existe ou non
 	 * 	@param gare une gare
 	 * 	@return existance vrai si la gare existe, faux sinon
@@ -394,5 +383,19 @@ public interface GraphiqueACoeur
 	public void apres5secondesOk();
 
 	public void choixImprimerHoraire();
-	
+
+	public void bloquerCarte();
+
+	public void rechargerCaisse();
+
+	public void rechargerEncreEtPapier();
+
+	public void viderEncreEtPapier();
+
+	/**
+	 * 	Communique le fait que l'utilisateur active la panne "Vider caisse"
+	 */
+	public void viderCaisse();
+
+	public void actualiserPanne(Composant lecteurcarte);
 }

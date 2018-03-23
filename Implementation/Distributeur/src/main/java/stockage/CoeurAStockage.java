@@ -43,12 +43,10 @@ public interface CoeurAStockage
 	public Rendu rendreMonnaie() throws PasAssezDeMonnaie;
 	public Rendu rendreIntroduit();
 	public void reinitialisation();
-	public void viderCaisse();
+	
 	
 	public boolean estEnMarche(Composant composant);
 	public void impression() throws ComposantHorsService, PlusDePapier;
-	public void tombeEnPanne(Composant composant);
-	public void composantRepare(Composant composant);
 	
 	public void miseAJourValiditeAbonnement();
 	public void insertionAbonnement();
@@ -68,4 +66,10 @@ public interface CoeurAStockage
 	public boolean tropDErreur();
 	public void actualiserSolde();
 	public ArrayList<String> getListeAbonnement();
+	
+	public void viderCaisse();
+	public void rechargerCaisse();
+	public void rechargerEncreEtPapier();
+	public void viderEncreEtPapier();
+	public void actualiserPanne(Composant composant);
 }

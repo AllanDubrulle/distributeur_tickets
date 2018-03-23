@@ -47,5 +47,5 @@ public interface CoeurAGraphique
 	public void afficherRecu(double prix , double introduit , double rendu, String modePaiement);
 	public void afficherRendu(Rendu monnaieRendu);
 	public void afficherTitre(Commande commande, TitreDeTransport titre, double prix);
-	public void actualiserComposant(Composant composant);
+	public void actualiserComposant(Composant composant,boolean enMarche);
 }

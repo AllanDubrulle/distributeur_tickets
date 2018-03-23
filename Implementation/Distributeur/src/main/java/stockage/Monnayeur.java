@@ -156,4 +156,16 @@ class Monnayeur
 			StockBillet.put(billet, 0);
 		}
 	}
+
+	public void rechargerCaisse()
+	{
+		for (Pieces piece : Pieces.values())
+		{	
+			StockPiece.put(piece, 10);
+		}
+		for(BilletMonnaie billet : BilletMonnaie.values())
+		{
+			StockBillet.put(billet, 10);
+		}
+	}
 }

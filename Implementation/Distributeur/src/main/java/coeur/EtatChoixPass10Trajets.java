@@ -1,5 +1,7 @@
 package coeur;
 
+import stockage.imprimable.Pass;
+
 /**
  * Classe EtatChoixPass10Trajets
  * @author TheoDaix, AllanDubrulle, VictorVerhoye
@@ -19,5 +21,10 @@ class EtatChoixPass10Trajets extends EtatChoixTitre
 	{
 		Controleur.getInstance().setCommande(Commande.PASS10TRAJETS);
 		super.entree();
+	}
+	public void valider()
+	{
+		Controleur.getInstance().calculerPrixPass10trajet((Pass) Controleur.getInstance().getCoeurAStockage().getTitre());
+		super.valider();
 	}
 }

@@ -250,10 +250,11 @@ abstract class ControleurEtat
 	 * 	Permet de mettre en panne un composant (lecteur, imprimante, ...)
 	 * 	@param composant un Composant à mettre en panne
 	 */
-	public void tombeEnPanne(Composant composant)
+	public void actualiserPanne(Composant composant)
 	{
-		Controleur.getInstance().getCoeurAStockage().tombeEnPanne(composant);
-		Controleur.getInstance().getCoeurAGraphique().actualiserComposant(composant);
+		Controleur.getInstance().getCoeurAStockage().actualiserPanne(composant);
+		Controleur.getInstance().getCoeurAGraphique().actualiserComposant(composant,
+				Controleur.getInstance().getCoeurAStockage().estEnMarche(composant));
 	}
 	
 	/**
@@ -263,6 +264,27 @@ abstract class ControleurEtat
 	public String toString() 
 	{
 		return this.getClass().getName();
+	}
+
+	public void rechargerCaisse()
+	{
+		Controleur.getInstance().getCoeurAStockage().rechargerCaisse();
+	}
+	
+	public void viderCaisse()
+	{
+		Controleur.getInstance().getCoeurAStockage().viderCaisse();
+	}
+
+	public void rechargerEncreEtPapier()
+	{
+		Controleur.getInstance().getCoeurAStockage().rechargerEncreEtPapier();
+		
+	}
+
+	public void viderEncreEtPapier()
+	{
+		Controleur.getInstance().getCoeurAStockage().viderEncreEtPapier();
 	}
 	
 	//regarder à ejecteCarte si utile ou pas

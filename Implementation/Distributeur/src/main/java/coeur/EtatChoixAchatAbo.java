@@ -1,5 +1,7 @@
 package coeur;
 
+import stockage.imprimable.Abonnement;
+
 /**
  * Classe EtatChoixAchatAbo
  * @author TheoDaix, AllanDubrulle, VictorVerhoye
@@ -20,5 +22,10 @@ class EtatChoixAchatAbo extends EtatChoixTitre
 	{
 		Controleur.getInstance().setCommande(Commande.ACHATABO);
 		super.entree();
+	}
+	public void valider()
+	{
+		Controleur.getInstance().calculerPrix((Abonnement) Controleur.getInstance().getCoeurAStockage().getTitre());
+		super.valider();
 	}
 }
