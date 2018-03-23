@@ -7,7 +7,7 @@ package stockage;
  */
 class Imprimante 
 {
-	private int nbrImpressions = 250;
+	private int nbrImpressions = 50;
 	private CoeurAStockage cAStock;
 	
 	/**
@@ -54,6 +54,7 @@ class Imprimante
 			throw new PlusDePapier("Plus de papier en réserve");
 		}
 		setNbrImpressions(getNbrImpressions()-1);
+		System.out.println(nbrImpressions);
 	}
 
 
