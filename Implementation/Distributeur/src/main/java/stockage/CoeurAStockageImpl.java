@@ -375,7 +375,6 @@ public class CoeurAStockageImpl implements CoeurAStockage
 
 	public boolean estEnMarche(Composant composant)
 	{
-		
 		return composantEnMarche.get(composant);
 	}
 
@@ -384,15 +383,9 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		imprimante.imprimer();
 	}
 
-	
-	public void tombeEnPanne(Composant composant)
+	public void actualiserPanne(Composant composant)
 	{
-		composantEnMarche.put(composant, false);
-	}
-
-	public void composantRepare(Composant composant)
-	{
-		composantEnMarche.put(composant, true);
+		composantEnMarche.put(composant,!composantEnMarche.get(composant));
 	}
 
 	public boolean depassementPrix()
@@ -527,5 +520,23 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		double res = db.calculerPrixPass(typePass);
 		db.deconnexion();
 		return res;
+	}
+	
+	public void rechargerCaisse()
+	{
+		monnayeur.rechargerCaisse();
+		
+	}
+	public void rechargerEncreEtPapier()
+	{
+		imprimante.setNbrImpressions(50);
+		
+	}
+
+	@Override
+	public void viderEncreEtPapier()
+	{
+		imprimante.setNbrImpressions(0);
+		
 	}
 }

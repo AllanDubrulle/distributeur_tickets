@@ -236,7 +236,6 @@ class Controleur
 		res*=100;
 		res -= res * (double)reduc.valeur()/100;	
 		res -= res * (double)type.valeur()/100;	
-		System.out.println(res);
 		res *= (3-classe.valeur());	
 		return (int) res;
 	}

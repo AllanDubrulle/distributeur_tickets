@@ -7,7 +7,7 @@ package stockage;
  */
 class Imprimante 
 {
-	private int nbrImpressions = 250;
+	private int nbrImpressions = 50;
 	private CoeurAStockage cAStock;
 	
 	/**

@@ -1,6 +1,5 @@
 package interfaceGraphique;
 
-import coeur.GraphiqueACoeurImpl;
 import interfaceGraphique.Clavier;
 import interfaceGraphique.FenteBillet;
 import interfaceGraphique.FentePiece;
@@ -12,6 +11,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
+import stockage.Composant;
 import javafx.event.EventHandler;
 
 class FenetreSimulation extends BorderPane 
@@ -98,7 +98,7 @@ class FenetreSimulation extends BorderPane
         checkMenuItem.setText("Lecteur de cartes");
         checkMenuItem.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
-            	mAJLecteur();
+            	fenetre.graphAC.actualiserPanne(Composant.LECTEURCARTE);
             }
         });
 
@@ -107,7 +107,7 @@ class FenetreSimulation extends BorderPane
         checkMenuItem0.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
             	
-            	mAJFenteABillets();
+            	fenetre.graphAC.actualiserPanne(Composant.FENTEBILLET);
             }
         });
 
@@ -115,7 +115,7 @@ class FenetreSimulation extends BorderPane
         checkMenuItem1.setText("Fente à  pièces");
         checkMenuItem1.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
-            	mAJFenteAPieces();
+            	fenetre.graphAC.actualiserPanne(Composant.FENTEPIECE);
             }
         });
 
@@ -123,7 +123,7 @@ class FenetreSimulation extends BorderPane
         checkMenuItem2.setText("Scanneur de codes");
         checkMenuItem2.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
-            	mAJScanneur();
+            	fenetre.graphAC.actualiserPanne(Composant.SCANNEUR);
             }
         });
 
@@ -131,7 +131,7 @@ class FenetreSimulation extends BorderPane
         checkMenuItem3.setText("Bloquer la carte");
         checkMenuItem3.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
-            	mAJCarte();
+            	fenetre.graphAC.bloquerCarte();
             }
         });
 
@@ -139,7 +139,7 @@ class FenetreSimulation extends BorderPane
         checkMenuItem4.setText("Imprimante");
         checkMenuItem4.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
-            	mAJImprimante();
+            	fenetre.graphAC.actualiserPanne(Composant.IMPRIMANTE);
             }
         });
 
@@ -150,7 +150,7 @@ class FenetreSimulation extends BorderPane
         menuItem.setText("Recharger caisse");
         menuItem.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
-            	rechargerCaisse();
+            	fenetre.graphAC.rechargerCaisse();
             }
         });
 
@@ -158,7 +158,7 @@ class FenetreSimulation extends BorderPane
         menuItem0.setText("Vider caisse");
         menuItem0.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
-            	viderCaisse();
+            	fenetre.graphAC.viderCaisse();
             }
         });
 
@@ -170,7 +170,7 @@ class FenetreSimulation extends BorderPane
         menuItem1.setText("Recharger encre et papier");
         menuItem1.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
-            	rechargerEncreEtPapier();
+            	fenetre.graphAC.rechargerEncreEtPapier();
             }
         });
        
@@ -179,7 +179,7 @@ class FenetreSimulation extends BorderPane
         menuItem2.setText("Vider encre et papier");
         menuItem2.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
-            	viderEncreEtPapier();
+            	fenetre.graphAC.viderEncreEtPapier();
             }
         });
 
@@ -378,14 +378,6 @@ class FenetreSimulation extends BorderPane
         getChildren().setAll(pane, claRe, fentes, scanLect, fenetre); 		
     }
     
-    public void mAJLecteur()
-    {
-    	if(checkMenuItem.isSelected())
-    		mettreEnPanneLecteur();
-    	
-    	if(!checkMenuItem.isSelected()) 
-    		remiseEnServiceLecteur();
-    }
     
     public void mAJScanneur()
     {
@@ -396,23 +388,6 @@ class FenetreSimulation extends BorderPane
     		remiseEnServiceScanneur();
     }
     
-    public void mAJFenteAPieces()
-    {
-    	if(checkMenuItem1.isSelected())
-    		mettreEnPanneFentePiece();
-
-    	if(!checkMenuItem1.isSelected())
-    		remiseEnServiceFentePiece();
-    }
-    
-    public void mAJFenteABillets()
-    {
-    	if(checkMenuItem0.isSelected())
-    		mettreEnPanneFenteBillet();
-    	
-    	if(!checkMenuItem0.isSelected())
-    		remiseEnServiceFenteBillet();
-    }
     
     public void mAJCarte()
     {
@@ -432,43 +407,9 @@ class FenetreSimulation extends BorderPane
     		remiseEnServiceImprimante();
     }
     
-    public void rechargerCaisse()
-    {
-    	//recharger caisse
-    }
+    
 
-    public void viderCaisse()
-    {
-    	GraphiqueACoeurImpl.getInstance().viderCaisse();
-    }
     
-    public void mettreEnPanneFentePiece()
-    {
-    	for (int i = 0; i < 8; i++)
-    		fentePiece.getButton(i).setDisable(true);
-    	getChildren().setAll(pane, claRe, fentes, scanLect, fenetre);
-    }
-    
-    public void remiseEnServiceFentePiece()
-    {
-    	for (int i = 0; i < 8; i++)
-    		fentePiece.getButton(i).setDisable(false);
-    	getChildren().setAll(pane, claRe, fentes, scanLect, fenetre);
-    }
-    
-    public void mettreEnPanneFenteBillet()
-    {
-    	for (int i = 0; i < 4; i++)
-			fenteBillet.getButton(i).setDisable(true);
-    	getChildren().setAll(pane, claRe, fentes, scanLect, fenetre);
-    }
-    
-    public void remiseEnServiceFenteBillet()
-    {
-    	for (int i = 0; i < 4; i++)
-			fenteBillet.getButton(i).setDisable(false);
-    	getChildren().setAll(pane, claRe, fentes, scanLect, fenetre);
-    }
     
     public void bloquerCarte()
     {
@@ -484,21 +425,6 @@ class FenetreSimulation extends BorderPane
         getChildren().setAll(pane, claRe, fentes, scanLect, fenetre);
     }
     
-    public void mettreEnPanneLecteur()
-    {
-    	for (int i = 0; i < 13; i++)
-			lecteur.getBouton(i).setDisable(true);
-		lecteur.getMDP().setDisable(true);
-        getChildren().setAll(pane, claRe, fentes, scanLect, fenetre);
-    }
-    
-    public void remiseEnServiceLecteur()
-    {
-    	for (int i = 0; i < 13; i++)
-			lecteur.getBouton(i).setDisable(false);
-		lecteur.getMDP().setDisable(false);
-        getChildren().setAll(pane, claRe, fentes, scanLect, fenetre);
-    }
     
     public void mettreEnPanneScanneur()				//je ne pense pas qu'il les faille ici mais
     {														//sans savoir, je les ai mises
@@ -520,16 +446,6 @@ class FenetreSimulation extends BorderPane
     	//remise en service imprimante
     }
     
-    public void viderEncreEtPapier()
-    {
-    	//vider encre et papier
-    }
-    
-    public void rechargerEncreEtPapier()
-    {
-    	//recharger encre et papier
-    }
-    
     public Ecran getEcran()
     {
     	return fenetre;
@@ -548,4 +464,61 @@ class FenetreSimulation extends BorderPane
     {
     	return lecteur;
     }
+
+    public void actualiserFenteBillet(boolean enMarche)
+    {
+		System.out.println(enMarche);
+    	if(enMarche)
+    	{
+        	for (int i = 0; i < 4; i++)
+    			fenteBillet.getButton(i).setDisable(false);
+        	getChildren().setAll(pane, claRe, fentes, scanLect, fenetre);
+    	}
+    	else
+    	{
+        	for (int i = 0; i < 4; i++)
+    			fenteBillet.getButton(i).setDisable(true);
+        	getChildren().setAll(pane, claRe, fentes, scanLect, fenetre);
+    	}
+    }
+    
+	public void actualiserFentePiece(boolean enMarche)
+	{
+		System.out.println(enMarche);
+		if(enMarche)
+	    {
+	    	for (int i = 0; i < 8; i++)
+	    		fentePiece.getButton(i).setDisable(false);
+	    	getChildren().setAll(pane, claRe, fentes, scanLect, fenetre);
+	    }
+	    
+	   else
+	    {
+	    	for (int i = 0; i < 8; i++)
+	    		fentePiece.getButton(i).setDisable(true);
+	    	getChildren().setAll(pane, claRe, fentes, scanLect, fenetre);
+	    }
+		
+	}
+
+	public void actualiserLecteurCarte(boolean enMarche)
+	{
+		if(enMarche)
+	    {
+	    	for (int i = 0; i < 13; i++)
+				lecteur.getBouton(i).setDisable(false);
+			lecteur.getMDP().setDisable(false);
+	        getChildren().setAll(pane, claRe, fentes, scanLect, fenetre);
+	    }
+	    
+		else
+	    {
+	    	for (int i = 0; i < 13; i++)
+				lecteur.getBouton(i).setDisable(true);
+			lecteur.getMDP().setDisable(true);
+	        getChildren().setAll(pane, claRe, fentes, scanLect, fenetre);
+	    }
+		
+	}
+
 }

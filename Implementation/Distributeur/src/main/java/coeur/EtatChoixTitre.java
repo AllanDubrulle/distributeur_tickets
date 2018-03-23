@@ -11,6 +11,7 @@ abstract class EtatChoixTitre extends EtatAnnulable
 	{
 		Controleur.getInstance().modifEtat(EtatPaiement.getInstance());
 	}
+	
 	public void valider() 
 	{
 		Controleur.getInstance().getCoeurAGraphique().afficherRecapCommande(Controleur.getInstance().getCommande(),

@@ -313,16 +313,10 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 	{
 		return Controleur.getInstance().getCoeurAStockage().getListeType();
 	}
-
-	public void viderCaisse()
-	{
-		Controleur.getInstance().getCoeurAStockage().viderCaisse();		
-	}
-
 	
-	public void TombeEnPanne(Composant composant)
+	public void actualiserPanne(Composant composant)
 	{
-		Controleur.getInstance().getEtatActuel().tombeEnPanne(composant);
+		Controleur.getInstance().getEtatActuel().actualiserPanne(composant);
 	}
 	
 	public boolean existanceGare(String gare) 
@@ -352,5 +346,34 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 	public void apres5secondesOk()
 	{
 		controleur.getEtatActuel().apres5secOk();
+	}
+
+	@Override
+	public void bloquerCarte()
+	{
+		// TODO Auto-generated method stub
+	}
+
+	public void rechargerCaisse()
+	{
+		Controleur.getInstance().getEtatActuel().rechargerCaisse();
+		
+	}
+
+
+	public void rechargerEncreEtPapier()
+	{
+		Controleur.getInstance().getEtatActuel().rechargerEncreEtPapier();
+		
+	}
+
+	public void viderEncreEtPapier()
+	{
+		Controleur.getInstance().getEtatActuel().viderEncreEtPapier();
+	}
+	
+	public void viderCaisse()
+	{
+		Controleur.getInstance().getEtatActuel().viderCaisse();		
 	}
 }
