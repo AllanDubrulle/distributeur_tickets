@@ -25,6 +25,16 @@ class EtatImpressionTitre extends EtatAnnulable
 	{
 		try
 		{
+			Commande commande = Controleur.getInstance().getCommande();
+			switch(commande)
+			{
+			case ACHATABO:
+				Controleur.getInstance().getCoeurAStockage().insertionAbonnement();
+			case RENOUVELLEMENTABO:
+				Controleur.getInstance().getCoeurAStockage().miseAJourValiditeAbonnement();
+			default:
+				break;
+			}
 			Controleur.getInstance().getCoeurAStockage().impression();
 			Controleur.getInstance().getCoeurAGraphique().afficherImpression();
 		}

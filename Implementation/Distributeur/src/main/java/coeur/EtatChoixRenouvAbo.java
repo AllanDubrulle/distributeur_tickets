@@ -18,7 +18,7 @@ class EtatChoixRenouvAbo extends EtatChoixTitre
 	
 	public void entree() 
 	{
-		Controleur.getInstance().setCommande(Commande.REVOUVELLEMENTABO);
+		Controleur.getInstance().setCommande(Commande.RENOUVELLEMENTABO);
 		super.entree();
 	}
 	

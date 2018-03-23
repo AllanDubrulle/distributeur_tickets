@@ -50,9 +50,9 @@ public interface CoeurAStockage
 	public void tombeEnPanne(Composant composant);
 	public void composantRepare(Composant composant);
 	
+	public void miseAJourValiditeAbonnement();
+	public void insertionAbonnement();
 
-
-	public boolean verifPaiementCarte(String numero, int codePIN, double montant);
 	public String[] rechercherHoraireItineraire(String gareDepart, String gareArrivee, int heure, int minute) throws SQLException;
 	public String[] rechercherHoraireArrivee(String gareArrivee, int heure, int minute) throws SQLException;
 	public boolean depassementPrix();

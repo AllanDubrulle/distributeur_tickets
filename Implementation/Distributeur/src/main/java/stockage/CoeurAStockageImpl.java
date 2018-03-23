@@ -51,6 +51,27 @@ public class CoeurAStockageImpl implements CoeurAStockage
 	{
 		this.prix = prix;
 	}
+	
+	public void insertionAbonnement()
+	{	
+		Abonnement abo = (Abonnement) achat;
+		String annee = Integer.toString(abo.getDateExp().getYear());
+		String mois = Integer.toString(abo.getDateExp().getMonth());
+		String jour = Integer.toString(abo.getDateExp().getDay());
+		BDDTitre bTitre = new BDDTitre();
+		bTitre.connexion();
+		bTitre.ajouterAbonnement(abo.getNum(), abo.getNom(), abo.getRegNat(), abo.getGareDepart(), abo.getGareArrivee(), annee, mois, jour,abo.getType().toString(), abo.getReduction().toString(), Integer.toString(abo.getClasse().valeur()));
+		bTitre.deconnexion();
+	}
+	
+	public void miseAJourValiditeAbonnement()
+	{
+		Abonnement abo = (Abonnement) achat;
+		BDDTitre bTitre = new BDDTitre();
+		bTitre.connexion();
+		bTitre.actualiserDateAbo(Integer.toString(abo.getNum()), abo.getValidite());
+		bTitre.deconnexion();
+	}
 
 	public void creerCarte(String id) 
 	{
@@ -122,16 +143,12 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		LocalDate dateExpiration = dateValidite.plusMonths(validite);
 		Date dateExp = java.sql.Date.valueOf(dateExpiration);
 		Date dateValid = java.sql.Date.valueOf(dateValidite);
-		String annee = String.valueOf(dateExpiration.getYear());
-		String mois = String.valueOf(dateExpiration.getMonthValue());
-		String jour = String.valueOf(dateExpiration.getDayOfMonth());
 		Reduction reduc = conversionReduction(reduction);
 		Classe classeAbo = conversionClasse(classe);
 		TypeTitre typeAbo = conversionType(type);
 		BDDTitre bTitre = new BDDTitre();
 		bTitre.connexion();
 		int num = bTitre.numeroAbonnementSuivant();
-		bTitre.ajouterAbonnement(num, nom, registreNational, gareDepart, gareArrivee, annee, mois, jour, type, reduction, Integer.toString(classe));
 		bTitre.deconnexion();
 		setNbrTitre(1);
 		setAchat(new Abonnement(num, dateValid, dateExp, gareDepart, gareArrivee,  classeAbo, reduc, typeAbo, nom, registreNational));	
@@ -165,23 +182,6 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		TypePass typePass = conversionTypePass(typePassStr);
 		setNbrTitre(1);
 		setAchat(new Pass(nom, nbrJours, classePass, typeTitre, reduc, typePass));
-	}
-	
-	public boolean verifPaiementCarte(String numero, int codePIN, double montant)
-	{
-		BDDBanque bBanque = new BDDBanque();
-		bBanque.connexion();
-		boolean res;
-		if (montant >= 5)
-		{
-			res = bBanque.verifPaiementPlusGrandQue5(numero, codePIN, montant);
-		}
-		else
-		{
-			res = bBanque.verifPaiementPlusPetitQue5(numero, montant);
-		}
-		bBanque.deconnexion();
-		return res;
 	}
 	
 	public void creerPass10Trajets(String nom, int classe, String reduction, String type, String typePassStr) throws ErreurDEncodage

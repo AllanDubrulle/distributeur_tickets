@@ -229,7 +229,7 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 			stage5.setTitle("Pass");
 			stage5.show();
 			break;
-		case REVOUVELLEMENTABO:
+		case RENOUVELLEMENTABO:
 			Abonnement abonnementRen = (Abonnement) titre;
 			StackPane root6 = new StackPane();
 			AfficherAbo afficheAboRen = new AfficherAbo(abonnementRen.getNum(), abonnementRen.getNom(), abonnementRen.getClasse().valeur(), abonnementRen.getGareDepart(), abonnementRen.getGareArrivee(), abonnementRen.getDateValidite(), abonnementRen.getDateExp(), abonnementRen.getReduction().toString(), abonnementRen.getType().toString(), prix );
@@ -332,7 +332,7 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 						pass3.getType().toString(), pass3.getReduction().toString(), pass3.getNbrJours(), prix , 
 						FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 				break;
-			case REVOUVELLEMENTABO:
+			case RENOUVELLEMENTABO:
 				Abonnement abonnementRen = (Abonnement) titre;
 				FenetreSimulation.getInstance().afficher(new FRecapAboRenouveler(Integer.toString(abonnementRen.getNum()), abonnementRen.getNom(), abonnementRen.getRegNat(), 
 						abonnementRen.getGareDepart(), abonnementRen.getGareArrivee(), abonnementRen.getValidite(), 	
@@ -365,7 +365,7 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 				this.fenPassIllimite=new FPassIllimite(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg());
 				FenetreSimulation.getInstance().afficher(fenPassIllimite);
 				break;
-			case REVOUVELLEMENTABO:
+			case RENOUVELLEMENTABO:
 				this.fenAboRenouv = new FAboRenouveler(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg());
 				FenetreSimulation.getInstance().afficher(fenAboRenouv);
 				break;

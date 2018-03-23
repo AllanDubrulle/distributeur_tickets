@@ -20,41 +20,6 @@ class BDDBanque extends GestionBaseDeDonnees
     }
 	
 	/**
-     * 	Vérification du paiement si le prix à payer est inférieur à 5 euros
-     * 	Vérifie dans la base de données si le solde sur une certaine carte bancaire est 
-     * 	supérieure au prix de sa commande dans le distributeur 
-     * 	Si la carte n'existe pas, la méthode retourne faux
-     * 	@param numero un numéro de carte
-     * 	@param montant un montant
-     * 	@return verification qui retourne si le solde correspondant au numéro de la carte 
-     * 	est supérieur ou égal au montant. Si la carte n'existe pas, la méthode retourne faux
-     */
-	public boolean verifPaiementPlusPetitQue5(String numero, double montant)
-	{
-		try
-        {
-			String requete = "SELECT SOLDE FROM CARTE WHERE (NUMERO = ?)";
-            PreparedStatement declar = this.connexion.prepareStatement(requete);
-            declar.setString(1, numero);
-			ResultSet res = declar.executeQuery();
-			boolean ok = res.next();
-			if (ok && res.getDouble(1) >= montant)
-			{
-        		return true;
-			}
-			else
-			{
-				return false;
-			}
-        }
-        catch (SQLException e)
-        {
-            e.printStackTrace();
-        }
-        return false;
-	}
-	
-	/**
      * 	Vérifie l'existence d'une certaine carte bancaire dans la base de données
      * 	@param numero le numero de carte
      * 	@return carte retourne si la carte est présente dans la base de données
@@ -107,43 +72,6 @@ class BDDBanque extends GestionBaseDeDonnees
             e.printStackTrace();
         }
         return res;
-	}
-	
-	/**
-	 * 	Vérification du paiement si le prix à payer est supérieur à 5 euros
-	 * 	Vérifie dans la base de données si le solde sur une certaine carte bancaire est 
-	 * 	supérieure au prix de sa commande dans le distributeur et si le code PIN inséré 
-	 * 	est correct
-	 * 	@param numero un numéro de carte bancaire
-	 * 	@param PIN un code PIN
-	 * 	@param montant un montant à payer
-	 * 	@return verification qui retourne si le solde correspondant au numéro de la carte 
-     * 	est supérieur ou égal au montant. Si la carte n'existe pas, la méthode retourne faux
-	 */
-	public boolean verifPaiementPlusGrandQue5(String numero, int PIN, double montant)
-	{
-		try
-        {
-			String requete = "SELECT SOLDE FROM CARTE WHERE (NUMERO = ? and CODE = ?)";
-            PreparedStatement declar = this.connexion.prepareStatement(requete);
-            declar.setString(1, numero);
-			declar.setInt(2, PIN);
-			ResultSet res = declar.executeQuery();
-			boolean ok = res.next();
-			if (ok && res.getDouble(1) >= montant)
-			{
-				return true;
-			}
-			else
-			{
-				return false;
-			}
-        }
-        catch (SQLException e)
-        {
-            e.printStackTrace();
-        }
-        return false;
 	}
 	
 	/**
