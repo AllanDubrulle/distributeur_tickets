@@ -434,7 +434,7 @@ class FenetreSimulation extends BorderPane
     
     public void rechargerCaisse()
     {
-    	
+    	//recharger caisse
     }
 
     public void viderCaisse()
