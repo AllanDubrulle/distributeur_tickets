@@ -23,6 +23,7 @@ class FenetreSimulation extends BorderPane
     private Ecran fenetre;
     private CheckMenuItem checkMenuItem, checkMenuItem0, checkMenuItem1, checkMenuItem2, checkMenuItem3, checkMenuItem4, checkMenuItem5; 
     private RadioMenuItem checkMenuItem6, checkMenuItem7, checkMenuItem8, checkMenuItem9, checkMenuItem10, checkMenuItem11;
+    private MenuItem menuItem, menuItem0, menuItem1, menuItem2;
     
     private static FenetreSimulation instance;
     
@@ -57,11 +58,11 @@ class FenetreSimulation extends BorderPane
         checkMenuItem3 = new CheckMenuItem();
         checkMenuItem4 = new CheckMenuItem();
         Menu menu0 = new Menu();
-        MenuItem menuItem = new MenuItem();
-        MenuItem menuItem0 = new MenuItem();
+        menuItem = new MenuItem();
+        menuItem0 = new MenuItem();
         Menu menu1 = new Menu();
-        MenuItem menuItem1 = new MenuItem();
-        MenuItem menuItem2 = new MenuItem();
+        menuItem1 = new MenuItem();
+        menuItem2 = new MenuItem();
         Menu menu2 = new Menu();
         checkMenuItem5 = new CheckMenuItem();
         Menu menu3 = new Menu();
@@ -97,7 +98,7 @@ class FenetreSimulation extends BorderPane
         checkMenuItem.setText("Lecteur de cartes");
         checkMenuItem.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
-            	mAJComposants();
+            	mAJLecteur();
             }
         });
 
@@ -106,7 +107,7 @@ class FenetreSimulation extends BorderPane
         checkMenuItem0.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
             	
-            	mAJComposants();
+            	mAJFenteABillets();
             }
         });
 
@@ -114,30 +115,50 @@ class FenetreSimulation extends BorderPane
         checkMenuItem1.setText("Fente à  pièces");
         checkMenuItem1.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
-            	mAJComposants();
+            	mAJFenteAPieces();
             }
         });
 
         checkMenuItem2.setMnemonicParsing(false);
         checkMenuItem2.setText("Scanneur de codes");
+        checkMenuItem2.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent e) {
+            	mAJScanneur();
+            }
+        });
 
         checkMenuItem3.setMnemonicParsing(false);
         checkMenuItem3.setText("Bloquer la carte");
+        checkMenuItem3.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent e) {
+            	mAJCarte();
+            }
+        });
 
         checkMenuItem4.setMnemonicParsing(false);
         checkMenuItem4.setText("Imprimante");
+        checkMenuItem4.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent e) {
+            	mAJImprimante();
+            }
+        });
 
         menu0.setMnemonicParsing(false);
         menu0.setText("Caisse");
 
         menuItem.setMnemonicParsing(false);
         menuItem.setText("Recharger caisse");
+        menuItem.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent e) {
+            	rechargerCaisse();
+            }
+        });
 
         menuItem0.setMnemonicParsing(false);
         menuItem0.setText("Vider caisse");
         menuItem0.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
-            	GraphiqueACoeurImpl.getInstance().viderCaisse();
+            	viderCaisse();
             }
         });
 
@@ -147,9 +168,20 @@ class FenetreSimulation extends BorderPane
 
         menuItem1.setMnemonicParsing(false);
         menuItem1.setText("Recharger encre et papier");
+        menuItem1.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent e) {
+            	rechargerEncreEtPapier();
+            }
+        });
+       
 
         menuItem2.setMnemonicParsing(false);
         menuItem2.setText("Vider encre et papier");
+        menuItem2.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent e) {
+            	viderEncreEtPapier();
+            }
+        });
 
         menu2.setMnemonicParsing(false);
         menu2.setText("Composants optionnels");
@@ -301,20 +333,19 @@ class FenetreSimulation extends BorderPane
         VBox.setMargin(fentePiece, new Insets(50.0*rapportHauteur, 0.0, 0.0, 0.0));
         fentes.setLayoutX(10.0*rapportLargeur);
         fentes.setLayoutY(100.0*rapportHauteur);
-        getChildren().setAll(pane, claRe, fentes, scanLect, fenetre);
         mAJComposants();
     }
     
-    public void mAJComposants() // enlever celles qui concernent les pannes et les mettres dans des methodes a part
-    {							// ajouter des actions sur les boutons pannes pour informer le coeur avec coeur a graphique et tombeEnpanne(composant) 
+    public void mAJComposants()
+    {
 		fentes.getChildren().clear();
 		claRe.getChildren().clear();
 		scanLect.getChildren().clear();
 		
-    	if (checkMenuItem6.isSelected())
+    	if(checkMenuItem6.isSelected())
     		fentes.getChildren().addAll(fenteBillet, fentePiece);
     	
-    	if (checkMenuItem7.isSelected())
+    	if(checkMenuItem7.isSelected())
     	{
     		Text text = new Text();
             text.setFont(new Font(15.0*rapportHauteur));
@@ -322,70 +353,181 @@ class FenetreSimulation extends BorderPane
     		fentes.getChildren().addAll(text, fentePiece);
     	}
     	
-    	if (checkMenuItem9.isSelected())
+    	if(checkMenuItem9.isSelected())
     		claRe.getChildren().addAll(clavier,reception);
     	
-    	if (checkMenuItem10.isSelected())
+    	if(checkMenuItem10.isSelected())
     		claRe.getChildren().addAll(clavier, reception);
-
-    	if (checkMenuItem11.isSelected())
+    	
+    	if(checkMenuItem11.isSelected())
     	{
     		Text text = new Text();
             text.setFont(new Font(15.0*rapportHauteur));
             VBox.setMargin(text, new Insets(110.0*rapportHauteur, 0.0, 100.0*rapportHauteur, 182.5*rapportLargeur));
     		claRe.getChildren().addAll(text, reception);
     	}
-    	
-    	if (!checkMenuItem5.isSelected())
+    	if(!checkMenuItem5.isSelected())
     	{
     		Text text = new Text();
             text.setFont(new Font(15.0*rapportHauteur));
             VBox.setMargin(text, new Insets(80.0*rapportHauteur, 0.0, 0.0, 0.0));
     		scanLect.getChildren().addAll(text, lecteur);
     	}
-    	
-    	if (checkMenuItem5.isSelected())
+    	if(checkMenuItem5.isSelected())
     		scanLect.getChildren().addAll( scanneur, lecteur);
+        getChildren().setAll(pane, claRe, fentes, scanLect, fenetre); 		
+    }
+    
+    public void mAJLecteur()
+    {
+    	if(checkMenuItem.isSelected())
+    		mettreEnPanneLecteur();
     	
-    	if (checkMenuItem.isSelected()) 
-    	{
-    		for (int i = 0; i < 13; i++)
-    			lecteur.getBouton(i).setDisable(true);
-    		lecteur.getMDP().setDisable(true);
-    	}
+    	if(!checkMenuItem.isSelected()) 
+    		remiseEnServiceLecteur();
+    }
+    
+    public void mAJScanneur()
+    {
+    	if(checkMenuItem2.isSelected())
+    		mettreEnPanneScanneur();
     	
-    	if (checkMenuItem1.isSelected())
-    	{
-    		for (int i = 0; i < 8; i++)
-    			fentePiece.getButton(i).setDisable(true);
-    	}
+    	if(!checkMenuItem2.isDisable())
+    		remiseEnServiceScanneur();
+    }
+    
+    public void mAJFenteAPieces()
+    {
+    	if(checkMenuItem1.isSelected())
+    		mettreEnPanneFentePiece();
+
+    	if(!checkMenuItem1.isSelected())
+    		remiseEnServiceFentePiece();
+    }
+    
+    public void mAJFenteABillets()
+    {
+    	if(checkMenuItem0.isSelected())
+    		mettreEnPanneFenteBillet();
     	
-    	if (checkMenuItem0.isSelected())
-    	{
-    		for (int i = 0; i < 4; i++)
-    			fenteBillet.getButton(i).setDisable(true);
-    	}
+    	if(!checkMenuItem0.isSelected())
+    		remiseEnServiceFenteBillet();
+    }
+    
+    public void mAJCarte()
+    {
+    	if(checkMenuItem3.isSelected())
+    		bloquerCarte();
     	
-    	if (!checkMenuItem.isSelected()) 
-    	{
-    		for (int i = 0; i < 13; i++)
-    			lecteur.getBouton(i).setDisable(false);
-    		lecteur.getMDP().setDisable(false);
-    	}
+    	if(!checkMenuItem3.isSelected())
+    		debloquerCarte();	
+    }
+    
+    public void mAJImprimante()
+    {
+    	if(checkMenuItem4.isSelected())
+    		mettreEnPanneImprimante();
     	
-    	if (!checkMenuItem1.isSelected())
-    	{
-    		for (int i = 0; i < 8; i++)
-    			fentePiece.getButton(i).setDisable(false);
-    	}
+    	if(!checkMenuItem4.isSelected())
+    		remiseEnServiceImprimante();
+    }
+    
+    public void rechargerCaisse()
+    {
     	
-    	if (!checkMenuItem0.isSelected())
-    	{
-    		for (int i = 0; i < 4; i++)
-    			fenteBillet.getButton(i).setDisable(false);
-    	}
-    	
+    }
+
+    public void viderCaisse()
+    {
+    	GraphiqueACoeurImpl.getInstance().viderCaisse();
+    }
+    
+    public void mettreEnPanneFentePiece()
+    {
+    	for (int i = 0; i < 8; i++)
+    		fentePiece.getButton(i).setDisable(true);
+    	getChildren().setAll(pane, claRe, fentes, scanLect, fenetre);
+    }
+    
+    public void remiseEnServiceFentePiece()
+    {
+    	for (int i = 0; i < 8; i++)
+    		fentePiece.getButton(i).setDisable(false);
+    	getChildren().setAll(pane, claRe, fentes, scanLect, fenetre);
+    }
+    
+    public void mettreEnPanneFenteBillet()
+    {
+    	for (int i = 0; i < 4; i++)
+			fenteBillet.getButton(i).setDisable(true);
+    	getChildren().setAll(pane, claRe, fentes, scanLect, fenetre);
+    }
+    
+    public void remiseEnServiceFenteBillet()
+    {
+    	for (int i = 0; i < 4; i++)
+			fenteBillet.getButton(i).setDisable(false);
+    	getChildren().setAll(pane, claRe, fentes, scanLect, fenetre);
+    }
+    
+    public void bloquerCarte()
+    {
+    	//Ici, je suppose griser le bouton 'retirer carte' ?
+    	lecteur.getBouton(12).setDisable(true);
         getChildren().setAll(pane, claRe, fentes, scanLect, fenetre);
+    }
+    
+    public void debloquerCarte()
+    {
+    	//Ici, je suppose dégriser le bouton 'retirer carte' ?
+    	lecteur.getBouton(12).setDisable(false);
+        getChildren().setAll(pane, claRe, fentes, scanLect, fenetre);
+    }
+    
+    public void mettreEnPanneLecteur()
+    {
+    	for (int i = 0; i < 13; i++)
+			lecteur.getBouton(i).setDisable(true);
+		lecteur.getMDP().setDisable(true);
+        getChildren().setAll(pane, claRe, fentes, scanLect, fenetre);
+    }
+    
+    public void remiseEnServiceLecteur()
+    {
+    	for (int i = 0; i < 13; i++)
+			lecteur.getBouton(i).setDisable(false);
+		lecteur.getMDP().setDisable(false);
+        getChildren().setAll(pane, claRe, fentes, scanLect, fenetre);
+    }
+    
+    public void mettreEnPanneScanneur()				//je ne pense pas qu'il les faille ici mais
+    {														//sans savoir, je les ai mises
+    	//mise en panne scanneur
+    }
+    
+    public void remiseEnServiceScanneur()
+    {
+    	//remise en service scanneur
+    }
+    
+    public void mettreEnPanneImprimante()
+    {
+    	//mise en panne imprimante
+    }
+    
+    public void remiseEnServiceImprimante()
+    {
+    	//remise en service imprimante
+    }
+    
+    public void viderEncreEtPapier()
+    {
+    	//vider encre et papier
+    }
+    
+    public void rechargerEncreEtPapier()
+    {
+    	//recharger encre et papier
     }
     
     public Ecran getEcran()
