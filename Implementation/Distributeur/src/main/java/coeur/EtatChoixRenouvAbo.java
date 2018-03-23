@@ -1,5 +1,7 @@
 package coeur;
 
+import stockage.imprimable.Abonnement;
+
 /**
  * Classe EtatChoixRenouvAbo
  * @author TheoDaix, AllanDubrulle, VictorVerhoye
@@ -25,5 +27,11 @@ class EtatChoixRenouvAbo extends EtatChoixTitre
 	public void scanneCode() 
 	{
 		Controleur.getInstance().getCoeurAGraphique().afficherNumAbo();
+	}
+	
+	public void valider()
+	{
+		Controleur.getInstance().calculerPrix((Abonnement) Controleur.getInstance().getCoeurAStockage().getTitre());
+		super.valider();
 	}
 }

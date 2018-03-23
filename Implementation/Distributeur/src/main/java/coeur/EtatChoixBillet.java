@@ -25,7 +25,6 @@ class EtatChoixBillet extends EtatChoixTitre
 	}
 	public void valider()
 	{
-		System.out.println((Billet) Controleur.getInstance().getCoeurAStockage().getTitre()==null);
 		Controleur.getInstance().calculerPrix((Billet) Controleur.getInstance().getCoeurAStockage().getTitre());
 		super.valider();
 	}

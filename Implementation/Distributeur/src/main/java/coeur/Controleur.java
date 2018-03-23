@@ -150,8 +150,7 @@ class Controleur
 	public void calculerPrix(Billet billet)
 	{
 		double calculPrix = getCoeurAStockage().rechercherPrix(commande,billet.getGareDepart(),billet.getGareArrivee());
-		System.out.println(calculPrix);
-		int res = ajusterPrix((int) calculPrix ,billet.getReduction(), billet.getType(), billet.getClasse())* getCoeurAStockage().getNbrTitre();
+		int res = ajusterPrix(calculPrix ,billet.getReduction(), billet.getType(), billet.getClasse())* getCoeurAStockage().getNbrTitre();
 		getCoeurAStockage().setPrix(res);
 	}
 	
@@ -169,7 +168,7 @@ class Controleur
 	public void calculerPrix(Abonnement abo)
 	{	
 		double calculPrix = getCoeurAStockage().rechercherPrix(commande,abo.getGareDepart(), abo.getGareArrivee());	
-		int res = ajusterPrix((int) calculPrix ,abo.getReduction(), abo.getType(), abo.getClasse());
+		int res = ajusterPrix(calculPrix ,abo.getReduction(), abo.getType(), abo.getClasse());
 		res *= abo.getValidite();	
 		getCoeurAStockage().setPrix(res);
 	}
@@ -186,7 +185,7 @@ class Controleur
 	public void calculerPrixIllimite(Pass pass)
 	{
 		double calculPrix = getCoeurAStockage().rechercherPrix(pass.getTypePass());
-		int res = ajusterPrix((int) calculPrix ,pass.getReduction(), pass.getType(), pass.getClasse());
+		int res = ajusterPrix(calculPrix ,pass.getReduction(), pass.getType(), pass.getClasse());
 		res *= pass.getNbrJours();	
 		getCoeurAStockage().setPrix(res);
 	}
@@ -202,7 +201,7 @@ class Controleur
 	public void calculerPrixPass10trajet(Pass pass)
 	{
 		double calculPrix = getCoeurAStockage().rechercherPrix(pass.getTypePass());
-		int res = ajusterPrix((int) calculPrix ,pass.getReduction(), pass.getType(), pass.getClasse());	
+		int res = ajusterPrix(calculPrix ,pass.getReduction(), pass.getType(), pass.getClasse());	
 		getCoeurAStockage().setPrix(res);
 	}
 	/**
@@ -218,7 +217,7 @@ class Controleur
 	public void calculerPrixPass10Trajets2Gares(Pass pass)
 	{	
 		double calculPrix = getCoeurAStockage().rechercherPrix(commande,pass.getGareDepart(),pass.getGareArrivee());
-		int res = ajusterPrix((int) calculPrix ,pass.getReduction(), pass.getType(), pass.getClasse());		
+		int res = ajusterPrix(calculPrix ,pass.getReduction(), pass.getType(), pass.getClasse());		
 		getCoeurAStockage().setPrix(res);
 	}
 	
@@ -231,12 +230,13 @@ class Controleur
 	 * 	@param classe une classe (Classe)
 	 * 	@return le prix du titre calculé en fonction des données introduites
 	 */
-	private int ajusterPrix(int prix ,Reduction reduc, TypeTitre type, Classe classe)
+	private int ajusterPrix(double prix ,Reduction reduc, TypeTitre type, Classe classe)
 	{
 		double res= prix;
 		res*=100;
 		res -= res * (double)reduc.valeur()/100;	
 		res -= res * (double)type.valeur()/100;	
+		System.out.println(res);
 		res *= (3-classe.valeur());	
 		return (int) res;
 	}
