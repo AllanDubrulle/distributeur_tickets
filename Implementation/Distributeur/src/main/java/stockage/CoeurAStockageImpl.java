@@ -30,6 +30,7 @@ public class CoeurAStockageImpl implements CoeurAStockage
 	private Imprimante imprimante;
 	private int essai;
 	private static CoeurAStockageImpl instance;
+	private String[] horaire;
 	
 	private CoeurAStockageImpl()
 	{
@@ -40,6 +41,11 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		{
 			composantEnMarche.put(composant, true);
 		}
+	}
+	
+	public String[] getHoraire()
+	{
+		return horaire;
 	}
 	
 	public int getPrix()
@@ -304,6 +310,7 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		hTrains.connexion();
 		ResultSet res = hTrains.calculToutesLesGaresArrivee(gareDepart, heure, minute);
 		String[] tab = hTrains.conversionRequeteEnTableau(res);
+		this.horaire = tab;
 		return tab;
 	}
 	
@@ -313,6 +320,7 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		hTrains.connexion();
 		ResultSet res = hTrains.calculItineraire(gareDepart, gareArrivee, heure, minute);
 		String[] tab = hTrains.conversionRequeteEnTableau(res);
+		this.horaire = tab;
 		return tab;
 	}
 	
@@ -322,6 +330,7 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		hTrains.connexion();
 		ResultSet res = hTrains.calculToutesLesGaresDepart(gareArrivee, heure, minute);
 		String[] tab = hTrains.conversionRequeteEnTableauArriv(res);
+		this.horaire = tab;
 		return tab;
 	}
 	

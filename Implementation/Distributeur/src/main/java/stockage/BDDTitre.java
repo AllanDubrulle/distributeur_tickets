@@ -15,7 +15,7 @@ import stockage.imprimable.TypePass;
  * @version 1.0
  */
 
-public class BDDTitre extends GestionBaseDeDonnees 
+class BDDTitre extends GestionBaseDeDonnees 
 {
 	/**
 	 * Constructeur de BDDTitre

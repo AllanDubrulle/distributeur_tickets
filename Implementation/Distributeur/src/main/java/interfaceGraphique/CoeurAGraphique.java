@@ -21,6 +21,7 @@ public interface CoeurAGraphique
 	public void afficherRecapCommande(Commande commande,TitreDeTransport titre,double prix,int nbrTitre);
 	
 	public void afficherResultatsHoraires(String[] tab);
+	public void afficherImpressionHoraire(String[] tab);
 	
 	public void afficherNumAbo();
 	

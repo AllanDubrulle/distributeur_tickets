@@ -22,6 +22,12 @@ class EtatChoixArrivees extends EtatAnnulable
 		String[] tab = Controleur.getInstance().getCoeurAStockage().rechercherHoraireArrivee(gareDepart, heure, minute);
 		Controleur.getInstance().getCoeurAGraphique().afficherResultatsHoraires(tab);
 	}
+	
+	public void choixImpressionHoraire()
+	{
+		Controleur.getInstance().modifEtat(EtatImpressionHoraire.getInstance());
+	}
+	
 	public void retour()
 	{
 		entree();

@@ -8,7 +8,7 @@ import javafx.scene.text.*;
 import javafx.scene.shape.*;
 import javafx.scene.layout.*;
 
-public class FRecapPass10Trajets extends Ecran 
+class FRecapPass10Trajets extends Ecran 
 {    
     public FRecapPass10Trajets(String nom, int classe, String reduction, String type, double prix, double hauteur, double largeur) 
     {

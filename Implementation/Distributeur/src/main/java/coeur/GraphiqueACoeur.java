@@ -392,5 +392,7 @@ public interface GraphiqueACoeur
 	 * 	d'affichage d'une fenêtre)
 	 */
 	public void apres5secondesOk();
+
+	public void choixImprimerHoraire();
 	
 }

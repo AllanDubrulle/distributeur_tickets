@@ -26,7 +26,6 @@ public interface CoeurAStockage
 	public Classe conversionClasse(int classe) throws ErreurDEncodage;
 	public Reduction conversionReduction(String reduction ) throws ErreurDEncodage;
 	
-	
 	public boolean existenceTrajet(String gareDepart,String gareArrivee);
 	public boolean existenceGare(String gare);
 	public boolean existenceAbo(String numAbo);
@@ -34,6 +33,7 @@ public interface CoeurAStockage
 	public String[] rechercherHoraireDepart(String gareDepart, int heure, int minute) throws SQLException;
 	public String[] getListeReduction();
 	public String[] getListeType();
+	public String[] getHoraire();
 	
 	public TitreDeTransport getTitre();
 	public int getNbrTitre();

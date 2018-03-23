@@ -163,6 +163,8 @@ abstract class ControleurEtat
 	 */
 	public void valideRechercheGD(String gareArrivee, int heure, int minute) throws SQLException {}
 	
+	public void choixImpressionHoraire() {}
+	
 	/**
 	 * 	Permet de valider le numéro de l'abonnement séléctionné
 	 */

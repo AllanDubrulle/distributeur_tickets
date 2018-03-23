@@ -45,6 +45,7 @@ class FResultatsHoraires extends Ecran
         Text text23 = new Text();
         Button button = new Button();
         Button button0 = new Button();
+        Button button1 = new Button();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -343,13 +344,28 @@ class FResultatsHoraires extends Ecran
         		graphAC.choixRetourEcranPrinc();
         	}
         });
+        
+        button1.setLayoutX(300.0*largeur);
+        button1.setLayoutY(340.0*hauteur);
+        button1.setMnemonicParsing(false);
+        button1.setPrefHeight(31.0*hauteur);
+        button1.setPrefWidth(200.0*largeur);
+        button1.setText("Imprimer horaire");
+        button1.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        button1.setOnAction(new EventHandler<ActionEvent>() 
+        {
+        	public void handle(ActionEvent event) 
+        	{
+        		graphAC.choixImprimerHoraire();
+        	}
+        });
 
         vBox.getChildren().addAll(text, text0, text1, text2, text3, text4);
         vBox0.getChildren().addAll(text5, text6, text7, text8, text9, text10);
         vBox1.getChildren().addAll(text11, text12, text13, text14, text15, text16);
         vBox2.getChildren().addAll(text23, text18, text19, text20, text21, text22);
         hBox.getChildren().addAll(vBox, vBox0, vBox1, vBox2);
-        getChildren().addAll(rectangle, hBox, text17, button, button0);
+        getChildren().addAll(rectangle, hBox, text17, button, button0, button1);
     }
 
 	public void actionRetour() 

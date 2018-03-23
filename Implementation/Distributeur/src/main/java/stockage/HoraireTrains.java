@@ -208,16 +208,16 @@ class HoraireTrains extends GestionBaseDeDonnees
     	{
         	if (existenceGare(arrivee))
         	{
-        		if (heure > 22)
+        		if (heure < 4)
         		{
-        			String requete = "SELECT depart, arrivee, Heure, minute, heurearrivee, minutearrivee FROM Horaire WHERE arrivee = ? order by heure, minute";
+        			String requete = "SELECT depart, arrivee, Heure, minute, heurearrivee, minutearrivee FROM Horaire WHERE arrivee = ? order by heurearrivee, minutearrivee";
 	        		PreparedStatement declar = this.connexion.prepareStatement(requete);
 	        		declar.setString(1, arriveeMaj);
 	        		res = declar.executeQuery();	        		
         		}
         		else
         		{
-        			String requete = "SELECT depart, arrivee, Heure, minute, heurearrivee, minutearrivee FROM Horaire WHERE arrivee = ? and ((heurearrivee <= ? and minutearrivee <= ?) or (heurearrivee < ? and minutearrivee > ?)) order by heure, minute";
+        			String requete = "SELECT depart, arrivee, Heure, minute, heurearrivee, minutearrivee FROM Horaire WHERE arrivee = ? and ((heurearrivee <= ? and minutearrivee <= ? and heurearrivee > 0) or (heurearrivee < ? and minutearrivee > ?  and heurearrivee > 0)) order by heurearrivee, minutearrivee";
         			PreparedStatement declar = this.connexion.prepareStatement(requete);
         			declar.setString(1, arriveeMaj);
         			declar.setInt(2, heure);

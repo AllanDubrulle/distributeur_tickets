@@ -118,6 +118,11 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 	{
 		controleur.getEtatActuel().valideRechercheItineraire(gareDepart, gareArrivee, heure, minute);
 	}
+	
+	public void choixImprimerHoraire()
+	{
+		controleur.getEtatActuel().choixImpressionHoraire();
+	}
 
 	public void choixScannerCode() 
 	{

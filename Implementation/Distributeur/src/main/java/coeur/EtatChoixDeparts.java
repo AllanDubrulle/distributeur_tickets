@@ -17,6 +17,11 @@ class EtatChoixDeparts extends EtatAnnulable
 		return (EtatChoixDeparts) instance;
 	}
 	
+	public void choixImpressionHoraire()
+	{
+		Controleur.getInstance().modifEtat(EtatImpressionHoraire.getInstance());
+	}
+	
 	public void valideRechercheGD(String gareArrivee, int heure, int minute) throws SQLException
 	{
 		String[] tab = Controleur.getInstance().getCoeurAStockage().rechercherHoraireDepart(gareArrivee, heure, minute);

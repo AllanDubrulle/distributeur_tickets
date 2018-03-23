@@ -121,6 +121,20 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 		pStage.setTitle("Choix du numéro de carte");
 		pStage.show();
 	}
+	
+	public void afficherImpressionHoraire(String[] tab)
+	{
+		StackPane root1 = new StackPane();
+		AfficherHoraire afficheHoraire = new AfficherHoraire(tab);
+		Stage stage1 = new Stage();
+		Scene scene1 = new Scene(root1, 600,250);
+		root1.getChildren().add(afficheHoraire);
+		stage1.setResizable(false);
+		stage1.setScene(scene1);
+		stage1.setTitle("Horaire");
+		stage1.show();
+	}
+	
 	public void afficherInsertionCarte() 
 	{
 		FenetreSimulation.getInstance().afficher(new FInsererCarte(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
@@ -245,6 +259,12 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 			break;
 		}
 	}
+	
+	public void afficherHoraire(String[] horaire)
+	{
+		
+	}
+	
 	public void afficherRecu(double prix , double introduit , double rendu,String modePaiement)
 	{
 		StackPane root2 = new StackPane();
