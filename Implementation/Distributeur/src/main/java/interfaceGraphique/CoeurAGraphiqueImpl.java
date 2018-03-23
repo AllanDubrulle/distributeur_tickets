@@ -402,7 +402,6 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	
 	public void actualiserComposant(Composant composant,boolean enMarche)
 	{
-		System.out.println(composant);
 		switch(composant)
 		{
 		case FENTEBILLET:
