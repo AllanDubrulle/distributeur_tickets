@@ -16,7 +16,6 @@ import stockage.imprimable.TitreDeTransport;
 public class CoeurAGraphiqueImpl implements CoeurAGraphique
 {
 	private static CoeurAGraphiqueImpl instance;
-	private Stage pStage2 = new Stage();
 	private FChoixParLiquide fLiquide;
 	private FBillet fenBillet;
 	private FAboAchat fenAboAchat;
@@ -25,12 +24,6 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	private FPassIllimite fenPassIllimite;
 	private FPass10Trajets fenPass10Trajets;
 	private FPass10Trajets2Gares fenPass10Trajets2Gares;
-	
-
-	public Stage getStage2() 
-	{
-		return pStage2;
-	}
 	
 	private CoeurAGraphiqueImpl(){}
 	

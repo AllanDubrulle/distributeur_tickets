@@ -8,7 +8,7 @@ import stockage.PlusDePapier;
  * @author TheoDaix, AllanDubrulle, VictorVerhoye
  * @version 1.0
  */
-class EtatImpressionRecu extends ControleurEtat
+public class EtatImpressionRecu extends ControleurEtat
 {
 	private static  EtatImpressionRecu instance;
 	

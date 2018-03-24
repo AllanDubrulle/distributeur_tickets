@@ -1,17 +1,7 @@
 import static org.junit.Assert.*;
-
 import java.sql.SQLException;
-
-import junit.framework.Assert;
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.JUnitCore; 
-import org.junit.runner.Result; 
-import org.junit.runner.notification.Failure; 
-
 import stockage.CoeurAStockageImpl;
-import coeur.Commande;
 
 public class BDDTest 
 {

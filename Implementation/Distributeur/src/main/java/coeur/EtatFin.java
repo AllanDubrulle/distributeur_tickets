@@ -5,7 +5,7 @@ package coeur;
  * @author TheoDaix, AllanDubrulle, VictorVerhoye
  * @version 1.0
  */
-class EtatFin extends EtatAnnulable 
+public class EtatFin extends EtatAnnulable 
 {	
 	private static EtatFin instance;
 	

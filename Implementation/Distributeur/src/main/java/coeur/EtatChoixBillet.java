@@ -8,7 +8,7 @@ import stockage.imprimable.Billet;
  * @version 1.0
  */
 
-class EtatChoixBillet extends EtatChoixTitre
+public class EtatChoixBillet extends EtatChoixTitre
 {	
 	private static EtatChoixBillet instance;
 	public static EtatChoixBillet getInstance() 

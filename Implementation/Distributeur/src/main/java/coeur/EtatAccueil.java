@@ -5,7 +5,7 @@ package coeur;
  * @author TheoDaix, AllanDubrulle, VictorVerhoye
  * @version 1.0
  */
-class EtatAccueil extends ControleurEtat
+public class EtatAccueil extends ControleurEtat
 {
 	private static EtatAccueil instance;
 	public static EtatAccueil getInstance() 
