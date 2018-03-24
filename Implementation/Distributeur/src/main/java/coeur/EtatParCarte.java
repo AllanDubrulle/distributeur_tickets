@@ -20,9 +20,7 @@ class EtatParCarte extends EtatAnnulable
 		if(Controleur.getInstance().getCoeurAStockage().getPrix()<=500 && Controleur.getInstance().getCoeurAStockage().verifSolde()) // paiement en dessous de 5€
 		{
 			Controleur.getInstance().getCoeurAStockage().actualiserSolde();
-			Controleur.getInstance().getCoeurAGraphique().afficherValidationPaiement();
-			Controleur.getInstance().getCoeurAGraphique().afficherEjectionCarte();
-			Controleur.getInstance().modifEtat(EtatImpressionTitre.getInstance());
+		Controleur.getInstance().modifEtat(EtatAttenteRepriseCarte.getInstance());
 		}
 		else
 		{

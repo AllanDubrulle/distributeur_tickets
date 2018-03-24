@@ -1,11 +1,8 @@
 package testStockage;
 
 import static org.junit.Assert.*;
-
 import java.util.HashMap;
-
 import org.junit.Test;
-
 import stockage.BilletMonnaie;
 import stockage.Monnayeur;
 import stockage.PasAssezDeMonnaie;

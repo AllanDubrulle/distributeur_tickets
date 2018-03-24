@@ -39,14 +39,14 @@ class FAfficherMessage extends Ecran
         text.setFont(new Font("System Italic", 18.0*hauteur));
 
         getChildren().addAll(rectangle, text);
-        if (message.equals("Impression ...") || message.equals("Veuillez récupérer votre carte.") || message.equals("Paiement effectué avec succès. Ejection de la carte dans un instant."))
+        if (message.equals("Impression ...") || message.equals("Veuillez récupérer votre carte."))
         {
         	lecteur = false;
         	PauseTransition delais = new PauseTransition(Duration.seconds(5));
     		delais.setOnFinished( event -> apres5secOk());
     		delais.play();
         }
-        if (!message.equals("Code PIN incorrect. Veuillez rééssayer.") && !message.equals("Veuillez entrer votre code PIN."))
+        if (!message.equals("Code PIN incorrect. Veuillez rééssayer.") && !message.equals("Veuillez entrer votre code PIN.") && !message.equals("Paiement effectué avec succès. Veuillez récuperer votre carte."))
         {
         	lecteur = false;
         	PauseTransition delais = new PauseTransition(Duration.seconds(5));

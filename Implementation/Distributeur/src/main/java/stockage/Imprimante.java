@@ -5,7 +5,7 @@ package stockage;
  * @author TheoDaix, AllanDubrulle, VictorVerhoye
  * @version 1.0
  */
-class Imprimante 
+public class Imprimante 
 {
 	private int nbrImpressions = 50;
 	private CoeurAStockage cAStock;

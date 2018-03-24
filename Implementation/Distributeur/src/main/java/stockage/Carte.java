@@ -62,4 +62,8 @@ public class Carte
 	{
 		return id;
 	}
+	public int getCode()
+	{
+		return codePIN;
+	}
 }

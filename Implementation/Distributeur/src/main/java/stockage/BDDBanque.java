@@ -9,7 +9,7 @@ import java.sql.SQLException;
  * @author TheoDaix, AllanDubrulle, VictorVerhoye
  * @version 1.0
  */
-class BDDBanque extends GestionBaseDeDonnees 
+public class BDDBanque extends GestionBaseDeDonnees 
 {	
 	/**
 	 * 	Constructeur de BDDBanque

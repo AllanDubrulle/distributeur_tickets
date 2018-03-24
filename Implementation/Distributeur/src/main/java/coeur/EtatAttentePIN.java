@@ -54,7 +54,6 @@ class EtatAttentePIN extends EtatAnnulable
 		if(Controleur.getInstance().getCoeurAStockage().tropDErreur())
 		{
 			Controleur.getInstance().getCoeurAGraphique().afficherTropDeTentatives();
-			Controleur.getInstance().getCoeurAGraphique().afficherEjectionCarte();
 			Controleur.getInstance().modifEtat(EtatPaiement.getInstance());
 		}
 	}
@@ -66,7 +65,6 @@ class EtatAttentePIN extends EtatAnnulable
 	private void soldeInsuffisant()
 	{
 		Controleur.getInstance().getCoeurAGraphique().afficherSoldeInsuffisant();
-		Controleur.getInstance().getCoeurAGraphique().afficherEjectionCarte();
 		Controleur.getInstance().modifEtat(EtatPaiement.getInstance());
 	}
 	
@@ -77,9 +75,7 @@ class EtatAttentePIN extends EtatAnnulable
 	private void infosCorrectes()
 	{
 		Controleur.getInstance().getCoeurAStockage().actualiserSolde();
-		Controleur.getInstance().getCoeurAGraphique().afficherValidationPaiement();
-		Controleur.getInstance().getCoeurAGraphique().afficherEjectionCarte();
-		//Controleur.getInstance().modifEtat(EtatImpressionTitre.getInstance());
+		Controleur.getInstance().modifEtat(EtatAttenteRepriseCarte.getInstance());
 	}
 	public void choixInsererRetirerCarte()
 	{

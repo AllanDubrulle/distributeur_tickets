@@ -523,13 +523,12 @@ class FenetreSimulation extends BorderPane
 
 	public void carteNonBloquee()
 	{
-		// TODO Auto-generated method stub
-		// décocher carte bloquée
+		checkMenuItem3.setSelected(false);
 	}
 
-	public void carteBloquee() {
-		// TODO Auto-generated method stub
-		//cocher lecteur carte 
+	public void carteBloquee() 
+	{
+		checkMenuItem3.setSelected(true);
 	}
 
 }

@@ -136,10 +136,6 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	{
 		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Carte éjectée.", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 	}
-	public void afficherEjectionCarte()
-	{
-		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Veuillez récupérer votre carte.", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
-	}
 	public void afficherAttentePIN() 
 	{
 		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Veuillez entrer votre code PIN.", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
@@ -160,7 +156,7 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	
 	public void afficherValidationPaiement() 
 	{
-		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Paiement effectué avec succès. Ejection de la carte dans un instant.", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
+		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Paiement effectué avec succès. Veuillez récuperer votre carte.", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 	}
 	
 	public void afficherImpression() 

@@ -30,7 +30,6 @@ public interface CoeurAGraphique
 	public void afficherChoixParCarte();
 	public void afficherInsertionCarte();
 	public void afficherRetraitCarte();
-	public void afficherEjectionCarte();
 	public void afficherAttentePIN();
 	public void afficherCodePINIncor();
 	public void afficherSoldeInsuffisant() ;
