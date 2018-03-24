@@ -517,7 +517,16 @@ public class CoeurAStockageImpl implements CoeurAStockage
 	{
 		BDDTitre db = new BDDTitre();
 		db.connexion();
-		double res = db.calculerPrixPass(typePass);
+		double res;
+		switch(typePass)
+		{
+		case PASSILLIMITE:
+			res = db.calculerPrixPass("SansRestriction");
+			break;
+		default:
+			res = db.calculerPrixPass("10Trajets");
+			break;
+		}
 		db.deconnexion();
 		return res;
 	}

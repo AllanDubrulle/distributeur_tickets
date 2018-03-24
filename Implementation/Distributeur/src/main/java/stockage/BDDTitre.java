@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import stockage.imprimable.TypePass;
 
 /**
- * Classe BBDTitre (gestion de base de données pour tout les données des titres de transport)
+ * Classe BBDTitre (gestion de base de données pour toutES les données des titres de transport)
  * @author TheoDaix, AllanDubrulle, VictorVerhoye
  * @version 1.0
  */
