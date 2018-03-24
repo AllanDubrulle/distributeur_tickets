@@ -9,7 +9,7 @@ import java.util.HashMap;
  */
 public class Rendu 
 {	
-	private HashMap<Pieces,Integer> pieces;
+	private HashMap<Piece,Integer> pieces;
 	private HashMap<BilletMonnaie,Integer> billets;
 	
 	/**
@@ -17,7 +17,7 @@ public class Rendu
 	 * 	@param pieces une quantité de pièces
 	 * 	@param billets une quantité de billets
 	 */
-	public Rendu (HashMap<Pieces,Integer> pieces, HashMap<BilletMonnaie,Integer> billets)
+	public Rendu (HashMap<Piece,Integer> pieces, HashMap<BilletMonnaie,Integer> billets)
 	{
 		this.pieces = pieces;
 		this.billets = billets;
@@ -27,7 +27,7 @@ public class Rendu
 	 * 	Permet d'obtenir la quantité de pièces à rendre
 	 * 	@return pieces une quantité de pièces
 	 */
-	public HashMap<Pieces,Integer> getPieces() 
+	public HashMap<Piece,Integer> getPieces() 
 	{
 		return pieces;
 	}

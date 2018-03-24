@@ -6,7 +6,7 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import stockage.BilletMonnaie;
 import stockage.Composant;
-import stockage.Pieces;
+import stockage.Piece;
 import stockage.Rendu;
 import stockage.imprimable.Billet;
 import stockage.imprimable.Abonnement;
@@ -277,14 +277,14 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 				monnaieRendu.getBillets().get(BilletMonnaie.B20),
 				monnaieRendu.getBillets().get(BilletMonnaie.B10),
 				monnaieRendu.getBillets().get(BilletMonnaie.B5),
-				monnaieRendu.getPieces().get(Pieces.P200),
-				monnaieRendu.getPieces().get(Pieces.P100),
-				monnaieRendu.getPieces().get(Pieces.P50),
-				monnaieRendu.getPieces().get(Pieces.P20),
-				monnaieRendu.getPieces().get(Pieces.P10),
-				monnaieRendu.getPieces().get(Pieces.P5),
-				monnaieRendu.getPieces().get(Pieces.P2),
-				monnaieRendu.getPieces().get(Pieces.P1));
+				monnaieRendu.getPieces().get(Piece.P200),
+				monnaieRendu.getPieces().get(Piece.P100),
+				monnaieRendu.getPieces().get(Piece.P50),
+				monnaieRendu.getPieces().get(Piece.P20),
+				monnaieRendu.getPieces().get(Piece.P10),
+				monnaieRendu.getPieces().get(Piece.P5),
+				monnaieRendu.getPieces().get(Piece.P2),
+				monnaieRendu.getPieces().get(Piece.P1));
 		Stage pStage6 = new Stage();
 		Scene sc = new Scene(root2, 250, 385);
 		root2.getChildren().add(billet);

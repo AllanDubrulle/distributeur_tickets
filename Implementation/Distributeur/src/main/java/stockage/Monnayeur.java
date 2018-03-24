@@ -7,13 +7,13 @@ import java.util.HashMap;
  * @author TheoDaix, AllanDubrulle, VictorVerhoye
  * @version 1.0
  */
-class Monnayeur 
+public class Monnayeur 
 {
-	private HashMap<Pieces, Integer > StockPiece; 
+	private HashMap<Piece, Integer > StockPiece; 
 	private HashMap<BilletMonnaie,Integer> StockBillet;
-	private Pieces[] ordrePieces= {Pieces.P200,Pieces.P100,Pieces.P50,Pieces.P20,Pieces.P10,Pieces.P5,Pieces.P2,Pieces.P1};  
+	private Piece[] ordrePieces= {Piece.P200,Piece.P100,Piece.P50,Piece.P20,Piece.P10,Piece.P5,Piece.P2,Piece.P1};  
 	private BilletMonnaie[] ordreBillets= {BilletMonnaie.B50,BilletMonnaie.B20,BilletMonnaie.B10,BilletMonnaie.B5};
-	private HashMap<Pieces, Integer > StockPiecePaiement;
+	private HashMap<Piece, Integer > StockPiecePaiement;
 	private HashMap<BilletMonnaie,Integer> StockBilletPaiement;
 	
 	/**
@@ -21,10 +21,10 @@ class Monnayeur
 	 */
 	public Monnayeur()
 	{
-		StockPiecePaiement= new HashMap<Pieces, Integer>();
+		StockPiecePaiement= new HashMap<Piece, Integer>();
 		StockBilletPaiement = new HashMap<BilletMonnaie,Integer>();
-		StockPiece = new HashMap<Pieces, Integer>();
-		for (Pieces piece : Pieces.values())
+		StockPiece = new HashMap<Piece, Integer>();
+		for (Piece piece : Piece.values())
 		{	
 			StockPiece.put(piece, 10);
 			StockPiecePaiement.put(piece, 0);
@@ -41,7 +41,7 @@ class Monnayeur
 	 * 	Permet de stocker des pièces en plus dans les stocks de pièces
 	 * 	@param piece une piece à stocker
 	 */
-	public void stockerPieces (Pieces piece)
+	public void stockerPiece(Piece piece)
 	{
 		StockPiecePaiement.put(piece,StockPiecePaiement.get(piece)+1);
 		StockPiece.put(piece,StockPiece.get(piece)+1);
@@ -51,7 +51,7 @@ class Monnayeur
 	 * 	Permet de stocker des billet en plus dans les stocks de billets
 	 * 	@param piece un billet à stocker
 	 */
-	public void stockerBillets (BilletMonnaie billet)
+	public void stockerBillet(BilletMonnaie billet)
 	{
 		StockBilletPaiement.put(billet,StockBilletPaiement.get(billet)+1);
 		StockBillet.put(billet,StockBillet.get(billet)+1);
@@ -65,7 +65,7 @@ class Monnayeur
 	 */
 	public Rendu retournerArgent(int montant) throws PasAssezDeMonnaie
 	{
-		HashMap<Pieces,Integer> renduPiece = new HashMap<Pieces,Integer>();
+		HashMap<Piece,Integer> renduPiece = new HashMap<Piece,Integer>();
 		HashMap<BilletMonnaie,Integer> renduBillet = new HashMap<BilletMonnaie,Integer>();
 		
 		for (int i =0;i< ordreBillets.length;i++)
@@ -94,7 +94,7 @@ class Monnayeur
 			{
 				StockBillet.put(billet,StockBillet.get(billet)- renduBillet.get(billet));
 			}
-			for (Pieces piece : Pieces.values())
+			for (Piece piece : Piece.values())
 			{
 				StockPiece.put(piece,StockPiece.get(piece)- renduPiece.get(piece));
 			}
@@ -110,9 +110,9 @@ class Monnayeur
 	 */
 	public Rendu rendreMontantEncours()
 	{
-		HashMap<Pieces,Integer> renduPiece = new HashMap<Pieces,Integer>();
+		HashMap<Piece,Integer> renduPiece = new HashMap<Piece,Integer>();
 		HashMap<BilletMonnaie,Integer> renduBillet = new HashMap<BilletMonnaie,Integer>();
-		for (Pieces piece : Pieces.values())
+		for (Piece piece : Piece.values())
 		{
 			renduPiece.put(piece, StockPiecePaiement.get(piece));
 		}
@@ -129,7 +129,7 @@ class Monnayeur
 	 */
 	private void viderPaiementEnCours()
 	{
-		for (Pieces piece : Pieces.values())
+		for (Piece piece : Piece.values())
 		{
 			 StockPiecePaiement.put(piece, 0);
 		}
@@ -146,7 +146,7 @@ class Monnayeur
 	 */
 	public void vider()
 	{
-		for (Pieces piece : Pieces.values())
+		for (Piece piece : Piece.values())
 		{
 			 StockPiece.put(piece, 0);
 		}
@@ -159,7 +159,7 @@ class Monnayeur
 
 	public void rechargerCaisse()
 	{
-		for (Pieces piece : Pieces.values())
+		for (Piece piece : Piece.values())
 		{	
 			StockPiece.put(piece, 10);
 		}
@@ -167,5 +167,15 @@ class Monnayeur
 		{
 			StockBillet.put(billet, 10);
 		}
+	}
+	
+	public HashMap<Piece,Integer> getStockPiece()
+	{
+		return StockPiece;
+	}
+	
+	public HashMap<BilletMonnaie, Integer> getStockBillet()
+	{
+		return StockBillet;
 	}
 }
