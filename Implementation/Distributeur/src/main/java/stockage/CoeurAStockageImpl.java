@@ -264,40 +264,40 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		switch(i)
 		{
 			case 1:
-				monnayeur.stockerPieces(Pieces.P1);
+				monnayeur.stockerPiece(Piece.P1);
 				break;
 			case 2:
-				monnayeur.stockerPieces(Pieces.P2);
+				monnayeur.stockerPiece(Piece.P2);
 				break;
 			case 5:
-				monnayeur.stockerPieces(Pieces.P5);
+				monnayeur.stockerPiece(Piece.P5);
 				break;
 			case 10:
-				monnayeur.stockerPieces(Pieces.P10);
+				monnayeur.stockerPiece(Piece.P10);
 				break;
 			case 20:
-				monnayeur.stockerPieces(Pieces.P20);
+				monnayeur.stockerPiece(Piece.P20);
 				break;
 			case 50:
-				monnayeur.stockerPieces(Pieces.P50);
+				monnayeur.stockerPiece(Piece.P50);
 				break;
 			case 100:
-				monnayeur.stockerPieces(Pieces.P100);
+				monnayeur.stockerPiece(Piece.P100);
 				break;
 			case 200:
-				monnayeur.stockerPieces(Pieces.P200);
+				monnayeur.stockerPiece(Piece.P200);
 				break;
 			case 500:
-				monnayeur.stockerBillets(BilletMonnaie.B5);
+				monnayeur.stockerBillet(BilletMonnaie.B5);
 				break;
 			case 1000:
-				monnayeur.stockerBillets(BilletMonnaie.B10);
+				monnayeur.stockerBillet(BilletMonnaie.B10);
 				break;
 			case 2000:
-				monnayeur.stockerBillets(BilletMonnaie.B20);
+				monnayeur.stockerBillet(BilletMonnaie.B20);
 				break;
 			case 5000:
-				monnayeur.stockerBillets(BilletMonnaie.B50);
+				monnayeur.stockerBillet(BilletMonnaie.B50);
 				break;
 		}
 		introduit+=i;

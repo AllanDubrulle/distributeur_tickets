@@ -1,21 +1,13 @@
+package testStockage;
 import static org.junit.Assert.*;
-
 import java.sql.SQLException;
-
-import junit.framework.Assert;
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.JUnitCore; 
-import org.junit.runner.Result; 
-import org.junit.runner.notification.Failure; 
-
 import stockage.CoeurAStockageImpl;
-import coeur.Commande;
 
 public class BDDTest 
 {
 	private static CoeurAStockageImpl instance = (CoeurAStockageImpl) CoeurAStockageImpl.getInstance();
+	private double delta = 0.000000000001;
 	
 	@Test
 	public void testExistenceCarte()
@@ -108,7 +100,6 @@ public class BDDTest
 	@Test
 	public void testRechercherPrix()
 	{
-		double delta = 0.000000000001;
 		assertEquals(instance.rechercherPrix(coeur.Commande.BILLET, "tournai", "mons"), 7.70, delta);
 		assertEquals(instance.rechercherPrix(coeur.Commande.PASS10TRAJETS2GARES, "tournai", "mons"), 61.6, delta);
 		assertEquals(instance.rechercherPrix(coeur.Commande.ACHATABO, "tournai", "mons"), 51, delta);

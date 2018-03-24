@@ -16,7 +16,7 @@ import stockage.imprimable.TypeTitre;
  * @author TheoDaix, AllanDubrulle, VictorVerhoye
  * @version 1.0
  */
-class Controleur 
+public class Controleur 
 {	
 	private ControleurEtat etatActuel = EtatAccueil.getInstance();
 	private Stack<ControleurEtat> etatsPrecedents = new Stack<ControleurEtat>();
