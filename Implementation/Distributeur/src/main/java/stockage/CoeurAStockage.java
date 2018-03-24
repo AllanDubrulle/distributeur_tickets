@@ -72,4 +72,6 @@ public interface CoeurAStockage
 	public void rechargerEncreEtPapier();
 	public void viderEncreEtPapier();
 	public void actualiserPanne(Composant composant);
+	public void carteEnlevee();
+	public boolean carteInseree();
 }

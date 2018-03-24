@@ -280,6 +280,20 @@ abstract class ControleurEtat
 	{
 		Controleur.getInstance().getCoeurAStockage().viderEncreEtPapier();
 	}
+
+	public void bloquerCarte()
+	{
+		if(Controleur.getInstance().getCoeurAStockage().carteInseree())
+		{
+			actualiserPanne(Composant.LECTEURCARTE);
+			Controleur.getInstance().getCoeurAGraphique().carteBloquee();
+		}
+		else
+		{
+			Controleur.getInstance().getCoeurAGraphique().carteNonBloquee();
+		}
+		
+	}
 	
 	//regarder à ejecteCarte si utile ou pas
 }

@@ -79,9 +79,11 @@ class EtatAttentePIN extends EtatAnnulable
 		Controleur.getInstance().getCoeurAStockage().actualiserSolde();
 		Controleur.getInstance().getCoeurAGraphique().afficherValidationPaiement();
 		Controleur.getInstance().getCoeurAGraphique().afficherEjectionCarte();
+		//Controleur.getInstance().modifEtat(EtatImpressionTitre.getInstance());
 	}
 	public void choixInsererRetirerCarte()
 	{
+		Controleur.getInstance().getCoeurAStockage().carteEnlevee();
 		Controleur.getInstance().getCoeurAGraphique().afficherRetraitCarte();
 	}
 	

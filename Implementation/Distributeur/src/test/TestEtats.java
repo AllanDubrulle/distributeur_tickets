@@ -16,13 +16,14 @@ public class TestEtats
 	@BeforeClass
     public static void initToolkit() throws InterruptedException
     {
+		/*
 		final CountDownLatch latch = new CountDownLatch(1);
         SwingUtilities.invokeLater(() -> {
         	new JFXPanel();
         	latch.countDown();
         });
         if (!latch.await(5L, TimeUnit.SECONDS)) 
-        	throw new ExceptionInInitializerError();
+        	throw new ExceptionInInitializerError();*/
     }
 
 	@Test

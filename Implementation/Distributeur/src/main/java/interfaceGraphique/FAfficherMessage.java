@@ -53,8 +53,11 @@ class FAfficherMessage extends Ecran
     		delais.setOnFinished( event -> apres5sec());
     		delais.play();
         }
-        lecteur = true;
-        FenetreSimulation.getInstance().getLecteur().getMDP().clear();
+        else
+        {
+        	lecteur = true;
+        	FenetreSimulation.getInstance().getLecteur().getMDP().clear();
+        }
     }
     
     private void apres5sec() 

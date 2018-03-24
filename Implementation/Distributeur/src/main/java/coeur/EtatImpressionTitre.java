@@ -37,6 +37,10 @@ class EtatImpressionTitre extends EtatAnnulable
 			}
 			Controleur.getInstance().getCoeurAStockage().impression();
 			Controleur.getInstance().getCoeurAGraphique().afficherImpression();
+			Controleur.getInstance().getCoeurAGraphique().afficherViderBacRecep();
+			Controleur.getInstance().getCoeurAGraphique().afficherTitre(Controleur.getInstance().getCommande(),Controleur.getInstance().getCoeurAStockage().getTitre() 
+					,Controleur.getInstance().getCoeurAStockage().prixAffichable()); 
+			Controleur.getInstance().modifEtat(EtatDemandeRecu.getInstance());
 		}
 		catch(PlusDePapier e)
 		{

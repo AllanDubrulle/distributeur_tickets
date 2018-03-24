@@ -252,7 +252,7 @@ class LecteurCarte extends Pane
             	{
             		graphAC.choixLecteurOK(Integer.parseInt(champDeMDP.getText()));
             	}
-            	catch(NumberFormatException e) {}
+            	catch(NumberFormatException e) {}  // catch vide ??
             }
         });
 

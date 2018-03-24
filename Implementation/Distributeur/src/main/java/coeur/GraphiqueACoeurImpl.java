@@ -344,10 +344,10 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 		controleur.getEtatActuel().apres5secOk();
 	}
 
-	@Override
+	
 	public void bloquerCarte()
 	{
-		// TODO Auto-generated method stub
+		Controleur.getInstance().getEtatActuel().bloquerCarte();
 	}
 
 	public void rechargerCaisse()

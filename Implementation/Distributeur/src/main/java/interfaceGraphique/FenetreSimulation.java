@@ -508,6 +508,7 @@ class FenetreSimulation extends BorderPane
 				lecteur.getBouton(i).setDisable(false);
 			lecteur.getMDP().setDisable(false);
 	        getChildren().setAll(pane, claRe, fentes, scanLect, fenetre);
+	        carteNonBloquee();
 	    }
 	    
 		else
@@ -518,6 +519,17 @@ class FenetreSimulation extends BorderPane
 	        getChildren().setAll(pane, claRe, fentes, scanLect, fenetre);
 	    }
 		
+	}
+
+	public void carteNonBloquee()
+	{
+		// TODO Auto-generated method stub
+		// décocher carte bloquée
+	}
+
+	public void carteBloquee() {
+		// TODO Auto-generated method stub
+		//cocher lecteur carte 
 	}
 
 }

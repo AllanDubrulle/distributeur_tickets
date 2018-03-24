@@ -411,4 +411,16 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 		
 		}
 	}
+
+	public void carteNonBloquee()
+	{
+		FenetreSimulation.getInstance().carteNonBloquee();
+	}
+
+	@Override
+	public void carteBloquee()
+	{
+		FenetreSimulation.getInstance().carteBloquee();
+		
+	}
 }

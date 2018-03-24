@@ -536,16 +536,26 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		monnayeur.rechargerCaisse();
 		
 	}
+	
 	public void rechargerEncreEtPapier()
 	{
 		imprimante.setNbrImpressions(50);
 		
 	}
 
-	@Override
 	public void viderEncreEtPapier()
 	{
 		imprimante.setNbrImpressions(0);
 		
+	}
+
+	public void carteEnlevee()
+	{
+		carte = null;
+	}
+
+	public boolean carteInseree()
+	{
+		return carte != null;
 	}
 }
