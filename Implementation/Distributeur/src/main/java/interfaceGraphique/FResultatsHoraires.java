@@ -9,7 +9,9 @@ import javafx.scene.shape.*;
 import javafx.scene.text.*;
 
 class FResultatsHoraires extends Ecran 
-{    
+{
+	private Button button1;
+	
     public FResultatsHoraires(String[] tab, double hauteur, double largeur) 
     {
         Rectangle rectangle = new Rectangle();
@@ -45,7 +47,7 @@ class FResultatsHoraires extends Ecran
         Text text23 = new Text();
         Button button = new Button();
         Button button0 = new Button();
-        Button button1 = new Button();
+        button1 = new Button();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -366,6 +368,10 @@ class FResultatsHoraires extends Ecran
         vBox2.getChildren().addAll(text23, text18, text19, text20, text21, text22);
         hBox.getChildren().addAll(vBox, vBox0, vBox1, vBox2);
         getChildren().addAll(rectangle, hBox, text17, button, button0, button1);
+        
+        button.setFocusTraversable(false);
+        button0.setFocusTraversable(false);
+        button1.setFocusTraversable(false);
     }
 
 	public void actionRetour() 
@@ -376,5 +382,10 @@ class FResultatsHoraires extends Ecran
 	public void actionEntrer()
 	{
 		graphAC.choixRetourEcranPrinc();
+	}
+	
+	public void actionEspace()
+	{
+		graphAC.choixImprimerHoraire();
 	}
 }

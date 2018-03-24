@@ -53,6 +53,8 @@ class FInsererCarte extends Ecran
         });
 
         getChildren().addAll(rectangle, text, button);
+        
+        button.setFocusTraversable(false);
     }
 
 	public void actionRetour() 

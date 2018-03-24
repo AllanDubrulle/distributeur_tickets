@@ -227,6 +227,9 @@ class FRecapPass10Trajets2Gares extends Ecran
         hBox6.getChildren().addAll(text12, text13);
         vBox.getChildren().addAll(hBox0, hBox1, hBox2, hBox3, hBox6, hBox4, hBox5);
         getChildren().addAll(rectangle, text, vBox, button, button0);
+        
+        button.setFocusTraversable(false);
+        button0.setFocusTraversable(false);
     }
 
 	public void actionRetour() 

@@ -169,6 +169,9 @@ class FRecapPass10Trajets extends Ecran
         hBox3.getChildren().addAll(text6, text7);
         vBox.getChildren().addAll(hBox0, hBox1, hBox2, hBox3);
         getChildren().addAll(rectangle, text, vBox, button, button0);
+        
+        button.setFocusTraversable(false);
+        button0.setFocusTraversable(false);
     }
 
 	public void actionRetour() 

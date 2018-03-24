@@ -270,7 +270,7 @@ class LecteurCarte extends Pane
             	graphAC.choixLecteurInsererRetirer();
             }
         });
-        
+        champDeMDP.setDisable(true);
         champDeMDP.setOnMousePressed(e -> {champDeMDP.clear();});
         
         hBox.getChildren().addAll(bouton, bouton0, bouton1);
@@ -279,6 +279,21 @@ class LecteurCarte extends Pane
         hBox2.getChildren().addAll(bouton8, bouton9, bouton10);
         vBox.getChildren().addAll(champDeMDP, hBox, hBox0, hBox1, hBox2, bouton11);
         getChildren().addAll(rectangle, vBox);
+        
+        bouton.setFocusTraversable(false);
+        bouton0.setFocusTraversable(false);
+        bouton1.setFocusTraversable(false);
+        bouton2.setFocusTraversable(false);
+        bouton3.setFocusTraversable(false);
+        bouton4.setFocusTraversable(false);
+        bouton5.setFocusTraversable(false);
+        bouton6.setFocusTraversable(false);
+        bouton7.setFocusTraversable(false);
+        bouton8.setFocusTraversable(false);
+        bouton9.setFocusTraversable(false);
+        bouton10.setFocusTraversable(false);
+        bouton11.setFocusTraversable(false);
+        champDeMDP.setFocusTraversable(false);
     }
 	
 	public Button getBouton(int i)

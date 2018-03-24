@@ -183,12 +183,6 @@ abstract class ControleurEtat
 	public void scanneCode() {}
 	
 	/**
-	 * 	Permet d'annuler le scan d'un numéro d'abonnement (en fermant la fenêtre de choix 
-	 * 	d'abonnement)
-	 */
-	public void choixAnnulerScanner() {}
-	
-	/**
 	 * 	Permet de passer de la fenêtre paiement vers la fenêtre du paiement par carte 
 	 * 	(affiche la fenêtre permettant de choisir le numéro de la carte)
 	 */

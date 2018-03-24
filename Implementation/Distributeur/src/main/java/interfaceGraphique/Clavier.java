@@ -711,6 +711,48 @@ class Clavier extends Pane
         hBox3.getChildren().addAll(button1117, button1118, button1119);
         vBox.getChildren().addAll(hBox, hBox0, hBox1, hBox2, hBox3);
         getChildren().addAll(rectangle, vBox);
+        
+        button.setFocusTraversable(false);
+        button0.setFocusTraversable(false);
+        button1.setFocusTraversable(false);
+        button2.setFocusTraversable(false);
+        button3.setFocusTraversable(false);
+        button4.setFocusTraversable(false);
+        button5.setFocusTraversable(false);
+        button6.setFocusTraversable(false);
+        button7.setFocusTraversable(false);
+        button8.setFocusTraversable(false);
+        button9.setFocusTraversable(false);
+        button10.setFocusTraversable(false);
+        button11.setFocusTraversable(false);
+        button12.setFocusTraversable(false);
+        button13.setFocusTraversable(false);
+        button14.setFocusTraversable(false);
+        button15.setFocusTraversable(false);
+        button16.setFocusTraversable(false);
+        button17.setFocusTraversable(false);
+        button18.setFocusTraversable(false);
+        button19.setFocusTraversable(false);
+        button110.setFocusTraversable(false);
+        button111.setFocusTraversable(false);
+        button112.setFocusTraversable(false);
+        button113.setFocusTraversable(false);
+        button114.setFocusTraversable(false);
+        button115.setFocusTraversable(false);
+        button116.setFocusTraversable(false);
+        button117.setFocusTraversable(false);
+        button118.setFocusTraversable(false);
+        button119.setFocusTraversable(false);
+        button1110.setFocusTraversable(false);
+        button1111.setFocusTraversable(false);
+        button1112.setFocusTraversable(false);
+        button1113.setFocusTraversable(false);
+        button1114.setFocusTraversable(false);
+        button1115.setFocusTraversable(false);
+        button1116.setFocusTraversable(false);
+        button1117.setFocusTraversable(false);
+        button1118.setFocusTraversable(false);
+        button1119.setFocusTraversable(false);
     }
 	
 	public void setFenetre(Ecran fen)

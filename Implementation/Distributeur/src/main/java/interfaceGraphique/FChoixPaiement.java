@@ -87,6 +87,8 @@ class FChoixPaiement extends Ecran
         });
 
         getChildren().addAll(rectangle, text, button, button0, button1);
+        
+        button1.setFocusTraversable(false);
     }
 
 	public void actionClavier(int a) 

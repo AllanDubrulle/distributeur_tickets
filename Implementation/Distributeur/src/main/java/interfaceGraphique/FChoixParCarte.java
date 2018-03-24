@@ -16,7 +16,6 @@ class FChoixParCarte extends Ecran
     {
     	this.stage = stage;
         Button button = new Button();
-        Button button0 = new Button();
         textField = new TextField();
         Text text = new Text();
         Text text0 = new Text();
@@ -28,7 +27,7 @@ class FChoixParCarte extends Ecran
         setPrefHeight(200.0);
         setPrefWidth(400.0);
 
-        button.setLayoutX(315.0);
+        button.setLayoutX(167.5);
         button.setLayoutY(160.0);
         button.setMnemonicParsing(false);
         button.setPrefHeight(31.0);
@@ -58,21 +57,6 @@ class FChoixParCarte extends Ecran
 		text0.setFill(javafx.scene.paint.Color.RED);
 		text0.setLayoutX(100.0);
 		text0.setLayoutY(160.0);
-        
-        button0.setLayoutX(10.0);
-        button0.setLayoutY(160.0);
-        button0.setMnemonicParsing(false);
-        button0.setPrefHeight(31.0);
-        button0.setPrefWidth(75.0);
-        button0.setText("Annuler");
-        button0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button0.setOnAction(new EventHandler<ActionEvent>()
-        {
-        	public void handle(ActionEvent event) 
-        	{
-        		stage.close();
-        	}
-        });
 
         textField.setLayoutX(100.0);
         textField.setLayoutY(85.0);
@@ -85,7 +69,7 @@ class FChoixParCarte extends Ecran
         text.setText("Choisissez un numéro de carte :");
         text.setFont(new Font("System Bold", 15.0));
 
-        getChildren().addAll(button, button0, textField, text, text0);
+        getChildren().addAll(button, textField, text, text0);
     }
 
 	public void actionClavier(int a) 

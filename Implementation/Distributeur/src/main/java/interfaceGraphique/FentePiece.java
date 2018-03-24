@@ -180,7 +180,18 @@ class FentePiece extends Pane
         });
         
         getChildren().addAll(circle, rectangle, button, button0, button1, button2, button3, button4, button5, button6);
-    }
+    
+        button.setFocusTraversable(false);
+        button0.setFocusTraversable(false);
+        button1.setFocusTraversable(false);
+        button2.setFocusTraversable(false);
+        button3.setFocusTraversable(false);
+        button4.setFocusTraversable(false);
+        button5.setFocusTraversable(false);
+        button6.setFocusTraversable(false);
+        
+        
+	}
 	
 	public Button getButton(int i)
 	{

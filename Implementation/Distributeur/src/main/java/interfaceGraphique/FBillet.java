@@ -21,6 +21,7 @@ class FBillet extends Ecran
 	private int pos = 0;
 	private ChoiceBox<String> choiceBox, choiceBox0;
 	private Text text10;
+	private Button button1;
 
     public FBillet(double hauteur, double largeur) 
     {
@@ -60,7 +61,7 @@ class FBillet extends Ecran
         text10 = new Text();
         choiceBox = new ChoiceBox<String>();
         choiceBox0 = new ChoiceBox<String>();
-        Button button1 = new Button();
+        button1 = new Button();
         
 
         setPrefHeight(400.0*hauteur);
@@ -359,6 +360,10 @@ class FBillet extends Ecran
         hBox5.getChildren().addAll(text5, textField, hBox6);
         vBox.getChildren().addAll(hBox, hBox0, hBox1, hBox3, hBox4, hBox5);
         getChildren().addAll(rectangle, vBox, button, button0, text9, text10, button1);
+    
+        button.setFocusTraversable(false);
+        button0.setFocusTraversable(false);
+        
     }
     
     public void actionClavier(String a) 
@@ -466,7 +471,7 @@ class FBillet extends Ecran
 			}
 			else if (s.length() < 4)
 				textField2.setText(s + a);
-		}
+		}				
 	}
 
 	public void actionRetour() 
@@ -476,7 +481,7 @@ class FBillet extends Ecran
 
 	public void actionSuivant() 
 	{
-		if (pos == 9)
+		if (pos == 10)
 		{
 			textField3.requestFocus();
 			pos = 0;
@@ -499,8 +504,10 @@ class FBillet extends Ecran
 				textField0.requestFocus();
 			else if (pos == 7)
 				textField1.requestFocus();
-			else
+			else if (pos == 8)
 				textField2.requestFocus();
+			else
+				button1.requestFocus();
 			pos ++;
 		}
 	}
@@ -511,6 +518,19 @@ class FBillet extends Ecran
 			textField3.setText(textField3.getText() + " ");
 		else if (pos == 1)
 			textField4.setText(textField4.getText() + " ");
+		if (pos == 10)
+		{
+			LocalDate date = LocalDate.now();
+           	if(Integer.toString(date.getDayOfMonth()).length() == 1)
+           		textField0.setText("0" + date.getDayOfMonth());
+           	else
+           		textField0.setText(Integer.toString(date.getDayOfMonth()));
+           	if(Integer.toString(date.getMonth().getValue()).length() == 1)
+           		textField1.setText("0" + date.getMonthValue());
+           	else
+           		textField1.setText(Integer.toString(date.getMonth().getValue()));
+           	textField2.setText(Integer.toString(date.getYear()));
+		}
 	}
 
 	public void actionEffacer() 

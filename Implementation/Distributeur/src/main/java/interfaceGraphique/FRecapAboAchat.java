@@ -280,6 +280,9 @@ class FRecapAboAchat extends Ecran
         hBox8.getChildren().addAll(text16, text17);
         vBox.getChildren().addAll(hBox, hBox0, hBox1, hBox2, hBox4, hBox5, hBox6, hBox8, hBox7);
         getChildren().addAll(rectangle, text, vBox, button, button0);
+        
+        button.setFocusTraversable(false);
+        button0.setFocusTraversable(false);
     }
 
 	public void actionRetour() 

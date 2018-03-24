@@ -55,6 +55,8 @@ class FBacReception extends Ecran
         });
 
         getChildren().addAll(rectangle, text, button);
+        
+        button.setFocusTraversable(false);
     }
 	public void actionEntrer()
 	{

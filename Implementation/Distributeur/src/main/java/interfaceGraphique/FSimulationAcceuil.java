@@ -42,6 +42,8 @@ class FSimulationAcceuil extends Ecran
             }
         });
         getChildren().addAll(rectangle, button);
+        
+        button.setFocusTraversable(false);
     }
 	
 	public void actionEntrer() 

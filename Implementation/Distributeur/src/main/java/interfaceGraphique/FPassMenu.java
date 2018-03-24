@@ -150,6 +150,8 @@ class FPassMenu extends Ecran
         vBox0.getChildren().addAll(text1, text2, text3);
         hBox.getChildren().addAll(vBox, vBox0);
         getChildren().addAll(rectangle, text, text0, hBox, button2);
+
+        button2.setFocusTraversable(false);
     }
 
 	public void actionClavier(int a) 

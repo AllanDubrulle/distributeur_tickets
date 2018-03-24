@@ -284,6 +284,9 @@ class FRecapBillet extends Ecran
         hBox8.getChildren().addAll(text15, text16);
         vBox.getChildren().addAll(hBox, hBox0, hBox1, hBox3, hBox4, hBox5, hBox6, hBox7, hBox8);
         getChildren().addAll(rectangle, vBox, button, button0, text17);
+        
+        button.setFocusTraversable(false);
+        button0.setFocusTraversable(false);
     }
 
 	public void actionRetour() 

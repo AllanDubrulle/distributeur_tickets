@@ -46,5 +46,7 @@ class FRendreMonnaie extends Pane
         });
 
         getChildren().addAll(text, button);
+        
+        button.setFocusTraversable(false);
     }
 }

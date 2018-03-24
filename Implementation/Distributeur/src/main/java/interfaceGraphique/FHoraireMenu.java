@@ -121,7 +121,7 @@ class FHoraireMenu extends Ecran
 
         text2.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text2.setStrokeWidth(0.0);
-        text2.setText(":     Permet de consulter les arrivées dans une gare");
+        text2.setText(":      Permet de consulter les arrivées dans une gare");
         text2.setFont(new Font(15.0*hauteur));
         VBox.setMargin(text2, new Insets(20.0*hauteur, 0.0, 20.0*hauteur, 0.0));
 
@@ -150,6 +150,8 @@ class FHoraireMenu extends Ecran
         vBox0.getChildren().addAll(text1, text2, text3);
         hBox.getChildren().addAll(vBox, vBox0);
         getChildren().addAll(rectangle, text, text0, hBox, button2);
+        
+        button2.setFocusTraversable(false);
     }
 
 	public void actionClavier(int a) 

@@ -129,10 +129,6 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 		controleur.getEtatActuel().scanneCode();
 	}
 	
-	public void choixAnnulerScanner() 
-	{
-		controleur.getEtatActuel().choixAnnulerScanner();
-	}
 	public void choixValiderNumAbo() 
 	{
 		controleur.getEtatActuel().valideNumAbo();

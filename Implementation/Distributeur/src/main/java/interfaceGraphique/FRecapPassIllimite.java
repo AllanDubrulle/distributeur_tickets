@@ -213,6 +213,9 @@ class FRecapPassIllimite extends Ecran
         hBox6.getChildren().addAll(text12, text13);
         vBox.getChildren().addAll(hBox, hBox0, hBox3, hBox1, hBox4, hBox5, hBox6);
         getChildren().addAll(rectangle, text, vBox, button, button0);
+        
+        button.setFocusTraversable(false);
+        button0.setFocusTraversable(false);
     }
 
 	public void actionRetour() 

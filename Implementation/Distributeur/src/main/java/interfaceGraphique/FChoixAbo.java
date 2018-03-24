@@ -19,7 +19,6 @@ class FChoixAbo extends Pane
     {
     	this.stage = stage;
         Button button = new Button();
-        Button button0 = new Button();
         choiceBox = new ChoiceBox<String>();
         Text text = new Text();
         choiceBox.setItems(FXCollections.observableArrayList(GraphiqueACoeurImpl.getInstance().listeNumeroAbonnement()));
@@ -32,7 +31,7 @@ class FChoixAbo extends Pane
         setPrefWidth(400.0);
 
         button.setAlignment(javafx.geometry.Pos.BOTTOM_RIGHT);
-        button.setLayoutX(315.0);
+        button.setLayoutX(167.5);
         button.setLayoutY(160.0);
         button.setMnemonicParsing(false);
         button.setPrefHeight(31.0);
@@ -48,23 +47,6 @@ class FChoixAbo extends Pane
             }
         });
 
-        button0.setAlignment(javafx.geometry.Pos.BOTTOM_RIGHT);
-        button0.setLayoutX(10.0);
-        button0.setLayoutY(160.0);
-        button0.setMnemonicParsing(false);
-        button0.setPrefHeight(31.0);
-        button0.setPrefWidth(75.0);
-        button0.setText("Retour");
-        button0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button0.setOnAction(new EventHandler<ActionEvent>()
-        {
-            public void handle(ActionEvent event)
-            {
-            	GraphiqueACoeurImpl.getInstance().choixAnnulerScanner();
-            	stage.close();
-            }
-        });
-
         choiceBox.setLayoutX(100.0);
         choiceBox.setLayoutY(85.0);
         choiceBox.setPrefWidth(200.0);
@@ -76,7 +58,7 @@ class FChoixAbo extends Pane
         text.setText("Choisissez un numéro d'abonnement :");
         text.setFont(new Font("System Bold", 15.0));
 
-        getChildren().addAll(button, button0, choiceBox, text);
+        getChildren().addAll(button, choiceBox, text);
 
     }
 	

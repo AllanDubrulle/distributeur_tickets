@@ -310,6 +310,9 @@ class FAboAchat extends Ecran
         hBox6.getChildren().addAll(text7, choiceBox0, text6, choiceBox);
         vBox.getChildren().addAll(hBox, hBox0, hBox1, hBox2, hBox3, hBox4, hBox5, hBox6);
         getChildren().addAll(rectangle, text, vBox, button, button0, text10);
+        
+        button.setFocusTraversable(false);
+        button0.setFocusTraversable(false);
     }
     
     public void actionClavier(String a) 

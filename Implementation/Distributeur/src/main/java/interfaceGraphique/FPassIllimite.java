@@ -228,6 +228,9 @@ class FPassIllimite extends Ecran
         hBox5.getChildren().addAll(text5, textField0);
         vBox.getChildren().addAll(hBox, hBox0, hBox3, hBox4, hBox5);
         getChildren().addAll(rectangle, text, vBox, button, button0, text10);
+        
+        button.setFocusTraversable(false);
+        button0.setFocusTraversable(false);
     }
     
     public void actionClavier(String a) 

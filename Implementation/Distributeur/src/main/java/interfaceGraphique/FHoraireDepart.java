@@ -17,6 +17,8 @@ class FHoraireDepart extends Ecran
 {
 	private TextField textField, textField0, textField1;
 	private int pos = 0;
+	private Button button1;
+	private Text text10;
 
     public FHoraireDepart(double hauteur, double largeur) 
     {
@@ -35,8 +37,8 @@ class FHoraireDepart extends Ecran
         VBox vBox1 = new VBox();
         Button button = new Button();
         Button button0 = new Button();
-        Text text10 = new Text();
-        Button button1 = new Button();
+        text10 = new Text();
+        button1 = new Button();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -198,11 +200,14 @@ class FHoraireDepart extends Ecran
         vBox1.getChildren().add(button);
         hBox.getChildren().addAll(vBox, vBox0, vBox1);
         getChildren().addAll(rectangle, text, hBox, button0, text10, button1);
+        
+        button.setFocusTraversable(false);
+        button0.setFocusTraversable(false);
     }	
     
     public void actionClavier(String a) 
     {
-    	if (pos == 2)
+    	if (pos == 0)
     		textField.setText(textField.getText() + a);
     }
 
@@ -242,7 +247,7 @@ class FHoraireDepart extends Ecran
 	public void actionSuivant() 
 	{
 		{
-			if (pos == 2)
+			if (pos == 3)
 			{
 				textField.requestFocus();
 				pos = 0;
@@ -253,6 +258,8 @@ class FHoraireDepart extends Ecran
 					textField0.requestFocus();
 				else if (pos == 1)
 					textField1.requestFocus();
+				else 
+					button1.requestFocus();
 				pos ++;
 			}
 		}
@@ -262,6 +269,22 @@ class FHoraireDepart extends Ecran
 	{
     	if (pos == 0)
     		textField.setText(textField.getText() + " ");
+    	if (pos == 3)
+    	{
+    		DateFormat format = new SimpleDateFormat("yyyy/MM/dd  HH:mm");
+    		Date date = new Date();
+    		format.format(date);
+    		int heure = date.getHours();
+    		int minute = date.getMinutes();
+    		if(Integer.toString(heure).length() == 1)
+    			textField0.setText("0" + heure);
+    		else
+    			textField0.setText(Integer.toString(heure));
+    		if(Integer.toString(minute).length() == 1)
+    			textField1.setText("0" + minute);
+    		else
+    			textField1.setText(Integer.toString(minute));
+    	}
     }
 
 	public void actionEffacer() 
@@ -294,7 +317,7 @@ class FHoraireDepart extends Ecran
 		} 
 		catch (NumberFormatException | SQLException e) 
 		{
-			e.printStackTrace();
+			text10.setText("Les données saisies sont incorrectes");
 		}
 	}
 }

@@ -205,6 +205,9 @@ public class FPass10Trajets extends Ecran
         hBox2.getChildren().addAll(text3, choiceBox0, text2, choiceBox);
         vBox.getChildren().addAll(hBox, hBox0, hBox1, hBox2);
         getChildren().addAll(rectangle, text, vBox, button, button0, text10);
+        
+        button.setFocusTraversable(false);
+        button0.setFocusTraversable(false);
     }
     
     public void actionClavier(String a) 

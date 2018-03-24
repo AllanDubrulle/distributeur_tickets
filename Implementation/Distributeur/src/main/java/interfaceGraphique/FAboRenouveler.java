@@ -14,11 +14,12 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import stockage.ErreurDEncodage;
 
-public class FAboRenouveler extends Ecran 
+class FAboRenouveler extends Ecran 
 {
 	private TextField textField;
 	private RadioButton radioButton, radioButton0, radioButton1, radioButton2;
 	private Text text10;
+	private Button button1;
 	
 	public FAboRenouveler(double hauteur, double largeur)
 	{
@@ -38,7 +39,7 @@ public class FAboRenouveler extends Ecran
         Button button = new Button();
         Button button0 = new Button();
         text10 = new Text();
-        Button button1 = new Button();
+        button1 = new Button();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -195,6 +196,9 @@ public class FAboRenouveler extends Ecran
         hBox1.getChildren().addAll(text0, radioButton, radioButton0, radioButton1, radioButton2);
         vBox.getChildren().addAll(hBox, hBox0, hBox1);
         getChildren().addAll(rectangle, vBox, text1, button, button0, text10, button1);
+        
+        button.setFocusTraversable(false);
+        button0.setFocusTraversable(false);
     }
 
 	public void actionClavier(int a) 
@@ -225,16 +229,25 @@ public class FAboRenouveler extends Ecran
 
 	public void actionSuivant() 
 	{
-		if (pos == 1)
+		if (pos == 2)
 		{
 			textField.requestFocus();
 			pos = 0;
 		}
 		else
 		{
-			radioButton.requestFocus();
+			if (pos == 0)
+				radioButton.requestFocus();
+			else
+				button1.requestFocus();
 			pos ++;
 		}
+	}
+	
+	public void actionEspace()
+	{
+		if (pos == 2)
+			graphAC.choixScannerCode();
 	}
 
 	public void actionEffacer() 

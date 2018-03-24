@@ -17,6 +17,7 @@ class FHoraireArEtDep extends Ecran
 	private TextField textField, textField0, textField1, textField2;
 	private int pos = 0;
 	private Text text10;
+	private Button button1;
 
     public FHoraireArEtDep(double hauteur, double largeur) 
     {
@@ -39,7 +40,7 @@ class FHoraireArEtDep extends Ecran
         Button button = new Button();
         Button button0 = new Button();
         text10 = new Text();
-        Button button1 = new Button();
+        button1 = new Button();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -216,6 +217,9 @@ class FHoraireArEtDep extends Ecran
         vBox1.getChildren().add(button);
         hBox.getChildren().addAll(vBox, vBox0,vBox1);
         getChildren().addAll(rectangle, text, hBox, button0, text10, button1);
+        
+        button.setFocusTraversable(false);
+        button0.setFocusTraversable(false);
     }
     
     public void actionClavier(String a) 
@@ -262,7 +266,7 @@ class FHoraireArEtDep extends Ecran
 	public void actionSuivant() 
 	{
 		{
-			if (pos == 3)
+			if (pos == 4)
 			{
 				textField.requestFocus();
 				pos = 0;
@@ -275,6 +279,8 @@ class FHoraireArEtDep extends Ecran
 					textField1.requestFocus();
 				else if (pos == 2)
 					textField2.requestFocus();
+				else 
+					button1.requestFocus();
 				pos ++;
 			}
 		}
@@ -286,6 +292,22 @@ class FHoraireArEtDep extends Ecran
     		textField.setText(textField.getText() + " ");
     	else if (pos == 1)
     		textField0.setText(textField0.getText() + " ");
+    	else if (pos == 4)
+    	{
+    		DateFormat format = new SimpleDateFormat("yyyy/MM/dd  HH:mm");
+    		Date date = new Date();
+    		format.format(date);
+    		int heure = date.getHours();
+    		int minute = date.getMinutes();
+    		if(Integer.toString(heure).length() == 1)
+    			textField1.setText("0" + heure);
+    		else
+    			textField1.setText(Integer.toString(heure));
+    		if(Integer.toString(minute).length() == 1)
+    			textField2.setText("0" + minute);
+    		else
+    			textField2.setText(Integer.toString(minute));
+    	}
     }
 
 	public void actionEffacer() 

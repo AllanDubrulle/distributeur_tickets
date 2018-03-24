@@ -159,12 +159,6 @@ public interface GraphiqueACoeur
 	public void choixScannerCode();
 	
 	/**
-	 * 	Communique le fait que l'utilisateur souhaite annuler le scan du code barre de son
-	 * 	abonnement
-	 */
-	public void choixAnnulerScanner();
-	
-	/**
 	 * 	Communique le fait que l'utilisateur valide le numéro de l'abonnement une fois scanné
 	 */
 	public void choixValiderNumAbo();

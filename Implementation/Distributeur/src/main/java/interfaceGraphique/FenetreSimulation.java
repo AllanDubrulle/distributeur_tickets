@@ -467,7 +467,7 @@ class FenetreSimulation extends BorderPane
 
     public void actualiserFenteBillet(boolean enMarche)
     {
-		System.out.println(enMarche);
+
     	if(enMarche)
     	{
         	for (int i = 0; i < 4; i++)
@@ -484,7 +484,6 @@ class FenetreSimulation extends BorderPane
     
 	public void actualiserFentePiece(boolean enMarche)
 	{
-		System.out.println(enMarche);
 		if(enMarche)
 	    {
 	    	for (int i = 0; i < 8; i++)

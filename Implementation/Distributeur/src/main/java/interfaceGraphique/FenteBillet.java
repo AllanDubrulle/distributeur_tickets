@@ -104,6 +104,11 @@ class FenteBillet extends Pane
         });
 
         getChildren().addAll(rectangle, button, button0, button1, button2);
+        
+        button.setFocusTraversable(false);
+        button0.setFocusTraversable(false);
+        button1.setFocusTraversable(false);
+        button2.setFocusTraversable(false);
     }
 	
 	public Button getButton(int i)
