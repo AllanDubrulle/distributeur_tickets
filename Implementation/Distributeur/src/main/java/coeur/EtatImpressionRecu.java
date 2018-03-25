@@ -48,15 +48,15 @@ public class EtatImpressionRecu extends ControleurEtat
 		Controleur.getInstance().getCoeurAGraphique().afficherRecu(Controleur.getInstance().getCoeurAStockage().prixAffichable(),
 				Controleur.getInstance().getCoeurAStockage().introduitAffichable(),
 				Controleur.getInstance().getCoeurAStockage().renduAffichable(),"Liquide"); 
-		Controleur.getInstance().modifEtat(EtatFin.getInstance());
 		}
 		else
 		{
 			Controleur.getInstance().getCoeurAGraphique().afficherRecu(Controleur.getInstance().getCoeurAStockage().prixAffichable(),
 					Controleur.getInstance().getCoeurAStockage().introduitAffichable(),
 					Controleur.getInstance().getCoeurAStockage().renduAffichable(),"Carte"); 
-			Controleur.getInstance().modifEtat(EtatFin.getInstance());
 		}
+		Controleur.getInstance().modifEtat(EtatFin.getInstance());
 	}
+	
 	
 }

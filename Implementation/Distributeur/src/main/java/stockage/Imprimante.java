@@ -54,7 +54,6 @@ public class Imprimante
 			throw new PlusDePapier("Plus de papier en réserve");
 		}
 		setNbrImpressions(getNbrImpressions()-1);
-		System.out.println(nbrImpressions);
 	}
 
 
