@@ -35,15 +35,10 @@ class EtatImpressionTitre extends EtatAnnulable
 			default:
 				break;
 			}
-			Controleur.getInstance().getCoeurAGraphique().afficherViderBacRecep();
-			int prix = Controleur.getInstance().getCoeurAStockage().getPrix();
-			Controleur.getInstance().getCoeurAStockage().setPrix(prix/Controleur.getInstance().getCoeurAStockage().getNbrTitre());
-			Controleur.getInstance().getCoeurAGraphique().afficherTitre(Controleur.getInstance().getCommande(),Controleur.getInstance().getCoeurAStockage().getTitre() 
-					,Controleur.getInstance().getCoeurAStockage().prixAffichable()); 
 			for(int i = 0; i < Controleur.getInstance().getCoeurAStockage().getNbrTitre(); i++)
 				Controleur.getInstance().getCoeurAStockage().impression();
-			Controleur.getInstance().getCoeurAStockage().setPrix(prix);
-			Controleur.getInstance().modifEtat(EtatDemandeRecu.getInstance());
+			Controleur.getInstance().getCoeurAGraphique().afficherImpression();
+			Controleur.getInstance().getCoeurAGraphique().afficherViderBacRecep();
 		}
 		catch(PlusDePapier e)
 		{

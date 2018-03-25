@@ -74,4 +74,5 @@ public interface CoeurAStockage
 	public void actualiserPanne(Composant composant);
 	public void carteEnlevee();
 	public boolean carteInseree();
+	public double prixTicketAffichable();
 }

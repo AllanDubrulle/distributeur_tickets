@@ -558,4 +558,9 @@ public class CoeurAStockageImpl implements CoeurAStockage
 	{
 		return carte != null;
 	}
+
+	public double prixTicketAffichable()
+	{
+		return (double)prix / nbrTitre;
+	}
 }
