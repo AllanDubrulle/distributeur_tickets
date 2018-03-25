@@ -31,12 +31,12 @@ class EtatImpressionHoraire extends ControleurEtat
 			Controleur.getInstance().getCoeurAGraphique().afficherImprimanteEnPanne(); 
 		}	
 	}
-	public void apres5secOk()
+	public void apres5sec()
 	{
 		Controleur.getInstance().getCoeurAGraphique().afficherViderBacRecep();
 	}
-	
-	public void apres5sec()
+																						//c'était l'inverse ici xD
+	public void apres5secOk()
 	{
 		Controleur.getInstance().modifEtat(EtatMenu.getInstance());
 	}

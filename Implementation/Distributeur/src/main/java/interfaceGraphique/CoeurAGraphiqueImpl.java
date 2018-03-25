@@ -418,6 +418,8 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 		case LECTEURCARTE:
 			FenetreSimulation.getInstance().actualiserLecteurCarte(enMarche);
 			break;
+		case SCANNEUR:												//A REGLER !!!!
+			break;
 		default:
 			break;
 		

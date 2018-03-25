@@ -85,7 +85,7 @@ class EtatAttentePIN extends EtatAnnulable
 	public void choixInsererRetirerCarte()
 	{
 		Controleur.getInstance().getCoeurAStockage().carteEnlevee();
-		Controleur.getInstance().modifEtat(EtatPaiement.getInstance());
+		Controleur.getInstance().getCoeurAGraphique().afficherRetraitCarte();		//afficher le retrait de la carte, puis ça passe directement à etat paiement après la pause
 	}
 	
 	public void apres5sec()

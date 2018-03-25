@@ -50,7 +50,10 @@ class FAfficherMessage extends Ecran
     		delais.play();
         }
         
-        if (!message.equals("Code PIN incorrect. Veuillez rééssayer.") && !message.equals("Veuillez entrer votre code PIN.") && !message.equals("Paiement effectué avec succès. Veuillez récuperer votre carte."))
+        //	Alors, ici, je ne sais pas pourquoi mais à un moment donné, je suis passé dans les deux, le premier ne faisait rien (car la méthode des 5 secondes
+        //	n'existait pas et le second était alors exécuté. Or, on exécute l'un OU (exclusif) l'autre : ajour du else
+        
+        else if (!message.equals("Code PIN incorrect. Veuillez rééssayer.") && !message.equals("Veuillez entrer votre code PIN.") && !message.equals("Paiement effectué avec succès. Veuillez récuperer votre carte."))
         {
         	lecteur = false;
         	PauseTransition delais = new PauseTransition(Duration.seconds(5));

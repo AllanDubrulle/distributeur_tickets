@@ -41,6 +41,11 @@ public class EtatImpressionRecu extends ControleurEtat
 		Controleur.getInstance().getCoeurAGraphique().afficherViderBacRecep();
 	}
 	
+	public void apres5secOk()
+	{
+		Controleur.getInstance().modifEtat(EtatFin.getInstance());							//manquait le cas ou l'imprimante était mise en panne après l'impression des billets
+	}
+	
 	public void choixOk()
 	{
 		if (Controleur.getInstance().getModePaiement() == EtatPaiementLiquide.getInstance())
