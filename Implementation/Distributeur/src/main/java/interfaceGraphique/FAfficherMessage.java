@@ -1,6 +1,8 @@
 package interfaceGraphique;
 
+import javafx.animation.FadeTransition;
 import javafx.animation.PauseTransition;
+import javafx.animation.SequentialTransition;
 import javafx.scene.shape.*;
 import javafx.scene.text.*;
 import javafx.util.Duration;
@@ -39,7 +41,7 @@ class FAfficherMessage extends Ecran
         text.setFont(new Font("System Italic", 18.0*hauteur));
 
         getChildren().addAll(rectangle, text);
-        if (message.equals("Impression ...") || message.equals("Veuillez récupérer votre carte."))
+        if (message.equals("Impression ...") || message.equals("Problème technique. Veuillez prendre contact avec un technicien pour tout rembouserment.") || message.equals("Problème d'imprimante"))
         {
         	lecteur = false;
         	PauseTransition delais = new PauseTransition(Duration.seconds(5));

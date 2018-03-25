@@ -163,6 +163,12 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	{
 		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Impression en cours ...", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 	}
+	
+	public void afficherImprimanteEnPanne()
+	{
+		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Problème d'imprimante", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
+	}
+	
 	public void afficherViderBacRecep() 
 	{
 		FenetreSimulation.getInstance().afficher(new FBacReception(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));

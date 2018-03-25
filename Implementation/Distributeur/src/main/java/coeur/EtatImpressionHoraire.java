@@ -23,18 +23,22 @@ class EtatImpressionHoraire extends ControleurEtat
 		}
 		catch(PlusDePapier e)
 		{
-			Controleur.getInstance().getCoeurAGraphique().afficherMessageDErreur();
+			Controleur.getInstance().getCoeurAGraphique().afficherImprimanteEnPanne();
 			Controleur.getInstance().modifEtat(EtatMenu.getInstance());
 		} 
 		catch (ComposantHorsService e)
 		{
-			Controleur.getInstance().getCoeurAGraphique().afficherMessageDErreur(); 
-			Controleur.getInstance().modifEtat(EtatMenu.getInstance());
+			Controleur.getInstance().getCoeurAGraphique().afficherImprimanteEnPanne(); 
 		}	
 	}
-	public void apres5sec()
+	public void apres5secOk()
 	{
 		Controleur.getInstance().getCoeurAGraphique().afficherViderBacRecep();
+	}
+	
+	public void apres5sec()
+	{
+		Controleur.getInstance().modifEtat(EtatMenu.getInstance());
 	}
 	
 	public void choixOk()
