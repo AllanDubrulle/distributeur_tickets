@@ -29,12 +29,10 @@ public class EtatImpressionRecu extends ControleurEtat
 		catch(PlusDePapier e)
 		{
 			Controleur.getInstance().getCoeurAGraphique().afficherMessageDErreur();
-			Controleur.getInstance().modifEtat(EtatMenu.getInstance());
 		} 
 		catch (ComposantHorsService e)
 		{
 			Controleur.getInstance().getCoeurAGraphique().afficherMessageDErreur(); 
-			Controleur.getInstance().modifEtat(EtatMenu.getInstance());
 		}	
 	}
 	

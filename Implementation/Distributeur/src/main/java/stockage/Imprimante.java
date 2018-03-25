@@ -49,7 +49,7 @@ public class Imprimante
 		{
 			throw new ComposantHorsService("Imprimante hors service");
 		}
-		else if(getNbrImpressions() == 0)
+		else if(getNbrImpressions() ==0)
 		{
 			throw new PlusDePapier("Plus de papier en réserve");
 		}

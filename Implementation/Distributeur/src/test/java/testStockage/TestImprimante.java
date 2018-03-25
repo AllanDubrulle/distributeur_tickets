@@ -19,8 +19,7 @@ public class TestImprimante
 		assertEquals(imprimante.getNbrImpressions(), 50, delta);
 		try 
 		{
-			for(int i = 1; i < 50; i++)
-				imprimante.imprimer();
+			imprimante.imprimer();
 		} 
 		catch (ComposantHorsService e) 
 		{

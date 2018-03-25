@@ -300,6 +300,16 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Problème monnayeur, veuillez récuperer votre monnaie.", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 	}
 	
+	public void afficherRendreMonnaieInsereeImprimante()
+	{
+		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Problème survenu lors de l'impression, veuillez récuperer votre monnaie.", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
+	}
+	
+	public void afficherProblemeTechnique()
+	{
+		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Problème technique, veuillez récuperer votre monnaie.", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
+	}
+	
 	public void afficherMessageDErreur()
 	{
 		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Problème technique. Veuillez prendre contact avec un technicien pour tout rembouserment.", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));

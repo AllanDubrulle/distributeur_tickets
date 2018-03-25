@@ -11,28 +11,28 @@ class AfficherBillet extends Pane
 {
     public AfficherBillet(String gareDepart, String gareArrivee, boolean allerRetour, int classe, String type, String reduc, Date date, double prix) 
     {
-        VBox vBox = new VBox();
-        HBox hBox = new HBox();
-        Text text = new Text();
-        Text text0 = new Text();
-        HBox hBox0 = new HBox();
-        Text text1 = new Text();
-        Text text2 = new Text();
-        HBox hBox1 = new HBox();
-        Text text3 = new Text();
-        HBox hBox2 = new HBox();
-        Text text4 = new Text();
-        Text text5 = new Text();
-        HBox hBox3 = new HBox();
-        Text text6 = new Text();
-        Text text7 = new Text();
-        HBox hBox4 = new HBox();
-        Text text8 = new Text();
-        Text text9 = new Text();
-        HBox hBox5 = new HBox();
-        Text text10 = new Text();
-        Text text11 = new Text();
-        Text text12 = new Text();
+        VBox boxVer = new VBox();
+        HBox boxHor1 = new HBox();
+        HBox boxHor2 = new HBox();
+        HBox boxHor3 = new HBox();
+        HBox boxHor4 = new HBox();
+        HBox boxHor5 = new HBox();
+        HBox boxHor6 = new HBox();
+        HBox boxHor7 = new HBox();
+        Text texte1 = new Text();
+        Text texte2 = new Text();
+        Text texte3 = new Text();
+        Text texte4 = new Text();
+        Text texte5 = new Text();
+        Text texte6 = new Text();
+        Text texte7 = new Text();
+        Text texte8 = new Text();
+        Text texte9 = new Text();
+        Text texte10 = new Text();
+        Text texte11 = new Text();
+        Text texte12 = new Text();
+        Text texte13 = new Text();
+        Text texte14 = new Text();
         Rectangle rectangle = new Rectangle();
 
         setMaxHeight(USE_PREF_SIZE);
@@ -42,145 +42,145 @@ class AfficherBillet extends Pane
         setPrefHeight(250.0);
         setPrefWidth(580.0);
 
-        vBox.setAlignment(javafx.geometry.Pos.TOP_CENTER);
-        vBox.setPrefHeight(300.0);
-        vBox.setPrefWidth(580.0);
+        boxVer.setAlignment(javafx.geometry.Pos.TOP_CENTER);
+        boxVer.setPrefHeight(300.0);
+        boxVer.setPrefWidth(580.0);
 
-        hBox.setPrefHeight(0.0);
-        hBox.setPrefWidth(580.0);
+        boxHor1.setPrefHeight(0.0);
+        boxHor1.setPrefWidth(580.0);
 
-        text.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text.setStrokeWidth(0.0);
-        text.setText("BILLET " + type.toUpperCase());
-        text.setWrappingWidth(200.0);
-        text.setFont(new Font("System Bold Italic", 18.0));
+        texte1.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte1.setStrokeWidth(0.0);
+        texte1.setText("BILLET " + type.toUpperCase());
+        texte1.setWrappingWidth(200.0);
+        texte1.setFont(new Font("System Bold Italic", 18.0));
 
         String format = "dd/MM/yy   HH:mm:ss"; 
         java.text.SimpleDateFormat formater = new java.text.SimpleDateFormat(format); 
         java.util.Date dateAchat = new java.util.Date(); 
         
-        text0.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text0.setStrokeWidth(0.0);
-        text0.setText(formater.format(dateAchat));
-        text0.setTextAlignment(javafx.scene.text.TextAlignment.RIGHT);
-        text0.setWrappingWidth(150.0);
-        HBox.setMargin(text0, new Insets(0.0, 0.0, 0.0, 180.0));
-        hBox.setOpaqueInsets(new Insets(0.0));
-        VBox.setMargin(hBox, new Insets(0.0, 20.0, 0.0, 20.0));
+        texte2.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte2.setStrokeWidth(0.0);
+        texte2.setText(formater.format(dateAchat));
+        texte2.setTextAlignment(javafx.scene.text.TextAlignment.RIGHT);
+        texte2.setWrappingWidth(150.0);
+        HBox.setMargin(texte2, new Insets(0.0, 0.0, 0.0, 180.0));
+        boxHor1.setOpaqueInsets(new Insets(0.0));
+        VBox.setMargin(boxHor1, new Insets(0.0, 20.0, 0.0, 20.0));
 
-        hBox0.setPrefHeight(0.0);
-        hBox0.setPrefWidth(580.0);
+        boxHor2.setPrefHeight(0.0);
+        boxHor2.setPrefWidth(580.0);
 
-        text1.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text1.setStrokeWidth(0.0);
+        texte3.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte3.setStrokeWidth(0.0);
         if (allerRetour)
         {
-        	text1.setText("ALLER-RETOUR");	
+        	texte3.setText("ALLER-RETOUR");	
         }
         else
         {
-        	text1.setText("ALLER SIMPLE");
+        	texte3.setText("ALLER SIMPLE");
         }
-        text1.setWrappingWidth(200.0);
-        text1.setFont(new Font("System Bold Italic", 18.0));
+        texte3.setWrappingWidth(200.0);
+        texte3.setFont(new Font("System Bold Italic", 18.0));
 
-        text2.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text2.setStrokeWidth(0.0);
-        text2.setText("Gare de MONS");
-        text2.setTextAlignment(javafx.scene.text.TextAlignment.RIGHT);
-        text2.setWrappingWidth(150.0);
-        HBox.setMargin(text2, new Insets(0.0, 0.0, 0.0, 180.0));
-        hBox0.setOpaqueInsets(new Insets(0.0));
-        VBox.setMargin(hBox0, new Insets(0.0, 20.0, 0.0, 20.0));
+        texte4.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte4.setStrokeWidth(0.0);
+        texte4.setText("Gare de MONS");
+        texte4.setTextAlignment(javafx.scene.text.TextAlignment.RIGHT);
+        texte4.setWrappingWidth(150.0);
+        HBox.setMargin(texte4, new Insets(0.0, 0.0, 0.0, 180.0));
+        boxHor2.setOpaqueInsets(new Insets(0.0));
+        VBox.setMargin(boxHor2, new Insets(0.0, 20.0, 0.0, 20.0));
 
-        hBox1.setPrefHeight(0.0);
-        hBox1.setPrefWidth(580.0);
+        boxHor3.setPrefHeight(0.0);
+        boxHor3.setPrefWidth(580.0);
 
-        text3.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text3.setStrokeWidth(0.0);
-        text3.setText(Integer.toString(classe) +"e classe");
-        text3.setWrappingWidth(200.0);
-        text3.setFont(new Font("System Bold", 18.0));
-        hBox1.setOpaqueInsets(new Insets(0.0));
-        VBox.setMargin(hBox1, new Insets(0.0, 0.0, 20.0, 20.0));
+        texte5.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte5.setStrokeWidth(0.0);
+        texte5.setText(Integer.toString(classe) +"e classe");
+        texte5.setWrappingWidth(200.0);
+        texte5.setFont(new Font("System Bold", 18.0));
+        boxHor3.setOpaqueInsets(new Insets(0.0));
+        VBox.setMargin(boxHor3, new Insets(0.0, 0.0, 20.0, 20.0));
 
-        hBox2.setPrefHeight(0.0);
-        hBox2.setPrefWidth(580.0);
+        boxHor4.setPrefHeight(0.0);
+        boxHor4.setPrefWidth(580.0);
 
-        text4.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text4.setStrokeWidth(0.0);
-        text4.setText("De :");
-        text4.setWrappingWidth(35.0);
+        texte6.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte6.setStrokeWidth(0.0);
+        texte6.setText("De :");
+        texte6.setWrappingWidth(35.0);
 
-        text5.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text5.setStrokeWidth(0.0);
-        text5.setText(gareDepart.toUpperCase());
-        text5.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        HBox.setMargin(text5, new Insets(0.0, 0.0, 0.0, 50.0));
-        hBox2.setOpaqueInsets(new Insets(0.0));
-        VBox.setMargin(hBox2, new Insets(0.0, 20.0, 5.0, 20.0));
+        texte7.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte7.setStrokeWidth(0.0);
+        texte7.setText(gareDepart.toUpperCase());
+        texte7.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        HBox.setMargin(texte7, new Insets(0.0, 0.0, 0.0, 50.0));
+        boxHor4.setOpaqueInsets(new Insets(0.0));
+        VBox.setMargin(boxHor4, new Insets(0.0, 20.0, 5.0, 20.0));
 
-        hBox3.setPrefHeight(0.0);
-        hBox3.setPrefWidth(580.0);
+        boxHor5.setPrefHeight(0.0);
+        boxHor5.setPrefWidth(580.0);
 
-        text6.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text6.setStrokeWidth(0.0);
-        text6.setText("A :");
-        text6.setWrappingWidth(35.0);
+        texte8.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte8.setStrokeWidth(0.0);
+        texte8.setText("A :");
+        texte8.setWrappingWidth(35.0);
 
-        text7.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text7.setStrokeWidth(0.0);
-        text7.setText(gareArrivee.toUpperCase());
-        text7.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        HBox.setMargin(text7, new Insets(0.0, 0.0, 0.0, 50.0));
-        hBox3.setOpaqueInsets(new Insets(0.0));
-        VBox.setMargin(hBox3, new Insets(0.0, 20.0, 5.0, 20.0));
+        texte9.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte9.setStrokeWidth(0.0);
+        texte9.setText(gareArrivee.toUpperCase());
+        texte9.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        HBox.setMargin(texte9, new Insets(0.0, 0.0, 0.0, 50.0));
+        boxHor5.setOpaqueInsets(new Insets(0.0));
+        VBox.setMargin(boxHor5, new Insets(0.0, 20.0, 5.0, 20.0));
 
-        hBox4.setPrefHeight(0.0);
-        hBox4.setPrefWidth(580.0);
+        boxHor6.setPrefHeight(0.0);
+        boxHor6.setPrefWidth(580.0);
 
-        text8.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text8.setStrokeWidth(0.0);
-        text8.setText("Le :");
-        text8.setWrappingWidth(35.0);
-        HBox.setMargin(text8, new Insets(0.0));
+        texte10.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte10.setStrokeWidth(0.0);
+        texte10.setText("Le :");
+        texte10.setWrappingWidth(35.0);
+        HBox.setMargin(texte10, new Insets(0.0));
 
-        text9.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text9.setStrokeWidth(0.0);
+        texte11.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte11.setStrokeWidth(0.0);
         if(date.getMonth() == 9 || date.getMonth() == 10 || date.getMonth() == 11)
-        	text9.setText(date.getDate() + "/" + String.valueOf(date.getMonth()+1) + "/" + String.valueOf(date.getYear()+1900));
+        	texte11.setText(date.getDate() + "/" + String.valueOf(date.getMonth()+1) + "/" + String.valueOf(date.getYear()+1900));
         else
-        	text9.setText(date.getDate() + "/0" + String.valueOf(date.getMonth()+1) + "/" + String.valueOf(date.getYear()+1900));
-        text9.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        HBox.setMargin(text9, new Insets(0.0, 0.0, 0.0, 50.0));
-        hBox4.setOpaqueInsets(new Insets(0.0));
-        VBox.setMargin(hBox4, new Insets(0.0, 20.0, 20.0, 20.0));
+        	texte11.setText(date.getDate() + "/0" + String.valueOf(date.getMonth()+1) + "/" + String.valueOf(date.getYear()+1900));
+        texte11.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        HBox.setMargin(texte11, new Insets(0.0, 0.0, 0.0, 50.0));
+        boxHor6.setOpaqueInsets(new Insets(0.0));
+        VBox.setMargin(boxHor6, new Insets(0.0, 20.0, 20.0, 20.0));
 
-        hBox5.setPrefHeight(0.0);
-        hBox5.setPrefWidth(580.0);
+        boxHor7.setPrefHeight(0.0);
+        boxHor7.setPrefWidth(580.0);
 
-        text10.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text10.setStrokeWidth(0.0);
-        text10.setText("REDUCTION :");
-        text10.setFont(new Font("System Bold", 15.0));
+        texte12.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte12.setStrokeWidth(0.0);
+        texte12.setText("REDUCTION :");
+        texte12.setFont(new Font("System Bold", 15.0));
 
-        text11.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text11.setStrokeWidth(0.0);
-        text11.setText(reduc);
-        text11.setWrappingWidth(200.0);
-        HBox.setMargin(text11, new Insets(0.0, 0.0, 0.0, 19.0));
+        texte13.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte13.setStrokeWidth(0.0);
+        texte13.setText(reduc);
+        texte13.setWrappingWidth(200.0);
+        HBox.setMargin(texte13, new Insets(0.0, 0.0, 0.0, 19.0));
 
-        text12.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text12.setStrokeWidth(0.0);
-        text12.setText(prix + "   EUR");
-        text12.setTextAlignment(javafx.scene.text.TextAlignment.RIGHT);
-        text12.setWrappingWidth(100.0);
-        HBox.setMargin(text12, new Insets(0.0, 0.0, 0.0, 110.0));
-        text12.setFont(new Font("System Bold", 16.0));
-        hBox5.setOpaqueInsets(new Insets(0.0));
-        VBox.setMargin(hBox5, new Insets(10.0, 20.0, 0.0, 20.0));
+        texte14.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte14.setStrokeWidth(0.0);
+        texte14.setText(prix + "   EUR");
+        texte14.setTextAlignment(javafx.scene.text.TextAlignment.RIGHT);
+        texte14.setWrappingWidth(100.0);
+        HBox.setMargin(texte14, new Insets(0.0, 0.0, 0.0, 110.0));
+        texte14.setFont(new Font("System Bold", 16.0));
+        boxHor7.setOpaqueInsets(new Insets(0.0));
+        VBox.setMargin(boxHor7, new Insets(10.0, 20.0, 0.0, 20.0));
         
-        vBox.setPadding(new Insets(20.0, 0.0, 0.0, 0.0));
+        boxVer.setPadding(new Insets(20.0, 0.0, 0.0, 0.0));
 
         rectangle.setArcHeight(5.0);
         rectangle.setArcWidth(5.0);
@@ -192,14 +192,14 @@ class AfficherBillet extends Pane
         rectangle.setStrokeType(javafx.scene.shape.StrokeType.INSIDE);
         rectangle.setWidth(560.0);
 
-        hBox.getChildren().addAll(text, text0);
-        hBox0.getChildren().addAll(text1, text2);
-        hBox1.getChildren().add(text3);
-        hBox2.getChildren().addAll(text4, text5);
-        hBox3.getChildren().addAll(text6, text7);
-        hBox4.getChildren().addAll(text8, text9);
-        hBox5.getChildren().addAll(text10, text11, text12);
-        vBox.getChildren().addAll(hBox, hBox0, hBox1, hBox2, hBox3, hBox4, hBox5);
-        getChildren().addAll(vBox, rectangle);
+        boxHor1.getChildren().addAll(texte1, texte2);
+        boxHor2.getChildren().addAll(texte3, texte4);
+        boxHor3.getChildren().add(texte5);
+        boxHor4.getChildren().addAll(texte6, texte7);
+        boxHor5.getChildren().addAll(texte8, texte9);
+        boxHor6.getChildren().addAll(texte10, texte11);
+        boxHor7.getChildren().addAll(texte12, texte13, texte14);
+        boxVer.getChildren().addAll(boxHor1, boxHor2, boxHor3, boxHor4, boxHor5, boxHor6, boxHor7);
+        getChildren().addAll(boxVer, rectangle);
     }
 }
