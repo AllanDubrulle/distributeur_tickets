@@ -25,14 +25,8 @@ class EtatAttenteRepriseCarte extends EtatAnnulable
 	
 	public void choixInsererRetirerCarte()
 	{
-
-		Controleur.getInstance().getCoeurAGraphique().afficherImpression();
 		Controleur.getInstance().getCoeurAStockage().carteEnlevee();
 		Controleur.getInstance().modifEtat(EtatImpressionTitre.getInstance());
 	}
 
-	public void apres5secOk()
-	{
-		Controleur.getInstance().modifEtat(EtatImpressionTitre.getInstance());
-	}
 }

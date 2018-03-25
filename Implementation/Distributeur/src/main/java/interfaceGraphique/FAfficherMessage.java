@@ -41,6 +41,7 @@ class FAfficherMessage extends Ecran
         text.setFont(new Font("System Italic", 18.0*hauteur));
 
         getChildren().addAll(rectangle, text);
+        
         if (message.equals("Impression ...") || message.equals("Problème technique. Veuillez prendre contact avec un technicien pour tout rembouserment.") || message.equals("Problème d'imprimante"))
         {
         	lecteur = false;
@@ -48,6 +49,7 @@ class FAfficherMessage extends Ecran
     		delais.setOnFinished( event -> apres5secOk());
     		delais.play();
         }
+        
         if (!message.equals("Code PIN incorrect. Veuillez rééssayer.") && !message.equals("Veuillez entrer votre code PIN.") && !message.equals("Paiement effectué avec succès. Veuillez récuperer votre carte."))
         {
         	lecteur = false;
@@ -55,6 +57,7 @@ class FAfficherMessage extends Ecran
     		delais.setOnFinished( event -> apres5sec());
     		delais.play();
         }
+        
         else
         {
         	lecteur = true;

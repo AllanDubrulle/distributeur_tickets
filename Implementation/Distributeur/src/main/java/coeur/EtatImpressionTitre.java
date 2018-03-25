@@ -38,20 +38,21 @@ class EtatImpressionTitre extends EtatAnnulable
 			for(int i = 0; i < Controleur.getInstance().getCoeurAStockage().getNbrTitre(); i++)
 				Controleur.getInstance().getCoeurAStockage().impression();
 			Controleur.getInstance().getCoeurAGraphique().afficherImpression();
-			Controleur.getInstance().getCoeurAGraphique().afficherViderBacRecep();
 		}
 		catch(PlusDePapier e)
 		{
 			Controleur.getInstance().getCoeurAGraphique().afficherMessageDErreur();
-			Controleur.getInstance().modifEtat(EtatMenu.getInstance());
 		} 
 		catch (ComposantHorsService e)
 		{
 			Controleur.getInstance().getCoeurAGraphique().afficherMessageDErreur(); 
-			Controleur.getInstance().modifEtat(EtatMenu.getInstance());
 		}
 	}
-	
+		
+	public void apres5secOk()
+	{
+		Controleur.getInstance().modifEtat(EtatMenu.getInstance());
+	}
 	public void apres5sec()
 	{
 		Controleur.getInstance().getCoeurAGraphique().afficherViderBacRecep();
@@ -59,7 +60,7 @@ class EtatImpressionTitre extends EtatAnnulable
 	public void choixOk()
 	{
 		Controleur.getInstance().getCoeurAGraphique().afficherTitre(Controleur.getInstance().getCommande(),Controleur.getInstance().getCoeurAStockage().getTitre() 
-				,Controleur.getInstance().getCoeurAStockage().prixAffichable()); 
+				,Controleur.getInstance().getCoeurAStockage().prixTicketAffichable()); 
 		Controleur.getInstance().modifEtat(EtatDemandeRecu.getInstance());
 	}
 	

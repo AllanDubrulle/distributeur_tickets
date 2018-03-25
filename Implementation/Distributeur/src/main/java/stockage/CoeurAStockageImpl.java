@@ -561,6 +561,6 @@ public class CoeurAStockageImpl implements CoeurAStockage
 
 	public double prixTicketAffichable()
 	{
-		return (double)prix / nbrTitre;
+		return (double)prix / (nbrTitre*100);
 	}
 }

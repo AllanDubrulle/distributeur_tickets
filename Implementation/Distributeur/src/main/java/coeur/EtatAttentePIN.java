@@ -47,14 +47,18 @@ class EtatAttentePIN extends EtatAnnulable
 	 * 	l'utilisateur n'as déjà pas entré trois fois un mauvais code PIN. Si c'est
 	 *  le cas, il est redirigé vers le choix de paiement et sa carte est ejectée
 	 */
+	
 	private void infosIncorrectes()
 	{
-		Controleur.getInstance().getCoeurAGraphique().afficherCodePINIncor();
 		Controleur.getInstance().getCoeurAStockage().mauvaisPin();
+		
 		if(Controleur.getInstance().getCoeurAStockage().tropDErreur())
 		{
 			Controleur.getInstance().getCoeurAGraphique().afficherTropDeTentatives();
-			Controleur.getInstance().modifEtat(EtatPaiement.getInstance());
+		}
+		else
+		{
+			Controleur.getInstance().getCoeurAGraphique().afficherCodePINIncor();
 		}
 	}
 	
@@ -62,10 +66,10 @@ class EtatAttentePIN extends EtatAnnulable
 	 * 	Permet d'afficher la fenêtre de solde insuffisant et de rediriger l'utilisateur
 	 * 	vers le choix de paiement
 	 */
+	
 	private void soldeInsuffisant()
 	{
 		Controleur.getInstance().getCoeurAGraphique().afficherSoldeInsuffisant();
-		Controleur.getInstance().modifEtat(EtatPaiement.getInstance());
 	}
 	
 	/**
@@ -77,18 +81,15 @@ class EtatAttentePIN extends EtatAnnulable
 		Controleur.getInstance().getCoeurAStockage().actualiserSolde();
 		Controleur.getInstance().modifEtat(EtatAttenteRepriseCarte.getInstance());
 	}
+	
 	public void choixInsererRetirerCarte()
 	{
 		Controleur.getInstance().getCoeurAStockage().carteEnlevee();
-		Controleur.getInstance().getCoeurAGraphique().afficherRetraitCarte();
+		Controleur.getInstance().modifEtat(EtatPaiement.getInstance());
 	}
 	
 	public void apres5sec()
 	{
 		Controleur.getInstance().modifEtat(EtatPaiement.getInstance());
-	}
-	public void apres5secOk()
-	{
-		Controleur.getInstance().modifEtat(EtatImpressionTitre.getInstance());
 	}
 }
