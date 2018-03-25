@@ -378,9 +378,9 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		return composantEnMarche.get(composant);
 	}
 
-	public void impression() throws ComposantHorsService, PlusDePapier
+	public void impression(int nbrAImprimer) throws ComposantHorsService, PlusDePapier
 	{
-		imprimante.imprimer();
+		imprimante.imprimer(nbrAImprimer);
 	}
 
 	public void actualiserPanne(Composant composant)

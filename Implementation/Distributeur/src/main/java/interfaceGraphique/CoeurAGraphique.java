@@ -38,6 +38,8 @@ public interface CoeurAGraphique
 	public void afficherDemandeRecu();
 	public void actualiserMontant(double restant , double introduit);
 	public void afficherRendreMonnaieInseree();
+	public void afficherRendreMonnaieInsereeImprimante();
+	public void afficherProblemeTechnique();
 	public void afficherMessageDErreur();
 	public void afficherImprimanteEnPanne();
 	

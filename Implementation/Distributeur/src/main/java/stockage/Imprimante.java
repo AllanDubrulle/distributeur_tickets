@@ -43,17 +43,17 @@ public class Imprimante
 	 * 	@throws ComposantHorsService (si le composant est en panne)
 	 * 	@throws PlusDePapier (s'il n'y a plus de papier)
 	 */
-	public void imprimer() throws ComposantHorsService, PlusDePapier
+	public void imprimer(int nbrAImprimer) throws ComposantHorsService, PlusDePapier
 	{
 		if(!cAStock.estEnMarche(Composant.IMPRIMANTE))
 		{
 			throw new ComposantHorsService("Imprimante hors service");
 		}
-		else if(getNbrImpressions() == 0)
+		else if(getNbrImpressions() <= nbrAImprimer)
 		{
 			throw new PlusDePapier("Plus de papier en réserve");
 		}
-		setNbrImpressions(getNbrImpressions()-1);
+		setNbrImpressions(getNbrImpressions()-nbrAImprimer);
 		System.out.println(nbrImpressions);
 	}
 

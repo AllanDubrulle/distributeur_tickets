@@ -46,7 +46,7 @@ public interface CoeurAStockage
 	
 	
 	public boolean estEnMarche(Composant composant);
-	public void impression() throws ComposantHorsService, PlusDePapier;
+	public void impression(int nbrAImprimer) throws ComposantHorsService, PlusDePapier;
 	
 	public void miseAJourValiditeAbonnement();
 	public void insertionAbonnement();
