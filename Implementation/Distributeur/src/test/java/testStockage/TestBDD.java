@@ -4,7 +4,7 @@ import java.sql.SQLException;
 import org.junit.Test;
 import stockage.CoeurAStockageImpl;
 
-public class BDDTest 
+public class TestBDD 
 {
 	private static CoeurAStockageImpl instance = (CoeurAStockageImpl) CoeurAStockageImpl.getInstance();
 	private double delta = 0.000000000001;

@@ -130,7 +130,7 @@ class FHoraireArrivee extends Ecran
         	{
         		try 
         		{
-        			if(graphAC.existanceGare(textField.getText()) && Integer.parseInt(textField0.getText()) < 24 && Integer.parseInt(textField1.getText()) < 60)
+        			if(graphAC.existenceGare(textField.getText()) && Integer.parseInt(textField0.getText()) < 24 && Integer.parseInt(textField1.getText()) < 60)
         				graphAC.choixRechercheGA(textField.getText(), Integer.parseInt(textField0.getText()), Integer.parseInt(textField1.getText()));
         			else 
         				text10.setText("Les données saisies sont incorrectes");

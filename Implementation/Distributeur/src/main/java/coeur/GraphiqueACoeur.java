@@ -305,7 +305,7 @@ public interface GraphiqueACoeur
 	 * 	@param gare une gare
 	 * 	@return existance vrai si la gare existe, faux sinon
 	 */
-	public boolean existanceGare(String gare);
+	public boolean existenceGare(String gare);
 	
 	/**
 	 * 	Retourne si un trajet entre deux gare existe ou non
@@ -313,7 +313,7 @@ public interface GraphiqueACoeur
 	 * 	@param gareArrivee une gare d'arrivée
 	 * 	@return existance vrai si la gare existe, faux sinon
 	 */
-	public boolean existanceTrajet(String gareDepart, String gareArrivee);
+	public boolean existenceTrajet(String gareDepart, String gareArrivee);
 	
 	/**
 	 * 	Retourne une liste de tout les abonnements existants

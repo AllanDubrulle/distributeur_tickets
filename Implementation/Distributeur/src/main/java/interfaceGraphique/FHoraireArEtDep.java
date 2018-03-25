@@ -145,7 +145,7 @@ class FHoraireArEtDep extends Ecran
         	{
         		try 
         		{
-        			if (graphAC.existanceTrajet(textField.getText(),textField0.getText()) && Integer.parseInt(textField1.getText()) < 24 && Integer.parseInt(textField2.getText()) < 60)
+        			if (graphAC.existenceTrajet(textField.getText(),textField0.getText()) && Integer.parseInt(textField1.getText()) < 24 && Integer.parseInt(textField2.getText()) < 60)
         				graphAC.choixRechercheGDEtGA(textField.getText(),textField0.getText(), Integer.parseInt(textField1.getText()), Integer.parseInt(textField2.getText()));
         			else 
         				text10.setText("Les données saisies sont incorrectes");

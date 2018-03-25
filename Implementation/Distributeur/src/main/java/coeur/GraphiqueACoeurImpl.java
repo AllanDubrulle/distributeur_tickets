@@ -315,12 +315,12 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 		Controleur.getInstance().getEtatActuel().actualiserPanne(composant);
 	}
 	
-	public boolean existanceGare(String gare) 
+	public boolean existenceGare(String gare) 
 	{
 		return Controleur.getInstance().getCoeurAStockage().existenceGare(gare);
 	}
 
-	public boolean existanceTrajet(String gareDepart, String gareArrivee) 
+	public boolean existenceTrajet(String gareDepart, String gareArrivee) 
 	{
 		return Controleur.getInstance().getCoeurAStockage().existenceTrajet(gareDepart, gareArrivee);
 	}
@@ -355,7 +355,6 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 		Controleur.getInstance().getEtatActuel().rechargerCaisse();
 		
 	}
-
 
 	public void rechargerEncreEtPapier()
 	{
