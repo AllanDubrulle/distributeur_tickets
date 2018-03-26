@@ -1,6 +1,6 @@
 Les pannes sont presques toutes réglées. 
 D'après moi (Théo) il reste :
-- /!\ scanneur de codes (je ne vois rien de géré à première vue)		fait (regardez si vous pensez que ça vous semblme correct) !
+- /!\ scanneur de codes (je ne vois rien a gérer à première vue)		fait (regardez si vous pensez que ça vous semblme correct) !
 - fentes (voir si on fait autre chose que de griser les boutons)		fait (regardez si vous pensez que ça vous semblme correct) !
 - lecteur / carte (voir si on fait autre chose que de griser les boutons)	fait (regardez si vous pensez que ça vous semblme correct) !
 
@@ -12,4 +12,4 @@ Il reste tout de même le cas tactile - non tactile !!!!!!!
 
 (si vous voyez autre chose, ajoutez le)
 
-Allez les gars, on commence à voir le bout du tunnel !
+Allez les gars, on commence à voir le bout du tunnel ! TA GUEULE THEO PTN
