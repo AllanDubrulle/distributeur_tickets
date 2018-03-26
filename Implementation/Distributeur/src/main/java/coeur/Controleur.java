@@ -26,7 +26,9 @@ public class Controleur
 	private Commande commande;
 	private ControleurEtat modePaiement;
 	private boolean ecranTactile;
-	private boolean present;
+	private boolean scanneurPresent;
+	private boolean fenteBillet, fentePiece;
+	
 	
 	/**
 	 * 	Constructeur de Controleur
@@ -254,11 +256,24 @@ public class Controleur
 	
 	public void setScanneur(boolean present) 
 	{
-		this.present = present;
+		this.scanneurPresent = present;
 	}
 	
 	public boolean scanneurPresent()
 	{
-		return present;
+		return scanneurPresent;
 	}
+	
+	public void setFentes(boolean fenteBillet, boolean fentePiece) 
+	{
+		this.fentePiece = fentePiece;
+		this.fenteBillet = fenteBillet;
+	}
+	
+	public boolean fentePresente()
+	{
+		return (fentePiece || fenteBillet);
+	}
+	
+	
 }

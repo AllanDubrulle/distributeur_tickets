@@ -51,7 +51,10 @@ class FChoixPaiement extends Ecran
             public void handle(ActionEvent event)
             {
             	if(graphAC.estTactile())
-            		graphAC.choixPaiementLiquide();
+            	{
+            		if(graphAC.fentePresente())
+            			graphAC.choixPaiementLiquide();
+            	}
             }
         });
 
@@ -97,7 +100,10 @@ class FChoixPaiement extends Ecran
 	public void actionClavier(int a) 
 	{
 		if (a == 1)
-			graphAC.choixPaiementLiquide();
+		{
+       		if(graphAC.fentePresente())
+       			graphAC.choixPaiementLiquide();
+		}
 		if (a == 2)
 			graphAC.choixPaiementParCarte();
 	}

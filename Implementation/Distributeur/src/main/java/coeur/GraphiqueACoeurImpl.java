@@ -81,6 +81,16 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 		controleur.setScanneur(present);
 	}
 	
+	public boolean fentePresente()
+	{
+		return controleur.fentePresente();
+	}
+	
+	public void setFentes(boolean fenteBillet, boolean fentePiece)
+	{
+		controleur.setFentes(fenteBillet, fentePiece);
+	}
+	
 	public void choixBillet() 
 	{
 		controleur.getEtatActuel().choixBillet();

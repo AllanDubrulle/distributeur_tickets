@@ -398,4 +398,10 @@ public interface GraphiqueACoeur
 	public void actualiserPanne(Composant lecteurcarte);
 
 	public boolean codeScanneurDispo();
+
+	public boolean fentePresente();
+	
+	public void setFentes(boolean fenteBillet, boolean fentePiece);
+	
+	public void setScanneur(boolean present);
 }

@@ -346,9 +346,13 @@ class FenetreSimulation extends BorderPane
 		claRe.getChildren().clear();
 		scanLect.getChildren().clear();
 		GraphiqueACoeurImpl.getInstance().setScanneur(false);
+		GraphiqueACoeurImpl.getInstance().setFentes(false, false);
 		
     	if(checkMenuItem6.isSelected())
+    	{
     		fentes.getChildren().addAll(fenteBillet, fentePiece);
+    		GraphiqueACoeurImpl.getInstance().setFentes(true, true);
+    	}
     	
     	if(checkMenuItem7.isSelected())
     	{
@@ -356,6 +360,7 @@ class FenetreSimulation extends BorderPane
             text.setFont(new Font(15.0*rapportHauteur));
             VBox.setMargin(text, new Insets(40.0*rapportHauteur, 0.0, 0.0, 0.0));
     		fentes.getChildren().addAll(text, fentePiece);
+    		GraphiqueACoeurImpl.getInstance().setFentes(false, true);
     	}
     	
     	if(checkMenuItem9.isSelected())
