@@ -145,7 +145,7 @@ class FHoraireArrivee extends Ecran
         button1.setMnemonicParsing(false);
         button1.setPrefHeight(31.0*hauteur);
         button1.setPrefWidth(185.0*largeur);
-        button1.setText("Heure courrante");
+        button1.setText("Heure courante");
         button1.setFont(new Font(15.0*hauteur));
         button1.setLayoutX(307.5*largeur);
         button1.setLayoutY(350.0*hauteur);

@@ -42,43 +42,36 @@ abstract class Ecran extends Pane
 
 	public boolean verifierDate(int jour, int mois, int annee) 
 	{
-		boolean res = true;
-		if(annee > 2100 || annee < 2000)
-			res = false;
-		if (mois > 12 || mois == 0)
-			res = false;
-		if(jour > 31 || jour == 0)
-			res = false;
-		if (mois == 4 || mois == 6 || mois == 9 || mois == 11)
-			if(jour > 30)
-				res = false;
+		if(annee >= 2100 || annee < 2000 || mois > 12 || mois == 0 || jour > 31 || jour == 0)
+			return false;
+		if ((mois == 4 || mois == 6 || mois == 9 || mois == 11) && jour > 30)
+			return false;
 		if (mois == 2)
 		{
 			if (jour > 29)
-				res = false;
+				return false;
 			else if (annee%4 != 0)
 				if (jour > 28)
-					res = false;
+					return false;
 		}
 		LocalDate date = LocalDate.now();
 		if (annee < date.getYear())
-			res = false;
+			return false;
 		else if (annee > date.getYear())
-			res = true;
+			return true;
 		else
 		{
 			if (mois < date.getMonth().getValue())
-				res = false;
+				return false;
 			else if (mois > date.getMonth().getValue())
-				res = true;
+				return true;
 			else
 			{
 				if (jour < date.getDayOfMonth())
-					res = false;
+					return false;
 				else
-					res = true;
+					return true;
 			}
 		}
-		return res;
 	}
 }

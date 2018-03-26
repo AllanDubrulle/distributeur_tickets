@@ -298,14 +298,14 @@ class FBillet extends Ecran
             		int jour = Integer.parseInt(textField0.getText());
             		int mois = Integer.parseInt(textField1.getText());
             		int annee = Integer.parseInt(textField2.getText());
-                    Date date = new Date(0,0,0);
-                    date.setYear(annee-1900);
-                    date.setDate(jour);
-                    date.setMonth(mois-1);
-                    if (nbrBillet == 0)
-                    	nbrBillet = 1;
+                    if (nbrBillet == 0 || nbrBillet >= 100)
+                    	throw new ErreurDEncodage("Nombre de billet invalide");
                     if (verifierDate(jour, mois, annee))
                     {
+                    	Date date = new Date(0,0,0);
+                        date.setYear(annee-1900);
+                        date.setDate(jour);
+                        date.setMonth(mois-1);
                     	graphAC.infoBillet(date,nbrBillet, getClasse(),textField3.getText().trim(),textField4.getText().trim(),choiceBox0.getValue(), choiceBox.getValue() ,radioButton1.isSelected());
                     	graphAC.choixValider();
                     }

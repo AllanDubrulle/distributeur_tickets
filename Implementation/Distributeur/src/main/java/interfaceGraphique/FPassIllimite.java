@@ -189,8 +189,8 @@ class FPassIllimite extends Ecran
             {
             	try 
             	{
-            		if (Integer.parseInt(textField0.getText()) == 0)
-            			textField0.setText("1");
+            		if (Integer.parseInt(textField0.getText()) == 0 || Integer.parseInt(textField0.getText()) >= 100)
+            			throw new ErreurDEncodage("Erreur nombre de jours de validité");
             		if (verifierNom(textField.getText().trim()))
 					{
             			graphAC.infoPassIllimite(textField.getText(), getClasse(), choiceBox.getValue(), choiceBox0.getValue(), Integer.parseInt(textField0.getText()));

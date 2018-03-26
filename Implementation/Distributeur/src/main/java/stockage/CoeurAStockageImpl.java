@@ -28,10 +28,6 @@ public class CoeurAStockageImpl implements CoeurAStockage
 	private Monnayeur monnayeur;  // a modifier si on modifie panne
 	private HashMap<Composant,Boolean> composantEnMarche;
 	private Imprimante imprimante;
-	private Scanneur scanneur;
-	private Lecteur lecteur;
-	private FenteBillet fenteBillet;
-	private FentePiece fentePiece;
 	private int essai;
 	private static CoeurAStockageImpl instance;
 	private String[] horaire;
@@ -40,10 +36,6 @@ public class CoeurAStockageImpl implements CoeurAStockage
 	{
 		monnayeur = new Monnayeur();
 		imprimante = new Imprimante(this);
-		scanneur = new Scanneur(this);
-		fentePiece = new FentePiece(this);
-		fenteBillet = new FenteBillet(this);
-		lecteur = new Lecteur(this);
 		composantEnMarche = new HashMap<Composant,Boolean>();
 		for(Composant composant : Composant.values())
 		{
@@ -265,48 +257,51 @@ public class CoeurAStockageImpl implements CoeurAStockage
 	
 	public void ajoutMonnaie(int i) throws ComposantHorsService
 	{
-		fentePiece.inserePiece();
-		fenteBillet.insereBillet();
-		switch(i)
+		if (!estEnMarche(Composant.FENTEBILLET) || !estEnMarche(Composant.FENTEPIECE))
+			throw new ComposantHorsService("Lecteur de cartes hors service");
+		else
 		{
-			case 1:
-				monnayeur.stockerPiece(Piece.P1);
-				break;
-			case 2:
-				monnayeur.stockerPiece(Piece.P2);
-				break;
-			case 5:
-				monnayeur.stockerPiece(Piece.P5);
-				break;
-			case 10:
-				monnayeur.stockerPiece(Piece.P10);
-				break;
-			case 20:
-				monnayeur.stockerPiece(Piece.P20);
-				break;
-			case 50:
-				monnayeur.stockerPiece(Piece.P50);
-				break;
-			case 100:
-				monnayeur.stockerPiece(Piece.P100);
-				break;
-			case 200:
-				monnayeur.stockerPiece(Piece.P200);
-				break;
-			case 500:
-				monnayeur.stockerBillet(BilletMonnaie.B5);
-				break;
-			case 1000:
-				monnayeur.stockerBillet(BilletMonnaie.B10);
-				break;
-			case 2000:
-				monnayeur.stockerBillet(BilletMonnaie.B20);
-				break;
-			case 5000:
-				monnayeur.stockerBillet(BilletMonnaie.B50);
-				break;
+			switch(i)
+			{
+				case 1:
+					monnayeur.stockerPiece(Piece.P1);
+					break;
+				case 2:
+					monnayeur.stockerPiece(Piece.P2);
+					break;
+				case 5:
+					monnayeur.stockerPiece(Piece.P5);
+					break;
+				case 10:
+					monnayeur.stockerPiece(Piece.P10);
+					break;
+				case 20:
+					monnayeur.stockerPiece(Piece.P20);
+					break;
+				case 50:
+					monnayeur.stockerPiece(Piece.P50);
+					break;
+				case 100:
+					monnayeur.stockerPiece(Piece.P100);
+					break;
+				case 200:
+					monnayeur.stockerPiece(Piece.P200);
+					break;
+				case 500:
+					monnayeur.stockerBillet(BilletMonnaie.B5);
+					break;
+				case 1000:
+					monnayeur.stockerBillet(BilletMonnaie.B10);
+					break;
+				case 2000:
+					monnayeur.stockerBillet(BilletMonnaie.B20);
+					break;
+				case 5000:
+					monnayeur.stockerBillet(BilletMonnaie.B50);
+					break;
+			}
+			introduit+=i;
 		}
-		introduit+=i;
 		
 	}
 	
@@ -391,12 +386,14 @@ public class CoeurAStockageImpl implements CoeurAStockage
 	
 	public void scanne() throws ComposantHorsService
 	{
-		scanneur.scanne();
+		if (!estEnMarche(Composant.SCANNEUR))
+			throw new ComposantHorsService("Scanneur de cartes hors service");
 	}
 	
 	public void lireCarte() throws ComposantHorsService
 	{
-		lecteur.lireCarte();
+		if (!estEnMarche(Composant.LECTEURCARTE))
+			throw new ComposantHorsService("Lecteur de cartes hors service");
 	}
 	
 
