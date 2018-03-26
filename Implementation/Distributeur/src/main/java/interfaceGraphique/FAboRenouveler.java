@@ -173,10 +173,14 @@ class FAboRenouveler extends Ecran
 					graphAC.infoAboRen(getValidite(), String.valueOf(verifAbo));
 	            	graphAC.choixValider();
 				} 
-            	catch (NumberFormatException | ErreurDEncodage e) 
+            	catch (NumberFormatException e) 
             	{
-            		text10.setText("Les données saisies sont incorrectes");		
+            		text10.setText("Les données saisies sont incorrectes");	
 				}
+            	catch (ErreurDEncodage e)
+            	{
+            		text10.setText(e.getMessage());
+            	}
             }
         });
 

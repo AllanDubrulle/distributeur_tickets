@@ -258,7 +258,7 @@ public class CoeurAStockageImpl implements CoeurAStockage
 	public void ajoutMonnaie(int i) throws ComposantHorsService
 	{
 		if (!estEnMarche(Composant.FENTEBILLET) || !estEnMarche(Composant.FENTEPIECE))
-			throw new ComposantHorsService("Lecteur de cartes hors service");
+			throw new ComposantHorsService("Fente a pieces ou a billets hors service");
 		else
 		{
 			switch(i)
@@ -387,7 +387,7 @@ public class CoeurAStockageImpl implements CoeurAStockage
 	public void scanne() throws ComposantHorsService
 	{
 		if (!estEnMarche(Composant.SCANNEUR))
-			throw new ComposantHorsService("Scanneur de cartes hors service");
+			throw new ComposantHorsService("Scanneur de codes hors service");
 	}
 	
 	public void lireCarte() throws ComposantHorsService
@@ -470,7 +470,7 @@ public class CoeurAStockageImpl implements CoeurAStockage
 				return Reduction.values()[i];	
 			}	
 		}
-		throw new ErreurDEncodage("reduction inexistant");
+		throw new ErreurDEncodage("Reduction inexistante");
 	}
 	public Classe conversionClasse(int classe) throws ErreurDEncodage
 	{
@@ -478,7 +478,7 @@ public class CoeurAStockageImpl implements CoeurAStockage
 			return Classe.C1;	
 		if (classe == 2)	
 			return Classe.C2;
-		throw new ErreurDEncodage("classe inexistant");
+		throw new ErreurDEncodage("Classe inexistante");
 		
 	}
 	public TypeTitre conversionType(String type ) throws ErreurDEncodage
@@ -490,7 +490,7 @@ public class CoeurAStockageImpl implements CoeurAStockage
 				return TypeTitre.values()[i];	
 			}	
 		}
-		throw new ErreurDEncodage("type inexistant");
+		throw new ErreurDEncodage("Type inexistant");
 	}
 	
 	public TypePass conversionTypePass(String typePassStr) throws ErreurDEncodage
@@ -502,7 +502,7 @@ public class CoeurAStockageImpl implements CoeurAStockage
 				return TypePass.values()[i];
 			}
 		}
-		throw new ErreurDEncodage("typePass inexistant");
+		throw new ErreurDEncodage("Type de pass inexistant");
 	}
 
 	public double rechercherPrix(Commande commande ,String gareDepart, String gareArrivee)

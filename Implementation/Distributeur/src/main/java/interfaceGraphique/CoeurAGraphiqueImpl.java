@@ -164,24 +164,9 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Impression en cours ...", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 	}
 	
-	public void afficherImprimanteEnPanne()
+	public void afficherPanne(String message)
 	{
-		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Problème d'imprimante", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
-	}
-	
-	public void afficherScanneurEnPanne()
-	{
-		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Problème de scanneur", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
-	}
-	
-	public void afficherLecteurEnPanne()
-	{
-		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Problème de lecteur", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
-	}
-	
-	public void afficherFenteEnPanne()
-	{
-		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Problème de réception de monnaie", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
+		FenetreSimulation.getInstance().afficher(new FAfficherMessage(message, FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 	}
 	
 	public void afficherViderBacRecep() 
@@ -270,11 +255,6 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 		}
 	}
 	
-	public void afficherHoraire(String[] horaire)
-	{
-		
-	}
-	
 	public void afficherRecu(double prix , double introduit , double rendu,String modePaiement)
 	{
 		StackPane root2 = new StackPane();
@@ -315,7 +295,7 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Problème monnayeur, veuillez récuperer votre monnaie.", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 	}
 	
-	public void afficherRendreMonnaieInsereeImprimante()
+	/*public void afficherRendreMonnaieInsereeImprimante()
 	{
 		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Problème survenu lors de l'impression, veuillez récuperer votre monnaie.", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 	}
@@ -323,12 +303,12 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	public void afficherProblemeTechnique()
 	{
 		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Problème technique, veuillez récuperer votre monnaie.", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
-	}
+	}*/
 	
 	public void afficherMessageDErreur()
 	{
 		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Problème technique. Veuillez prendre contact avec un technicien pour tout rembouserment.", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
-		}
+	}
 	
 	public void afficherDemandeRecu() // modifié pas encore fini bug possible 
 	{

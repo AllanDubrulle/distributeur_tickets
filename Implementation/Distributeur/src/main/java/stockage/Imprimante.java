@@ -51,7 +51,7 @@ public class Imprimante
 		}
 		else if(getNbrImpressions() ==0)
 		{
-			throw new PlusDePapier("Plus de papier en réserve");
+			throw new PlusDePapier("Plus de papier en reserve");
 		}
 		setNbrImpressions(getNbrImpressions()-1);
 	}

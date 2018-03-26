@@ -38,13 +38,9 @@ public interface CoeurAGraphique
 	public void afficherDemandeRecu();
 	public void actualiserMontant(double restant , double introduit);
 	public void afficherRendreMonnaieInseree();
-	public void afficherRendreMonnaieInsereeImprimante();
-	public void afficherProblemeTechnique();
+	//public void afficherRendreMonnaieInsereeImprimante();
+	//public void afficherProblemeTechnique();
 	public void afficherMessageDErreur();
-	public void afficherScanneurEnPanne();
-	public void afficherLecteurEnPanne();
-	public void afficherFenteEnPanne();
-	public void afficherImprimanteEnPanne();
 	
 	public void afficherImpression();
 	public void afficherViderBacRecep();
@@ -55,4 +51,5 @@ public interface CoeurAGraphique
 	//public void actualiserComposant(Composant composant,boolean enMarche);
 	public void carteNonBloquee();
 	public void carteBloquee();
+	public void afficherPanne(String message);
 }

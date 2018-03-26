@@ -34,7 +34,7 @@ class EtatChoixRenouvAbo extends EtatChoixTitre
 		} 
 		catch (ComposantHorsService e) 
 		{
-			Controleur.getInstance().getCoeurAGraphique().afficherScanneurEnPanne();
+			Controleur.getInstance().getCoeurAGraphique().afficherPanne(e.getMessage());
 		}
 	}
 	

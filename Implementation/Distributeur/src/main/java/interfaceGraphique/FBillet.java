@@ -311,12 +311,16 @@ class FBillet extends Ecran
                     }
                     else
                     {
-                		text10.setText("Les données saisies sont incorrectes");
+                		text10.setText("La date saisie est incorrecte");
                     }
             	}
-            	catch (NumberFormatException | ErreurDEncodage e)
+            	catch (NumberFormatException e)
             	{
             		text10.setText("Les données saisies sont incorrectes");
+            	}
+            	catch (ErreurDEncodage e)
+            	{
+            		text10.setText(e.getMessage());
             	}
             	
             }

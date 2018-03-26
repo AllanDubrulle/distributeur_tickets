@@ -46,7 +46,7 @@ class FChoixParCarte extends Ecran
 				} 
         		catch (ErreurDEncodage e) 
         		{
-					texte2.setText("Le numéro de carte saisi est incorrect");
+					texte2.setText(e.getMessage());
 				}
         	}
         });

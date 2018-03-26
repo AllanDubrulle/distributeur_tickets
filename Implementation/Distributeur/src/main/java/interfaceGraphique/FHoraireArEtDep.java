@@ -145,14 +145,19 @@ class FHoraireArEtDep extends Ecran
         	{
         		try 
         		{
-        			if (graphAC.existenceTrajet(textField.getText(),textField0.getText()) && Integer.parseInt(textField1.getText()) < 24 && Integer.parseInt(textField2.getText()) < 60)
-        				graphAC.choixRechercheGDEtGA(textField.getText(),textField0.getText(), Integer.parseInt(textField1.getText()), Integer.parseInt(textField2.getText()));
-        			else 
-        				text10.setText("Les données saisies sont incorrectes");
+        			if (graphAC.existenceTrajet(textField.getText(),textField0.getText())) 
+        			{	
+        				if (Integer.parseInt(textField1.getText()) < 24 && Integer.parseInt(textField2.getText()) < 60)
+        					graphAC.choixRechercheGDEtGA(textField.getText(),textField0.getText(), Integer.parseInt(textField1.getText()), Integer.parseInt(textField2.getText()));
+        				else 
+        					text10.setText("L'heure saisie est incorrecte");
+        			}
+        			else
+    					text10.setText("Trajet/gare(s) inexistant(e)(s)");
         		}
         		catch (NumberFormatException | SQLException e)
         		{
-        			text10.setText("Les données saisies sont incorrectes");
+        			text10.setText("L'heure saisie est incorrecte");
         		}
         	}
         });

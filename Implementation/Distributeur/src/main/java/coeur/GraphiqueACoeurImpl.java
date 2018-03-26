@@ -217,7 +217,7 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 		}
 		else
 		{
-			throw new ErreurDEncodage("carteNonExistente");
+			throw new ErreurDEncodage("Carte innexistante");
 		}
 	}
 	
@@ -236,7 +236,7 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 		}
 		else
 		{
-			throw new ErreurDEncodage("gareInexistante"	);
+			throw new ErreurDEncodage("Trajet/gare(s) inexistant(e)(s)");
 		}
 		
 	}
@@ -249,7 +249,7 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 		}	
 		else	
 		{	
-			throw new ErreurDEncodage("gareInexistante"	);	
+			throw new ErreurDEncodage("Trajet/gare(s) inexistant(e)(s)"	);	
 		}	
 	}
 	
@@ -261,7 +261,7 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 		}
 		else 
 		{
-			throw new ErreurDEncodage("abonnementInexistant");
+			throw new ErreurDEncodage("Abonnement innexistant");
 		}
 	}
 	
@@ -273,7 +273,7 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 		}
 		catch (ErreurDEncodage e) 
 		{
-			throw new ErreurDEncodage("probleme");
+			throw new ErreurDEncodage("Probleme");
 		}			
 	}
 	
@@ -285,7 +285,7 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 		}
 		catch (ErreurDEncodage e) 
 		{
-			throw new ErreurDEncodage("probleme");
+			throw new ErreurDEncodage("Probleme");
 		}			
 	}
 	
@@ -297,7 +297,7 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 		}
 		else 
 		{
-			throw new ErreurDEncodage("probleme");
+			throw new ErreurDEncodage("Probleme");
 		}			
 	}
 	

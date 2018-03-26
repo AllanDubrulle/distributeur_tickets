@@ -54,7 +54,7 @@ class EtatPaiementLiquide extends EtatAnnulable
 		catch (ComposantHorsService e)
 		{
 			if(Controleur.getInstance().getCoeurAStockage().introduitAffichable() == 0)
-				Controleur.getInstance().getCoeurAGraphique().afficherFenteEnPanne();
+				Controleur.getInstance().getCoeurAGraphique().afficherPanne(e.getMessage());
 			else
 				Controleur.getInstance().getCoeurAGraphique().afficherMessageDErreur();
 		}

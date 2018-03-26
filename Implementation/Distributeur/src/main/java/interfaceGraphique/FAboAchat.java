@@ -272,13 +272,17 @@ class FAboAchat extends Ecran
     				}
     				else 
     				{
-    					text10.setText("Les données saisies sont incorrectes");
+    					text10.setText("Le nom saisi est incorrect");
     				}
         		}	
-		    		catch (NumberFormatException | ErreurDEncodage e)	
+		    	catch (NumberFormatException e)	
     		   	{	
-        			text10.setText("Les données saisies sont incorrectes");
+        			text10.setText("Le numero de registre national saisi est incorrect");
         		}
+            	catch (ErreurDEncodage e)
+            	{
+        			text10.setText(e.getMessage());
+            	}
             }
         });
         

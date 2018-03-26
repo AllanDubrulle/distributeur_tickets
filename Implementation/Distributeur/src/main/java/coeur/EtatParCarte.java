@@ -46,7 +46,7 @@ class EtatParCarte extends EtatAnnulable
 		}
 		catch (ComposantHorsService e)
 		{
-			Controleur.getInstance().getCoeurAGraphique().afficherLecteurEnPanne();
+			Controleur.getInstance().getCoeurAGraphique().afficherPanne(e.getMessage());
 		}
 	}
 	
