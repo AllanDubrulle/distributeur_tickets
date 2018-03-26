@@ -401,4 +401,9 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 	{
 		Controleur.getInstance().getEtatActuel().viderCaisse();		
 	}
+
+	public void choixRetirerFentes() 
+	{
+		Controleur.getInstance().getEtatActuel().retirerFentes();
+	}
 }

@@ -296,22 +296,6 @@ class FAboAchat extends Ecran
 		text10.setLayoutX(275.0*largeur);	
 		text10.setLayoutY(384.0*hauteur);
 		
-		if(graphAC.estTactile())
-		{
-			textField.setOnMouseClicked(e -> {pos = 0;});
-			textField0.setOnMouseClicked(e -> {pos = 1;});
-			textField1.setOnMouseClicked(e -> {pos = 2;});
-			textField2.setOnMouseClicked(e -> {pos = 3;});
-			radioButton.setOnMouseClicked(e -> {pos = 4;});
-			radioButton0.setOnMouseClicked(e -> {pos = 4;});
-			radioButton1.setOnMouseClicked(e -> {pos = 4;});
-			radioButton2.setOnMouseClicked(e -> {pos = 4;});
-			radioButton3.setOnMouseClicked(e -> {pos = 5;});
-			radioButton4.setOnMouseClicked(e -> {pos = 5;});
-			choiceBox0.setOnMouseClicked(e -> {pos = 6;});
-			choiceBox.setOnMouseClicked(e -> {pos = 7;});
-		}
-		
         hBox0.getChildren().addAll(text0, textField);
         hBox1.getChildren().addAll(text1, textField0);
         hBox2.getChildren().addAll(text2, textField1);
@@ -509,5 +493,24 @@ class FAboAchat extends Ecran
 			return 1;
 		else
 			return 2;
+	}
+	
+	public void mettreToutAJour()
+	{
+		if(graphAC.estTactile())
+		{
+			textField.setOnMouseClicked(e -> {pos = 0;});
+			textField0.setOnMouseClicked(e -> {pos = 1;});
+			textField1.setOnMouseClicked(e -> {pos = 2;});
+			textField2.setOnMouseClicked(e -> {pos = 3;});
+			radioButton.setOnMouseClicked(e -> {pos = 4;});
+			radioButton0.setOnMouseClicked(e -> {pos = 4;});
+			radioButton1.setOnMouseClicked(e -> {pos = 4;});
+			radioButton2.setOnMouseClicked(e -> {pos = 4;});
+			radioButton3.setOnMouseClicked(e -> {pos = 5;});
+			radioButton4.setOnMouseClicked(e -> {pos = 5;});
+			choiceBox0.setOnMouseClicked(e -> {pos = 6;});
+			choiceBox.setOnMouseClicked(e -> {pos = 7;});
+		}
 	}
 }

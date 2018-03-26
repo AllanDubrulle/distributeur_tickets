@@ -394,6 +394,8 @@ public interface GraphiqueACoeur
 	 * 	Communique le fait que l'utilisateur active la panne "Vider caisse"
 	 */
 	public void viderCaisse();
+	
+	public void choixRetirerFentes();
 
 	public void actualiserPanne(Composant lecteurcarte);
 

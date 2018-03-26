@@ -8,8 +8,11 @@ import javafx.scene.shape.*;
 
 class FChoixPaiement extends Ecran 
 {
+	private Text text10;
+	
     public FChoixPaiement(double hauteur, double largeur) 
     {
+    	text10 = new Text();
         Rectangle rectangle = new Rectangle();
         Text text = new Text();
         Button button = new Button();
@@ -54,6 +57,8 @@ class FChoixPaiement extends Ecran
             	{
             		if(graphAC.fentePresente())
             			graphAC.choixPaiementLiquide();
+            		else
+            			text10.setText("Le distributeur ne possede pas de fente");
             	}
             }
         });
@@ -91,8 +96,15 @@ class FChoixPaiement extends Ecran
             		graphAC.choixAnnuler();
             }
         });
+        
+        text10.setFont(new Font("System Bold", 15.0*hauteur));
+		text10.setWrappingWidth(250.0*largeur);
+		text10.setFill(javafx.scene.paint.Color.RED);
+		text10.setLayoutX(175.0*largeur);
+		text10.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+		text10.setLayoutY(300.0*hauteur);
 
-        getChildren().addAll(rectangle, text, button, button0, button1);
+        getChildren().addAll(rectangle, text, button, button0, text10, button1);
         
         button1.setFocusTraversable(false);
     }
@@ -103,6 +115,8 @@ class FChoixPaiement extends Ecran
 		{
        		if(graphAC.fentePresente())
        			graphAC.choixPaiementLiquide();
+       		else
+       			text10.setText("Le distributeur ne possede pas de fente");
 		}
 		if (a == 2)
 			graphAC.choixPaiementParCarte();

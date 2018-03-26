@@ -202,15 +202,6 @@ class FAboRenouveler extends Ecran
 		text10.setFill(javafx.scene.paint.Color.RED);	
 		text10.setLayoutX(260.0*largeur);	
 		text10.setLayoutY(304.0*hauteur);
-		
-		if(graphAC.estTactile())
-		{
-			textField.setOnMouseClicked(e -> {pos = 0;});
-			radioButton.setOnMouseClicked(e -> {pos = 1;});
-			radioButton0.setOnMouseClicked(e -> {pos = 1;});
-			radioButton1.setOnMouseClicked(e -> {pos = 1;});
-			radioButton2.setOnMouseClicked(e -> {pos = 1;});
-		}
         
         hBox0.getChildren().addAll(text, textField);
         hBox1.getChildren().addAll(text0, radioButton, radioButton0, radioButton1, radioButton2);
@@ -308,5 +299,17 @@ class FAboRenouveler extends Ecran
 	public void setNumAbo(String numAbo)
 	{
 		textField.setText(numAbo);
+	}
+	
+	public void mettreToutAJour()
+	{
+		if(graphAC.estTactile())
+		{
+			textField.setOnMouseClicked(e -> {pos = 0;});
+			radioButton.setOnMouseClicked(e -> {pos = 1;});
+			radioButton0.setOnMouseClicked(e -> {pos = 1;});
+			radioButton1.setOnMouseClicked(e -> {pos = 1;});
+			radioButton2.setOnMouseClicked(e -> {pos = 1;});
+		}
 	}
 }

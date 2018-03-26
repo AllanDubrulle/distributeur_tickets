@@ -193,6 +193,8 @@ abstract class ControleurEtat
 	 */
 	public void choixInsererRetirerCarte() {}
 	
+	public void retirerFentes() {}
+	
 	/**
 	 * 	Permet de passer de la fenêtre paiement vers la fenêtre du paiement liquide
 	 */

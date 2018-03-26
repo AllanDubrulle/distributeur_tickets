@@ -134,7 +134,7 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	}
 	public void afficherRetraitCarte()
 	{
-		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Carte éjectée.", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
+		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Carte ejectee.", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 	}
 	public void afficherAttentePIN() 
 	{
@@ -142,7 +142,7 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	}	
 	public void afficherCodePINIncor() 
 	{
-		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Code PIN incorrect. Veuillez rééssayer.", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
+		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Code PIN incorrect. Veuillez reessayer.", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 	}
 	public void afficherSoldeInsuffisant() 
 	{
@@ -151,12 +151,12 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	
 	public void afficherTropDeTentatives() 
 	{
-		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Code PIN incorrect. Veuillez récuperer votre carte.", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
+		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Code PIN incorrect. Veuillez recuperer votre carte.", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 	}
 	
 	public void afficherValidationPaiement() 
 	{
-		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Paiement effectué avec succès. Veuillez récuperer votre carte.", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
+		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Paiement effectue avec succes. Veuillez recuperer votre carte.", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 	}
 	
 	public void afficherImpression() 
@@ -292,7 +292,7 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	}
 	public void afficherRendreMonnaieInseree()
 	{
-		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Problème monnayeur, veuillez récuperer votre monnaie.", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
+		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Probleme du monnayeur, veuillez recuperer votre monnaie.", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 	}
 	
 	/*public void afficherRendreMonnaieInsereeImprimante()
@@ -307,7 +307,7 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	
 	public void afficherMessageDErreur()
 	{
-		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Problème technique. Veuillez prendre contact avec un technicien pour tout rembouserment.", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
+		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Probleme technique. Veuillez prendre contact avec un technicien pour tout remboursement.", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 	}
 	
 	public void afficherDemandeRecu() // modifié pas encore fini bug possible 

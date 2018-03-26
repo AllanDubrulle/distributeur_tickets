@@ -198,15 +198,6 @@ public class FPass10Trajets extends Ecran
 		text10.setLayoutX(275.0*largeur);
 		text10.setLayoutY(364.0*hauteur);
 		
-		if(graphAC.estTactile())
-		{	
-			textField.setOnMouseClicked(e -> {pos = 0;});
-			radioButton.setOnMouseClicked(e -> {pos = 1;});
-			radioButton0.setOnMouseClicked(e -> {pos = 1;});
-			choiceBox0.setOnMouseClicked(e -> {pos = 2;});
-			choiceBox.setOnMouseClicked(e -> {pos = 3;});
-		}
-		
         hBox0.getChildren().addAll(text0, textField);
         hBox1.getChildren().addAll(text1, radioButton, radioButton0);
         hBox2.getChildren().addAll(text3, choiceBox0, text2, choiceBox);
@@ -310,5 +301,17 @@ public class FPass10Trajets extends Ecran
 			return 1;
 		else 
 			return 2;
+	}
+	
+	public void mettreToutAJour()
+	{
+		if(graphAC.estTactile())
+		{	
+			textField.setOnMouseClicked(e -> {pos = 0;});
+			radioButton.setOnMouseClicked(e -> {pos = 1;});
+			radioButton0.setOnMouseClicked(e -> {pos = 1;});
+			choiceBox0.setOnMouseClicked(e -> {pos = 2;});
+			choiceBox.setOnMouseClicked(e -> {pos = 3;});
+		}
 	}
 }

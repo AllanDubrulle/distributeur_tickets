@@ -362,6 +362,11 @@ class FenetreSimulation extends BorderPane
     		fentes.getChildren().addAll(text, fentePiece);
     		GraphiqueACoeurImpl.getInstance().setFentes(false, true);
     	}
+    	if (checkMenuItem8.isSelected())
+    	{
+    		GraphiqueACoeurImpl.getInstance().choixRetirerFentes();
+    	}
+    	
     	
     	if(checkMenuItem9.isSelected())
     	{

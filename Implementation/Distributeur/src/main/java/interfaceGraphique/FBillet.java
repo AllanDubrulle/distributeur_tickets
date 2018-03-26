@@ -348,13 +348,7 @@ class FBillet extends Ecran
 		text10.setFill(javafx.scene.paint.Color.RED);
 		text10.setLayoutX(175.0*largeur);
 		text10.setLayoutY(364.0*hauteur);
-
-		if(graphAC.estTactile())
-		{
-			
-		}
 		
-
         hBox.getChildren().addAll(text, textField3);
         hBox0.getChildren().addAll(text0, textField4);
         hBox2.getChildren().addAll(text1, radioButton, radioButton0);
@@ -618,13 +612,18 @@ class FBillet extends Ecran
 	{
 		if (graphAC.estTactile())
 		{
-			choiceBox.setDisable(false);
-			choiceBox0.setDisable(false);
-		}
-		else
-		{
-			choiceBox.setDisable(true);
-			choiceBox0.setDisable(true);
+			textField3.setOnMouseClicked(e -> pos = 0);
+			textField4.setOnMouseClicked(e -> pos = 1);
+			radioButton.setOnMouseClicked(e -> pos = 2);
+			radioButton0.setOnMouseClicked(e -> pos = 2);
+			radioButton1.setOnMouseClicked(e -> pos = 3);
+			radioButton2.setOnMouseClicked(e -> pos = 3);
+			choiceBox0.setOnMouseClicked(e -> pos = 4);
+			choiceBox.setOnMouseClicked(e -> pos = 5);
+			textField.setOnMouseClicked(e -> pos = 6);
+			textField1.setOnMouseClicked(e -> pos = 7);
+			textField2.setOnMouseClicked(e -> pos = 8);
+			textField3.setOnMouseClicked(e -> pos = 9);
 		}
 	}
 }

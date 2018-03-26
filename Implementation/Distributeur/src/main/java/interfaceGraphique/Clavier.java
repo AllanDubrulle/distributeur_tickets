@@ -15,53 +15,53 @@ class Clavier extends Pane
 	public Clavier(double hauteur, double largeur) 
 	{
         Rectangle rectangle = new Rectangle();
-        VBox vBox = new VBox();
-        HBox hBox = new HBox();
-        Button button = new Button();
-        Button button0 = new Button();
-        Button button1 = new Button();
-        Button button2 = new Button();
-        Button button3 = new Button();
-        Button button4 = new Button();
-        Button button5 = new Button();
-        Button button6 = new Button();
-        Button button7 = new Button();
-        Button button8 = new Button();
-        HBox hBox0 = new HBox();
-        Button button9 = new Button();
-        Button button10 = new Button();
-        Button button11 = new Button();
-        Button button12 = new Button();
-        Button button13 = new Button();
-        Button button14 = new Button();
-        Button button15 = new Button();
-        Button button16 = new Button();
-        Button button17 = new Button();
-        Button button18 = new Button();
-        HBox hBox1 = new HBox();
-        Button button19 = new Button();
-        Button button110 = new Button();
-        Button button111 = new Button();
-        Button button112 = new Button();
-        Button button113 = new Button();
-        Button button114 = new Button();
-        Button button115 = new Button();
-        Button button116 = new Button();
-        Button button117 = new Button();
-        Button button118 = new Button();
-        HBox hBox2 = new HBox();
-        Button button119 = new Button();
-        Button button1110 = new Button();
-        Button button1111 = new Button();
-        Button button1112 = new Button();
-        Button button1113 = new Button();
-        Button button1114 = new Button();
-        Button button1115 = new Button();
-        Button button1116 = new Button();
-        HBox hBox3 = new HBox();
-        Button button1117 = new Button();
-        Button button1118 = new Button();
-        Button button1119 = new Button();
+        VBox boxVer = new VBox();
+        HBox boxHor1 = new HBox();
+        HBox boxHor2 = new HBox();
+        HBox boxHor3 = new HBox();
+        HBox boxHor4 = new HBox();
+        HBox boxHor5 = new HBox();
+        Button bouton1 = new Button();
+        Button bouton2 = new Button();
+        Button bouton3 = new Button();
+        Button bouton4 = new Button();
+        Button bouton5 = new Button();
+        Button bouton6 = new Button();
+        Button bouton7 = new Button();
+        Button bouton8 = new Button();
+        Button bouton9 = new Button();
+        Button bouton10 = new Button();
+        Button bouton11 = new Button();
+        Button bouton12 = new Button();
+        Button bouton13 = new Button();
+        Button bouton14 = new Button();
+        Button bouton15 = new Button();
+        Button bouton16 = new Button();
+        Button bouton17 = new Button();
+        Button bouton18 = new Button();
+        Button bouton19 = new Button();
+        Button bouton20 = new Button();
+        Button bouton21 = new Button();
+        Button bouton22 = new Button();
+        Button bouton23 = new Button();
+        Button bouton24 = new Button();
+        Button bouton25 = new Button();
+        Button bouton26 = new Button();
+        Button bouton27 = new Button();
+        Button bouton28 = new Button();
+        Button bouton29 = new Button();
+        Button bouton30 = new Button();
+        Button bouton31 = new Button();
+        Button bouton32 = new Button();
+        Button bouton33 = new Button();
+        Button bouton34 = new Button();
+        Button bouton35 = new Button();
+        Button bouton36 = new Button();
+        Button bouton37 = new Button();
+        Button bouton38 = new Button();
+        Button bouton39 = new Button();
+        Button bouton40 = new Button();
+        Button bouton41 = new Button();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -78,21 +78,21 @@ class Clavier extends Pane
         rectangle.setStrokeType(javafx.scene.shape.StrokeType.INSIDE);
         rectangle.setWidth(625.0*largeur);
 
-        vBox.setLayoutX(25.5*largeur);
-        vBox.setLayoutY(11.0*hauteur);
-        vBox.setPrefHeight(175.0*hauteur);
-        vBox.setPrefWidth(574.0*largeur);
+        boxVer.setLayoutX(25.5*largeur);
+        boxVer.setLayoutY(11.0*hauteur);
+        boxVer.setPrefHeight(175.0*hauteur);
+        boxVer.setPrefWidth(574.0*largeur);
 
-        hBox.setPrefHeight(31.0*hauteur);
-        hBox.setPrefWidth(506.0*largeur);
+        boxHor1.setPrefHeight(31.0*hauteur);
+        boxHor1.setPrefWidth(506.0*largeur);
 
-        button.setMnemonicParsing(false);
-        button.setPrefHeight(31.0*hauteur);
-        button.setPrefWidth(50.0*largeur);
-        button.setText("1");
-        button.setFont(new Font(15.0*hauteur));
-        button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button.setOnAction(new EventHandler<ActionEvent>()
+        bouton1.setMnemonicParsing(false);
+        bouton1.setPrefHeight(31.0*hauteur);
+        bouton1.setPrefWidth(50.0*largeur);
+        bouton1.setText("1");
+        bouton1.setFont(new Font(15.0*hauteur));
+        bouton1.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        bouton1.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -100,14 +100,14 @@ class Clavier extends Pane
             }
         });
 
-        button0.setMnemonicParsing(false);
-        button0.setPrefHeight(31.0*hauteur);
-        button0.setPrefWidth(50.0*largeur);
-        button0.setText("2");
-        button0.setFont(new Font(15.0*hauteur));
-        button0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        HBox.setMargin(button0, new Insets(0.0, 8.0*largeur, 0.0, 8.0*largeur));
-        button0.setOnAction(new EventHandler<ActionEvent>()
+        bouton2.setMnemonicParsing(false);
+        bouton2.setPrefHeight(31.0*hauteur);
+        bouton2.setPrefWidth(50.0*largeur);
+        bouton2.setText("2");
+        bouton2.setFont(new Font(15.0*hauteur));
+        bouton2.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        HBox.setMargin(bouton2, new Insets(0.0, 8.0*largeur, 0.0, 8.0*largeur));
+        bouton2.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -115,13 +115,13 @@ class Clavier extends Pane
             }
         });
 
-        button1.setMnemonicParsing(false);
-        button1.setPrefHeight(31.0*hauteur);
-        button1.setPrefWidth(50.0*largeur);
-        button1.setText("3");
-        button1.setFont(new Font(15.0*hauteur));
-        button1.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button1.setOnAction(new EventHandler<ActionEvent>()
+        bouton3.setMnemonicParsing(false);
+        bouton3.setPrefHeight(31.0*hauteur);
+        bouton3.setPrefWidth(50.0*largeur);
+        bouton3.setText("3");
+        bouton3.setFont(new Font(15.0*hauteur));
+        bouton3.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        bouton3.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -129,14 +129,14 @@ class Clavier extends Pane
             }
         });
 
-        button2.setMnemonicParsing(false);
-        button2.setPrefHeight(31.0*hauteur);
-        button2.setPrefWidth(50.0*largeur);
-        button2.setText("4");
-        button2.setFont(new Font(15.0*hauteur));
-        button2.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        HBox.setMargin(button2, new Insets(0.0, 8.0*largeur, 0.0, 8.0*largeur));
-        button2.setOnAction(new EventHandler<ActionEvent>()
+        bouton4.setMnemonicParsing(false);
+        bouton4.setPrefHeight(31.0*hauteur);
+        bouton4.setPrefWidth(50.0*largeur);
+        bouton4.setText("4");
+        bouton4.setFont(new Font(15.0*hauteur));
+        bouton4.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        HBox.setMargin(bouton4, new Insets(0.0, 8.0*largeur, 0.0, 8.0*largeur));
+        bouton4.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -144,13 +144,13 @@ class Clavier extends Pane
             }
         });
 
-        button3.setMnemonicParsing(false);
-        button3.setPrefHeight(31.0*hauteur);
-        button3.setPrefWidth(50.0*largeur);
-        button3.setText("5");
-        button3.setFont(new Font(15.0*hauteur));
-        button3.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button3.setOnAction(new EventHandler<ActionEvent>()
+        bouton5.setMnemonicParsing(false);
+        bouton5.setPrefHeight(31.0*hauteur);
+        bouton5.setPrefWidth(50.0*largeur);
+        bouton5.setText("5");
+        bouton5.setFont(new Font(15.0*hauteur));
+        bouton5.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        bouton5.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -158,15 +158,15 @@ class Clavier extends Pane
             }
         });
 
-        button4.setMnemonicParsing(false);
-        button4.setPrefHeight(31.0*hauteur);
-        button4.setPrefWidth(50.0*largeur);
-        button4.setText("6");
-        button4.setFont(new Font(15.0*hauteur));
-        button4.setFont(new Font(15.0*hauteur));
-        button4.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        HBox.setMargin(button4, new Insets(0.0, 8.0*largeur, 0.0, 8.0*largeur));
-        button4.setOnAction(new EventHandler<ActionEvent>()
+        bouton6.setMnemonicParsing(false);
+        bouton6.setPrefHeight(31.0*hauteur);
+        bouton6.setPrefWidth(50.0*largeur);
+        bouton6.setText("6");
+        bouton6.setFont(new Font(15.0*hauteur));
+        bouton6.setFont(new Font(15.0*hauteur));
+        bouton6.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        HBox.setMargin(bouton6, new Insets(0.0, 8.0*largeur, 0.0, 8.0*largeur));
+        bouton6.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -174,14 +174,14 @@ class Clavier extends Pane
             }
         });
 
-        button5.setMnemonicParsing(false);
-        button5.setPrefHeight(31.0*hauteur);
-        button5.setPrefWidth(50.0*largeur);
-        button5.setText("7");
-        button5.setFont(new Font(15.0*hauteur));
-        button5.setFont(new Font(15.0*hauteur));
-        button5.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button5.setOnAction(new EventHandler<ActionEvent>()
+        bouton7.setMnemonicParsing(false);
+        bouton7.setPrefHeight(31.0*hauteur);
+        bouton7.setPrefWidth(50.0*largeur);
+        bouton7.setText("7");
+        bouton7.setFont(new Font(15.0*hauteur));
+        bouton7.setFont(new Font(15.0*hauteur));
+        bouton7.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        bouton7.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -189,14 +189,14 @@ class Clavier extends Pane
             }
         });
 
-        button6.setMnemonicParsing(false);
-        button6.setPrefHeight(31.0*hauteur);
-        button6.setPrefWidth(50.0*largeur);
-        button6.setText("8");
-        button6.setFont(new Font(15.0*hauteur));
-        button6.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        HBox.setMargin(button6, new Insets(0.0, 8.0*largeur, 0.0, 8.0*largeur));
-        button6.setOnAction(new EventHandler<ActionEvent>()
+        bouton8.setMnemonicParsing(false);
+        bouton8.setPrefHeight(31.0*hauteur);
+        bouton8.setPrefWidth(50.0*largeur);
+        bouton8.setText("8");
+        bouton8.setFont(new Font(15.0*hauteur));
+        bouton8.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        HBox.setMargin(bouton8, new Insets(0.0, 8.0*largeur, 0.0, 8.0*largeur));
+        bouton8.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -204,13 +204,13 @@ class Clavier extends Pane
             }
         });
 
-        button7.setMnemonicParsing(false);
-        button7.setPrefHeight(31.0*hauteur);
-        button7.setPrefWidth(50.0*largeur);
-        button7.setText("9");
-        button7.setFont(new Font(15.0*hauteur));
-        button7.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button7.setOnAction(new EventHandler<ActionEvent>()
+        bouton9.setMnemonicParsing(false);
+        bouton9.setPrefHeight(31.0*hauteur);
+        bouton9.setPrefWidth(50.0*largeur);
+        bouton9.setText("9");
+        bouton9.setFont(new Font(15.0*hauteur));
+        bouton9.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        bouton9.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -218,15 +218,15 @@ class Clavier extends Pane
             }
         });
 
-        button8.setMnemonicParsing(false);
-        button8.setPrefHeight(31.0*hauteur);
-        button8.setPrefWidth(50.0*largeur);
-        button8.setText("0");
-        button8.setFont(new Font(15.0*hauteur));
-        button8.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        HBox.setMargin(button8, new Insets(0.0, 0.0, 0.0, 8.0*largeur));
-        VBox.setMargin(hBox, new Insets(0.0));
-        button8.setOnAction(new EventHandler<ActionEvent>()
+        bouton10.setMnemonicParsing(false);
+        bouton10.setPrefHeight(31.0*hauteur);
+        bouton10.setPrefWidth(50.0*largeur);
+        bouton10.setText("0");
+        bouton10.setFont(new Font(15.0*hauteur));
+        bouton10.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        HBox.setMargin(bouton10, new Insets(0.0, 0.0, 0.0, 8.0*largeur));
+        VBox.setMargin(boxHor1, new Insets(0.0));
+        bouton10.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -234,18 +234,18 @@ class Clavier extends Pane
             }
         });
 
-        hBox0.setPrefHeight(0.0*hauteur);
-        hBox0.setPrefWidth(973.0*largeur);
+        boxHor2.setPrefHeight(0.0*hauteur);
+        boxHor2.setPrefWidth(973.0*largeur);
 
-        button9.setMinWidth(USE_PREF_SIZE);
-        button9.setMnemonicParsing(false);
-        button9.setPrefHeight(31.0*hauteur);
-        button9.setPrefWidth(50.0*largeur);
-        button9.setText("A");
-        button9.setFont(new Font(15.0*hauteur));
-        button9.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        HBox.setMargin(button9, new Insets(0.0));
-        button9.setOnAction(new EventHandler<ActionEvent>()
+        bouton11.setMinWidth(USE_PREF_SIZE);
+        bouton11.setMnemonicParsing(false);
+        bouton11.setPrefHeight(31.0*hauteur);
+        bouton11.setPrefWidth(50.0*largeur);
+        bouton11.setText("A");
+        bouton11.setFont(new Font(15.0*hauteur));
+        bouton11.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        HBox.setMargin(bouton11, new Insets(0.0));
+        bouton11.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -253,15 +253,15 @@ class Clavier extends Pane
             }
         });
 
-        button10.setMinWidth(USE_PREF_SIZE);
-        button10.setMnemonicParsing(false);
-        button10.setPrefHeight(31.0*hauteur);
-        button10.setPrefWidth(50.0*largeur);
-        button10.setText("Z");
-        button10.setFont(new Font(15.0*hauteur));
-        button10.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        HBox.setMargin(button10, new Insets(0.0, 8.0*largeur, 0.0, 8.0*largeur));
-        button10.setOnAction(new EventHandler<ActionEvent>()
+        bouton12.setMinWidth(USE_PREF_SIZE);
+        bouton12.setMnemonicParsing(false);
+        bouton12.setPrefHeight(31.0*hauteur);
+        bouton12.setPrefWidth(50.0*largeur);
+        bouton12.setText("Z");
+        bouton12.setFont(new Font(15.0*hauteur));
+        bouton12.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        HBox.setMargin(bouton12, new Insets(0.0, 8.0*largeur, 0.0, 8.0*largeur));
+        bouton12.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -269,13 +269,13 @@ class Clavier extends Pane
             }
         });
 
-        button11.setMnemonicParsing(false);
-        button11.setPrefHeight(31.0*hauteur);
-        button11.setPrefWidth(50.0*largeur);
-        button11.setText("E");
-        button11.setFont(new Font(15.0*hauteur));
-        button11.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button11.setOnAction(new EventHandler<ActionEvent>()
+        bouton13.setMnemonicParsing(false);
+        bouton13.setPrefHeight(31.0*hauteur);
+        bouton13.setPrefWidth(50.0*largeur);
+        bouton13.setText("E");
+        bouton13.setFont(new Font(15.0*hauteur));
+        bouton13.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        bouton13.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -283,27 +283,27 @@ class Clavier extends Pane
             }
         });
 
-        button12.setMnemonicParsing(false);
-        button12.setPrefHeight(31.0*hauteur);
-        button12.setPrefWidth(50.0*largeur);
-        button12.setText("R");
-        button12.setFont(new Font(15.0*hauteur));
-        button12.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        HBox.setMargin(button12, new Insets(0.0, 8.0*largeur, 0.0, 8.0*largeur));
-        button12.setOnAction(new EventHandler<ActionEvent>()
+        bouton14.setMnemonicParsing(false);
+        bouton14.setPrefHeight(31.0*hauteur);
+        bouton14.setPrefWidth(50.0*largeur);
+        bouton14.setText("R");
+        bouton14.setFont(new Font(15.0*hauteur));
+        bouton14.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        HBox.setMargin(bouton14, new Insets(0.0, 8.0*largeur, 0.0, 8.0*largeur));
+        bouton14.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event){
             	fenetre.actionClavier("R");
             }
         });
 
-        button13.setMnemonicParsing(false);
-        button13.setPrefHeight(31.0*hauteur);
-        button13.setPrefWidth(50.0*largeur);
-        button13.setText("T");
-        button13.setFont(new Font(15.0*hauteur));
-        button13.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button13.setOnAction(new EventHandler<ActionEvent>()
+        bouton15.setMnemonicParsing(false);
+        bouton15.setPrefHeight(31.0*hauteur);
+        bouton15.setPrefWidth(50.0*largeur);
+        bouton15.setText("T");
+        bouton15.setFont(new Font(15.0*hauteur));
+        bouton15.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        bouton15.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -311,14 +311,14 @@ class Clavier extends Pane
             }
         });
 
-        button14.setMnemonicParsing(false);
-        button14.setPrefHeight(31.0*hauteur);
-        button14.setPrefWidth(50.0*largeur);
-        button14.setText("Y");
-        button14.setFont(new Font(15.0*hauteur));
-        button14.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        HBox.setMargin(button14, new Insets(0.0, 8.0*largeur, 0.0, 8.0*largeur));
-        button14.setOnAction(new EventHandler<ActionEvent>()
+        bouton16.setMnemonicParsing(false);
+        bouton16.setPrefHeight(31.0*hauteur);
+        bouton16.setPrefWidth(50.0*largeur);
+        bouton16.setText("Y");
+        bouton16.setFont(new Font(15.0*hauteur));
+        bouton16.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        HBox.setMargin(bouton16, new Insets(0.0, 8.0*largeur, 0.0, 8.0*largeur));
+        bouton16.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -326,14 +326,14 @@ class Clavier extends Pane
             }
         });
 
-        button15.setMnemonicParsing(false);
-        button15.setPrefHeight(31.0*hauteur);
-        button15.setPrefWidth(50.0*largeur);
-        button15.setText("U");
-        button15.setFont(new Font(15.0*hauteur));
-        button15.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        HBox.setMargin(button15, new Insets(0.0, 8.0*largeur, 0.0, 0.0));
-        button15.setOnAction(new EventHandler<ActionEvent>()
+        bouton17.setMnemonicParsing(false);
+        bouton17.setPrefHeight(31.0*hauteur);
+        bouton17.setPrefWidth(50.0*largeur);
+        bouton17.setText("U");
+        bouton17.setFont(new Font(15.0*hauteur));
+        bouton17.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        HBox.setMargin(bouton17, new Insets(0.0, 8.0*largeur, 0.0, 0.0));
+        bouton17.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -341,14 +341,14 @@ class Clavier extends Pane
             }
         });
 
-        button16.setMnemonicParsing(false);
-        button16.setPrefHeight(31.0*hauteur);
-        button16.setPrefWidth(50.0*largeur);
-        button16.setText("I");
-        button16.setFont(new Font(15.0*hauteur));
-        button16.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        HBox.setMargin(button16, new Insets(0.0));
-        button16.setOnAction(new EventHandler<ActionEvent>()
+        bouton18.setMnemonicParsing(false);
+        bouton18.setPrefHeight(31.0*hauteur);
+        bouton18.setPrefWidth(50.0*largeur);
+        bouton18.setText("I");
+        bouton18.setFont(new Font(15.0*hauteur));
+        bouton18.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        HBox.setMargin(bouton18, new Insets(0.0));
+        bouton18.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -356,14 +356,14 @@ class Clavier extends Pane
             }
         });
 
-        button17.setMnemonicParsing(false);
-        button17.setPrefHeight(31.0*hauteur);
-        button17.setPrefWidth(50.0*largeur);
-        button17.setText("O");
-        button17.setFont(new Font(15.0*hauteur));
-        button17.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        HBox.setMargin(button17, new Insets(0.0, 8.0*largeur, 0.0, 8.0*largeur));
-        button17.setOnAction(new EventHandler<ActionEvent>()
+        bouton19.setMnemonicParsing(false);
+        bouton19.setPrefHeight(31.0*hauteur);
+        bouton19.setPrefWidth(50.0*largeur);
+        bouton19.setText("O");
+        bouton19.setFont(new Font(15.0*hauteur));
+        bouton19.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        HBox.setMargin(bouton19, new Insets(0.0, 8.0*largeur, 0.0, 8.0*largeur));
+        bouton19.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -371,14 +371,14 @@ class Clavier extends Pane
             }
         });
 
-        button18.setMnemonicParsing(false);
-        button18.setPrefHeight(31.0*hauteur);
-        button18.setPrefWidth(50.0*largeur);
-        button18.setText("P");
-        button18.setFont(new Font(15.0*hauteur));
-        button18.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        VBox.setMargin(hBox0, new Insets(5.0*largeur, 0.0, 0.0, 0.0));
-        button18.setOnAction(new EventHandler<ActionEvent>()
+        bouton20.setMnemonicParsing(false);
+        bouton20.setPrefHeight(31.0*hauteur);
+        bouton20.setPrefWidth(50.0*largeur);
+        bouton20.setText("P");
+        bouton20.setFont(new Font(15.0*hauteur));
+        bouton20.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        VBox.setMargin(boxHor2, new Insets(5.0*largeur, 0.0, 0.0, 0.0));
+        bouton20.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -386,16 +386,16 @@ class Clavier extends Pane
             }
         });
 
-        hBox1.setPrefHeight(0.0*hauteur);
-        hBox1.setPrefWidth(973.0*largeur);
+        boxHor3.setPrefHeight(0.0*hauteur);
+        boxHor3.setPrefWidth(973.0*largeur);
 
-        button19.setMnemonicParsing(false);
-        button19.setPrefHeight(31.0*hauteur);
-        button19.setPrefWidth(50.0*largeur);
-        button19.setText("Q");
-        button19.setFont(new Font(15.0*hauteur));
-        button19.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button19.setOnAction(new EventHandler<ActionEvent>()
+        bouton21.setMnemonicParsing(false);
+        bouton21.setPrefHeight(31.0*hauteur);
+        bouton21.setPrefWidth(50.0*largeur);
+        bouton21.setText("Q");
+        bouton21.setFont(new Font(15.0*hauteur));
+        bouton21.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        bouton21.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -403,14 +403,14 @@ class Clavier extends Pane
             }
         });
 
-        button110.setMnemonicParsing(false);
-        button110.setPrefHeight(31.0*hauteur);
-        button110.setPrefWidth(50.0*largeur);
-        button110.setText("S");
-        button110.setFont(new Font(15.0*hauteur));
-        button110.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        HBox.setMargin(button110, new Insets(0.0, 8.0*largeur, 0.0, 8.0*largeur));
-        button110.setOnAction(new EventHandler<ActionEvent>()
+        bouton22.setMnemonicParsing(false);
+        bouton22.setPrefHeight(31.0*hauteur);
+        bouton22.setPrefWidth(50.0*largeur);
+        bouton22.setText("S");
+        bouton22.setFont(new Font(15.0*hauteur));
+        bouton22.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        HBox.setMargin(bouton22, new Insets(0.0, 8.0*largeur, 0.0, 8.0*largeur));
+        bouton22.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -418,13 +418,13 @@ class Clavier extends Pane
             }
         });
 
-        button111.setMnemonicParsing(false);
-        button111.setPrefHeight(31.0*hauteur);
-        button111.setPrefWidth(50.0*largeur);
-        button111.setText("D");
-        button111.setFont(new Font(15.0*hauteur));
-        button111.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button111.setOnAction(new EventHandler<ActionEvent>()
+        bouton23.setMnemonicParsing(false);
+        bouton23.setPrefHeight(31.0*hauteur);
+        bouton23.setPrefWidth(50.0*largeur);
+        bouton23.setText("D");
+        bouton23.setFont(new Font(15.0*hauteur));
+        bouton23.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        bouton23.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -432,14 +432,14 @@ class Clavier extends Pane
             }
         });
 
-        button112.setMnemonicParsing(false);
-        button112.setPrefHeight(31.0*hauteur);
-        button112.setPrefWidth(50.0*largeur);
-        button112.setText("F");
-        button112.setFont(new Font(15.0*hauteur));
-        button112.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        HBox.setMargin(button112, new Insets(0.0, 8.0*largeur, 0.0, 8.0*largeur));
-        button112.setOnAction(new EventHandler<ActionEvent>()
+        bouton24.setMnemonicParsing(false);
+        bouton24.setPrefHeight(31.0*hauteur);
+        bouton24.setPrefWidth(50.0*largeur);
+        bouton24.setText("F");
+        bouton24.setFont(new Font(15.0*hauteur));
+        bouton24.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        HBox.setMargin(bouton24, new Insets(0.0, 8.0*largeur, 0.0, 8.0*largeur));
+        bouton24.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -447,13 +447,13 @@ class Clavier extends Pane
             }
         });
 
-        button113.setMnemonicParsing(false);
-        button113.setPrefHeight(31.0*hauteur);
-        button113.setPrefWidth(50.0*largeur);
-        button113.setText("G");
-        button113.setFont(new Font(15.0*hauteur));
-        button113.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button113.setOnAction(new EventHandler<ActionEvent>()
+        bouton25.setMnemonicParsing(false);
+        bouton25.setPrefHeight(31.0*hauteur);
+        bouton25.setPrefWidth(50.0*largeur);
+        bouton25.setText("G");
+        bouton25.setFont(new Font(15.0*hauteur));
+        bouton25.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        bouton25.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -461,14 +461,14 @@ class Clavier extends Pane
             }
         });
 
-        button114.setMnemonicParsing(false);
-        button114.setPrefHeight(31.0*hauteur);
-        button114.setPrefWidth(50.0*largeur);
-        button114.setText("H");
-        button114.setFont(new Font(15.0*hauteur));
-        button114.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        HBox.setMargin(button114, new Insets(0.0, 8.0*largeur, 0.0, 8.0*largeur));
-        button114.setOnAction(new EventHandler<ActionEvent>()
+        bouton26.setMnemonicParsing(false);
+        bouton26.setPrefHeight(31.0*hauteur);
+        bouton26.setPrefWidth(50.0*largeur);
+        bouton26.setText("H");
+        bouton26.setFont(new Font(15.0*hauteur));
+        bouton26.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        HBox.setMargin(bouton26, new Insets(0.0, 8.0*largeur, 0.0, 8.0*largeur));
+        bouton26.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -476,13 +476,13 @@ class Clavier extends Pane
             }
         });
 
-        button115.setMnemonicParsing(false);
-        button115.setPrefHeight(31.0*hauteur);
-        button115.setPrefWidth(50.0*largeur);
-        button115.setText("J");
-        button115.setFont(new Font(15.0*hauteur));
-        button115.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button115.setOnAction(new EventHandler<ActionEvent>()
+        bouton27.setMnemonicParsing(false);
+        bouton27.setPrefHeight(31.0*hauteur);
+        bouton27.setPrefWidth(50.0*largeur);
+        bouton27.setText("J");
+        bouton27.setFont(new Font(15.0*hauteur));
+        bouton27.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        bouton27.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -490,14 +490,14 @@ class Clavier extends Pane
             }
         });
 
-        button116.setMnemonicParsing(false);
-        button116.setPrefHeight(31.0*hauteur);
-        button116.setPrefWidth(50.0*largeur);
-        button116.setText("K");
-        button116.setFont(new Font(15.0*hauteur));
-        button116.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        HBox.setMargin(button116, new Insets(0.0, 8.0*largeur, 0.0, 8.0*largeur));
-        button116.setOnAction(new EventHandler<ActionEvent>()
+        bouton28.setMnemonicParsing(false);
+        bouton28.setPrefHeight(31.0*hauteur);
+        bouton28.setPrefWidth(50.0*largeur);
+        bouton28.setText("K");
+        bouton28.setFont(new Font(15.0*hauteur));
+        bouton28.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        HBox.setMargin(bouton28, new Insets(0.0, 8.0*largeur, 0.0, 8.0*largeur));
+        bouton28.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -505,13 +505,13 @@ class Clavier extends Pane
             }
         });
 
-        button117.setMnemonicParsing(false);
-        button117.setPrefHeight(31.0*hauteur);
-        button117.setPrefWidth(50.0*largeur);
-        button117.setText("L");
-        button117.setFont(new Font(15.0*hauteur));
-        button117.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button117.setOnAction(new EventHandler<ActionEvent>()
+        bouton29.setMnemonicParsing(false);
+        bouton29.setPrefHeight(31.0*hauteur);
+        bouton29.setPrefWidth(50.0*largeur);
+        bouton29.setText("L");
+        bouton29.setFont(new Font(15.0*hauteur));
+        bouton29.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        bouton29.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -519,15 +519,15 @@ class Clavier extends Pane
             }
         });
 
-        button118.setMnemonicParsing(false);
-        button118.setPrefHeight(31.0*hauteur);
-        button118.setPrefWidth(50.0*largeur);
-        button118.setText("M");
-        button118.setFont(new Font(15.0*hauteur));
-        button118.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        HBox.setMargin(button118, new Insets(0.0, 0.0, 0.0, 8.0*largeur));
-        VBox.setMargin(hBox1, new Insets(5.0*largeur, 0.0, 0.0, 0.0));
-        button118.setOnAction(new EventHandler<ActionEvent>()
+        bouton30.setMnemonicParsing(false);
+        bouton30.setPrefHeight(31.0*hauteur);
+        bouton30.setPrefWidth(50.0*largeur);
+        bouton30.setText("M");
+        bouton30.setFont(new Font(15.0*hauteur));
+        bouton30.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        HBox.setMargin(bouton30, new Insets(0.0, 0.0, 0.0, 8.0*largeur));
+        VBox.setMargin(boxHor3, new Insets(5.0*largeur, 0.0, 0.0, 0.0));
+        bouton30.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -535,16 +535,16 @@ class Clavier extends Pane
             }
         });
 
-        hBox2.setPrefHeight(31.0*hauteur);
-        hBox2.setPrefWidth(526.0*largeur);
+        boxHor4.setPrefHeight(31.0*hauteur);
+        boxHor4.setPrefWidth(526.0*largeur);
 
-        button119.setMnemonicParsing(false);
-        button119.setPrefHeight(31.0*hauteur);
-        button119.setPrefWidth(50.0*largeur);
-        button119.setText("W");
-        button119.setFont(new Font(15.0*hauteur));
-        button119.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button119.setOnAction(new EventHandler<ActionEvent>()
+        bouton31.setMnemonicParsing(false);
+        bouton31.setPrefHeight(31.0*hauteur);
+        bouton31.setPrefWidth(50.0*largeur);
+        bouton31.setText("W");
+        bouton31.setFont(new Font(15.0*hauteur));
+        bouton31.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        bouton31.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -552,14 +552,14 @@ class Clavier extends Pane
             }
         });
 
-        button1110.setMnemonicParsing(false);
-        button1110.setPrefHeight(31.0*hauteur);
-        button1110.setPrefWidth(50.0*largeur);
-        button1110.setText("X");
-        button1110.setFont(new Font(15.0*hauteur));
-        button1110.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        HBox.setMargin(button1110, new Insets(0.0, 8.0*largeur, 0.0, 8.0*largeur));
-        button1110.setOnAction(new EventHandler<ActionEvent>()
+        bouton32.setMnemonicParsing(false);
+        bouton32.setPrefHeight(31.0*hauteur);
+        bouton32.setPrefWidth(50.0*largeur);
+        bouton32.setText("X");
+        bouton32.setFont(new Font(15.0*hauteur));
+        bouton32.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        HBox.setMargin(bouton32, new Insets(0.0, 8.0*largeur, 0.0, 8.0*largeur));
+        bouton32.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -567,13 +567,13 @@ class Clavier extends Pane
             }
         });
 
-        button1111.setMnemonicParsing(false);
-        button1111.setPrefHeight(31.0*hauteur);
-        button1111.setPrefWidth(50.0*largeur);
-        button1111.setText("C");
-        button1111.setFont(new Font(15.0*hauteur));
-        button1111.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button1111.setOnAction(new EventHandler<ActionEvent>()
+        bouton33.setMnemonicParsing(false);
+        bouton33.setPrefHeight(31.0*hauteur);
+        bouton33.setPrefWidth(50.0*largeur);
+        bouton33.setText("C");
+        bouton33.setFont(new Font(15.0*hauteur));
+        bouton33.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        bouton33.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -581,14 +581,14 @@ class Clavier extends Pane
             }
         });
 
-        button1112.setMnemonicParsing(false);
-        button1112.setPrefHeight(31.0*hauteur);
-        button1112.setPrefWidth(50.0*largeur);
-        button1112.setText("V");
-        button1112.setFont(new Font(15.0*hauteur));
-        button1112.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        HBox.setMargin(button1112, new Insets(0.0, 8.0*largeur, 0.0, 8.0*largeur));
-        button1112.setOnAction(new EventHandler<ActionEvent>()
+        bouton34.setMnemonicParsing(false);
+        bouton34.setPrefHeight(31.0*hauteur);
+        bouton34.setPrefWidth(50.0*largeur);
+        bouton34.setText("V");
+        bouton34.setFont(new Font(15.0*hauteur));
+        bouton34.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        HBox.setMargin(bouton34, new Insets(0.0, 8.0*largeur, 0.0, 8.0*largeur));
+        bouton34.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -596,13 +596,13 @@ class Clavier extends Pane
             }
         });
 
-        button1113.setMnemonicParsing(false);
-        button1113.setPrefHeight(31.0*hauteur);
-        button1113.setPrefWidth(50.0*largeur);
-        button1113.setText("B");
-        button1113.setFont(new Font(15.0*hauteur));
-        button1113.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button1113.setOnAction(new EventHandler<ActionEvent>()
+        bouton35.setMnemonicParsing(false);
+        bouton35.setPrefHeight(31.0*hauteur);
+        bouton35.setPrefWidth(50.0*largeur);
+        bouton35.setText("B");
+        bouton35.setFont(new Font(15.0*hauteur));
+        bouton35.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        bouton35.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -610,14 +610,14 @@ class Clavier extends Pane
             }
         });
 
-        button1114.setMnemonicParsing(false);
-        button1114.setPrefHeight(31.0*hauteur);
-        button1114.setPrefWidth(50.0*largeur);
-        button1114.setText("N");
-        button1114.setFont(new Font(15.0*hauteur));
-        button1114.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        HBox.setMargin(button1114, new Insets(0.0, 8.0*largeur, 0.0, 8.0*largeur));
-        button1114.setOnAction(new EventHandler<ActionEvent>()
+        bouton36.setMnemonicParsing(false);
+        bouton36.setPrefHeight(31.0*hauteur);
+        bouton36.setPrefWidth(50.0*largeur);
+        bouton36.setText("N");
+        bouton36.setFont(new Font(15.0*hauteur));
+        bouton36.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        HBox.setMargin(bouton36, new Insets(0.0, 8.0*largeur, 0.0, 8.0*largeur));
+        bouton36.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -625,15 +625,15 @@ class Clavier extends Pane
             }
         });
 
-        button1115.setMnemonicParsing(false);
-        button1115.setPrefHeight(31.0*hauteur);
-        button1115.setPrefWidth(96.0*largeur);
-        button1115.setText("EFFACER");
-        button1115.setFont(new Font(15.0*hauteur));
-        button1115.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button1115.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        HBox.setMargin(button1115, new Insets(0.0, 8.0*largeur, 0.0, 0.0));
-        button1115.setOnAction(new EventHandler<ActionEvent>()
+        bouton37.setMnemonicParsing(false);
+        bouton37.setPrefHeight(31.0*hauteur);
+        bouton37.setPrefWidth(96.0*largeur);
+        bouton37.setText("EFFACER");
+        bouton37.setFont(new Font(15.0*hauteur));
+        bouton37.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        bouton37.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        HBox.setMargin(bouton37, new Insets(0.0, 8.0*largeur, 0.0, 0.0));
+        bouton37.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -641,14 +641,14 @@ class Clavier extends Pane
             }
         });
 
-        button1116.setMnemonicParsing(false);
-        button1116.setPrefHeight(31.0*hauteur);
-        button1116.setPrefWidth(96.0*largeur);
-        button1116.setText("SUIVANT");
-        button1116.setFont(new Font(15.0*hauteur));
-        button1116.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        VBox.setMargin(hBox2, new Insets(5.0*hauteur, 0.0, 0.0, 15.0*largeur));
-        button1116.setOnAction(new EventHandler<ActionEvent>()
+        bouton38.setMnemonicParsing(false);
+        bouton38.setPrefHeight(31.0*hauteur);
+        bouton38.setPrefWidth(96.0*largeur);
+        bouton38.setText("SUIVANT");
+        bouton38.setFont(new Font(15.0*hauteur));
+        bouton38.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        VBox.setMargin(boxHor4, new Insets(5.0*hauteur, 0.0, 0.0, 15.0*largeur));
+        bouton38.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -656,17 +656,17 @@ class Clavier extends Pane
             }
         });
 
-        hBox3.setLayoutX(10.0*largeur);
-        hBox3.setPrefHeight(1.0*hauteur);
-        hBox3.setPrefWidth(973.0*largeur);
+        boxHor5.setLayoutX(10.0*largeur);
+        boxHor5.setPrefHeight(1.0*hauteur);
+        boxHor5.setPrefWidth(973.0*largeur);
 
-        button1117.setMnemonicParsing(false);
-        button1117.setPrefHeight(31.0*hauteur);
-        button1117.setPrefWidth(80.0*largeur);
-        button1117.setText("RETOUR");
-        button1117.setFont(new Font(15.0*hauteur));
-        button1117.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button1117.setOnAction(new EventHandler<ActionEvent>()
+        bouton39.setMnemonicParsing(false);
+        bouton39.setPrefHeight(31.0*hauteur);
+        bouton39.setPrefWidth(80.0*largeur);
+        bouton39.setText("RETOUR");
+        bouton39.setFont(new Font(15.0*hauteur));
+        bouton39.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        bouton39.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -674,14 +674,14 @@ class Clavier extends Pane
             }
         });
 
-        button1118.setMnemonicParsing(false);
-        button1118.setPrefHeight(31.0*hauteur);
-        button1118.setPrefWidth(398.0*largeur);
-        button1118.setText("ESPACE");
-        button1118.setFont(new Font(15.0*hauteur));
-        button1118.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        HBox.setMargin(button1118, new Insets(0.0, 8.0*largeur, 0.0, 8.0*largeur));
-        button1118.setOnAction(new EventHandler<ActionEvent>()
+        bouton40.setMnemonicParsing(false);
+        bouton40.setPrefHeight(31.0*hauteur);
+        bouton40.setPrefWidth(398.0*largeur);
+        bouton40.setText("ESPACE");
+        bouton40.setFont(new Font(15.0*hauteur));
+        bouton40.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        HBox.setMargin(bouton40, new Insets(0.0, 8.0*largeur, 0.0, 8.0*largeur));
+        bouton40.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -689,14 +689,14 @@ class Clavier extends Pane
             }
         });
 
-        button1119.setMnemonicParsing(false);
-        button1119.setPrefHeight(31.0*hauteur);
-        button1119.setPrefWidth(80.0*largeur);
-        button1119.setText("ENTRER");
-        button1119.setFont(new Font(15.0*hauteur));
-        button1119.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        VBox.setMargin(hBox3, new Insets(5.0*largeur, 0.0, 0.0, 0.0));
-        button1119.setOnAction(new EventHandler<ActionEvent>()
+        bouton41.setMnemonicParsing(false);
+        bouton41.setPrefHeight(31.0*hauteur);
+        bouton41.setPrefWidth(80.0*largeur);
+        bouton41.setText("ENTRER");
+        bouton41.setFont(new Font(15.0*hauteur));
+        bouton41.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        VBox.setMargin(boxHor5, new Insets(5.0*largeur, 0.0, 0.0, 0.0));
+        bouton41.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -704,55 +704,55 @@ class Clavier extends Pane
             }
         });
 
-        hBox.getChildren().addAll(button, button0, button1, button2, button3, button4, button5, button6, button7, button8);
-        hBox0.getChildren().addAll(button9, button10, button11, button12, button13, button14, button15, button16, button17, button18);
-        hBox1.getChildren().addAll(button19, button110, button111, button112, button113, button114, button115, button116, button117, button118);
-        hBox2.getChildren().addAll(button119, button1110, button1111, button1112, button1113, button1114, button1115, button1116);
-        hBox3.getChildren().addAll(button1117, button1118, button1119);
-        vBox.getChildren().addAll(hBox, hBox0, hBox1, hBox2, hBox3);
-        getChildren().addAll(rectangle, vBox);
+        boxHor1.getChildren().addAll(bouton1, bouton2, bouton3, bouton4, bouton5, bouton6, bouton7, bouton8, bouton9, bouton10);
+        boxHor2.getChildren().addAll(bouton11, bouton12, bouton13, bouton14, bouton15, bouton16, bouton17, bouton18, bouton19, bouton20);
+        boxHor3.getChildren().addAll(bouton21, bouton22, bouton23, bouton24, bouton25, bouton26, bouton27, bouton28, bouton29, bouton30);
+        boxHor4.getChildren().addAll(bouton31, bouton32, bouton33, bouton34, bouton35, bouton36, bouton37, bouton38);
+        boxHor5.getChildren().addAll(bouton39, bouton40, bouton41);
+        boxVer.getChildren().addAll(boxHor1, boxHor2, boxHor3, boxHor4, boxHor5);
+        getChildren().addAll(rectangle, boxVer);
         
-        button.setFocusTraversable(false);
-        button0.setFocusTraversable(false);
-        button1.setFocusTraversable(false);
-        button2.setFocusTraversable(false);
-        button3.setFocusTraversable(false);
-        button4.setFocusTraversable(false);
-        button5.setFocusTraversable(false);
-        button6.setFocusTraversable(false);
-        button7.setFocusTraversable(false);
-        button8.setFocusTraversable(false);
-        button9.setFocusTraversable(false);
-        button10.setFocusTraversable(false);
-        button11.setFocusTraversable(false);
-        button12.setFocusTraversable(false);
-        button13.setFocusTraversable(false);
-        button14.setFocusTraversable(false);
-        button15.setFocusTraversable(false);
-        button16.setFocusTraversable(false);
-        button17.setFocusTraversable(false);
-        button18.setFocusTraversable(false);
-        button19.setFocusTraversable(false);
-        button110.setFocusTraversable(false);
-        button111.setFocusTraversable(false);
-        button112.setFocusTraversable(false);
-        button113.setFocusTraversable(false);
-        button114.setFocusTraversable(false);
-        button115.setFocusTraversable(false);
-        button116.setFocusTraversable(false);
-        button117.setFocusTraversable(false);
-        button118.setFocusTraversable(false);
-        button119.setFocusTraversable(false);
-        button1110.setFocusTraversable(false);
-        button1111.setFocusTraversable(false);
-        button1112.setFocusTraversable(false);
-        button1113.setFocusTraversable(false);
-        button1114.setFocusTraversable(false);
-        button1115.setFocusTraversable(false);
-        button1116.setFocusTraversable(false);
-        button1117.setFocusTraversable(false);
-        button1118.setFocusTraversable(false);
-        button1119.setFocusTraversable(false);
+        bouton1.setFocusTraversable(false);
+        bouton2.setFocusTraversable(false);
+        bouton3.setFocusTraversable(false);
+        bouton4.setFocusTraversable(false);
+        bouton5.setFocusTraversable(false);
+        bouton6.setFocusTraversable(false);
+        bouton7.setFocusTraversable(false);
+        bouton8.setFocusTraversable(false);
+        bouton9.setFocusTraversable(false);
+        bouton10.setFocusTraversable(false);
+        bouton11.setFocusTraversable(false);
+        bouton12.setFocusTraversable(false);
+        bouton13.setFocusTraversable(false);
+        bouton14.setFocusTraversable(false);
+        bouton15.setFocusTraversable(false);
+        bouton16.setFocusTraversable(false);
+        bouton17.setFocusTraversable(false);
+        bouton18.setFocusTraversable(false);
+        bouton19.setFocusTraversable(false);
+        bouton20.setFocusTraversable(false);
+        bouton21.setFocusTraversable(false);
+        bouton22.setFocusTraversable(false);
+        bouton23.setFocusTraversable(false);
+        bouton24.setFocusTraversable(false);
+        bouton25.setFocusTraversable(false);
+        bouton26.setFocusTraversable(false);
+        bouton27.setFocusTraversable(false);
+        bouton28.setFocusTraversable(false);
+        bouton29.setFocusTraversable(false);
+        bouton30.setFocusTraversable(false);
+        bouton31.setFocusTraversable(false);
+        bouton32.setFocusTraversable(false);
+        bouton33.setFocusTraversable(false);
+        bouton34.setFocusTraversable(false);
+        bouton35.setFocusTraversable(false);
+        bouton36.setFocusTraversable(false);
+        bouton37.setFocusTraversable(false);
+        bouton38.setFocusTraversable(false);
+        bouton39.setFocusTraversable(false);
+        bouton40.setFocusTraversable(false);
+        bouton41.setFocusTraversable(false);
     }
 	
 	public void setFenetre(Ecran fen)

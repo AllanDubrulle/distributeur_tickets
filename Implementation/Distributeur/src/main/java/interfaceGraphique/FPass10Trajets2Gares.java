@@ -232,17 +232,6 @@ class FPass10Trajets2Gares extends Ecran
 		text10.setLayoutX(275.0*largeur);
 		text10.setLayoutY(364.0*hauteur);
 
-		if(graphAC.estTactile())
-		{
-			textField.setOnMouseClicked(e -> {pos = 0;});
-			textField0.setOnMouseClicked(e -> {pos = 1;});
-			textField1.setOnMouseClicked(e -> {pos = 2;});
-			radioButton.setOnMouseClicked(e -> {pos = 3;});
-			radioButton0.setOnMouseClicked(e -> {pos = 3;});
-			choiceBox0.setOnMouseClicked(e -> {pos = 4;});
-			choiceBox.setOnMouseClicked(e -> {pos = 5;});
-		}
-
         hBox0.getChildren().addAll(text0, textField);
         hBox1.getChildren().addAll(text1, textField0);
         hBox2.getChildren().addAll(text2, textField1);
@@ -359,5 +348,19 @@ class FPass10Trajets2Gares extends Ecran
 			return 1;
 		else
 			return 2;
+	}
+	
+	public void mettreToutAJour()
+	{
+		if(graphAC.estTactile())
+		{
+			textField.setOnMouseClicked(e -> {pos = 0;});
+			textField0.setOnMouseClicked(e -> {pos = 1;});
+			textField1.setOnMouseClicked(e -> {pos = 2;});
+			radioButton.setOnMouseClicked(e -> {pos = 3;});
+			radioButton0.setOnMouseClicked(e -> {pos = 3;});
+			choiceBox0.setOnMouseClicked(e -> {pos = 4;});
+			choiceBox.setOnMouseClicked(e -> {pos = 5;});
+		}
 	}
 }

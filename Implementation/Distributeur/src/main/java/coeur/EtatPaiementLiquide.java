@@ -68,4 +68,9 @@ class EtatPaiementLiquide extends EtatAnnulable
 	{
 		Controleur.getInstance().modifEtat(EtatPaiement.getInstance());
 	}
+	
+	public void retirerFentes()
+	{
+		Controleur.getInstance().getCoeurAGraphique().afficherMessageDErreur();
+	}
 }
