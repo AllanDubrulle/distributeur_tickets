@@ -24,7 +24,6 @@ class EtatImpressionHoraire extends ControleurEtat
 		catch(PlusDePapier e)
 		{
 			Controleur.getInstance().getCoeurAGraphique().afficherImprimanteEnPanne();
-			Controleur.getInstance().modifEtat(EtatMenu.getInstance());
 		} 
 		catch (ComposantHorsService e)
 		{

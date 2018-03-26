@@ -379,14 +379,14 @@ class FenetreSimulation extends BorderPane
     }
     
     
-    public void mAJScanneur()
+    /*public void mAJScanneur()
     {
     	if(checkMenuItem2.isSelected())
     		mettreEnPanneScanneur();
     	
     	if(!checkMenuItem2.isDisable())
     		remiseEnServiceScanneur();
-    }
+    }*/
     
     
     public void mAJCarte()
@@ -398,14 +398,14 @@ class FenetreSimulation extends BorderPane
     		debloquerCarte();	
     }
     
-    public void mAJImprimante()
+    /*public void mAJImprimante()
     {
     	if(checkMenuItem4.isSelected())
     		mettreEnPanneImprimante();
     	
     	if(!checkMenuItem4.isSelected())
     		remiseEnServiceImprimante();
-    }
+    }*/
     
     
 
@@ -426,7 +426,7 @@ class FenetreSimulation extends BorderPane
     }
     
     
-    public void mettreEnPanneScanneur()				//je ne pense pas qu'il les faille ici mais
+    /*public void mettreEnPanneScanneur()				//je ne pense pas qu'il les faille ici mais
     {														//sans savoir, je les ai mises
     	//mise en panne scanneur
     }
@@ -444,7 +444,7 @@ class FenetreSimulation extends BorderPane
     public void remiseEnServiceImprimante()
     {
     	//remise en service imprimante
-    }
+    }*/
     
     public Ecran getEcran()
     {
@@ -465,7 +465,7 @@ class FenetreSimulation extends BorderPane
     	return lecteur;
     }
 
-    public void actualiserFenteBillet(boolean enMarche)
+    /*public void actualiserFenteBillet(boolean enMarche)
     {
 
     	if(enMarche)
@@ -497,7 +497,6 @@ class FenetreSimulation extends BorderPane
 	    		fentePiece.getButton(i).setDisable(true);
 	    	getChildren().setAll(pane, claRe, fentes, scanLect, fenetre);
 	    }
-		
 	}
 
 	public void actualiserLecteurCarte(boolean enMarche)
@@ -519,7 +518,7 @@ class FenetreSimulation extends BorderPane
 	        getChildren().setAll(pane, claRe, fentes, scanLect, fenetre);
 	    }
 		
-	}
+	}*/
 
 	public void carteNonBloquee()
 	{

@@ -169,6 +169,21 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Problème d'imprimante", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 	}
 	
+	public void afficherScanneurEnPanne()
+	{
+		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Problème de scanneur", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
+	}
+	
+	public void afficherLecteurEnPanne()
+	{
+		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Problème de lecteur", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
+	}
+	
+	public void afficherFenteEnPanne()
+	{
+		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Problème de réception de monnaie", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
+	}
+	
 	public void afficherViderBacRecep() 
 	{
 		FenetreSimulation.getInstance().afficher(new FBacReception(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
@@ -405,7 +420,7 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	}
 
 	
-	public void actualiserComposant(Composant composant,boolean enMarche)
+	/*public void actualiserComposant(Composant composant,boolean enMarche)
 	{
 		switch(composant)
 		{
@@ -424,7 +439,7 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 			break;
 		
 		}
-	}
+	}*/
 
 	public void carteNonBloquee()
 	{

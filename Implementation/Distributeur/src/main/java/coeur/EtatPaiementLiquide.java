@@ -32,7 +32,6 @@ class EtatPaiementLiquide extends EtatAnnulable
 		try
 		{
 			Controleur.getInstance().getCoeurAStockage().ajoutMonnaie(i);
-	
 			if(Controleur.getInstance().getCoeurAStockage().depassementPrix())
 			{
 				Controleur.getInstance().getCoeurAGraphique().afficherRendu(Controleur.getInstance().getCoeurAStockage()
@@ -51,17 +50,20 @@ class EtatPaiementLiquide extends EtatAnnulable
 		{
 			Controleur.getInstance().getCoeurAGraphique().afficherRendu(Controleur.getInstance().getCoeurAStockage().rendreIntroduit());
 			Controleur.getInstance().getCoeurAGraphique().afficherRendreMonnaieInseree();
-			PauseTransition delais = new PauseTransition(Duration.seconds(5));
-			delais.setOnFinished( event -> apres5sec());
-			delais.play();
 		}
 		catch (ComposantHorsService e)
 		{
-			// TODO Auto-generated catch block
-			// afficher message
-			apres5sec();
+			if(Controleur.getInstance().getCoeurAStockage().introduitAffichable() == 0)
+				Controleur.getInstance().getCoeurAGraphique().afficherFenteEnPanne();
+			else
+				Controleur.getInstance().getCoeurAGraphique().afficherMessageDErreur();
 		}
 	}
+	public void apres5secOk()
+	{
+		Controleur.getInstance().modifEtat(EtatPaiement.getInstance());
+	}
+	
 	public void apres5sec()
 	{
 		Controleur.getInstance().modifEtat(EtatPaiement.getInstance());

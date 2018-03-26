@@ -1,5 +1,7 @@
 package coeur;
 
+import stockage.ComposantHorsService;
+
 /**
  * Classe EtatParCarte
  * @author TheoDaix, AllanDubrulle, VictorVerhoye
@@ -20,7 +22,7 @@ class EtatParCarte extends EtatAnnulable
 		if(Controleur.getInstance().getCoeurAStockage().getPrix()<=500 && Controleur.getInstance().getCoeurAStockage().verifSolde()) // paiement en dessous de 5€
 		{
 			Controleur.getInstance().getCoeurAStockage().actualiserSolde();
-		Controleur.getInstance().modifEtat(EtatAttenteRepriseCarte.getInstance());
+			Controleur.getInstance().modifEtat(EtatAttenteRepriseCarte.getInstance());
 		}
 		else
 		{
@@ -37,6 +39,19 @@ class EtatParCarte extends EtatAnnulable
 	
 	public void choixInsererRetirerCarte()
 	{
-		Controleur.getInstance().getCoeurAGraphique().afficherChoixParCarte();
+		try 
+		{
+			Controleur.getInstance().getCoeurAStockage().lireCarte();
+			Controleur.getInstance().getCoeurAGraphique().afficherChoixParCarte();
+		}
+		catch (ComposantHorsService e)
+		{
+			Controleur.getInstance().getCoeurAGraphique().afficherLecteurEnPanne();
+		}
+	}
+	
+	public void apres5sec()
+	{
+		Controleur.getInstance().modifEtat(EtatPaiement.getInstance());
 	}
 }

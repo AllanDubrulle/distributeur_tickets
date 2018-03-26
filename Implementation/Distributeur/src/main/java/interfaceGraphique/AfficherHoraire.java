@@ -4,73 +4,41 @@ import javafx.geometry.*;
 import javafx.scene.text.*;
 import javafx.scene.layout.*;
 
-class AfficherHoraire extends Pane {
-
-    protected final VBox vBox;
-    protected final Text text;
-    protected final HBox hBox;
-    protected final VBox vBox0;
-    protected final Text text0;
-    protected final Text text1;
-    protected final Text text2;
-    protected final Text text3;
-    protected final Text text4;
-    protected final Text text5;
-    protected final VBox vBox1;
-    protected final Text text6;
-    protected final Text text7;
-    protected final Text text8;
-    protected final Text text9;
-    protected final Text text10;
-    protected final Text text11;
-    protected final VBox vBox2;
-    protected final Text text12;
-    protected final Text text13;
-    protected final Text text14;
-    protected final Text text15;
-    protected final Text text16;
-    protected final Text text17;
-    protected final VBox vBox3;
-    protected final Text text18;
-    protected final Text text19;
-    protected final Text text110;
-    protected final Text text111;
-    protected final Text text112;
-    protected final Text text113;
-
-    public AfficherHoraire(String[] horaire) {
-
-        vBox = new VBox();
-        text = new Text();
-        hBox = new HBox();
-        vBox0 = new VBox();
-        text0 = new Text();
-        text1 = new Text();
-        text2 = new Text();
-        text3 = new Text();
-        text4 = new Text();
-        text5 = new Text();
-        vBox1 = new VBox();
-        text6 = new Text();
-        text7 = new Text();
-        text8 = new Text();
-        text9 = new Text();
-        text10 = new Text();
-        text11 = new Text();
-        vBox2 = new VBox();
-        text12 = new Text();
-        text13 = new Text();
-        text14 = new Text();
-        text15 = new Text();
-        text16 = new Text();
-        text17 = new Text();
-        vBox3 = new VBox();
-        text18 = new Text();
-        text19 = new Text();
-        text110 = new Text();
-        text111 = new Text();
-        text112 = new Text();
-        text113 = new Text();
+class AfficherHoraire extends Pane 
+{
+    public AfficherHoraire(String[] horaire) 
+    {
+        HBox boxHor = new HBox();
+        VBox boxVer1 = new VBox();
+        VBox boxVer2 = new VBox();
+        VBox boxVer3 = new VBox();
+        VBox boxVer4 = new VBox();
+        VBox boxVer5 = new VBox();
+        Text texte1 = new Text();
+        Text texte2 = new Text();
+        Text texte3 = new Text();
+        Text texte4 = new Text();
+        Text texte5 = new Text();
+        Text texte6 = new Text();
+        Text texte7 = new Text();
+        Text texte8 = new Text();
+        Text texte9 = new Text();
+        Text texte10 = new Text();
+        Text texte11 = new Text();
+        Text texte12 = new Text();
+        Text texte13 = new Text();
+        Text texte14 = new Text();
+        Text texte15 = new Text();
+        Text texte16 = new Text();
+        Text texte17 = new Text();
+        Text texte18 = new Text();
+        Text texte19 = new Text();
+        Text texte20 = new Text();
+        Text texte21 = new Text();
+        Text texte22 = new Text();
+        Text texte23 = new Text();
+        Text texte24 = new Text();
+        Text texte25 = new Text();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -79,285 +47,261 @@ class AfficherHoraire extends Pane {
         setPrefHeight(250.0);
         setPrefWidth(600.0);
 
-        vBox.setPrefHeight(250.0);
-        vBox.setPrefWidth(600.0);
+        boxVer1.setPrefHeight(250.0);
+        boxVer1.setPrefWidth(600.0);
 
-        text.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text.setStrokeWidth(0.0);
-        text.setText("VERIFICATION D'HORAIRE");
-        text.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        text.setUnderline(true);
-        text.setWrappingWidth(300.0);
-        text.setFont(new Font("System Bold Italic", 21.0));
-        VBox.setMargin(text, new Insets(15.0, 0.0, 15.0, 150.0));
+        texte1.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte1.setStrokeWidth(0.0);
+        texte1.setText("VERIFICATION D'HORAIRE");
+        texte1.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        texte1.setUnderline(true);
+        texte1.setWrappingWidth(300.0);
+        texte1.setFont(new Font("System Bold Italic", 21.0));
+        VBox.setMargin(texte1, new Insets(15.0, 0.0, 15.0, 150.0));
 
-        hBox.setPrefHeight(160.0);
-        hBox.setPrefWidth(600.0);
+        boxHor.setPrefHeight(160.0);
+        boxHor.setPrefWidth(600.0);
 
-        vBox0.setPrefHeight(160.0);
-        vBox0.setPrefWidth(150.0);
+        boxVer2.setPrefHeight(160.0);
+        boxVer2.setPrefWidth(150.0);
 
-        text0.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text0.setStrokeWidth(0.0);
-        text0.setText("Gare de depart :");
-        text0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        text0.setUnderline(true);
-        text0.setWrappingWidth(150.0);
+        texte2.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte2.setStrokeWidth(0.0);
+        texte2.setText("Gare de depart :");
+        texte2.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        texte2.setUnderline(true);
+        texte2.setWrappingWidth(150.0);
 
-        text1.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text1.setStrokeWidth(0.0);
-        text1.setText(horaire[0]);
-        text1.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        text1.setWrappingWidth(150.0);
-        VBox.setMargin(text1, new Insets(10.0, 0.0, 5.0, 0.0));
+        texte3.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte3.setStrokeWidth(0.0);
+        texte3.setText(horaire[0]);
+        texte3.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        texte3.setWrappingWidth(150.0);
+        VBox.setMargin(texte3, new Insets(10.0, 0.0, 5.0, 0.0));
 
-        text2.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text2.setStrokeWidth(0.0);
-        text2.setText(horaire[6]);
-        text2.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        text2.setWrappingWidth(150.0);
+        texte4.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte4.setStrokeWidth(0.0);
+        texte4.setText(horaire[6]);
+        texte4.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        texte4.setWrappingWidth(150.0);
 
-        text3.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text3.setStrokeWidth(0.0);
-        text3.setText(horaire[12]);
-        text3.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        text3.setWrappingWidth(150.0);
-        VBox.setMargin(text3, new Insets(5.0, 0.0, 5.0, 0.0));
+        texte5.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte5.setStrokeWidth(0.0);
+        texte5.setText(horaire[12]);
+        texte5.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        texte5.setWrappingWidth(150.0);
+        VBox.setMargin(texte5, new Insets(5.0, 0.0, 5.0, 0.0));
 
-        text4.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text4.setStrokeWidth(0.0);
-        text4.setText(horaire[18]);
-        text4.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        text4.setWrappingWidth(150.0);
+        texte6.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte6.setStrokeWidth(0.0);
+        texte6.setText(horaire[18]);
+        texte6.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        texte6.setWrappingWidth(150.0);
 
-        text5.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text5.setStrokeWidth(0.0);
-        text5.setText(horaire[24]);
-        text5.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        text5.setWrappingWidth(150.0);
-        VBox.setMargin(text5, new Insets(5.0, 0.0, 0.0, 0.0));
+        texte7.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte7.setStrokeWidth(0.0);
+        texte7.setText(horaire[24]);
+        texte7.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        texte7.setWrappingWidth(150.0);
+        VBox.setMargin(texte7, new Insets(5.0, 0.0, 0.0, 0.0));
 
-        vBox1.setPrefHeight(160.0);
-        vBox1.setPrefWidth(150.0);
+        boxVer3.setPrefHeight(160.0);
+        boxVer3.setPrefWidth(150.0);
 
-        text6.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text6.setStrokeWidth(0.0);
-        text6.setText("Gare d'arrivee :");
-        text6.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        text6.setUnderline(true);
-        text6.setWrappingWidth(150.0);
+        texte8.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte8.setStrokeWidth(0.0);
+        texte8.setText("Gare d'arrivee :");
+        texte8.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        texte8.setUnderline(true);
+        texte8.setWrappingWidth(150.0);
 
-        text7.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text7.setStrokeWidth(0.0);
-        text7.setText(horaire[1]);
-        text7.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        text7.setWrappingWidth(150.0);
-        VBox.setMargin(text7, new Insets(10.0, 0.0, 5.0, 0.0));
+        texte9.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte9.setStrokeWidth(0.0);
+        texte9.setText(horaire[1]);
+        texte9.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        texte9.setWrappingWidth(150.0);
+        VBox.setMargin(texte9, new Insets(10.0, 0.0, 5.0, 0.0));
 
-        text8.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text8.setStrokeWidth(0.0);
-        text8.setText(horaire[7]);
-        text8.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        text8.setWrappingWidth(150.0);
+        texte10.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte10.setStrokeWidth(0.0);
+        texte10.setText(horaire[7]);
+        texte10.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        texte10.setWrappingWidth(150.0);
 
-        text9.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text9.setStrokeWidth(0.0);
-        text9.setText(horaire[13]);
-        text9.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        text9.setWrappingWidth(150.0);
-        VBox.setMargin(text9, new Insets(5.0, 0.0, 5.0, 0.0));
+        texte11.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte11.setStrokeWidth(0.0);
+        texte11.setText(horaire[13]);
+        texte11.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        texte11.setWrappingWidth(150.0);
+        VBox.setMargin(texte11, new Insets(5.0, 0.0, 5.0, 0.0));
 
-        text10.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text10.setStrokeWidth(0.0);
-        text10.setText(horaire[19]);
-        text10.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        text10.setWrappingWidth(150.0);
+        texte12.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte12.setStrokeWidth(0.0);
+        texte12.setText(horaire[19]);
+        texte12.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        texte12.setWrappingWidth(150.0);
 
-        text11.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text11.setStrokeWidth(0.0);
-        text11.setText(horaire[25]);
-        text11.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        text11.setWrappingWidth(150.0);
-        VBox.setMargin(text11, new Insets(5.0, 0.0, 0.0, 0.0));
+        texte13.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte13.setStrokeWidth(0.0);
+        texte13.setText(horaire[25]);
+        texte13.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        texte13.setWrappingWidth(150.0);
+        VBox.setMargin(texte13, new Insets(5.0, 0.0, 0.0, 0.0));
 
-        vBox2.setPrefHeight(160.0);
-        vBox2.setPrefWidth(150.0);
+        boxVer4.setPrefHeight(160.0);
+        boxVer4.setPrefWidth(150.0);
 
-        text12.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text12.setStrokeWidth(0.0);
-        text12.setText("Heure de depart :");
-        text12.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        text12.setUnderline(true);
-        text12.setWrappingWidth(150.0);
+        texte14.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte14.setStrokeWidth(0.0);
+        texte14.setText("Heure de depart :");
+        texte14.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        texte14.setUnderline(true);
+        texte14.setWrappingWidth(150.0);
 
-        text13.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text13.setStrokeWidth(0.0);
+        texte15.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte15.setStrokeWidth(0.0);
         if (horaire[2] != null)
         {
         	if (horaire[3].length() == 1)
-        		text13.setText(horaire[2]+":0"+horaire[3]);
+        		texte15.setText(horaire[2]+":0"+horaire[3]);
         	else
-        		text13.setText(horaire[2]+":"+horaire[3]);
+        		texte15.setText(horaire[2]+":"+horaire[3]);
         }
-        text13.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        text13.setWrappingWidth(150.0);
-        VBox.setMargin(text13, new Insets(10.0, 0.0, 5.0, 0.0));
+        texte15.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        texte15.setWrappingWidth(150.0);
+        VBox.setMargin(texte15, new Insets(10.0, 0.0, 5.0, 0.0));
 
-        text14.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text14.setStrokeWidth(0.0);
+        texte16.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte16.setStrokeWidth(0.0);
         if (horaire[8] != null)
         {
         	if (horaire[9].length() == 1)
-        		text14.setText(horaire[8]+":0"+horaire[9]);
+        		texte16.setText(horaire[8]+":0"+horaire[9]);
         	else
-        		text14.setText(horaire[8]+":"+horaire[9]);
+        		texte16.setText(horaire[8]+":"+horaire[9]);
         }
-        text14.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        text14.setWrappingWidth(150.0);
+        texte16.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        texte16.setWrappingWidth(150.0);
 
-        text15.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text15.setStrokeWidth(0.0);
+        texte17.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte17.setStrokeWidth(0.0);
         if (horaire[14] != null)
         {
         	if (horaire[15].length() == 1)
-        		text15.setText(horaire[14]+":0"+horaire[15]);
+        		texte17.setText(horaire[14]+":0"+horaire[15]);
         	else
-        		text15.setText(horaire[14]+":"+horaire[15]);
+        		texte17.setText(horaire[14]+":"+horaire[15]);
         }
-        text15.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        text15.setWrappingWidth(150.0);
-        VBox.setMargin(text15, new Insets(5.0, 0.0, 5.0, 0.0));
+        texte17.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        texte17.setWrappingWidth(150.0);
+        VBox.setMargin(texte17, new Insets(5.0, 0.0, 5.0, 0.0));
 
-        text16.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text16.setStrokeWidth(0.0);
+        texte18.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte18.setStrokeWidth(0.0);
         if (horaire[20] != null)
         {
         	if (horaire[21].length() == 1)
-        		text16.setText(horaire[20]+":0"+horaire[21]);
+        		texte18.setText(horaire[20]+":0"+horaire[21]);
         	else
-        		text16.setText(horaire[20]+":"+horaire[21]);
+        		texte18.setText(horaire[20]+":"+horaire[21]);
         }
-        text16.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        text16.setWrappingWidth(150.0);
+        texte18.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        texte18.setWrappingWidth(150.0);
 
-        text17.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text17.setStrokeWidth(0.0);
+        texte19.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte19.setStrokeWidth(0.0);
         if (horaire[26] != null)
         {
         	if (horaire[27].length() == 1)
-        		text17.setText(horaire[26]+":0"+horaire[27]);
+        		texte19.setText(horaire[26]+":0"+horaire[27]);
         	else
-        		text17.setText(horaire[26]+":"+horaire[27]);
+        		texte19.setText(horaire[26]+":"+horaire[27]);
         }
-        text17.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        text17.setWrappingWidth(150.0);
-        VBox.setMargin(text17, new Insets(5.0, 0.0, 0.0, 0.0));
+        texte19.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        texte19.setWrappingWidth(150.0);
+        VBox.setMargin(texte19, new Insets(5.0, 0.0, 0.0, 0.0));
 
-        vBox3.setPrefHeight(160.0);
-        vBox3.setPrefWidth(150.0);
+        boxVer5.setPrefHeight(160.0);
+        boxVer5.setPrefWidth(150.0);
 
-        text18.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text18.setStrokeWidth(0.0);
-        text18.setText("Heure d'arrivee :");
-        text18.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        text18.setUnderline(true);
-        text18.setWrappingWidth(150.0);
+        texte20.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte20.setStrokeWidth(0.0);
+        texte20.setText("Heure d'arrivee :");
+        texte20.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        texte20.setUnderline(true);
+        texte20.setWrappingWidth(150.0);
 
-        text19.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text19.setStrokeWidth(0.0);
+        texte21.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte21.setStrokeWidth(0.0);
         if (horaire[4] != null)
         {
         	if (horaire[5].length() == 1)
-        		text19.setText(horaire[4]+":0"+horaire[5]);
+        		texte21.setText(horaire[4]+":0"+horaire[5]);
         	else
-        		text19.setText(horaire[4]+":"+horaire[5]);
+        		texte21.setText(horaire[4]+":"+horaire[5]);
         }
-        text19.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        text19.setWrappingWidth(150.0);
-        VBox.setMargin(text19, new Insets(10.0, 0.0, 5.0, 0.0));
+        texte21.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        texte21.setWrappingWidth(150.0);
+        VBox.setMargin(texte21, new Insets(10.0, 0.0, 5.0, 0.0));
 
-        text110.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text110.setStrokeWidth(0.0);
+        texte22.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte22.setStrokeWidth(0.0);
         if (horaire[10] != null)
         {
         	if (horaire[11].length() == 1)
-        		text110.setText(horaire[10]+":0"+horaire[11]);
+        		texte22.setText(horaire[10]+":0"+horaire[11]);
         	else
-        		text110.setText(horaire[10]+":"+horaire[11]);
+        		texte22.setText(horaire[10]+":"+horaire[11]);
         }
-        text110.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        text110.setWrappingWidth(150.0);
+        texte22.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        texte22.setWrappingWidth(150.0);
 
-        text111.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text111.setStrokeWidth(0.0);
+        texte23.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte23.setStrokeWidth(0.0);
         if (horaire[16] != null)
         {
         	if (horaire[17].length() == 1)
-        		text111.setText(horaire[16]+":0"+horaire[17]);
+        		texte23.setText(horaire[16]+":0"+horaire[17]);
         	else
-        		text111.setText(horaire[16]+":"+horaire[17]);
+        		texte23.setText(horaire[16]+":"+horaire[17]);
         }
-        text111.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        text111.setWrappingWidth(150.0);
-        VBox.setMargin(text111, new Insets(5.0, 0.0, 5.0, 0.0));
+        texte23.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        texte23.setWrappingWidth(150.0);
+        VBox.setMargin(texte23, new Insets(5.0, 0.0, 5.0, 0.0));
 
-        text112.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text112.setStrokeWidth(0.0);
+        texte24.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte24.setStrokeWidth(0.0);
         if (horaire[22] != null)
         {
         	if (horaire[23].length() == 1)
-        		text112.setText(horaire[22]+":0"+horaire[23]);
+        		texte24.setText(horaire[22]+":0"+horaire[23]);
         	else
-        		text112.setText(horaire[22]+":"+horaire[23]);
+        		texte24.setText(horaire[22]+":"+horaire[23]);
         }
-        text112.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        text112.setWrappingWidth(150.0);
+        texte24.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        texte24.setWrappingWidth(150.0);
 
-        text113.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text113.setStrokeWidth(0.0);
+        texte25.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte25.setStrokeWidth(0.0);
         if (horaire[28] != null)
         {
         	if (horaire[29].length() == 1)
-        		text113.setText(horaire[28]+":0"+horaire[29]);
+        		texte25.setText(horaire[28]+":0"+horaire[29]);
         	else
-        		text113.setText(horaire[28]+":"+horaire[29]);
+        		texte25.setText(horaire[28]+":"+horaire[29]);
         }
-        text113.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        text113.setWrappingWidth(150.0);
-        VBox.setMargin(text113, new Insets(5.0, 0.0, 0.0, 0.0));
-        VBox.setMargin(hBox, new Insets(0.0));
+        texte25.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        texte25.setWrappingWidth(150.0);
+        VBox.setMargin(texte25, new Insets(5.0, 0.0, 0.0, 0.0));
+        VBox.setMargin(boxHor, new Insets(0.0));
 
-        vBox.getChildren().add(text);
-        vBox0.getChildren().add(text0);
-        vBox0.getChildren().add(text1);
-        vBox0.getChildren().add(text2);
-        vBox0.getChildren().add(text3);
-        vBox0.getChildren().add(text4);
-        vBox0.getChildren().add(text5);
-        hBox.getChildren().add(vBox0);
-        vBox1.getChildren().add(text6);
-        vBox1.getChildren().add(text7);
-        vBox1.getChildren().add(text8);
-        vBox1.getChildren().add(text9);
-        vBox1.getChildren().add(text10);
-        vBox1.getChildren().add(text11);
-        hBox.getChildren().add(vBox1);
-        vBox2.getChildren().add(text12);
-        vBox2.getChildren().add(text13);
-        vBox2.getChildren().add(text14);
-        vBox2.getChildren().add(text15);
-        vBox2.getChildren().add(text16);
-        vBox2.getChildren().add(text17);
-        hBox.getChildren().add(vBox2);
-        vBox3.getChildren().add(text18);
-        vBox3.getChildren().add(text19);
-        vBox3.getChildren().add(text110);
-        vBox3.getChildren().add(text111);
-        vBox3.getChildren().add(text112);
-        vBox3.getChildren().add(text113);
-        hBox.getChildren().add(vBox3);
-        vBox.getChildren().add(hBox);
-        getChildren().add(vBox);
+        boxVer2.getChildren().addAll(texte2, texte3, texte4, texte5, texte6, texte7);
+        boxVer3.getChildren().addAll(texte8, texte9, texte10, texte11, texte12, texte13);
+        boxVer4.getChildren().addAll(texte14, texte15, texte16, texte17, texte18, texte19);
+        boxVer5.getChildren().addAll(texte20, texte21, texte22, texte23, texte24, texte25);
+        boxHor.getChildren().addAll(boxVer2, boxVer3, boxVer4, boxVer5);
+        boxVer1.getChildren().addAll(texte1, boxHor);
+        getChildren().add(boxVer1);
 
     }
 }

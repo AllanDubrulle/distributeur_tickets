@@ -28,6 +28,10 @@ public class CoeurAStockageImpl implements CoeurAStockage
 	private Monnayeur monnayeur;  // a modifier si on modifie panne
 	private HashMap<Composant,Boolean> composantEnMarche;
 	private Imprimante imprimante;
+	private Scanneur scanneur;
+	private Lecteur lecteur;
+	private FenteBillet fenteBillet;
+	private FentePiece fentePiece;
 	private int essai;
 	private static CoeurAStockageImpl instance;
 	private String[] horaire;
@@ -36,6 +40,10 @@ public class CoeurAStockageImpl implements CoeurAStockage
 	{
 		monnayeur = new Monnayeur();
 		imprimante = new Imprimante(this);
+		scanneur = new Scanneur(this);
+		fentePiece = new FentePiece(this);
+		fenteBillet = new FenteBillet(this);
+		lecteur = new Lecteur(this);
 		composantEnMarche = new HashMap<Composant,Boolean>();
 		for(Composant composant : Composant.values())
 		{
@@ -257,10 +265,8 @@ public class CoeurAStockageImpl implements CoeurAStockage
 	
 	public void ajoutMonnaie(int i) throws ComposantHorsService
 	{
-		if(!(estEnMarche(Composant.FENTEBILLET)&&estEnMarche(Composant.FENTEPIECE)))
-		{
-			throw new ComposantHorsService("piece ou billet refuse");
-		}
+		fentePiece.inserePiece();
+		fenteBillet.insereBillet();
 		switch(i)
 		{
 			case 1:
@@ -382,6 +388,17 @@ public class CoeurAStockageImpl implements CoeurAStockage
 	{
 		imprimante.imprimer();
 	}
+	
+	public void scanne() throws ComposantHorsService
+	{
+		scanneur.scanne();
+	}
+	
+	public void lireCarte() throws ComposantHorsService
+	{
+		lecteur.lireCarte();
+	}
+	
 
 	public void actualiserPanne(Composant composant)
 	{

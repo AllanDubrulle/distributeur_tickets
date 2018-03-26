@@ -1,8 +1,10 @@
 Les pannes sont presques toutes réglées. 
 D'après moi (Théo) il reste :
-- /!\ scanneur de codes (je ne vois rien de géré à première vue)
-- fentes (voir si on fait autre chose que de griser les boutons)
-- lecteur / carte (voir si on fait autre chose que de griser les boutons)
+- /!\ scanneur de codes (je ne vois rien de géré à première vue)		fait (regardez si vous pensez que ça vous semblme correct) !
+- fentes (voir si on fait autre chose que de griser les boutons)		fait (regardez si vous pensez que ça vous semblme correct) !
+- lecteur / carte (voir si on fait autre chose que de griser les boutons)	fait (regardez si vous pensez que ça vous semblme correct) !
+
+A ce propos, il y a pas mal de code qui ne sert plus (selon moi). Regardez si ce que j'ai fait est bon et efficace et voir en fonction de...
 
 D'après moi, les pannes de l'imprimante, de la caisse et du stock papiers sont bons !
 

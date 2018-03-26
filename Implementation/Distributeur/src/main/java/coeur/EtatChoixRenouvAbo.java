@@ -1,5 +1,6 @@
 package coeur;
 
+import stockage.ComposantHorsService;
 import stockage.imprimable.Abonnement;
 
 /**
@@ -26,12 +27,25 @@ class EtatChoixRenouvAbo extends EtatChoixTitre
 	
 	public void scanneCode() 
 	{
-		Controleur.getInstance().getCoeurAGraphique().afficherNumAbo();
+		try 
+		{
+			Controleur.getInstance().getCoeurAStockage().scanne();
+			Controleur.getInstance().getCoeurAGraphique().afficherNumAbo();
+		} 
+		catch (ComposantHorsService e) 
+		{
+			Controleur.getInstance().getCoeurAGraphique().afficherScanneurEnPanne();
+		}
 	}
 	
 	public void valider()
 	{
 		Controleur.getInstance().calculerPrix((Abonnement) Controleur.getInstance().getCoeurAStockage().getTitre());
 		super.valider();
+	}
+	
+	public void apres5sec()
+	{
+		Controleur.getInstance().modifEtat(EtatMenu.getInstance());
 	}
 }

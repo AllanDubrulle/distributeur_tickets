@@ -247,8 +247,8 @@ abstract class ControleurEtat
 	public void actualiserPanne(Composant composant)
 	{
 		Controleur.getInstance().getCoeurAStockage().actualiserPanne(composant);
-		Controleur.getInstance().getCoeurAGraphique().actualiserComposant(composant,
-				Controleur.getInstance().getCoeurAStockage().estEnMarche(composant));
+		//Controleur.getInstance().getCoeurAGraphique().actualiserComposant(composant,
+		//		Controleur.getInstance().getCoeurAStockage().estEnMarche(composant));
 	}
 	
 	/**
