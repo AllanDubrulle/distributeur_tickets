@@ -143,7 +143,8 @@ class FRecapPass10Trajets extends Ecran
         {
         	public void handle(ActionEvent event) 
         	{
-        		graphAC.choixRetourTitre();
+        		if(graphAC.estTactile())
+        			graphAC.choixRetourTitre();
         	}
         });
 
@@ -159,7 +160,8 @@ class FRecapPass10Trajets extends Ecran
         {
         	public void handle(ActionEvent event) 
         	{
-        		graphAC.choixPaiement();
+        		if(graphAC.estTactile())
+        			graphAC.choixPaiement();
         	}
         });
 

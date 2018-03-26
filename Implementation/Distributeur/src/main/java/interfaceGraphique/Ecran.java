@@ -25,6 +25,7 @@ abstract class Ecran extends Pane
 	public void actionEspace() {}
 	public void actionEffacer() {}
 	public void actionEntrer() {}
+	public void mettreToutAJour() {}
 	
 	public void actionLecteur(int a) {}
 	public void actionLecteurEff() {}

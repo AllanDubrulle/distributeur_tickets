@@ -1,5 +1,6 @@
 package interfaceGraphique;
 
+import coeur.GraphiqueACoeurImpl;
 import interfaceGraphique.Clavier;
 import interfaceGraphique.FenteBillet;
 import interfaceGraphique.FentePiece;
@@ -233,6 +234,7 @@ class FenetreSimulation extends BorderPane
         checkMenuItem9.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
             	mAJComposants();
+            	fenetre.mettreToutAJour();
             }
         });
 
@@ -241,6 +243,7 @@ class FenetreSimulation extends BorderPane
         checkMenuItem10.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
             	mAJComposants();
+            	fenetre.mettreToutAJour();
             }
         });
 
@@ -249,6 +252,7 @@ class FenetreSimulation extends BorderPane
         checkMenuItem11.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
             	mAJComposants();
+            	fenetre.mettreToutAJour();
             }
         });
         
@@ -341,6 +345,7 @@ class FenetreSimulation extends BorderPane
 		fentes.getChildren().clear();
 		claRe.getChildren().clear();
 		scanLect.getChildren().clear();
+		GraphiqueACoeurImpl.getInstance().setScanneur(false);
 		
     	if(checkMenuItem6.isSelected())
     		fentes.getChildren().addAll(fenteBillet, fentePiece);
@@ -354,17 +359,23 @@ class FenetreSimulation extends BorderPane
     	}
     	
     	if(checkMenuItem9.isSelected())
+    	{
     		claRe.getChildren().addAll(clavier,reception);
-    	
+    		GraphiqueACoeurImpl.getInstance().mettreTactile(true);
+    	}
     	if(checkMenuItem10.isSelected())
+    	{
     		claRe.getChildren().addAll(clavier, reception);
-    	
+    		GraphiqueACoeurImpl.getInstance().mettreTactile(false);
+    	}
+    		
     	if(checkMenuItem11.isSelected())
     	{
     		Text text = new Text();
             text.setFont(new Font(15.0*rapportHauteur));
             VBox.setMargin(text, new Insets(110.0*rapportHauteur, 0.0, 100.0*rapportHauteur, 182.5*rapportLargeur));
     		claRe.getChildren().addAll(text, reception);
+    		GraphiqueACoeurImpl.getInstance().mettreTactile(true);
     	}
     	if(!checkMenuItem5.isSelected())
     	{
@@ -374,8 +385,11 @@ class FenetreSimulation extends BorderPane
     		scanLect.getChildren().addAll(text, lecteur);
     	}
     	if(checkMenuItem5.isSelected())
+    	{
     		scanLect.getChildren().addAll( scanneur, lecteur);
-        getChildren().setAll(pane, claRe, fentes, scanLect, fenetre); 		
+    		GraphiqueACoeurImpl.getInstance().setScanneur(true);
+    	}
+    	getChildren().setAll(pane, claRe, fentes, scanLect, fenetre); 		
     }
     
     

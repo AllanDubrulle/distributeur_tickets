@@ -247,7 +247,8 @@ class FAboAchat extends Ecran
         {
             public void handle(ActionEvent event)
             {
-            	graphAC.choixAnnuler();
+            	if(graphAC.estTactile())
+            		graphAC.choixAnnuler();
             }
         });
 
@@ -263,25 +264,28 @@ class FAboAchat extends Ecran
         {
             public void handle(ActionEvent event)
             {
-            	try
-    			{	
-    				if (textField0.getText().trim().length() == 11 && verifierNom(textField.getText().trim()))
-    				{	
-    					graphAC.infoAbo(getValidite(), textField1.getText().trim(), textField2.getText().trim(), getClasse(), choiceBox.getValue(), choiceBox0.getValue(), textField.getText(), textField0.getText().trim());
-    					graphAC.choixValider();	
-    				}
-    				else 
-    				{
-    					text10.setText("Le nom saisi est incorrect");
-    				}
-        		}	
-		    	catch (NumberFormatException e)	
-    		   	{	
-        			text10.setText("Le numero de registre national saisi est incorrect");
-        		}
-            	catch (ErreurDEncodage e)
+            	if(graphAC.estTactile())
             	{
-        			text10.setText(e.getMessage());
+            		try
+            		{	
+            			if (textField0.getText().trim().length() == 11 && verifierNom(textField.getText().trim()))
+            			{	
+            				graphAC.infoAbo(getValidite(), textField1.getText().trim(), textField2.getText().trim(), getClasse(), choiceBox.getValue(), choiceBox0.getValue(), textField.getText(), textField0.getText().trim());
+            				graphAC.choixValider();	
+            			}
+            			else 
+            			{
+            				text10.setText("Le nom saisi est incorrect");
+            			}
+            		}	
+            		catch (NumberFormatException e)	
+            		{	
+            			text10.setText("Le numero de registre national saisi est incorrect");
+            		}
+            		catch (ErreurDEncodage e)
+            		{
+            			text10.setText(e.getMessage());
+            		}
             	}
             }
         });
@@ -292,18 +296,21 @@ class FAboAchat extends Ecran
 		text10.setLayoutX(275.0*largeur);	
 		text10.setLayoutY(384.0*hauteur);
 		
-		textField.setOnMouseClicked(e -> {pos = 0;});
-		textField0.setOnMouseClicked(e -> {pos = 1;});
-		textField1.setOnMouseClicked(e -> {pos = 2;});
-		textField2.setOnMouseClicked(e -> {pos = 3;});
-		radioButton.setOnMouseClicked(e -> {pos = 4;});
-		radioButton0.setOnMouseClicked(e -> {pos = 4;});
-		radioButton1.setOnMouseClicked(e -> {pos = 4;});
-		radioButton2.setOnMouseClicked(e -> {pos = 4;});
-		radioButton3.setOnMouseClicked(e -> {pos = 5;});
-		radioButton4.setOnMouseClicked(e -> {pos = 5;});
-		choiceBox0.setOnMouseClicked(e -> {pos = 6;});
-		choiceBox.setOnMouseClicked(e -> {pos = 7;});
+		if(graphAC.estTactile())
+		{
+			textField.setOnMouseClicked(e -> {pos = 0;});
+			textField0.setOnMouseClicked(e -> {pos = 1;});
+			textField1.setOnMouseClicked(e -> {pos = 2;});
+			textField2.setOnMouseClicked(e -> {pos = 3;});
+			radioButton.setOnMouseClicked(e -> {pos = 4;});
+			radioButton0.setOnMouseClicked(e -> {pos = 4;});
+			radioButton1.setOnMouseClicked(e -> {pos = 4;});
+			radioButton2.setOnMouseClicked(e -> {pos = 4;});
+			radioButton3.setOnMouseClicked(e -> {pos = 5;});
+			radioButton4.setOnMouseClicked(e -> {pos = 5;});
+			choiceBox0.setOnMouseClicked(e -> {pos = 6;});
+			choiceBox.setOnMouseClicked(e -> {pos = 7;});
+		}
 		
         hBox0.getChildren().addAll(text0, textField);
         hBox1.getChildren().addAll(text1, textField0);

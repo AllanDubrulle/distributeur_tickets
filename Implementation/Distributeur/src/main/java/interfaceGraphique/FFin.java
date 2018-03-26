@@ -40,7 +40,8 @@ class FFin extends Ecran
         {
             public void handle(ActionEvent event)
             {
-            	graphAC.choixRetourEcranPrinc();
+            	if(graphAC.estTactile())
+            		graphAC.choixRetourEcranPrinc();
             }
         });
 

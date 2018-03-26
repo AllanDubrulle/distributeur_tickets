@@ -187,7 +187,8 @@ class FPass10Trajets2Gares extends Ecran
         {
             public void handle(ActionEvent event)
             {
-            	graphAC.choixAnnuler();
+            	if(graphAC.estTactile())
+            		graphAC.choixAnnuler();
             }
         });
 
@@ -203,23 +204,26 @@ class FPass10Trajets2Gares extends Ecran
         {
         	public void handle(ActionEvent event)
             {
-            	try 
+        		if(graphAC.estTactile())
             	{
-            		if (verifierNom(textField.getText().trim()))
-					{
-            			graphAC.infoPass10Trajets2Gares(textField.getText(), textField0.getText(), textField1.getText(), getClasse(), choiceBox.getValue(), choiceBox0.getValue());
-            			graphAC.choixValider();
-					}
-            		else
-	            	{
-            			text10.setText("Les données saisies sont incorrectes");
-	            	}
-				} 
-            	catch (NumberFormatException | ErreurDEncodage e) 
-            	{
-            		text10.setText("Les données saisies sont incorrectes");
-				}
-            }
+        			try 
+        			{
+        				if (verifierNom(textField.getText().trim()))
+        				{
+        					graphAC.infoPass10Trajets2Gares(textField.getText(), textField0.getText(), textField1.getText(), getClasse(), choiceBox.getValue(), choiceBox0.getValue());
+        					graphAC.choixValider();
+        				}
+        				else
+        				{
+        					text10.setText("Les données saisies sont incorrectes");
+        				}
+        			}
+        			catch (NumberFormatException | ErreurDEncodage e) 
+        			{
+        				text10.setText("Les données saisies sont incorrectes");
+        			}
+            	}
+        	}
         });
 
 		text10.setFont(new Font("System Bold", 15.0*hauteur));
@@ -228,13 +232,16 @@ class FPass10Trajets2Gares extends Ecran
 		text10.setLayoutX(275.0*largeur);
 		text10.setLayoutY(364.0*hauteur);
 
-		textField.setOnMouseClicked(e -> {pos = 0;});
-		textField0.setOnMouseClicked(e -> {pos = 1;});
-		textField1.setOnMouseClicked(e -> {pos = 2;});
-		radioButton.setOnMouseClicked(e -> {pos = 3;});
-		radioButton0.setOnMouseClicked(e -> {pos = 3;});
-		choiceBox0.setOnMouseClicked(e -> {pos = 4;});
-		choiceBox.setOnMouseClicked(e -> {pos = 5;});
+		if(graphAC.estTactile())
+		{
+			textField.setOnMouseClicked(e -> {pos = 0;});
+			textField0.setOnMouseClicked(e -> {pos = 1;});
+			textField1.setOnMouseClicked(e -> {pos = 2;});
+			radioButton.setOnMouseClicked(e -> {pos = 3;});
+			radioButton0.setOnMouseClicked(e -> {pos = 3;});
+			choiceBox0.setOnMouseClicked(e -> {pos = 4;});
+			choiceBox.setOnMouseClicked(e -> {pos = 5;});
+		}
 
         hBox0.getChildren().addAll(text0, textField);
         hBox1.getChildren().addAll(text1, textField0);

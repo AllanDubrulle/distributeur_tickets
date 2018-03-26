@@ -197,8 +197,10 @@ class FRecapPass10Trajets2Gares extends Ecran
         button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         button.setOnAction(new EventHandler<ActionEvent>() 
         {
-        	public void handle(ActionEvent event) {
-        		graphAC.choixRetourTitre();
+        	public void handle(ActionEvent event) 
+        	{
+        		if(graphAC.estTactile())
+        			graphAC.choixRetourTitre();
         	}
         });
 
@@ -214,7 +216,8 @@ class FRecapPass10Trajets2Gares extends Ecran
         {
         	public void handle(ActionEvent event) 
         	{
-        		graphAC.choixPaiement();
+        		if(graphAC.estTactile())
+        			graphAC.choixPaiement();
         	}
         });
 

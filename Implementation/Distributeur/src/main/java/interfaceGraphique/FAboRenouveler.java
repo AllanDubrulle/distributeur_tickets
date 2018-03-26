@@ -90,7 +90,16 @@ class FAboRenouveler extends Ecran
         {
             public void handle(ActionEvent event)
             {
-            	graphAC.choixScannerCode();
+            	if(graphAC.estTactile())
+            	{
+            		if(graphAC.codeScanneurDispo())
+            		{
+            			graphAC.choixScannerCode();
+            			text10.setText("");
+            		}
+            		else
+            			text10.setText("Cet appareil n'est pas equipe d'un scanneur");
+            	}   	
             }
         });
 
@@ -152,7 +161,8 @@ class FAboRenouveler extends Ecran
         {
             public void handle(ActionEvent event)
             {
-            	graphAC.choixAnnuler();
+            	if(graphAC.estTactile())
+            		graphAC.choixAnnuler();
             }
         });
 
@@ -167,34 +177,40 @@ class FAboRenouveler extends Ecran
         {
             public void handle(ActionEvent event)
             {
-            	try 
+            	if(graphAC.estTactile())
             	{
-            		int verifAbo = Integer.parseInt(textField.getText());
-					graphAC.infoAboRen(getValidite(), String.valueOf(verifAbo));
-	            	graphAC.choixValider();
-				} 
-            	catch (NumberFormatException e) 
-            	{
-            		text10.setText("Les données saisies sont incorrectes");	
-				}
-            	catch (ErreurDEncodage e)
-            	{
-            		text10.setText(e.getMessage());
+            		try 
+            		{
+            			int verifAbo = Integer.parseInt(textField.getText());
+            			graphAC.infoAboRen(getValidite(), String.valueOf(verifAbo));
+            			graphAC.choixValider();
+            		} 
+            		catch (NumberFormatException e) 
+            		{
+            			text10.setText("Les données saisies sont incorrectes");	
+            		}
+            		catch (ErreurDEncodage e)
+            		{
+            			text10.setText(e.getMessage());
+            		}
             	}
             }
         });
 
 		text10.setFont(new Font("System Bold", 15.0*hauteur));	
-		text10.setWrappingWidth(250.0*largeur);	
+		text10.setWrappingWidth(280.0*largeur);	
 		text10.setFill(javafx.scene.paint.Color.RED);	
-		text10.setLayoutX(275.0*largeur);	
+		text10.setLayoutX(260.0*largeur);	
 		text10.setLayoutY(304.0*hauteur);
 		
-		textField.setOnMouseClicked(e -> {pos = 0;});
-		radioButton.setOnMouseClicked(e -> {pos = 1;});
-		radioButton0.setOnMouseClicked(e -> {pos = 1;});
-		radioButton1.setOnMouseClicked(e -> {pos = 1;});
-		radioButton2.setOnMouseClicked(e -> {pos = 1;});
+		if(graphAC.estTactile())
+		{
+			textField.setOnMouseClicked(e -> {pos = 0;});
+			radioButton.setOnMouseClicked(e -> {pos = 1;});
+			radioButton0.setOnMouseClicked(e -> {pos = 1;});
+			radioButton1.setOnMouseClicked(e -> {pos = 1;});
+			radioButton2.setOnMouseClicked(e -> {pos = 1;});
+		}
         
         hBox0.getChildren().addAll(text, textField);
         hBox1.getChildren().addAll(text0, radioButton, radioButton0, radioButton1, radioButton2);

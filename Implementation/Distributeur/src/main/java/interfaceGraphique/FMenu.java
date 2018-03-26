@@ -53,7 +53,8 @@ class FMenu extends Ecran
         {
             public void handle(ActionEvent event)
             {
-            	graphAC.choixBillet();
+            	if(graphAC.estTactile())
+            		graphAC.choixBillet();
             }
         });
 
@@ -69,7 +70,8 @@ class FMenu extends Ecran
         {
             public void handle(ActionEvent event)
             {
-            	graphAC.choixAchatAbo();
+            	if(graphAC.estTactile())
+            		graphAC.choixAchatAbo();
             }
         });
 
@@ -85,7 +87,8 @@ class FMenu extends Ecran
         {
             public void handle(ActionEvent event)
             {
-            	graphAC.choixRenouvAbo();
+            	if(graphAC.estTactile())
+            		graphAC.choixRenouvAbo();
             }
         });
 
@@ -101,7 +104,8 @@ class FMenu extends Ecran
         {
             public void handle(ActionEvent event)
             {
-            	graphAC.choixPass();
+            	if(graphAC.estTactile())
+            		graphAC.choixPass();
             }
         });
 
@@ -116,7 +120,8 @@ class FMenu extends Ecran
         {
             public void handle(ActionEvent event)
             {
-            	graphAC.choixHoraire();
+            	if(graphAC.estTactile())
+            		graphAC.choixHoraire();
             }
         });
 

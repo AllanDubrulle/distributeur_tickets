@@ -128,21 +128,24 @@ class FHoraireArrivee extends Ecran
         {
         	public void handle(ActionEvent event) 
         	{
-        		try 
+        		if(graphAC.estTactile())
         		{
-        			if(graphAC.existenceGare(textField.getText()))
+        			try 
         			{
-        				if (Integer.parseInt(textField0.getText()) < 24 && Integer.parseInt(textField1.getText()) < 60)
-        					graphAC.choixRechercheGA(textField.getText(), Integer.parseInt(textField0.getText()), Integer.parseInt(textField1.getText()));
-        				else 
-        					text10.setText("L'heure saisie est incorrecte");
+        				if(graphAC.existenceGare(textField.getText()))
+        				{
+        					if (Integer.parseInt(textField0.getText()) < 24 && Integer.parseInt(textField1.getText()) < 60)
+        						graphAC.choixRechercheGA(textField.getText(), Integer.parseInt(textField0.getText()), Integer.parseInt(textField1.getText()));
+        					else 
+        						text10.setText("L'heure saisie est incorrecte");
+        				}
+        				else
+        					text10.setText("Gare inexistante");
         			}
-        			else
-    					text10.setText("Gare inexistante");
-        		}
-        		catch (NumberFormatException | SQLException e)
-        		{
-        			text10.setText("L'heure saisie est incorrecte");
+        			catch (NumberFormatException | SQLException e)
+        			{
+        				text10.setText("L'heure saisie est incorrecte");
+        			}
         		}
         	}
         });
@@ -159,19 +162,22 @@ class FHoraireArrivee extends Ecran
         {
         	public void handle(ActionEvent event) 
         	{
-        		DateFormat format = new SimpleDateFormat("yyyy/MM/dd  HH:mm");
-        		Date date = new Date();
-        		format.format(date);
-        		int heure = date.getHours();
-        		int minute = date.getMinutes();
-        		if(Integer.toString(heure).length() == 1)
-        			textField0.setText("0" + heure);
-        		else
-        			textField0.setText(Integer.toString(heure));
-        		if(Integer.toString(minute).length() == 1)
-        			textField1.setText("0" + minute);
-        		else
-        			textField1.setText(Integer.toString(minute));
+        		if(graphAC.estTactile())
+        		{
+        			DateFormat format = new SimpleDateFormat("yyyy/MM/dd  HH:mm");
+        			Date date = new Date();
+        			format.format(date);
+        			int heure = date.getHours();
+        			int minute = date.getMinutes();
+        			if(Integer.toString(heure).length() == 1)
+        				textField0.setText("0" + heure);
+        			else
+        				textField0.setText(Integer.toString(heure));
+        			if(Integer.toString(minute).length() == 1)
+        				textField1.setText("0" + minute);
+        			else
+        				textField1.setText(Integer.toString(minute));
+        		}
         	}
         });
         
@@ -191,14 +197,18 @@ class FHoraireArrivee extends Ecran
         {
         	public void handle(ActionEvent event) 
         	{
-        		graphAC.choixAnnuler();
+        		if(graphAC.estTactile())
+        			graphAC.choixAnnuler();
         	}
         });
 
-		textField.setOnMouseClicked(e -> {pos = 0;});
-		textField0.setOnMouseClicked(e -> {pos = 1;});
-		textField1.setOnMouseClicked(e -> {pos = 2;});
-		
+        if(graphAC.estTactile())
+        {
+        	textField.setOnMouseClicked(e -> {pos = 0;});
+        	textField0.setOnMouseClicked(e -> {pos = 1;});
+        	textField1.setOnMouseClicked(e -> {pos = 2;});
+        }
+        
         vBox.getChildren().addAll(text0, text1);
         hBox0.getChildren().addAll(textField0, text2, textField1);
         vBox0.getChildren().addAll(textField, hBox0);

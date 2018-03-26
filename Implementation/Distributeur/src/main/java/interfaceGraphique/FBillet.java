@@ -2,6 +2,7 @@ package interfaceGraphique;
 
 import java.sql.Date;
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 import coeur.GraphiqueACoeurImpl;
 import javafx.collections.FXCollections;
@@ -251,7 +252,8 @@ class FBillet extends Ecran
         {
             public void handle(ActionEvent event)
             {
-            	graphAC.choixAnnuler();
+            	if(graphAC.estTactile())
+            		graphAC.choixAnnuler();
             }
         });
         
@@ -267,16 +269,19 @@ class FBillet extends Ecran
         {
             public void handle(ActionEvent event)
             {
-            	LocalDate date = LocalDate.now();
-            	if(Integer.toString(date.getDayOfMonth()).length() == 1)
-            		textField0.setText("0" + date.getDayOfMonth());
-            	else
-            		textField0.setText(Integer.toString(date.getDayOfMonth()));
-            	if(Integer.toString(date.getMonth().getValue()).length() == 1)
-            		textField1.setText("0" + date.getMonthValue());
-            	else
-            		textField1.setText(Integer.toString(date.getMonth().getValue()));
-            	textField2.setText(Integer.toString(date.getYear()));
+            	if(graphAC.estTactile())
+            	{	
+            		LocalDate date = LocalDate.now();
+            		if(Integer.toString(date.getDayOfMonth()).length() == 1)
+            			textField0.setText("0" + date.getDayOfMonth());
+            		else
+            			textField0.setText(Integer.toString(date.getDayOfMonth()));
+            		if(Integer.toString(date.getMonth().getValue()).length() == 1)
+            			textField1.setText("0" + date.getMonthValue());
+            		else
+            			textField1.setText(Integer.toString(date.getMonth().getValue()));
+            		textField2.setText(Integer.toString(date.getYear()));
+            	}
             }
         });
 
@@ -292,37 +297,40 @@ class FBillet extends Ecran
         {
             public void handle(ActionEvent event)
             {
-            	try
+            	if(graphAC.estTactile())
             	{
-            		int nbrBillet = Integer.parseInt(textField.getText());
-            		int jour = Integer.parseInt(textField0.getText());
-            		int mois = Integer.parseInt(textField1.getText());
-            		int annee = Integer.parseInt(textField2.getText());
-                    if (nbrBillet == 0 || nbrBillet >= 100)
-                    	throw new ErreurDEncodage("Nombre de billet invalide");
-                    if (verifierDate(jour, mois, annee))
-                    {
-                    	Date date = new Date(0,0,0);
-                        date.setYear(annee-1900);
-                        date.setDate(jour);
-                        date.setMonth(mois-1);
-                    	graphAC.infoBillet(date,nbrBillet, getClasse(),textField3.getText().trim(),textField4.getText().trim(),choiceBox0.getValue(), choiceBox.getValue() ,radioButton1.isSelected());
-                    	graphAC.choixValider();
-                    }
-                    else
-                    {
-                		text10.setText("La date saisie est incorrecte");
-                    }
+            		try
+            		{
+            			int nbrBillet = Integer.parseInt(textField.getText());
+            			int jour = Integer.parseInt(textField0.getText());
+            			int mois = Integer.parseInt(textField1.getText());
+            			int annee = Integer.parseInt(textField2.getText());
+            			if (nbrBillet == 0 || nbrBillet >= 100)
+            				throw new ErreurDEncodage("Nombre de billet invalide");
+            			if (verifierDate(jour, mois, annee))
+            			{
+            				Date date = new Date(0,0,0);
+            				date.setYear(annee-1900);
+            				date.setDate(jour);
+            				date.setMonth(mois-1);
+            				graphAC.infoBillet(date,nbrBillet, getClasse(),textField3.getText().trim(),textField4.getText().trim(),
+            						choiceBox0.getValue(), choiceBox.getValue() ,radioButton1.isSelected());
+            				graphAC.choixValider();
+            			}
+            			else
+            			{
+            				text10.setText("La date saisie est incorrecte");
+            			}
+            		}
+            		catch (NumberFormatException e)
+            		{
+            			text10.setText("Les données saisies sont incorrectes");
+            		}
+            		catch (ErreurDEncodage e)
+            		{
+            			text10.setText(e.getMessage());
+            		}
             	}
-            	catch (NumberFormatException e)
-            	{
-            		text10.setText("Les données saisies sont incorrectes");
-            	}
-            	catch (ErreurDEncodage e)
-            	{
-            		text10.setText(e.getMessage());
-            	}
-            	
             }
         });
 
@@ -341,18 +349,11 @@ class FBillet extends Ecran
 		text10.setLayoutX(175.0*largeur);
 		text10.setLayoutY(364.0*hauteur);
 
-		textField3.setOnMouseClicked(e -> {pos = 0;});
-		textField4.setOnMouseClicked(e -> {pos = 1;});
-		radioButton.setOnMouseClicked(e -> {pos = 2;});
-		radioButton0.setOnMouseClicked(e -> {pos = 2;});
-		radioButton1.setOnMouseClicked(e -> {pos = 3;});
-		radioButton2.setOnMouseClicked(e -> {pos = 3;});
-		choiceBox0.setOnMouseClicked(e -> {pos = 4;});
-		choiceBox.setOnMouseClicked(e -> {pos = 5;});
-		textField.setOnMouseClicked(e -> {pos = 6;});
-		textField0.setOnMouseClicked(e -> {pos = 7;});
-		textField1.setOnMouseClicked(e -> {pos = 8;});
-		textField2.setOnMouseClicked(e -> {pos = 9;});
+		if(graphAC.estTactile())
+		{
+			
+		}
+		
 
         hBox.getChildren().addAll(text, textField3);
         hBox0.getChildren().addAll(text0, textField4);
@@ -611,5 +612,19 @@ class FBillet extends Ecran
 			return 1;
 		else
 			return 2;
+	}
+	
+	public void mettreToutAJour()
+	{
+		if (graphAC.estTactile())
+		{
+			choiceBox.setDisable(false);
+			choiceBox0.setDisable(false);
+		}
+		else
+		{
+			choiceBox.setDisable(true);
+			choiceBox0.setDisable(true);
+		}
 	}
 }

@@ -61,6 +61,26 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 		controleur.getEtatActuel().retourMenuPrincipal();
 	}
 	
+	public void mettreTactile(boolean tactile)
+	{
+		controleur.setTactile(tactile);
+	}
+	
+	public boolean estTactile()
+	{
+		return controleur.getTactile();
+	}
+	
+	public boolean codeScanneurDispo()
+	{
+		return controleur.scanneurPresent();
+	}
+	
+	public void setScanneur(boolean present)
+	{
+		controleur.setScanneur(present);
+	}
+	
 	public void choixBillet() 
 	{
 		controleur.getEtatActuel().choixBillet();

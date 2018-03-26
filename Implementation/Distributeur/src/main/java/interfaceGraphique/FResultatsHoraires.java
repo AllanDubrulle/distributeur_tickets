@@ -328,7 +328,8 @@ class FResultatsHoraires extends Ecran
         {
         	public void handle(ActionEvent event) 
         	{
-        		graphAC.choixRetour();
+        		if(graphAC.estTactile())
+        			graphAC.choixRetour();
         	}
         });
 
@@ -343,7 +344,8 @@ class FResultatsHoraires extends Ecran
         {
         	public void handle(ActionEvent event) 
         	{
-        		graphAC.choixRetourEcranPrinc();
+        		if(graphAC.estTactile())
+        			graphAC.choixRetourEcranPrinc();
         	}
         });
         
@@ -358,7 +360,8 @@ class FResultatsHoraires extends Ecran
         {
         	public void handle(ActionEvent event) 
         	{
-        		graphAC.choixImprimerHoraire();
+        		if(graphAC.estTactile())
+        			graphAC.choixImprimerHoraire();
         	}
         });
 

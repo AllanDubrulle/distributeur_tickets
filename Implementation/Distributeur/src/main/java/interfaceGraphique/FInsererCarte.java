@@ -48,7 +48,8 @@ class FInsererCarte extends Ecran
         {
         	public void handle(ActionEvent event) 
         	{
-        		graphAC.choixRetour();
+        		if(graphAC.estTactile())
+        			graphAC.choixRetour();
         	}
         });
 

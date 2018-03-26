@@ -50,7 +50,8 @@ class FBacReception extends Ecran
         {
             public void handle(ActionEvent event)
             {
-            	graphAC.choixOk();
+            	if(graphAC.estTactile())
+            		graphAC.choixOk();
             }
         });
 

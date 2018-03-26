@@ -77,7 +77,8 @@ class FPassMenu extends Ecran
         {
             public void handle(ActionEvent event)
             {
-            	graphAC.choixPassIllimite();
+            	if(graphAC.estTactile())
+            		graphAC.choixPassIllimite();
             }
         });
 
@@ -91,7 +92,8 @@ class FPassMenu extends Ecran
         {
             public void handle(ActionEvent event)
             {
-            	graphAC.choixPass10Trajets();
+            	if(graphAC.estTactile())
+            		graphAC.choixPass10Trajets();
             }
         });
 
@@ -106,7 +108,8 @@ class FPassMenu extends Ecran
         {
             public void handle(ActionEvent event)
             {
-            	graphAC.choixPass10Tajets2Gares();
+            	if(graphAC.estTactile())
+            		graphAC.choixPass10Tajets2Gares();
             }
         });
         
@@ -141,8 +144,9 @@ class FPassMenu extends Ecran
         button2.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
-            {	
-            	graphAC.choixAnnuler();
+            {
+            	if(graphAC.estTactile())
+            		graphAC.choixAnnuler();
             }
         });
 

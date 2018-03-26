@@ -49,7 +49,8 @@ class FDemandeRecu extends Ecran
         {
             public void handle(ActionEvent event)
             {
-            	graphAC.choixNon();
+            	if(graphAC.estTactile())
+            		graphAC.choixNon();
             }
         });
 
@@ -65,7 +66,8 @@ class FDemandeRecu extends Ecran
         {
             public void handle(ActionEvent event)
             {
-            	graphAC.choixOui();
+            	if(graphAC.estTactile())
+            		graphAC.choixOui();
             }
         });
 

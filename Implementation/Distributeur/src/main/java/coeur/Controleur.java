@@ -25,6 +25,8 @@ public class Controleur
 	private static Controleur instance;
 	private Commande commande;
 	private ControleurEtat modePaiement;
+	private boolean ecranTactile;
+	private boolean present;
 	
 	/**
 	 * 	Constructeur de Controleur
@@ -238,5 +240,25 @@ public class Controleur
 		res -= res * (double)type.valeur()/100;	
 		res *= (3-classe.valeur());	
 		return (int) res;
+	}
+	
+	public void setTactile(boolean tactile)
+	{
+		this.ecranTactile = tactile;
+	}
+	
+	public boolean getTactile()
+	{
+		return ecranTactile;
+	}
+	
+	public void setScanneur(boolean present) 
+	{
+		this.present = present;
+	}
+	
+	public boolean scanneurPresent()
+	{
+		return present;
 	}
 }

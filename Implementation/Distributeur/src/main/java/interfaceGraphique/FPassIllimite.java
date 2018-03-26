@@ -171,7 +171,8 @@ class FPassIllimite extends Ecran
         {
             public void handle(ActionEvent event)
             {
-            	graphAC.choixAnnuler();
+            	if(graphAC.estTactile())
+            		graphAC.choixAnnuler();
             }
         });
 
@@ -187,27 +188,30 @@ class FPassIllimite extends Ecran
         {
             public void handle(ActionEvent event)
             {
-            	try 
+            	if(graphAC.estTactile())
             	{
-            		if (Integer.parseInt(textField0.getText()) == 0 || Integer.parseInt(textField0.getText()) >= 100)
-            			throw new ErreurDEncodage("Erreur nombre de jours de validité");
-            		if (verifierNom(textField.getText().trim()))
-					{
-            			graphAC.infoPassIllimite(textField.getText(), getClasse(), choiceBox.getValue(), choiceBox0.getValue(), Integer.parseInt(textField0.getText()));
-    	            	graphAC.choixValider();
-					}
-            		else
+            		try 
             		{
-            			text10.setText("Le nom saisi est incorrect");
+            			if (Integer.parseInt(textField0.getText()) == 0 || Integer.parseInt(textField0.getText()) >= 100)
+            				throw new ErreurDEncodage("Erreur nombre de jours de validité");
+            			if (verifierNom(textField.getText().trim()))
+            			{
+            				graphAC.infoPassIllimite(textField.getText(), getClasse(), choiceBox.getValue(), choiceBox0.getValue(), Integer.parseInt(textField0.getText()));
+            				graphAC.choixValider();
+            			}
+            			else
+            			{
+            				text10.setText("Le nom saisi est incorrect");
+            			}
+            		} 
+            		catch (NumberFormatException e) 
+            		{
+            			text10.setText("Les données saisies sont incorrectes");
             		}
-				} 
-            	catch (NumberFormatException e) 
-            	{
-            		text10.setText("Les données saisies sont incorrectes");
-				}
-            	catch (ErreurDEncodage e)
-            	{
-            		text10.setText(e.getMessage());
+            		catch (ErreurDEncodage e)
+            		{
+            			text10.setText(e.getMessage());
+            		}
             	}
             }
         });
@@ -218,13 +222,15 @@ class FPassIllimite extends Ecran
 		text10.setLayoutX(275.0*largeur);
 		text10.setLayoutY(364.0*hauteur);
 		
-
-		textField.setOnMouseClicked(e -> {pos = 0;});
-		radioButton.setOnMouseClicked(e -> {pos = 1;});
-		radioButton1.setOnMouseClicked(e -> {pos = 1;});
-		choiceBox0.setOnMouseClicked(e -> {pos = 2;});
-		choiceBox.setOnMouseClicked(e -> {pos = 2;});
-		textField0.setOnMouseClicked(e -> {pos = 3;});
+		if(graphAC.estTactile())
+		{
+			textField.setOnMouseClicked(e -> {pos = 0;});
+			radioButton.setOnMouseClicked(e -> {pos = 1;});
+			radioButton1.setOnMouseClicked(e -> {pos = 1;});
+			choiceBox0.setOnMouseClicked(e -> {pos = 2;});
+			choiceBox.setOnMouseClicked(e -> {pos = 2;});
+			textField0.setOnMouseClicked(e -> {pos = 3;});
+		}
 
         hBox0.getChildren().addAll(text0, textField);
         hBox3.getChildren().addAll(text3, radioButton, radioButton1);

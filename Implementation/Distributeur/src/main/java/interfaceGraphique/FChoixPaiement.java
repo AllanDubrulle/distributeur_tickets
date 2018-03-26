@@ -50,7 +50,8 @@ class FChoixPaiement extends Ecran
         {
             public void handle(ActionEvent event)
             {
-            	graphAC.choixPaiementLiquide();
+            	if(graphAC.estTactile())
+            		graphAC.choixPaiementLiquide();
             }
         });
 
@@ -66,7 +67,8 @@ class FChoixPaiement extends Ecran
         {
             public void handle(ActionEvent event)
             {
-            	graphAC.choixPaiementParCarte();
+            	if(graphAC.estTactile())
+            		graphAC.choixPaiementParCarte();
             }
         });
 
@@ -82,7 +84,8 @@ class FChoixPaiement extends Ecran
         {
             public void handle(ActionEvent event)
             {
-            	graphAC.choixAnnuler();
+            	if(graphAC.estTactile())
+            		graphAC.choixAnnuler();
             }
         });
 

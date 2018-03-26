@@ -56,6 +56,10 @@ public interface GraphiqueACoeur
 	 */
 	public void choixRetourEcranPrinc();
 	
+	public boolean estTactile();
+	
+	public void mettreTactile(boolean tactile);
+	
 	/**
 	 * 	Communique le fait qu'il faille afficher la fenêtre de billet
 	 */
@@ -392,4 +396,6 @@ public interface GraphiqueACoeur
 	public void viderCaisse();
 
 	public void actualiserPanne(Composant lecteurcarte);
+
+	public boolean codeScanneurDispo();
 }

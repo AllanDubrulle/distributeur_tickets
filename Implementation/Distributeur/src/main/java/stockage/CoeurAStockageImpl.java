@@ -258,7 +258,7 @@ public class CoeurAStockageImpl implements CoeurAStockage
 	public void ajoutMonnaie(int i) throws ComposantHorsService
 	{
 		if (!estEnMarche(Composant.FENTEBILLET) || !estEnMarche(Composant.FENTEPIECE))
-			throw new ComposantHorsService("Fente a pieces ou a billets hors service");
+			throw new ComposantHorsService("Fente a piece ou a billet hors service");
 		else
 		{
 			switch(i)
@@ -387,13 +387,13 @@ public class CoeurAStockageImpl implements CoeurAStockage
 	public void scanne() throws ComposantHorsService
 	{
 		if (!estEnMarche(Composant.SCANNEUR))
-			throw new ComposantHorsService("Scanneur de codes hors service");
+			throw new ComposantHorsService("Scanneur de code hors service");
 	}
 	
 	public void lireCarte() throws ComposantHorsService
 	{
 		if (!estEnMarche(Composant.LECTEURCARTE))
-			throw new ComposantHorsService("Lecteur de cartes hors service");
+			throw new ComposantHorsService("Lecteur de carte hors service");
 	}
 	
 

@@ -38,7 +38,8 @@ class FSimulationAcceuil extends Ecran
         {
             public void handle(ActionEvent event)
             {
-            	graphAC.choixDemarrerSimul();	
+            	if(graphAC.estTactile())
+            		graphAC.choixDemarrerSimul();	
             }
         });
         getChildren().addAll(rectangle, button);

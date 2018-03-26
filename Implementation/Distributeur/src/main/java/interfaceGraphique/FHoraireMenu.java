@@ -77,7 +77,8 @@ class FHoraireMenu extends Ecran
         {
         	public void handle(ActionEvent event) 
         	{
-        		graphAC.choixHoraireDepart();
+        		if(graphAC.estTactile())
+        			graphAC.choixHoraireDepart();
         	}
         });
 
@@ -91,7 +92,8 @@ class FHoraireMenu extends Ecran
         {
         	public void handle(ActionEvent event) 
         	{
-        		graphAC.choixHoraireArrivee();
+        		if(graphAC.estTactile())
+        			graphAC.choixHoraireArrivee();
         	}
         });
 
@@ -106,7 +108,8 @@ class FHoraireMenu extends Ecran
         {
         	public void handle(ActionEvent event) 
         	{
-        		graphAC.choixHoraireItineraire();
+        		if(graphAC.estTactile())
+        			graphAC.choixHoraireItineraire();
         	}
         });
 
@@ -142,7 +145,8 @@ class FHoraireMenu extends Ecran
         {
         	public void handle(ActionEvent event) 
         	{
-        		graphAC.choixAnnuler();
+        		if(graphAC.estTactile())
+        			graphAC.choixAnnuler();
         	}
         });
         
