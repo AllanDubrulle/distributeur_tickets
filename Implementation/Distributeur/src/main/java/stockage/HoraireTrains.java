@@ -37,7 +37,7 @@ class HoraireTrains extends GestionBaseDeDonnees
     	{
         	if (existenceTrajet(depart, arrivee))
         	{
-        		if ((minuteTrajet(depart, arrivee) < minute && heure >= 22) || (heure > 22))
+        		if ((minuteTrajet(depart, arrivee) < minute && heure == 22) || (heure > 22))
         		{
         			String requete = "SELECT depart, arrivee, Heure, minute, heurearrivee, minutearrivee FROM Horaire WHERE DEPART = ? and ARRIVEE = ?";
 	        		PreparedStatement declar = this.connexion.prepareStatement(requete);
@@ -147,6 +147,46 @@ class HoraireTrains extends GestionBaseDeDonnees
         return -1;
     }
     
+    public int minuteDepart(String depart)
+    {
+    	String departMaj = depart.toUpperCase();
+    	try
+        {
+            String requete = "SELECT distinct minute FROM horaire WHERE (DEPART = ?) order by minute desc";
+            PreparedStatement declar = this.connexion.prepareStatement(requete);
+            declar.setString(1, departMaj);
+			ResultSet res = declar.executeQuery();
+			int min = res.getInt(1);
+        	return min;
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+        return -1;
+    }
+    
+    public int[] premiereHeureArrivee(String arrivee)
+    {
+        String arriveeMaj = arrivee.toUpperCase();
+        int[] heure = new int[2];
+    	try
+        {
+            String requete = "SELECT distinct heureArrivee, minuteArrivee FROM horaire WHERE (ARRIVEE = ? and heureArrivee <> 0) order by heureArrivee, minuteArrivee";
+            PreparedStatement declar = this.connexion.prepareStatement(requete);
+			declar.setString(1, arriveeMaj);
+			ResultSet res = declar.executeQuery();
+			heure[0] = res.getInt(1);
+			heure[1] = res.getInt(2);
+        	return heure;
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+        return heure;
+    }
+    
     /**
      * 	Va chercher dans la base de données tous les itinéraires de trains à partir d'une 
      * 	certaine gare de départ et à partir d'une certaine heure
@@ -164,7 +204,7 @@ class HoraireTrains extends GestionBaseDeDonnees
     	{
         	if (existenceGare(depart))
         	{
-        		if (heure > 22)
+        		if ((minuteDepart(depart) < minute && heure == 22) ||(heure > 22))
         		{
         			String requete = "SELECT depart, arrivee, Heure, minute, heurearrivee, minutearrivee FROM Horaire WHERE DEPART = ? order by heure, minute";
 	        		PreparedStatement declar = this.connexion.prepareStatement(requete);
@@ -204,11 +244,12 @@ class HoraireTrains extends GestionBaseDeDonnees
     {
     	String arriveeMaj = arrivee.toUpperCase();
         ResultSet res = null;
+        int[] heurePremiereArrivee = premiereHeureArrivee(arrivee);
     	try
     	{
         	if (existenceGare(arrivee))
         	{
-        		if (heure < 4)
+        		if ((heure < heurePremiereArrivee[0]) || (heure == heurePremiereArrivee[0] && minute < heurePremiereArrivee[1]))
         		{
         			String requete = "SELECT depart, arrivee, Heure, minute, heurearrivee, minutearrivee FROM Horaire WHERE arrivee = ? order by heurearrivee, minutearrivee";
 	        		PreparedStatement declar = this.connexion.prepareStatement(requete);
@@ -276,6 +317,7 @@ class HoraireTrains extends GestionBaseDeDonnees
     	ArrayList<String> tab = new ArrayList<String>();
     	ResultSetMetaData resBis = res.getMetaData();
 		int nbrColonnes = resBis.getColumnCount();
+		
 		while (res.next()) 
 		{
 			for (int i = 1; i <= nbrColonnes; i++) 
@@ -290,13 +332,30 @@ class HoraireTrains extends GestionBaseDeDonnees
 			for (int i = 0; i < l; i++)
 				tabHor[i] = tab.get(i);
 		}
-		else 
+		else
 		{
-			int compteur = 0;
-			for(int i = l-30; i < l; i++)
+			if (Integer.parseInt(tab.get(4)) == 0)
 			{
-				tabHor[compteur] = tab.get(i);
-				compteur++;
+				int compteur = 0;
+				for (int i = l-24; i < l; i++)
+				{
+					tabHor[compteur] = tab.get(i);
+					compteur++;
+				}
+				for (int j = 0; j <6; j++)
+				{
+					tabHor[compteur] = tab.get(j);
+					compteur++;
+				}
+			}
+			else 
+			{
+				int compteur = 0;
+				for (int i = l-30; i < l; i++)
+				{
+					tabHor[compteur] = tab.get(i);
+					compteur++;
+				}
 			}
 		}
     	return tabHor;
