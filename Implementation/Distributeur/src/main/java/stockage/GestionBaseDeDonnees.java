@@ -34,7 +34,7 @@ class GestionBaseDeDonnees {
 	            System.err.println(e1.getMessage());
 	        }
 	        String separation = File.separator;
-	        this.chemin = "src"+ separation + "main" + separation + "resources" + separation + "BDDDistributeur.db";
+	        this.chemin = "classes"+separation +"src"+ separation + "main" + separation + "resources" + separation + "BDDDistributeur.db";
 	        this.connexion = null;
 	    }
 	    
