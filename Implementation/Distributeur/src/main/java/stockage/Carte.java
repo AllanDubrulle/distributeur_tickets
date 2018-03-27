@@ -31,7 +31,6 @@ public class Carte
 	 */
 	public boolean soldeSuffisant(double montant)
 	{
-		System.out.println(solde);
 		return (this.solde >= montant);
 	}
 	

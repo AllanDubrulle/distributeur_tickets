@@ -1,5 +1,6 @@
 package coeur;
 
+import stockage.Composant;
 import stockage.ComposantHorsService;
 import stockage.PlusDePapier;
 
@@ -23,6 +24,8 @@ class EtatImpressionHoraire extends ControleurEtat
 		}
 		catch(PlusDePapier e)
 		{
+			Controleur.getInstance().getCoeurAStockage().actualiserPanne(Composant.IMPRIMANTE);
+			Controleur.getInstance().getCoeurAGraphique().imprimanteEnPanne(); // peut être a supprimer 
 			Controleur.getInstance().getCoeurAGraphique().afficherPanne(e.getMessage());
 		} 
 		catch (ComposantHorsService e)
@@ -37,7 +40,7 @@ class EtatImpressionHoraire extends ControleurEtat
 																						//c'était l'inverse ici xD
 	public void apres5secOk()
 	{
-		Controleur.getInstance().modifEtat(EtatMenu.getInstance());
+		Controleur.getInstance().modifEtat(EtatFin.getInstance());
 	}
 	
 	public void choixOk()

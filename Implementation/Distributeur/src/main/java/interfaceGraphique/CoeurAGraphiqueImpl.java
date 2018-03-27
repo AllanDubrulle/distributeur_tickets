@@ -5,7 +5,6 @@ import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import stockage.BilletMonnaie;
-import stockage.Composant;
 import stockage.Piece;
 import stockage.Rendu;
 import stockage.imprimable.Billet;
@@ -431,6 +430,13 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	public void carteBloquee()
 	{
 		FenetreSimulation.getInstance().carteBloquee();
+		
+	}
+
+	@Override
+	public void imprimanteEnPanne() // cocher imprimante en panne
+	{
+		// TODO Auto-generated method stub
 		
 	}
 }

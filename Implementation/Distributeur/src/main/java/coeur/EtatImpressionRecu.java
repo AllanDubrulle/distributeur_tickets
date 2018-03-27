@@ -1,5 +1,6 @@
 package coeur;
 
+import stockage.Composant;
 import stockage.ComposantHorsService;
 import stockage.PlusDePapier;
 
@@ -28,6 +29,8 @@ public class EtatImpressionRecu extends ControleurEtat
 		}
 		catch(PlusDePapier e)
 		{
+			Controleur.getInstance().getCoeurAStockage().actualiserPanne(Composant.IMPRIMANTE);
+			Controleur.getInstance().getCoeurAGraphique().imprimanteEnPanne(); // peut être a supprimer 
 			Controleur.getInstance().getCoeurAGraphique().afficherMessageDErreur();
 		} 
 		catch (ComposantHorsService e)

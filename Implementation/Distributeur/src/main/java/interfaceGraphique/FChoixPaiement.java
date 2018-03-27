@@ -58,7 +58,7 @@ class FChoixPaiement extends Ecran
             		if(graphAC.fentePresente())
             			graphAC.choixPaiementLiquide();
             		else
-            			text10.setText("Le distributeur ne possede pas de fente");
+            			text10.setText("Le distributeur ne possede pas de fentes");
             	}
             }
         });
