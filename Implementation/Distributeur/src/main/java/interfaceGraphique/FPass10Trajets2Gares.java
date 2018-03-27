@@ -13,38 +13,38 @@ import javafx.scene.layout.*;
 
 class FPass10Trajets2Gares extends Ecran 
 {
-    private TextField textField, textField0, textField1;
-    private RadioButton radioButton, radioButton0;
-    private ChoiceBox<String> choiceBox, choiceBox0;
-    private Text text10;
+    private TextField zoneTexte, zoneTexte0, zoneTexte1;
+    private RadioButton boutonChoix, boutonChoix0;
+    private ChoiceBox<String> menuDeroulant, menuDeroulant0;
+    private Text texte10;
 
     public FPass10Trajets2Gares(double hauteur, double largeur) 
     {
         Rectangle rectangle = new Rectangle();
-        Text text = new Text();
+        Text texte = new Text();
         VBox vBox = new VBox();
         HBox hBox = new HBox();
         HBox hBox0 = new HBox();
-        Text text0 = new Text();
-        textField = new TextField();
+        Text texte0 = new Text();
+        zoneTexte = new TextField();
         HBox hBox1 = new HBox();
-        Text text1 = new Text();
-        textField0 = new TextField();
+        Text texte1 = new Text();
+        zoneTexte0 = new TextField();
         HBox hBox2 = new HBox();
-        Text text2 = new Text();
-        textField1 = new TextField();
+        Text texte2 = new Text();
+        zoneTexte1 = new TextField();
         HBox hBox3 = new HBox();
-        Text text3 = new Text();
-        radioButton = new RadioButton();
-        radioButton0 = new RadioButton();
+        Text texte3 = new Text();
+        boutonChoix = new RadioButton();
+        boutonChoix0 = new RadioButton();
         HBox hBox4 = new HBox();
-        Text text4 = new Text();
-        Button button = new Button();
-        Button button0 = new Button();
-        Text text5 = new Text();
-        choiceBox = new ChoiceBox<String>();	
-        choiceBox0 = new ChoiceBox<String>();
-        text10 = new Text();
+        Text texte4 = new Text();
+        Button bouton = new Button();
+        Button bouton0 = new Button();
+        Text texte5 = new Text();
+        menuDeroulant = new ChoiceBox<String>();	
+        menuDeroulant0 = new ChoiceBox<String>();
+        texte10 = new Text();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -61,14 +61,14 @@ class FPass10Trajets2Gares extends Ecran
         rectangle.setStrokeType(javafx.scene.shape.StrokeType.INSIDE);
         rectangle.setWidth(800.0*largeur);
 
-        text.setFontSmoothingType(javafx.scene.text.FontSmoothingType.LCD);
-        text.setLayoutX(24.0*largeur);
-        text.setLayoutY(64.0*hauteur);
-        text.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text.setStrokeWidth(0.0);
-        text.setText("Achat d'un pass dix trajets entre deux gares prédéfinies");
-        text.setUnderline(true);
-        text.setFont(new Font("System Bold", 22.0*hauteur));
+        texte.setFontSmoothingType(javafx.scene.text.FontSmoothingType.LCD);
+        texte.setLayoutX(24.0*largeur);
+        texte.setLayoutY(64.0*hauteur);
+        texte.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte.setStrokeWidth(0.0);
+        texte.setText("Achat d'un pass dix trajets entre deux gares predefinies");
+        texte.setUnderline(true);
+        texte.setFont(new Font("System Bold", 22.0*hauteur));
 
         vBox.setLayoutX(53.0*largeur);
         vBox.setLayoutY(109.0*hauteur);
@@ -81,109 +81,109 @@ class FPass10Trajets2Gares extends Ecran
         hBox0.setPrefHeight(12.0*hauteur);
         hBox0.setPrefWidth(711.0*largeur);
 
-        text0.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text0.setStrokeWidth(0.0);
-        text0.setText("Nom : ");
-        text0.setWrappingWidth(180.0*largeur);
-        text0.setFont(new Font(15.0*hauteur));
-        HBox.setMargin(text0, new Insets(0.0));
+        texte0.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte0.setStrokeWidth(0.0);
+        texte0.setText("Nom : ");
+        texte0.setWrappingWidth(180.0*largeur);
+        texte0.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(texte0, new Insets(0.0));
 
-        textField.setPrefHeight(31.0*hauteur);
-        textField.setPrefWidth(300.0*largeur);
-        textField.setFont(new Font(15.0*hauteur));
-        HBox.setMargin(textField, new Insets(0.0, 0.0, 10.0*hauteur, 20.0*largeur));
+        zoneTexte.setPrefHeight(31.0*hauteur);
+        zoneTexte.setPrefWidth(300.0*largeur);
+        zoneTexte.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(zoneTexte, new Insets(0.0, 0.0, 10.0*hauteur, 20.0*largeur));
 
         hBox1.setPrefHeight(17.0*hauteur);
         hBox1.setPrefWidth(244.0*largeur);
 
-        text1.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text1.setStrokeWidth(0.0);
-        text1.setText("Gare de départ :");
-        text1.setWrappingWidth(180.0*largeur);
-        text1.setFont(new Font(15.0*hauteur));
-        HBox.setMargin(text1, new Insets(0.0, 20.0*largeur, 0.0, 0.0));
+        texte1.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte1.setStrokeWidth(0.0);
+        texte1.setText("Gare de depart :");
+        texte1.setWrappingWidth(180.0*largeur);
+        texte1.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(texte1, new Insets(0.0, 20.0*largeur, 0.0, 0.0));
 
-        textField0.setPrefWidth(300.0*largeur);
-        textField0.setPrefHeight(31.0*hauteur);
-        textField0.setFont(new Font(15.0*hauteur));
+        zoneTexte0.setPrefWidth(300.0*largeur);
+        zoneTexte0.setPrefHeight(31.0*hauteur);
+        zoneTexte0.setFont(new Font(15.0*hauteur));
         hBox1.setPadding(new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
 
         hBox2.setPrefHeight(17.0*hauteur);
         hBox2.setPrefWidth(244.0*largeur);
 
-        text2.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text2.setStrokeWidth(0.0);
-        text2.setText("Gare d'arrivée :");
-        text2.setWrappingWidth(180.0*largeur);
-        text2.setFont(new Font(15.0*hauteur));
-        HBox.setMargin(text2, new Insets(0.0, 20.0*largeur, 0.0, 0.0));
+        texte2.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte2.setStrokeWidth(0.0);
+        texte2.setText("Gare d'arrivee :");
+        texte2.setWrappingWidth(180.0*largeur);
+        texte2.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(texte2, new Insets(0.0, 20.0*largeur, 0.0, 0.0));
 
-        textField1.setPrefWidth(300.0*largeur);
-        textField1.setPrefHeight(31.0*hauteur);
-        textField1.setFont(new Font(15.0*hauteur));
+        zoneTexte1.setPrefWidth(300.0*largeur);
+        zoneTexte1.setPrefHeight(31.0*hauteur);
+        zoneTexte1.setFont(new Font(15.0*hauteur));
         hBox2.setPadding(new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
 
         hBox3.setPrefHeight(17.0*hauteur);
         hBox3.setPrefWidth(244.0*largeur);
 
-        text3.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text3.setStrokeWidth(0.0);
-        text3.setText("Classe :");
-        text3.setWrappingWidth(180.0*largeur);
-        text3.setFont(new Font(15.0*hauteur));
-        HBox.setMargin(text3, new Insets(0.0, 20.0*largeur, 0.0, 0.0));
+        texte3.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte3.setStrokeWidth(0.0);
+        texte3.setText("Classe :");
+        texte3.setWrappingWidth(180.0*largeur);
+        texte3.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(texte3, new Insets(0.0, 20.0*largeur, 0.0, 0.0));
 
-        radioButton.setMnemonicParsing(false);
-        radioButton.setText("1e classe");
-        radioButton.setFont(new Font(15.0*hauteur));
-        radioButton.setSelected(true);
+        boutonChoix.setMnemonicParsing(false);
+        boutonChoix.setText("1e classe");
+        boutonChoix.setFont(new Font(15.0*hauteur));
+        boutonChoix.setSelected(true);
 
-        radioButton0.setMnemonicParsing(false);
-        radioButton0.setText("2e classe");
-        radioButton0.setFont(new Font(15.0*hauteur));
-        HBox.setMargin(radioButton0, new Insets(0.0, 0.0, 0.0, 50.0*largeur));
+        boutonChoix0.setMnemonicParsing(false);
+        boutonChoix0.setText("2e classe");
+        boutonChoix0.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(boutonChoix0, new Insets(0.0, 0.0, 0.0, 50.0*largeur));
         hBox3.setPadding(new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
         
         ToggleGroup t = new ToggleGroup();
-        radioButton.setToggleGroup(t);
-        radioButton0.setToggleGroup(t);
+        boutonChoix.setToggleGroup(t);
+        boutonChoix0.setToggleGroup(t);
 
         hBox4.setPrefHeight(17.0*hauteur);
         hBox4.setPrefWidth(244.0*largeur);
 
-        text4.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text4.setStrokeWidth(0.0);
-        text4.setText("Réduction :");
-        text4.setFont(new Font(15.0*hauteur));
-        HBox.setMargin(text4, new Insets(0.0, 0.0, 0.0, 50.0*largeur));
+        texte4.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte4.setStrokeWidth(0.0);
+        texte4.setText("Reduction :");
+        texte4.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(texte4, new Insets(0.0, 0.0, 0.0, 50.0*largeur));
         
-        choiceBox.setPrefWidth(225.0*largeur);	
-        choiceBox.setPrefHeight(30.0*hauteur);
-        choiceBox.setItems(FXCollections.observableArrayList(GraphiqueACoeurImpl.getInstance().getReductions()));
-        HBox.setMargin(choiceBox, new Insets(0.0, 0.0, 0.0, 20.0*largeur));
+        menuDeroulant.setPrefWidth(225.0*largeur);	
+        menuDeroulant.setPrefHeight(30.0*hauteur);
+        menuDeroulant.setItems(FXCollections.observableArrayList(GraphiqueACoeurImpl.getInstance().getReductions()));
+        HBox.setMargin(menuDeroulant, new Insets(0.0, 0.0, 0.0, 20.0*largeur));
         
-        text5.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);	
-        text5.setStrokeWidth(0.0);	
-        text5.setText("Type du pass :");	
-        text5.setWrappingWidth(180.0*largeur);	
-        text5.setFont(new Font(15.0*hauteur));	
-        HBox.setMargin(text5, new Insets(0.0));	
+        texte5.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);	
+        texte5.setStrokeWidth(0.0);	
+        texte5.setText("Type du pass :");	
+        texte5.setWrappingWidth(180.0*largeur);	
+        texte5.setFont(new Font(15.0*hauteur));	
+        HBox.setMargin(texte5, new Insets(0.0));	
         
-        choiceBox0.setPrefWidth(125.0*largeur);	
-        choiceBox0.setPrefHeight(30.0*hauteur);	
-        choiceBox0.setItems(FXCollections.observableArrayList(GraphiqueACoeurImpl.getInstance().getTypes()));	
-        HBox.setMargin(choiceBox0, new Insets(0.0, 0.0, 0.0, 20.0*largeur));	
+        menuDeroulant0.setPrefWidth(125.0*largeur);	
+        menuDeroulant0.setPrefHeight(30.0*hauteur);	
+        menuDeroulant0.setItems(FXCollections.observableArrayList(GraphiqueACoeurImpl.getInstance().getTypes()));	
+        HBox.setMargin(menuDeroulant0, new Insets(0.0, 0.0, 0.0, 20.0*largeur));	
         hBox4.setPadding(new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
 
-        button.setLayoutX(23.0*largeur);
-        button.setLayoutY(354.0*hauteur);
-        button.setMnemonicParsing(false);
-        button.setPrefHeight(31.0*hauteur);
-        button.setPrefWidth(75.0*largeur);
-        button.setText("Annuler");
-        button.setFont(new Font(15.0*hauteur));
-        button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button.setOnAction(new EventHandler<ActionEvent>()
+        bouton.setLayoutX(23.0*largeur);
+        bouton.setLayoutY(354.0*hauteur);
+        bouton.setMnemonicParsing(false);
+        bouton.setPrefHeight(31.0*hauteur);
+        bouton.setPrefWidth(75.0*largeur);
+        bouton.setText("Annuler");
+        bouton.setFont(new Font(15.0*hauteur));
+        bouton.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        bouton.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -192,15 +192,15 @@ class FPass10Trajets2Gares extends Ecran
             }
         });
 
-        button0.setLayoutX(703.0*largeur);
-        button0.setLayoutY(354.0*hauteur);
-        button0.setMnemonicParsing(false);
-        button0.setPrefHeight(31.0*hauteur);
-        button0.setPrefWidth(75.0*largeur);
-        button0.setText("Valider");
-        button0.setFont(new Font(15.0*hauteur));
-        button0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button0.setOnAction(new EventHandler<ActionEvent>()
+        bouton0.setLayoutX(703.0*largeur);
+        bouton0.setLayoutY(354.0*hauteur);
+        bouton0.setMnemonicParsing(false);
+        bouton0.setPrefHeight(31.0*hauteur);
+        bouton0.setPrefWidth(75.0*largeur);
+        bouton0.setText("Valider");
+        bouton0.setFont(new Font(15.0*hauteur));
+        bouton0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        bouton0.setOnAction(new EventHandler<ActionEvent>()
         {
         	public void handle(ActionEvent event)
             {
@@ -208,50 +208,50 @@ class FPass10Trajets2Gares extends Ecran
             	{
         			try 
         			{
-        				if (verifierNom(textField.getText().trim()))
+        				if (verifierNom(zoneTexte.getText().trim()))
         				{
-        					graphAC.infoPass10Trajets2Gares(textField.getText(), textField0.getText(), textField1.getText(), getClasse(), choiceBox.getValue(), choiceBox0.getValue());
+        					graphAC.infoPass10Trajets2Gares(zoneTexte.getText(), zoneTexte0.getText(), zoneTexte1.getText(), getClasse(), menuDeroulant.getValue(), menuDeroulant0.getValue());
         					graphAC.choixValider();
         				}
         				else
         				{
-        					text10.setText("Les données saisies sont incorrectes");
+        					texte10.setText("Les donnees saisies sont incorrectes");
         				}
         			}
         			catch (NumberFormatException | ErreurDEncodage e) 
         			{
-        				text10.setText("Les données saisies sont incorrectes");
+        				texte10.setText("Les donnees saisies sont incorrectes");
         			}
             	}
         	}
         });
 
-		text10.setFont(new Font("System Bold", 15.0*hauteur));
-		text10.setWrappingWidth(250.0*largeur);
-		text10.setFill(javafx.scene.paint.Color.RED);
-		text10.setLayoutX(275.0*largeur);
-		text10.setLayoutY(364.0*hauteur);
+		texte10.setFont(new Font("System Bold", 15.0*hauteur));
+		texte10.setWrappingWidth(250.0*largeur);
+		texte10.setFill(javafx.scene.paint.Color.RED);
+		texte10.setLayoutX(275.0*largeur);
+		texte10.setLayoutY(364.0*hauteur);
 
-        hBox0.getChildren().addAll(text0, textField);
-        hBox1.getChildren().addAll(text1, textField0);
-        hBox2.getChildren().addAll(text2, textField1);
-        hBox3.getChildren().addAll(text3, radioButton, radioButton0);
-        hBox4.getChildren().addAll(text5, choiceBox0, text4, choiceBox);
+        hBox0.getChildren().addAll(texte0, zoneTexte);
+        hBox1.getChildren().addAll(texte1, zoneTexte0);
+        hBox2.getChildren().addAll(texte2, zoneTexte1);
+        hBox3.getChildren().addAll(texte3, boutonChoix, boutonChoix0);
+        hBox4.getChildren().addAll(texte5, menuDeroulant0, texte4, menuDeroulant);
         vBox.getChildren().addAll(hBox, hBox0, hBox1, hBox2, hBox3, hBox4);
-        getChildren().addAll(rectangle, text, vBox, button, button0, text10);
+        getChildren().addAll(rectangle, texte, vBox, bouton, bouton0, texte10);
         
-        button.setFocusTraversable(false);
-        button0.setFocusTraversable(false);
+        bouton.setFocusTraversable(false);
+        bouton0.setFocusTraversable(false);
     }
     
     public void actionClavier(String a) 
     {
     	if (pos == 0)
-    		textField.setText(textField.getText() + a);
+    		zoneTexte.setText(zoneTexte.getText() + a);
     	else if (pos == 1)
-    		textField0.setText(textField0.getText() + a);
+    		zoneTexte0.setText(zoneTexte0.getText() + a);
     	else if (pos == 2)
-    		textField1.setText(textField1.getText() + a);
+    		zoneTexte1.setText(zoneTexte1.getText() + a);
     }
 
 	public void actionClavier(int a) 
@@ -259,19 +259,19 @@ class FPass10Trajets2Gares extends Ecran
 		if (pos == 3)
 		{
 			if (a == 1)
-				radioButton.setSelected(true);
+				boutonChoix.setSelected(true);
 			else if (a == 2)
-				radioButton0.setSelected(true);
+				boutonChoix0.setSelected(true);
 		}
 		else if (pos == 4)	
 		{	
 			if (a < GraphiqueACoeurImpl.getInstance().getTypes().length)	
-				choiceBox0.setValue(GraphiqueACoeurImpl.getInstance().getTypes()[a]);	
+				menuDeroulant0.setValue(GraphiqueACoeurImpl.getInstance().getTypes()[a]);	
 		}	
 		else if (pos == 5)	
 		{	
 			if (a < GraphiqueACoeurImpl.getInstance().getReductions().length)	
-				choiceBox.setValue(GraphiqueACoeurImpl.getInstance().getReductions()[a]);	
+				menuDeroulant.setValue(GraphiqueACoeurImpl.getInstance().getReductions()[a]);	
 		}
 	}
 
@@ -285,22 +285,22 @@ class FPass10Trajets2Gares extends Ecran
 		if (pos == 5)
 		{
 			pos = 0;
-			textField.requestFocus();
+			zoneTexte.requestFocus();
 		}
 		else
 		{
 			if (pos == 0)
-				textField0.requestFocus();
+				zoneTexte0.requestFocus();
 			else if (pos == 1)
-				textField1.requestFocus();
+				zoneTexte1.requestFocus();
 			else if (pos == 2)
-				radioButton.requestFocus();
+				boutonChoix.requestFocus();
 			else if (pos == 3)
-				choiceBox0.requestFocus();
+				menuDeroulant0.requestFocus();
 			else if (pos == 4)	
-				choiceBox.requestFocus();
+				menuDeroulant.requestFocus();
 			else
-				textField.requestFocus();
+				zoneTexte.requestFocus();
 			pos ++;
 		}
 	}
@@ -308,32 +308,32 @@ class FPass10Trajets2Gares extends Ecran
 	public void actionEspace() 
 	{
     	if (pos == 0)
-    		textField.setText(textField.getText() + " ");
+    		zoneTexte.setText(zoneTexte.getText() + " ");
     	else if (pos == 1)
-    		textField0.setText(textField0.getText() + " ");
+    		zoneTexte0.setText(zoneTexte0.getText() + " ");
     	else if (pos == 2)
-    		textField1.setText(textField1.getText() + " ");
+    		zoneTexte1.setText(zoneTexte1.getText() + " ");
     }
 
 	public void actionEffacer() 
 	{
 		if (pos == 0)
 		{
-			String s = textField.getText();
+			String s = zoneTexte.getText();
 			if (s.length() > 0)
-				textField.setText(s.substring(0, s.length()-1));
+				zoneTexte.setText(s.substring(0, s.length()-1));
 		}
 		else if (pos == 1)
 		{
-			String s = textField0.getText();
+			String s = zoneTexte0.getText();
 			if (s.length() > 0)
-				textField0.setText(s.substring(0, s.length()-1));
+				zoneTexte0.setText(s.substring(0, s.length()-1));
 		}
 		else if (pos == 2)
 		{
-			String s = textField1.getText();
+			String s = zoneTexte1.getText();
 			if (s.length() > 0)
-				textField1.setText(s.substring(0, s.length()-1));
+				zoneTexte1.setText(s.substring(0, s.length()-1));
 		}
 	}
 	
@@ -344,7 +344,7 @@ class FPass10Trajets2Gares extends Ecran
 	
 	private int getClasse()
 	{
-		if (radioButton.isSelected())
+		if (boutonChoix.isSelected())
 			return 1;
 		else
 			return 2;
@@ -354,13 +354,13 @@ class FPass10Trajets2Gares extends Ecran
 	{
 		if(graphAC.estTactile())
 		{
-			textField.setOnMouseClicked(e -> {pos = 0;});
-			textField0.setOnMouseClicked(e -> {pos = 1;});
-			textField1.setOnMouseClicked(e -> {pos = 2;});
-			radioButton.setOnMouseClicked(e -> {pos = 3;});
-			radioButton0.setOnMouseClicked(e -> {pos = 3;});
-			choiceBox0.setOnMouseClicked(e -> {pos = 4;});
-			choiceBox.setOnMouseClicked(e -> {pos = 5;});
+			zoneTexte.setOnMouseClicked(e -> {pos = 0;});
+			zoneTexte0.setOnMouseClicked(e -> {pos = 1;});
+			zoneTexte1.setOnMouseClicked(e -> {pos = 2;});
+			boutonChoix.setOnMouseClicked(e -> {pos = 3;});
+			boutonChoix0.setOnMouseClicked(e -> {pos = 3;});
+			menuDeroulant0.setOnMouseClicked(e -> {pos = 4;});
+			menuDeroulant.setOnMouseClicked(e -> {pos = 5;});
 		}
 	}
 }

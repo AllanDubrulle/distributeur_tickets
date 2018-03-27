@@ -13,7 +13,7 @@ class FRecapPass10Trajets extends Ecran
     public FRecapPass10Trajets(String nom, int classe, String reduction, String type, double prix, double hauteur, double largeur) 
     {
         Rectangle rectangle = new Rectangle();
-        Text text = new Text();
+        Text text = new Text();// A FAIRE VICTOR
         VBox vBox = new VBox();
         HBox hBox0 = new HBox();
         Text text0 = new Text();

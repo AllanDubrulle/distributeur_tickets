@@ -14,12 +14,12 @@ class FMenu extends Ecran
     {
         Rectangle rectangle = new Rectangle();
         VBox vBox = new VBox();
-        Button button = new Button();
-        Button button0 = new Button();
-        Button button1 = new Button();
-        Button button2 = new Button();
-        Button button3 = new Button();
-        Text text = new Text();
+        Button bouton = new Button();
+        Button bouton0 = new Button();
+        Button bouton1 = new Button();
+        Button bouton2 = new Button();
+        Button bouton3 = new Button();
+        Text texte = new Text();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -41,15 +41,15 @@ class FMenu extends Ecran
         vBox.setPrefHeight(202.0*hauteur);
         vBox.setPrefWidth(244.0*largeur);
 
-        button.setAlignment(javafx.geometry.Pos.TOP_LEFT);
-        button.setMnemonicParsing(false);
-        button.setPrefHeight(31.0*hauteur);
-        button.setPrefWidth(250.0*largeur);
-        button.setText("Acheter un billet");
-        button.setFont(new Font(15.0*hauteur));
-        button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        VBox.setMargin(button, new Insets(0.0, 0.0, 5.0*largeur, 0.0));
-        button.setOnAction(new EventHandler<ActionEvent>()
+        bouton.setAlignment(javafx.geometry.Pos.TOP_LEFT);
+        bouton.setMnemonicParsing(false);
+        bouton.setPrefHeight(31.0*hauteur);
+        bouton.setPrefWidth(250.0*largeur);
+        bouton.setText("Acheter un billet");
+        bouton.setFont(new Font(15.0*hauteur));
+        bouton.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        VBox.setMargin(bouton, new Insets(0.0, 0.0, 5.0*largeur, 0.0));
+        bouton.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -58,15 +58,15 @@ class FMenu extends Ecran
             }
         });
 
-        button0.setAlignment(javafx.geometry.Pos.TOP_LEFT);
-        button0.setMnemonicParsing(false);
-        button0.setPrefHeight(31.0*hauteur);
-        button0.setPrefWidth(283.0*largeur);
-        button0.setText("Acheter un abonnement");
-        button0.setFont(new Font(15.0*hauteur));
-        button0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        VBox.setMargin(button0, new Insets(0.0, 0.0, 5.0*largeur, 0.0));
-        button0.setOnAction(new EventHandler<ActionEvent>()
+        bouton0.setAlignment(javafx.geometry.Pos.TOP_LEFT);
+        bouton0.setMnemonicParsing(false);
+        bouton0.setPrefHeight(31.0*hauteur);
+        bouton0.setPrefWidth(283.0*largeur);
+        bouton0.setText("Acheter un abonnement");
+        bouton0.setFont(new Font(15.0*hauteur));
+        bouton0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        VBox.setMargin(bouton0, new Insets(0.0, 0.0, 5.0*largeur, 0.0));
+        bouton0.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -75,15 +75,15 @@ class FMenu extends Ecran
             }
         });
 
-        button1.setAlignment(javafx.geometry.Pos.TOP_LEFT);
-        button1.setMnemonicParsing(false);
-        button1.setPrefHeight(31.0*hauteur);
-        button1.setPrefWidth(288.0*largeur);
-        button1.setText("Renouveler un abonnement");
-        button1.setFont(new Font(15.0*hauteur));
-        button1.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        VBox.setMargin(button1, new Insets(0.0, 0.0, 5.0*largeur, 0.0));
-        button1.setOnAction(new EventHandler<ActionEvent>()
+        bouton1.setAlignment(javafx.geometry.Pos.TOP_LEFT);
+        bouton1.setMnemonicParsing(false);
+        bouton1.setPrefHeight(31.0*hauteur);
+        bouton1.setPrefWidth(288.0*largeur);
+        bouton1.setText("Renouveler un abonnement");
+        bouton1.setFont(new Font(15.0*hauteur));
+        bouton1.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        VBox.setMargin(bouton1, new Insets(0.0, 0.0, 5.0*largeur, 0.0));
+        bouton1.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -92,15 +92,15 @@ class FMenu extends Ecran
             }
         });
 
-        button2.setAlignment(javafx.geometry.Pos.TOP_LEFT);
-        button2.setMnemonicParsing(false);
-        button2.setPrefHeight(31.0*hauteur);
-        button2.setPrefWidth(300.0*largeur);
-        button2.setText("Acheter un pass");
-        button2.setFont(new Font(15.0*hauteur));
-        button2.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        VBox.setMargin(button2, new Insets(0.0, 0.0, 5.0*largeur, 0.0));
-        button2.setOnAction(new EventHandler<ActionEvent>()
+        bouton2.setAlignment(javafx.geometry.Pos.TOP_LEFT);
+        bouton2.setMnemonicParsing(false);
+        bouton2.setPrefHeight(31.0*hauteur);
+        bouton2.setPrefWidth(300.0*largeur);
+        bouton2.setText("Acheter un pass");
+        bouton2.setFont(new Font(15.0*hauteur));
+        bouton2.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        VBox.setMargin(bouton2, new Insets(0.0, 0.0, 5.0*largeur, 0.0));
+        bouton2.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -109,14 +109,14 @@ class FMenu extends Ecran
             }
         });
 
-        button3.setAlignment(javafx.geometry.Pos.TOP_LEFT);
-        button3.setMnemonicParsing(false);
-        button3.setPrefHeight(31.0*hauteur);
-        button3.setPrefWidth(392.0*largeur);
-        button3.setText("Vérifier l'horaire d'un train");
-        button3.setFont(new Font(15.0*hauteur));
-        button3.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button3.setOnAction(new EventHandler<ActionEvent>()
+        bouton3.setAlignment(javafx.geometry.Pos.TOP_LEFT);
+        bouton3.setMnemonicParsing(false);
+        bouton3.setPrefHeight(31.0*hauteur);
+        bouton3.setPrefWidth(392.0*largeur);
+        bouton3.setText("Verifier l'horaire d'un train");
+        bouton3.setFont(new Font(15.0*hauteur));
+        bouton3.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        bouton3.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -125,16 +125,16 @@ class FMenu extends Ecran
             }
         });
 
-        text.setFontSmoothingType(javafx.scene.text.FontSmoothingType.LCD);
-        text.setLayoutX(44.0*largeur);
-        text.setLayoutY(62.0*hauteur);
-        text.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text.setStrokeWidth(0.0);
-        text.setText("Que voulez-vous faire ?");
-        text.setFont(new Font(22.0*hauteur));
+        texte.setFontSmoothingType(javafx.scene.text.FontSmoothingType.LCD);
+        texte.setLayoutX(44.0*largeur);
+        texte.setLayoutY(62.0*hauteur);
+        texte.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte.setStrokeWidth(0.0);
+        texte.setText("Que voulez-vous faire ?");
+        texte.setFont(new Font(22.0*hauteur));
 
-        vBox.getChildren().addAll(button, button0, button1, button2, button3);
-        getChildren().addAll(rectangle, vBox, text);
+        vBox.getChildren().addAll(bouton, bouton0, bouton1, bouton2, bouton3);
+        getChildren().addAll(rectangle, vBox, texte);
     }
 
 	public void actionClavier(int a) 

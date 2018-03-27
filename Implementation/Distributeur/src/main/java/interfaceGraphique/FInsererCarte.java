@@ -11,8 +11,8 @@ class FInsererCarte extends Ecran
     public FInsererCarte(double hauteur, double largeur) 
     {
         Rectangle rectangle = new Rectangle();
-        Text text = new Text();
-        Button button = new Button();
+        Text texte = new Text();
+        Button bouton = new Button();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -29,22 +29,22 @@ class FInsererCarte extends Ecran
         rectangle.setStrokeType(javafx.scene.shape.StrokeType.INSIDE);
         rectangle.setWidth(800.0*largeur);
 
-        text.setLayoutX(284.0*largeur);
-        text.setLayoutY(193.0*hauteur);
-        text.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text.setStrokeWidth(0.0);
-        text.setText("Veuillez insérer votre carte");
-        text.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        text.setWrappingWidth(231.5*largeur);
-        text.setFont(new Font("System Italic", 18.0*hauteur));
+        texte.setLayoutX(284.0*largeur);
+        texte.setLayoutY(193.0*hauteur);
+        texte.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte.setStrokeWidth(0.0);
+        texte.setText("Veuillez inserer votre carte");
+        texte.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        texte.setWrappingWidth(231.5*largeur);
+        texte.setFont(new Font("System Italic", 18.0*hauteur));
         
-        button.setText("Retour");
-        button.setPrefHeight(31.0*hauteur);
-        button.setPrefWidth(75.0*largeur);
-        button.setLayoutX(362.5*largeur);
-        button.setLayoutY(339*hauteur);
-        button.setFont(new Font(15.0*hauteur));
-        button.setOnAction(new EventHandler<ActionEvent>() 
+        bouton.setText("Retour");
+        bouton.setPrefHeight(31.0*hauteur);
+        bouton.setPrefWidth(75.0*largeur);
+        bouton.setLayoutX(362.5*largeur);
+        bouton.setLayoutY(339*hauteur);
+        bouton.setFont(new Font(15.0*hauteur));
+        bouton.setOnAction(new EventHandler<ActionEvent>() 
         {
         	public void handle(ActionEvent event) 
         	{
@@ -53,9 +53,9 @@ class FInsererCarte extends Ecran
         	}
         });
 
-        getChildren().addAll(rectangle, text, button);
+        getChildren().addAll(rectangle, texte, bouton);
         
-        button.setFocusTraversable(false);
+        bouton.setFocusTraversable(false);
     }
 
 	public void actionRetour() 
