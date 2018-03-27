@@ -288,7 +288,17 @@ abstract class ControleurEtat
 		if(Controleur.getInstance().getCoeurAStockage().carteInseree())
 		{
 			actualiserPanne(Composant.LECTEURCARTE);
+			if (!Controleur.getInstance().getCoeurAStockage().estEnMarche(Composant.LECTEURCARTE))
+			{
+				Controleur.getInstance().getCoeurAGraphique().carteBloquee();
+			}
+			else
+			{
+				Controleur.getInstance().getCoeurAStockage().carteEnlevee();
+				Controleur.getInstance().getCoeurAGraphique().carteNonBloquee();
+			}
 			Controleur.getInstance().getCoeurAGraphique().carteBloquee();
+			
 		}
 		else
 		{

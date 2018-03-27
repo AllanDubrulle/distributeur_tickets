@@ -133,22 +133,20 @@ class FMenu extends Ecran
         texte.setText("Que voulez-vous faire ?");
         texte.setFont(new Font(22.0*hauteur));
 
-<<<<<<< HEAD
         vBox.getChildren().addAll(bouton, bouton0, bouton1, bouton2, bouton3);
         getChildren().addAll(rectangle, vBox, texte);
-=======
+        
         if (!possible)
         {
-        	button.setDisable(true);
-        	button0.setDisable(true);
-        	button1.setDisable(true);
-        	button2.setDisable(true);
+        	bouton.setDisable(true);
+        	bouton.setDisable(true);
+        	bouton1.setDisable(true);
+        	bouton2.setDisable(true);
         }
         
-        vBox.getChildren().addAll(button, button0, button1, button2, button3);
-        getChildren().addAll(rectangle, vBox, text);
+        vBox.getChildren().addAll(bouton, bouton0, bouton1, bouton2, bouton3);
+        getChildren().addAll(rectangle, vBox, texte);
         
->>>>>>> a289dbcde9b060828655c4871ecdc8c901e20a70
     }
 
 	public void actionClavier(int a) 
