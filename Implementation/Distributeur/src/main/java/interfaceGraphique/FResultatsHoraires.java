@@ -10,44 +10,44 @@ import javafx.scene.text.*;
 
 class FResultatsHoraires extends Ecran 
 {
-	private Button button1;
+	private Button bouton1;
 	
     public FResultatsHoraires(String[] tab, double hauteur, double largeur) 
     {
         Rectangle rectangle = new Rectangle();
         HBox hBox = new HBox();
         VBox vBox = new VBox();
-        Text text = new Text();
-        Text text0 = new Text();
-        Text text1 = new Text();
-        Text text2 = new Text();
-        Text text3 = new Text();
-        Text text4 = new Text();
+        Text texte = new Text();
+        Text texte0 = new Text();
+        Text texte1 = new Text();
+        Text texte2 = new Text();
+        Text texte3 = new Text();
+        Text texte4 = new Text();
         VBox vBox0 = new VBox();
-        Text text5 = new Text();
-        Text text6 = new Text();
-        Text text7 = new Text();
-        Text text8 = new Text();
-        Text text9 = new Text();
-        Text text10 = new Text();
+        Text texte5 = new Text();
+        Text texte6 = new Text();
+        Text texte7 = new Text();
+        Text texte8 = new Text();
+        Text texte9 = new Text();
+        Text texte10 = new Text();
         VBox vBox1 = new VBox();
-        Text text11 = new Text();
-        Text text12 = new Text();
-        Text text13 = new Text();
-        Text text14 = new Text();
-        Text text15 = new Text();
-        Text text16 = new Text();
-        Text text17 = new Text();
+        Text texte11 = new Text();
+        Text texte12 = new Text();
+        Text texte13 = new Text();
+        Text texte14 = new Text();
+        Text texte15 = new Text();
+        Text texte16 = new Text();
+        Text texte17 = new Text();
         VBox vBox2 = new VBox();
-        Text text18 = new Text();
-        Text text19 = new Text();
-        Text text20 = new Text();
-        Text text21 = new Text();
-        Text text22 = new Text();
-        Text text23 = new Text();
-        Button button = new Button();
-        Button button0 = new Button();
-        button1 = new Button();
+        Text texte18 = new Text();
+        Text texte19 = new Text();
+        Text texte20 = new Text();
+        Text texte21 = new Text();
+        Text texte22 = new Text();
+        Text texte23 = new Text();
+        Button bouton = new Button();
+        Button bouton0 = new Button();
+        bouton1 = new Button();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -72,47 +72,47 @@ class FResultatsHoraires extends Ecran
         vBox.setPrefHeight(200.0*hauteur);
         vBox.setPrefWidth(100.0*largeur);
 
-        text.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text.setStrokeWidth(0.0);
-        text.setText("Gare de départ :");
-        text.setWrappingWidth(115.0*largeur);
-        text.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        text.setUnderline(true);
-        text.setFont(new Font("System Italic", 18.0*hauteur));
-        VBox.setMargin(text, new Insets(0.0, 0.0, 20.0*hauteur, 0.0));
+        texte.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte.setStrokeWidth(0.0);
+        texte.setText("Gare de depart :");
+        texte.setWrappingWidth(115.0*largeur);
+        texte.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        texte.setUnderline(true);
+        texte.setFont(new Font("System Italic", 18.0*hauteur));
+        VBox.setMargin(texte, new Insets(0.0, 0.0, 20.0*hauteur, 0.0));
 
-        text0.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text0.setStrokeWidth(0.0);
-        text0.setWrappingWidth(100.0*largeur);
-        text0.setText(tab[0]);
-        text0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        text0.setWrappingWidth(98.5*largeur);
+        texte0.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte0.setStrokeWidth(0.0);
+        texte0.setWrappingWidth(100.0*largeur);
+        texte0.setText(tab[0]);
+        texte0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        texte0.setWrappingWidth(98.5*largeur);
 
-        text1.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text1.setStrokeWidth(0.0);
-        text1.setWrappingWidth(100.0*largeur);
-        text1.setText(tab[6]);
-        text1.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        VBox.setMargin(text1, new Insets(10.0*hauteur, 0.0, 10.0*hauteur, 0.0));
+        texte1.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte1.setStrokeWidth(0.0);
+        texte1.setWrappingWidth(100.0*largeur);
+        texte1.setText(tab[6]);
+        texte1.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        VBox.setMargin(texte1, new Insets(10.0*hauteur, 0.0, 10.0*hauteur, 0.0));
 
-        text2.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text2.setStrokeWidth(0.0);
-        text2.setWrappingWidth(100.0*largeur);
-        text2.setText(tab[12]);
-        text2.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        texte2.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte2.setStrokeWidth(0.0);
+        texte2.setWrappingWidth(100.0*largeur);
+        texte2.setText(tab[12]);
+        texte2.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
 
-        text3.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text3.setStrokeWidth(0.0);
-        text3.setWrappingWidth(100.0*largeur);
-        text3.setText(tab[18]);
-        text3.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        VBox.setMargin(text3, new Insets(10.0*hauteur, 0.0, 10.0*hauteur, 0.0));
+        texte3.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte3.setStrokeWidth(0.0);
+        texte3.setWrappingWidth(100.0*largeur);
+        texte3.setText(tab[18]);
+        texte3.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        VBox.setMargin(texte3, new Insets(10.0*hauteur, 0.0, 10.0*hauteur, 0.0));
 
-        text4.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text4.setStrokeWidth(0.0);
-        text4.setWrappingWidth(100.0*largeur);
-        text4.setText(tab[24]);
-        text4.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        texte4.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte4.setStrokeWidth(0.0);
+        texte4.setWrappingWidth(100.0*largeur);
+        texte4.setText(tab[24]);
+        texte4.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         vBox.setOpaqueInsets(new Insets(0.0));
         HBox.setMargin(vBox, new Insets(0.0, 75.0*largeur, 0.0, 0.0));
 
@@ -120,211 +120,211 @@ class FResultatsHoraires extends Ecran
         vBox0.setPrefWidth(100.0);
         HBox.setMargin(vBox0, new Insets(0.0, 75.0*largeur, 0.0, 0.0));
 
-        text5.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text5.setStrokeWidth(0.0);
-        text5.setText("Gare d'arrivée :");
-        text5.setWrappingWidth(110.0*largeur);
-        text5.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        text5.setUnderline(true);
-        text5.setFont(new Font("System Italic", 18.0*hauteur));
-        VBox.setMargin(text5, new Insets(0.0, 0.0, 20.0*hauteur, 0.0));
+        texte5.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte5.setStrokeWidth(0.0);
+        texte5.setText("Gare d'arrivee :");
+        texte5.setWrappingWidth(110.0*largeur);
+        texte5.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        texte5.setUnderline(true);
+        texte5.setFont(new Font("System Italic", 18.0*hauteur));
+        VBox.setMargin(texte5, new Insets(0.0, 0.0, 20.0*hauteur, 0.0));
 
-        text6.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text6.setStrokeWidth(0.0);
-        text6.setWrappingWidth(100.0*largeur);
-        text6.setText(tab[1]);
-        text6.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        texte6.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte6.setStrokeWidth(0.0);
+        texte6.setWrappingWidth(100.0*largeur);
+        texte6.setText(tab[1]);
+        texte6.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
 
-        text7.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text7.setStrokeWidth(0.0);
-        text7.setWrappingWidth(100.0*largeur);
-        text7.setText(tab[7]);
-        text7.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        VBox.setMargin(text7, new Insets(10.0*hauteur, 0.0, 10.0*hauteur, 0.0));
+        texte7.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte7.setStrokeWidth(0.0);
+        texte7.setWrappingWidth(100.0*largeur);
+        texte7.setText(tab[7]);
+        texte7.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        VBox.setMargin(texte7, new Insets(10.0*hauteur, 0.0, 10.0*hauteur, 0.0));
 
-        text8.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text8.setStrokeWidth(0.0);
-        text8.setWrappingWidth(100.0*largeur);
-        text8.setText(tab[13]);
-        text8.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        texte8.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte8.setStrokeWidth(0.0);
+        texte8.setWrappingWidth(100.0*largeur);
+        texte8.setText(tab[13]);
+        texte8.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
 
-        text9.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text9.setStrokeWidth(0.0);
-        text9.setWrappingWidth(100.0*largeur);
-        text9.setText(tab[19]);
-        text9.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        VBox.setMargin(text9, new Insets(10.0*hauteur, 0.0, 10.0*hauteur, 0.0));
+        texte9.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte9.setStrokeWidth(0.0);
+        texte9.setWrappingWidth(100.0*largeur);
+        texte9.setText(tab[19]);
+        texte9.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        VBox.setMargin(texte9, new Insets(10.0*hauteur, 0.0, 10.0*hauteur, 0.0));
 
-        text10.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text10.setStrokeWidth(0.0);
-        text10.setWrappingWidth(100.0*largeur);
-        text10.setText(tab[25]);
-        text10.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        texte10.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte10.setStrokeWidth(0.0);
+        texte10.setWrappingWidth(100.0*largeur);
+        texte10.setText(tab[25]);
+        texte10.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
 
         vBox1.setPrefHeight(200.0*hauteur);
         vBox1.setPrefWidth(120.0*largeur);
         HBox.setMargin(vBox1, new Insets(0.0, 75.0*largeur, 0.0, 0.0));
 
-        text11.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text11.setStrokeWidth(0.0);
-        text11.setText("Heure de départ :");
-        text11.setWrappingWidth(120.0*largeur);
-        text11.setUnderline(true);
-        text11.setFont(new Font("System Italic", 18.0*hauteur));
-        text11.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        VBox.setMargin(text11, new Insets(0.0, 0.0, 20.0*hauteur, 0.0));
+        texte11.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte11.setStrokeWidth(0.0);
+        texte11.setText("Heure de depart :");
+        texte11.setWrappingWidth(120.0*largeur);
+        texte11.setUnderline(true);
+        texte11.setFont(new Font("System Italic", 18.0*hauteur));
+        texte11.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        VBox.setMargin(texte11, new Insets(0.0, 0.0, 20.0*hauteur, 0.0));
 
-        text12.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text12.setStrokeWidth(0.0);
-        text12.setWrappingWidth(100.0*largeur);
+        texte12.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte12.setStrokeWidth(0.0);
+        texte12.setWrappingWidth(100.0*largeur);
         if (tab[2] != null)
         {
         	if (tab[3].length() == 1)
-        		text12.setText(tab[2]+":0"+tab[3]);
+        		texte12.setText(tab[2]+":0"+tab[3]);
         	else
-        		text12.setText(tab[2]+":"+tab[3]);
+        		texte12.setText(tab[2]+":"+tab[3]);
         }
-        text12.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        texte12.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
 
-        text13.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text13.setStrokeWidth(0.0);
-        text13.setWrappingWidth(100.0*largeur);
+        texte13.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte13.setStrokeWidth(0.0);
+        texte13.setWrappingWidth(100.0*largeur);
         if (tab[8] != null)
         {
         	if (tab[9].length() == 1)
-        		text13.setText(tab[8]+":0"+tab[9]);
+        		texte13.setText(tab[8]+":0"+tab[9]);
         	else
-        		text13.setText(tab[8]+":"+tab[9]);
+        		texte13.setText(tab[8]+":"+tab[9]);
         }
-        text13.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        VBox.setMargin(text13, new Insets(10.0*hauteur, 0.0, 10.0*hauteur, 0.0));
+        texte13.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        VBox.setMargin(texte13, new Insets(10.0*hauteur, 0.0, 10.0*hauteur, 0.0));
 
-        text14.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text14.setStrokeWidth(0.0);
-        text14.setWrappingWidth(100.0*largeur);
+        texte14.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte14.setStrokeWidth(0.0);
+        texte14.setWrappingWidth(100.0*largeur);
         if (tab[14] != null)
         {
         	if (tab[15].length() == 1)
-        		text14.setText(tab[14]+":0"+tab[15]);
+        		texte14.setText(tab[14]+":0"+tab[15]);
         	else
-        		text14.setText(tab[14]+":"+tab[15]);
+        		texte14.setText(tab[14]+":"+tab[15]);
         }
-        text14.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        texte14.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
 
-        text15.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text15.setStrokeWidth(0.0);
-        text15.setWrappingWidth(100.0*largeur);
+        texte15.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte15.setStrokeWidth(0.0);
+        texte15.setWrappingWidth(100.0*largeur);
         if (tab[20] != null)
         {
         	if (tab[21].length() == 1)
-        		text15.setText(tab[20]+":0"+tab[21]);
+        		texte15.setText(tab[20]+":0"+tab[21]);
         	else
-        		text15.setText(tab[20]+":"+tab[21]);
+        		texte15.setText(tab[20]+":"+tab[21]);
         }
-        text15.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        VBox.setMargin(text15, new Insets(10.0*hauteur, 0.0, 10.0*hauteur, 0.0));
+        texte15.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        VBox.setMargin(texte15, new Insets(10.0*hauteur, 0.0, 10.0*hauteur, 0.0));
 
-        text16.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text16.setStrokeWidth(0.0);
-        text16.setWrappingWidth(100.0*largeur);
+        texte16.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte16.setStrokeWidth(0.0);
+        texte16.setWrappingWidth(100.0*largeur);
         if (tab[26] != null)
         {
         	if (tab[27].length() == 1)
-        		text16.setText(tab[26]+":0"+tab[27]);
+        		texte16.setText(tab[26]+":0"+tab[27]);
         	else
-        		text16.setText(tab[26]+":"+tab[27]);
+        		texte16.setText(tab[26]+":"+tab[27]);
         }
-        text16.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        texte16.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         
-        text23.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text23.setStrokeWidth(0.0);
-        text23.setText("Heure d'arrivée :");
-        text23.setWrappingWidth(120.0*largeur);
-        text23.setUnderline(true);
-        text23.setFont(new Font("System Italic", 18.0*hauteur));
-        text23.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        VBox.setMargin(text23, new Insets(0.0, 0.0, 20.0*hauteur, 0.0));
+        texte23.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte23.setStrokeWidth(0.0);
+        texte23.setText("Heure d'arrivee :");
+        texte23.setWrappingWidth(120.0*largeur);
+        texte23.setUnderline(true);
+        texte23.setFont(new Font("System Italic", 18.0*hauteur));
+        texte23.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        VBox.setMargin(texte23, new Insets(0.0, 0.0, 20.0*hauteur, 0.0));
 
         vBox2.setPrefHeight(200.0*hauteur);
         vBox2.setPrefWidth(120.0*largeur);
         
-        text18.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text18.setStrokeWidth(0.0);
-        text18.setWrappingWidth(100.0*largeur);
+        texte18.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte18.setStrokeWidth(0.0);
+        texte18.setWrappingWidth(100.0*largeur);
         if (tab[4] != null)
         {
         	if (tab[5].length() == 1)
-        		text18.setText(tab[4]+":0"+tab[5]);
+        		texte18.setText(tab[4]+":0"+tab[5]);
         	else
-        		text18.setText(tab[4]+":"+tab[5]);
+        		texte18.setText(tab[4]+":"+tab[5]);
         }
-        text18.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        texte18.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
 
-        text19.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text19.setStrokeWidth(0.0);
-        text19.setWrappingWidth(100.0*largeur);
+        texte19.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte19.setStrokeWidth(0.0);
+        texte19.setWrappingWidth(100.0*largeur);
         if (tab[10] != null)
         {
         	if (tab[11].length() == 1)
-        		text19.setText(tab[10]+":0"+tab[11]);
+        		texte19.setText(tab[10]+":0"+tab[11]);
         	else
-        		text19.setText(tab[10]+":"+tab[11]);
+        		texte19.setText(tab[10]+":"+tab[11]);
         }
-        text19.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        VBox.setMargin(text19, new Insets(10.0*hauteur, 0.0, 10.0*hauteur, 0.0));
+        texte19.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        VBox.setMargin(texte19, new Insets(10.0*hauteur, 0.0, 10.0*hauteur, 0.0));
 
-        text20.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text20.setStrokeWidth(0.0);
-        text20.setWrappingWidth(100.0*largeur);
+        texte20.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte20.setStrokeWidth(0.0);
+        texte20.setWrappingWidth(100.0*largeur);
         if (tab[16] != null)
         {
         	if (tab[17].length() == 1)
-        		text20.setText(tab[16]+":0"+tab[17]);
+        		texte20.setText(tab[16]+":0"+tab[17]);
         	else
-        		text20.setText(tab[16]+":"+tab[17]);
+        		texte20.setText(tab[16]+":"+tab[17]);
         }
-        text20.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        texte20.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
 
-        text21.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text21.setStrokeWidth(0.0);
-        text21.setWrappingWidth(100.0*largeur);
+        texte21.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte21.setStrokeWidth(0.0);
+        texte21.setWrappingWidth(100.0*largeur);
         if (tab[22] != null)
         {
         	if (tab[23].length() == 1)
-        		text21.setText(tab[22]+":0"+tab[23]);
+        		texte21.setText(tab[22]+":0"+tab[23]);
         	else
-        		text21.setText(tab[22]+":"+tab[23]);
+        		texte21.setText(tab[22]+":"+tab[23]);
         }
-        text21.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        VBox.setMargin(text21, new Insets(10.0*hauteur, 0.0, 10.0*hauteur, 0.0));
+        texte21.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        VBox.setMargin(texte21, new Insets(10.0*hauteur, 0.0, 10.0*hauteur, 0.0));
 
-        text22.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text22.setStrokeWidth(0.0);
-        text22.setWrappingWidth(100.0*largeur);
+        texte22.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte22.setStrokeWidth(0.0);
+        texte22.setWrappingWidth(100.0*largeur);
         if (tab[28] != null)
         {
         	if (tab[29].length() == 1)
-        		text22.setText(tab[28]+":0"+tab[29]);
+        		texte22.setText(tab[28]+":0"+tab[29]);
         	else
-        		text22.setText(tab[28]+":"+tab[29]);
+        		texte22.setText(tab[28]+":"+tab[29]);
         }
-        text22.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        texte22.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
 
-        text17.setLayoutX(35.0*largeur);
-        text17.setLayoutY(69.0*hauteur);
-        text17.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text17.setStrokeWidth(0.0);
-        text17.setText("Résultats de votre recherche");
-        text17.setFont(new Font("System Bold", 24.0*hauteur));
+        texte17.setLayoutX(35.0*largeur);
+        texte17.setLayoutY(69.0*hauteur);
+        texte17.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte17.setStrokeWidth(0.0);
+        texte17.setText("Resultats de votre recherche");
+        texte17.setFont(new Font("System Bold", 24.0*hauteur));
 
-        button.setLayoutX(50.0*largeur);
-        button.setLayoutY(340.0*hauteur);
-        button.setMnemonicParsing(false);
-        button.setPrefHeight(31.0*hauteur);
-        button.setPrefWidth(200.0*largeur);
-        button.setText("Changer l'heure");
-        button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button.setOnAction(new EventHandler<ActionEvent>() 
+        bouton.setLayoutX(50.0*largeur);
+        bouton.setLayoutY(340.0*hauteur);
+        bouton.setMnemonicParsing(false);
+        bouton.setPrefHeight(31.0*hauteur);
+        bouton.setPrefWidth(200.0*largeur);
+        bouton.setText("Changer l'heure");
+        bouton.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        bouton.setOnAction(new EventHandler<ActionEvent>() 
         {
         	public void handle(ActionEvent event) 
         	{
@@ -333,14 +333,14 @@ class FResultatsHoraires extends Ecran
         	}
         });
 
-        button0.setLayoutX(550.0*largeur);
-        button0.setLayoutY(340.0*hauteur);
-        button0.setMnemonicParsing(false);
-        button0.setPrefHeight(31.0*hauteur);
-        button0.setPrefWidth(200.0*largeur);
-        button0.setText("Retour à l'écran principal");
-        button0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button0.setOnAction(new EventHandler<ActionEvent>() 
+        bouton0.setLayoutX(550.0*largeur);
+        bouton0.setLayoutY(340.0*hauteur);
+        bouton0.setMnemonicParsing(false);
+        bouton0.setPrefHeight(31.0*hauteur);
+        bouton0.setPrefWidth(200.0*largeur);
+        bouton0.setText("Retour a l'ecran principal");
+        bouton0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        bouton0.setOnAction(new EventHandler<ActionEvent>() 
         {
         	public void handle(ActionEvent event) 
         	{
@@ -349,14 +349,14 @@ class FResultatsHoraires extends Ecran
         	}
         });
         
-        button1.setLayoutX(300.0*largeur);
-        button1.setLayoutY(340.0*hauteur);
-        button1.setMnemonicParsing(false);
-        button1.setPrefHeight(31.0*hauteur);
-        button1.setPrefWidth(200.0*largeur);
-        button1.setText("Imprimer horaire");
-        button1.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button1.setOnAction(new EventHandler<ActionEvent>() 
+        bouton1.setLayoutX(300.0*largeur);
+        bouton1.setLayoutY(340.0*hauteur);
+        bouton1.setMnemonicParsing(false);
+        bouton1.setPrefHeight(31.0*hauteur);
+        bouton1.setPrefWidth(200.0*largeur);
+        bouton1.setText("Imprimer horaire");
+        bouton1.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        bouton1.setOnAction(new EventHandler<ActionEvent>() 
         {
         	public void handle(ActionEvent event) 
         	{
@@ -365,16 +365,16 @@ class FResultatsHoraires extends Ecran
         	}
         });
 
-        vBox.getChildren().addAll(text, text0, text1, text2, text3, text4);
-        vBox0.getChildren().addAll(text5, text6, text7, text8, text9, text10);
-        vBox1.getChildren().addAll(text11, text12, text13, text14, text15, text16);
-        vBox2.getChildren().addAll(text23, text18, text19, text20, text21, text22);
+        vBox.getChildren().addAll(texte, texte0, texte1, texte2, texte3, texte4);
+        vBox0.getChildren().addAll(texte5, texte6, texte7, texte8, texte9, texte10);
+        vBox1.getChildren().addAll(texte11, texte12, texte13, texte14, texte15, texte16);
+        vBox2.getChildren().addAll(texte23, texte18, texte19, texte20, texte21, texte22);
         hBox.getChildren().addAll(vBox, vBox0, vBox1, vBox2);
-        getChildren().addAll(rectangle, hBox, text17, button, button0, button1);
+        getChildren().addAll(rectangle, hBox, texte17, bouton, bouton0, bouton1);
         
-        button.setFocusTraversable(false);
-        button0.setFocusTraversable(false);
-        button1.setFocusTraversable(false);
+        bouton.setFocusTraversable(false);
+        bouton0.setFocusTraversable(false);
+        bouton1.setFocusTraversable(false);
     }
 
 	public void actionRetour() 

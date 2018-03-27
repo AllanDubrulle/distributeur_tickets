@@ -13,22 +13,22 @@ class FRecapPass10Trajets extends Ecran
     public FRecapPass10Trajets(String nom, int classe, String reduction, String type, double prix, double hauteur, double largeur) 
     {
         Rectangle rectangle = new Rectangle();
-        Text text = new Text();// A FAIRE VICTOR
+        Text texte = new Text();
         VBox vBox = new VBox();
         HBox hBox0 = new HBox();
-        Text text0 = new Text();
-        Text text1 = new Text();
+        Text texte0 = new Text();
+        Text texte1 = new Text();
         HBox hBox1 = new HBox();
-        Text text2 = new Text();
-        Text text3 = new Text();
+        Text texte2 = new Text();
+        Text texte3 = new Text();
         HBox hBox2 = new HBox();
-        Text text4 = new Text();
-        Text text5 = new Text();
+        Text texte4 = new Text();
+        Text texte5 = new Text();
         HBox hBox3 = new HBox();
-        Text text6 = new Text();
-        Text text7 = new Text();
-        Button button = new Button();
-        Button button0 = new Button();
+        Text texte6 = new Text();
+        Text texte7 = new Text();
+        Button bouton = new Button();
+        Button bouton0 = new Button();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -45,14 +45,14 @@ class FRecapPass10Trajets extends Ecran
         rectangle.setStrokeType(javafx.scene.shape.StrokeType.INSIDE);
         rectangle.setWidth(800.0*largeur);
 
-        text.setFontSmoothingType(javafx.scene.text.FontSmoothingType.LCD);
-        text.setLayoutX(54.0*largeur);
-        text.setLayoutY(86.0*hauteur);
-        text.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text.setStrokeWidth(0.0);
-        text.setText("Achat d'un pass dix trajets sans gares prédéfinies (récapitulatif de commande)");
-        text.setUnderline(true);
-        text.setFont(new Font("System Bold", 20.0*hauteur));
+        texte.setFontSmoothingType(javafx.scene.text.FontSmoothingType.LCD);
+        texte.setLayoutX(54.0*largeur);
+        texte.setLayoutY(86.0*hauteur);
+        texte.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte.setStrokeWidth(0.0);
+        texte.setText("Achat d'un pass dix trajets sans gares predefinies (recapitulatif de commande)");
+        texte.setUnderline(true);
+        texte.setFont(new Font("System Bold", 20.0*hauteur));
 
         vBox.setLayoutX(78.0*largeur);
         vBox.setLayoutY(129.0*hauteur);
@@ -62,84 +62,84 @@ class FRecapPass10Trajets extends Ecran
         hBox0.setPrefHeight(12.0*hauteur);
         hBox0.setPrefWidth(711.0*largeur);
 
-        text0.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text0.setStrokeWidth(0.0);
-        text0.setText("Nom : ");
-        text0.setWrappingWidth(180.0*largeur);
-        text0.setFont(new Font(15.0*hauteur));
-        HBox.setMargin(text0, new Insets(0.0));
+        texte0.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte0.setStrokeWidth(0.0);
+        texte0.setText("Nom : ");
+        texte0.setWrappingWidth(180.0*largeur);
+        texte0.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(texte0, new Insets(0.0));
 
-        text1.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text1.setStrokeWidth(0.0);
-        text1.setText(nom.toUpperCase());
-        text1.setWrappingWidth(200.0*largeur);
-        HBox.setMargin(text1, new Insets(0.0, 0.0, 0.0, 20.0*largeur));
-        text1.setFont(new Font("System Bold Italic", 15.0*hauteur));
+        texte1.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte1.setStrokeWidth(0.0);
+        texte1.setText(nom.toUpperCase());
+        texte1.setWrappingWidth(200.0*largeur);
+        HBox.setMargin(texte1, new Insets(0.0, 0.0, 0.0, 20.0*largeur));
+        texte1.setFont(new Font("System Bold Italic", 15.0*hauteur));
         VBox.setMargin(hBox0, new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
 
         hBox1.setPrefHeight(17.0*hauteur);
         hBox1.setPrefWidth(244.0*largeur);
 
-        text2.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text2.setStrokeWidth(0.0);
-        text2.setText("Classe :");
-        text2.setWrappingWidth(180.0*largeur);
-        text2.setFont(new Font(15.0*hauteur));
-        HBox.setMargin(text2, new Insets(0.0, 20.0*largeur, 0.0, 0.0));
+        texte2.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte2.setStrokeWidth(0.0);
+        texte2.setText("Classe :");
+        texte2.setWrappingWidth(180.0*largeur);
+        texte2.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(texte2, new Insets(0.0, 20.0*largeur, 0.0, 0.0));
 
-        text3.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text3.setStrokeWidth(0.0);
-        text3.setText(classe + "e classe");
-        text3.setWrappingWidth(200.0*largeur);
-        text3.setFont(new Font("System Bold Italic", 15.0*hauteur));
-        HBox.setMargin(text3, new Insets(0.0));
+        texte3.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte3.setStrokeWidth(0.0);
+        texte3.setText(classe + "e classe");
+        texte3.setWrappingWidth(200.0*largeur);
+        texte3.setFont(new Font("System Bold Italic", 15.0*hauteur));
+        HBox.setMargin(texte3, new Insets(0.0));
         hBox1.setPadding(new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
 
         hBox2.setPrefHeight(17.0*hauteur);
         hBox2.setPrefWidth(244.0*largeur);
 
-        text4.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text4.setStrokeWidth(0.0);
-        text4.setText("Réduction :");
-        text4.setWrappingWidth(180.0*largeur);
-        text4.setFont(new Font(15.0*hauteur));
-        HBox.setMargin(text4, new Insets(0.0));
+        texte4.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte4.setStrokeWidth(0.0);
+        texte4.setText("Reduction :");
+        texte4.setWrappingWidth(180.0*largeur);
+        texte4.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(texte4, new Insets(0.0));
 
-        text5.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text5.setStrokeWidth(0.0);
-        text5.setText(reduction);
-        text5.setWrappingWidth(200.0*largeur);
-        text5.setFont(new Font("System Bold Italic", 15.0*hauteur));
-        HBox.setMargin(text5, new Insets(0.0, 0.0, 0.0, 20.0*largeur));
+        texte5.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte5.setStrokeWidth(0.0);
+        texte5.setText(reduction);
+        texte5.setWrappingWidth(200.0*largeur);
+        texte5.setFont(new Font("System Bold Italic", 15.0*hauteur));
+        HBox.setMargin(texte5, new Insets(0.0, 0.0, 0.0, 20.0*largeur));
         hBox2.setPadding(new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
 
         hBox3.setPrefHeight(17.0*hauteur);
         hBox3.setPrefWidth(244.0*largeur);
 
-        text6.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text6.setStrokeWidth(0.0);
-        text6.setText("Prix :");
-        text6.setWrappingWidth(180.0*largeur);
-        text6.setFont(new Font(15.0*hauteur));
-        HBox.setMargin(text6, new Insets(0.0));
+        texte6.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte6.setStrokeWidth(0.0);
+        texte6.setText("Prix :");
+        texte6.setWrappingWidth(180.0*largeur);
+        texte6.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(texte6, new Insets(0.0));
 
-        text7.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text7.setStrokeWidth(0.0);
-        text7.setText(prix + " €");
-        text7.setWrappingWidth(200.0*largeur);
-        text7.setFont(new Font("System Bold Italic", 15.0*hauteur));
-        HBox.setMargin(text7, new Insets(0.0, 0.0, 0.0, 20.0*largeur));
+        texte7.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte7.setStrokeWidth(0.0);
+        texte7.setText(prix + " eur");
+        texte7.setWrappingWidth(200.0*largeur);
+        texte7.setFont(new Font("System Bold Italic", 15.0*hauteur));
+        HBox.setMargin(texte7, new Insets(0.0, 0.0, 0.0, 20.0*largeur));
         hBox3.setPadding(new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
 
-        button.setLayoutX(23.0*largeur);
-        button.setLayoutY(354.0*hauteur);
-        button.setMnemonicParsing(false);
-        button.setPrefHeight(31.0*hauteur);
-        button.setPrefWidth(75.0*largeur);
-        button.setText("Retour");
-        button.setFont(new Font(15.0*hauteur));
-        button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button.setOnAction(new EventHandler<ActionEvent>() 
+        bouton.setLayoutX(23.0*largeur);
+        bouton.setLayoutY(354.0*hauteur);
+        bouton.setMnemonicParsing(false);
+        bouton.setPrefHeight(31.0*hauteur);
+        bouton.setPrefWidth(75.0*largeur);
+        bouton.setText("Retour");
+        bouton.setFont(new Font(15.0*hauteur));
+        bouton.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        bouton.setOnAction(new EventHandler<ActionEvent>() 
         {
         	public void handle(ActionEvent event) 
         	{
@@ -148,15 +148,15 @@ class FRecapPass10Trajets extends Ecran
         	}
         });
 
-        button0.setLayoutX(679.0*largeur);
-        button0.setLayoutY(354.0*hauteur);
-        button0.setMnemonicParsing(false);
-        button0.setPrefHeight(31.0*hauteur);
-        button0.setPrefWidth(100.0*largeur);
-        button0.setText("Paiement");
-        button0.setFont(new Font(15.0*hauteur));
-        button0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button0.setOnAction(new EventHandler<ActionEvent>() 
+        bouton0.setLayoutX(679.0*largeur);
+        bouton0.setLayoutY(354.0*hauteur);
+        bouton0.setMnemonicParsing(false);
+        bouton0.setPrefHeight(31.0*hauteur);
+        bouton0.setPrefWidth(100.0*largeur);
+        bouton0.setText("Paiement");
+        bouton0.setFont(new Font(15.0*hauteur));
+        bouton0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        bouton0.setOnAction(new EventHandler<ActionEvent>() 
         {
         	public void handle(ActionEvent event) 
         	{
@@ -165,15 +165,15 @@ class FRecapPass10Trajets extends Ecran
         	}
         });
 
-        hBox0.getChildren().addAll(text0, text1);
-        hBox1.getChildren().addAll(text2, text3);
-        hBox2.getChildren().addAll(text4, text5);
-        hBox3.getChildren().addAll(text6, text7);
+        hBox0.getChildren().addAll(texte0, texte1);
+        hBox1.getChildren().addAll(texte2, texte3);
+        hBox2.getChildren().addAll(texte4, texte5);
+        hBox3.getChildren().addAll(texte6, texte7);
         vBox.getChildren().addAll(hBox0, hBox1, hBox2, hBox3);
-        getChildren().addAll(rectangle, text, vBox, button, button0);
+        getChildren().addAll(rectangle, texte, vBox, bouton, bouton0);
         
-        button.setFocusTraversable(false);
-        button0.setFocusTraversable(false);
+        bouton.setFocusTraversable(false);
+        bouton0.setFocusTraversable(false);
     }
 
 	public void actionRetour() 

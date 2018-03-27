@@ -11,9 +11,9 @@ class FDemandeRecu extends Ecran
     public FDemandeRecu(double hauteur, double largeur) 
     {
         Rectangle rectangle = new Rectangle();
-        Text text = new Text();
-        Button button = new Button();
-        Button button0 = new Button();
+        Text texte = new Text();
+        Button bouton = new Button();
+        Button bouton0 = new Button();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -30,22 +30,22 @@ class FDemandeRecu extends Ecran
         rectangle.setStrokeType(javafx.scene.shape.StrokeType.INSIDE);
         rectangle.setWidth(800.0*largeur);
 
-        text.setLayoutX(60.0*largeur);
-        text.setLayoutY(100.0*hauteur);
-        text.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text.setStrokeWidth(0.0);
-        text.setText("Souhaitez-vous un reçu ?");
-        text.setFont(new Font("System Bold", 22.0*hauteur));
+        texte.setLayoutX(60.0*largeur);
+        texte.setLayoutY(100.0*hauteur);
+        texte.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte.setStrokeWidth(0.0);
+        texte.setText("Souhaitez-vous un recu ?");
+        texte.setFont(new Font("System Bold", 22.0*hauteur));
 
-        button.setLayoutX(575.0*largeur);
-        button.setLayoutY(200.0*hauteur);
-        button.setMnemonicParsing(false);
-        button.setPrefHeight(31.0*hauteur);
-        button.setPrefWidth(75.0*largeur);
-        button.setText("Non");
-        button.setFont(new Font(15.0*hauteur));
-        button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button.setOnAction(new EventHandler<ActionEvent>()
+        bouton.setLayoutX(575.0*largeur);
+        bouton.setLayoutY(200.0*hauteur);
+        bouton.setMnemonicParsing(false);
+        bouton.setPrefHeight(31.0*hauteur);
+        bouton.setPrefWidth(75.0*largeur);
+        bouton.setText("Non");
+        bouton.setFont(new Font(15.0*hauteur));
+        bouton.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        bouton.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -54,15 +54,15 @@ class FDemandeRecu extends Ecran
             }
         });
 
-        button0.setLayoutX(150.0*largeur);
-        button0.setLayoutY(200.0*hauteur);
-        button0.setMnemonicParsing(false);
-        button0.setPrefHeight(31.0*hauteur);
-        button0.setPrefWidth(75.0*largeur);
-        button0.setText("Oui");
-        button0.setFont(new Font(15.0*hauteur));
-        button0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button0.setOnAction(new EventHandler<ActionEvent>()
+        bouton0.setLayoutX(150.0*largeur);
+        bouton0.setLayoutY(200.0*hauteur);
+        bouton0.setMnemonicParsing(false);
+        bouton0.setPrefHeight(31.0*hauteur);
+        bouton0.setPrefWidth(75.0*largeur);
+        bouton0.setText("Oui");
+        bouton0.setFont(new Font(15.0*hauteur));
+        bouton0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        bouton0.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -71,7 +71,7 @@ class FDemandeRecu extends Ecran
             }
         });
 
-        getChildren().addAll(rectangle, text, button, button0);
+        getChildren().addAll(rectangle, texte, bouton, bouton0);
     }
 
 	public void actionClavier(int a) 

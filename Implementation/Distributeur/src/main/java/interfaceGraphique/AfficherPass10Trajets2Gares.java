@@ -16,7 +16,7 @@ class AfficherPass10Trajets2Gares extends Pane
         HBox boxHor4 = new HBox();
         HBox boxHor5 = new HBox();
         HBox boxHor6 = new HBox();
-        HBox boxHox7 = new HBox();
+        HBox boxHor7 = new HBox();
         HBox boxHor8 = new HBox();
         HBox boxHor9 = new HBox();
         HBox boxHor10 = new HBox();
@@ -39,7 +39,6 @@ class AfficherPass10Trajets2Gares extends Pane
         Text texte12 = new Text();
         Text texte13 = new Text();
         Text texte14 = new Text();
-        HBox boxHor7 = new HBox();
         Text texte15 = new Text();
         Text texte16 = new Text();
         Text texte17 = new Text();

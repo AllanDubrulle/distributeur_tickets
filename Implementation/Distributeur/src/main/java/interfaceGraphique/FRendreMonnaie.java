@@ -11,8 +11,8 @@ class FRendreMonnaie extends Pane
 {    
     public FRendreMonnaie() 
     {
-        Text text = new Text();
-        Button button = new Button();
+        Text texte = new Text();
+        Button bouton = new Button();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -21,23 +21,23 @@ class FRendreMonnaie extends Pane
         setPrefHeight(200.0);
         setPrefWidth(400.0);
 
-        text.setLayoutX(90.0);
-        text.setLayoutY(66.0);
-        text.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text.setStrokeWidth(0.0);
-        text.setText("Veuillez récuperer l'argent dans le bac de réception.");
-        text.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        text.setWrappingWidth(220.841796875);
-        text.setFont(new Font("System Italic", 18.0));
+        texte.setLayoutX(90.0);
+        texte.setLayoutY(66.0);
+        texte.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte.setStrokeWidth(0.0);
+        texte.setText("Veuillez recuperer l'argent dans le bac de reception.");
+        texte.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        texte.setWrappingWidth(220.841796875);
+        texte.setFont(new Font("System Italic", 18.0));
 
-        button.setLayoutX(163.0);
-        button.setLayoutY(147.0);
-        button.setMnemonicParsing(false);
-        button.setPrefHeight(31.0);
-        button.setPrefWidth(75.0);
-        button.setText("Ok");
-        button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button.setOnAction(new EventHandler<ActionEvent>()
+        bouton.setLayoutX(163.0);
+        bouton.setLayoutY(147.0);
+        bouton.setMnemonicParsing(false);
+        bouton.setPrefHeight(31.0);
+        bouton.setPrefWidth(75.0);
+        bouton.setText("Ok");
+        bouton.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        bouton.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -45,8 +45,8 @@ class FRendreMonnaie extends Pane
             }
         });
 
-        getChildren().addAll(text, button);
+        getChildren().addAll(texte, bouton);
         
-        button.setFocusTraversable(false);
+        bouton.setFocusTraversable(false);
     }
 }

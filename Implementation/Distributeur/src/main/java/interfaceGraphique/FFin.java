@@ -13,7 +13,7 @@ class FFin extends Ecran
     public FFin(double hauteur, double largeur) 
     {
         Rectangle rectangle = new Rectangle();
-        Button button = new Button();
+        Button bouton = new Button();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -30,13 +30,13 @@ class FFin extends Ecran
         rectangle.setStrokeType(javafx.scene.shape.StrokeType.INSIDE);
         rectangle.setWidth(800.0*largeur);
 
-        button.setLayoutX(287.0*largeur);
-        button.setLayoutY(181.0*hauteur);
-        button.setMnemonicParsing(false);
-        button.setText("Revenir à l'écran principal");
-        button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button.setFont(new Font(18.0*hauteur));
-        button.setOnAction(new EventHandler<ActionEvent>()
+        bouton.setLayoutX(287.0*largeur);
+        bouton.setLayoutY(181.0*hauteur);
+        bouton.setMnemonicParsing(false);
+        bouton.setText("Revenir a l'ecran principal");
+        bouton.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        bouton.setFont(new Font(18.0*hauteur));
+        bouton.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -45,7 +45,7 @@ class FFin extends Ecran
             }
         });
 
-        getChildren().addAll(rectangle, button);
+        getChildren().addAll(rectangle, bouton);
         PauseTransition delais = new PauseTransition(Duration.seconds(15));
 		delais.setOnFinished( event -> apres15sec());
 		delais.play();

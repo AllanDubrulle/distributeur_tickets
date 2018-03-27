@@ -14,7 +14,7 @@ class FAfficherMessage extends Ecran
     public FAfficherMessage(String message, double hauteur, double largeur) 
     {
         Rectangle rectangle = new Rectangle();
-        Text text = new Text();
+        Text texte = new Text();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -31,16 +31,16 @@ class FAfficherMessage extends Ecran
         rectangle.setStrokeType(javafx.scene.shape.StrokeType.INSIDE);
         rectangle.setWidth(800.0*largeur);
 
-        text.setLayoutX(284.0*largeur);
-        text.setLayoutY(193.0*hauteur);
-        text.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text.setStrokeWidth(0.0);
-        text.setText(message);
-        text.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        text.setWrappingWidth(232.0*largeur);
-        text.setFont(new Font("System Italic", 18.0*hauteur));
+        texte.setLayoutX(284.0*largeur);
+        texte.setLayoutY(193.0*hauteur);
+        texte.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte.setStrokeWidth(0.0);
+        texte.setText(message);
+        texte.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        texte.setWrappingWidth(232.0*largeur);
+        texte.setFont(new Font("System Italic", 18.0*hauteur));
 
-        getChildren().addAll(rectangle, text);
+        getChildren().addAll(rectangle, texte);
         
         if (message.equals("Plus de papier en reserve") ||message.equals("Impression ...") || message.equals("Probleme technique. Veuillez prendre contact avec un technicien pour tout remboursement.") || message.equals("Probleme d'imprimante"))
         {

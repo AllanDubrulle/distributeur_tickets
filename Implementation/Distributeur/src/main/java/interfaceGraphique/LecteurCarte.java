@@ -12,7 +12,7 @@ import javafx.scene.layout.*;
 
 class LecteurCarte extends Pane 
 {
-	private PasswordField champDeMDP;
+	private PasswordField zoneDeMDP;
 	private Button bouton, bouton0, bouton1, bouton2, bouton3, bouton4, bouton5, bouton6, bouton7, bouton8, bouton9, bouton10, bouton11;
 	private GraphiqueACoeur graphAC = GraphiqueACoeurImpl.getInstance();
 	
@@ -22,7 +22,7 @@ class LecteurCarte extends Pane
 	{
         Rectangle rectangle = new Rectangle();
         VBox vBox = new VBox();
-        champDeMDP = new PasswordField();
+        zoneDeMDP = new PasswordField();
         HBox hBox = new HBox();
         bouton = new Button();
         bouton0 = new Button();
@@ -55,8 +55,8 @@ class LecteurCarte extends Pane
         vBox.setPrefHeight(250.0*hauteur);
         vBox.setPrefWidth(200.0*largeur);
 
-        VBox.setMargin(champDeMDP, new Insets(10.0*hauteur, 20.0*largeur, 10.0*hauteur, 20.0*largeur));
-        champDeMDP.setFont(new Font(15.0*hauteur));
+        VBox.setMargin(zoneDeMDP, new Insets(10.0*hauteur, 20.0*largeur, 10.0*hauteur, 20.0*largeur));
+        zoneDeMDP.setFont(new Font(15.0*hauteur));
         
 
         hBox.setPrefHeight(37.0*hauteur);
@@ -250,7 +250,7 @@ class LecteurCarte extends Pane
             {
             	try
             	{
-            		graphAC.choixLecteurOK(Integer.parseInt(champDeMDP.getText()));
+            		graphAC.choixLecteurOK(Integer.parseInt(zoneDeMDP.getText()));
             	}
             	catch(NumberFormatException e) {}  // catch vide ??
             }
@@ -259,7 +259,7 @@ class LecteurCarte extends Pane
         bouton11.setMnemonicParsing(false);
         bouton11.setPrefHeight(31.0*hauteur);
         bouton11.setPrefWidth(140.0*largeur);
-        bouton11.setText("Insérer/Retirer carte");
+        bouton11.setText("Inserer/Retirer carte");
         bouton11.setFont(new Font(15.0*hauteur));
         bouton11.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         VBox.setMargin(bouton11, new Insets(0.0, 0.0, 0.0, 26.0*largeur));
@@ -270,14 +270,14 @@ class LecteurCarte extends Pane
             	graphAC.choixLecteurInsererRetirer();
             }
         });
-        champDeMDP.setDisable(true);
-        champDeMDP.setOnMousePressed(e -> {champDeMDP.clear();});
+        zoneDeMDP.setDisable(true);
+        zoneDeMDP.setOnMousePressed(e -> {zoneDeMDP.clear();});
         
         hBox.getChildren().addAll(bouton, bouton0, bouton1);
         hBox0.getChildren().addAll(bouton2, bouton3, bouton4);
         hBox1.getChildren().addAll(bouton5, bouton6, bouton7);
         hBox2.getChildren().addAll(bouton8, bouton9, bouton10);
-        vBox.getChildren().addAll(champDeMDP, hBox, hBox0, hBox1, hBox2, bouton11);
+        vBox.getChildren().addAll(zoneDeMDP, hBox, hBox0, hBox1, hBox2, bouton11);
         getChildren().addAll(rectangle, vBox);
         
         bouton.setFocusTraversable(false);
@@ -293,7 +293,7 @@ class LecteurCarte extends Pane
         bouton9.setFocusTraversable(false);
         bouton10.setFocusTraversable(false);
         bouton11.setFocusTraversable(false);
-        champDeMDP.setFocusTraversable(false);
+        zoneDeMDP.setFocusTraversable(false);
     }
 	
 	public Button getBouton(int i)
@@ -328,7 +328,7 @@ class LecteurCarte extends Pane
 	
 	public PasswordField getMDP()
 	{
-		return champDeMDP;
+		return zoneDeMDP;
 	}
 	
 	public void setFenetre(Ecran fen)

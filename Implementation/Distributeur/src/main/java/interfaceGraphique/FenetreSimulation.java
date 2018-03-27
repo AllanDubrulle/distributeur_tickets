@@ -17,14 +17,14 @@ import javafx.event.EventHandler;
 
 class FenetreSimulation extends BorderPane 
 {
-    private Pane pane;
+    private Pane panneau;
     private VBox claRe = new VBox();
     private VBox fentes = new VBox();
     private VBox scanLect = new VBox();
     private Ecran fenetre;
-    private CheckMenuItem checkMenuItem, checkMenuItem0, checkMenuItem1, checkMenuItem2, checkMenuItem3, checkMenuItem4, checkMenuItem5; 
-    private RadioMenuItem checkMenuItem6, checkMenuItem7, checkMenuItem8, checkMenuItem9, checkMenuItem10, checkMenuItem11;
-    private MenuItem menuItem, menuItem0, menuItem1, menuItem2;
+    private CheckMenuItem menuACocher, menuACocher0, menuACocher1, menuACocher2, menuACocher3, menuACocher4, menuACocher5; 
+    private RadioMenuItem menuACocher6, menuACocher7, menuACocher8, menuACocher9, menuACocher10, menuACocher11;
+    private MenuItem elementACocher, elementACocher0, elementACocher1, elementACocher2;
     
     private static FenetreSimulation instance;
     
@@ -49,39 +49,39 @@ class FenetreSimulation extends BorderPane
     	fentePiece = new FentePiece(rapportHauteur, rapportLargeur);
     	scanneur = new Scanneur(rapportHauteur, rapportLargeur);
     	
-    	pane = new Pane();
-        MenuBar menuBar = new MenuBar();
+    	panneau = new Pane();
+        MenuBar barreMenu = new MenuBar();
         Menu menu = new Menu();
-        checkMenuItem = new CheckMenuItem();
-        checkMenuItem0 = new CheckMenuItem();
-        checkMenuItem1 = new CheckMenuItem();
-        checkMenuItem2 = new CheckMenuItem();
-        checkMenuItem3 = new CheckMenuItem();
-        checkMenuItem4 = new CheckMenuItem();
+        menuACocher = new CheckMenuItem();
+        menuACocher0 = new CheckMenuItem();
+        menuACocher1 = new CheckMenuItem();
+        menuACocher2 = new CheckMenuItem();
+        menuACocher3 = new CheckMenuItem();
+        menuACocher4 = new CheckMenuItem();
         Menu menu0 = new Menu();
-        menuItem = new MenuItem();
-        menuItem0 = new MenuItem();
+        elementACocher = new MenuItem();
+        elementACocher0 = new MenuItem();
         Menu menu1 = new Menu();
-        menuItem1 = new MenuItem();
-        menuItem2 = new MenuItem();
+        elementACocher1 = new MenuItem();
+        elementACocher2 = new MenuItem();
         Menu menu2 = new Menu();
-        checkMenuItem5 = new CheckMenuItem();
+        menuACocher5 = new CheckMenuItem();
         Menu menu3 = new Menu();
-        checkMenuItem6 = new RadioMenuItem();
-        checkMenuItem7 = new RadioMenuItem();
-        checkMenuItem8 = new RadioMenuItem();
+        menuACocher6 = new RadioMenuItem();
+        menuACocher7 = new RadioMenuItem();
+        menuACocher8 = new RadioMenuItem();
         Menu menu4 = new Menu();
-        checkMenuItem9 = new RadioMenuItem();
-        checkMenuItem10 = new RadioMenuItem();
-        checkMenuItem11 = new RadioMenuItem();
+        menuACocher9 = new RadioMenuItem();
+        menuACocher10 = new RadioMenuItem();
+        menuACocher11 = new RadioMenuItem();
         EcranContour contour = EcranContour.getInstance();
 
-        setAlignment(pane, javafx.geometry.Pos.CENTER);
-        pane.setPrefHeight(39.0*rapportHauteur);
-        pane.setPrefWidth(1350.0*rapportLargeur);
+        setAlignment(panneau, javafx.geometry.Pos.CENTER);
+        panneau.setPrefHeight(39.0*rapportHauteur);
+        panneau.setPrefWidth(1350.0*rapportLargeur);
         
-        menuBar.setMaxHeight(32.0*rapportHauteur);
-        menuBar.setMaxWidth(350.0*rapportLargeur);;
+        barreMenu.setMaxHeight(32.0*rapportHauteur);
+        barreMenu.setMaxWidth(350.0*rapportLargeur);;
         
         afficher(new FSimulationAcceuil(rapportHauteur, rapportLargeur));
 
@@ -95,50 +95,50 @@ class FenetreSimulation extends BorderPane
         menu.setMnemonicParsing(false);
         menu.setText("Pannes");
 
-        checkMenuItem.setMnemonicParsing(false);
-        checkMenuItem.setText("Lecteur de cartes");
-        checkMenuItem.setOnAction(new EventHandler<ActionEvent>() {
+        menuACocher.setMnemonicParsing(false);
+        menuACocher.setText("Lecteur de cartes");
+        menuACocher.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
             	fenetre.graphAC.actualiserPanne(Composant.LECTEURCARTE);
             }
         });
 
-        checkMenuItem0.setMnemonicParsing(false);
-        checkMenuItem0.setText("Fente à  billets");
-        checkMenuItem0.setOnAction(new EventHandler<ActionEvent>() {
+        menuACocher0.setMnemonicParsing(false);
+        menuACocher0.setText("Fente a billets");
+        menuACocher0.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
             	
             	fenetre.graphAC.actualiserPanne(Composant.FENTEBILLET);
             }
         });
 
-        checkMenuItem1.setMnemonicParsing(false);
-        checkMenuItem1.setText("Fente à  pièces");
-        checkMenuItem1.setOnAction(new EventHandler<ActionEvent>() {
+        menuACocher1.setMnemonicParsing(false);
+        menuACocher1.setText("Fente a  pieces");
+        menuACocher1.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
             	fenetre.graphAC.actualiserPanne(Composant.FENTEPIECE);
             }
         });
 
-        checkMenuItem2.setMnemonicParsing(false);
-        checkMenuItem2.setText("Scanneur de codes");
-        checkMenuItem2.setOnAction(new EventHandler<ActionEvent>() {
+        menuACocher2.setMnemonicParsing(false);
+        menuACocher2.setText("Scanneur de codes");
+        menuACocher2.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
             	fenetre.graphAC.actualiserPanne(Composant.SCANNEUR);
             }
         });
 
-        checkMenuItem3.setMnemonicParsing(false);
-        checkMenuItem3.setText("Bloquer la carte");
-        checkMenuItem3.setOnAction(new EventHandler<ActionEvent>() {
+        menuACocher3.setMnemonicParsing(false);
+        menuACocher3.setText("Bloquer la carte");
+        menuACocher3.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
             	fenetre.graphAC.bloquerCarte();
             }
         });
 
-        checkMenuItem4.setMnemonicParsing(false);
-        checkMenuItem4.setText("Imprimante");
-        checkMenuItem4.setOnAction(new EventHandler<ActionEvent>() {
+        menuACocher4.setMnemonicParsing(false);
+        menuACocher4.setText("Imprimante");
+        menuACocher4.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
             	fenetre.graphAC.actualiserPanne(Composant.IMPRIMANTE);
             }
@@ -147,17 +147,17 @@ class FenetreSimulation extends BorderPane
         menu0.setMnemonicParsing(false);
         menu0.setText("Caisse");
 
-        menuItem.setMnemonicParsing(false);
-        menuItem.setText("Recharger caisse");
-        menuItem.setOnAction(new EventHandler<ActionEvent>() {
+        elementACocher.setMnemonicParsing(false);
+        elementACocher.setText("Recharger caisse");
+        elementACocher.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
             	fenetre.graphAC.rechargerCaisse();
             }
         });
 
-        menuItem0.setMnemonicParsing(false);
-        menuItem0.setText("Vider caisse");
-        menuItem0.setOnAction(new EventHandler<ActionEvent>() {
+        elementACocher0.setMnemonicParsing(false);
+        elementACocher0.setText("Vider caisse");
+        elementACocher0.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
             	fenetre.graphAC.viderCaisse();
             }
@@ -167,18 +167,18 @@ class FenetreSimulation extends BorderPane
         menu1.setMnemonicParsing(false);
         menu1.setText("Impression");
 
-        menuItem1.setMnemonicParsing(false);
-        menuItem1.setText("Recharger encre et papier");
-        menuItem1.setOnAction(new EventHandler<ActionEvent>() {
+        elementACocher1.setMnemonicParsing(false);
+        elementACocher1.setText("Recharger encre et papier");
+        elementACocher1.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
             	fenetre.graphAC.rechargerEncreEtPapier();
             }
         });
        
 
-        menuItem2.setMnemonicParsing(false);
-        menuItem2.setText("Vider encre et papier");
-        menuItem2.setOnAction(new EventHandler<ActionEvent>() {
+        elementACocher2.setMnemonicParsing(false);
+        elementACocher2.setText("Vider encre et papier");
+        elementACocher2.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
             	fenetre.graphAC.viderEncreEtPapier();
             }
@@ -187,9 +187,9 @@ class FenetreSimulation extends BorderPane
         menu2.setMnemonicParsing(false);
         menu2.setText("Composants optionnels");
 
-        checkMenuItem5.setMnemonicParsing(false);
-        checkMenuItem5.setText("Scanneur de codes");
-        checkMenuItem5.setOnAction(new EventHandler<ActionEvent>() {
+        menuACocher5.setMnemonicParsing(false);
+        menuACocher5.setText("Scanneur de codes");
+        menuACocher5.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
             	mAJComposants();
             }
@@ -198,83 +198,83 @@ class FenetreSimulation extends BorderPane
         menu3.setMnemonicParsing(false);
         menu3.setText("Fentes");
 
-        checkMenuItem6.setMnemonicParsing(false);
-        checkMenuItem6.setText("Fentes à pièces et à billets");
-        checkMenuItem6.setOnAction(new EventHandler<ActionEvent>() {
+        menuACocher6.setMnemonicParsing(false);
+        menuACocher6.setText("Fentes a pieces et a billets");
+        menuACocher6.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
             	mAJComposants();
             }
         });
 
-        checkMenuItem7.setMnemonicParsing(false);
-        checkMenuItem7.setText("Fente à pièces uniquement");
-        checkMenuItem7.setOnAction(new EventHandler<ActionEvent>() {
+        menuACocher7.setMnemonicParsing(false);
+        menuACocher7.setText("Fente a pieces uniquement");
+        menuACocher7.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
             	mAJComposants();
             }
         });
 
-        checkMenuItem8.setMnemonicParsing(false);
-        checkMenuItem8.setText("Aucune fente");
-        checkMenuItem8.setOnAction(new EventHandler<ActionEvent>() {
+        menuACocher8.setMnemonicParsing(false);
+        menuACocher8.setText("Aucune fente");
+        menuACocher8.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
             	mAJComposants();
             }
         });
         
         ToggleGroup t1 = new ToggleGroup();
-        checkMenuItem6.setToggleGroup(t1);
-        checkMenuItem7.setToggleGroup(t1);
-        checkMenuItem8.setToggleGroup(t1);
+        menuACocher6.setToggleGroup(t1);
+        menuACocher7.setToggleGroup(t1);
+        menuACocher8.setToggleGroup(t1);
 
         menu4.setMnemonicParsing(false);
-        menu4.setText("Clavier et écran");
-        checkMenuItem9.setMnemonicParsing(false);
-        checkMenuItem9.setText("Clavier et écran tactile");
-        checkMenuItem9.setOnAction(new EventHandler<ActionEvent>() {
+        menu4.setText("Clavier et ecran");
+        menuACocher9.setMnemonicParsing(false);
+        menuACocher9.setText("Clavier et ecran tactile");
+        menuACocher9.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
             	mAJComposants();
             	fenetre.mettreToutAJour();
             }
         });
 
-        checkMenuItem10.setMnemonicParsing(false);
-        checkMenuItem10.setText("Clavier et écran non tactile");
-        checkMenuItem10.setOnAction(new EventHandler<ActionEvent>() {
+        menuACocher10.setMnemonicParsing(false);
+        menuACocher10.setText("Clavier et ecran non tactile");
+        menuACocher10.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
             	mAJComposants();
             	fenetre.mettreToutAJour();
             }
         });
 
-        checkMenuItem11.setMnemonicParsing(false);
-        checkMenuItem11.setText("Ecran tacile sans clavier");
-        checkMenuItem11.setOnAction(new EventHandler<ActionEvent>() {
+        menuACocher11.setMnemonicParsing(false);
+        menuACocher11.setText("Ecran tactile sans clavier");
+        menuACocher11.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
             	mAJComposants();
             	fenetre.mettreToutAJour();
             }
         });
         
-        menuBar.setLayoutX(0.0);
-        menuBar.setLayoutY(0.0);
+        barreMenu.setLayoutX(0.0);
+        barreMenu.setLayoutY(0.0);
         
         ToggleGroup t = new ToggleGroup();
-        checkMenuItem9.setToggleGroup(t);
-        checkMenuItem10.setToggleGroup(t);
-        checkMenuItem11.setToggleGroup(t);
+        menuACocher9.setToggleGroup(t);
+        menuACocher10.setToggleGroup(t);
+        menuACocher11.setToggleGroup(t);
         
         contour.setLayoutX(259.0*rapportLargeur);
         contour.setLayoutY(75.0*rapportHauteur);
         
-        menu1.getItems().addAll(menuItem1, menuItem2);
-        menu0.getItems().addAll(menuItem, menuItem0);
-        menu.getItems().addAll(checkMenuItem, checkMenuItem0, checkMenuItem1, checkMenuItem2, checkMenuItem3, checkMenuItem4, menu0, menu1);
-        menu3.getItems().addAll(checkMenuItem6, checkMenuItem7, checkMenuItem8);
-        menu4.getItems().addAll(checkMenuItem9, checkMenuItem10, checkMenuItem11);
-        menu2.getItems().addAll(checkMenuItem5, menu3, menu4);
-        menuBar.getMenus().addAll(menu, menu2);
-        pane.getChildren().addAll(menuBar, contour);
+        menu1.getItems().addAll(elementACocher1, elementACocher2);
+        menu0.getItems().addAll(elementACocher, elementACocher0);
+        menu.getItems().addAll(menuACocher, menuACocher0, menuACocher1, menuACocher2, menuACocher3, menuACocher4, menu0, menu1);
+        menu3.getItems().addAll(menuACocher6, menuACocher7, menuACocher8);
+        menu4.getItems().addAll(menuACocher9, menuACocher10, menuACocher11);
+        menu2.getItems().addAll(menuACocher5, menu3, menu4);
+        barreMenu.getMenus().addAll(menu, menu2);
+        panneau.getChildren().addAll(barreMenu, contour);
     }
 	
     public static FenetreSimulation getInstance() 
@@ -289,38 +289,38 @@ class FenetreSimulation extends BorderPane
 		this.fenetre = fen; 
         fenetre.setLayoutX(284.0*rapportLargeur);
         fenetre.setLayoutY(100.0*rapportHauteur);
-		getChildren().setAll(pane, fenetre, claRe, fentes, scanLect);
+		getChildren().setAll(panneau, fenetre, claRe, fentes, scanLect);
 		clavier.setFenetre(fen);
 		lecteur.setFenetre(fen);
 	}
     
     public void setParametre()
     {
-    	checkMenuItem8.setSelected(true);
+    	menuACocher8.setSelected(true);
         if (FenetreConfiguration.getInstance().deuxFentes())
         {
-        	checkMenuItem6.setSelected(true);
+        	menuACocher6.setSelected(true);
         }
         else if (FenetreConfiguration.getInstance().fentePiece())
         {
-        	checkMenuItem7.setSelected(true);
+        	menuACocher7.setSelected(true);
         }
         
         if (FenetreConfiguration.getInstance().ecranEtClavier() ||  FenetreConfiguration.getInstance().clavierEtNonEcran())
         {
         	if (FenetreConfiguration.getInstance().clavierEtNonEcran())
-        		checkMenuItem10.setSelected(true);
+        		menuACocher10.setSelected(true);
         	else 
-        		checkMenuItem9.setSelected(true);
+        		menuACocher9.setSelected(true);
         }
         else if (FenetreConfiguration.getInstance().ecranEtNonClavier())
         {
-        	checkMenuItem11.setSelected(true);
+        	menuACocher11.setSelected(true);
         }
         
         if (FenetreConfiguration.getInstance().scanneur())
         {
-        	checkMenuItem5.setSelected(true);
+        	menuACocher5.setSelected(true);
         }      
         
         VBox.setMargin(clavier, new Insets(0.0, 0.0, 20.0*rapportHauteur, 182.5*rapportLargeur));
@@ -348,13 +348,13 @@ class FenetreSimulation extends BorderPane
 		GraphiqueACoeurImpl.getInstance().setScanneur(false);
 		GraphiqueACoeurImpl.getInstance().setFentes(false, false);
 		
-    	if(checkMenuItem6.isSelected())
+    	if(menuACocher6.isSelected())
     	{
     		fentes.getChildren().addAll(fenteBillet, fentePiece);
     		GraphiqueACoeurImpl.getInstance().setFentes(true, true);
     	}
     	
-    	if(checkMenuItem7.isSelected())
+    	if(menuACocher7.isSelected())
     	{
     		Text text = new Text();
             text.setFont(new Font(15.0*rapportHauteur));
@@ -362,24 +362,24 @@ class FenetreSimulation extends BorderPane
     		fentes.getChildren().addAll(text, fentePiece);
     		GraphiqueACoeurImpl.getInstance().setFentes(false, true);
     	}
-    	if (checkMenuItem8.isSelected())
+    	if (menuACocher8.isSelected())
     	{
     		GraphiqueACoeurImpl.getInstance().choixRetirerFentes();
     	}
     	
     	
-    	if(checkMenuItem9.isSelected())
+    	if(menuACocher9.isSelected())
     	{
     		claRe.getChildren().addAll(clavier,reception);
     		GraphiqueACoeurImpl.getInstance().mettreTactile(true);
     	}
-    	if(checkMenuItem10.isSelected())
+    	if(menuACocher10.isSelected())
     	{
     		claRe.getChildren().addAll(clavier, reception);
     		GraphiqueACoeurImpl.getInstance().mettreTactile(false);
     	}
     		
-    	if(checkMenuItem11.isSelected())
+    	if(menuACocher11.isSelected())
     	{
     		Text text = new Text();
             text.setFont(new Font(15.0*rapportHauteur));
@@ -387,47 +387,47 @@ class FenetreSimulation extends BorderPane
     		claRe.getChildren().addAll(text, reception);
     		GraphiqueACoeurImpl.getInstance().mettreTactile(true);
     	}
-    	if(!checkMenuItem5.isSelected())
+    	if(!menuACocher5.isSelected())
     	{
     		Text text = new Text();
             text.setFont(new Font(15.0*rapportHauteur));
             VBox.setMargin(text, new Insets(80.0*rapportHauteur, 0.0, 0.0, 0.0));
     		scanLect.getChildren().addAll(text, lecteur);
     	}
-    	if(checkMenuItem5.isSelected())
+    	if(menuACocher5.isSelected())
     	{
     		scanLect.getChildren().addAll( scanneur, lecteur);
     		GraphiqueACoeurImpl.getInstance().setScanneur(true);
     	}
-    	getChildren().setAll(pane, claRe, fentes, scanLect, fenetre); 		
+    	getChildren().setAll(panneau, claRe, fentes, scanLect, fenetre); 		
     }
     
     
     /*public void mAJScanneur()
     {
-    	if(checkMenuItem2.isSelected())
+    	if(menuACocher2.isSelected())
     		mettreEnPanneScanneur();
     	
-    	if(!checkMenuItem2.isDisable())
+    	if(!menuACocher2.isDisable())
     		remiseEnServiceScanneur();
     }*/
     
     
     public void mAJCarte()
     {
-    	if(checkMenuItem3.isSelected())
+    	if(menuACocher3.isSelected())
     		bloquerCarte();
     	
-    	if(!checkMenuItem3.isSelected())
+    	if(!menuACocher3.isSelected())
     		debloquerCarte();	
     }
     
     /*public void mAJImprimante()
     {
-    	if(checkMenuItem4.isSelected())
+    	if(menuACocher4.isSelected())
     		mettreEnPanneImprimante();
     	
-    	if(!checkMenuItem4.isSelected())
+    	if(!menuACocher4.isSelected())
     		remiseEnServiceImprimante();
     }*/
     
@@ -439,14 +439,14 @@ class FenetreSimulation extends BorderPane
     {
     	//Ici, je suppose griser le bouton 'retirer carte' ?
     	lecteur.getBouton(12).setDisable(true);
-        getChildren().setAll(pane, claRe, fentes, scanLect, fenetre);
+        getChildren().setAll(panneau, claRe, fentes, scanLect, fenetre);
     }
     
     public void debloquerCarte()
     {
     	//Ici, je suppose dégriser le bouton 'retirer carte' ?
     	lecteur.getBouton(12).setDisable(false);
-        getChildren().setAll(pane, claRe, fentes, scanLect, fenetre);
+        getChildren().setAll(panneau, claRe, fentes, scanLect, fenetre);
     }
     
     
@@ -496,13 +496,13 @@ class FenetreSimulation extends BorderPane
     	{
         	for (int i = 0; i < 4; i++)
     			fenteBillet.getButton(i).setDisable(false);
-        	getChildren().setAll(pane, claRe, fentes, scanLect, fenetre);
+        	getChildren().setAll(panneau, claRe, fentes, scanLect, fenetre);
     	}
     	else
     	{
         	for (int i = 0; i < 4; i++)
     			fenteBillet.getButton(i).setDisable(true);
-        	getChildren().setAll(pane, claRe, fentes, scanLect, fenetre);
+        	getChildren().setAll(panneau, claRe, fentes, scanLect, fenetre);
     	}
     }
     
@@ -512,14 +512,14 @@ class FenetreSimulation extends BorderPane
 	    {
 	    	for (int i = 0; i < 8; i++)
 	    		fentePiece.getButton(i).setDisable(false);
-	    	getChildren().setAll(pane, claRe, fentes, scanLect, fenetre);
+	    	getChildren().setAll(panneau, claRe, fentes, scanLect, fenetre);
 	    }
 	    
 	   else
 	    {
 	    	for (int i = 0; i < 8; i++)
 	    		fentePiece.getButton(i).setDisable(true);
-	    	getChildren().setAll(pane, claRe, fentes, scanLect, fenetre);
+	    	getChildren().setAll(panneau, claRe, fentes, scanLect, fenetre);
 	    }
 	}
 
@@ -530,7 +530,7 @@ class FenetreSimulation extends BorderPane
 	    	for (int i = 0; i < 13; i++)
 				lecteur.getBouton(i).setDisable(false);
 			lecteur.getMDP().setDisable(false);
-	        getChildren().setAll(pane, claRe, fentes, scanLect, fenetre);
+	        getChildren().setAll(panneau, claRe, fentes, scanLect, fenetre);
 	        carteNonBloquee();
 	    }
 	    
@@ -539,19 +539,19 @@ class FenetreSimulation extends BorderPane
 	    	for (int i = 0; i < 13; i++)
 				lecteur.getBouton(i).setDisable(true);
 			lecteur.getMDP().setDisable(true);
-	        getChildren().setAll(pane, claRe, fentes, scanLect, fenetre);
+	        getChildren().setAll(panneau, claRe, fentes, scanLect, fenetre);
 	    }
 		
 	}*/
 
 	public void carteNonBloquee()
 	{
-		checkMenuItem3.setSelected(false);
+		menuACocher3.setSelected(false);
 	}
 
 	public void carteBloquee() 
 	{
-		checkMenuItem3.setSelected(true);
+		menuACocher3.setSelected(true);
 	}
 
 }

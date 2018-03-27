@@ -11,7 +11,7 @@ class FBacReception extends Ecran
 	public FBacReception(double hauteur, double largeur) 
     {
 		Rectangle rectangle = new Rectangle();
-        Text text = new Text();
+        Text texte = new Text();
         Button button = new Button();
 
         setMaxHeight(USE_PREF_SIZE);
@@ -29,14 +29,14 @@ class FBacReception extends Ecran
         rectangle.setStrokeType(javafx.scene.shape.StrokeType.INSIDE);
         rectangle.setWidth(800.0*largeur);
 
-        text.setLayoutX(284.0*largeur);
-        text.setLayoutY(144.0*hauteur);
-        text.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text.setStrokeWidth(0.0);
-        text.setText("Veuillez récuperer votre (vos) ticket(s) dans le bac de reception");
-        text.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        text.setWrappingWidth(231.5*largeur);
-        text.setFont(new Font("System Italic", 18.0*hauteur));
+        texte.setLayoutX(284.0*largeur);
+        texte.setLayoutY(144.0*hauteur);
+        texte.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte.setStrokeWidth(0.0);
+        texte.setText("Veuillez recuperer votre (vos) ticket(s) dans le bac de reception");
+        texte.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        texte.setWrappingWidth(231.5*largeur);
+        texte.setFont(new Font("System Italic", 18.0*hauteur));
         
         button.setLayoutX(377.5*largeur);
         button.setLayoutY(333.0*hauteur);
@@ -55,7 +55,7 @@ class FBacReception extends Ecran
             }
         });
 
-        getChildren().addAll(rectangle, text, button);
+        getChildren().addAll(rectangle, texte, button);
         
         button.setFocusTraversable(false);
     }

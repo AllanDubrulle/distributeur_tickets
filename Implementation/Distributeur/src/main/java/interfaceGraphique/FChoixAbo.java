@@ -11,17 +11,17 @@ import javafx.scene.layout.Pane;
 
 class FChoixAbo extends Pane 
 {
-    private ChoiceBox<String> choiceBox;
-    private Stage stage;
+    private ChoiceBox<String> boutonChoix;
+    private Stage scene;
     private FAboRenouveler aboRenouv;
 
-    public FChoixAbo(Stage stage, FAboRenouveler aboRenouv)
+    public FChoixAbo(Stage scene, FAboRenouveler aboRenouv)
     {
-    	this.stage = stage;
+    	this.scene = scene;
         Button button = new Button();
-        choiceBox = new ChoiceBox<String>();
+        boutonChoix = new ChoiceBox<String>();
         Text text = new Text();
-        choiceBox.setItems(FXCollections.observableArrayList(GraphiqueACoeurImpl.getInstance().listeNumeroAbonnement()));
+        boutonChoix.setItems(FXCollections.observableArrayList(GraphiqueACoeurImpl.getInstance().listeNumeroAbonnement()));
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -42,28 +42,28 @@ class FChoixAbo extends Pane
         {
             public void handle(ActionEvent event)
             {
-            	aboRenouv.setNumAbo(choiceBox.getValue());	
-            	stage.close();
+            	aboRenouv.setNumAbo(boutonChoix.getValue());	
+            	scene.close();
             }
         });
 
-        choiceBox.setLayoutX(100.0);
-        choiceBox.setLayoutY(85.0);
-        choiceBox.setPrefWidth(200.0);
+        boutonChoix.setLayoutX(100.0);
+        boutonChoix.setLayoutY(85.0);
+        boutonChoix.setPrefWidth(200.0);
 
         text.setLayoutX(20.0);
         text.setLayoutY(30.0);
         text.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         text.setStrokeWidth(0.0);
-        text.setText("Choisissez un numéro d'abonnement :");
+        text.setText("Choisissez un numero d'abonnement :");
         text.setFont(new Font("System Bold", 15.0));
 
-        getChildren().addAll(button, choiceBox, text);
+        getChildren().addAll(button, boutonChoix, text);
 
     }
 	
 	public String getNumAbo()
 	{
-		return choiceBox.getValue();	
+		return boutonChoix.getValue();	
 	}
 }

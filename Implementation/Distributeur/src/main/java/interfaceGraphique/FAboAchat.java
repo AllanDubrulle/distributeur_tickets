@@ -13,48 +13,48 @@ import javafx.scene.layout.*;
 
 class FAboAchat extends Ecran 
 {
-    private TextField textField, textField0, textField1, textField2;
-    private RadioButton radioButton, radioButton0, radioButton1, radioButton2, radioButton3, radioButton4;
+    private TextField zoneTexte, zoneTexte0, zoneTexte1, zoneTexte2;
+    private RadioButton boutonChoix, boutonChoix0, boutonChoix1, boutonChoix2, boutonChoix3, boutonChoix4;
     private int pos = 0;
-	private ChoiceBox<String> choiceBox, choiceBox0;
-	private Text text10;
+	private ChoiceBox<String> menuDeroulant, menuDeroulant0;
+	private Text texte10;
     
     public FAboAchat(double hauteur, double largeur) 
     {
         Rectangle rectangle = new Rectangle();
-        Text text = new Text();
+        Text texte = new Text();
         VBox vBox = new VBox();
         HBox hBox = new HBox();
         HBox hBox0 = new HBox();
-        Text text0 = new Text();
-        textField = new TextField();
+        Text texte0 = new Text();
+        zoneTexte = new TextField();
         HBox hBox1 = new HBox();
-        Text text1 = new Text();
-        textField0 = new TextField();
+        Text texte1 = new Text();
+        zoneTexte0 = new TextField();
         HBox hBox2 = new HBox();
-        Text text2 = new Text();
-        textField1 = new TextField();
+        Text texte2 = new Text();
+        zoneTexte1 = new TextField();
         HBox hBox3 = new HBox();
-        Text text3 = new Text();
-        textField2 = new TextField();
+        Text texte3 = new Text();
+        zoneTexte2 = new TextField();
         HBox hBox4 = new HBox();
-        Text text4 = new Text();
-        radioButton = new RadioButton();
-        radioButton0 = new RadioButton();
-        radioButton1 = new RadioButton();
-        radioButton2 = new RadioButton();
+        Text texte4 = new Text();
+        boutonChoix = new RadioButton();
+        boutonChoix0 = new RadioButton();
+        boutonChoix1 = new RadioButton();
+        boutonChoix2 = new RadioButton();
         HBox hBox5 = new HBox();
-        Text text5 = new Text();
-        radioButton3 = new RadioButton();
-        radioButton4 = new RadioButton();
+        Text texte5 = new Text();
+        boutonChoix3 = new RadioButton();
+        boutonChoix4 = new RadioButton();
         HBox hBox6 = new HBox();
-        Text text6 = new Text();
-        Button button = new Button();
-        Button button0 = new Button();
-		Text text7 = new Text();	
-        choiceBox = new ChoiceBox<String>();	
-        choiceBox0 = new ChoiceBox<String>();	
-        text10 = new Text();
+        Text texte6 = new Text();
+        Button bouton = new Button();
+        Button bouton0 = new Button();
+		Text texte7 = new Text();	
+        menuDeroulant = new ChoiceBox<String>();	
+        menuDeroulant0 = new ChoiceBox<String>();	
+        texte10 = new Text();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -71,14 +71,14 @@ class FAboAchat extends Ecran
         rectangle.setStrokeType(javafx.scene.shape.StrokeType.INSIDE);
         rectangle.setWidth(800.0*largeur);
 
-        text.setFontSmoothingType(javafx.scene.text.FontSmoothingType.LCD);
-        text.setLayoutX(54.0*largeur);
-        text.setLayoutY(55.0*hauteur);
-        text.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text.setStrokeWidth(0.0);
-        text.setText("Achat d'un abonnement");
-        text.setUnderline(true);
-        text.setFont(new Font("System Bold", 22.0*hauteur));
+        texte.setFontSmoothingType(javafx.scene.text.FontSmoothingType.LCD);
+        texte.setLayoutX(54.0*largeur);
+        texte.setLayoutY(55.0*hauteur);
+        texte.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte.setStrokeWidth(0.0);
+        texte.setText("Achat d'un abonnement");
+        texte.setUnderline(true);
+        texte.setFont(new Font("System Bold", 22.0*hauteur));
 
         vBox.setLayoutX(60.0*largeur);
         vBox.setLayoutY(70.0*hauteur);
@@ -91,159 +91,159 @@ class FAboAchat extends Ecran
         hBox0.setPrefHeight(12.0*hauteur);
         hBox0.setPrefWidth(711.0*largeur);
 
-        text0.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text0.setStrokeWidth(0.0);
-        text0.setText("Nom : ");
-        text0.setWrappingWidth(180*largeur);
-        text0.setFont(new Font(15.0*hauteur));
-        HBox.setMargin(text0, new Insets(0.0));
+        texte0.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte0.setStrokeWidth(0.0);
+        texte0.setText("Nom : ");
+        texte0.setWrappingWidth(180*largeur);
+        texte0.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(texte0, new Insets(0.0));
 
-        textField.setPrefHeight(31.0*hauteur);
-        textField.setPrefWidth(300.0*largeur);
-        textField.setFont(new Font(15.0*hauteur));
-        HBox.setMargin(textField, new Insets(0.0, 0.0, 10.0*hauteur, 20*largeur));
+        zoneTexte.setPrefHeight(31.0*hauteur);
+        zoneTexte.setPrefWidth(300.0*largeur);
+        zoneTexte.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(zoneTexte, new Insets(0.0, 0.0, 10.0*hauteur, 20*largeur));
 
         hBox1.setPrefHeight(12.0*hauteur);
         hBox1.setPrefWidth(711.0*largeur);
 
-        text1.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text1.setStrokeWidth(0.0);
-        text1.setWrappingWidth(180*largeur);
-        text1.setText("Numéro de registre national : ");
-        text1.setFont(new Font(15.0*hauteur));
-        HBox.setMargin(text1, new Insets(0.0));
+        texte1.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte1.setStrokeWidth(0.0);
+        texte1.setWrappingWidth(180*largeur);
+        texte1.setText("Numero de registre national : ");
+        texte1.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(texte1, new Insets(0.0));
 
-        textField0.setPrefHeight(31.0*hauteur);
-        textField0.setPrefWidth(300.0*largeur);
-        textField0.setFont(new Font(15.0*hauteur));
-        HBox.setMargin(textField0, new Insets(0.0, 0.0, 10.0*hauteur, 20.0*largeur));
+        zoneTexte0.setPrefHeight(31.0*hauteur);
+        zoneTexte0.setPrefWidth(300.0*largeur);
+        zoneTexte0.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(zoneTexte0, new Insets(0.0, 0.0, 10.0*hauteur, 20.0*largeur));
 
         hBox2.setPrefHeight(17.0*hauteur);
         hBox2.setPrefWidth(244.0*largeur);
 
-        text2.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text2.setStrokeWidth(0.0);
-        text2.setText("Gare de départ :");
-        text2.setWrappingWidth(180*largeur);
-        text2.setFont(new Font(15.0*hauteur));
-        HBox.setMargin(text2, new Insets(0.0, 0.0*largeur, 0.0, 0.0));
+        texte2.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte2.setStrokeWidth(0.0);
+        texte2.setText("Gare de départ :");
+        texte2.setWrappingWidth(180*largeur);
+        texte2.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(texte2, new Insets(0.0, 0.0*largeur, 0.0, 0.0));
 
-        textField1.setPrefWidth(300.0*largeur);
-        textField1.setFont(new Font(15.0*hauteur));
-        HBox.setMargin(textField1, new Insets(0.0, 0.0, 0.0, 20.0*largeur));
+        zoneTexte1.setPrefWidth(300.0*largeur);
+        zoneTexte1.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(zoneTexte1, new Insets(0.0, 0.0, 0.0, 20.0*largeur));
         hBox2.setPadding(new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
 
         hBox3.setPrefHeight(17.0*hauteur);
         hBox3.setPrefWidth(244.0*largeur);
 
-        text3.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text3.setStrokeWidth(0.0);
-        text3.setText("Gare d'arrivée :");
-        text3.setWrappingWidth(180*largeur);
-        text3.setFont(new Font(15.0*hauteur));
-        HBox.setMargin(text3, new Insets(0.0, 20.0*largeur, 0.0, 0.0));
+        texte3.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte3.setStrokeWidth(0.0);
+        texte3.setText("Gare d'arrivee :");
+        texte3.setWrappingWidth(180*largeur);
+        texte3.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(texte3, new Insets(0.0, 20.0*largeur, 0.0, 0.0));
 
-        textField2.setPrefWidth(300.0*largeur);
-        textField2.setFont(new Font(15.0*hauteur));
-        HBox.setMargin(textField2, new Insets(0.0, 0.0, 0.0, 0.0));
+        zoneTexte2.setPrefWidth(300.0*largeur);
+        zoneTexte2.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(zoneTexte2, new Insets(0.0, 0.0, 0.0, 0.0));
         hBox3.setPadding(new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
 
         hBox4.setPrefHeight(41.0*hauteur);
         hBox4.setPrefWidth(725.0*largeur);
 
-        text4.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text4.setStrokeWidth(0.0);
-        text4.setText("Validité de l'abonnement :");
-        text4.setWrappingWidth(180*largeur);
-        text4.setFont(new Font(15.0*hauteur));
-        HBox.setMargin(text4, new Insets(0.0, 20.0*largeur, 0.0, 0.0));
+        texte4.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte4.setStrokeWidth(0.0);
+        texte4.setText("Validite de l'abonnement :");
+        texte4.setWrappingWidth(180*largeur);
+        texte4.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(texte4, new Insets(0.0, 20.0*largeur, 0.0, 0.0));
 
-        radioButton.setMnemonicParsing(false);
-        radioButton.setText("1 mois");
-        radioButton.setFont(new Font(15.0*hauteur));
-        radioButton.setSelected(true);
+        boutonChoix.setMnemonicParsing(false);
+        boutonChoix.setText("1 mois");
+        boutonChoix.setFont(new Font(15.0*hauteur));
+        boutonChoix.setSelected(true);
 
-        radioButton0.setMnemonicParsing(false);
-        radioButton0.setText("3 mois");
-        radioButton0.setFont(new Font(15.0*hauteur));
-        HBox.setMargin(radioButton0, new Insets(0.0, 15.0*largeur, 0.0, 65.0*largeur));
+        boutonChoix0.setMnemonicParsing(false);
+        boutonChoix0.setText("3 mois");
+        boutonChoix0.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(boutonChoix0, new Insets(0.0, 15.0*largeur, 0.0, 65.0*largeur));
 
-        radioButton1.setMnemonicParsing(false);
-        radioButton1.setText("6 mois");
-        radioButton1.setFont(new Font(15.0*hauteur));
-        HBox.setMargin(radioButton1, new Insets(0.0, 15.0*largeur, 0.0, 50.0*largeur));
+        boutonChoix1.setMnemonicParsing(false);
+        boutonChoix1.setText("6 mois");
+        boutonChoix1.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(boutonChoix1, new Insets(0.0, 15.0*largeur, 0.0, 50.0*largeur));
 
-        radioButton2.setMnemonicParsing(false);
-        radioButton2.setText("12 mois");
-        radioButton2.setFont(new Font(15.0*hauteur));
-        HBox.setMargin(radioButton2, new Insets(0.0, 0.0, 0.0, 50.0*largeur));
+        boutonChoix2.setMnemonicParsing(false);
+        boutonChoix2.setText("12 mois");
+        boutonChoix2.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(boutonChoix2, new Insets(0.0, 0.0, 0.0, 50.0*largeur));
         hBox4.setPadding(new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
         
         ToggleGroup t1 = new ToggleGroup();
-        radioButton.setToggleGroup(t1);
-        radioButton0.setToggleGroup(t1);
-        radioButton1.setToggleGroup(t1);
-        radioButton2.setToggleGroup(t1);
+        boutonChoix.setToggleGroup(t1);
+        boutonChoix0.setToggleGroup(t1);
+        boutonChoix1.setToggleGroup(t1);
+        boutonChoix2.setToggleGroup(t1);
 
         hBox5.setPrefHeight(17.0*hauteur);
         hBox5.setPrefWidth(244.0*largeur);
 
-        text5.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text5.setStrokeWidth(0.0);
-        text5.setText("Classe :");
-        text5.setWrappingWidth(180*largeur);
-        text5.setFont(new Font(15.0*hauteur));
-        HBox.setMargin(text5, new Insets(0.0, 20.0*largeur, 0.0, 0.0));
+        texte5.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte5.setStrokeWidth(0.0);
+        texte5.setText("Classe :");
+        texte5.setWrappingWidth(180*largeur);
+        texte5.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(texte5, new Insets(0.0, 20.0*largeur, 0.0, 0.0));
 
-        radioButton3.setMnemonicParsing(false);
-        radioButton3.setText("1e classe");
-        radioButton3.setFont(new Font(15.0*hauteur));
-        radioButton3.setSelected(true);
+        boutonChoix3.setMnemonicParsing(false);
+        boutonChoix3.setText("1e classe");
+        boutonChoix3.setFont(new Font(15.0*hauteur));
+        boutonChoix3.setSelected(true);
 
-        radioButton4.setMnemonicParsing(false);
-        radioButton4.setText("2e classe");
-        radioButton4.setFont(new Font(15.0*hauteur));
-        HBox.setMargin(radioButton4, new Insets(0.0, 0.0, 0.0, 50.0*largeur));
+        boutonChoix4.setMnemonicParsing(false);
+        boutonChoix4.setText("2e classe");
+        boutonChoix4.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(boutonChoix4, new Insets(0.0, 0.0, 0.0, 50.0*largeur));
         hBox5.setPadding(new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
         
         ToggleGroup t2 = new ToggleGroup();
-        radioButton3.setToggleGroup(t2);
-        radioButton4.setToggleGroup(t2);
+        boutonChoix3.setToggleGroup(t2);
+        boutonChoix4.setToggleGroup(t2);
 
         hBox6.setPrefHeight(17.0*hauteur);
         hBox6.setPrefWidth(244.0*largeur);
 
-        text6.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text6.setStrokeWidth(0.0);
-        text6.setText("Réduction :");
-        text6.setFont(new Font(15.0*hauteur));
-        HBox.setMargin(text6, new Insets(0.0, 0.0, 0.0, 50.0*largeur));
+        texte6.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte6.setStrokeWidth(0.0);
+        texte6.setText("Reduction :");
+        texte6.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(texte6, new Insets(0.0, 0.0, 0.0, 50.0*largeur));
 
-        choiceBox.setPrefWidth(225.0*largeur);	
-        choiceBox.setPrefHeight(30.0*hauteur);	
-        choiceBox.setItems(FXCollections.observableArrayList(GraphiqueACoeurImpl.getInstance().getReductions()));
-        HBox.setMargin(choiceBox, new Insets(0.0, 0.0, 0.0, 50.0*largeur));
+        menuDeroulant.setPrefWidth(225.0*largeur);	
+        menuDeroulant.setPrefHeight(30.0*hauteur);	
+        menuDeroulant.setItems(FXCollections.observableArrayList(GraphiqueACoeurImpl.getInstance().getReductions()));
+        HBox.setMargin(menuDeroulant, new Insets(0.0, 0.0, 0.0, 50.0*largeur));
         
-        text7.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);	
-        text7.setStrokeWidth(0.0);	
-        text7.setText("Type d'abonnement :");	
-        text7.setWrappingWidth(180*largeur);	
-        text7.setFont(new Font(15.0*hauteur));	
-        HBox.setMargin(text7, new Insets(0.0, 20.0*largeur, 0.0, 0.0));
+        texte7.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);	
+        texte7.setStrokeWidth(0.0);	
+        texte7.setText("Type d'abonnement :");	
+        texte7.setWrappingWidth(180*largeur);	
+        texte7.setFont(new Font(15.0*hauteur));	
+        HBox.setMargin(texte7, new Insets(0.0, 20.0*largeur, 0.0, 0.0));
         
-        choiceBox0.setPrefWidth(125.0*largeur);	
-        choiceBox0.setPrefHeight(30.0*hauteur);	
-        choiceBox0.setItems(FXCollections.observableArrayList(GraphiqueACoeurImpl.getInstance().getTypes()));
+        menuDeroulant0.setPrefWidth(125.0*largeur);	
+        menuDeroulant0.setPrefHeight(30.0*hauteur);	
+        menuDeroulant0.setItems(FXCollections.observableArrayList(GraphiqueACoeurImpl.getInstance().getTypes()));
 
-        button.setLayoutX(23.0*largeur);
-        button.setLayoutY(354.0*hauteur);
-        button.setMnemonicParsing(false);
-        button.setPrefHeight(31.0*hauteur);
-        button.setPrefWidth(75.0*largeur);
-        button.setText("Annuler");
-        button.setFont(new Font(15.0*hauteur));
-        button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button.setOnAction(new EventHandler<ActionEvent>()
+        bouton.setLayoutX(23.0*largeur);
+        bouton.setLayoutY(354.0*hauteur);
+        bouton.setMnemonicParsing(false);
+        bouton.setPrefHeight(31.0*hauteur);
+        bouton.setPrefWidth(75.0*largeur);
+        bouton.setText("Annuler");
+        bouton.setFont(new Font(15.0*hauteur));
+        bouton.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        bouton.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -252,15 +252,15 @@ class FAboAchat extends Ecran
             }
         });
 
-        button0.setLayoutX(702.5*largeur);
-        button0.setLayoutY(354.0*hauteur);
-        button0.setMnemonicParsing(false);
-        button0.setPrefHeight(31.0*hauteur);
-        button0.setPrefWidth(75.0*largeur);
-        button0.setText("Valider");
-        button0.setFont(new Font(15.0*hauteur));
-        button0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button0.setOnAction(new EventHandler<ActionEvent>()
+        bouton0.setLayoutX(702.5*largeur);
+        bouton0.setLayoutY(354.0*hauteur);
+        bouton0.setMnemonicParsing(false);
+        bouton0.setPrefHeight(31.0*hauteur);
+        bouton0.setPrefWidth(75.0*largeur);
+        bouton0.setText("Valider");
+        bouton0.setFont(new Font(15.0*hauteur));
+        bouton0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        bouton0.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -268,46 +268,46 @@ class FAboAchat extends Ecran
             	{
             		try
             		{	
-            			if (textField0.getText().trim().length() == 11 && verifierNom(textField.getText().trim()))
+            			if (zoneTexte0.getText().trim().length() == 11 && verifierNom(zoneTexte.getText().trim()))
             			{	
-            				graphAC.infoAbo(getValidite(), textField1.getText().trim(), textField2.getText().trim(), getClasse(), choiceBox.getValue(), choiceBox0.getValue(), textField.getText(), textField0.getText().trim());
+            				graphAC.infoAbo(getValidite(), zoneTexte1.getText().trim(), zoneTexte2.getText().trim(), getClasse(), menuDeroulant.getValue(), menuDeroulant0.getValue(), zoneTexte.getText(), zoneTexte0.getText().trim());
             				graphAC.choixValider();	
             			}
             			else 
             			{
-            				text10.setText("Le nom saisi est incorrect");
+            				texte10.setText("Le nom saisi est incorrect");
             			}
             		}	
             		catch (NumberFormatException e)	
             		{	
-            			text10.setText("Le numero de registre national saisi est incorrect");
+            			texte10.setText("Le numero de registre national saisi est incorrect");
             		}
             		catch (ErreurDEncodage e)
             		{
-            			text10.setText(e.getMessage());
+            			texte10.setText(e.getMessage());
             		}
             	}
             }
         });
         
-		text10.setFont(new Font("System Bold", 15.0*hauteur));	
-		text10.setWrappingWidth(250.0*largeur);	
-		text10.setFill(javafx.scene.paint.Color.RED);	
-		text10.setLayoutX(275.0*largeur);	
-		text10.setLayoutY(384.0*hauteur);
+		texte10.setFont(new Font("System Bold", 15.0*hauteur));	
+		texte10.setWrappingWidth(250.0*largeur);	
+		texte10.setFill(javafx.scene.paint.Color.RED);	
+		texte10.setLayoutX(275.0*largeur);	
+		texte10.setLayoutY(384.0*hauteur);
 		
-        hBox0.getChildren().addAll(text0, textField);
-        hBox1.getChildren().addAll(text1, textField0);
-        hBox2.getChildren().addAll(text2, textField1);
-        hBox3.getChildren().addAll(text3, textField2);
-        hBox4.getChildren().addAll(text4, radioButton, radioButton0, radioButton1, radioButton2);
-        hBox5.getChildren().addAll(text5, radioButton3, radioButton4);
-        hBox6.getChildren().addAll(text7, choiceBox0, text6, choiceBox);
+        hBox0.getChildren().addAll(texte0, zoneTexte);
+        hBox1.getChildren().addAll(texte1, zoneTexte0);
+        hBox2.getChildren().addAll(texte2, zoneTexte1);
+        hBox3.getChildren().addAll(texte3, zoneTexte2);
+        hBox4.getChildren().addAll(texte4, boutonChoix, boutonChoix0, boutonChoix1, boutonChoix2);
+        hBox5.getChildren().addAll(texte5, boutonChoix3, boutonChoix4);
+        hBox6.getChildren().addAll(texte7, menuDeroulant0, texte6, menuDeroulant);
         vBox.getChildren().addAll(hBox, hBox0, hBox1, hBox2, hBox3, hBox4, hBox5, hBox6);
-        getChildren().addAll(rectangle, text, vBox, button, button0, text10);
+        getChildren().addAll(rectangle, texte, vBox, bouton, bouton0, texte10);
         
-        button.setFocusTraversable(false);
-        button0.setFocusTraversable(false);
+        bouton.setFocusTraversable(false);
+        bouton0.setFocusTraversable(false);
     }
     
     public void actionClavier(String a) 
@@ -315,18 +315,18 @@ class FAboAchat extends Ecran
     	String s;
     	if (pos == 0) 
     	{
-    		s = textField.getText();
-    		textField.setText(s + a);
+    		s = zoneTexte.getText();
+    		zoneTexte.setText(s + a);
     	}
     	else if(pos == 2) 
     	{
-    		s = textField1.getText();
-    		textField1.setText(s + a);
+    		s = zoneTexte1.getText();
+    		zoneTexte1.setText(s + a);
     	}
     	else if(pos == 3) 
     	{
-    		s = textField2.getText();
-    		textField2.setText(s + a);
+    		s = zoneTexte2.getText();
+    		zoneTexte2.setText(s + a);
     	}
     }
 
@@ -334,38 +334,38 @@ class FAboAchat extends Ecran
 	{
 		if (pos == 1)
 		{
-			String s = textField0.getText();
-			textField0.setText(s + a);
+			String s = zoneTexte0.getText();
+			zoneTexte0.setText(s + a);
 			if (s.length() == 10)
 				actionSuivant();
 		}
 		if (pos == 4) 
 		{
 			if (a == 1)
-	    		radioButton.setSelected(true);
+	    		boutonChoix.setSelected(true);
 			else if (a == 2)
-	    		radioButton0.setSelected(true);
+	    		boutonChoix0.setSelected(true);
 			else if (a == 3)
-	    		radioButton1.setSelected(true);
+	    		boutonChoix1.setSelected(true);
 			else if (a == 4) 
-	    		radioButton2.setSelected(true);
+	    		boutonChoix2.setSelected(true);
 		}
 		else if (pos == 5) 
 		{
 			if (a == 1) 
-	    		radioButton3.setSelected(true);
+	    		boutonChoix3.setSelected(true);
 			else if (a == 2) 
-	    		radioButton4.setSelected(true);
+	    		boutonChoix4.setSelected(true);
 		}
 		else if (pos == 6)	
 		{	
 			if (a < GraphiqueACoeurImpl.getInstance().getTypes().length)	
-				choiceBox0.setValue(GraphiqueACoeurImpl.getInstance().getTypes()[a]);	
+				menuDeroulant0.setValue(GraphiqueACoeurImpl.getInstance().getTypes()[a]);	
 		}	
 		else if (pos == 7)	
 		{	
 			if (a < GraphiqueACoeurImpl.getInstance().getReductions().length)	
-				choiceBox.setValue(GraphiqueACoeurImpl.getInstance().getReductions()[a]);	
+				menuDeroulant.setValue(GraphiqueACoeurImpl.getInstance().getReductions()[a]);	
 		}
 	}
 
@@ -379,24 +379,24 @@ class FAboAchat extends Ecran
 		if(pos == 7) 
 		{
 			pos = 0;
-			textField.requestFocus();
+			zoneTexte.requestFocus();
 		}
 		else 
 		{
 			if (pos == 0)
-				textField0.requestFocus();
+				zoneTexte0.requestFocus();
 			else if (pos == 1)
-				textField1.requestFocus();
+				zoneTexte1.requestFocus();
 			else if (pos == 2)
-				textField2.requestFocus();
+				zoneTexte2.requestFocus();
 			else if (pos == 3)
-				radioButton.requestFocus();
+				boutonChoix.requestFocus();
 			else if (pos == 4)
-				radioButton3.requestFocus();
+				boutonChoix3.requestFocus();
 			else if (pos == 5)
-				choiceBox0.requestFocus();
+				menuDeroulant0.requestFocus();
 			else
-				choiceBox.requestFocus();
+				menuDeroulant.requestFocus();
 			pos++;
 		}
 	}
@@ -406,23 +406,23 @@ class FAboAchat extends Ecran
 		String s;
     	if (pos == 0) 
     	{
-    		s = textField.getText();
-    		textField.setText(s + " ");
+    		s = zoneTexte.getText();
+    		zoneTexte.setText(s + " ");
     	}
     	else if(pos == 1) 
     	{
-    		s = textField0.getText();
-    		textField0.setText(s + " ");
+    		s = zoneTexte0.getText();
+    		zoneTexte0.setText(s + " ");
     	}
     	else if(pos == 2) 
     	{
-    		s = textField1.getText();
-    		textField1.setText(s + " ");
+    		s = zoneTexte1.getText();
+    		zoneTexte1.setText(s + " ");
     	}
     	else if(pos == 3) 
     	{
-    		s = textField2.getText();
-    		textField2.setText(s + " ");
+    		s = zoneTexte2.getText();
+    		zoneTexte2.setText(s + " ");
     	}
 	}
 
@@ -431,27 +431,27 @@ class FAboAchat extends Ecran
 		String s;
     	if (pos == 0) 
     	{
-    		s = textField.getText();
+    		s = zoneTexte.getText();
     		if (s.length()>0)
-    			textField.setText(s.substring(0, s.length()-1));
+    			zoneTexte.setText(s.substring(0, s.length()-1));
     	}
     	else if(pos == 1) 
     	{
-    		s = textField0.getText();
+    		s = zoneTexte0.getText();
     		if (s.length()>0)
-    			textField0.setText(s.substring(0, s.length()-1));
+    			zoneTexte0.setText(s.substring(0, s.length()-1));
     	}
     	else if(pos == 2) 
     	{
-    		s = textField1.getText();
+    		s = zoneTexte1.getText();
     		if (s.length()>0)
-    			textField1.setText(s.substring(0, s.length()-1));
+    			zoneTexte1.setText(s.substring(0, s.length()-1));
     	}
     	else if(pos == 3) 
     	{
-    		s = textField2.getText();
+    		s = zoneTexte2.getText();
     		if (s.length()>0)
-    			textField2.setText(s.substring(0, s.length()-1));
+    			zoneTexte2.setText(s.substring(0, s.length()-1));
     	}
 	}
 	
@@ -459,29 +459,29 @@ class FAboAchat extends Ecran
 	{
 		try
 		{	
-			if (textField0.getText().trim().length() == 11 && verifierNom(textField.getText().trim()))
+			if (zoneTexte0.getText().trim().length() == 11 && verifierNom(zoneTexte.getText().trim()))
 			{	
-				graphAC.infoAbo(getValidite(), textField1.getText().trim(), textField2.getText().trim(), getClasse(), choiceBox.getValue(), choiceBox0.getValue(), textField.getText(), textField0.getText().trim());
+				graphAC.infoAbo(getValidite(), zoneTexte1.getText().trim(), zoneTexte2.getText().trim(), getClasse(), menuDeroulant.getValue(), menuDeroulant0.getValue(), zoneTexte.getText(), zoneTexte0.getText().trim());
 				graphAC.choixValider();	
 			}
 			else 
 			{
-				text10.setText("Les données saisies sont incorrectes");
+				texte10.setText("Les donnees saisies sont incorrectes");
 			}
 		}	
     		catch (NumberFormatException | ErreurDEncodage e)	
 	   	{	
-			text10.setText("Les données saisies sont incorrectes");
+			texte10.setText("Les donnees saisies sont incorrectes");
 		}
 	}
 	
 	private int getValidite()
 	{
-		if (radioButton.isSelected())
+		if (boutonChoix.isSelected())
 			return 1;
-		else if (radioButton0.isSelected())
+		else if (boutonChoix0.isSelected())
 			return 3;
-		else if (radioButton1.isSelected())
+		else if (boutonChoix1.isSelected())
 			return 6;
 		else
 			return 12;
@@ -489,7 +489,7 @@ class FAboAchat extends Ecran
 	
 	private int getClasse()
 	{
-		if (radioButton3.isSelected())
+		if (boutonChoix3.isSelected())
 			return 1;
 		else
 			return 2;
@@ -499,18 +499,18 @@ class FAboAchat extends Ecran
 	{
 		if(graphAC.estTactile())
 		{
-			textField.setOnMouseClicked(e -> {pos = 0;});
-			textField0.setOnMouseClicked(e -> {pos = 1;});
-			textField1.setOnMouseClicked(e -> {pos = 2;});
-			textField2.setOnMouseClicked(e -> {pos = 3;});
-			radioButton.setOnMouseClicked(e -> {pos = 4;});
-			radioButton0.setOnMouseClicked(e -> {pos = 4;});
-			radioButton1.setOnMouseClicked(e -> {pos = 4;});
-			radioButton2.setOnMouseClicked(e -> {pos = 4;});
-			radioButton3.setOnMouseClicked(e -> {pos = 5;});
-			radioButton4.setOnMouseClicked(e -> {pos = 5;});
-			choiceBox0.setOnMouseClicked(e -> {pos = 6;});
-			choiceBox.setOnMouseClicked(e -> {pos = 7;});
+			zoneTexte.setOnMouseClicked(e -> {pos = 0;});
+			zoneTexte0.setOnMouseClicked(e -> {pos = 1;});
+			zoneTexte1.setOnMouseClicked(e -> {pos = 2;});
+			zoneTexte2.setOnMouseClicked(e -> {pos = 3;});
+			boutonChoix.setOnMouseClicked(e -> {pos = 4;});
+			boutonChoix0.setOnMouseClicked(e -> {pos = 4;});
+			boutonChoix1.setOnMouseClicked(e -> {pos = 4;});
+			boutonChoix2.setOnMouseClicked(e -> {pos = 4;});
+			boutonChoix3.setOnMouseClicked(e -> {pos = 5;});
+			boutonChoix4.setOnMouseClicked(e -> {pos = 5;});
+			menuDeroulant0.setOnMouseClicked(e -> {pos = 6;});
+			menuDeroulant.setOnMouseClicked(e -> {pos = 7;});
 		}
 	}
 }

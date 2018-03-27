@@ -11,7 +11,7 @@ class FSimulationAcceuil extends Ecran
     public FSimulationAcceuil(double hauteur, double largeur)
     {
         Rectangle rectangle = new Rectangle();
-        Button button = new Button();
+        Button bouton = new Button();
         
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -28,13 +28,13 @@ class FSimulationAcceuil extends Ecran
         rectangle.setStrokeType(javafx.scene.shape.StrokeType.INSIDE);
         rectangle.setWidth(800.0*largeur);
 
-        button.setLayoutX(334.0*largeur);
-        button.setLayoutY(175.0*hauteur);
-        button.setMnemonicParsing(false);
-        button.setText("Démarrer");
-        button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button.setFont(new Font(24.0*hauteur));
-        button.setOnAction(new EventHandler<ActionEvent>()
+        bouton.setLayoutX(334.0*largeur);
+        bouton.setLayoutY(175.0*hauteur);
+        bouton.setMnemonicParsing(false);
+        bouton.setText("Demarrer");
+        bouton.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        bouton.setFont(new Font(24.0*hauteur));
+        bouton.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -42,9 +42,9 @@ class FSimulationAcceuil extends Ecran
             		graphAC.choixDemarrerSimul();	
             }
         });
-        getChildren().addAll(rectangle, button);
+        getChildren().addAll(rectangle, bouton);
         
-        button.setFocusTraversable(false);
+        bouton.setFocusTraversable(false);
     }
 	
 	public void actionEntrer() 

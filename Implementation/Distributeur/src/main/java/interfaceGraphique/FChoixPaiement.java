@@ -8,16 +8,16 @@ import javafx.scene.shape.*;
 
 class FChoixPaiement extends Ecran 
 {
-	private Text text10;
+	private Text texte10;
 	
     public FChoixPaiement(double hauteur, double largeur) 
     {
-    	text10 = new Text();
+    	texte10 = new Text();
         Rectangle rectangle = new Rectangle();
-        Text text = new Text();
-        Button button = new Button();
-        Button button0 = new Button();
-        Button button1 = new Button();
+        Text texte = new Text();
+        Button bouton = new Button();
+        Button bouton0 = new Button();
+        Button bouton1 = new Button();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -34,22 +34,22 @@ class FChoixPaiement extends Ecran
         rectangle.setStrokeType(javafx.scene.shape.StrokeType.INSIDE);
         rectangle.setWidth(800.0*largeur);
 
-        text.setLayoutX(60.0*largeur);
-        text.setLayoutY(75.0*hauteur);
-        text.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text.setStrokeWidth(0.0);
-        text.setText("Choisissez un mode de paiement :");
-        text.setFont(new Font("System Bold", 22.0*hauteur));
+        texte.setLayoutX(60.0*largeur);
+        texte.setLayoutY(75.0*hauteur);
+        texte.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte.setStrokeWidth(0.0);
+        texte.setText("Choisissez un mode de paiement :");
+        texte.setFont(new Font("System Bold", 22.0*hauteur));
 
-        button.setLayoutX(150.0*largeur);
-        button.setLayoutY(170.0*hauteur);
-        button.setMnemonicParsing(false);
-        button.setPrefHeight(31.0*hauteur);
-        button.setPrefWidth(175.0*largeur);
-        button.setText("Paiement liquide");
-        button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button.setFont(new Font(17.0*hauteur));
-        button.setOnAction(new EventHandler<ActionEvent>()
+        bouton.setLayoutX(150.0*largeur);
+        bouton.setLayoutY(170.0*hauteur);
+        bouton.setMnemonicParsing(false);
+        bouton.setPrefHeight(31.0*hauteur);
+        bouton.setPrefWidth(175.0*largeur);
+        bouton.setText("Paiement liquide");
+        bouton.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        bouton.setFont(new Font(17.0*hauteur));
+        bouton.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -58,20 +58,20 @@ class FChoixPaiement extends Ecran
             		if(graphAC.fentePresente())
             			graphAC.choixPaiementLiquide();
             		else
-            			text10.setText("Le distributeur ne possede pas de fentes");
+            			texte10.setText("Le distributeur ne possede pas de fentes");
             	}
             }
         });
 
-        button0.setLayoutX(475.0*largeur);
-        button0.setLayoutY(170.0*hauteur);
-        button0.setMnemonicParsing(false);
-        button0.setPrefHeight(31.0*hauteur);
-        button0.setPrefWidth(175.0*largeur);
-        button0.setText("Paiement par carte");
-        button0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button0.setFont(new Font(17.0*hauteur));
-        button0.setOnAction(new EventHandler<ActionEvent>()
+        bouton0.setLayoutX(475.0*largeur);
+        bouton0.setLayoutY(170.0*hauteur);
+        bouton0.setMnemonicParsing(false);
+        bouton0.setPrefHeight(31.0*hauteur);
+        bouton0.setPrefWidth(175.0*largeur);
+        bouton0.setText("Paiement par carte");
+        bouton0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        bouton0.setFont(new Font(17.0*hauteur));
+        bouton0.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -80,15 +80,15 @@ class FChoixPaiement extends Ecran
             }
         });
 
-        button1.setLayoutX(362.5*largeur);
-        button1.setLayoutY(333.0*hauteur);
-        button1.setMnemonicParsing(false);
-        button1.setPrefHeight(31.0*hauteur);
-        button1.setPrefWidth(75.0*largeur);
-        button1.setText("Annuler");
-        button1.setFont(new Font(15.0*hauteur));
-        button1.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button1.setOnAction(new EventHandler<ActionEvent>()
+        bouton1.setLayoutX(362.5*largeur);
+        bouton1.setLayoutY(333.0*hauteur);
+        bouton1.setMnemonicParsing(false);
+        bouton1.setPrefHeight(31.0*hauteur);
+        bouton1.setPrefWidth(75.0*largeur);
+        bouton1.setText("Annuler");
+        bouton1.setFont(new Font(15.0*hauteur));
+        bouton1.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        bouton1.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -97,16 +97,16 @@ class FChoixPaiement extends Ecran
             }
         });
         
-        text10.setFont(new Font("System Bold", 15.0*hauteur));
-		text10.setWrappingWidth(250.0*largeur);
-		text10.setFill(javafx.scene.paint.Color.RED);
-		text10.setLayoutX(175.0*largeur);
-		text10.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-		text10.setLayoutY(300.0*hauteur);
+        texte10.setFont(new Font("System Bold", 15.0*hauteur));
+		texte10.setWrappingWidth(250.0*largeur);
+		texte10.setFill(javafx.scene.paint.Color.RED);
+		texte10.setLayoutX(175.0*largeur);
+		texte10.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+		texte10.setLayoutY(300.0*hauteur);
 
-        getChildren().addAll(rectangle, text, button, button0, text10, button1);
+        getChildren().addAll(rectangle, texte, bouton, bouton0, texte10, bouton1);
         
-        button1.setFocusTraversable(false);
+        bouton1.setFocusTraversable(false);
     }
 
 	public void actionClavier(int a) 
@@ -116,7 +116,7 @@ class FChoixPaiement extends Ecran
        		if(graphAC.fentePresente())
        			graphAC.choixPaiementLiquide();
        		else
-       			text10.setText("Le distributeur ne possede pas de fente");
+       			texte10.setText("Le distributeur ne possede pas de fente");
 		}
 		if (a == 2)
 			graphAC.choixPaiementParCarte();

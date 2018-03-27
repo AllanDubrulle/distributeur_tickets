@@ -11,17 +11,17 @@ import javafx.scene.text.Font;
 
 class FenteBillet extends Pane 
 {
-	private Button button, button1, button0, button2;
+	private Button bouton, bouton1, bouton0, bouton2;
 	private GraphiqueACoeur graphAC = GraphiqueACoeurImpl.getInstance();
 
 	
 	public FenteBillet(double hauteur, double largeur) 
 	{
         Rectangle rectangle = new Rectangle();
-        button = new Button();
-        button0 = new Button();
-        button1 = new Button();
-        button2 = new Button();
+        bouton = new Button();
+        bouton0 = new Button();
+        bouton1 = new Button();
+        bouton2 = new Button();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -39,15 +39,15 @@ class FenteBillet extends Pane
         rectangle.setStrokeType(javafx.scene.shape.StrokeType.INSIDE);
         rectangle.setWidth(200.0*largeur);
 
-        button.setLayoutX(5.0*largeur);
-        button.setLayoutY(24.0*hauteur);
-        button.setFont(new Font(15.0*hauteur));
-        button.setMnemonicParsing(false);
-        button.setPrefHeight(31.0*hauteur);
-        button.setPrefWidth(50.0*largeur);
-        button.setText("5 €");
-        button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button.setOnAction(new EventHandler<ActionEvent>()
+        bouton.setLayoutX(5.0*largeur);
+        bouton.setLayoutY(24.0*hauteur);
+        bouton.setFont(new Font(15.0*hauteur));
+        bouton.setMnemonicParsing(false);
+        bouton.setPrefHeight(31.0*hauteur);
+        bouton.setPrefWidth(50.0*largeur);
+        bouton.setText("5 eur");
+        bouton.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        bouton.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -55,15 +55,15 @@ class FenteBillet extends Pane
             }
         });
 
-        button0.setLayoutX(62.5*largeur);
-        button0.setLayoutY(24.0*hauteur);
-        button0.setFont(new Font(15.0*hauteur));
-        button0.setMnemonicParsing(false);
-        button0.setPrefHeight(31.0*hauteur);
-        button0.setPrefWidth(50.0*largeur);
-        button0.setText("10 €");
-        button0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button0.setOnAction(new EventHandler<ActionEvent>()
+        bouton0.setLayoutX(62.5*largeur);
+        bouton0.setLayoutY(24.0*hauteur);
+        bouton0.setFont(new Font(15.0*hauteur));
+        bouton0.setMnemonicParsing(false);
+        bouton0.setPrefHeight(31.0*hauteur);
+        bouton0.setPrefWidth(50.0*largeur);
+        bouton0.setText("10 eur");
+        bouton0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        bouton0.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -71,15 +71,15 @@ class FenteBillet extends Pane
             }
         });
 
-        button1.setLayoutX(177.5*largeur);
-        button1.setLayoutY(24.0*hauteur);
-        button1.setFont(new Font(15.0*hauteur));
-        button1.setMnemonicParsing(false);
-        button1.setPrefHeight(31.0*hauteur);
-        button1.setPrefWidth(50.0*largeur);
-        button1.setText("50 €");
-        button1.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button1.setOnAction(new EventHandler<ActionEvent>()
+        bouton1.setLayoutX(177.5*largeur);
+        bouton1.setLayoutY(24.0*hauteur);
+        bouton1.setFont(new Font(15.0*hauteur));
+        bouton1.setMnemonicParsing(false);
+        bouton1.setPrefHeight(31.0*hauteur);
+        bouton1.setPrefWidth(50.0*largeur);
+        bouton1.setText("50 eur");
+        bouton1.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        bouton1.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -87,15 +87,15 @@ class FenteBillet extends Pane
             }
         });
 
-        button2.setLayoutX(120.0*largeur);
-        button2.setLayoutY(24.0*hauteur);
-        button2.setFont(new Font(15.0*hauteur));
-        button2.setMnemonicParsing(false);
-        button2.setPrefHeight(31.0*hauteur);
-        button2.setPrefWidth(50.0*largeur);
-        button2.setText("20 €");
-        button2.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button2.setOnAction(new EventHandler<ActionEvent>()
+        bouton2.setLayoutX(120.0*largeur);
+        bouton2.setLayoutY(24.0*hauteur);
+        bouton2.setFont(new Font(15.0*hauteur));
+        bouton2.setMnemonicParsing(false);
+        bouton2.setPrefHeight(31.0*hauteur);
+        bouton2.setPrefWidth(50.0*largeur);
+        bouton2.setText("20 eur");
+        bouton2.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        bouton2.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -103,24 +103,24 @@ class FenteBillet extends Pane
             }
         });
 
-        getChildren().addAll(rectangle, button, button0, button1, button2);
+        getChildren().addAll(rectangle, bouton, bouton0, bouton1, bouton2);
         
-        button.setFocusTraversable(false);
-        button0.setFocusTraversable(false);
-        button1.setFocusTraversable(false);
-        button2.setFocusTraversable(false);
+        bouton.setFocusTraversable(false);
+        bouton0.setFocusTraversable(false);
+        bouton1.setFocusTraversable(false);
+        bouton2.setFocusTraversable(false);
     }
 	
 	public Button getButton(int i)
 	{
 		if (i == 0)
-			return button;
+			return bouton;
 		else if (i == 1)
-			return button0;
+			return bouton0;
 		else if (i == 2)
-			return button1;
+			return bouton1;
 		else
-			return button2;
+			return bouton2;
 		
 	}
 }

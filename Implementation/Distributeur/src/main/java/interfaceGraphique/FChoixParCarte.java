@@ -9,14 +9,14 @@ import javafx.scene.control.*;
 
 class FChoixParCarte extends Ecran 
 {
-    private static TextField champDeTexte;
-    private Stage stage;
+    private static TextField zoneTexte;
+    private Stage scene;
     
-    public FChoixParCarte(Stage stage) 
+    public FChoixParCarte(Stage scene) 
     {
-    	this.stage = stage;
+    	this.scene = scene;
         Button button = new Button();
-        champDeTexte = new TextField();
+        zoneTexte = new TextField();
         Text texte1 = new Text();
         Text texte2 = new Text();
 
@@ -40,9 +40,9 @@ class FChoixParCarte extends Ecran
         	{
         		try 
         		{
-					graphAC.infoCarte(champDeTexte.getText());
+					graphAC.infoCarte(zoneTexte.getText());
 	        		graphAC.choixValider();
-	        		stage.close();
+	        		scene.close();
 				} 
         		catch (ErreurDEncodage e) 
         		{
@@ -58,23 +58,23 @@ class FChoixParCarte extends Ecran
 		texte2.setLayoutX(50.0);
 		texte2.setLayoutY(145.0);
 
-        champDeTexte.setLayoutX(100.0);
-        champDeTexte.setLayoutY(85.0);
-        champDeTexte.setPrefWidth(200.0);
+        zoneTexte.setLayoutX(100.0);
+        zoneTexte.setLayoutY(85.0);
+        zoneTexte.setPrefWidth(200.0);
 
         texte1.setLayoutX(20.0);
         texte1.setLayoutY(30.0);
         texte1.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         texte1.setStrokeWidth(0.0);
-        texte1.setText("Choisissez un numéro de carte :");
+        texte1.setText("Choisissez un numero de carte :");
         texte1.setFont(new Font("System Bold", 15.0));
 
-        getChildren().addAll(button, champDeTexte, texte1, texte2);
+        getChildren().addAll(button, zoneTexte, texte1, texte2);
     }
 
 	public void actionClavier(int a) 
 	{
-		champDeTexte.setText(champDeTexte.getText() + a);
+		zoneTexte.setText(zoneTexte.getText() + a);
 	}
 
 	public void actionRetour() 
@@ -84,8 +84,8 @@ class FChoixParCarte extends Ecran
 
 	public void actionEffacer() 
 	{
-		if (champDeTexte.getText().length() > 0)
-			champDeTexte.setText(champDeTexte.getText().substring(0, champDeTexte.getText().length()-1));
+		if (zoneTexte.getText().length() > 0)
+			zoneTexte.setText(zoneTexte.getText().substring(0, zoneTexte.getText().length()-1));
 	}
 	
 	public void actionEntrer() 
