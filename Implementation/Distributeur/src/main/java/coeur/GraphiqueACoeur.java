@@ -406,4 +406,6 @@ public interface GraphiqueACoeur
 	public void setFentes(boolean fenteBillet, boolean fentePiece);
 	
 	public void setScanneur(boolean present);
+
+	public void paiement();
 }

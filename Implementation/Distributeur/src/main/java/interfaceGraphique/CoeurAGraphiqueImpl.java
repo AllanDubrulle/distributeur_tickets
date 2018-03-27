@@ -427,9 +427,10 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	}
 
 	@Override
-	public void carteBloquee()
+	public void carteBloquee() 
 	{
 		FenetreSimulation.getInstance().carteBloquee();
+		FenetreSimulation.getInstance().afficher(new FAfficherMessage("carte bloquée.", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 		
 	}
 
