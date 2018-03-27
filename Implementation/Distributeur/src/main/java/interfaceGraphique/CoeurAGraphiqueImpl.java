@@ -41,9 +41,10 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	{
 		FenetreSimulation.getInstance().afficher(new FSimulationAcceuil(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 	}
-	public void afficherMenu() 
+	public void afficherMenu(boolean imprimante, boolean fentesOuLecteur) 
 	{
-		FenetreSimulation.getInstance().afficher(new FMenu(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
+		boolean possible = imprimante && fentesOuLecteur;
+		FenetreSimulation.getInstance().afficher(new FMenu(possible, FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 	}
 	public void afficherFin() 
 	{

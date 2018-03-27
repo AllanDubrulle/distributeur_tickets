@@ -1,5 +1,7 @@
 package coeur;
 
+import stockage.Composant;
+
 /**
  * Classe EtatMenu
  * @author TheoDaix, AllanDubrulle, VictorVerhoye
@@ -44,7 +46,8 @@ public class EtatMenu extends ControleurEtat
 	
 	public void entree()
 	{
-		Controleur.getInstance().getCoeurAGraphique().afficherMenu();
+		boolean moyenDePayer = (Controleur.getInstance().getCoeurAStockage().estEnMarche(Composant.FENTEBILLET) || Controleur.getInstance().getCoeurAStockage().estEnMarche(Composant.FENTEPIECE) || Controleur.getInstance().getCoeurAStockage().estEnMarche(Composant.LECTEURCARTE));
+		Controleur.getInstance().getCoeurAGraphique().afficherMenu(Controleur.getInstance().getCoeurAStockage().estEnMarche(Composant.IMPRIMANTE), moyenDePayer);
 		Controleur.getInstance().getEtatsPrecedents().clear();
 		Controleur.getInstance().reinitialisationCommande();
 	}

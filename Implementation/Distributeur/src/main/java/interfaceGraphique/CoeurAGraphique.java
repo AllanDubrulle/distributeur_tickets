@@ -9,7 +9,7 @@ public interface CoeurAGraphique
 {
 	
 	public void afficherAccueil();
-	public void afficherMenu();
+	public void afficherMenu(boolean imprimante, boolean fentesEtLecteur);
 	public void afficherFin();
 	
 	public void afficherChoixPass();
