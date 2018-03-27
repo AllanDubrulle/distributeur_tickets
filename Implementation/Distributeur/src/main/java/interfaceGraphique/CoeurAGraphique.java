@@ -52,4 +52,5 @@ public interface CoeurAGraphique
 	public void carteNonBloquee();
 	public void carteBloquee();
 	public void afficherPanne(String message);
+	public void imprimanteEnPanne();
 }

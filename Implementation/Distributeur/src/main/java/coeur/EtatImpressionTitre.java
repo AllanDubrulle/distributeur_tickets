@@ -1,5 +1,6 @@
 package coeur;
 
+import stockage.Composant;
 import stockage.ComposantHorsService;
 import stockage.PlusDePapier;
 
@@ -41,6 +42,8 @@ class EtatImpressionTitre extends EtatAnnulable
 		}
 		catch(PlusDePapier e)
 		{
+			Controleur.getInstance().getCoeurAStockage().actualiserPanne(Composant.IMPRIMANTE);
+			Controleur.getInstance().getCoeurAGraphique().imprimanteEnPanne(); // peut être a supprimer 
 			Controleur.getInstance().getCoeurAGraphique().afficherMessageDErreur();
 		} 
 		catch (ComposantHorsService e)
@@ -49,14 +52,16 @@ class EtatImpressionTitre extends EtatAnnulable
 		}
 	}
 		
-	public void apres5secOk()
-	{
-		Controleur.getInstance().modifEtat(EtatMenu.getInstance());
-	}
 	public void apres5sec()
 	{
 		Controleur.getInstance().getCoeurAGraphique().afficherViderBacRecep();
 	}
+	
+	public void apres5secOk()
+	{
+		Controleur.getInstance().modifEtat(EtatFin.getInstance());
+	}
+
 	public void choixOk()
 	{
 		Controleur.getInstance().getCoeurAGraphique().afficherTitre(Controleur.getInstance().getCommande(),Controleur.getInstance().getCoeurAStockage().getTitre() 

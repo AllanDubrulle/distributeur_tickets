@@ -42,7 +42,7 @@ class FAfficherMessage extends Ecran
 
         getChildren().addAll(rectangle, text);
         
-        if (message.equals("Impression ...") || message.equals("Probleme technique. Veuillez prendre contact avec un technicien pour tout remboursement.") || message.equals("Probleme d'imprimante"))
+        if (message.equals("Plus de papier en reserve") ||message.equals("Impression ...") || message.equals("Probleme technique. Veuillez prendre contact avec un technicien pour tout remboursement.") || message.equals("Probleme d'imprimante"))
         {
         	lecteur = false;
         	PauseTransition delais = new PauseTransition(Duration.seconds(5));
@@ -53,7 +53,7 @@ class FAfficherMessage extends Ecran
         //	Alors, ici, je ne sais pas pourquoi mais à un moment donné, je suis passé dans les deux, le premier ne faisait rien (car la méthode des 5 secondes
         //	n'existait pas et le second était alors exécuté. Or, on exécute l'un OU (exclusif) l'autre : ajour du else
         
-        else if (!message.equals("Code PIN incorrect. Veuillez reessayer.") && !message.equals("Veuillez entrer votre code PIN.") && !message.equals("Paiement effectue avec succes. Veuillez recuperer votre carte."))
+        if (!message.equals("Code PIN incorrect. Veuillez reessayer.") && !message.equals("Veuillez entrer votre code PIN.") && !message.equals("Paiement effectue avec succes. Veuillez recuperer votre carte."))
         {
         	lecteur = false;
         	PauseTransition delais = new PauseTransition(Duration.seconds(5));

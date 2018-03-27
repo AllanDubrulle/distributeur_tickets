@@ -5,7 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
- * Classe BBDBanque (gestion de base de données pour toute les données bancaires)
+ * Classe BBDBanque (gestion de base de donnees pour toute les donnees bancaires)
  * @author TheoDaix, AllanDubrulle, VictorVerhoye
  * @version 1.0
  */
@@ -20,9 +20,9 @@ public class BDDBanque extends GestionBaseDeDonnees
     }
 	
 	/**
-     * 	Vérifie l'existence d'une certaine carte bancaire dans la base de données
+     * 	Verifie l'existence d'une certaine carte bancaire dans la base de donnees
      * 	@param numero le numero de carte
-     * 	@return carte retourne si la carte est présente dans la base de données
+     * 	@return carte retourne si la carte est presente dans la base de donnees
      */
 	public boolean existenceCarte(String numero)
 	{
@@ -43,11 +43,11 @@ public class BDDBanque extends GestionBaseDeDonnees
 	}
 	
 	/**
-     * 	Va chercher dans la base de données les informations d'une carte bancaire à partir de son numéro de carte (numero)
+     * 	Va chercher dans la base de donnees les informations d'une carte bancaire à partir de son numero de carte (numero)
      * 	Retourne un tableau contenant ces informations
-     * 	@param numero un numéro de carte bancaire
+     * 	@param numero un numero de carte bancaire
      * 	@return liste une liste d'informations sur la carte dans l'ordre :
-     * 	Numéro, Code, Solde
+     * 	Numero, Code, Solde
      */
 	public String[] infoCarte(String numero)
 	{
@@ -75,7 +75,7 @@ public class BDDBanque extends GestionBaseDeDonnees
 	}
 	
 	/**
-	 * 	Permet de modifier le solde d'une certaine carte bancaire dans la base de données après un paiement
+	 * 	Permet de modifier le solde d'une certaine carte bancaire dans la base de donnees apres un paiement
 	 * 	@param numero un numero de carte bancaire
 	 * 	@param somme le montant à mettre au solde de la carte bancaire
 	 */
