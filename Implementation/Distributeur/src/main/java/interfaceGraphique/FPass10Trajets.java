@@ -13,33 +13,33 @@ import javafx.scene.layout.*;
 
 public class FPass10Trajets extends Ecran 
 {
-    private TextField textField;
-    private RadioButton radioButton, radioButton0;
+    private TextField zoneTexte;
+    private RadioButton boutonChoix, boutonChoix0;
     private int pos = 0;
-    private ChoiceBox<String> choiceBox, choiceBox0;
-    private Text text10;
+    private ChoiceBox<String> menuDeroulant, menuDeroulant0;
+    private Text texte10;
 
     public FPass10Trajets(double hauteur, double largeur) 
     {
         Rectangle rectangle = new Rectangle();
-        Text text = new Text();
+        Text texte = new Text();
         VBox vBox = new VBox();
         HBox hBox = new HBox();
         HBox hBox0 = new HBox();
-        Text text0 = new Text();
-        textField = new TextField();
+        Text texte0 = new Text();
+        zoneTexte = new TextField();
         HBox hBox1 = new HBox();
-        Text text1 = new Text();
-        radioButton = new RadioButton();
-        radioButton0 = new RadioButton();
+        Text texte1 = new Text();
+        boutonChoix = new RadioButton();
+        boutonChoix0 = new RadioButton();
         HBox hBox2 = new HBox();
-        Text text2 = new Text();
-        Button button = new Button();
-        Button button0 = new Button();
-        choiceBox = new ChoiceBox<String>();	
-        choiceBox0 = new ChoiceBox<String>();	
-        Text text3 = new Text();
-        text10 = new Text();
+        Text texte2 = new Text();
+        Button bouton = new Button();
+        Button bouton0 = new Button();
+        menuDeroulant = new ChoiceBox<String>();	
+        menuDeroulant0 = new ChoiceBox<String>();	
+        Text texte3 = new Text();
+        texte10 = new Text();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -56,14 +56,14 @@ public class FPass10Trajets extends Ecran
         rectangle.setStrokeType(javafx.scene.shape.StrokeType.INSIDE);
         rectangle.setWidth(800.0*largeur);
 
-        text.setFontSmoothingType(javafx.scene.text.FontSmoothingType.LCD);
-        text.setLayoutX(54.0*largeur);
-        text.setLayoutY(86.0*hauteur);
-        text.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text.setStrokeWidth(0.0);
-        text.setText("Achat d'un pass dix trajets sans gares prédéfinies");
-        text.setUnderline(true);
-        text.setFont(new Font("System Bold", 22.0*hauteur));
+        texte.setFontSmoothingType(javafx.scene.text.FontSmoothingType.LCD);
+        texte.setLayoutX(54.0*largeur);
+        texte.setLayoutY(86.0*hauteur);
+        texte.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte.setStrokeWidth(0.0);
+        texte.setText("Achat d'un pass dix trajets sans gares predefinies");
+        texte.setUnderline(true);
+        texte.setFont(new Font("System Bold", 22.0*hauteur));
 
         vBox.setLayoutX(78.0*largeur);
         vBox.setLayoutY(129.0*hauteur);
@@ -76,80 +76,80 @@ public class FPass10Trajets extends Ecran
         hBox0.setPrefHeight(12.0*hauteur);
         hBox0.setPrefWidth(711.0*largeur);
 
-        text0.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text0.setStrokeWidth(0.0);
-        text0.setText("Nom : ");
-        text0.setWrappingWidth(150.0*largeur);
-        text0.setFont(new Font(15.0*hauteur));
-        HBox.setMargin(text0, new Insets(0.0));
+        texte0.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte0.setStrokeWidth(0.0);
+        texte0.setText("Nom : ");
+        texte0.setWrappingWidth(150.0*largeur);
+        texte0.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(texte0, new Insets(0.0));
 
-        textField.setPrefHeight(31.0*hauteur);
-        textField.setPrefWidth(300.0*largeur);
-        textField.setFont(new Font(15.0*hauteur));
-        HBox.setMargin(textField, new Insets(0.0, 0.0, 10.0*hauteur, 20.0*largeur));
+        zoneTexte.setPrefHeight(31.0*hauteur);
+        zoneTexte.setPrefWidth(300.0*largeur);
+        zoneTexte.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(zoneTexte, new Insets(0.0, 0.0, 10.0*hauteur, 20.0*largeur));
         VBox.setMargin(hBox0, new Insets(0.0));
 
         hBox1.setPrefHeight(17.0*hauteur);
         hBox1.setPrefWidth(244.0*largeur);
 
-        text1.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text1.setStrokeWidth(0.0);
-        text1.setText("Classe :");
-        text1.setWrappingWidth(150.0*largeur);
-        text1.setFont(new Font(15.0*hauteur));
-        HBox.setMargin(text1, new Insets(0.0, 20.0*largeur, 0.0, 0.0));
+        texte1.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte1.setStrokeWidth(0.0);
+        texte1.setText("Classe :");
+        texte1.setWrappingWidth(150.0*largeur);
+        texte1.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(texte1, new Insets(0.0, 20.0*largeur, 0.0, 0.0));
 
-        radioButton.setMnemonicParsing(false);
-        radioButton.setText("1e classe");
-        radioButton.setFont(new Font(15.0*hauteur));
-        radioButton.setSelected(true);
+        boutonChoix.setMnemonicParsing(false);
+        boutonChoix.setText("1e classe");
+        boutonChoix.setFont(new Font(15.0*hauteur));
+        boutonChoix.setSelected(true);
 
-        radioButton0.setMnemonicParsing(false);
-        radioButton0.setText("2e classe");
-        radioButton0.setFont(new Font(15.0*hauteur));
-        HBox.setMargin(radioButton0, new Insets(0.0, 0.0, 0.0, 50.0*largeur));
+        boutonChoix0.setMnemonicParsing(false);
+        boutonChoix0.setText("2e classe");
+        boutonChoix0.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(boutonChoix0, new Insets(0.0, 0.0, 0.0, 50.0*largeur));
         hBox1.setPadding(new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
 
         ToggleGroup t = new ToggleGroup();
-        radioButton.setToggleGroup(t);
-        radioButton0.setToggleGroup(t);
+        boutonChoix.setToggleGroup(t);
+        boutonChoix0.setToggleGroup(t);
         
         hBox2.setPrefHeight(17.0*hauteur);
         hBox2.setPrefWidth(244.0*largeur);
         
-        text3.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);	
-        text3.setStrokeWidth(0.0);	
-        text3.setText("Type du pass :");	
-        text3.setWrappingWidth(150.0*largeur);	
-        text3.setFont(new Font(15.0*hauteur));	
-        HBox.setMargin(text3, new Insets(0.0, 20.0*largeur, 0.0, 0.0));	
+        texte3.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);	
+        texte3.setStrokeWidth(0.0);	
+        texte3.setText("Type du pass :");	
+        texte3.setWrappingWidth(150.0*largeur);	
+        texte3.setFont(new Font(15.0*hauteur));	
+        HBox.setMargin(texte3, new Insets(0.0, 20.0*largeur, 0.0, 0.0));	
         
-        choiceBox0.setPrefWidth(125.0*largeur);	
-        choiceBox0.setPrefHeight(30.0*hauteur);	
-        choiceBox0.setItems(FXCollections.observableArrayList(GraphiqueACoeurImpl.getInstance().getTypes()));	
+        menuDeroulant0.setPrefWidth(125.0*largeur);	
+        menuDeroulant0.setPrefHeight(30.0*hauteur);	
+        menuDeroulant0.setItems(FXCollections.observableArrayList(GraphiqueACoeurImpl.getInstance().getTypes()));	
         hBox2.setPadding(new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
 
-        text2.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text2.setStrokeWidth(0.0);
-        text2.setText("Réduction :");
-        text2.setFont(new Font(15.0*hauteur));
-        HBox.setMargin(text2, new Insets(0.0, 0.0, 0.0, 50.0*largeur));
+        texte2.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte2.setStrokeWidth(0.0);
+        texte2.setText("Reduction :");
+        texte2.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(texte2, new Insets(0.0, 0.0, 0.0, 50.0*largeur));
 
-        choiceBox.setPrefWidth(225.0*largeur);
-        choiceBox.setPrefHeight(31.0*hauteur);
-        choiceBox.setItems(FXCollections.observableArrayList(GraphiqueACoeurImpl.getInstance().getReductions()));
-        HBox.setMargin(choiceBox, new Insets(0.0, 0.0, 0.0, 20.0*largeur));
+        menuDeroulant.setPrefWidth(225.0*largeur);
+        menuDeroulant.setPrefHeight(31.0*hauteur);
+        menuDeroulant.setItems(FXCollections.observableArrayList(GraphiqueACoeurImpl.getInstance().getReductions()));
+        HBox.setMargin(menuDeroulant, new Insets(0.0, 0.0, 0.0, 20.0*largeur));
         hBox2.setPadding(new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
 
-        button.setLayoutX(22.5*largeur);
-        button.setLayoutY(354.0*hauteur);
-        button.setMnemonicParsing(false);
-        button.setPrefHeight(31.0*hauteur);
-        button.setPrefWidth(75.0*largeur);
-        button.setText("Annuler");
-        button.setFont(new Font(15.0*hauteur));
-        button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button.setOnAction(new EventHandler<ActionEvent>()
+        bouton.setLayoutX(22.5*largeur);
+        bouton.setLayoutY(354.0*hauteur);
+        bouton.setMnemonicParsing(false);
+        bouton.setPrefHeight(31.0*hauteur);
+        bouton.setPrefWidth(75.0*largeur);
+        bouton.setText("Annuler");
+        bouton.setFont(new Font(15.0*hauteur));
+        bouton.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        bouton.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -158,15 +158,15 @@ public class FPass10Trajets extends Ecran
             }
         });
 
-        button0.setLayoutX(702.5*largeur);
-        button0.setLayoutY(354.0*hauteur);
-        button0.setMnemonicParsing(false);
-        button0.setPrefHeight(31.0*hauteur);
-        button0.setPrefWidth(75.0*largeur);
-        button0.setText("Valider");
-        button0.setFont(new Font(15.0*hauteur));
-        button0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button0.setOnAction(new EventHandler<ActionEvent>()
+        bouton0.setLayoutX(702.5*largeur);
+        bouton0.setLayoutY(354.0*hauteur);
+        bouton0.setMnemonicParsing(false);
+        bouton0.setPrefHeight(31.0*hauteur);
+        bouton0.setPrefWidth(75.0*largeur);
+        bouton0.setText("Valider");
+        bouton0.setFont(new Font(15.0*hauteur));
+        bouton0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        bouton0.setOnAction(new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -174,44 +174,44 @@ public class FPass10Trajets extends Ecran
             	{
             		try 
             		{
-            			if (verifierNom(textField.getText().trim()))
+            			if (verifierNom(zoneTexte.getText().trim()))
             			{
-            				graphAC.infoPass10Trajets(textField.getText(), getClasse(), choiceBox.getValue(), choiceBox0.getValue());
+            				graphAC.infoPass10Trajets(zoneTexte.getText(), getClasse(), menuDeroulant.getValue(), menuDeroulant0.getValue());
             				graphAC.choixValider();
             			}
             			else 
             			{
-            				text10.setText("Les données saisies sont incorrectes");
+            				texte10.setText("Les donnees saisies sont incorrectes");
             			}
             		} 
             		catch (NumberFormatException | ErreurDEncodage e) 
             		{
-            			text10.setText("Les données saisies sont incorrectes");
+            			texte10.setText("Les donnees saisies sont incorrectes");
             		}
             	}
             }
         });
 
-		text10.setFont(new Font("System Bold", 15.0*hauteur));
-		text10.setWrappingWidth(250.0*largeur);
-		text10.setFill(javafx.scene.paint.Color.RED);
-		text10.setLayoutX(275.0*largeur);
-		text10.setLayoutY(364.0*hauteur);
+		texte10.setFont(new Font("System Bold", 15.0*hauteur));
+		texte10.setWrappingWidth(250.0*largeur);
+		texte10.setFill(javafx.scene.paint.Color.RED);
+		texte10.setLayoutX(275.0*largeur);
+		texte10.setLayoutY(364.0*hauteur);
 		
-        hBox0.getChildren().addAll(text0, textField);
-        hBox1.getChildren().addAll(text1, radioButton, radioButton0);
-        hBox2.getChildren().addAll(text3, choiceBox0, text2, choiceBox);
+        hBox0.getChildren().addAll(texte0, zoneTexte);
+        hBox1.getChildren().addAll(texte1, boutonChoix, boutonChoix0);
+        hBox2.getChildren().addAll(texte3, menuDeroulant0, texte2, menuDeroulant);
         vBox.getChildren().addAll(hBox, hBox0, hBox1, hBox2);
-        getChildren().addAll(rectangle, text, vBox, button, button0, text10);
+        getChildren().addAll(rectangle, texte, vBox, bouton, bouton0, texte10);
         
-        button.setFocusTraversable(false);
-        button0.setFocusTraversable(false);
+        bouton.setFocusTraversable(false);
+        bouton0.setFocusTraversable(false);
     }
     
     public void actionClavier(String a) 
     {
     	if (pos == 0)
-    		textField.setText(textField.getText() + a);
+    		zoneTexte.setText(zoneTexte.getText() + a);
     }
 
 	public void actionClavier(int a) 
@@ -219,19 +219,19 @@ public class FPass10Trajets extends Ecran
 		if (pos == 1)
 		{	
 			if (a == 1)
-				radioButton.setSelected(true);
+				boutonChoix.setSelected(true);
 			else if (a == 2)
-				radioButton0.setSelected(true);
+				boutonChoix0.setSelected(true);
 		}
 		else if (pos == 2)	
 		{	
 			if (a < GraphiqueACoeurImpl.getInstance().getTypes().length)	
-				choiceBox0.setValue(GraphiqueACoeurImpl.getInstance().getTypes()[a]);	
+				menuDeroulant0.setValue(GraphiqueACoeurImpl.getInstance().getTypes()[a]);	
 		}	
 		else if (pos == 3)	
 		{	
 			if (a < GraphiqueACoeurImpl.getInstance().getReductions().length)	
-				choiceBox.setValue(GraphiqueACoeurImpl.getInstance().getReductions()[a]);	
+				menuDeroulant.setValue(GraphiqueACoeurImpl.getInstance().getReductions()[a]);	
 		}
 	}
 
@@ -239,19 +239,19 @@ public class FPass10Trajets extends Ecran
 	{
 		try 
     	{
-    		if (verifierNom(textField.getText().trim()))
+    		if (verifierNom(zoneTexte.getText().trim()))
     		{
-				graphAC.infoPass10Trajets(textField.getText(), getClasse(), choiceBox.getValue(), choiceBox0.getValue());
+				graphAC.infoPass10Trajets(zoneTexte.getText(), getClasse(), menuDeroulant.getValue(), menuDeroulant0.getValue());
             	graphAC.choixValider();
     		}
     		else 
     		{
-    			text10.setText("Les données saisies sont incorrectes");
+    			texte10.setText("Les donnees saisies sont incorrectes");
     		}
 		} 
     	catch (NumberFormatException | ErreurDEncodage e) 
     	{
-    		text10.setText("Les données saisies sont incorrectes");
+    		texte10.setText("Les donnees saisies sont incorrectes");
 		}
 	}
 
@@ -259,17 +259,17 @@ public class FPass10Trajets extends Ecran
 	{
 		if (pos == 3)
 		{
-			textField.requestFocus();
+			zoneTexte.requestFocus();
 			pos = 0;
 		}
 		else
 		{
 			if (pos == 0)
-				radioButton.requestFocus();
+				boutonChoix.requestFocus();
 			else if (pos == 1)
-				choiceBox0.requestFocus();
+				menuDeroulant0.requestFocus();
 			else if (pos == 2)
-				choiceBox.requestFocus();
+				menuDeroulant.requestFocus();
 			pos++;
 		}
 	}
@@ -277,16 +277,16 @@ public class FPass10Trajets extends Ecran
 	public void actionEspace() 
 	{
 		if (pos == 0)
-			textField.setText(textField.getText() + " ");
+			zoneTexte.setText(zoneTexte.getText() + " ");
 	}
 
 	public void actionEffacer() 
 	{
 		if (pos == 0)
 		{
-			String s = textField.getText();
+			String s = zoneTexte.getText();
 			if (s.length() > 0)
-				textField.setText(s.substring(0, s.length()-1));
+				zoneTexte.setText(s.substring(0, s.length()-1));
 		}
 	}
 	
@@ -297,7 +297,7 @@ public class FPass10Trajets extends Ecran
 	
 	private int getClasse()
 	{
-		if (radioButton.isSelected())
+		if (boutonChoix.isSelected())
 			return 1;
 		else 
 			return 2;
@@ -307,11 +307,11 @@ public class FPass10Trajets extends Ecran
 	{
 		if(graphAC.estTactile())
 		{	
-			textField.setOnMouseClicked(e -> {pos = 0;});
-			radioButton.setOnMouseClicked(e -> {pos = 1;});
-			radioButton0.setOnMouseClicked(e -> {pos = 1;});
-			choiceBox0.setOnMouseClicked(e -> {pos = 2;});
-			choiceBox.setOnMouseClicked(e -> {pos = 3;});
+			zoneTexte.setOnMouseClicked(e -> {pos = 0;});
+			boutonChoix.setOnMouseClicked(e -> {pos = 1;});
+			boutonChoix0.setOnMouseClicked(e -> {pos = 1;});
+			menuDeroulant0.setOnMouseClicked(e -> {pos = 2;});
+			menuDeroulant.setOnMouseClicked(e -> {pos = 3;});
 		}
 	}
 }

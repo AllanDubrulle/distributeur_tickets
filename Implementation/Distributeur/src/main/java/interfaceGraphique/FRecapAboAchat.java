@@ -13,39 +13,39 @@ class FRecapAboAchat extends Ecran
 	public FRecapAboAchat(String numero, String nom, String registre, String gareDepart, String gareArrivee, int validite, int classe, String reduction, String type, double prix, double hauteur, double largeur)
 	{
         Rectangle rectangle = new Rectangle();
-        Text text = new Text();
+        Text texte = new Text();
         VBox vBox = new VBox();
         HBox hBox = new HBox();
         HBox hBox0 = new HBox();
-        Text text0 = new Text();
-        Text text1 = new Text();
+        Text texte0 = new Text();
+        Text texte1 = new Text();
         HBox hBox1 = new HBox();
-        Text text2 = new Text();
-        Text text3 = new Text();
+        Text texte2 = new Text();
+        Text texte3 = new Text();
         HBox hBox2 = new HBox();
-        Text text4 = new Text();
-        Text text5 = new Text();
-        Text text6 = new Text();
-        Text text7 = new Text();
+        Text texte4 = new Text();
+        Text texte5 = new Text();
+        Text texte6 = new Text();
+        Text texte7 = new Text();
         HBox hBox4 = new HBox();
-        Text text8 = new Text();
-        Text text9 = new Text();
+        Text texte8 = new Text();
+        Text texte9 = new Text();
         HBox hBox5 = new HBox();
-        Text text10 = new Text();
-        Text text11 = new Text();
+        Text texte10 = new Text();
+        Text texte11 = new Text();
         HBox hBox6 = new HBox();
-        Text text12 = new Text();
-        Text text13 = new Text();
+        Text texte12 = new Text();
+        Text texte13 = new Text();
         HBox hBox7 = new HBox();
-        Text text14 = new Text();
-        Text text15 = new Text();
-        Button button = new Button();
-        Button button0 = new Button();
+        Text texte14 = new Text();
+        Text texte15 = new Text();
+        Button bouton = new Button();
+        Button bouton0 = new Button();
         HBox hBox8 = new HBox();	
-        Text text16 = new Text();	
-        Text text17 = new Text();
-        Text text18 = new Text();
-        Text text19 = new Text();
+        Text texte16 = new Text();	
+        Text texte17 = new Text();
+        Text texte18 = new Text();
+        Text texte19 = new Text();
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -62,14 +62,14 @@ class FRecapAboAchat extends Ecran
         rectangle.setStrokeType(javafx.scene.shape.StrokeType.INSIDE);
         rectangle.setWidth(800.0*largeur);
         
-        text.setFontSmoothingType(javafx.scene.text.FontSmoothingType.LCD);
-        text.setLayoutX(54.0*largeur);
-        text.setLayoutY(60.0*hauteur);
-        text.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text.setStrokeWidth(0.0);
-        text.setText("Achat d'un abonnement (récapitulatif de commande)");
-        text.setUnderline(true);
-        text.setFont(new Font("System Bold", 22.0*hauteur));
+        texte.setFontSmoothingType(javafx.scene.text.FontSmoothingType.LCD);
+        texte.setLayoutX(54.0*largeur);
+        texte.setLayoutY(60.0*hauteur);
+        texte.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte.setStrokeWidth(0.0);
+        texte.setText("Achat d'un abonnement (recapitulatif de commande)");
+        texte.setUnderline(true);
+        texte.setFont(new Font("System Bold", 22.0*hauteur));
 
         vBox.setLayoutX(87.0*largeur);
         vBox.setLayoutY(86.0*hauteur);
@@ -79,173 +79,173 @@ class FRecapAboAchat extends Ecran
         hBox.setPrefHeight(12.0*hauteur);
         hBox.setPrefWidth(711.0*largeur);
         
-        text18.setText("Numéro de l'abonnement :");
-        text18.setWrappingWidth(180.0*largeur);
-        text18.setFont(new Font(15.0*hauteur));
+        texte18.setText("Numero de l'abonnement :");
+        texte18.setWrappingWidth(180.0*largeur);
+        texte18.setFont(new Font(15.0*hauteur));
         
-        text19.setText(numero);
-        text19.setFont(new Font("System Bold Italic", 15.0*hauteur));
-        HBox.setMargin(text19, new Insets(0.0, 0.0, 0.0, 20.0*largeur));
+        texte19.setText(numero);
+        texte19.setFont(new Font("System Bold Italic", 15.0*hauteur));
+        HBox.setMargin(texte19, new Insets(0.0, 0.0, 0.0, 20.0*largeur));
         VBox.setMargin(hBox, new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
 
         hBox0.setPrefHeight(12.0*hauteur);
         hBox0.setPrefWidth(711.0*largeur);
 
-        text0.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text0.setStrokeWidth(0.0);
-        text0.setText("Nom : ");
-        text0.setWrappingWidth(180.0*largeur);
-        text0.setFont(new Font(15.0*hauteur));
-        HBox.setMargin(text0, new Insets(0.0));
+        texte0.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte0.setStrokeWidth(0.0);
+        texte0.setText("Nom : ");
+        texte0.setWrappingWidth(180.0*largeur);
+        texte0.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(texte0, new Insets(0.0));
 
-        text1.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text1.setStrokeWidth(0.0);
-        text1.setText(nom.toUpperCase());
-        text1.setWrappingWidth(200.0*largeur);
-        text1.setFont(new Font("System Bold Italic", 15.0*hauteur));
-        HBox.setMargin(text1, new Insets(0.0, 0.0, 0.0, 20.0*largeur));
+        texte1.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte1.setStrokeWidth(0.0);
+        texte1.setText(nom.toUpperCase());
+        texte1.setWrappingWidth(200.0*largeur);
+        texte1.setFont(new Font("System Bold Italic", 15.0*hauteur));
+        HBox.setMargin(texte1, new Insets(0.0, 0.0, 0.0, 20.0*largeur));
         VBox.setMargin(hBox0, new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
 
         hBox1.setPrefHeight(12.0*hauteur);
         hBox1.setPrefWidth(711.0*largeur);
 
-        text2.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text2.setStrokeWidth(0.0);
-        text2.setText("Numéro de registre national : ");
-        text2.setWrappingWidth(180.0*largeur);
-        text2.setFont(new Font(15.0*hauteur));
-        HBox.setMargin(text2, new Insets(0.0));
+        texte2.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte2.setStrokeWidth(0.0);
+        texte2.setText("Numero de registre national : ");
+        texte2.setWrappingWidth(180.0*largeur);
+        texte2.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(texte2, new Insets(0.0));
 
-        text3.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text3.setStrokeWidth(0.0);
-        text3.setText(registre);
-        text3.setWrappingWidth(200.0*largeur);
-        text3.setFont(new Font("System Bold Italic", 15.0*hauteur));
-        HBox.setMargin(text3, new Insets(0.0, 0.0, 0.0, 20.0*largeur));
+        texte3.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte3.setStrokeWidth(0.0);
+        texte3.setText(registre);
+        texte3.setWrappingWidth(200.0*largeur);
+        texte3.setFont(new Font("System Bold Italic", 15.0*hauteur));
+        HBox.setMargin(texte3, new Insets(0.0, 0.0, 0.0, 20.0*largeur));
         hBox1.setPadding(new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
 
         hBox2.setPrefHeight(17.0*hauteur);
         hBox2.setPrefWidth(244.0*largeur);
 
-        text4.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text4.setStrokeWidth(0.0);
-        text4.setText("Itinéraire :");
-        text4.setWrappingWidth(180.0*largeur);
-        text4.setFont(new Font(15.0*hauteur));
-        HBox.setMargin(text4, new Insets(0.0, 20.0*largeur, 0.0, 0.0));
+        texte4.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte4.setStrokeWidth(0.0);
+        texte4.setText("Itineraire :");
+        texte4.setWrappingWidth(180.0*largeur);
+        texte4.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(texte4, new Insets(0.0, 20.0*largeur, 0.0, 0.0));
 
-        text5.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text5.setStrokeWidth(0.0);
-        text5.setText(gareDepart.toUpperCase());
-        text5.setFont(new Font("System Bold Italic", 15.0*hauteur));
-        HBox.setMargin(text5, new Insets(0.0, 0.0, 0.0, 0.0));
+        texte5.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte5.setStrokeWidth(0.0);
+        texte5.setText(gareDepart.toUpperCase());
+        texte5.setFont(new Font("System Bold Italic", 15.0*hauteur));
+        HBox.setMargin(texte5, new Insets(0.0, 0.0, 0.0, 0.0));
         hBox2.setPadding(new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
 
-        text6.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text6.setStrokeWidth(0.0);
-        text6.setText("    -    ");
-        text6.setFont(new Font(15.0*hauteur));
-        HBox.setMargin(text6, new Insets(0.0, 20.0*largeur, 0.0, 20.0*largeur));
+        texte6.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte6.setStrokeWidth(0.0);
+        texte6.setText("    -    ");
+        texte6.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(texte6, new Insets(0.0, 20.0*largeur, 0.0, 20.0*largeur));
 
-        text7.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text7.setStrokeWidth(0.0);
-        text7.setText(gareArrivee.toUpperCase());
-        text7.setFont(new Font("System Bold Italic", 15.0*hauteur));
+        texte7.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte7.setStrokeWidth(0.0);
+        texte7.setText(gareArrivee.toUpperCase());
+        texte7.setFont(new Font("System Bold Italic", 15.0*hauteur));
 
         hBox4.setPrefHeight(41.0*hauteur);
         hBox4.setPrefWidth(725.0*largeur);
 
-        text8.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text8.setStrokeWidth(0.0);
-        text8.setText("Validité de l'abonnement :");
-        text8.setWrappingWidth(180.0*largeur);
-        text8.setFont(new Font(15.0*hauteur));
-        HBox.setMargin(text8, new Insets(0.0, 20.0*largeur, 0.0, 0.0));
+        texte8.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte8.setStrokeWidth(0.0);
+        texte8.setText("Validite de l'abonnement :");
+        texte8.setWrappingWidth(180.0*largeur);
+        texte8.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(texte8, new Insets(0.0, 20.0*largeur, 0.0, 0.0));
 
-        text9.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text9.setStrokeWidth(0.0);
-        text9.setText(validite + " mois");
-        text9.setWrappingWidth(200.0*largeur);
-        text9.setFont(new Font("System Bold Italic", 15.0*hauteur));
+        texte9.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte9.setStrokeWidth(0.0);
+        texte9.setText(validite + " mois");
+        texte9.setWrappingWidth(200.0*largeur);
+        texte9.setFont(new Font("System Bold Italic", 15.0*hauteur));
         hBox4.setPadding(new Insets(0.0, 0.0, 10.0, 0.0));
 
         hBox5.setPrefHeight(17.0*hauteur);
         hBox5.setPrefWidth(244.0*largeur);
 
-        text10.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text10.setStrokeWidth(0.0);
-        text10.setText("Classe :");
-        text10.setWrappingWidth(180.0*largeur);
-        text10.setFont(new Font(15.0*hauteur));
-        HBox.setMargin(text10, new Insets(0.0, 20.0*largeur, 0.0, 0.0));
+        texte10.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte10.setStrokeWidth(0.0);
+        texte10.setText("Classe :");
+        texte10.setWrappingWidth(180.0*largeur);
+        texte10.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(texte10, new Insets(0.0, 20.0*largeur, 0.0, 0.0));
 
-        text11.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text11.setStrokeWidth(0.0);
-        text11.setText(classe + "e classe");
-        text11.setWrappingWidth(200.0*largeur);
-        text11.setFont(new Font("System Bold Italic", 15.0*hauteur));
+        texte11.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte11.setStrokeWidth(0.0);
+        texte11.setText(classe + "e classe");
+        texte11.setWrappingWidth(200.0*largeur);
+        texte11.setFont(new Font("System Bold Italic", 15.0*hauteur));
         hBox5.setPadding(new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
 
         hBox6.setPrefHeight(17.0*hauteur);
         hBox6.setPrefWidth(244.0);
 
-        text12.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text12.setStrokeWidth(0.0);
-        text12.setText("Réduction :");
-        text12.setWrappingWidth(180.0*largeur);
-        text12.setFont(new Font(15.0*hauteur));
-        HBox.setMargin(text12, new Insets(0.0));
+        texte12.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte12.setStrokeWidth(0.0);
+        texte12.setText("Reduction :");
+        texte12.setWrappingWidth(180.0*largeur);
+        texte12.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(texte12, new Insets(0.0));
 
-        text13.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text13.setStrokeWidth(0.0);
-        text13.setText(reduction);
-        text13.setWrappingWidth(200.0);
-        text13.setFont(new Font("System Bold Italic", 15.0*hauteur));
-        HBox.setMargin(text13, new Insets(0.0, 0.0, 0.0, 20.0*largeur));
+        texte13.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte13.setStrokeWidth(0.0);
+        texte13.setText(reduction);
+        texte13.setWrappingWidth(200.0);
+        texte13.setFont(new Font("System Bold Italic", 15.0*hauteur));
+        HBox.setMargin(texte13, new Insets(0.0, 0.0, 0.0, 20.0*largeur));
         hBox6.setPadding(new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
         
-        text16.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);	
-        text16.setStrokeWidth(0.0);	
-        text16.setText("Type d'abonnement :");	
-        text16.setWrappingWidth(180.0*largeur);	
-        text16.setFont(new Font(15.0*hauteur));	
-        HBox.setMargin(text16, new Insets(0.0));	
+        texte16.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);	
+        texte16.setStrokeWidth(0.0);	
+        texte16.setText("Type d'abonnement :");	
+        texte16.setWrappingWidth(180.0*largeur);	
+        texte16.setFont(new Font(15.0*hauteur));	
+        HBox.setMargin(texte16, new Insets(0.0));	
         
-        text17.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);	
-        text17.setStrokeWidth(0.0);	
-        text17.setText(type);	
-        text17.setWrappingWidth(200.0);	
-        text17.setFont(new Font("System Bold Italic", 15.0*hauteur));	
-        HBox.setMargin(text17, new Insets(0.0, 0.0, 0.0, 20.0*largeur));	
+        texte17.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);	
+        texte17.setStrokeWidth(0.0);	
+        texte17.setText(type);	
+        texte17.setWrappingWidth(200.0);	
+        texte17.setFont(new Font("System Bold Italic", 15.0*hauteur));	
+        HBox.setMargin(texte17, new Insets(0.0, 0.0, 0.0, 20.0*largeur));	
         hBox8.setPadding(new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
 
         hBox7.setPrefHeight(17.0*hauteur);
         hBox7.setPrefWidth(244.0*largeur);
 
-        text14.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text14.setStrokeWidth(0.0);
-        text14.setText("Prix :");
-        text14.setWrappingWidth(180.0*largeur);
-        text14.setFont(new Font(15.0*hauteur));
-        HBox.setMargin(text14, new Insets(0.0));
+        texte14.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte14.setStrokeWidth(0.0);
+        texte14.setText("Prix :");
+        texte14.setWrappingWidth(180.0*largeur);
+        texte14.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(texte14, new Insets(0.0));
 
-        text15.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
-        text15.setStrokeWidth(0.0);
-        text15.setText(prix + " €");
-        text15.setWrappingWidth(200.0);
-        text15.setFont(new Font("System Bold Italic", 15.0*hauteur));
-        HBox.setMargin(text15, new Insets(0.0, 0.0, 0.0, 20.0*largeur));
+        texte15.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
+        texte15.setStrokeWidth(0.0);
+        texte15.setText(prix + " eur");
+        texte15.setWrappingWidth(200.0);
+        texte15.setFont(new Font("System Bold Italic", 15.0*hauteur));
+        HBox.setMargin(texte15, new Insets(0.0, 0.0, 0.0, 20.0*largeur));
         hBox7.setPadding(new Insets(0.0, 0.0, 10.0*hauteur, 0.0));
 
-        button.setLayoutX(23.0*largeur);
-        button.setLayoutY(354.0*hauteur);
-        button.setMnemonicParsing(false);
-        button.setPrefHeight(31.0*hauteur);
-        button.setPrefWidth(75.0*largeur);
-        button.setText("Retour");
-        button.setFont(new Font(15.0*hauteur));
-        button.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button.setOnAction(new EventHandler<ActionEvent>() 
+        bouton.setLayoutX(23.0*largeur);
+        bouton.setLayoutY(354.0*hauteur);
+        bouton.setMnemonicParsing(false);
+        bouton.setPrefHeight(31.0*hauteur);
+        bouton.setPrefWidth(75.0*largeur);
+        bouton.setText("Retour");
+        bouton.setFont(new Font(15.0*hauteur));
+        bouton.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        bouton.setOnAction(new EventHandler<ActionEvent>() 
         {
         	public void handle(ActionEvent event) 
         	{
@@ -254,15 +254,15 @@ class FRecapAboAchat extends Ecran
         	}
         });
 
-        button0.setLayoutX(679.0*largeur);
-        button0.setLayoutY(354.0*hauteur);
-        button0.setMnemonicParsing(false);
-        button0.setPrefHeight(31.0*hauteur);
-        button0.setPrefWidth(100.0*largeur);
-        button0.setText("Paiement");
-        button0.setFont(new Font(15.0*hauteur));
-        button0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
-        button0.setOnAction(new EventHandler<ActionEvent>() 
+        bouton0.setLayoutX(679.0*largeur);
+        bouton0.setLayoutY(354.0*hauteur);
+        bouton0.setMnemonicParsing(false);
+        bouton0.setPrefHeight(31.0*hauteur);
+        bouton0.setPrefWidth(100.0*largeur);
+        bouton0.setText("Paiement");
+        bouton0.setFont(new Font(15.0*hauteur));
+        bouton0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
+        bouton0.setOnAction(new EventHandler<ActionEvent>() 
         {
         	public void handle(ActionEvent event) 
         	{
@@ -271,20 +271,20 @@ class FRecapAboAchat extends Ecran
         	}
         });
 
-        hBox.getChildren().addAll(text18, text19);
-        hBox0.getChildren().addAll(text0, text1);
-        hBox1.getChildren().addAll(text2, text3);
-        hBox2.getChildren().addAll(text4, text5, text6, text7);
-        hBox4.getChildren().addAll(text8, text9);
-        hBox5.getChildren().addAll(text10, text11);
-        hBox6.getChildren().addAll(text12, text13);
-        hBox7.getChildren().addAll(text14, text15);
-        hBox8.getChildren().addAll(text16, text17);
+        hBox.getChildren().addAll(texte18, texte19);
+        hBox0.getChildren().addAll(texte0, texte1);
+        hBox1.getChildren().addAll(texte2, texte3);
+        hBox2.getChildren().addAll(texte4, texte5, texte6, texte7);
+        hBox4.getChildren().addAll(texte8, texte9);
+        hBox5.getChildren().addAll(texte10, texte11);
+        hBox6.getChildren().addAll(texte12, texte13);
+        hBox7.getChildren().addAll(texte14, texte15);
+        hBox8.getChildren().addAll(texte16, texte17);
         vBox.getChildren().addAll(hBox, hBox0, hBox1, hBox2, hBox4, hBox5, hBox6, hBox8, hBox7);
-        getChildren().addAll(rectangle, text, vBox, button, button0);
+        getChildren().addAll(rectangle, texte, vBox, bouton, bouton0);
         
-        button.setFocusTraversable(false);
-        button0.setFocusTraversable(false);
+        bouton.setFocusTraversable(false);
+        bouton0.setFocusTraversable(false);
     }
 
 	public void actionRetour() 
