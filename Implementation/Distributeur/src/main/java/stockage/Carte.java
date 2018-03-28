@@ -7,7 +7,7 @@ package stockage;
  */
 public class Carte 
 {
-	private String id;
+	private String identifiant;
 	private int codePIN;
 	private int solde;
 	
@@ -19,7 +19,7 @@ public class Carte
 	 */
 	public Carte(String id, int codePIN, int solde) 
 	{
-		this.id = id;
+		this.identifiant = id;
 		this.codePIN = codePIN;
 		this.solde = solde; 
 	}
@@ -59,7 +59,7 @@ public class Carte
 	 */
 	public String getID()
 	{
-		return id;
+		return identifiant;
 	}
 	public int getCode()
 	{

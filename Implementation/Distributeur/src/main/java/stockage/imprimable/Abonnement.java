@@ -6,15 +6,15 @@ public class Abonnement extends TitreDeTransport
 {
 	private String nom;
 	private String registreNational;
-	private int num;
+	private int codeBarre;
 	
-	public Abonnement(int num, Date dateValidite, Date dateExp, String gareDepart, String gareArrivee, Classe classe,
+	public Abonnement(int codeBarre, Date dateValidite, Date dateExp, String gareDepart, String gareArrivee, Classe classe,
 			Reduction reduction, TypeTitre type, String nom,String registreNational)
 	{
 		super(dateValidite, dateExp, gareDepart, gareArrivee, classe, type, reduction);
 		this.nom=nom;
 		this.registreNational=registreNational;
-		this.num = num;
+		this.codeBarre = codeBarre;
 	}
 	public String getNom() 
 	{
@@ -37,8 +37,8 @@ public class Abonnement extends TitreDeTransport
 			val = 12;
 		return val;
 	}
-	public int getNum()
+	public int getCodeBarre()
 	{
-		return num;
+		return codeBarre;
 	}
 }

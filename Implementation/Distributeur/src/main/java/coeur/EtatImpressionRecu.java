@@ -54,13 +54,13 @@ public class EtatImpressionRecu extends ControleurEtat
 		if (Controleur.getInstance().getModePaiement() == EtatPaiementLiquide.getInstance())
 		{
 		Controleur.getInstance().getCoeurAGraphique().afficherRecu(Controleur.getInstance().getCoeurAStockage().prixAffichable(),
-				Controleur.getInstance().getCoeurAStockage().introduitAffichable(),
+				Controleur.getInstance().getCoeurAStockage().montantRecuAffichable(),
 				Controleur.getInstance().getCoeurAStockage().renduAffichable(),"Liquide"); 
 		}
 		else
 		{
 			Controleur.getInstance().getCoeurAGraphique().afficherRecu(Controleur.getInstance().getCoeurAStockage().prixAffichable(),
-					Controleur.getInstance().getCoeurAStockage().introduitAffichable(),
+					Controleur.getInstance().getCoeurAStockage().montantRecuAffichable(),
 					Controleur.getInstance().getCoeurAStockage().renduAffichable(),"Carte"); 
 		}
 		Controleur.getInstance().modifEtat(EtatFin.getInstance());

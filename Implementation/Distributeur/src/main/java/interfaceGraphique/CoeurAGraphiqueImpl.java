@@ -181,7 +181,7 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 		case ACHATABO:
 			Abonnement abonnement = (Abonnement) titre;
 			StackPane root1 = new StackPane();
-			AfficherAbo afficheAbo = new AfficherAbo(abonnement.getNum(), abonnement.getNom(), abonnement.getClasse().valeur(), abonnement.getGareDepart(), abonnement.getGareArrivee(), abonnement.getDateValidite(), abonnement.getDateExp(), abonnement.getReduction().toString(), abonnement.getType().toString(), prix );
+			AfficherAbo afficheAbo = new AfficherAbo(abonnement.getCodeBarre(), abonnement.getNom(), abonnement.getClasse().valeur(), abonnement.getGareDepart(), abonnement.getGareArrivee(), abonnement.getDateValidite(), abonnement.getDateExp(), abonnement.getReduction().toString(), abonnement.getType().toString(), prix );
 			Stage stage1 = new Stage();
 			Scene scene1 = new Scene(root1, 580,300);
 			root1.getChildren().add(afficheAbo);
@@ -241,7 +241,7 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 		case RENOUVELLEMENTABO:
 			Abonnement abonnementRen = (Abonnement) titre;
 			StackPane root6 = new StackPane();
-			AfficherAbo afficheAboRen = new AfficherAbo(abonnementRen.getNum(), abonnementRen.getNom(), abonnementRen.getClasse().valeur(), abonnementRen.getGareDepart(), abonnementRen.getGareArrivee(), abonnementRen.getDateValidite(), abonnementRen.getDateExp(), abonnementRen.getReduction().toString(), abonnementRen.getType().toString(), prix );
+			AfficherAbo afficheAboRen = new AfficherAbo(abonnementRen.getCodeBarre(), abonnementRen.getNom(), abonnementRen.getClasse().valeur(), abonnementRen.getGareDepart(), abonnementRen.getGareArrivee(), abonnementRen.getDateValidite(), abonnementRen.getDateExp(), abonnementRen.getReduction().toString(), abonnementRen.getType().toString(), prix );
 			Stage stage6 = new Stage();
 			Scene scene6 = new Scene(root6, 580,300);
 			root6.getChildren().add(afficheAboRen);
@@ -311,7 +311,7 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 		{
 			case ACHATABO:
 				Abonnement abonnement = (Abonnement) titre;
-				FenetreSimulation.getInstance().afficher(new FRecapAboAchat(Integer.toString(abonnement.getNum()), abonnement.getNom(), abonnement.getRegNat(), 
+				FenetreSimulation.getInstance().afficher(new FRecapAboAchat(Integer.toString(abonnement.getCodeBarre()), abonnement.getNom(), abonnement.getRegNat(), 
 						abonnement.getGareDepart(), abonnement.getGareArrivee(), abonnement.getValidite(), 	
 						abonnement.getClasse().valeur(), abonnement.getReduction().toString(), abonnement.getType().toString(), prix, 	
 						FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
@@ -344,7 +344,7 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 				break;
 			case RENOUVELLEMENTABO:
 				Abonnement abonnementRen = (Abonnement) titre;
-				FenetreSimulation.getInstance().afficher(new FRecapAboRenouveler(Integer.toString(abonnementRen.getNum()), abonnementRen.getNom(), abonnementRen.getRegNat(), 
+				FenetreSimulation.getInstance().afficher(new FRecapAboRenouveler(Integer.toString(abonnementRen.getCodeBarre()), abonnementRen.getNom(), abonnementRen.getRegNat(), 
 						abonnementRen.getGareDepart(), abonnementRen.getGareArrivee(), abonnementRen.getValidite(), 	
 						abonnementRen.getClasse().valeur(), abonnementRen.getReduction().toString(), abonnementRen.getType().toString(), prix, 	
 						FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));

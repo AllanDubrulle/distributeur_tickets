@@ -63,7 +63,7 @@ public class Monnayeur
 	 * 	@return	rendu un rendu avec le détail de ce qui a été donné
 	 * 	@throws PasAssezDeMonnaie (s'il n'y a pas assez de monnaie pour rendre)
 	 */
-	public Rendu retournerArgent(int montant) throws PasAssezDeMonnaie
+	public Rendu calculerRenduArgent(int montant) throws PasAssezDeMonnaie
 	{
 		HashMap<Piece,Integer> renduPiece = new HashMap<Piece,Integer>();
 		HashMap<BilletMonnaie,Integer> renduBillet = new HashMap<BilletMonnaie,Integer>();

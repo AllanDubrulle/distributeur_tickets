@@ -41,7 +41,7 @@ public interface CoeurAStockage
 	
 	public void ajoutMonnaie(int i) throws ComposantHorsService;
 	public Rendu rendreMonnaie() throws PasAssezDeMonnaie;
-	public Rendu rendreIntroduit();
+	public Rendu rendreMontantRecu();
 	public void reinitialisation();
 	
 	
@@ -59,7 +59,7 @@ public interface CoeurAStockage
 	public int getPrix();
 	public double prixAffichable();
 	public double renduAffichable();
-	public double introduitAffichable();
+	public double montantRecuAffichable();
 	public boolean existenceCarte(String numero);
 	public Carte getCarte();
 	public boolean verifCode(int codePIN);

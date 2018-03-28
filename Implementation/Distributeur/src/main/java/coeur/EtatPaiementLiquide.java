@@ -40,13 +40,13 @@ class EtatPaiementLiquide extends EtatAnnulable
 			{
 				Controleur.getInstance().getCoeurAGraphique().actualiserMontant(
 						Controleur.getInstance().getCoeurAStockage().renduAffichable(),
-						Controleur.getInstance().getCoeurAStockage().introduitAffichable());
+						Controleur.getInstance().getCoeurAStockage().montantRecuAffichable());
 			}
 		}
 		
 		catch(PasAssezDeMonnaie e)
 		{
-			Controleur.getInstance().getCoeurAGraphique().afficherRendu(Controleur.getInstance().getCoeurAStockage().rendreIntroduit());
+			Controleur.getInstance().getCoeurAGraphique().afficherRendu(Controleur.getInstance().getCoeurAStockage().rendreMontantRecu());
 			Controleur.getInstance().getCoeurAGraphique().afficherRendreMonnaieInseree();
 		}
 		catch(ComposantHorsService e)

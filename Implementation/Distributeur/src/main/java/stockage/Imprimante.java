@@ -7,7 +7,7 @@ package stockage;
  */
 public class Imprimante 
 {
-	private int nbrImpressions = 200;
+	private int nombresImpressions = 250;
 	private CoeurAStockage cAStock;
 	
 	/**
@@ -25,7 +25,7 @@ public class Imprimante
 	 */
 	public int getNbrImpressions() 
 	{
-		return nbrImpressions;
+		return nombresImpressions;
 	}
 	
 	/**
@@ -34,7 +34,7 @@ public class Imprimante
 	 */
 	public void setNbrImpressions(int nbrImpressions)
 	{
-		this.nbrImpressions = nbrImpressions;
+		this.nombresImpressions = nbrImpressions;
 	}
 	
 	/**

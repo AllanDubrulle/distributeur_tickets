@@ -25,7 +25,7 @@ public class CoeurAStockageImpl implements CoeurAStockage
 	private TitreDeTransport achat;
 	private int nbrTitre;
 	private int prix;
-	private int introduit;
+	private int montantRecu;
 	private Monnayeur monnayeur;  // a modifier si on modifie panne
 	private HashMap<Composant,Boolean> composantEnMarche;
 	private Imprimante imprimante;
@@ -67,7 +67,7 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		String jour = Integer.toString(abo.getDateExp().getDay());
 		BDDTitre bTitre = new BDDTitre();
 		bTitre.connexion();
-		bTitre.ajouterAbonnement(abo.getNum(), abo.getNom(), abo.getRegNat(), abo.getGareDepart(), abo.getGareArrivee(), annee, mois, jour,abo.getType().toString(), abo.getReduction().toString(), Integer.toString(abo.getClasse().valeur()));
+		bTitre.ajouterAbonnement(abo.getCodeBarre(), abo.getNom(), abo.getRegNat(), abo.getGareDepart(), abo.getGareArrivee(), annee, mois, jour,abo.getType().toString(), abo.getReduction().toString(), Integer.toString(abo.getClasse().valeur()));
 		bTitre.deconnexion();
 	}
 	
@@ -76,7 +76,7 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		Abonnement abo = (Abonnement) achat;
 		BDDTitre bTitre = new BDDTitre();
 		bTitre.connexion();
-		bTitre.actualiserDateAbo(Integer.toString(abo.getNum()), abo.getValidite());
+		bTitre.actualiserDateAbo(Integer.toString(abo.getCodeBarre()), abo.getValidite());
 		bTitre.deconnexion();
 	}
 
@@ -301,7 +301,7 @@ public class CoeurAStockageImpl implements CoeurAStockage
 					monnayeur.stockerBillet(BilletMonnaie.B50);
 					break;
 			}
-			introduit+=i;
+			montantRecu+=i;
 		}
 	}
 	
@@ -345,28 +345,28 @@ public class CoeurAStockageImpl implements CoeurAStockage
 	
 	public Rendu rendreMonnaie() throws PasAssezDeMonnaie
 	{
-		return monnayeur.retournerArgent(introduit-prix);
+		return monnayeur.calculerRenduArgent(montantRecu-prix);
 	}
 
 	
-	public Rendu rendreIntroduit()
+	public Rendu rendreMontantRecu()
 	{
 		return monnayeur.rendreMontantEncours();
 	}
 
-	/*public int getIntroduit()
+	/*public int getMontantRecu()
 	{
-		return introduit;
+		return montantRecu;
 	}*/
 
 	public void reinitialisation()
 	{
-		setIntroduit(0);
+		setMontantRecu(0);
 	}
 
-	private void setIntroduit(int introduit)
+	private void setMontantRecu(int montantRecu)
 	{
-		this.introduit=introduit;
+		this.montantRecu = montantRecu;
 	}
 
 	public void viderCaisse()
@@ -404,7 +404,7 @@ public class CoeurAStockageImpl implements CoeurAStockage
 
 	public boolean depassementPrix()
 	{
-		return prix<=introduit;
+		return prix<=montantRecu;
 	}
 
 	public double prixAffichable()
@@ -414,12 +414,12 @@ public class CoeurAStockageImpl implements CoeurAStockage
 
 	public double renduAffichable()
 	{
-		return Math.abs((double) (introduit-prix) /100);
+		return Math.abs((double) (montantRecu-prix) /100);
 	}
 
-	public double introduitAffichable()
+	public double montantRecuAffichable()
 	{
-		return (double) introduit /100;
+		return (double) montantRecu /100;
 	}
 
 	public boolean verifSolde() 
@@ -451,7 +451,7 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		bBanque.connexion();
 		bBanque.actualiserSolde(numero, somme);
 		bBanque.deconnexion();
-		introduit = prix;
+		montantRecu = prix;
 	}
 
 	public static CoeurAStockage getInstance() 
