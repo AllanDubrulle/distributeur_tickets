@@ -4,13 +4,6 @@ import static org.junit.Assert.assertEquals;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import coeur.*;
-import interfaceGraphique.CoeurAGraphique;
-
-import java.util.concurrent.*;
-import javax.swing.SwingUtilities;
-import javafx.embed.swing.JFXPanel;
-import stockage.Rendu;
-import stockage.imprimable.TitreDeTransport;
 
 
 public class TestEtats 
@@ -19,7 +12,7 @@ public class TestEtats
 	private static GraphiqueACoeur instance = GraphiqueACoeurImpl.getInstance();
 	
 	@BeforeClass
-    public static void initToolkit() throws InterruptedException
+    public static void initialisationControleur()
     {
 		controleur.setGraphique(new CoeurAGraphiqueTest());
     }
