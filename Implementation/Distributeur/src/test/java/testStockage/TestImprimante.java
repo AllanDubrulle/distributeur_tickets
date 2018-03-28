@@ -16,7 +16,7 @@ public class TestImprimante
 	public void testImprimer()
 	{
 		imprimante.setNbrImpressions(50);
-		assertEquals(imprimante.getNbrImpressions(), 50, delta);
+		assertEquals(imprimante.getNbrImpressions(), 50);
 		try 
 		{
 			imprimante.imprimer();
@@ -29,6 +29,6 @@ public class TestImprimante
 		{
 			e.printStackTrace();
 		}
-		assertEquals(imprimante.getNbrImpressions(), 1, delta);
+		assertEquals(imprimante.getNbrImpressions(), 49);
 	}
 }
