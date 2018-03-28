@@ -72,7 +72,7 @@ class AfficherRendu extends Pane
 
         texte1.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         texte1.setStrokeWidth(0.0);
-        texte1.setText("50 €   x");
+        texte1.setText("50 eur   x");
         texte1.setTextAlignment(javafx.scene.text.TextAlignment.RIGHT);
         texte1.setWrappingWidth(75.0);
         HBox.setMargin(texte1, new Insets(0.0));
@@ -89,7 +89,7 @@ class AfficherRendu extends Pane
 
         texte3.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         texte3.setStrokeWidth(0.0);
-        texte3.setText("20 €   x");
+        texte3.setText("20 eur   x");
         texte3.setTextAlignment(javafx.scene.text.TextAlignment.RIGHT);
         texte3.setWrappingWidth(75.0);
         HBox.setMargin(texte3, new Insets(0.0));
@@ -106,7 +106,7 @@ class AfficherRendu extends Pane
 
         texte5.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         texte5.setStrokeWidth(0.0);
-        texte5.setText("10 €   x");
+        texte5.setText("10 eur   x");
         texte5.setTextAlignment(javafx.scene.text.TextAlignment.RIGHT);
         texte5.setWrappingWidth(75.0);
         HBox.setMargin(texte5, new Insets(0.0));
@@ -123,7 +123,7 @@ class AfficherRendu extends Pane
 
         texte7.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         texte7.setStrokeWidth(0.0);
-        texte7.setText("5 €   x");
+        texte7.setText("5 eur   x");
         texte7.setTextAlignment(javafx.scene.text.TextAlignment.RIGHT);
         texte7.setWrappingWidth(75.0);
         HBox.setMargin(texte7, new Insets(0.0));
@@ -140,7 +140,7 @@ class AfficherRendu extends Pane
 
         texte9.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         texte9.setStrokeWidth(0.0);
-        texte9.setText("2 €   x");
+        texte9.setText("2 eur   x");
         texte9.setTextAlignment(javafx.scene.text.TextAlignment.RIGHT);
         texte9.setWrappingWidth(75.0);
         HBox.setMargin(texte9, new Insets(0.0));
@@ -157,7 +157,7 @@ class AfficherRendu extends Pane
 
         texte11.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         texte11.setStrokeWidth(0.0);
-        texte11.setText("1 €   x");
+        texte11.setText("1 eur   x");
         texte11.setTextAlignment(javafx.scene.text.TextAlignment.RIGHT);
         texte11.setWrappingWidth(75.0);
         HBox.setMargin(texte11, new Insets(0.0));
@@ -174,7 +174,7 @@ class AfficherRendu extends Pane
 
         texte13.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         texte13.setStrokeWidth(0.0);
-        texte13.setText("0.50 €   x");
+        texte13.setText("0.50 eur   x");
         texte13.setTextAlignment(javafx.scene.text.TextAlignment.RIGHT);
         texte13.setWrappingWidth(75.0);
         HBox.setMargin(texte13, new Insets(0.0));
@@ -191,7 +191,7 @@ class AfficherRendu extends Pane
 
         texte15.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         texte15.setStrokeWidth(0.0);
-        texte15.setText("0.20 €   x");
+        texte15.setText("0.20 eur   x");
         texte15.setTextAlignment(javafx.scene.text.TextAlignment.RIGHT);
         texte15.setWrappingWidth(75.0);
         HBox.setMargin(texte15, new Insets(0.0));
@@ -208,7 +208,7 @@ class AfficherRendu extends Pane
 
         texte17.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         texte17.setStrokeWidth(0.0);
-        texte17.setText("0.10 €   x");
+        texte17.setText("0.10 eur   x");
         texte17.setTextAlignment(javafx.scene.text.TextAlignment.RIGHT);
         texte17.setWrappingWidth(75.0);
         HBox.setMargin(texte17, new Insets(0.0));
@@ -225,7 +225,7 @@ class AfficherRendu extends Pane
 
         texte19.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         texte19.setStrokeWidth(0.0);
-        texte19.setText("0.05 €   x");
+        texte19.setText("0.05 eur   x");
         texte19.setTextAlignment(javafx.scene.text.TextAlignment.RIGHT);
         texte19.setWrappingWidth(75.0);
         HBox.setMargin(texte19, new Insets(0.0));
@@ -242,7 +242,7 @@ class AfficherRendu extends Pane
 
         texte21.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         texte21.setStrokeWidth(0.0);
-        texte21.setText("0.02 €   x");
+        texte21.setText("0.02 eur   x");
         texte21.setTextAlignment(javafx.scene.text.TextAlignment.RIGHT);
         texte21.setWrappingWidth(75.0);
         HBox.setMargin(texte21, new Insets(0.0));
@@ -259,7 +259,7 @@ class AfficherRendu extends Pane
 
         texte23.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         texte23.setStrokeWidth(0.0);
-        texte23.setText("0.01 €   x");
+        texte23.setText("0.01 eur   x");
         texte23.setTextAlignment(javafx.scene.text.TextAlignment.RIGHT);
         texte23.setWrappingWidth(75.0);
         HBox.setMargin(texte23, new Insets(0.0));

@@ -123,7 +123,7 @@ class FAboAchat extends Ecran
 
         texte2.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         texte2.setStrokeWidth(0.0);
-        texte2.setText("Gare de départ :");
+        texte2.setText("Gare de depart :");
         texte2.setWrappingWidth(180*largeur);
         texte2.setFont(new Font(15.0*hauteur));
         HBox.setMargin(texte2, new Insets(0.0, 0.0*largeur, 0.0, 0.0));

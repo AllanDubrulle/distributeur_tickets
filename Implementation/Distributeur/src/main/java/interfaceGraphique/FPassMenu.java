@@ -124,7 +124,7 @@ class FPassMenu extends Ecran
 
         texte2.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         texte2.setStrokeWidth(0.0);
-        texte2.setText(":     Permet d'effectuer 10 trajets sans gares predefinies");
+        texte2.setText(":      Permet d'effectuer 10 trajets sans gares predefinies");
         texte2.setFont(new Font(15.0*hauteur));
         VBox.setMargin(texte2, new Insets(20.0*hauteur, 0.0, 20.0*hauteur, 0.0));
 

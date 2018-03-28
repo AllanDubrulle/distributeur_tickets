@@ -57,7 +57,6 @@ public class Controleur
 	{
 		etatsPrecedents.push(etatActuel);
 		etatActuel = etat;
-		System.out.println(etatActuel);
 		etatActuel.entree();
 	}
 	

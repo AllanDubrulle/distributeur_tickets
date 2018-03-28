@@ -12,8 +12,8 @@ class AfficherRecu extends Pane
 {	
     public AfficherRecu(double prix , double introduit , double rendu, String modePaiement) 
     {
-    	NumberFormat nf = NumberFormat.getInstance();
-    	nf.setMaximumFractionDigits(2);
+    	NumberFormat formatNombre = NumberFormat.getInstance();
+    	formatNombre.setMaximumFractionDigits(2);
     	
         VBox boxVer = new VBox();
         HBox boxHor1 = new HBox();
@@ -79,12 +79,12 @@ class AfficherRecu extends Pane
 
         texte4.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         texte4.setStrokeWidth(0.0);
-        texte4.setText("Montant à payer :");
+        texte4.setText("Montant a payer :");
         texte4.setWrappingWidth(150.0);
 
         texte5.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         texte5.setStrokeWidth(0.0);
-        texte5.setText(nf.format(prix) + " €");
+        texte5.setText(formatNombre.format(prix) + " eur");
         texte5.setWrappingWidth(60.0);
 
         boxHor4.setPrefHeight(0.0);
@@ -92,13 +92,13 @@ class AfficherRecu extends Pane
 
         texte6.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         texte6.setStrokeWidth(0.0);
-        texte6.setText("Montant payé :");
+        texte6.setText("Montant paye :");
         texte6.setWrappingWidth(150.0);
         HBox.setMargin(texte6, new Insets(0.0));
 
         texte7.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         texte7.setStrokeWidth(0.0);
-        texte7.setText(nf.format(introduit) + " €");
+        texte7.setText(formatNombre.format(introduit) + " eur");
         texte7.setWrappingWidth(60.0);
         VBox.setMargin(boxHor4, new Insets(5.0, 0.0, 5.0, 0.0));
 
@@ -114,7 +114,7 @@ class AfficherRecu extends Pane
         	
         	texte9.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         	texte9.setStrokeWidth(0.0);
-        	texte9.setText(nf.format(rendu) + " €");
+        	texte9.setText(formatNombre.format(rendu) + " eur");
         	texte9.setWrappingWidth(60.0);
         }
 
