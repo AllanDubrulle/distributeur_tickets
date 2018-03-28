@@ -39,7 +39,7 @@ public interface CoeurAStockage
 	public int getNbrTitre();
 	public void setPrix(int prix);
 	
-	public void ajoutMonnaie(int i);
+	public void ajoutMonnaie(int i) throws ComposantHorsService;
 	public Rendu rendreMonnaie() throws PasAssezDeMonnaie;
 	public Rendu rendreIntroduit();
 	public void reinitialisation();

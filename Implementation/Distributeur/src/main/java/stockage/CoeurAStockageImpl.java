@@ -8,6 +8,7 @@ import java.util.Date;
 import java.util.HashMap;
 
 import coeur.Commande;
+import coeur.Controleur;
 import stockage.imprimable.Abonnement;
 import stockage.imprimable.Billet;
 import stockage.imprimable.Classe;
@@ -255,48 +256,53 @@ public class CoeurAStockageImpl implements CoeurAStockage
 	}
 
 	
-	public void ajoutMonnaie(int i)
+	public void ajoutMonnaie(int i) throws ComposantHorsService
 	{
-		switch(i)
+		if (!Controleur.getInstance().getCoeurAStockage().estEnMarche(Composant.FENTEBILLET) || !Controleur.getInstance().getCoeurAStockage().estEnMarche(Composant.FENTEPIECE))
+			throw new ComposantHorsService("Fente a piece ou a billet hors service");
+		else
 		{
-			case 1:
-				monnayeur.stockerPiece(Piece.P1);
-				break;
-			case 2:
-				monnayeur.stockerPiece(Piece.P2);
-				break;
-			case 5:
-				monnayeur.stockerPiece(Piece.P5);
-				break;
-			case 10:
-				monnayeur.stockerPiece(Piece.P10);
-				break;
-			case 20:
-				monnayeur.stockerPiece(Piece.P20);
-				break;
-			case 50:
-				monnayeur.stockerPiece(Piece.P50);
-				break;
-			case 100:
-				monnayeur.stockerPiece(Piece.P100);
-				break;
-			case 200:
-				monnayeur.stockerPiece(Piece.P200);
-				break;
-			case 500:
-				monnayeur.stockerBillet(BilletMonnaie.B5);
-				break;
-			case 1000:
-				monnayeur.stockerBillet(BilletMonnaie.B10);
-				break;
-			case 2000:
-				monnayeur.stockerBillet(BilletMonnaie.B20);
-				break;
-			case 5000:
-				monnayeur.stockerBillet(BilletMonnaie.B50);
-				break;
+			switch(i)
+			{
+				case 1:
+					monnayeur.stockerPiece(Piece.P1);
+					break;
+				case 2:
+					monnayeur.stockerPiece(Piece.P2);
+					break;
+				case 5:
+					monnayeur.stockerPiece(Piece.P5);
+					break;
+				case 10:
+					monnayeur.stockerPiece(Piece.P10);
+					break;
+				case 20:
+					monnayeur.stockerPiece(Piece.P20);
+					break;
+				case 50:
+					monnayeur.stockerPiece(Piece.P50);
+					break;
+				case 100:
+					monnayeur.stockerPiece(Piece.P100);
+					break;
+				case 200:
+					monnayeur.stockerPiece(Piece.P200);
+					break;
+				case 500:
+					monnayeur.stockerBillet(BilletMonnaie.B5);
+					break;
+				case 1000:
+					monnayeur.stockerBillet(BilletMonnaie.B10);
+					break;
+				case 2000:
+					monnayeur.stockerBillet(BilletMonnaie.B20);
+					break;
+				case 5000:
+					monnayeur.stockerBillet(BilletMonnaie.B50);
+					break;
+			}
+			introduit+=i;
 		}
-		introduit+=i;
 	}
 	
 	public String[] rechercherHoraireDepart(String gareDepart, int heure, int minute) throws SQLException

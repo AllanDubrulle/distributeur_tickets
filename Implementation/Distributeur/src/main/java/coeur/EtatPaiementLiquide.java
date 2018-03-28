@@ -1,5 +1,6 @@
 package coeur;
 
+import stockage.ComposantHorsService;
 import stockage.PasAssezDeMonnaie;
 
 /**
@@ -47,6 +48,10 @@ class EtatPaiementLiquide extends EtatAnnulable
 		{
 			Controleur.getInstance().getCoeurAGraphique().afficherRendu(Controleur.getInstance().getCoeurAStockage().rendreIntroduit());
 			Controleur.getInstance().getCoeurAGraphique().afficherRendreMonnaieInseree();
+		}
+		catch(ComposantHorsService e)
+		{
+			Controleur.getInstance().getCoeurAGraphique().afficherPanne(e.getMessage());
 		}
 	}
 	public void apres5secOk()
