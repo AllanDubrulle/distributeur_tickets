@@ -13,9 +13,8 @@ import javafx.scene.control.*;
 public class FenetreConfiguration extends Pane 
 { 
     private static FenetreConfiguration instance;
-    private RadioButton boutonChoix, boutonChoix0, boutonChoix1, boutonChoix2, boutonChoix3, boutonChoix4;
+    private RadioButton boutonChoix, boutonChoix0, boutonChoix1, boutonChoix2, boutonChoix3, boutonChoix4, boutonChoix5, boutonChoix6, boutonChoix7;
     private CheckBox boutonACocher;
-    private TextField zoneTexte, zoneTexte0;
     private double tVoulueHauteur = 450;
     private double tVoulueLargeur = 600;
     private double rapportHauteur = tVoulueHauteur/450;
@@ -27,7 +26,7 @@ public class FenetreConfiguration extends Pane
         Text texte = new Text();
         Text texte0 = new Text();
         boutonChoix = new RadioButton();
-       boutonChoix0 = new RadioButton();
+        boutonChoix0 = new RadioButton();
         boutonChoix1 = new RadioButton();
         Text texte1 = new Text();
         boutonChoix2 = new RadioButton();
@@ -37,8 +36,9 @@ public class FenetreConfiguration extends Pane
         HBox hBox = new HBox();
         Text texte2 = new Text();
         Text texte3 = new Text();
-        zoneTexte = new TextField();
-        zoneTexte0 = new TextField();
+        boutonChoix5 = new RadioButton();
+        boutonChoix6 = new RadioButton();
+        boutonChoix7 = new RadioButton();
         Button bouton = new Button();
         Text texte4 = new Text();
 
@@ -122,11 +122,23 @@ public class FenetreConfiguration extends Pane
         boutonACocher.setFont(new Font(15.0*rapportHauteur));
         VBox.setMargin(boutonACocher, new Insets(0.0, 0.0, 0.0, 25.0*rapportLargeur));
         
-        texte2.setText("Dimensions de la fenetre de simulation :     ");
-        texte3.setText("  x  ");
+        boutonChoix5.setText("SD");
+        boutonChoix5.setFont(new Font(15.0*rapportHauteur));
+        boutonChoix6.setText("HD");
+        boutonChoix6.setFont(new Font(15.0*rapportHauteur));
+        boutonChoix7.setText("Full HD");
+        boutonChoix7.setFont(new Font(15.0*rapportHauteur));
+        boutonChoix6.setSelected(true);
+        
+        ToggleGroup t3 = new ToggleGroup();
+        boutonChoix5.setToggleGroup(t3);
+        boutonChoix6.setToggleGroup(t3);
+        boutonChoix7.setToggleGroup(t3);
+        
+        texte2.setText("Resolution :     ");
         texte2.setFont(new Font(15.0*rapportHauteur));
-        texte3.setFont(new Font(15.0*rapportHauteur));
-        hBox.getChildren().addAll(texte2, zoneTexte, texte3, zoneTexte0);
+        hBox.getChildren().addAll(texte2, boutonChoix5, boutonChoix6, boutonChoix7);
+        HBox.setMargin(boutonChoix6, new Insets(0.0, 15.0*rapportLargeur, 0.0, 15.0*rapportLargeur));
         VBox.setMargin(hBox, new Insets(15.0*rapportHauteur, 0.0, 15.0*rapportHauteur, 0.0));
 
         bouton.setLayoutX(515.0*rapportLargeur);
@@ -238,18 +250,40 @@ public class FenetreConfiguration extends Pane
 	
 	public double getHauteur()
 	{
-		if (zoneTexte0.getText().equals("")||Double.valueOf(zoneTexte0.getText()) < 360)
+		if (boutonChoix5.isSelected())
 		{
-			zoneTexte0.setText("720");
+			return 480.0;
 		}
-		return Double.valueOf(zoneTexte0.getText());
+		else if (boutonChoix6.isSelected())
+		{
+			return 720.0;
+		}
+		else if (boutonChoix7.isSelected())
+		{
+			return 1080.0;
+		}
+		else
+		{
+			return 720.0;
+		}
 	}
 	public double getLargeur()
 	{
-		if (zoneTexte.getText().equals("")||Double.valueOf(zoneTexte.getText()) < 640)
+		if (boutonChoix5.isSelected())
 		{
-			zoneTexte.setText("1280");
+			return 720.0;
 		}
-		return Double.valueOf(zoneTexte.getText());
+		else if (boutonChoix6.isSelected())
+		{
+			return 1280.0;
+		}
+		else if (boutonChoix7.isSelected())
+		{
+			return 1920.0;
+		}
+		else
+		{
+			return 1280.0;
+		}
 	}
 }

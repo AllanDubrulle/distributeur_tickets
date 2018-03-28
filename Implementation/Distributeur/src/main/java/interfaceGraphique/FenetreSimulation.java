@@ -80,7 +80,7 @@ class FenetreSimulation extends BorderPane
         panneau.setPrefWidth(1350.0*rapportLargeur);
         
         barreMenu.setMaxHeight(32.0*rapportHauteur);
-        barreMenu.setMaxWidth(350.0*rapportLargeur);;
+        barreMenu.setMaxWidth(350.0*rapportLargeur);
         
         afficher(new FSimulationAcceuil(rapportHauteur, rapportLargeur));
 
@@ -447,27 +447,6 @@ class FenetreSimulation extends BorderPane
         getChildren().setAll(panneau, claRe, fentes, scanLect, fenetre);
     }
     
-    
-    /*public void mettreEnPanneScanneur()				//je ne pense pas qu'il les faille ici mais
-    {														//sans savoir, je les ai mises
-    	//mise en panne scanneur
-    }
-    
-    public void remiseEnServiceScanneur()
-    {
-    	//remise en service scanneur
-    }
-    
-    public void mettreEnPanneImprimante()
-    {
-    	//mise en panne imprimante
-    }
-    
-    public void remiseEnServiceImprimante()
-    {
-    	//remise en service imprimante
-    }*/
-    
     public Ecran getEcran()
     {
     	return fenetre;
@@ -486,61 +465,6 @@ class FenetreSimulation extends BorderPane
     {
     	return lecteur;
     }
-
-    /*public void actualiserFenteBillet(boolean enMarche)
-    {
-
-    	if(enMarche)
-    	{
-        	for (int i = 0; i < 4; i++)
-    			fenteBillet.getButton(i).setDisable(false);
-        	getChildren().setAll(panneau, claRe, fentes, scanLect, fenetre);
-    	}
-    	else
-    	{
-        	for (int i = 0; i < 4; i++)
-    			fenteBillet.getButton(i).setDisable(true);
-        	getChildren().setAll(panneau, claRe, fentes, scanLect, fenetre);
-    	}
-    }
-    
-	public void actualiserFentePiece(boolean enMarche)
-	{
-		if(enMarche)
-	    {
-	    	for (int i = 0; i < 8; i++)
-	    		fentePiece.getButton(i).setDisable(false);
-	    	getChildren().setAll(panneau, claRe, fentes, scanLect, fenetre);
-	    }
-	    
-	   else
-	    {
-	    	for (int i = 0; i < 8; i++)
-	    		fentePiece.getButton(i).setDisable(true);
-	    	getChildren().setAll(panneau, claRe, fentes, scanLect, fenetre);
-	    }
-	}
-
-	public void actualiserLecteurCarte(boolean enMarche)
-	{
-		if(enMarche)
-	    {
-	    	for (int i = 0; i < 13; i++)
-				lecteur.getBouton(i).setDisable(false);
-			lecteur.getMDP().setDisable(false);
-	        getChildren().setAll(panneau, claRe, fentes, scanLect, fenetre);
-	        carteNonBloquee();
-	    }
-	    
-		else
-	    {
-	    	for (int i = 0; i < 13; i++)
-				lecteur.getBouton(i).setDisable(true);
-			lecteur.getMDP().setDisable(true);
-	        getChildren().setAll(panneau, claRe, fentes, scanLect, fenetre);
-	    }
-		
-	}*/
 
 	public void carteNonBloquee()
 	{
