@@ -21,7 +21,7 @@ class FAboRenouveler extends Ecran
 	private Text texte10;
 	private Button bouton1;
 	
-	public FAboRenouveler(double hauteur, double largeur)
+	public FAboRenouveler(boolean scanneur, double hauteur, double largeur)
 	{
 		Rectangle rectangle = new Rectangle();
         VBox vBox = new VBox();
@@ -203,6 +203,9 @@ class FAboRenouveler extends Ecran
 		texte10.setLayoutX(260.0*largeur);	
 		texte10.setLayoutY(304.0*hauteur);
         
+		if (!scanneur)
+			bouton1.setDisable(true);
+		
         hBox0.getChildren().addAll(texte, texteField);
         hBox1.getChildren().addAll(texte0, boutonChoix, boutonChoix0, boutonChoix1, boutonChoix2);
         vBox.getChildren().addAll(hBox, hBox0, hBox1);

@@ -1,8 +1,6 @@
 package interfaceGraphique;
 
-import javafx.animation.FadeTransition;
 import javafx.animation.PauseTransition;
-import javafx.animation.SequentialTransition;
 import javafx.scene.shape.*;
 import javafx.scene.text.*;
 import javafx.util.Duration;

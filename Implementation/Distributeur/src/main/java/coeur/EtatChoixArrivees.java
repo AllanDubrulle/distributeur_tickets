@@ -7,6 +7,8 @@ package coeur;
  */
 import java.sql.SQLException;
 
+import stockage.Composant;
+
 class EtatChoixArrivees extends EtatAnnulable 
 {
 	private static EtatChoixArrivees instance;
@@ -20,7 +22,7 @@ class EtatChoixArrivees extends EtatAnnulable
 	public void valideRechercheGA(String gareDepart, int heure, int minute) throws SQLException
 	{
 		String[] tab = Controleur.getInstance().getCoeurAStockage().rechercherHoraireArrivee(gareDepart, heure, minute);
-		Controleur.getInstance().getCoeurAGraphique().afficherResultatsHoraires(tab);
+		Controleur.getInstance().getCoeurAGraphique().afficherResultatsHoraires(Controleur.getInstance().getCoeurAStockage().estEnMarche(Composant.IMPRIMANTE), tab);
 	}
 	
 	public void choixImpressionHoraire()

@@ -403,6 +403,16 @@ public interface GraphiqueACoeur
 
 	public boolean fentePresente();
 	
+	public void lecteurEnPanne();
+	
+	public void fentePieceEnPanne();
+	
+	public void fenteBilletEnPanne();
+	
+	public void scanneurEnPanne();
+	
+	public void imprimanteEnPanne();
+	
 	public void setFentes(boolean fenteBillet, boolean fentePiece);
 	
 	public void setScanneur(boolean present);

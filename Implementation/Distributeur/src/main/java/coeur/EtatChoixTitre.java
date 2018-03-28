@@ -1,5 +1,7 @@
 package coeur;
 
+import stockage.Composant;
+
 /**
  * Classe abstraite EtatChoixTitre
  * @author TheoDaix, AllanDubrulle, VictorVerhoye
@@ -22,6 +24,6 @@ abstract class EtatChoixTitre extends EtatAnnulable
 	
 	public void entree()
 	{
-		Controleur.getInstance().getCoeurAGraphique().afficherChoixCommande(Controleur.getInstance().getCommande());
+		Controleur.getInstance().getCoeurAGraphique().afficherChoixCommande(Controleur.getInstance().getCoeurAStockage().estEnMarche(Composant.SCANNEUR), Controleur.getInstance().getCommande());
 	}
 }

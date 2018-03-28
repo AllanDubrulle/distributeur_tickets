@@ -73,9 +73,9 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 		FenetreSimulation.getInstance().afficher(new FHoraireDepart(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 	}
 		
-	public void afficherResultatsHoraires(String[] tab) 
+	public void afficherResultatsHoraires(boolean imprimante, String[] tab) 
 	{
-		FenetreSimulation.getInstance().afficher(new FResultatsHoraires(tab, FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
+		FenetreSimulation.getInstance().afficher(new FResultatsHoraires(imprimante, tab, FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 	}
 	
 	public void afficherNumAbo() 
@@ -93,9 +93,9 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	}
 
 	
-	public void afficherPaiement() 
+	public void afficherPaiement(boolean fentes, boolean lecteur) 
 	{
-		FenetreSimulation.getInstance().afficher(new FChoixPaiement(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
+		FenetreSimulation.getInstance().afficher(new FChoixPaiement(fentes, lecteur, FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 	}
 	public void afficherChoixParLiquide(double prix) 
 	{
@@ -295,22 +295,12 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Probleme du monnayeur, veuillez recuperer votre monnaie.", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 	}
 	
-	/*public void afficherRendreMonnaieInsereeImprimante()
-	{
-		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Problème survenu lors de l'impression, veuillez récuperer votre monnaie.", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
-	}
-	
-	public void afficherProblemeTechnique()
-	{
-		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Problème technique, veuillez récuperer votre monnaie.", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
-	}*/
-	
 	public void afficherMessageDErreur()
 	{
 		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Probleme technique. Veuillez prendre contact avec un technicien pour tout remboursement.", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 	}
 	
-	public void afficherDemandeRecu() // modifié pas encore fini bug possible 
+	public void afficherDemandeRecu()
 	{
 		FenetreSimulation.getInstance().afficher(new FDemandeRecu(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 		
@@ -361,7 +351,7 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 				break;
 		}
 	}
-	public void afficherChoixCommande(Commande commande)
+	public void afficherChoixCommande(boolean scanneur, Commande commande)
 	{
 		switch(commande)
 		{
@@ -386,7 +376,7 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 				FenetreSimulation.getInstance().afficher(fenPassIllimite);
 				break;
 			case RENOUVELLEMENTABO:
-				this.fenAboRenouv = new FAboRenouveler(FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg());
+				this.fenAboRenouv = new FAboRenouveler(scanneur, FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg());
 				FenetreSimulation.getInstance().afficher(fenAboRenouv);
 				break;
 		}
@@ -399,45 +389,64 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 		
 	}
 
-	
-	/*public void actualiserComposant(Composant composant,boolean enMarche)
-	{
-		switch(composant)
-		{
-		case FENTEBILLET:
-			FenetreSimulation.getInstance().actualiserFenteBillet(enMarche);
-			break;
-		case FENTEPIECE:
-			FenetreSimulation.getInstance().actualiserFentePiece(enMarche);
-			break;
-		case LECTEURCARTE:
-			FenetreSimulation.getInstance().actualiserLecteurCarte(enMarche);
-			break;
-		case SCANNEUR:												//A REGLER !!!!
-			break;
-		default:
-			break;
-		
-		}
-	}*/
-
 	public void carteNonBloquee()
 	{
 		FenetreSimulation.getInstance().carteNonBloquee();
 	}
 
-	@Override
 	public void carteBloquee() 
 	{
 		FenetreSimulation.getInstance().carteBloquee();
-		FenetreSimulation.getInstance().afficher(new FAfficherMessage("carte bloquée.", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
-		
+		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Carte bloquee", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
+	}
+	public void lecteurEnPanne()
+	{
+		FenetreSimulation.getInstance().lecteurEnPanne();
+		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Lecteur en panne", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
+	}
+	public void lecteurPasEnPanne()
+	{
+		FenetreSimulation.getInstance().lecteurPasEnPanne();
+	}
+	
+	public void fenteBilletEnPanne()
+	{
+		FenetreSimulation.getInstance().fenteBilletEnPanne();
+		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Fente a billet en panne", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
+	}
+	
+	public void fenteBilletPasEnPanne()
+	{
+		FenetreSimulation.getInstance().fenteBilletPasEnPanne();
+	}
+	public void fentePieceEnPanne()
+	{
+		FenetreSimulation.getInstance().fentePieceEnPanne();
+		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Fente a piece en panne", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
+	}
+	
+	public void fentePiecePasEnPanne()
+	{
+		FenetreSimulation.getInstance().fentePiecePasEnPanne();
 	}
 
-	@Override
-	public void imprimanteEnPanne() // cocher imprimante en panne
+	public void imprimanteEnPanne()
 	{
-		// TODO Auto-generated method stub
-		
+		FenetreSimulation.getInstance().imprimanteEnPanne();
+	}
+	
+	public void imprimantePasEnPanne()
+	{
+		FenetreSimulation.getInstance().imprimantePasEnPanne();
+	}
+	
+	public void scanneurEnPanne()
+	{
+		FenetreSimulation.getInstance().scanneurEnPanne();
+	}
+	
+	public void scanneurPasEnPanne()
+	{
+		FenetreSimulation.getInstance().scanneurPasEnPanne();
 	}
 }

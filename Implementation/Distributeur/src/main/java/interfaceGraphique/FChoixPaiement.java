@@ -10,7 +10,7 @@ class FChoixPaiement extends Ecran
 {
 	private Text texte10;
 	
-    public FChoixPaiement(double hauteur, double largeur) 
+    public FChoixPaiement(boolean fentes, boolean lecteur, double hauteur, double largeur) 
     {
     	texte10 = new Text();
         Rectangle rectangle = new Rectangle();
@@ -104,9 +104,14 @@ class FChoixPaiement extends Ecran
 		texte10.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
 		texte10.setLayoutY(300.0*hauteur);
 
-        getChildren().addAll(rectangle, texte, bouton, bouton0, texte10, bouton1);
-        
+		if (!lecteur)
+			bouton0.setDisable(true);
+		if (!fentes)
+			bouton.setDisable(true);
+		
         bouton1.setFocusTraversable(false);
+		
+        getChildren().addAll(rectangle, texte, bouton, bouton0, texte10, bouton1);
     }
 
 	public void actionClavier(int a) 

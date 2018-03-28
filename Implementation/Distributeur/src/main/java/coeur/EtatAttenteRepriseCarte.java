@@ -28,5 +28,4 @@ class EtatAttenteRepriseCarte extends EtatAnnulable
 		Controleur.getInstance().getCoeurAStockage().carteEnlevee();
 		Controleur.getInstance().modifEtat(EtatImpressionTitre.getInstance());
 	}
-
 }

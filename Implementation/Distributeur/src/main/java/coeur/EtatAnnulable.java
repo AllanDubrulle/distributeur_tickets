@@ -1,5 +1,7 @@
 package coeur;
 
+import stockage.Composant;
+
 /**
  * Classe EtatAnnulable (parent de tout les états dont nous pouvons revenir en arrière)
  * @author TheoDaix, AllanDubrulle, VictorVerhoye
@@ -15,7 +17,7 @@ abstract class EtatAnnulable extends ControleurEtat
 	}
 	public void retourTitre()
 	{
-		Controleur.getInstance().getCoeurAGraphique().afficherChoixCommande(Controleur.getInstance().getCommande());
+		Controleur.getInstance().getCoeurAGraphique().afficherChoixCommande(Controleur.getInstance().getCoeurAStockage().estEnMarche(Composant.SCANNEUR), Controleur.getInstance().getCommande());
 	}
 	
 	public void annule() 

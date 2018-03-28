@@ -304,8 +304,79 @@ abstract class ControleurEtat
 		{
 			Controleur.getInstance().getCoeurAGraphique().carteNonBloquee();
 		}
-		
 	}
 	
-	//regarder à ejecteCarte si utile ou pas
+	public void lecteurPanne() 
+	{
+		actualiserPanne(Composant.LECTEURCARTE);
+		if(Controleur.getInstance().getModePaiement().equals(EtatParCarte.getInstance()))
+		{
+			if(!Controleur.getInstance().getCoeurAStockage().estEnMarche(Composant.LECTEURCARTE))
+			{
+				Controleur.getInstance().getCoeurAGraphique().lecteurEnPanne();
+			}
+			else
+			{
+				Controleur.getInstance().getCoeurAGraphique().lecteurPasEnPanne();
+			}
+		}
+	}
+	
+	public void fenteBilletPanne() 
+	{
+		actualiserPanne(Composant.FENTEBILLET);
+		if(Controleur.getInstance().getModePaiement().equals(EtatPaiementLiquide.getInstance()))
+		{
+			if(!Controleur.getInstance().getCoeurAStockage().estEnMarche(Composant.FENTEBILLET))
+			{
+				Controleur.getInstance().getCoeurAGraphique().fenteBilletEnPanne();
+			}
+			else
+			{
+				Controleur.getInstance().getCoeurAGraphique().fenteBilletPasEnPanne();
+			}
+		}
+	}
+	
+	public void fentePiecePanne() 
+	{
+		actualiserPanne(Composant.FENTEPIECE);
+		if(Controleur.getInstance().getModePaiement().equals(EtatPaiementLiquide.getInstance()))
+		{
+			if(!Controleur.getInstance().getCoeurAStockage().estEnMarche(Composant.FENTEPIECE))
+			{
+				Controleur.getInstance().getCoeurAGraphique().fentePieceEnPanne();
+			}
+			else
+			{
+				Controleur.getInstance().getCoeurAGraphique().fentePiecePasEnPanne();
+			}
+		}
+	}
+	
+	public void scanneurPanne()
+	{
+		actualiserPanne(Composant.SCANNEUR);
+		if(!Controleur.getInstance().getCoeurAStockage().estEnMarche(Composant.SCANNEUR))
+		{
+			Controleur.getInstance().getCoeurAGraphique().scanneurEnPanne();
+		}
+		else
+		{
+			Controleur.getInstance().getCoeurAGraphique().scanneurPasEnPanne();
+		}
+	}
+	
+	public void imprimantePanne()
+	{
+		actualiserPanne(Composant.IMPRIMANTE);
+		if(!Controleur.getInstance().getCoeurAStockage().estEnMarche(Composant.IMPRIMANTE))
+		{
+			Controleur.getInstance().getCoeurAGraphique().imprimanteEnPanne();
+		}
+		else
+		{
+			Controleur.getInstance().getCoeurAGraphique().imprimantePasEnPanne();
+		}
+	}
 }

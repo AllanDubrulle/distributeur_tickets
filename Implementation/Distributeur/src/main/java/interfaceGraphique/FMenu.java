@@ -132,14 +132,11 @@ class FMenu extends Ecran
         texte.setStrokeWidth(0.0);
         texte.setText("Que voulez-vous faire ?");
         texte.setFont(new Font(22.0*hauteur));
-
-        vBox.getChildren().addAll(bouton, bouton0, bouton1, bouton2, bouton3);
-        getChildren().addAll(rectangle, vBox, texte);
         
         if (!possible)
         {
         	bouton.setDisable(true);
-        	bouton.setDisable(true);
+        	bouton0.setDisable(true);
         	bouton1.setDisable(true);
         	bouton2.setDisable(true);
         }

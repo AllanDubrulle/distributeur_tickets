@@ -18,6 +18,7 @@ class FChoixAbo extends Pane
     public FChoixAbo(Stage scene, FAboRenouveler aboRenouv)
     {
     	this.scene = scene;
+    	this.aboRenouv = aboRenouv;
         Button button = new Button();
         boutonChoix = new ChoiceBox<String>();
         Text text = new Text();

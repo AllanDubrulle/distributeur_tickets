@@ -12,7 +12,6 @@ import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
-import stockage.Composant;
 import javafx.event.EventHandler;
 
 class FenetreSimulation extends BorderPane 
@@ -99,16 +98,16 @@ class FenetreSimulation extends BorderPane
         menuACocher.setText("Lecteur de cartes");
         menuACocher.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
-            	fenetre.graphAC.actualiserPanne(Composant.LECTEURCARTE);
+            	fenetre.graphAC.lecteurEnPanne();
             }
         });
 
         menuACocher0.setMnemonicParsing(false);
         menuACocher0.setText("Fente a billets");
         menuACocher0.setOnAction(new EventHandler<ActionEvent>() {
-            public void handle(ActionEvent e) {
-            	
-            	fenetre.graphAC.actualiserPanne(Composant.FENTEBILLET);
+            public void handle(ActionEvent e) 
+            {	
+            	fenetre.graphAC.fenteBilletEnPanne();
             }
         });
 
@@ -116,7 +115,7 @@ class FenetreSimulation extends BorderPane
         menuACocher1.setText("Fente a  pieces");
         menuACocher1.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
-            	fenetre.graphAC.actualiserPanne(Composant.FENTEPIECE);
+            	fenetre.graphAC.fentePieceEnPanne();
             }
         });
 
@@ -124,7 +123,7 @@ class FenetreSimulation extends BorderPane
         menuACocher2.setText("Scanneur de codes");
         menuACocher2.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
-            	fenetre.graphAC.actualiserPanne(Composant.SCANNEUR);
+            	fenetre.graphAC.scanneurEnPanne();
             }
         });
 
@@ -140,7 +139,7 @@ class FenetreSimulation extends BorderPane
         menuACocher4.setText("Imprimante");
         menuACocher4.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
-            	fenetre.graphAC.actualiserPanne(Composant.IMPRIMANTE);
+            	fenetre.graphAC.imprimanteEnPanne();
             }
         });
 
@@ -264,7 +263,7 @@ class FenetreSimulation extends BorderPane
         menuACocher10.setToggleGroup(t);
         menuACocher11.setToggleGroup(t);
         
-        contour.setLayoutX(259.0*rapportLargeur);
+        contour.setLayoutX(265.0*rapportLargeur);
         contour.setLayoutY(75.0*rapportHauteur);
         
         menu1.getItems().addAll(elementACocher1, elementACocher2);
@@ -287,7 +286,7 @@ class FenetreSimulation extends BorderPane
     public void afficher(Ecran fen) 
     {
 		this.fenetre = fen; 
-        fenetre.setLayoutX(284.0*rapportLargeur);
+        fenetre.setLayoutX(290.0*rapportLargeur);
         fenetre.setLayoutY(100.0*rapportHauteur);
 		getChildren().setAll(panneau, fenetre, claRe, fentes, scanLect);
 		clavier.setFenetre(fen);
@@ -333,10 +332,9 @@ class FenetreSimulation extends BorderPane
         scanLect.setLayoutY(85.0*rapportHauteur);
         scanLect.setLayoutX(1130.0*rapportLargeur);
                 
-        setMargin(fentes, new Insets(100.0*rapportHauteur, 0.0, 0.0, 10.0*rapportLargeur));
-        VBox.setMargin(fentePiece, new Insets(50.0*rapportHauteur, 0.0, 0.0, 0.0));
-        fentes.setLayoutX(10.0*rapportLargeur);
-        fentes.setLayoutY(100.0*rapportHauteur);
+        VBox.setMargin(fentePiece, new Insets(35.0*rapportHauteur, 0.0, 0.0, 12.5*rapportLargeur));
+        fentes.setLayoutX(5.0*rapportLargeur);
+        fentes.setLayoutY(130.0*rapportHauteur);
         mAJComposants();
     }
     
@@ -553,5 +551,55 @@ class FenetreSimulation extends BorderPane
 	{
 		menuACocher3.setSelected(true);
 	}
+	
+	public void lecteurEnPanne()
+	{
+		menuACocher.setSelected(true);
+	}
+	public void lecteurPasEnPanne()
+	{
+		menuACocher.setSelected(false);
+	}
 
+	public void imprimanteEnPanne() 
+	{
+		menuACocher4.setSelected(true);
+	}
+	
+	public void imprimantePasEnPanne()
+	{
+		menuACocher4.setSelected(false);
+	}
+	
+	public void scanneurEnPanne()
+	{
+		menuACocher2.setSelected(true);
+	}
+	
+	public void scanneurPasEnPanne()
+	{
+		menuACocher2.setSelected(false);
+	}
+
+	public void fenteBilletEnPanne() 
+	{
+		menuACocher0.setSelected(true);
+	}
+	
+	public void fentePieceEnPanne() 
+	{
+		menuACocher1.setSelected(true);
+	}
+	
+	public void fenteBilletPasEnPanne() 
+	{
+		menuACocher0.setSelected(false);
+	}
+	
+	public void fentePiecePasEnPanne() 
+	{
+		menuACocher1.setSelected(false);
+	}
+	
+	
 }

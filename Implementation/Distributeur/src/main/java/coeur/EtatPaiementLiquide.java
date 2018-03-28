@@ -1,8 +1,5 @@
 package coeur;
 
-import javafx.animation.PauseTransition;
-import javafx.util.Duration;
-import stockage.ComposantHorsService;
 import stockage.PasAssezDeMonnaie;
 
 /**
@@ -50,13 +47,6 @@ class EtatPaiementLiquide extends EtatAnnulable
 		{
 			Controleur.getInstance().getCoeurAGraphique().afficherRendu(Controleur.getInstance().getCoeurAStockage().rendreIntroduit());
 			Controleur.getInstance().getCoeurAGraphique().afficherRendreMonnaieInseree();
-		}
-		catch (ComposantHorsService e)
-		{
-			if(Controleur.getInstance().getCoeurAStockage().introduitAffichable() == 0)
-				Controleur.getInstance().getCoeurAGraphique().afficherPanne(e.getMessage());
-			else
-				Controleur.getInstance().getCoeurAGraphique().afficherMessageDErreur();
 		}
 	}
 	public void apres5secOk()

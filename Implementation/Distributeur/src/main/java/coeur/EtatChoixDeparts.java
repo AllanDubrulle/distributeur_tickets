@@ -2,6 +2,8 @@ package coeur;
 
 import java.sql.SQLException;
 
+import stockage.Composant;
+
 /**
  * Classe EtatChoixDepart
  * @author TheoDaix, AllanDubrulle, VictorVerhoye
@@ -25,7 +27,7 @@ class EtatChoixDeparts extends EtatAnnulable
 	public void valideRechercheGD(String gareArrivee, int heure, int minute) throws SQLException
 	{
 		String[] tab = Controleur.getInstance().getCoeurAStockage().rechercherHoraireDepart(gareArrivee, heure, minute);
-		Controleur.getInstance().getCoeurAGraphique().afficherResultatsHoraires(tab);
+		Controleur.getInstance().getCoeurAGraphique().afficherResultatsHoraires(Controleur.getInstance().getCoeurAStockage().estEnMarche(Composant.IMPRIMANTE), tab);
 	}
 	
 	public void retour()

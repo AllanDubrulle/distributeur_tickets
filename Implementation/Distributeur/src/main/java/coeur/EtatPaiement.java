@@ -1,5 +1,7 @@
 package coeur;
 
+import stockage.Composant;
+
 /**
  * Classe EtatPaiement
  * @author TheoDaix, AllanDubrulle, VictorVerhoye
@@ -26,6 +28,9 @@ class EtatPaiement extends EtatAnnulable
 	
 	public void entree() 
 	{
-		Controleur.getInstance().getCoeurAGraphique().afficherPaiement();
+		boolean fentes = Controleur.getInstance().getCoeurAStockage().estEnMarche(Composant.FENTEBILLET) && Controleur.getInstance().getCoeurAStockage().estEnMarche(Composant.FENTEPIECE);
+		boolean lecteur = Controleur.getInstance().getCoeurAStockage().estEnMarche(Composant.LECTEURCARTE);
+		Controleur.getInstance().setModePaiement(null);
+		Controleur.getInstance().getCoeurAGraphique().afficherPaiement(fentes, lecteur);
 	}
 }

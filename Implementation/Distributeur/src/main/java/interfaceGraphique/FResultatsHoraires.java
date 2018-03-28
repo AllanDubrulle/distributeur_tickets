@@ -12,7 +12,7 @@ class FResultatsHoraires extends Ecran
 {
 	private Button bouton1;
 	
-    public FResultatsHoraires(String[] tab, double hauteur, double largeur) 
+    public FResultatsHoraires(boolean imprimante, String[] tab, double hauteur, double largeur) 
     {
         Rectangle rectangle = new Rectangle();
         HBox hBox = new HBox();
@@ -371,6 +371,9 @@ class FResultatsHoraires extends Ecran
         vBox2.getChildren().addAll(texte23, texte18, texte19, texte20, texte21, texte22);
         hBox.getChildren().addAll(vBox, vBox0, vBox1, vBox2);
         getChildren().addAll(rectangle, hBox, texte17, bouton, bouton0, bouton1);
+        
+        if(!imprimante)
+        	bouton1.setDisable(true);
         
         bouton.setFocusTraversable(false);
         bouton0.setFocusTraversable(false);

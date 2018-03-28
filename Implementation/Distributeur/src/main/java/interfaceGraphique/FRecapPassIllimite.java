@@ -52,7 +52,7 @@ class FRecapPassIllimite extends Ecran
         rectangle.setStrokeType(javafx.scene.shape.StrokeType.INSIDE);
         rectangle.setWidth(800.0*largeur);
 
-        texte.setFontSmoothingType(javafx.scene.texte.FontSmoothingType.LCD);
+        texte.setFontSmoothingType(javafx.scene.text.FontSmoothingType.LCD);
         texte.setLayoutX(32.0*largeur);
         texte.setLayoutY(62.0*hauteur);
         texte.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
