@@ -21,7 +21,7 @@ public class TestMonnayeur
 		Rendu rendu = null;
 		try 
 		{
-			rendu = monnayeur.retournerArgent(2256); //demande de rendre 22.56 euros
+			rendu = monnayeur.calculerRenduArgent(2256); //demande de rendre 22.56 euros
 		} 
 		catch (PasAssezDeMonnaie e) 
 		{

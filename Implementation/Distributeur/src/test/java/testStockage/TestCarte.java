@@ -45,7 +45,7 @@ public class TestCarte
 		instance.actualiserSolde();
 		bBanque.connexion();
 		int actu = Integer.parseInt(bBanque.infoCarte("67030615781202136")[2]);
-		bBanque.deconnexion();
+		bBanque.deconnexion(); 
 		assertEquals(solde-1000, actu, delta);
 	}
 }

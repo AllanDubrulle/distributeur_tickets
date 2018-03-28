@@ -43,15 +43,7 @@
         <directory>src/main/resources</directory>
       </resource>
     </resources>
-        <testResources>
-        <testResource>
-            <targetPath>resources/test</targetPath>
-            <directory>src/main/resources</directory>
-            <includes>
-                <include>*.db</include>
-            </includes>
-        </testResource>
-    </testResources>
+
   </build>
 
   <dependencies>
