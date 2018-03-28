@@ -124,8 +124,12 @@ class BDDTitre extends GestionBaseDeDonnees
             String requete = "SELECT numeroabo FROM abosexistants order by numeroabo desc";
             PreparedStatement declar = this.connexion.prepareStatement(requete);
 			ResultSet res = declar.executeQuery();
-			int dernierAbo = res.getInt(1);
-        	return dernierAbo + 1;
+			int compteur = 0;
+			while (res.next())
+			{
+				compteur++;
+			}
+        	return compteur;
         }
         catch (SQLException e)
         {

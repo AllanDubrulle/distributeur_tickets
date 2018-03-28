@@ -268,10 +268,15 @@ class FAboAchat extends Ecran
             	{
             		try
             		{	
-            			if (zoneTexte0.getText().trim().length() == 11 && verifierNom(zoneTexte.getText().trim()))
+            			if (verifierNom(zoneTexte.getText().trim()))
             			{	
-            				graphAC.infoAbo(getValidite(), zoneTexte1.getText().trim(), zoneTexte2.getText().trim(), getClasse(), menuDeroulant.getValue(), menuDeroulant0.getValue(), zoneTexte.getText(), zoneTexte0.getText().trim());
-            				graphAC.choixValider();	
+            				if (zoneTexte0.getText().trim().length() == 11)
+            				{
+            					graphAC.infoAbo(getValidite(), zoneTexte1.getText().trim(), zoneTexte2.getText().trim(), getClasse(), menuDeroulant.getValue(), menuDeroulant0.getValue(), zoneTexte.getText(), zoneTexte0.getText().trim());
+            					graphAC.choixValider();	
+            				}
+            				else
+            					texte10.setText("Le numero de registre national saisi est incorrect");
             			}
             			else 
             			{
@@ -291,9 +296,9 @@ class FAboAchat extends Ecran
         });
         
 		texte10.setFont(new Font("System Bold", 15.0*hauteur));	
-		texte10.setWrappingWidth(250.0*largeur);	
+		texte10.setWrappingWidth(350.0*largeur);	
 		texte10.setFill(javafx.scene.paint.Color.RED);	
-		texte10.setLayoutX(275.0*largeur);	
+		texte10.setLayoutX(225.0*largeur);	
 		texte10.setLayoutY(384.0*hauteur);
 		
         hBox0.getChildren().addAll(texte0, zoneTexte);

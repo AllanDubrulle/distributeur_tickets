@@ -297,8 +297,6 @@ abstract class ControleurEtat
 				Controleur.getInstance().getCoeurAStockage().carteEnlevee();
 				Controleur.getInstance().getCoeurAGraphique().carteNonBloquee();
 			}
-			Controleur.getInstance().getCoeurAGraphique().carteBloquee();
-			
 		}
 		else
 		{
