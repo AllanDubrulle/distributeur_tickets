@@ -1,34 +1,33 @@
+package testEtats;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
 import coeur.*;
+import interfaceGraphique.CoeurAGraphique;
+
 import java.util.concurrent.*;
 import javax.swing.SwingUtilities;
 import javafx.embed.swing.JFXPanel;
+import stockage.Rendu;
+import stockage.imprimable.TitreDeTransport;
 
 
 public class TestEtats 
 {
 	private static Controleur controleur = Controleur.getInstance();
-	private static GraphiqueACoeurImpl instance = GraphiqueACoeurImpl.getInstance();
+	private static GraphiqueACoeur instance = GraphiqueACoeurImpl.getInstance();
 	
 	@BeforeClass
     public static void initToolkit() throws InterruptedException
     {
-		/*
-		final CountDownLatch latch = new CountDownLatch(1);
-        SwingUtilities.invokeLater(() -> {
-        	new JFXPanel();
-        	latch.countDown();
-        });
-        if (!latch.await(5L, TimeUnit.SECONDS)) 
-        	throw new ExceptionInInitializerError();*/
+		controleur.setGraphique(new CoeurAGraphiqueTest());
     }
 
 	@Test
 	public void testEtatMenu() 
 	{
+		controleur.modifEtat(EtatAccueil.getInstance());
 		instance.choixDemarrerSimul();
 		assertEquals(controleur.getEtatActuel(), EtatMenu.getInstance());
 	}

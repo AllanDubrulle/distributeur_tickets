@@ -33,8 +33,7 @@ class GestionBaseDeDonnees {
 	        {
 	            System.err.println(e1.getMessage());
 	        }
-	        String separation = File.separator;
-	        this.chemin = "classes"+separation +"src"+ separation + "main" + separation + "resources" + separation + "BDDDistributeur.db";
+	        this.chemin = "src/main/resources/BDDDistributeur.db";
 	        this.connexion = null;
 	    }
 	    
@@ -46,7 +45,7 @@ class GestionBaseDeDonnees {
 	    {
 	        try
 	        {
-	            connexion = DriverManager.getConnection("jdbc:sqlite:"+ this.chemin);
+	            connexion = DriverManager.getConnection("jdbc:sqlite::resource:"+ this.chemin);
 	            requete = connexion.createStatement();
 	            return true;
 	        }

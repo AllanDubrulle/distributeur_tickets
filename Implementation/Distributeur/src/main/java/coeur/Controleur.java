@@ -20,7 +20,7 @@ public class Controleur
 {	
 	private ControleurEtat etatActuel = EtatAccueil.getInstance();
 	private Stack<ControleurEtat> etatsPrecedents = new Stack<ControleurEtat>();
-	private CoeurAGraphique coeurAGraphique = CoeurAGraphiqueImpl.getInstance();
+	private CoeurAGraphique coeurAGraphique;
 	private CoeurAStockage coeurAStockage = CoeurAStockageImpl.getInstance();
 	private static Controleur instance;
 	private Commande commande;
@@ -41,13 +41,17 @@ public class Controleur
 	 */
 	public static Controleur getInstance()
 	{
-		if(instance==null)
+		if(instance == null)
 		{
 			instance = new Controleur();
 		}
 		return instance;
 	}
 	
+	public void setGraphique(CoeurAGraphique cAGraph)
+	{
+		this.coeurAGraphique = cAGraph;
+	}
 	/**
 	 *	Permet de modifier les états au fur et à mesure de l'exécution (ajout à la pile
 	 *	et mise à jour de etatActuel)

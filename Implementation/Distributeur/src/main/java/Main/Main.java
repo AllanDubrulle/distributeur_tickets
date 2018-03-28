@@ -4,7 +4,7 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
-
+import coeur.Controleur;
 import interfaceGraphique.*;
 
 public class Main extends Application 
@@ -14,6 +14,7 @@ public class Main extends Application
 	public void start(Stage stage)
 	{
 		StackPane root = new StackPane();
+		Controleur.getInstance().setGraphique(CoeurAGraphiqueImpl.getInstance());
         root.getChildren().add(FenetreConfiguration.getInstance());
         Scene scene = new Scene(root, FenetreConfiguration.getInstance().getRapportLarg()*600, FenetreConfiguration.getInstance().getRapportHaut()*420);
         primaryStage.setResizable(false);

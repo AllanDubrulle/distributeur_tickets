@@ -27,7 +27,7 @@ public class FenetreConfiguration extends Pane
         Text texte = new Text();
         Text texte0 = new Text();
         boutonChoix = new RadioButton();
-        boutonChoix0 = new RadioButton();
+       boutonChoix0 = new RadioButton();
         boutonChoix1 = new RadioButton();
         Text texte1 = new Text();
         boutonChoix2 = new RadioButton();
