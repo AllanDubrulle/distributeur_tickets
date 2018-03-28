@@ -39,14 +39,14 @@ class AfficherRecu extends Pane
         setMinHeight(USE_PREF_SIZE);
         setMinWidth(USE_PREF_SIZE);
         setPrefHeight(250.0);
-        setPrefWidth(250.0);
+        setPrefWidth(270.0);
 
         boxVer.setAlignment(javafx.geometry.Pos.TOP_CENTER);
         boxVer.setPrefHeight(250.0);
-        boxVer.setPrefWidth(250.0);
+        boxVer.setPrefWidth(270.0);
 
         boxHor1.setPrefHeight(0.0);
-        boxHor1.setPrefWidth(300.0);
+        boxHor1.setPrefWidth(270.0);
 
         texte1.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         texte1.setStrokeWidth(0.0);
@@ -72,7 +72,7 @@ class AfficherRecu extends Pane
         texte3.setStrokeWidth(0.0);
         texte3.setText("RECU");
         texte3.setFont(new Font("System Bold Italic", 18.0));
-        VBox.setMargin(texte3, new Insets(0.0, 0.0, 20.0, 0.0));
+        VBox.setMargin(texte3, new Insets(0.0, 0.0, 30.0, 0.0));
 
         boxHor3.setPrefHeight(0.0);
         boxHor3.setPrefWidth(300.0);
@@ -85,7 +85,7 @@ class AfficherRecu extends Pane
         texte5.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         texte5.setStrokeWidth(0.0);
         texte5.setText(formatNombre.format(prix) + " eur");
-        texte5.setWrappingWidth(60.0);
+        texte5.setWrappingWidth(80.0);
 
         boxHor4.setPrefHeight(0.0);
         boxHor4.setPrefWidth(300.0);
@@ -99,7 +99,7 @@ class AfficherRecu extends Pane
         texte7.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         texte7.setStrokeWidth(0.0);
         texte7.setText(formatNombre.format(introduit) + " eur");
-        texte7.setWrappingWidth(60.0);
+        texte7.setWrappingWidth(80.0);
         VBox.setMargin(boxHor4, new Insets(5.0, 0.0, 5.0, 0.0));
 
         boxHor5.setPrefHeight(0.0);
@@ -115,7 +115,7 @@ class AfficherRecu extends Pane
         	texte9.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         	texte9.setStrokeWidth(0.0);
         	texte9.setText(formatNombre.format(rendu) + " eur");
-        	texte9.setWrappingWidth(60.0);
+        	texte9.setWrappingWidth(80.0);
         }
 
         boxHor6.setPrefHeight(0.0);
@@ -139,7 +139,7 @@ class AfficherRecu extends Pane
         rectangle.setSmooth(false);
         rectangle.setStroke(javafx.scene.paint.Color.BLACK);
         rectangle.setStrokeType(javafx.scene.shape.StrokeType.INSIDE);
-        rectangle.setWidth(230.0);
+        rectangle.setWidth(250.0);
 
         boxHor1.getChildren().add(texte1);
         boxHor2.getChildren().add(texte2);

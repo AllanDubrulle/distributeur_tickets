@@ -260,7 +260,7 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 		StackPane root2 = new StackPane();
 		AfficherRecu billet = new AfficherRecu(prix ,introduit ,rendu,modePaiement);
 		Stage pStage5 = new Stage();
-		Scene sc = new Scene(root2, 250, 300);
+		Scene sc = new Scene(root2, 250, 270);
 		root2.getChildren().add(billet);
 		pStage5.setResizable(false);
 		pStage5.setScene(sc);
