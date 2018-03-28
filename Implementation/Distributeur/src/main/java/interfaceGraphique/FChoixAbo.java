@@ -13,12 +13,12 @@ class FChoixAbo extends Pane
 {
     private ChoiceBox<String> boutonChoix;
     private Stage scene;
-    private FAboRenouveler aboRenouv;
+
 
     public FChoixAbo(Stage scene, FAboRenouveler aboRenouv)
     {
     	this.scene = scene;
-    	this.aboRenouv = aboRenouv;
+
         Button button = new Button();
         boutonChoix = new ChoiceBox<String>();
         Text text = new Text();

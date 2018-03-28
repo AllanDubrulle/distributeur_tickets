@@ -15,18 +15,11 @@ public class TestMonnayeur
 	private double delta = 0.000000000001;
 	
 	@Test
-	public void testRendreArgent()
+	public void testRendreArgent() throws PasAssezDeMonnaie
 	{
 		monnayeur.rechargerCaisse();;
-		Rendu rendu = null;
-		try 
-		{
-			rendu = monnayeur.calculerRenduArgent(2256); //demande de rendre 22.56 euros
-		} 
-		catch (PasAssezDeMonnaie e) 
-		{
-			e.printStackTrace();
-		}
+		Rendu rendu = monnayeur.calculerRenduArgent(2256); //demande de rendre 22.56 euros
+
 		HashMap<Piece,Integer> pieces = rendu.getPieces();
 		HashMap<BilletMonnaie,Integer> billets = rendu.getBillets();
 		assertEquals(pieces.get(stockage.Piece.P200), 1, delta);
@@ -46,5 +39,13 @@ public class TestMonnayeur
 		assertEquals(monnayeur.getStockPiece().get(stockage.Piece.P1), 0 , delta);
 		assertEquals(monnayeur.getStockBillet().get(stockage.BilletMonnaie.B50), 1, delta);	
 		assertEquals(monnayeur.getStockBillet().get(stockage.BilletMonnaie.B20), 0, delta);	
+	}
+	
+	
+	@Test (expected=PasAssezDeMonnaie.class)
+	public void testPlusDeMonnaie() throws PasAssezDeMonnaie
+	{
+		monnayeur.vider();
+		monnayeur.calculerRenduArgent(2256);
 	}
 }

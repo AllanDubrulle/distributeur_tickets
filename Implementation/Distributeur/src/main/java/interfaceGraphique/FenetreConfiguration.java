@@ -35,7 +35,6 @@ public class FenetreConfiguration extends Pane
         boutonACocher = new CheckBox();
         HBox hBox = new HBox();
         Text texte2 = new Text();
-        Text texte3 = new Text(); 
         boutonChoix5 = new RadioButton();
         boutonChoix6 = new RadioButton();
         boutonChoix7 = new RadioButton();
