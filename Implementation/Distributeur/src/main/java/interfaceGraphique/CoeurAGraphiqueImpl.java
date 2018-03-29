@@ -195,7 +195,7 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 		root2.getChildren().add(fen);
 		pStage.setResizable(false);
 		pStage.setScene(sc);
-		pStage.setTitle("Choix du numéro d'abonnement");
+		pStage.setTitle("Choix du numero d'abonnement");
 		pStage.show();
 	}
 

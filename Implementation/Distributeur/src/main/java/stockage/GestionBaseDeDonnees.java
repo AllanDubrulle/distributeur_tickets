@@ -13,9 +13,8 @@ import java.sql.Statement;
  * @author TheoDaix, AllanDubrulle, VictorVerhoye
  * @version 1.0
  */
-class GestionBaseDeDonnees {
-
-	    protected String chemin;
+class GestionBaseDeDonnees 
+{
 	    protected Connection connexion;
 	    protected Statement requete;
 	    
@@ -32,7 +31,6 @@ class GestionBaseDeDonnees {
 	        {
 	            System.err.println(e1.getMessage());
 	        }
-	        this.chemin = "src/main/resources/BDDDistributeur.db";
 	        this.connexion = null;
 	    }
 	    
@@ -44,7 +42,7 @@ class GestionBaseDeDonnees {
 	    {
 	        try
 	        {
-	            connexion = DriverManager.getConnection("jdbc:sqlite::resource:"+ this.chemin);
+	            connexion = DriverManager.getConnection("jdbc:sqlite::resource:src/main/resources/BDDDistributeur.db");
 	            requete = connexion.createStatement();
 	            return true;
 	        }
