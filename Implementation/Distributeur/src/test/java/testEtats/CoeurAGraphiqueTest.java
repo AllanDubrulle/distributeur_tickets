@@ -5,6 +5,12 @@ import interfaceGraphique.CoeurAGraphique;
 import stockage.Rendu;
 import stockage.imprimable.TitreDeTransport;
 
+/**
+ * Classe CoeurAGraphiqueTest (permet de verifier les changements d'etat sans instancier les classes
+ * de l'interface graphique)
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
 public class CoeurAGraphiqueTest implements CoeurAGraphique 
 {
 
