@@ -429,4 +429,46 @@ public interface CoeurAStockage
 	 * 	lecteur de carte est en panne)
 	 */
 	public void lireCarte() throws ComposantHorsService;
+	
+	/**
+	 * 	Permet de mettre a jour la configuration de l'ecran du distributeur
+	 * 	@param tactile vrai si l'ecran choisi est tactile, faux sinon
+	 */
+	public void setTactile(boolean tactile);
+	
+	/**
+	 * 	Permet de savoir si l'ecran est tactile ou non
+	 * 	@return ecranTactile qui est vrai si l'ecran est tactile, faux sinon
+	 */
+	public boolean getTactile();
+	
+	/**
+	 * 	Permet de mettre a jour le scanneur du distributeur (l'ajoute s'il n'est pas present,
+	 * 	l'enleve s'il l'est)
+	 * 	@param present vrai si le distributeur est equipe d'un scanneur, faux sinon
+	 */
+	public void setScanneur(boolean present);
+	
+	/**
+	 * 	Permet de savoir si le scanneur de codes est present sur le distributeur ou non
+	 * 	@return scanneurPresent qui est vrai si le distributeur est equipe d'un scanneur, faux
+	 * 	sinon
+	 */
+	public boolean scanneurPresent();
+	
+	/**
+	 * 	Permet de mettre a jour les fentes du distributeur (les ajoutes si elles ne sont pas 
+	 * 	presentes ou les enleve)
+	 * 	@param fenteBillet vrai si la fente a billet veut etre mise, faux si elle doit etre 
+	 * 	enlevee
+	 * 	@param fentePiece vrai si la fente a piece veut etre mise, faux si elle doit etre 
+	 * 	enlevee
+	 */
+	public void setFentes(boolean fenteBillet, boolean fentePiece);
+	
+	/**
+	 * 	Permet de savoir si au moins une fente est presente sur le distributeur
+	 * 	@return fente vrai si on a au moins une fente (fenteBillet ou fentePiece), faux sinon
+	 */
+	public boolean fentePresente();
 }

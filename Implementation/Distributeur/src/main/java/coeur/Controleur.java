@@ -25,10 +25,6 @@ public class Controleur
 	private static Controleur instance;
 	private Commande commande;
 	private ControleurEtat modePaiement;
-	private boolean ecranTactile;
-	private boolean scanneurPresent;
-	private boolean fenteBillet, fentePiece;
-	
 	
 	/**
 	 * 	Constructeur de Controleur
@@ -259,7 +255,7 @@ public class Controleur
 	 */
 	public void setTactile(boolean tactile)
 	{
-		this.ecranTactile = tactile;
+		coeurAStockage.setTactile(tactile);
 	}
 	
 	/**
@@ -268,7 +264,7 @@ public class Controleur
 	 */
 	public boolean getTactile()
 	{
-		return ecranTactile;
+		return coeurAStockage.getTactile();
 	}
 	
 	/**
@@ -278,7 +274,7 @@ public class Controleur
 	 */
 	public void setScanneur(boolean present) 
 	{
-		this.scanneurPresent = present;
+		coeurAStockage.setScanneur(present);
 	}
 	
 	/**
@@ -288,7 +284,7 @@ public class Controleur
 	 */
 	public boolean scanneurPresent()
 	{
-		return scanneurPresent;
+		return coeurAStockage.scanneurPresent();
 	}
 	
 	/**
@@ -301,8 +297,7 @@ public class Controleur
 	 */
 	public void setFentes(boolean fenteBillet, boolean fentePiece) 
 	{
-		this.fentePiece = fentePiece;
-		this.fenteBillet = fenteBillet;
+		coeurAStockage.setFentes(fenteBillet, fentePiece);
 	}
 	
 	/**
@@ -311,7 +306,7 @@ public class Controleur
 	 */
 	public boolean fentePresente()
 	{
-		return (fentePiece || fenteBillet);
+		return coeurAStockage.fentePresente();
 	}
 	
 	
