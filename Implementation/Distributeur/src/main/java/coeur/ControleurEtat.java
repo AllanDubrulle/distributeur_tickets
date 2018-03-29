@@ -287,6 +287,7 @@ abstract class ControleurEtat
 	/**
 	 * 	Permet d'actualiser l'etat de blocage de la carte dans le distributeur
 	 */
+	
 	public void bloquerCarte()
 	{
 		if(Controleur.getInstance().getCoeurAStockage().carteInseree())
@@ -307,100 +308,12 @@ abstract class ControleurEtat
 			Controleur.getInstance().getCoeurAGraphique().carteNonBloquee();
 		}
 	}
-	
-	/**
-	 * 	Permet d'actualiser la mise en panne le lecteur de carte du distributeur
-	 */
-	public void lecteurPanne() 
-	{
-		actualiserPanne(Composant.LECTEURCARTE);
-		if(Controleur.getInstance().getModePaiement().equals(EtatParCarte.getInstance()))
-		{
-			if(!Controleur.getInstance().getCoeurAStockage().estEnMarche(Composant.LECTEURCARTE))
-			{
-				Controleur.getInstance().getCoeurAGraphique().lecteurEnPanne();
-			}
-			else
-			{
-				Controleur.getInstance().getCoeurAGraphique().lecteurPasEnPanne();
-			}
-		}
-	}
 
 	/**
 	 * 	Permet de mettre a jour le distributeur lorqu'on retire les fentes
 	 */
 	public void retirerFentes() {}
 	
-	/**
-	 * 	Permet d'actualiser la mise en panne la fente a billet du distributeur
-	 */
-	public void fenteBilletPanne() 
-	{
-		actualiserPanne(Composant.FENTEBILLET);
-		if(Controleur.getInstance().getModePaiement().equals(EtatPaiementLiquide.getInstance()))
-		{
-			if(!Controleur.getInstance().getCoeurAStockage().estEnMarche(Composant.FENTEBILLET))
-			{
-				Controleur.getInstance().getCoeurAGraphique().fenteBilletEnPanne();
-			}
-			else
-			{
-				Controleur.getInstance().getCoeurAGraphique().fenteBilletPasEnPanne();
-			}
-		}
-	}
-	
-	/**
-	 * 	Permet d'actualiser la mise en panne la fente a piece du distributeur
-	 */
-	public void fentePiecePanne() 
-	{
-		actualiserPanne(Composant.FENTEPIECE);
-		if(Controleur.getInstance().getModePaiement().equals(EtatPaiementLiquide.getInstance()))
-		{
-			if(!Controleur.getInstance().getCoeurAStockage().estEnMarche(Composant.FENTEPIECE))
-			{
-				Controleur.getInstance().getCoeurAGraphique().fentePieceEnPanne();
-			}
-			else
-			{
-				Controleur.getInstance().getCoeurAGraphique().fentePiecePasEnPanne();
-			}
-		}
-	}
-	
-	/**
-	 * 	Permet d'actualiser la mise en panne le scanneur du distributeur
-	 */
-	public void scanneurPanne()
-	{
-		actualiserPanne(Composant.SCANNEUR);
-		if(!Controleur.getInstance().getCoeurAStockage().estEnMarche(Composant.SCANNEUR))
-		{
-			Controleur.getInstance().getCoeurAGraphique().scanneurEnPanne();
-		}
-		else
-		{
-			Controleur.getInstance().getCoeurAGraphique().scanneurPasEnPanne();
-		}
-	}
-	
-	/**
-	 * 	Permet d'actualiser la mise en panne l'imprimante du distributeur
-	 */
-	public void imprimantePanne()
-	{
-		actualiserPanne(Composant.IMPRIMANTE);
-		if(!Controleur.getInstance().getCoeurAStockage().estEnMarche(Composant.IMPRIMANTE))
-		{
-			Controleur.getInstance().getCoeurAGraphique().imprimanteEnPanne();
-		}
-		else
-		{
-			Controleur.getInstance().getCoeurAGraphique().imprimantePasEnPanne();
-		}
-	}
 	
 	/**
 	 * 	Permet d'ecrire le nom de l'etat

@@ -17,12 +17,10 @@ import javafx.scene.layout.Pane;
 class FChoixAbo extends Pane 
 {
     private ChoiceBox<String> boutonChoix;
-    private Stage scene;
 
 
     public FChoixAbo(Stage scene, FAboRenouveler aboRenouv)
     {
-    	this.scene = scene;
 
         Button button = new Button();
         boutonChoix = new ChoiceBox<String>();

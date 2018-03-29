@@ -32,6 +32,9 @@ public class CoeurAStockageImpl implements CoeurAStockage
 	private int essai;
 	private static CoeurAStockageImpl instance;
 	private String[] horaire;
+	private boolean ecranTactile;
+	private boolean scanneurPresent;
+	private boolean fenteBillet, fentePiece;
 	
 	/**
 	 * 	Constructeur de CoeurAStockageImpl (qui instancie les composant)
@@ -567,15 +570,34 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		imprimante.imprimer();
 	}
 	
-	public void scanne() throws ComposantHorsService
+	public void setTactile(boolean tactile)
 	{
-		if (!estEnMarche(Composant.SCANNEUR))
-			throw new ComposantHorsService("Scanneur de code hors service");
+		this.ecranTactile = tactile;
 	}
 	
-	public void lireCarte() throws ComposantHorsService
+	public boolean getTactile()
 	{
-		if (!estEnMarche(Composant.LECTEURCARTE))
-			throw new ComposantHorsService("Lecteur de carte hors service");
-	}	
+		return ecranTactile;
+	}
+	
+	public void setScanneur(boolean present) 
+	{
+		this.scanneurPresent = present;
+	}
+	
+	public boolean scanneurPresent()
+	{
+		return scanneurPresent;
+	}
+	
+	public void setFentes(boolean fenteBillet, boolean fentePiece) 
+	{
+		this.fentePiece = fentePiece;
+		this.fenteBillet = fenteBillet;
+	}
+	
+	public boolean fentePresente()
+	{
+		return (fentePiece || fenteBillet);
+	}
 }

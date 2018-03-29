@@ -30,7 +30,6 @@ public class EtatImpressionRecu extends ControleurEtat
 		catch(PlusDePapier e)
 		{
 			Controleur.getInstance().getCoeurAStockage().actualiserPanne(Composant.IMPRIMANTE);
-			Controleur.getInstance().getCoeurAGraphique().imprimanteEnPanne();
 			Controleur.getInstance().getCoeurAGraphique().afficherMessageDErreur();
 		} 
 		catch (ComposantHorsService e)

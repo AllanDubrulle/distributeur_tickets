@@ -15,11 +15,10 @@ import javafx.scene.control.*;
 class FChoixParCarte extends Ecran 
 {
     private static TextField zoneTexte;
-    private Stage scene;
+
     
     public FChoixParCarte(Stage scene) 
     {
-    	this.scene = scene;
         Button button = new Button();
         zoneTexte = new TextField();
         Text texte1 = new Text();

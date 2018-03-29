@@ -1,5 +1,6 @@
 package coeur;
 
+import stockage.Composant;
 import stockage.ComposantHorsService;
 import stockage.imprimable.Abonnement;
 
@@ -29,8 +30,15 @@ class EtatChoixRenouvAbo extends EtatChoixTitre
 	{
 		try 
 		{
-			Controleur.getInstance().getCoeurAStockage().scanne();
-			Controleur.getInstance().getCoeurAGraphique().afficherNumAbo();
+			if(!Controleur.getInstance().getCoeurAStockage().estEnMarche(Composant.SCANNEUR))
+			{
+				Controleur.getInstance().getCoeurAGraphique().afficherNumAbo();
+			}
+			else
+			{
+				throw new ComposantHorsService("Lecteur de carte hors service");
+			}
+			
 		} 
 		catch (ComposantHorsService e) 
 		{

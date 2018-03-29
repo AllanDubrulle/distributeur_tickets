@@ -415,19 +415,53 @@ public interface CoeurAStockage
 	 */
 	public void impression() throws ComposantHorsService, PlusDePapier;
 	
+	
 	/**
+	 * 	Permet de mettre a jour la configuration de l'ecran du distributeur
+	 * 	@param tactile vrai si l'ecran choisi est tactile, faux sinon
+	 */
+	public void setTactile(boolean tactile);
+	
+	/**
+	 * 	Permet de savoir si l'ecran est tactile ou non
+	 * 	@return ecranTactile qui est vrai si l'ecran est tactile, faux sinon
+	 */
+	public boolean getTactile();
+	
+	/**
+	 * 	Permet de mettre a jour le scanneur du distributeur (l'ajoute s'il n'est pas present,
+	 * 	l'enleve s'il l'est)
+	 * 	@param present vrai si le distributeur est equipe d'un scanneur, faux sinon
+	 */
+	public void setScanneur(boolean present);
+	
+	/**
+	 * 	Permet de savoir si le scanneur de codes est present sur le distributeur ou non
+	 * 	@return scanneurPresent qui est vrai si le distributeur est equipe d'un scanneur, faux
+	 * 	sinon
+	 */
+	public boolean scanneurPresent();
+	
+	/**
+<<<<<<< HEAD
 	 * 	Permet de scanneur le code barre d'un abonnement (afficher la fenetre des 
 	 * 	abonnements existants)
 	 * 	@throws ComposantHorsService (peut generer une exception si le scanneur est 
 	 * 	en panne)
+=======
+	 * 	Permet de mettre a jour les fentes du distributeur (les ajoutes si elles ne sont pas 
+	 * 	presentes ou les enleve)
+	 * 	@param fenteBillet vrai si la fente a billet veut etre mise, faux si elle doit etre 
+	 * 	enlevee
+	 * 	@param fentePiece vrai si la fente a piece veut etre mise, faux si elle doit etre 
+	 * 	enlevee
+>>>>>>> d4ef2e34fe9e9479518bd467af49797490101446
 	 */
-	public void scanne() throws ComposantHorsService;
+	public void setFentes(boolean fenteBillet, boolean fentePiece);
 	
 	/**
-	 * 	Permet de lire une carte (afficher la fenetre pour choisir le numero de carte
-	 * 	bancaire)
-	 * 	@throws ComposantHorsService (peut generer une exception si le lecteur de
-	 * 	lecteur de carte est en panne)
+	 * 	Permet de savoir si au moins une fente est presente sur le distributeur
+	 * 	@return fente vrai si on a au moins une fente (fenteBillet ou fentePiece), faux sinon
 	 */
-	public void lireCarte() throws ComposantHorsService;
+	public boolean fentePresente();
 }

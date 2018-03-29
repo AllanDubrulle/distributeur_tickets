@@ -1,5 +1,6 @@
 package coeur;
 
+import stockage.Composant;
 import stockage.ComposantHorsService;
 
 /**
@@ -41,8 +42,14 @@ class EtatParCarte extends EtatAnnulable
 	{
 		try 
 		{
-			Controleur.getInstance().getCoeurAStockage().lireCarte();
-			Controleur.getInstance().getCoeurAGraphique().afficherChoixParCarte();
+			if(Controleur.getInstance().getCoeurAStockage().estEnMarche(Composant.LECTEURCARTE))
+			{
+				Controleur.getInstance().getCoeurAGraphique().afficherChoixParCarte();
+			}
+			else
+			{
+				throw new ComposantHorsService("Scanneur de code hors service");
+			}
 		}
 		catch (ComposantHorsService e)
 		{
