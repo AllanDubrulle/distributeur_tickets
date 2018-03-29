@@ -129,7 +129,7 @@ class BDDTitre extends GestionBaseDeDonnees
 			{
 				compteur++;
 			}
-        	return compteur;
+        	return compteur + 1;
         }
         catch (SQLException e)
         {
