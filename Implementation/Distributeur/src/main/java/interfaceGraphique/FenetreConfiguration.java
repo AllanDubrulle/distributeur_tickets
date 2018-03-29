@@ -1,6 +1,6 @@
 package interfaceGraphique;
 
-import Main.*;
+import main.*;
 import javafx.scene.text.*;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
