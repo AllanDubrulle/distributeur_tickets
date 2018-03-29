@@ -24,7 +24,7 @@ public class CoeurAStockageImpl implements CoeurAStockage
 	private Carte carte;
 	private TitreDeTransport achat;
 	private int nbrTitre;
-	private int prix;
+	private int montantAPayer;
 	private int montantRecu;
 	private Monnayeur monnayeur;
 	private HashMap<Composant,Boolean> composantEnMarche;
@@ -32,6 +32,9 @@ public class CoeurAStockageImpl implements CoeurAStockage
 	private int essai;
 	private static CoeurAStockageImpl instance;
 	private String[] horaire;
+	private boolean ecranTactile;
+	private boolean scanneurPresent;
+	private boolean fenteBillet, fentePiece;
 	
 	/**
 	 * 	Constructeur de CoeurAStockageImpl (qui instancie les composant)
@@ -342,12 +345,12 @@ public class CoeurAStockageImpl implements CoeurAStockage
 	
 	public int getPrix()
 	{
-		return prix;
+		return montantAPayer;
 	}
 
-	public void setPrix(int prix) 
+	public void setPrix(int montantAPayer) 
 	{
-		this.prix = prix;
+		this.montantAPayer = montantAPayer;
 	}
 	
 	public void ajoutMonnaie(int i) throws ComposantHorsService
@@ -401,7 +404,7 @@ public class CoeurAStockageImpl implements CoeurAStockage
 	
 	public Rendu rendreMonnaie() throws PasAssezDeMonnaie
 	{
-		return monnayeur.calculerRenduArgent(montantRecu-prix);
+		return monnayeur.calculerRenduArgent(montantRecu-montantAPayer);
 	}
 	
 	private void setMontantRecu(int montantRecu)
@@ -448,24 +451,24 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		bTitre.deconnexion();
 	}
 	
-	public boolean depassementPrix()
+	public boolean depassementMontantAPayer()
 	{
-		return prix<=montantRecu;
+		return montantAPayer<=montantRecu;
 	}
 
-	public double prixAffichable()
+	public double montantAPayerAffichable()
 	{
-		return (double) prix /100;
+		return (double) montantAPayer /100;
 	}
 	
 	public double prixTicketAffichable()
 	{
-		return (double)prix / (nbrTitre*100);
+		return (double)montantAPayer / (nbrTitre*100);
 	}
 
 	public double renduAffichable()
 	{
-		return Math.abs((double) (montantRecu-prix) /100);
+		return Math.abs((double) (montantRecu-montantAPayer) /100);
 	}
 
 	public double montantRecuAffichable()
@@ -489,7 +492,7 @@ public class CoeurAStockageImpl implements CoeurAStockage
 	
 	public boolean verifSolde() 
 	{
-		return carte.soldeSuffisant(prix);
+		return carte.soldeSuffisant(montantAPayer);
 	}
 	
 	public boolean verifCode(int codePIN)
@@ -511,12 +514,12 @@ public class CoeurAStockageImpl implements CoeurAStockage
 	public void actualiserSolde()
 	{
 		String numero = carte.getID();
-		int somme = carte.getSolde() - prix;
+		int somme = carte.getSolde() - montantAPayer;
 		BDDBanque bBanque = new BDDBanque();
 		bBanque.connexion();
 		bBanque.actualiserSolde(numero, somme);
 		bBanque.deconnexion();
-		montantRecu = prix;
+		montantRecu = montantAPayer;
 	}
 	
 	public boolean estEnMarche(Composant composant)
@@ -578,4 +581,35 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		if (!estEnMarche(Composant.LECTEURCARTE))
 			throw new ComposantHorsService("Lecteur de carte hors service");
 	}	
+	
+	public void setTactile(boolean tactile)
+	{
+		this.ecranTactile = tactile;
+	}
+	
+	public boolean getTactile()
+	{
+		return ecranTactile;
+	}
+	
+	public void setScanneur(boolean present) 
+	{
+		this.scanneurPresent = present;
+	}
+	
+	public boolean scanneurPresent()
+	{
+		return scanneurPresent;
+	}
+	
+	public void setFentes(boolean fenteBillet, boolean fentePiece) 
+	{
+		this.fentePiece = fentePiece;
+		this.fenteBillet = fenteBillet;
+	}
+	
+	public boolean fentePresente()
+	{
+		return (fentePiece || fenteBillet);
+	}
 }

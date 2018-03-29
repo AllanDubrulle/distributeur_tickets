@@ -23,14 +23,14 @@ class EtatPaiementLiquide extends EtatAnnulable
 	{
 		Controleur.getInstance().setModePaiement(this);
 		Controleur.getInstance().getCoeurAStockage().reinitialisation();
-		Controleur.getInstance().getCoeurAGraphique().afficherChoixParLiquide(Controleur.getInstance().getCoeurAStockage().prixAffichable());
+		Controleur.getInstance().getCoeurAGraphique().afficherChoixParLiquide(Controleur.getInstance().getCoeurAStockage().montantAPayerAffichable());
 	}
 	public void inserer(int i)
 	{
 		try
 		{
 			Controleur.getInstance().getCoeurAStockage().ajoutMonnaie(i);
-			if(Controleur.getInstance().getCoeurAStockage().depassementPrix())
+			if(Controleur.getInstance().getCoeurAStockage().depassementMontantAPayer())
 			{
 				Controleur.getInstance().getCoeurAGraphique().afficherRendu(Controleur.getInstance().getCoeurAStockage()
 						.rendreMonnaie());
