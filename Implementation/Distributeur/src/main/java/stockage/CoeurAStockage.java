@@ -443,19 +443,12 @@ public interface CoeurAStockage
 	public boolean scanneurPresent();
 	
 	/**
-<<<<<<< HEAD
-	 * 	Permet de scanneur le code barre d'un abonnement (afficher la fenetre des 
-	 * 	abonnements existants)
-	 * 	@throws ComposantHorsService (peut generer une exception si le scanneur est 
-	 * 	en panne)
-=======
 	 * 	Permet de mettre a jour les fentes du distributeur (les ajoutes si elles ne sont pas 
 	 * 	presentes ou les enleve)
 	 * 	@param fenteBillet vrai si la fente a billet veut etre mise, faux si elle doit etre 
 	 * 	enlevee
 	 * 	@param fentePiece vrai si la fente a piece veut etre mise, faux si elle doit etre 
 	 * 	enlevee
->>>>>>> d4ef2e34fe9e9479518bd467af49797490101446
 	 */
 	public void setFentes(boolean fenteBillet, boolean fentePiece);
 	
