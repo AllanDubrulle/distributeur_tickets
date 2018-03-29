@@ -415,20 +415,6 @@ public interface CoeurAStockage
 	 */
 	public void impression() throws ComposantHorsService, PlusDePapier;
 	
-	/**
-	 * 	Permet de scanneur le code barre d'un abonnement (afficher la fenetre des 
-	 * 	abonnements existants)
-	 * 	@throws ComposantHorsService
-	 */
-	public void scanne() throws ComposantHorsService;
-	
-	/**
-	 * 	Permet de lire une carte (afficher la fenetre pour choisir le numero de carte
-	 * 	bancaire)
-	 * 	@throws ComposantHorsService (peut generer une exception si le lecteur de
-	 * 	lecteur de carte est en panne)
-	 */
-	public void lireCarte() throws ComposantHorsService;
 	
 	/**
 	 * 	Permet de mettre a jour la configuration de l'ecran du distributeur

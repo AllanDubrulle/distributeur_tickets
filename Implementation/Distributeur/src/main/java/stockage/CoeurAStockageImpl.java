@@ -570,18 +570,6 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		imprimante.imprimer();
 	}
 	
-	public void scanne() throws ComposantHorsService
-	{
-		if (!estEnMarche(Composant.SCANNEUR))
-			throw new ComposantHorsService("Scanneur de code hors service");
-	}
-	
-	public void lireCarte() throws ComposantHorsService
-	{
-		if (!estEnMarche(Composant.LECTEURCARTE))
-			throw new ComposantHorsService("Lecteur de carte hors service");
-	}	
-	
 	public void setTactile(boolean tactile)
 	{
 		this.ecranTactile = tactile;
