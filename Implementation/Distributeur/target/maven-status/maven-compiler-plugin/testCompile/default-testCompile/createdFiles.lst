@@ -1,0 +1,7 @@
+testStockage\TestImprimante.class
+testStockage\TestMonnayeur.class
+testStockage\TestCarte.class
+testStockage\TestCoeurAStockage.class
+testEtats\CoeurAGraphiqueTest.class
+testEtats\TestEtats.class
+testStockage\TestBDD.class
