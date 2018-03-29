@@ -7,7 +7,7 @@ import stockage.Valeur;
  *  @author TheoDaix, AllanDubrulle, VictorVerhoye
  *  @version 1.0
  */
-public enum TypeTitre implements Valeur // changer les valeurs
+public enum TypeTitre implements Valeur
 {
 	STANDARD("Standard"){ public int valeur()
 		{ return 0; }

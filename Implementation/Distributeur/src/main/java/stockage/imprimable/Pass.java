@@ -22,7 +22,7 @@ public class Pass extends TitreDeTransport
 	 * 	@param reduction la reduction du pass
 	 * 	@param typePass le type de pass
 	 */
-	public Pass(String nom, String gareDepart, String gareArrivee, Classe classe, TypeTitre type, Reduction reduction, TypePass typePass)	//10Trajets2Gares
+	public Pass(String nom, String gareDepart, String gareArrivee, Classe classe, TypeTitre type, Reduction reduction, TypePass typePass)
 	{
 		super(gareDepart, gareArrivee, classe, type, reduction);
 		this.nom = nom;
@@ -38,7 +38,7 @@ public class Pass extends TitreDeTransport
 	 *  @param reduction la reduction du pass
 	 *  @param typePass le type de pass
 	 */
-	public Pass(String nom, int nbrJours, Classe classe, TypeTitre type, Reduction reduction, TypePass typePass)		//Illimite
+	public Pass(String nom, int nbrJours, Classe classe, TypeTitre type, Reduction reduction, TypePass typePass)
 	{
 		super(nbrJours, classe, type, reduction);
 		this.nom = nom;
@@ -53,7 +53,7 @@ public class Pass extends TitreDeTransport
 	 *  @param reduction la reduction du pass
 	 *  @param typePass le type de pass
 	 */
-	public Pass(String nom, Classe classe, TypeTitre type, Reduction reduction, TypePass typePass)		//10Trajets
+	public Pass(String nom, Classe classe, TypeTitre type, Reduction reduction, TypePass typePass)
 	{
 		super(classe, type, reduction);
 		this.nom = nom;
