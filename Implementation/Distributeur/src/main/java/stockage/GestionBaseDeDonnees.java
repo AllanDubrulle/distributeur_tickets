@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 /**
- * Classe Gestion base de données (classe parent des classes BDDTitre, BDDBanque et
+ * Classe Gestion base de donnees (classe parent des classes BDDTitre, BDDBanque etc)
  * HoraireTrains)
  * @author TheoDaix, AllanDubrulle, VictorVerhoye
  * @version 1.0
@@ -37,8 +37,8 @@ class GestionBaseDeDonnees {
 	    }
 	    
 	    /**
-	     * 	Permet à une instance de GestionBaseDeDonnees de se connecter à la base de données
-	     *	@return connexion vrai si la connexion a pu être établie, faux sinon
+	     * 	Permet a une instance de GestionBaseDeDonnees de se connecter a la base de donnees
+	     *	@return connexion vrai si la connexion a pu etre etablie, faux sinon
 	     */
 	    public boolean connexion()
 	    {
@@ -57,8 +57,8 @@ class GestionBaseDeDonnees {
 	    
 
 	    /**
-	     * 	Permet à une instance de GestionBaseDeDonnees de se déconnecter de la base de données
-	     * 	@return deconnexion vrai si la deconnexion a pu être établie, faux sinon
+	     * 	Permet a une instance de GestionBaseDeDonnees de se deconnecter de la base de donnees
+	     * 	@return deconnexion vrai si la deconnexion a pu etre etablie, faux sinon
 	     */
 	    public boolean deconnexion()
 	    {
@@ -77,9 +77,9 @@ class GestionBaseDeDonnees {
 	    }
 	    
 	    /**
-	     * 	Permet d'afficher les résultats d'une requête
-	     * 	@param res un resultat d'une requête de type SQL
-	     * 	@throws SQLException (peut être déclanchée si il y a une erreur dans le résultat)
+	     * 	Permet d'afficher les resultats d'une requete
+	     * 	@param res un resultat d'une requete de type SQL
+	     * 	@throws SQLException (peut etre declanchee si il y a une erreur dans le resultat)
 	     */
 	    public static void afficherResultat(ResultSet res) throws SQLException { //A SUPPRIMER
 			if (res != null)
@@ -101,8 +101,8 @@ class GestionBaseDeDonnees {
 	    }   
 	    
 	    /**
-	     * 	Permet de retourner un résultat à partir d'une requête de type SQL
-	     * 	@param requete une requête de type SQL
+	     * 	Permet de retourner un resultat a partir d'une requete de type SQL
+	     * 	@param requete une requete de type SQL
 	     */
 	    public ResultSet resultatRequete(String requete) //A SUPPRIMER
 	    {
@@ -119,8 +119,8 @@ class GestionBaseDeDonnees {
 	    }
 	    
 	    /**
-	     * 	Permet de mettre à jour une donnée à partir d'une requête de type SQL
-	     * 	@param requete une requête de type SQL
+	     * 	Permet de mettre a jour une donnee a partir d'une requete de type SQL
+	     * 	@param requete une requete de type SQL
 	     */
 	    public void mettreAJour(String requete) //A SUPPRIMER
 	    {

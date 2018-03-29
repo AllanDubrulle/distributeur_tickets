@@ -10,6 +10,11 @@ import javafx.scene.layout.*;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 
+/**
+ * Classe FenetreConfiguration
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
 public class FenetreConfiguration extends Pane 
 { 
     private static FenetreConfiguration instance;
@@ -20,6 +25,9 @@ public class FenetreConfiguration extends Pane
     private double rapportHauteur = tVoulueHauteur/450;
     private double rapportLargeur = tVoulueLargeur/600;
 
+    /**
+     * 	Constructeur de FenetreConfiguration
+     */
     private FenetreConfiguration() 
     {
         VBox vBox = new VBox();
@@ -182,6 +190,10 @@ public class FenetreConfiguration extends Pane
         getChildren().addAll(vBox, bouton, texte4);
     }
     
+    /**
+     * 	Permet de recuperer l'instance unique de FenetreConfiguration (Singleton Design Pattern)
+     * 	@return instance l'instance de FenetreConfiguration
+     */
     public static FenetreConfiguration getInstance() 
     {
     	if (instance == null)
@@ -189,6 +201,10 @@ public class FenetreConfiguration extends Pane
     	return instance;
     }
     
+    /**
+     * 	Permet de savoir si l'on a choisit d'avoir l'ecran tactile et le clavier
+     * 	@return ecranEtClavier vrai si on veut un ecran tactile et un clavier, faux sinon
+     */
     public boolean ecranEtClavier()
     {
     	if (boutonChoix.isSelected())
@@ -196,6 +212,10 @@ public class FenetreConfiguration extends Pane
     	return false;
     }
     
+    /**
+     * 	Permet de savoir si l'on a choisit d'avoir l'ecran non tactile et le clavier
+     * 	@return ecranEtClavier vrai si on veut un ecran non tactile et un clavier, faux sinon
+     */
     public boolean clavierEtNonEcran()
     {
     	if (boutonChoix0.isSelected())
@@ -203,6 +223,10 @@ public class FenetreConfiguration extends Pane
     	return false;
     }
     
+    /**
+     * 	Permet de savoir si l'on a choisit d'avoir l'ecran tactile et pas de clavier
+     * 	@return ecranEtClavier vrai si on veut un ectan tactile et pas le clavier, faux sinon
+     */
     public boolean ecranEtNonClavier()
     {
     	if (boutonChoix1.isSelected())
@@ -210,6 +234,10 @@ public class FenetreConfiguration extends Pane
     	return false;
     }
     
+    /**
+     * 	Permet de savoir si l'on a choisit d'avoir les deux fentes
+     * 	@return ecranEtClavier vrai si on veut les deux fentes, faux sinon
+     */
     public boolean deuxFentes()
     {
     	if (boutonChoix2.isSelected())
@@ -217,6 +245,10 @@ public class FenetreConfiguration extends Pane
     	return false;
     }
     
+    /**
+     * 	Permet de savoir si l'on a choisit d'avoir une fente a piece uniquement
+     * 	@return ecranEtClavier vrai si on veut la fente a piece uniquement, faux sinon
+     */
     public boolean fentePiece()
     {
     	if (boutonChoix3.isSelected())
@@ -224,6 +256,10 @@ public class FenetreConfiguration extends Pane
     	return false;
     }
     
+    /**
+     * 	Permet de savoir si l'on a choisit d'avoir aucune des deux fentes
+     * 	@return ecranEtClavier vrai si on veut aucune des deux fentes, faux sinon
+     */
     public boolean aucuneFente()
     {
     	if (boutonChoix4.isSelected())
@@ -231,6 +267,10 @@ public class FenetreConfiguration extends Pane
     	return false;
     }
     
+    /**
+     * 	Permet de savoir si l'on a choisit d'avoir un scanneur
+     * 	@return ecranEtClavier vrai si on veut le scanneur, faux sinon
+     */
     public boolean scanneur()
     {
     	if (boutonACocher.isSelected())
@@ -238,15 +278,28 @@ public class FenetreConfiguration extends Pane
     	return false;
     }
 
+    /**
+     * 	Permet de recuperer le rapport de multiplication de largeur de la fenetre de configuration (pour avoir un affichage optimal)
+     * 	@return rapportLargeur le rapport de multiplication de largeur de la fenetre de configuration
+     */
 	public double getRapportLarg() 
 	{
 		return rapportLargeur;
 	}
+	
+	/**
+     * 	Permet de recuperer le rapport de hauteur de la fenetre de configuration (pour avoir un affichage optimal)
+     * 	@return rapportHauteur le rapport de multiplication de hauteur de la fenetre de configuration
+     */
 	public double getRapportHaut() 
 	{
 		return rapportHauteur;
 	}
 	
+	/**
+     * 	Permet de recuperer la hauteur souhaitee pour la fenetre de simulation
+     * 	@return hauteur la hauteur de la fenetre de simulation
+     */
 	public double getHauteur()
 	{
 		if (boutonChoix5.isSelected())
@@ -266,6 +319,11 @@ public class FenetreConfiguration extends Pane
 			return 720.0;
 		}
 	}
+	
+	/**
+     * 	Permet de recuperer la largeur souhaitee pour la fenetre de simulation
+     * 	@return largeur la largeur de la fenetre de simulation
+     */
 	public double getLargeur()
 	{
 		if (boutonChoix5.isSelected())

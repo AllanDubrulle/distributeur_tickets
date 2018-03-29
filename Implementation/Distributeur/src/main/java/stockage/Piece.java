@@ -1,7 +1,7 @@
 package stockage;
 
 /**
- * Enumération Piece (différents pièces utilisés lors de l'application)
+ * Enumeration Piece (differents pieces utilisees lors de l'application)
  * @author TheoDaix, AllanDubrulle, VictorVerhoye
  * @version 1.0
  */

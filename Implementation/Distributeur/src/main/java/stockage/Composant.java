@@ -1,7 +1,7 @@
 package stockage;
 
 /**
- * Enumération Composant (différents composants pouvant être présents dans le distributeur)
+ * Enumeration Composant (differents composants pouvant etre presents dans le distributeur)
  * @author TheoDaix, AllanDubrulle, VictorVerhoye
  * @version 1.0
  */

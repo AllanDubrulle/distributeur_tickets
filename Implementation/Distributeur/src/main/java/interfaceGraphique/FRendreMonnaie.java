@@ -7,6 +7,11 @@ import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.*;
 
+/**
+ * Classe FRendreMonnaie
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
 class FRendreMonnaie extends Pane
 {    
     public FRendreMonnaie() 

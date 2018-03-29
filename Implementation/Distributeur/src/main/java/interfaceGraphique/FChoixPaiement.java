@@ -6,6 +6,11 @@ import javafx.scene.control.*;
 import javafx.scene.text.*;
 import javafx.scene.shape.*;
 
+/**
+ * Classe FChoixPaiement
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
 class FChoixPaiement extends Ecran 
 {
 	private Text texte10;

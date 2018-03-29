@@ -10,6 +10,11 @@ import javafx.scene.layout.*;
 import javafx.scene.shape.*;
 import javafx.scene.text.*;
 
+/**
+ * Classe FChoixParLiquide
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
 class FChoixParLiquide extends Ecran 
 {
     private Text texte1, texte3, texte5;

@@ -13,9 +13,9 @@ public class Rendu
 	private HashMap<BilletMonnaie,Integer> billets;
 	
 	/**
-	 * 	Contructeur de Rendu qui met à jour les quantités de pièces et de billet à rendre
-	 * 	@param pieces une quantité de pièces
-	 * 	@param billets une quantité de billets
+	 * 	Contructeur de Rendu qui met a jour les quantites de pieces et de billet a rendre
+	 * 	@param pieces une quantite de pieces
+	 * 	@param billets une quantite de billets
 	 */
 	public Rendu (HashMap<Piece,Integer> pieces, HashMap<BilletMonnaie,Integer> billets)
 	{
@@ -24,8 +24,8 @@ public class Rendu
 	}
 
 	/**
-	 * 	Permet d'obtenir la quantité de pièces à rendre
-	 * 	@return pieces une quantité de pièces
+	 * 	Permet d'obtenir la quantite de pieces a rendre
+	 * 	@return pieces une quantite de pieces
 	 */
 	public HashMap<Piece,Integer> getPieces() 
 	{
@@ -33,8 +33,8 @@ public class Rendu
 	}
 
 	/**
-	 * 	Permet d'obtenir la quantité de billets à rendre
-	 * 	@return billets une quantité de billets
+	 * 	Permet d'obtenir la quantite de billets a rendre
+	 * 	@return billets une quantite de billets
 	 */
 	public HashMap<BilletMonnaie,Integer> getBillets() 
 	{

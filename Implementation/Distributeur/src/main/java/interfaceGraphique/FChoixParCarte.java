@@ -7,6 +7,11 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.*;
 
+/**
+ * Classe FChoixParCarte (permet de choisir le numero de carte bancaire pour effectuer le paiement)
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
 class FChoixParCarte extends Ecran 
 {
     private static TextField zoneTexte;
@@ -71,25 +76,4 @@ class FChoixParCarte extends Ecran
 
         getChildren().addAll(button, zoneTexte, texte1, texte2);
     }
-
-	public void actionClavier(int a) 
-	{
-		zoneTexte.setText(zoneTexte.getText() + a);
-	}
-
-	public void actionRetour() 
-	{
-		graphAC.choixAnnuler();
-	}
-
-	public void actionEffacer() 
-	{
-		if (zoneTexte.getText().length() > 0)
-			zoneTexte.setText(zoneTexte.getText().substring(0, zoneTexte.getText().length()-1));
-	}
-	
-	public void actionEntrer() 
-	{
-		graphAC.choixValider();
-	}
 }

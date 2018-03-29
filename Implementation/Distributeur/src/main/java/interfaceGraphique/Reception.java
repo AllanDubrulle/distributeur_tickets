@@ -3,10 +3,18 @@ package interfaceGraphique;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.*;
 
+/**
+ * Classe Reception (permet de representer le bac de reception sur l'interface graphique)
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
 class Reception extends Pane 
-{	
-
-	
+{
+	/**
+	 * 	Constructeur de Reception
+	 * 	@param hauteur l'indice de multiplication de hauteur (pour un affichage optimal)
+	 * 	@param largeur l'indice de multiplication de largeur (pour un affichage optimal)
+	 */
 	public Reception(double hauteur, double largeur)
 	{
         Rectangle rectangle = new Rectangle();

@@ -1,7 +1,7 @@
 package stockage;
 
 /**
- * Classe PasAssezDeMonnaie (exception générée s'il n'y a plus assez de monnaie)
+ * Classe PasAssezDeMonnaie (exception generee s'il n'y a plus assez de monnaie)
  * @author TheoDaix, AllanDubrulle, VictorVerhoye
  * @version 1.0
  */

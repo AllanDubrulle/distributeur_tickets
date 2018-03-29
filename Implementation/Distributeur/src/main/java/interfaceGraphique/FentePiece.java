@@ -9,12 +9,21 @@ import javafx.scene.layout.Pane;
 import javafx.scene.shape.*;
 import javafx.scene.text.Font;
 
+/**
+ * Classe FentePiece (permet de representer la fente a billet sur l'interface graphqiue)
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
 class FentePiece extends Pane
 {
 	private Button bouton, bouton0, bouton1, bouton2, bouton3, bouton4, bouton5, bouton6;
 	private GraphiqueACoeur graphAC = GraphiqueACoeurImpl.getInstance();
 
-	
+	/**
+	 * 	Constructeur de FentePiece
+	 * 	@param hauteur l'indice de multiplication de hauteur (pour un affichage optimal)
+	 * 	@param largeur l'indice de multiplication de largeur (pour un affichage optimal)
+	 */
 	public FentePiece(double hauteur, double largeur) 
 	{
         Circle cercle = new Circle();
@@ -189,27 +198,5 @@ class FentePiece extends Pane
         bouton4.setFocusTraversable(false);
         bouton5.setFocusTraversable(false);
         bouton6.setFocusTraversable(false);
-        
-        
-	}
-	
-	public Button getButton(int i)
-	{
-		if (i == 0)
-			return bouton;
-		else if (i == 1)
-			return bouton0;
-		else if (i == 2)
-			return bouton1;
-		else if (i == 3)
-			return bouton2;
-		else if (i == 4)
-			return bouton3;
-		else if (i == 5)
-			return bouton4;
-		else if (i == 6)
-			return bouton5;
-		else
-			return bouton6;
 	}
 }

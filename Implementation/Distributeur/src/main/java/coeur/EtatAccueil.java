@@ -1,7 +1,7 @@
 package coeur;
 
 /**
- * Classe EtatAcceuil
+ * Classe EtatAccueil
  * @author TheoDaix, AllanDubrulle, VictorVerhoye
  * @version 1.0
  */

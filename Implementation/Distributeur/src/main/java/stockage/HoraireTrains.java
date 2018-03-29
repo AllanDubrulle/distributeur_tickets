@@ -1,16 +1,16 @@
 package stockage;
 
-/**
- * Classe HoraireTrains
- * @author TheoDaix, AllanDubrulle, VictorVerhoye
- * @version 1.0
- */
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+/**
+ * Classe HoraireTrains
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
 class HoraireTrains extends GestionBaseDeDonnees
 {
 	
@@ -20,13 +20,13 @@ class HoraireTrains extends GestionBaseDeDonnees
     }
    
     /**
-     * 	Va chercher dans la base de données les itinéraires de trains entre deux 
-     * 	gares à partir d'une certaine heure
-     * 	@param depart une gare de départ
-     * 	@param arrivee une gare d'arrivée
-     * 	@param heure l'heure de l'heure de départ
-     *	@param minute les minutes de l'heure départ
-     *	@return res un résultat de type SQL contenant les horaires de l'itinéraire choisi
+     * 	Va chercher dans la base de donnees les itineraires de trains entre deux 
+     * 	gares a partir d'une certaine heure
+     * 	@param depart une gare de depart
+     * 	@param arrivee une gare d'arrivee
+     * 	@param heure l'heure de l'heure de depart
+     *	@param minute les minutes de l'heure depart
+     *	@return res un resultat de type SQL contenant les horaires de l'itineraire choisi
      */
     public ResultSet calculItineraire(String depart, String arrivee, int heure, int minute)
     {
@@ -67,7 +67,7 @@ class HoraireTrains extends GestionBaseDeDonnees
     }
     
     /**
-     * 	Va regarder dans la base de données si un couple de gares apparaît bien
+     * 	Va regarder dans la base de donnees si un couple de gares apparaît bien
      *	@param gare1 une gare
      *	@param gare2 une autre gare
      *	@return res vrai si il existe un trajet entre les deux gares, faux sinon
@@ -95,7 +95,7 @@ class HoraireTrains extends GestionBaseDeDonnees
     }
     
     /**
-     * 	Va regarder dans la base de données si une gare apparait bien
+     * 	Va regarder dans la base de donnees si une gare apparait bien
      * 	@param gare une gare
      *	@return res vrai si la gare existe, faux sinon
      */	
@@ -119,12 +119,12 @@ class HoraireTrains extends GestionBaseDeDonnees
     }
     
     /**
-     * 	Va chercher dans la base de données la minute à laquelle un train part d'une certaine 
+     * 	Va chercher dans la base de donnees la minute a laquelle un train part d'une certaine 
      * 	gare et va vers une certaine autre gare
-     * 	@param depart une gare de départ
-     * 	@param arrivee une gare d'arrivée
+     * 	@param depart une gare de depart
+     * 	@param arrivee une gare d'arrivee
      * 	@return min le nombre de minutes entre les deux gares, si le trajet existe, une erreur
-     * 	est générée dans le cas contraire
+     * 	est generee dans le cas contraire
      */
     public int minuteTrajet(String depart, String arrivee)
     {
@@ -188,13 +188,13 @@ class HoraireTrains extends GestionBaseDeDonnees
     }
     
     /**
-     * 	Va chercher dans la base de données tous les itinéraires de trains à partir d'une 
-     * 	certaine gare de départ et à partir d'une certaine heure
-     * 	@param depart une gare de départ
-     * 	@param heure l'heure de l'heure de départ minimale
-     * 	@param minute les minutes de l'heure de départ minimale
-     * 	@return result un résultat de type SQL qui contient toutes les arrivées au départ 
-     * 	d'une certaine gare à partir d'une certaine heure
+     * 	Va chercher dans la base de donnees tous les itineraires de trains a partir d'une 
+     * 	certaine gare de depart et a partir d'une certaine heure
+     * 	@param depart une gare de depart
+     * 	@param heure l'heure de l'heure de depart minimale
+     * 	@param minute les minutes de l'heure de depart minimale
+     * 	@return result un resultat de type SQL qui contient toutes les arrivees au depart 
+     * 	d'une certaine gare a partir d'une certaine heure
      */
     public ResultSet calculToutesLesGaresArrivee(String depart, int heure, int minute)
     {
@@ -232,13 +232,13 @@ class HoraireTrains extends GestionBaseDeDonnees
     }
     
     /**
-     * 	Va chercher dans la base de données tous les itinéraires de trains ayant pour gare 
-     * 	d'arrivée une certaine gare et ce avant une certaine heure
-     * 	@param arrivée une gare d'arrivée
-     * 	@param heure l'heure de l'heure d'arrivée maximale
-     * 	@param minute les minutes de l'heure d'arrivée maximale
-     * 	@return result un résultat de type SQL qui contient toutes les arrivées au départ 
-     * 	d'une certaine gare à partir d'une certaine heure
+     * 	Va chercher dans la base de donnees tous les itineraires de trains ayant pour gare 
+     * 	d'arrivee une certaine gare et ce avant une certaine heure
+     * 	@param arrivee une gare d'arrivee
+     * 	@param heure l'heure de l'heure d'arrivee maximale
+     * 	@param minute les minutes de l'heure d'arrivee maximale
+     * 	@return result un resultat de type SQL qui contient toutes les arrivees au depart 
+     * 	d'une certaine gare a partir d'une certaine heure
      */
     public ResultSet calculToutesLesGaresDepart(String arrivee, int heure, int minute)
     {
@@ -277,10 +277,10 @@ class HoraireTrains extends GestionBaseDeDonnees
     }
     
     /**
-     * 	Permet de prendre les 5 premières lignes d'un résultat d'une requête SQL et de 
+     * 	Permet de prendre les 5 premieres lignes d'un resultat d'une requete SQL et de 
      * 	les rassembler dans un tableau afin de l'utiliser dans le reste de l'application
-     * 	@param res un résultat d'une requête SQL
-     * 	@return tab un tableau contenant les 5 premières lignes d'un résultat de type SQL
+     * 	@param res un resultat d'une requete SQL
+     * 	@return tab un tableau contenant les 5 premieres lignes d'un resultat de type SQL
      */
     public String[] conversionRequeteEnTableau(ResultSet res) throws SQLException
     {
@@ -303,13 +303,13 @@ class HoraireTrains extends GestionBaseDeDonnees
     }
     
     /**
-     * 	Permet de prendre les 5 dernières lignes d'un résultat d'une requête SQL et de les 
+     * 	Permet de prendre les 5 dernieres lignes d'un resultat d'une requete SQL et de les 
      * 	rassembler dans un tableau afin de l'utiliser dans le reste de l'application. C'est 
-     * 	ici pour le cas particulier où on ne doit pas prendre les heures après une certaine 
-     * 	heure mais les heures avant une certaine heure (typiquement pour les arrivées dans 
+     * 	ici pour le cas particulier où on ne doit pas prendre les heures apres une certaine 
+     * 	heure mais les heures avant une certaine heure (typiquement pour les arrivees dans 
      * 	une gare)
-     * 	@param res un résultat d'une requête de type SQL
-     * 	@return un tableau contenant les 5 dernières lignes d'un résultat de type SQL
+     * 	@param res un resultat d'une requete de type SQL
+     * 	@return un tableau contenant les 5 dernieres lignes d'un resultat de type SQL
      */
     public String[] conversionRequeteEnTableauArriv(ResultSet res) throws SQLException
     {

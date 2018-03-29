@@ -5,7 +5,7 @@ package coeur;
  * @author TheoDaix, AllanDubrulle, VictorVerhoye
  * @version 1.0
  */
-class EtatAttentePIN extends EtatAnnulable 
+class EtatAttentePIN extends ControleurEtat
 {	
 	private static EtatAttentePIN instance;
 	
@@ -85,7 +85,7 @@ class EtatAttentePIN extends EtatAnnulable
 	public void choixInsererRetirerCarte()
 	{
 		Controleur.getInstance().getCoeurAStockage().carteEnlevee();
-		Controleur.getInstance().getCoeurAGraphique().afficherRetraitCarte();		//afficher le retrait de la carte, puis ça passe directement à etat paiement après la pause
+		Controleur.getInstance().getCoeurAGraphique().afficherRetraitCarte();
 	}
 	
 	public void apres5sec()

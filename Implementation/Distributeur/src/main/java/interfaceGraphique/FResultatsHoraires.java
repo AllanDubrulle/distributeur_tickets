@@ -8,6 +8,11 @@ import javafx.scene.layout.*;
 import javafx.scene.shape.*;
 import javafx.scene.text.*;
 
+/**
+ * Classe FResultatsHoraires
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
 class FResultatsHoraires extends Ecran 
 {
 	private Button bouton1;

@@ -6,6 +6,11 @@ import javafx.scene.control.*;
 import javafx.scene.shape.*;
 import javafx.scene.text.*;
 
+/**
+ * Classe FDemanderRecu
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
 class FDemandeRecu extends Ecran 
 {    
     public FDemandeRecu(double hauteur, double largeur) 

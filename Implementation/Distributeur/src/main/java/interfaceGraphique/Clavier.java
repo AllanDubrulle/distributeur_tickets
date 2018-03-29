@@ -8,10 +8,20 @@ import javafx.scene.shape.*;
 import javafx.scene.text.Font;
 import javafx.scene.layout.*;
 
+/**
+ * Classe Clavier (permet de representer le clavier sur l'interface graphique)
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
 class Clavier extends Pane 
 {		
 	private Ecran fenetre;
 
+	/**
+	 * 	Constructeur de Clavier
+	 * 	@param hauteur l'indice de multiplication de hauteur (pour un affichage optimal)
+	 * 	@param largeur l'indice de multiplication de largeur (pour un affichage optimal)
+	 */
 	public Clavier(double hauteur, double largeur) 
 	{
         Rectangle rectangle = new Rectangle();
@@ -755,6 +765,10 @@ class Clavier extends Pane
         bouton41.setFocusTraversable(false);
     }
 	
+	/**
+	 * 	Permet de mettre a jour la variable fenetre
+	 * 	@param fen la nouvelle fenetre
+	 */
 	public void setFenetre(Ecran fen)
 	{
 		fenetre = fen;

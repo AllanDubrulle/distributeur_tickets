@@ -10,6 +10,7 @@ import stockage.imprimable.Classe;
 import stockage.imprimable.Pass;
 import stockage.imprimable.Reduction;
 import stockage.imprimable.TypeTitre;
+
 /**
  * Classe Controleur
  * @author TheoDaix, AllanDubrulle, VictorVerhoye
@@ -35,7 +36,7 @@ public class Controleur
 	private Controleur() {}
 	
 	/**
-	 *	Permet de récuperérer l'instance unique de Controleur (Singleton Design Pattern)
+	 *	Permet de recupererer l'instance unique de Controleur (Singleton Design Pattern)
 	 *	@return instance l'instance de Controleur
 	 */
 	public static Controleur getInstance()
@@ -47,33 +48,8 @@ public class Controleur
 		return instance;
 	}
 	
-	public void setGraphique(CoeurAGraphique cAGraph)
-	{
-		this.coeurAGraphique = cAGraph;
-	}
 	/**
-	 *	Permet de modifier les états au fur et à mesure de l'exécution (ajout à la pile
-	 *	et mise à jour de etatActuel)
-	 *	@param etat un état de type ControleurEtat
-	 */
-	public void modifEtat(ControleurEtat etat) 
-	{
-		etatsPrecedents.push(etatActuel);
-		etatActuel = etat;
-		etatActuel.entree();
-	}
-	
-	/**
-	 *	Permet de récupérer la pile contenant les état dans lesquels nous sommes passés
-	 *	@return etatPrecedents la pile des états précédents
-	 */
-	public Stack<ControleurEtat> getEtatsPrecedents() 
-	{
-		return etatsPrecedents;
-	}
-	
-	/**
-	 *	Permet de récupérer cette instance de CoeurAGraphiqueImpl
+	 *	Permet de recuperer cette instance de CoeurAGraphiqueImpl
 	 *	@return coeurAGraphqique l'instance de coeurAGraphiqueImpl
 	 */
 	public CoeurAGraphique getCoeurAGraphique() 
@@ -89,9 +65,39 @@ public class Controleur
 	{
 		return coeurAStockage;
 	}
-
+	
 	/**
-	 *	Permet de récupérer l'état dans lequel nous nous trouvons (etatActuel)
+	 * 	Cette methode permet d'initialiser coeurAGraphique (pour les test unitaires)
+	 * 	@param cAGraph une instance de CoeurAGraphiqueImpl
+	 */
+	public void setGraphique(CoeurAGraphique cAGraph)
+	{
+		this.coeurAGraphique = cAGraph;
+	}
+	
+	/**
+	 *	Permet de modifier les etats au fur et a mesure de l'execution (ajout à la pile
+	 *	et mise à jour de etatActuel)
+	 *	@param etat un etat de type ControleurEtat
+	 */
+	public void modifEtat(ControleurEtat etat) 
+	{
+		etatsPrecedents.push(etatActuel);
+		etatActuel = etat;
+		etatActuel.entree();
+	}
+	
+	/**
+	 *	Permet de recuperer la pile contenant les etats dans lesquels nous sommes passes
+	 *	@return etatPrecedents la pile des etats precedents
+	 */
+	public Stack<ControleurEtat> getEtatsPrecedents() 
+	{
+		return etatsPrecedents;
+	}
+	
+	/**
+	 *	Permet de recuperer l'etat dans lequel nous nous trouvons (etatActuel)
 	 *	@return etatActuel etat dans lequel nous nous trouvons
 	 */
 	public ControleurEtat getEtatActuel() 
@@ -100,7 +106,7 @@ public class Controleur
 	}
 
 	/**
-	 *	Permet de récupérer la commande en cours (billet, abonnement, pass, ...)
+	 *	Permet de recuperer la commande en cours (billet, abonnement, pass, ...)
 	 *	@return commande la commande en cours d'achat
 	 */
 	public Commande getCommande()
@@ -109,7 +115,7 @@ public class Controleur
 	}
 
 	/**
-	 *	Permet de mettre à jour la commande en cours
+	 *	Permet de mettre a jour la commande en cours
 	 *	@param commande une commande (billet, abonnement, pass, ...)
 	 */
 	public void setCommande(Commande commande)
@@ -118,7 +124,7 @@ public class Controleur
 	}
 
 	/**
-	 *	Permet de réinitialiser la commande pour une éventuelle seconde utilisation
+	 *	Permet de reinitialiser la commande pour une eventuelle seconde utilisation
 	 */
 	public void reinitialisationCommande()
 	{
@@ -126,7 +132,7 @@ public class Controleur
 	}
 
 	/**
-	 *	Permet de mettre à jour le mode de paiement (soit liquide ou par carte)
+	 *	Permet de mettre a jour le mode de paiement (soit liquide ou par carte)
 	 *	@param modePaiement un mode de paiement
 	 */
 	public void setModePaiement(ControleurEtat modePaiement)
@@ -135,8 +141,8 @@ public class Controleur
 	}
 	
 	/**
-	 *	Permet de récuperer le mode de paiement
-	 *	@return modePaiement le mode de paiement utilisé
+	 *	Permet de recuperer le mode de paiement
+	 *	@return modePaiement le mode de paiement utilise
 	 */
 	public ControleurEtat getModePaiement()
 	{
@@ -144,11 +150,11 @@ public class Controleur
 	}
 
 	/**
-	 *	Permet de calculer le prix d'un billet à partir d'une gare de départ, d'une gare
-	 *	d'arrivée, d'une réduction, d'un type et d'une classe
-	 * 	@param gareDepart une gare de départ
-	 * 	@param gareArrivee une gare d'arrivée
-	 * 	@param reduc une réduction (Reduction)
+	 *	Permet de calculer le prix d'un billet a partir d'une gare de depart, d'une gare
+	 *	d'arrivee, d'une reduction, d'un type et d'une classe
+	 * 	@param gareDepart une gare de depart
+	 * 	@param gareArrivee une gare d'arrivee
+	 * 	@param reduc une reduction (Reduction)
 	 * 	@param type un type de billet (TypeTitre)
 	 * 	@param classe une classe (Classe)
 	 * 	@return le prix du billet
@@ -161,14 +167,14 @@ public class Controleur
 	}
 	
 	/**
-	 * 	Permet de calculer le prix d'un abonnement à partir d'une gare de départ, d'une gare
-	 *	d'arrivée, d'une réduction, d'un type, d'une classe et d'une validité
-	 * 	@param gareDepart une gare de départ
-	 * 	@param gareArrivee une gare d'arrivée
-	 * 	@param reduc une réduction (Reduction)
+	 * 	Permet de calculer le prix d'un abonnement a partir d'une gare de depart, d'une gare
+	 *	d'arrivee, d'une reduction, d'un type, d'une classe et d'une validite
+	 * 	@param gareDepart une gare de depart
+	 * 	@param gareArrivee une gare d'arrivee
+	 * 	@param reduc une reduction (Reduction)
 	 * 	@param type un type d'abonnement (TypeTitre)
 	 * 	@param classe une classe (Classe)
-	 * 	@param validite une validité (1, 3, 6 ou 12 mois)
+	 * 	@param validite une validite (1, 3, 6 ou 12 mois)
 	 * 	@return le prix de l'abonnement
 	 */
 	public void calculerPrix(Abonnement abo)
@@ -180,12 +186,12 @@ public class Controleur
 	}
 	
 	/**
-	 *  Permet de calculer le prix d'un pass illimité à partir d'une classe, d'une réduction,
+	 *  Permet de calculer le prix d'un pass illimite a partir d'une classe, d'une reduction,
 	 *	d'un type et un nombre de jours
 	 * 	@param classe une classe (Classe)
-	 * 	@param reduction une réduction (Reduction)
+	 * 	@param reduction une reduction (Reduction)
 	 * 	@param type un type de titre (TypeTitre)
-	 * 	@param nbrJours le nombre de jour de validité
+	 * 	@param nbrJours le nombre de jour de validite
 	 * 	@return le prix du pass
 	 */
 	public void calculerPrixIllimite(Pass pass)
@@ -197,10 +203,10 @@ public class Controleur
 	}
 
 	/**
-	 * 	Permet de calculer le prix d'un pass dix trajets à partir d'une classe, d'une réduction
+	 * 	Permet de calculer le prix d'un pass dix trajets a partir d'une classe, d'une reduction
 	 *	et d'un type
 	 * 	@param classe une classe (Classe)
-	 * 	@param reduction une réduction (Reduction)
+	 * 	@param reduction une reduction (Reduction)
 	 * 	@param type un type de titre (TypeTitre)
 	 * 	@return le prix du pass
 	 */
@@ -210,8 +216,9 @@ public class Controleur
 		int res = ajusterPrix(calculPrix ,pass.getReduction(), pass.getType(), pass.getClasse());	
 		getCoeurAStockage().setPrix(res);
 	}
+	
 	/**
-	 * 	Permet de calculer le prix d'un pass dix trajets entre deux gares à partir d'une gare
+	 * 	Permet de calculer le prix d'un pass dix trajets entre deux gares a partir d'une gare
 	 *	de départ, d'une gare d'arrivée, d'une classe, d'une réduction et d'un type
 	 * 	@param gareDepart une gare de départ
 	 * 	@param gareArrivee une gare d'arrivée
@@ -228,13 +235,13 @@ public class Controleur
 	}
 	
 	/**
-	 * 	Permet de calculer le prix d'un Titre de transport en fonction des données entrées
-	 *	(le prix de base du titre, la réduction, le type et la classe)
-	 * 	@param prix un prix à ajuster (en cents)
+	 * 	Permet de calculer le prix d'un titre de transport en fonction des donnees entrees
+	 *	(le prix de base du titre, la reduction, le type et la classe)
+	 * 	@param prix un prix à ajuster (en euros)
 	 * 	@param reduc une réduction (Reduction)
 	 * 	@param type un type de titre (TypeTitre)
 	 * 	@param classe une classe (Classe)
-	 * 	@return le prix du titre calculé en fonction des données introduites
+	 * 	@return le prix (en cents) du titre calculé en fonction des données introduites
 	 */
 	private int ajusterPrix(double prix ,Reduction reduc, TypeTitre type, Classe classe)
 	{
@@ -246,32 +253,62 @@ public class Controleur
 		return (int) res;
 	}
 	
+	/**
+	 * 	Permet de mettre a jour la configuration de l'ecran du distributeur
+	 * 	@param tactile vrai si l'ecran choisi est tactile, faux sinon
+	 */
 	public void setTactile(boolean tactile)
 	{
 		this.ecranTactile = tactile;
 	}
 	
+	/**
+	 * 	Permet de savoir si l'ecran est tactile ou non
+	 * 	@return ecranTactile qui est vrai si l'ecran est tactile, faux sinon
+	 */
 	public boolean getTactile()
 	{
 		return ecranTactile;
 	}
 	
+	/**
+	 * 	Permet de mettre a jour le scanneur du distributeur (l'ajoute s'il n'est pas present,
+	 * 	l'enleve s'il l'est)
+	 * 	@param present vrai si le distributeur est equipe d'un scanneur, faux sinon
+	 */
 	public void setScanneur(boolean present) 
 	{
 		this.scanneurPresent = present;
 	}
 	
+	/**
+	 * 	Permet de savoir si le scanneur de codes est present sur le distributeur ou non
+	 * 	@return scanneurPresent qui est vrai si le distributeur est equipe d'un scanneur, faux
+	 * 	sinon
+	 */
 	public boolean scanneurPresent()
 	{
 		return scanneurPresent;
 	}
 	
+	/**
+	 * 	Permet de mettre a jour les fentes du distributeur (les ajoutes si elles ne sont pas 
+	 * 	presentes ou les enleve)
+	 * 	@param fenteBillet vrai si la fente a billet veut etre mise, faux si elle doit etre 
+	 * 	enlevee
+	 * 	@param fentePiece vrai si la fente a piece veut etre mise, faux si elle doit etre 
+	 * 	enlevee
+	 */
 	public void setFentes(boolean fenteBillet, boolean fentePiece) 
 	{
 		this.fentePiece = fentePiece;
 		this.fenteBillet = fenteBillet;
 	}
 	
+	/**
+	 * 	Permet de savoir si au moins une fente est presente sur le distributeur
+	 * 	@return fente vrai si on a au moins une fente (fenteBillet ou fentePiece), faux sinon
+	 */
 	public boolean fentePresente()
 	{
 		return (fentePiece || fenteBillet);

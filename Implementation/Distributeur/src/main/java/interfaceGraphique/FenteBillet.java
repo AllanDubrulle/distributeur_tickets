@@ -9,12 +9,21 @@ import javafx.scene.layout.Pane;
 import javafx.scene.shape.*;
 import javafx.scene.text.Font;
 
+/**
+ * Classe FenteBillet (permet de representer la fente a billet sur l'interface graphique)
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
 class FenteBillet extends Pane 
 {
 	private Button bouton, bouton1, bouton0, bouton2;
 	private GraphiqueACoeur graphAC = GraphiqueACoeurImpl.getInstance();
 
-	
+	/**
+	 * 	Constructeur de FenteBillet
+	 * 	@param hauteur l'indice de multiplication de hauteur (pour un affichage optimal)
+	 * 	@param largeur l'indice de multiplication de largeur (pour un affichage optimal)
+	 */
 	public FenteBillet(double hauteur, double largeur) 
 	{
         Rectangle rectangle = new Rectangle();
@@ -110,17 +119,4 @@ class FenteBillet extends Pane
         bouton1.setFocusTraversable(false);
         bouton2.setFocusTraversable(false);
     }
-	
-	public Button getButton(int i)
-	{
-		if (i == 0)
-			return bouton;
-		else if (i == 1)
-			return bouton0;
-		else if (i == 2)
-			return bouton1;
-		else
-			return bouton2;
-		
-	}
 }

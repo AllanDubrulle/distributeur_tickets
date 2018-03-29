@@ -5,8 +5,23 @@ import javafx.geometry.*;
 import javafx.scene.text.*;
 import javafx.scene.layout.*;
 
+/**
+ * Classe AfficherPass10Trajets2Gares (permet d'afficher le pass achete)
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
 class AfficherPass10Trajets2Gares extends Pane 
 {
+	/**
+	 * 	Constructeur de AfficherPass10Trajets2Gares
+	 * 	@param nom le nom auquel est enregistre le pass
+	 * 	@param gareDepart la gare de depart du pass
+	 * 	@param gareArrivee la gare d'arrivee du pass
+	 * 	@param classe la classe du pass
+	 * 	@param reduction la reduction du pass
+	 * 	@param type le type du pass
+	 * 	@param prix le prix du pass
+	 */
     public AfficherPass10Trajets2Gares(String nom, String gareDepart, String gareArrivee, int classe, String reduction, String type, double prix) 
     {
         VBox boxVer = new VBox();

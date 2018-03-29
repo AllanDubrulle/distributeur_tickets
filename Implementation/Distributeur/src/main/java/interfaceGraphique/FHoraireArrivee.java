@@ -13,6 +13,11 @@ import javafx.scene.text.*;
 import javafx.scene.shape.*;
 import javafx.scene.layout.*;
 
+/**
+ * Classe FHoraireArrivee
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
 class FHoraireArrivee extends Ecran 
 {
 	private TextField zoneTexte, zoneTexte0, zoneTexte1;

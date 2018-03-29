@@ -5,8 +5,28 @@ import javafx.geometry.*;
 import javafx.scene.text.*;
 import javafx.scene.layout.*;
 
+/**
+ * Classe AfficherRendu (permet d'afficher le detail de la monnaie rendue)
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
 class AfficherRendu extends Pane 
 {
+	/**
+	 * 	Constructeur de AfficherRendu
+	 * 	@param b50 la quantite de billet de 50 euros a rendre
+	 * 	@param b20 la quantite de billet de 20 euros a rendre
+	 * 	@param b10 la quantite de billet de 10 euros a rendre
+	 * 	@param b5 la quantite de billet de 5 euros a rendre
+	 * 	@param p200 la quantite de piece de 2 euros a rendre
+	 * 	@param p100 la quantite de piece de 1 euro a rendre
+	 * 	@param p50 la quantite de piece de 50 cents a rendre
+	 * 	@param p20 la quantite de piece de 20 cents a rendre
+	 * 	@param p10 la quantite de piece de 10 cents a rendre
+	 * 	@param p5 la quantite de piece de 5 cents a rendre
+	 * 	@param p2 la quantite de piece de 2 cents a rendre
+	 * 	@param p1 la quantite de piece de 1 cent a rendre
+	 */
     public AfficherRendu(int b50, int b20, int b10, int b5, int p200, int p100,
     		int p50, int p20, int p10, int p5, int p2, int p1) 
     {

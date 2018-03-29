@@ -11,6 +11,11 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.layout.*;
 
+/**
+ * Classe FPass10Trajets2Gares
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
 class FPass10Trajets2Gares extends Ecran 
 {
     private TextField zoneTexte, zoneTexte0, zoneTexte1;
@@ -342,6 +347,10 @@ class FPass10Trajets2Gares extends Ecran
 		graphAC.choixValider();
 	}
 	
+	/**
+	 * 	Permet de retourner la classe choisie
+	 * 	@return classe 1 s'il s'agit de la 1e classe, 2 s'il s'agit de la seconde
+	 */
 	private int getClasse()
 	{
 		if (boutonChoix.isSelected())

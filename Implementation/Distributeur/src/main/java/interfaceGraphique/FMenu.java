@@ -8,6 +8,11 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.shape.*;
 
+/**
+ * Classe FMenu
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
 class FMenu extends Ecran 
 {
     public FMenu(boolean possible, double hauteur, double largeur) 

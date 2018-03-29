@@ -8,6 +8,11 @@ import javafx.scene.text.*;
 import javafx.scene.shape.*;
 import javafx.scene.layout.*;
 
+/**
+ * Classe FRecapPassIllimite
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
 class FRecapPassIllimite extends Ecran 
 {    
     public FRecapPassIllimite(String nom, int classe, String type, String reduction, int nbrJours, double prix, double hauteur, double largeur) 

@@ -6,8 +6,22 @@ import javafx.geometry.*;
 import javafx.scene.text.*;
 import javafx.scene.layout.*;
 
+/**
+ * Classe AfficherPassIllimite (permet d'afficher le pass achete)
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
 class AfficherPassIllimite extends Pane 
 {
+	/**
+	 * 	Constructeur de AfficherPassIllimite
+	 * 	@param nom le nom auquel est enregistre le pass
+	 * 	@param classe la classe du pass
+	 * 	@param reduction la reduction du pass
+	 * 	@param type le type du pass
+	 * 	@param nbrJours le nombre de jours de validite du pass
+	 * 	@param prix le prix du pass
+	 */
     public AfficherPassIllimite(String nom, int classe, String reduction, String type, int nbrJours, double prix) 
     {
         VBox boxVer = new VBox();

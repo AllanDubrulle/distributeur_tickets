@@ -3,9 +3,18 @@ package interfaceGraphique;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
 
+/**
+ * Classe Scanneur (permet de representer le bac de reception sur l'interface graphique)
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
 class Scanneur extends Pane 
 {
-	
+	/**
+	 * 	Constructeur de Scanneur
+	 * 	@param hauteur l'indice de multiplication de hauteur (pour un affichage optimal)
+	 * 	@param largeur l'indice de multiplication de largeur (pour un affichage optimal)
+	 */
 	public Scanneur(double hauteur, double largeur)
 	{
 		Rectangle rectangle = new Rectangle();

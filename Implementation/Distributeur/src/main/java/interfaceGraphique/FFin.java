@@ -8,6 +8,11 @@ import javafx.scene.shape.*;
 import javafx.scene.text.*;
 import javafx.util.Duration;
 
+/**
+ * Classe FFin
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
 class FFin extends Ecran 
 {
     public FFin(double hauteur, double largeur) 
@@ -51,6 +56,9 @@ class FFin extends Ecran
 		delais.play();
     }
     
+    /**
+     * 	Action a effectuer apres 15 secondes
+     */
     private void apres15sec() 
     {
 		graphAC.apres15secondes();

@@ -6,6 +6,11 @@ import javafx.scene.control.*;
 import javafx.scene.shape.*;
 import javafx.scene.text.*;
 
+/**
+ * Classe FSimulationAcceuil
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
 class FSimulationAcceuil extends Ecran 
 {
     public FSimulationAcceuil(double hauteur, double largeur)

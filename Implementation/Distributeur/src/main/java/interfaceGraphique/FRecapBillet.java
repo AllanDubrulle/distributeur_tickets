@@ -10,6 +10,11 @@ import javafx.scene.layout.*;
 import javafx.scene.shape.*;
 import javafx.scene.text.*;
 
+/**
+ * Classe FRecapBillet
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
 class FRecapBillet extends Ecran 
 {    
     public FRecapBillet(String gareDepart, String gareArrivee, boolean allerRetour, int classe, String type, String reduction, int nombre, Date date, double prix, double hauteur, double largeur) 

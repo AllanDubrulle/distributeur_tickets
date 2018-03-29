@@ -11,6 +11,11 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.layout.*;
 
+/**
+ * Classe FPassIllimite
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
 class FPassIllimite extends Ecran 
 {
     private TextField zoneTexte, zoneTexte0;
@@ -330,6 +335,10 @@ class FPassIllimite extends Ecran
 		}
 	}
 
+	/**
+	 * 	Permet de retourner la classe choisie
+	 * 	@return classe 1 s'il s'agit de la 1e classe, 2 s'il s'agit de la seconde
+	 */
 	private int getClasse()
 	{
 		if (boutonChoix.isSelected())

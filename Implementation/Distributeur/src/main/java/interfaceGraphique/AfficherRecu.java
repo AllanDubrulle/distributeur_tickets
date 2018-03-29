@@ -8,8 +8,20 @@ import javafx.geometry.*;
 import javafx.scene.text.*;
 import javafx.scene.layout.*;
 
+/**
+ * Classe AfficherRecu (permet d'afficher le recu demande)
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
 class AfficherRecu extends Pane 
 {	
+	/**
+	 * 	Constructeur de AfficherRecu
+	 *	@param prix le prix paye
+	 * 	@param introduit le montant introduit
+	 * 	@param rendu le montant rendu
+	 * 	@param modePaiement le mode de paiement
+	 */
     public AfficherRecu(double prix , double introduit , double rendu, String modePaiement) 
     {
     	NumberFormat formatNombre = NumberFormat.getInstance();

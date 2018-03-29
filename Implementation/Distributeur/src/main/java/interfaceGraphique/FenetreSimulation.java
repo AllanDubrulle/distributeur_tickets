@@ -14,6 +14,11 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.event.EventHandler;
 
+/**
+ * Classe FenetreSimulation
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
 class FenetreSimulation extends BorderPane 
 {
     private Pane panneau;
@@ -39,6 +44,9 @@ class FenetreSimulation extends BorderPane
     private double rapportHauteur = tVoulueHauteur/850;
     private double rapportLargeur = tVoulueLargeur/1350;
     
+    /**
+     * 	Constructeur de FenetreSimulation
+     */
     private FenetreSimulation()
     {
     	clavier = new Clavier(rapportHauteur, rapportLargeur);
@@ -95,7 +103,7 @@ class FenetreSimulation extends BorderPane
         menu.setText("Pannes");
 
         menuACocher.setMnemonicParsing(false);
-        menuACocher.setText("Lecteur de cartes");
+        menuACocher.setText("Lecteur de carte");
         menuACocher.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
             	fenetre.graphAC.lecteurEnPanne();
@@ -103,7 +111,7 @@ class FenetreSimulation extends BorderPane
         });
 
         menuACocher0.setMnemonicParsing(false);
-        menuACocher0.setText("Fente a billets");
+        menuACocher0.setText("Fente a billet");
         menuACocher0.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) 
             {	
@@ -112,7 +120,7 @@ class FenetreSimulation extends BorderPane
         });
 
         menuACocher1.setMnemonicParsing(false);
-        menuACocher1.setText("Fente a  pieces");
+        menuACocher1.setText("Fente a  piece");
         menuACocher1.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
             	fenetre.graphAC.fentePieceEnPanne();
@@ -120,7 +128,7 @@ class FenetreSimulation extends BorderPane
         });
 
         menuACocher2.setMnemonicParsing(false);
-        menuACocher2.setText("Scanneur de codes");
+        menuACocher2.setText("Scanneur de code");
         menuACocher2.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
             	fenetre.graphAC.scanneurEnPanne();
@@ -187,7 +195,7 @@ class FenetreSimulation extends BorderPane
         menu2.setText("Composants optionnels");
 
         menuACocher5.setMnemonicParsing(false);
-        menuACocher5.setText("Scanneur de codes");
+        menuACocher5.setText("Scanneur de code");
         menuACocher5.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
             	mAJComposants();
@@ -198,7 +206,7 @@ class FenetreSimulation extends BorderPane
         menu3.setText("Fentes");
 
         menuACocher6.setMnemonicParsing(false);
-        menuACocher6.setText("Fentes a pieces et a billets");
+        menuACocher6.setText("Fentes a piece et a billet");
         menuACocher6.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
             	mAJComposants();
@@ -206,7 +214,7 @@ class FenetreSimulation extends BorderPane
         });
 
         menuACocher7.setMnemonicParsing(false);
-        menuACocher7.setText("Fente a pieces uniquement");
+        menuACocher7.setText("Fente a piece uniquement");
         menuACocher7.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
             	mAJComposants();
@@ -276,6 +284,10 @@ class FenetreSimulation extends BorderPane
         panneau.getChildren().addAll(barreMenu, contour);
     }
 	
+    /**
+     * 	Permet de recuperer l'instance unique de FenetreSimulation (Singleton Design Pattern)
+     * 	@return instance l'instance de FenetreSimulation
+     */
     public static FenetreSimulation getInstance() 
     {
     	if (instance == null)
@@ -283,6 +295,10 @@ class FenetreSimulation extends BorderPane
     	return instance;
     }
     
+    /**
+     * 	Permet d'afficher une fenetre dans l'espace dans le contour de l'ecran
+     * 	@param fen la fentre a afficher
+     */
     public void afficher(Ecran fen) 
     {
 		this.fenetre = fen; 
@@ -293,6 +309,10 @@ class FenetreSimulation extends BorderPane
 		lecteur.setFenetre(fen);
 	}
     
+    /**
+     * 	Permet de recuperer les informations selectionnees dans la fenetre de configuation et
+     * 	de configurer la fenetre de simulation en fonction de ce qui a ete choisi
+     */
     public void setParametre()
     {
     	menuACocher8.setSelected(true);
@@ -338,6 +358,9 @@ class FenetreSimulation extends BorderPane
         mAJComposants();
     }
     
+    /**
+     * 	Permet de mettre a jour les composants lorque l'on souhaite en ajouter ou en enlever
+     */
     public void mAJComposants()
     {
 		fentes.getChildren().clear();
@@ -400,130 +423,135 @@ class FenetreSimulation extends BorderPane
     	getChildren().setAll(panneau, claRe, fentes, scanLect, fenetre); 		
     }
     
-    
-    /*public void mAJScanneur()
-    {
-    	if(menuACocher2.isSelected())
-    		mettreEnPanneScanneur();
-    	
-    	if(!menuACocher2.isDisable())
-    		remiseEnServiceScanneur();
-    }*/
-    
-    
-    public void mAJCarte()
-    {
-    	if(menuACocher3.isSelected())
-    		bloquerCarte();
-    	
-    	if(!menuACocher3.isSelected())
-    		debloquerCarte();	
-    }
-    
-    /*public void mAJImprimante()
-    {
-    	if(menuACocher4.isSelected())
-    		mettreEnPanneImprimante();
-    	
-    	if(!menuACocher4.isSelected())
-    		remiseEnServiceImprimante();
-    }*/
-    
-    
-
-    
-    
-    public void bloquerCarte()
-    {
-    	//Ici, je suppose griser le bouton 'retirer carte' ?
-    	lecteur.getBouton(12).setDisable(true);
-        getChildren().setAll(panneau, claRe, fentes, scanLect, fenetre);
-    }
-    
-    public void debloquerCarte()
-    {
-    	//Ici, je suppose dégriser le bouton 'retirer carte' ?
-    	lecteur.getBouton(12).setDisable(false);
-        getChildren().setAll(panneau, claRe, fentes, scanLect, fenetre);
-    }
-    
+    /**
+     * 	Permet de recuper l'ecran en cours d'affichage
+     * 	@return
+     */
     public Ecran getEcran()
     {
     	return fenetre;
     }
     
+    /**
+     * 	Permet de recuperer le rapport de multiplication de la hauteur (pour un affichage optimal)
+     * 	@return rapportHauteur le rapport de multiplication de la hauteur
+     */
     public double getRapportHaut()
     {
     	return rapportHauteur;
     }
+    
+    /**
+     * 	Permet de recuperer le rapport de multiplication de la largeur (pour un affichage optimal)
+     * 	@return rapportLargeur le rapport de multiplication de la largeur
+     */
     public double getRapportLarg()
     {
     	return rapportLargeur;
     }
     
+    /**
+     * 	Permet de recuperer le l'instance de LecteurCarte de la fenetre de simulation
+     * @return
+     */
     public LecteurCarte getLecteur()
     {
     	return lecteur;
     }
 
+    /**
+     * 	Permet de decocher l'item du menu panne "Carte bloquee"
+     */
 	public void carteNonBloquee()
 	{
 		menuACocher3.setSelected(false);
 	}
 
+	/**
+	 * 	Permet de cocher l'item du menu panne "Carte bloquee"
+     */
 	public void carteBloquee() 
 	{
 		menuACocher3.setSelected(true);
 	}
 	
+	/**
+     * 	Permet de cocher l'item du menu panne "Lecteur de carte"
+     */
 	public void lecteurEnPanne()
 	{
 		menuACocher.setSelected(true);
 	}
+	
+	/**
+     * 	Permet de decocher l'item du menu panne "Lecteur de carte"
+     */
 	public void lecteurPasEnPanne()
 	{
 		menuACocher.setSelected(false);
 	}
 
+	/**
+     * 	Permet de cocher l'item du menu panne "Imprimante"
+     */
 	public void imprimanteEnPanne() 
 	{
 		menuACocher4.setSelected(true);
 	}
 	
+	/**
+     * 	Permet de decocher l'item du menu panne "Imprimante"
+     */
 	public void imprimantePasEnPanne()
 	{
 		menuACocher4.setSelected(false);
 	}
 	
+	/**
+     * 	Permet de cocher l'item du menu panne "Scanneur de code"
+     */
 	public void scanneurEnPanne()
 	{
 		menuACocher2.setSelected(true);
 	}
 	
+	/**
+     * 	Permet de decocher l'item du menu panne "Scanneur de code"
+     */
 	public void scanneurPasEnPanne()
 	{
 		menuACocher2.setSelected(false);
 	}
-
+	
+	/**
+     * 	Permet de cocher l'item du menu panne "Fente a billet"
+     */
 	public void fenteBilletEnPanne() 
 	{
 		menuACocher0.setSelected(true);
 	}
 	
+	/**
+     * 	Permet de cocher l'item du menu panne "Fente a piece"
+     */
 	public void fentePieceEnPanne() 
 	{
 		menuACocher1.setSelected(true);
 	}
 	
+	/**
+     * 	Permet de decocher l'item du menu panne "Fente a billet"
+     */
 	public void fenteBilletPasEnPanne() 
 	{
 		menuACocher0.setSelected(false);
 	}
 	
+	/**
+     * 	Permet de decocher l'item du menu panne "Fente a piece"
+     */
 	public void fentePiecePasEnPanne() 
 	{
 		menuACocher1.setSelected(false);
 	}
-	
-	
 }

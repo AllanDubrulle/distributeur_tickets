@@ -8,8 +8,26 @@ import javafx.geometry.*;
 import javafx.scene.text.*;
 import javafx.scene.layout.*;
 
+/**
+ * Classe AfficherAbo (permet d'afficher l'abonnement achete)
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
 class AfficherAbo extends Pane 
 {
+	/**
+	 * 	Constructeur de AfficherAbo
+	 *	@param numero le numero de l'abonnement a afficher
+	 * 	@param nom le nom auquel est enregistre l'abonnement
+	 * 	@param classe la classe de l'abonnement
+	 * 	@param gareDepart la gare de depart de l'abonnement
+	 * 	@param gareArrivee la gare d'arrivee de l'abonnement
+	 * 	@param dateVal la date de debut de validite de l'abonnement
+	 * 	@param dateExp la date d'expiration de l'abonnement
+	 * 	@param reduction la reduction de l'abonnement
+	 * 	@param type le type de l'abonnement
+	 * 	@param prix le prix de l'abonnement
+	 */
 	public AfficherAbo(int numero, String nom, int classe, String gareDepart, String gareArrivee, Date dateVal, Date dateExp, String reduction, String type, double prix) 
 	{
         VBox boxVer = new VBox();

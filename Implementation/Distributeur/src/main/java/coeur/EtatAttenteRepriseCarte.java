@@ -5,7 +5,7 @@ package coeur;
  * @author TheoDaix, AllanDubrulle, VictorVerhoye
  * @version 1.0
  */
-class EtatAttenteRepriseCarte extends EtatAnnulable 
+class EtatAttenteRepriseCarte extends ControleurEtat
 {	
 	private static EtatAttenteRepriseCarte instance;
 	

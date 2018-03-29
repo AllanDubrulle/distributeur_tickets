@@ -5,6 +5,11 @@ import javafx.scene.shape.*;
 import javafx.scene.text.*;
 import javafx.util.Duration;
 
+/**
+ * Classe FAfficherMessage (permet d'afficher un message)
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
 class FAfficherMessage extends Ecran 
 {
 	private boolean lecteur; 
@@ -47,10 +52,7 @@ class FAfficherMessage extends Ecran
     		delais.setOnFinished( event -> apres5secOk());
     		delais.play();
         }
-        
-        //	Alors, ici, je ne sais pas pourquoi mais à un moment donné, je suis passé dans les deux, le premier ne faisait rien (car la méthode des 5 secondes
-        //	n'existait pas et le second était alors exécuté. Or, on exécute l'un OU (exclusif) l'autre : ajour du else
-        else if (message.equals("carte bloquée."))
+        else if (message.equals("Carte bloquee"))
         {
         	lecteur = false;
         	PauseTransition delais = new PauseTransition(Duration.seconds(5));
@@ -71,19 +73,34 @@ class FAfficherMessage extends Ecran
         	FenetreSimulation.getInstance().getLecteur().getMDP().clear();
         }
     }
+    
+    /**
+     * 	Action a effectuer si le message correspond a "Carte bloquee"
+     */
     private void carteBloquee()
     {
     	graphAC.paiement();
     }
+    
+    /**
+     * 	Action a effectuer apres 5 secondes
+     */
     private void apres5sec() 
     {
 		graphAC.apres5secondes();
 	}
+    
+    /**
+     * 	Action a effectuer apres 5 secondes
+     */
     private void apres5secOk() 
     {
 		graphAC.apres5secondesOk();
 	}
-
+    
+    /**
+     * 	Permet de remplir la zone de mot de passe du lecteur de carte
+     */
     public void actionLecteur(int a) 
 	{
     	if(lecteur)
@@ -91,6 +108,9 @@ class FAfficherMessage extends Ecran
     			FenetreSimulation.getInstance().getLecteur().getMDP().setText(FenetreSimulation.getInstance().getLecteur().getMDP().getText() + a);
 	}
 	
+    /**
+     * 	Permet d'effacer les caractere dans la zone de mot de passe du lecteur de carte
+     */
 	public void actionLecteurEff() 
 	{
 		if(lecteur)

@@ -6,6 +6,11 @@ import javafx.scene.control.*;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.*;
 
+/**
+ * Classe FBacReception (permet d'afficher qu'il faut vider le bac de reception)
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
 class FBacReception extends Ecran
 {
 	public FBacReception(double hauteur, double largeur) 
@@ -59,6 +64,7 @@ class FBacReception extends Ecran
         
         button.setFocusTraversable(false);
     }
+	
 	public void actionEntrer()
 	{
 		graphAC.choixOk();

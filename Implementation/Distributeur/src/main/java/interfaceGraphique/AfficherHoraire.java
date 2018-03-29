@@ -4,8 +4,17 @@ import javafx.geometry.*;
 import javafx.scene.text.*;
 import javafx.scene.layout.*;
 
+/**
+ * Classe AfficherHoraire (permet d'afficher l'horaire imprime)
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
 class AfficherHoraire extends Pane 
 {
+	/**
+	 * 	Constructeur de AfficherHoraire
+	 * 	@param horaire un tableau contenant l'horaire imprime
+	 */
     public AfficherHoraire(String[] horaire) 
     {
         HBox boxHor = new HBox();

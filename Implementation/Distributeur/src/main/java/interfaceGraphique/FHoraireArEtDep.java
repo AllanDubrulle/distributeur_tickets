@@ -12,6 +12,11 @@ import javafx.scene.text.*;
 import javafx.scene.shape.*;
 import javafx.scene.layout.*;
 
+/**
+ * Classe FHoraireArEtDep
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
 class FHoraireArEtDep extends Ecran 
 {
 	private TextField zoneTexte, zoneTexte0, zoneTexte1, zoneTexte2;

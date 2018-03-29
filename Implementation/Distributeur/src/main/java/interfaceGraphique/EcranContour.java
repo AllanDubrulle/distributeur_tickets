@@ -3,6 +3,11 @@ package interfaceGraphique;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
 
+/**
+ * Classe EcranContout (represente le contour de l'ecran sur l'interface graphique)
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
 class EcranContour extends Pane
 {
 	private double hauteur = FenetreConfiguration.getInstance().getHauteur()/850;

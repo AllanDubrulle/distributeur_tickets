@@ -1,7 +1,7 @@
 package stockage;
 
 /**
- * Enumération BilletMonnaie (différents billets utilisés lors de l'application)
+ * Enumeration BilletMonnaie (différents billets utilises lors de l'application)
  * @author TheoDaix, AllanDubrulle, VictorVerhoye
  * @version 1.0
  */

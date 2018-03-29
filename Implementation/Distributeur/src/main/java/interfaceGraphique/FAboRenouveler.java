@@ -14,9 +14,14 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import stockage.ErreurDEncodage;
 
+/**
+ * Classe FAboRenouveler
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
 class FAboRenouveler extends Ecran 
 {
-	private TextField texteField;
+	private TextField zoneTexte;
 	private RadioButton boutonChoix, boutonChoix0, boutonChoix1, boutonChoix2;
 	private Text texte10;
 	private Button bouton1;
@@ -28,7 +33,7 @@ class FAboRenouveler extends Ecran
         HBox hBox = new HBox();
         HBox hBox0 = new HBox();
         Text texte = new Text();
-        texteField = new TextField();
+        zoneTexte = new TextField();
         HBox hBox1 = new HBox();
         Text texte0 = new Text();
         boutonChoix = new RadioButton();
@@ -74,10 +79,10 @@ class FAboRenouveler extends Ecran
         texte.setFont(new Font(15.0*hauteur));
         HBox.setMargin(texte, new Insets(0.0));
 
-        texteField.setPrefHeight(31.0*hauteur);
-        texteField.setPrefWidth(250.0*largeur);
-        texteField.setFont(new Font(15.0*hauteur));
-        HBox.setMargin(texteField, new Insets(0.0, 0.0, 10.0*hauteur, 20.0*largeur));
+        zoneTexte.setPrefHeight(31.0*hauteur);
+        zoneTexte.setPrefWidth(250.0*largeur);
+        zoneTexte.setFont(new Font(15.0*hauteur));
+        HBox.setMargin(zoneTexte, new Insets(0.0, 0.0, 10.0*hauteur, 20.0*largeur));
         
         bouton1.setLayoutX(520.0*largeur);
         bouton1.setLayoutY(155.0*hauteur);
@@ -181,7 +186,7 @@ class FAboRenouveler extends Ecran
             	{
             		try 
             		{
-            			int verifAbo = Integer.parseInt(texteField.getText());
+            			int verifAbo = Integer.parseInt(zoneTexte.getText());
             			graphAC.infoAboRen(getValidite(), String.valueOf(verifAbo));
             			graphAC.choixValider();
             		} 
@@ -206,7 +211,7 @@ class FAboRenouveler extends Ecran
 		if (!scanneur)
 			bouton1.setDisable(true);
 		
-        hBox0.getChildren().addAll(texte, texteField);
+        hBox0.getChildren().addAll(texte, zoneTexte);
         hBox1.getChildren().addAll(texte0, boutonChoix, boutonChoix0, boutonChoix1, boutonChoix2);
         vBox.getChildren().addAll(hBox, hBox0, hBox1);
         getChildren().addAll(rectangle, vBox, texte1, bouton, bouton0, texte10, bouton1);
@@ -219,8 +224,8 @@ class FAboRenouveler extends Ecran
 	{
 		if (pos == 0)
 		{
-			String s = texteField.getText();
-			texteField.setText(s + a);
+			String s = zoneTexte.getText();
+			zoneTexte.setText(s + a);
 		}
 		else
 		{
@@ -245,7 +250,7 @@ class FAboRenouveler extends Ecran
 	{
 		if (pos == 2)
 		{
-			texteField.requestFocus();
+			zoneTexte.requestFocus();
 			pos = 0;
 		}
 		else
@@ -268,9 +273,9 @@ class FAboRenouveler extends Ecran
 	{
 		if (pos == 0)
 		{
-			String s = texteField.getText();
+			String s = zoneTexte.getText();
 			if (s.length()>0)
-				texteField.setText(s.substring(0, s.length()-1));
+				zoneTexte.setText(s.substring(0, s.length()-1));
 		}
 	}
 	
@@ -278,7 +283,7 @@ class FAboRenouveler extends Ecran
 	{
 		try 
     	{
-    		int verifAbo = Integer.parseInt(texteField.getText());
+    		int verifAbo = Integer.parseInt(zoneTexte.getText());
 			graphAC.infoAboRen(getValidite(), String.valueOf(verifAbo));
         	graphAC.choixValider();
 		} 
@@ -288,6 +293,10 @@ class FAboRenouveler extends Ecran
 		}
 	}
 	
+	/**
+	 * 	Permet de retourner le nombre de mois de la validite
+	 * 	@return validite le nombre de mois de la validite
+	 */
 	public int getValidite()
 	{
 		if (boutonChoix.isSelected())
@@ -299,16 +308,22 @@ class FAboRenouveler extends Ecran
 		else
 			return 12;
 	}
+	
+	/**
+	 * 	Permet de remplir la zone de texte avec le numero d'abonnement scanne (choisi dans
+	 * 	l'autre fenetre)
+	 * 	@param numAbo le numero d'abonnement a mettre dans la zone de texte
+	 */
 	public void setNumAbo(String numAbo)
 	{
-		texteField.setText(numAbo);
+		zoneTexte.setText(numAbo);
 	}
 	
 	public void mettreToutAJour()
 	{
 		if(graphAC.estTactile())
 		{
-			texteField.setOnMouseClicked(e -> {pos = 0;});
+			zoneTexte.setOnMouseClicked(e -> {pos = 0;});
 			boutonChoix.setOnMouseClicked(e -> {pos = 1;});
 			boutonChoix0.setOnMouseClicked(e -> {pos = 1;});
 			boutonChoix1.setOnMouseClicked(e -> {pos = 1;});

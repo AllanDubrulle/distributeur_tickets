@@ -11,6 +11,11 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.layout.*;
 
+/**
+ * Classe FAboAchat
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
 class FAboAchat extends Ecran 
 {
     private TextField zoneTexte, zoneTexte0, zoneTexte1, zoneTexte2;
@@ -480,6 +485,10 @@ class FAboAchat extends Ecran
 		}
 	}
 	
+	/**
+	 * 	Permet de retourner le nombre de mois de la validite
+	 * 	@return validite le nombre de mois de la validite
+	 */
 	private int getValidite()
 	{
 		if (boutonChoix.isSelected())
@@ -492,6 +501,10 @@ class FAboAchat extends Ecran
 			return 12;
 	}
 	
+	/**
+	 * 	Permet de retourner la classe choisie
+	 * 	@return classe 1 s'il s'agit de la 1e classe, 2 s'il s'agit de la seconde
+	 */
 	private int getClasse()
 	{
 		if (boutonChoix3.isSelected())

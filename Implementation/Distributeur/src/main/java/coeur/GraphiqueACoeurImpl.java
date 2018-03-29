@@ -8,7 +8,7 @@ import stockage.ErreurDEncodage;
 import stockage.imprimable.TypePass;
 
 /**
- * Classe GraphiqueACoeurImpl (permet à l'interface graphique de communiquer avec le coeur)
+ * Classe GraphiqueACoeurImpl (permet a l'interface graphique de communiquer avec le coeur)
  * @author TheoDaix, AllanDubrulle, VictorVerhoye
  * @version 1.0
  */
@@ -17,8 +17,15 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 	private Controleur controleur = Controleur.getInstance();
 	private static GraphiqueACoeurImpl instance;
 	
+	/**
+	 * 	Constructeur de GraphiqueACoeurImpl
+	 */
 	private GraphiqueACoeurImpl() {}
 	
+	/**
+	 *	Permet de recupererer l'instance unique de GraphiqueACoeurImpl (Singleton Design Pattern)
+	 *	@return instance l'instance de GraphiqueACoeurImpl
+	 */
 	public static GraphiqueACoeurImpl getInstance()
 	{
 		if(instance==null)
@@ -32,106 +39,98 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 	{
 		controleur.getEtatActuel().demarreSimulation();
 	}
+	
 	public void choixAnnuler() 
 	{
 		controleur.getEtatActuel().annule();
 	}
+	
+	public void choixValider()
+	{
+		controleur.getEtatActuel().valider();
+	}
+	
 	public void choixRetourTitre() 
 	{
 		controleur.getEtatActuel().retourTitre();
 	}
+	
 	public void choixRetour() 
 	{
 		controleur.getEtatActuel().retour();
 	}
+	
 	public void choixOk() 
 	{
 		controleur.getEtatActuel().choixOk();
 	}
+	
 	public void choixOui() 
 	{
 		controleur.getEtatActuel().choixOui();
 	}
+	
 	public void choixNon() 
 	{
 		controleur.getEtatActuel().choixNon();
 	}
+	
 	public void choixRetourEcranPrinc() 
 	{
 		controleur.getEtatActuel().retourMenuPrincipal();
-	}
-	
-	public void mettreTactile(boolean tactile)
-	{
-		controleur.setTactile(tactile);
-	}
-	
-	public boolean estTactile()
-	{
-		return controleur.getTactile();
-	}
-	
-	public boolean codeScanneurDispo()
-	{
-		return controleur.scanneurPresent();
-	}
-	
-	public void setScanneur(boolean present)
-	{
-		controleur.setScanneur(present);
-	}
-	
-	public boolean fentePresente()
-	{
-		return controleur.fentePresente();
-	}
-	
-	public void setFentes(boolean fenteBillet, boolean fentePiece)
-	{
-		controleur.setFentes(fenteBillet, fentePiece);
 	}
 	
 	public void choixBillet() 
 	{
 		controleur.getEtatActuel().choixBillet();
 	}
+	
 	public void choixRenouvAbo() 
 	{
 		controleur.getEtatActuel().choixRenouvAbo();
 	}
+	
 	public void choixAchatAbo() 
 	{
 		controleur.getEtatActuel().choixAchatAbo();
 	}
+	
 	public void choixPass() 
 	{
 		controleur.getEtatActuel().choixPass();
 	}
+	
 	public void choixPassIllimite() 
 	{
 		controleur.getEtatActuel().choixPassIllimite();	
 	}
+	
 	public void choixPass10Trajets() 
 	{
 		controleur.getEtatActuel().choixPass10Trajets();
 	}
+	
 	public void choixPass10Tajets2Gares() 
 	{
 		controleur.getEtatActuel().choixPass10Trajets2Gares();
 	}
-	public void choixHoraire() //pour afficher menu trois horaires
+	
+	public void choixHoraire()
 	{
 		controleur.getEtatActuel().choixHoraire();
 	}
-	public void choixHoraireArrivee() //afficher menu recherche arrivee
+	
+	public void choixHoraireArrivee()
 	{
 		controleur.getEtatActuel().choixArrivees();
 	}
-	public void choixHoraireDepart() //afficher menu recherche depart
+	
+	public void choixHoraireDepart()
 	{
 		controleur.getEtatActuel().choixDeparts();
 	}
-	public void choixHoraireItineraire() //afficher menu itineraire depart arrivee
+	
+	public void choixHoraireItineraire()
 	{
 		controleur.getEtatActuel().choixItineraire();
 	}
@@ -140,10 +139,12 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 	{
 		controleur.getEtatActuel().valideRechercheGD(gareArrivee, heure, minute);
 	}
+	
 	public void choixRechercheGA(String gareDepart, int heure, int minute) throws SQLException 
 	{
 		controleur.getEtatActuel().valideRechercheGA(gareDepart, heure, minute);
 	}
+	
 	public void choixRechercheGDEtGA(String gareDepart, String gareArrivee, int heure, int minute) throws SQLException 
 	{
 		controleur.getEtatActuel().valideRechercheItineraire(gareDepart, gareArrivee, heure, minute);
@@ -168,49 +169,60 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 	{
 		controleur.getEtatActuel().inserer(500);
 	}
+	
 	public void choix10eur() 
 	{
 		controleur.getEtatActuel().inserer(1000);
 	}
-	public void choix50eur() 
-	{
-		controleur.getEtatActuel().inserer(5000);
-	}
+	
 	public void choix20eur() 
 	{
 		controleur.getEtatActuel().inserer(2000);
 	}
+	
+	public void choix50eur() 
+	{
+		controleur.getEtatActuel().inserer(5000);
+	}
+	
 	public void choix1ct() 
 	{
 		controleur.getEtatActuel().inserer(1);
 	}
+	
 	public void choix2cts() 
 	{
 		controleur.getEtatActuel().inserer(2);
 	}
+	
 	public void choix5cts() 
 	{
 		controleur.getEtatActuel().inserer(5);
 	}
-	public void choix2eur() 
-	{
-		controleur.getEtatActuel().inserer(200);
-	}
+	
 	public void choix10cts() 
 	{
 		controleur.getEtatActuel().inserer(10);
 	}
-	public void choix1eur() 
+	
+	public void choix20cts() 
 	{
-		controleur.getEtatActuel().inserer(100);
+		controleur.getEtatActuel().inserer(20);
 	}
+	
 	public void choix50cts() 
 	{
 		controleur.getEtatActuel().inserer(50);
 	}
-	public void choix20cts() 
+	
+	public void choix1eur() 
 	{
-		controleur.getEtatActuel().inserer(20);
+		controleur.getEtatActuel().inserer(100);
+	}
+	
+	public void choix2eur() 
+	{
+		controleur.getEtatActuel().inserer(200);
 	}
 
 	public void choixLecteurOK(int PIN) 
@@ -218,9 +230,22 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 		if(PIN != 0)
 			controleur.getEtatActuel().validePIN(PIN);
 	}
+	
 	public void choixLecteurInsererRetirer() 
 	{
 		controleur.getEtatActuel().choixInsererRetirerCarte();
+	}
+	
+	public void infoCarte(String numero) throws ErreurDEncodage
+	{
+		if (Controleur.getInstance().getCoeurAStockage().existenceCarte(numero))
+		{
+			Controleur.getInstance().getCoeurAStockage().creerCarte(numero);
+		}
+		else
+		{
+			throw new ErreurDEncodage("Carte innexistante");
+		}
 	}
 	
 	public void choixPaiement() 
@@ -238,25 +263,6 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 		controleur.getEtatActuel().choixEnLiquide();
 	}
 	
-	
-	public void infoCarte(String numero) throws ErreurDEncodage
-	{
-		if (Controleur.getInstance().getCoeurAStockage().existenceCarte(numero))
-		{
-			Controleur.getInstance().getCoeurAStockage().creerCarte(numero);
-		}
-		else
-		{
-			throw new ErreurDEncodage("Carte innexistante");
-		}
-	}
-	
-	public void choixValider()
-	{
-		controleur.getEtatActuel().valider();
-	}
-
-	
 	public void infoBillet(Date dateValidite, int nbrBillet, int classe, String gareDepart,String gareArrivee,String typeBillet,
 			String reduction, boolean allerRetour) throws ErreurDEncodage
 	{
@@ -270,6 +276,7 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 		}
 		
 	}
+	
 	public void infoAbo(int validite, String gareDepart, String gareArrivee, int classe,
 			String reduction, String type, String nom, String registre) throws ErreurDEncodage 
 	{
@@ -335,14 +342,10 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 	{
 		return Controleur.getInstance().getCoeurAStockage().getListeReduction();
 	}
+	
 	public String[] getTypes()
 	{
 		return Controleur.getInstance().getCoeurAStockage().getListeType();
-	}
-	
-	public void actualiserPanne(Composant composant)
-	{
-		Controleur.getInstance().getEtatActuel().actualiserPanne(composant);
 	}
 	
 	public boolean existenceGare(String gare) 
@@ -359,6 +362,7 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 	{
 		return Controleur.getInstance().getCoeurAStockage().getListeAbonnement();
 	}
+	
 	public void apres5secondes()
 	{
 		controleur.getEtatActuel().apres5sec();
@@ -374,6 +378,35 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 		controleur.getEtatActuel().apres5secOk();
 	}
 
+	public boolean estTactile()
+	{
+		return controleur.getTactile();
+	}
+	
+	public void mettreTactile(boolean tactile)
+	{
+		controleur.setTactile(tactile);
+	}
+	
+	public void setFentes(boolean fenteBillet, boolean fentePiece)
+	{
+		controleur.setFentes(fenteBillet, fentePiece);
+	}
+	
+	public void setScanneur(boolean present)
+	{
+		controleur.setScanneur(present);
+	}
+	
+	public void choixRetirerFentes() 
+	{
+		Controleur.getInstance().getEtatActuel().retirerFentes();
+	}
+	
+	public void actualiserPanne(Composant composant)
+	{
+		Controleur.getInstance().getEtatActuel().actualiserPanne(composant);
+	}
 	
 	public void bloquerCarte()
 	{
@@ -402,10 +435,15 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 		Controleur.getInstance().getEtatActuel().viderCaisse();		
 	}
 
-	public void choixRetirerFentes() 
+	public boolean codeScanneurDispo()
 	{
-		Controleur.getInstance().getEtatActuel().retirerFentes();
+		return controleur.scanneurPresent();
 	}
+
+	public boolean fentePresente()
+	{
+		return controleur.fentePresente();
+	}	
 	
 	public void lecteurEnPanne()
 	{

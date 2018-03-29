@@ -26,7 +26,7 @@ public class CoeurAStockageImpl implements CoeurAStockage
 	private int nbrTitre;
 	private int prix;
 	private int montantRecu;
-	private Monnayeur monnayeur;  // a modifier si on modifie panne
+	private Monnayeur monnayeur;
 	private HashMap<Composant,Boolean> composantEnMarche;
 	private Imprimante imprimante;
 	private int essai;

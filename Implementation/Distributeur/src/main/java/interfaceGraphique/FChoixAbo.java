@@ -9,6 +9,11 @@ import javafx.event.EventHandler;
 import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
 
+/**
+ * Classe FChoixAbo (permet de choisir le numero de l'abonnement a renouveler)
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
 class FChoixAbo extends Pane 
 {
     private ChoiceBox<String> boutonChoix;
@@ -62,9 +67,4 @@ class FChoixAbo extends Pane
         getChildren().addAll(button, boutonChoix, text);
 
     }
-	
-	public String getNumAbo()
-	{
-		return boutonChoix.getValue();	
-	}
 }

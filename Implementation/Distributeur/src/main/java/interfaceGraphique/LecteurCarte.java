@@ -10,6 +10,11 @@ import javafx.scene.shape.*;
 import javafx.scene.text.Font;
 import javafx.scene.layout.*;
 
+/**
+ * Classe LecteurCarte (permet de representer le lecteur de carte sur l'interface graphique)
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
 class LecteurCarte extends Pane 
 {
 	private PasswordField zoneDeMDP;
@@ -18,6 +23,11 @@ class LecteurCarte extends Pane
 	
 	private Ecran fenetre;
 
+	/**
+	 * 	Constructeur de LecteurCarte
+	 * 	@param hauteur l'indice de multiplication de hauteur (pour un affichage optimal)
+	 * 	@param largeur l'indice de multiplication de largeur (pour un affichage optimal)
+	 */
 	public LecteurCarte(double hauteur, double largeur) 
 	{
         Rectangle rectangle = new Rectangle();
@@ -296,41 +306,25 @@ class LecteurCarte extends Pane
         zoneDeMDP.setFocusTraversable(false);
     }
 	
-	public Button getBouton(int i)
+	public Button getBouton()
 	{
-		if (i == 0)
-			return bouton;
-		else if (i == 1)
-			return bouton0;
-		else if (i == 2)
-			return bouton1;
-		else if (i == 3)
-			return bouton2;
-		else if (i == 4)
-			return bouton3;
-		else if (i == 5)
-			return bouton4;
-		else if (i == 6)
-			return bouton5;
-		else if (i == 7)
-			return bouton6;
-		else if (i == 8)
-			return bouton7;
-		else if (i == 9)
-			return bouton8;
-		else if (i == 10)
-			return bouton9;
-		else if (i == 11)
-			return bouton10;
-		else
-			return bouton11;
+		return bouton11;
 	}
 	
+	/**
+	 * 	Permet de recuperer ce qui a ete introduit dans la zone de mot de passe
+	 * 	du lecteur
+	 * 	@return motDePasse le code PIN entre
+	 */
 	public PasswordField getMDP()
 	{
 		return zoneDeMDP;
 	}
 	
+	/**
+	 * 	Permet de mettre a jour la variable fenetre
+	 * @param fen la nouvelle fenetre
+	 */
 	public void setFenetre(Ecran fen)
 	{
 		fenetre = fen;

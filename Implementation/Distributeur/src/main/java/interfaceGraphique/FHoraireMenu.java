@@ -8,6 +8,11 @@ import javafx.scene.text.*;
 import javafx.scene.shape.*;
 import javafx.scene.layout.*;
 
+/**
+ * Classe FHoraireMenu
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
 class FHoraireMenu extends Ecran 
 {
 	public FHoraireMenu(double hauteur, double largeur) 

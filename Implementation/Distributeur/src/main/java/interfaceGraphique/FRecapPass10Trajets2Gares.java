@@ -8,6 +8,11 @@ import javafx.scene.text.*;
 import javafx.scene.shape.*;
 import javafx.scene.layout.*;
 
+/**
+ * Classe FRecapPass10Trajets2Gares
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
 class FRecapPass10Trajets2Gares extends Ecran 
 {    
     public FRecapPass10Trajets2Gares(String nom, String gareDepart, String gareArrivee, int classe, String reduction, String type, double prix, double hauteur, double largeur) 

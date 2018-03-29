@@ -6,6 +6,11 @@ import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.shape.*;
 
+/**
+ * Classe FInsererCarte
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
 class FInsererCarte extends Ecran 
 {
     public FInsererCarte(double hauteur, double largeur) 

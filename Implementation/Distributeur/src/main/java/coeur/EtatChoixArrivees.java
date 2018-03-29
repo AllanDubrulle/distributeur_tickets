@@ -12,6 +12,7 @@ import stockage.Composant;
 class EtatChoixArrivees extends EtatAnnulable 
 {
 	private static EtatChoixArrivees instance;
+	
 	public static EtatChoixArrivees getInstance() 
 	{
 		if (instance == null)

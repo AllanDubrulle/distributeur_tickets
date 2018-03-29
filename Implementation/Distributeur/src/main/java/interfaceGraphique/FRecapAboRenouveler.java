@@ -8,6 +8,11 @@ import javafx.scene.text.*;
 import javafx.scene.shape.*;
 import javafx.scene.layout.*;
 
+/**
+ * Classe FRecapAboRenouveler
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
 class FRecapAboRenouveler extends Ecran 
 {    
 	public FRecapAboRenouveler(String numero, String nom, String registre, String gareDepart, String gareArrivee, int validite, int classe, String reduction, String type, double prix, double hauteur, double largeur)

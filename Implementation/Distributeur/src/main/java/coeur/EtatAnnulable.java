@@ -3,7 +3,7 @@ package coeur;
 import stockage.Composant;
 
 /**
- * Classe EtatAnnulable (parent de tout les états dont nous pouvons revenir en arrière)
+ * Classe EtatAnnulable (parent de tout les etats dont nous pouvons revenir en arriere)
  * @author TheoDaix, AllanDubrulle, VictorVerhoye
  * @version 1.0
  */

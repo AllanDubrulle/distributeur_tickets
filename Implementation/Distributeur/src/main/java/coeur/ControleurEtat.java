@@ -5,7 +5,7 @@ import java.sql.SQLException;
 import stockage.Composant;
 
 /**
- * 	Classe abstraite ControleurEtat (classe parent de tout les différents états dans lesquels
+ * 	Classe abstraite ControleurEtat (classe parent de tout les differents etats dans lesquels
  * 	nous pouvons voyager)
  * 	@author TheoDaix, AllanDubrulle, VictorVerhoye
  * 	@version 1.0
@@ -18,12 +18,12 @@ abstract class ControleurEtat
 	protected ControleurEtat() {}
 	
 	/**
-	 *	Permet de valider les choix séléctionnés dans la fenêtre de configuration
+	 *	Permet de valider les choix selectionnes dans la fenêtre de configuration
 	 */
 	public void valideConfig() {}
 	
 	/**
-	 *	Permet de lancer la simulation une fois la Configuration validée
+	 *	Permet de lancer la simulation une fois la Configuration validee
 	 */
 	public void demarreSimulation() {}
 	
@@ -33,40 +33,40 @@ abstract class ControleurEtat
 	public void retourMenuPrincipal() {}
 	
 	/**
-	 * 	Action d'entrée de chaque état, comportement différent selon l'état mais en général 
+	 * 	Action d'entree de chaque etat, comportement different selon l'etat mais en general 
 	 * 	permet d'afficher la bonne fenêtre
 	 */
 	public void entree() {}
 	
 	/**
-	 * 	Permet d'annuler et en général permet de revenir sur le menu principal et vide la pile
-	 * 	d'états
+	 * 	Permet d'annuler et en general permet de revenir sur le menu principal et vide la pile
+	 * 	d'etats
 	 */
 	public void annule() {}
 	
 	/**
-	 *	Permet de revenir sur le choix du titre lorsque nous sommes dans les récapitulatifs
+	 *	Permet de revenir sur le choix du titre lorsque nous sommes dans les recapitulatifs
 	 *	de commande
 	 */
 	public void retourTitre() {}
 	
 	/**
-	 * 	Permet de revenir sur la fenêtre précédente, en éliminant le dernier état dans la 
-	 * 	pile d'états
+	 * 	Permet de revenir sur la fenêtre precedente, en eliminant le dernier etat dans la 
+	 * 	pile d'etats
 	 */
 	public void retour() {}
 	
 	/**
-	 * 	Permet de confirmer un achat, en général permet de passer du récapitulatif de l'achat
+	 * 	Permet de confirmer un achat, en general permet de passer du recapitulatif de l'achat
 	 *	au paiement
 	 */
 	public void confirme() {}
 	
 	/**
-	 *	Permet de valider les informations entrées lors d'un achat d'un Titre de transport,
-	 *	en général permet de passer de la fenêtre du Titre vers le récapitulatif 
+	 *	Permet de valider les informations entrees lors d'un achat d'un Titre de transport,
+	 *	en general permet de passer de la fenêtre du Titre vers le recapitulatif 
 	 *	OU 
-	 *	Permet de valider le numéro de la carte bancaire entré lors du paiement par carte
+	 *	Permet de valider le numero de la carte bancaire entre lors du paiement par carte
 	 */
 	public void valider() {}
 	
@@ -92,7 +92,7 @@ abstract class ControleurEtat
 	public void choixPass() {}
 	
 	/**
-	 * 	Permet de passer de menu des Pass vers la fenêtre de pass illimité
+	 * 	Permet de passer de menu des Pass vers la fenêtre de pass illimite
 	 */
 	public void choixPassIllimite() {}
 
@@ -115,85 +115,85 @@ abstract class ControleurEtat
 
 	/**
 	 * 	Permet de passer de menu d'horaire vers la fenêtre de recherche de l'heure d'un 
-	 * 	itinéraire
+	 * 	itineraire
 	 */
 	public void choixItineraire() {}
 	
 	/**
 	 * 	Permet de passer de menu d'horaire vers la fenêtre de recherche de l'heure des
-	 * 	arrivées
+	 * 	arrivees
 	 */
 	public void choixArrivees() {}
 	
 	/**
 	 * 	Permet de passer de menu d'horaire vers la fenêtre de recherche de l'heure des
-	 * 	départs
+	 * 	departs
 	 */
 	public void choixDeparts() {}
 	
 	/**
-	 * 	Permet de passer de la fenêtre des recherches des horaires d'itinéraires vers la 
-	 * 	fenêtre des résultats
-	 * 	@param gareDepart une gare de départ
-	 * 	@param gareArrivee une gare d'arrivée
-	 * 	@param heure l'heure de l'heure du départ
-	 * 	@param minute la minute de l'heure du départ
-	 * 	@throws SQLException (peut générer une exception lors de l'envoi de la requête) 
+	 * 	Permet de passer de la fenêtre des recherches des horaires d'itineraires vers la 
+	 * 	fenêtre des resultats
+	 * 	@param gareDepart une gare de depart
+	 * 	@param gareArrivee une gare d'arrivee
+	 * 	@param heure l'heure de l'heure du depart
+	 * 	@param minute la minute de l'heure du depart
+	 * 	@throws SQLException (peut generer une exception lors de l'envoi de la requête) 
 	 */
-	public void valideRechercheItineraire(String gareDepart, String gareArrivee, int heure, int minute) 
-			throws SQLException {}
+	public void valideRechercheItineraire(String gareDepart, String gareArrivee, int heure, int minute) throws SQLException {}
 	
 	/**
-	 * 	Permet de passer de la fenêtre des recherches des horaires des départs vers la 
-	 * 	fenêtre des résultats
-	 * 	@param gareDepart une gare de départ
-	 * 	@param heure l'heure de l'heure du départ
-	 * 	@param minute la minute de l'heure du départ
-	 * 	@throws SQLException (peut générer une exception lors de l'envoi de la requête)
+	 * 	Permet de passer de la fenêtre des recherches des horaires des departs vers la 
+	 * 	fenêtre des resultats
+	 * 	@param gareDepart une gare de depart
+	 * 	@param heure l'heure de l'heure du depart
+	 * 	@param minute la minute de l'heure du depart
+	 * 	@throws SQLException (peut generer une exception lors de l'envoi de la requête)
 	 */
 	public void valideRechercheGA(String gareDepart, int heure, int minute) throws SQLException {}
 	
 	/**
-	 * 	Permet de passer de la fenêtre des recherches des horaires des arrivées vers la 
-	 * 	fenêtre des résultats
-	 * 	@param gareArrivee une gare d'arrivée
-	 * 	@param heure l'heure de l'heure d'arrivée
-	 * 	@param minute la minute de l'heure d'arrivée
-	 * 	@throws SQLException (peut générer une exception lors de l'envoi de la requête) 
+	 * 	Permet de passer de la fenêtre des recherches des horaires des arrivees vers la 
+	 * 	fenêtre des resultats
+	 * 	@param gareArrivee une gare d'arrivee
+	 * 	@param heure l'heure de l'heure d'arrivee
+	 * 	@param minute la minute de l'heure d'arrivee
+	 * 	@throws SQLException (peut generer une exception lors de l'envoi de la requête) 
 	 */
 	public void valideRechercheGD(String gareArrivee, int heure, int minute) throws SQLException {}
 	
+	/**
+	 * 	Permet d'imprimer l'horaire d'une recherche effectuee
+	 */
 	public void choixImpressionHoraire() {}
 	
 	/**
-	 * 	Permet de valider le numéro de l'abonnement séléctionné
+	 * 	Permet de valider le numero de l'abonnement selectionne
 	 */
 	public void valideNumAbo() {}
 	
 	/**
-	 * 	Permet de valider le code PIN entré et de lancer la vérification
-	 * 	@param codePIN le code PIN entré par l'utilisateur
+	 * 	Permet de valider le code PIN entre et de lancer la verification
+	 * 	@param codePIN le code PIN entre par l'utilisateur
 	 */
 	public void validePIN(int codePIN) {}
 	
 	/**
-	 *	Permet de scanner le code d'un numéro d'abonnement (afficher une fenêtre de choix de 
-	 *	numéro d'abonnement)
+	 *	Permet de scanner le code d'un numero d'abonnement (afficher une fenêtre de choix de 
+	 *	numero d'abonnement)
 	 */
 	public void scanneCode() {}
 	
 	/**
 	 * 	Permet de passer de la fenêtre paiement vers la fenêtre du paiement par carte 
-	 * 	(affiche la fenêtre permettant de choisir le numéro de la carte)
+	 * 	(affiche la fenêtre permettant de choisir le numero de la carte)
 	 */
 	public void choixParCarte() {}
 	
 	/**
-	 *	Permet de d'insérer/de retirer une carte dans le lecteur de carte
+	 *	Permet de d'inserer/de retirer une carte dans le lecteur de carte
 	 */
 	public void choixInsererRetirerCarte() {}
-	
-	public void retirerFentes() {}
 	
 	/**
 	 * 	Permet de passer de la fenêtre paiement vers la fenêtre du paiement liquide
@@ -201,7 +201,7 @@ abstract class ControleurEtat
 	public void choixEnLiquide() {}
 	
 	/**
-	 * Permet d'insérer un montant i (met à jour le montant à payer et le montant introduit)
+	 * Permet d'inserer un montant i (met à jour le montant à payer et le montant introduit)
 	 * 	@param i un montant (en cents)
 	 */
 	public void inserer(int i) {}
@@ -218,14 +218,14 @@ abstract class ControleurEtat
 	public void choixNon() {}
 	
 	/**
-	 * 	Permet de récuperer les documents imprimés par la machine (et de les afficher à 
-	 * 	l'écran)
+	 * 	Permet de recuperer les documents imprimes par la machine (et de les afficher à 
+	 * 	l'ecran)
 	 */
 	public void choixOk() {}
 	
 	/**
 	 * 	Permet d'effectuer une action après un certain temps (ici, 5 secondes) ; le temps 
-	 * 	d'affichage d'une erreur OU pour insérer le code PIN
+	 * 	d'affichage d'une erreur OU pour inserer le code PIN
 	 */
 	public void apres5sec() {}
 	
@@ -237,7 +237,7 @@ abstract class ControleurEtat
 	
 	/**
 	 * 	Permet d'effectuer une action après un certain temps (ici, 5 secondes) ; le temps 
-	 * 	d'affichage d'une impression OU de l'éjection de la carte OU de la validation du
+	 * 	d'affichage d'une impression OU de l'ejection de la carte OU de la validation du
 	 * 	paiement par carte
 	 */
 	public void apres5secOk() {}
@@ -249,40 +249,44 @@ abstract class ControleurEtat
 	public void actualiserPanne(Composant composant)
 	{
 		Controleur.getInstance().getCoeurAStockage().actualiserPanne(composant);
-		//Controleur.getInstance().getCoeurAGraphique().actualiserComposant(composant,
-		//		Controleur.getInstance().getCoeurAStockage().estEnMarche(composant));
-	}
-	
-	/**
-	 * 	Permet d'écrire le nom de l'état
-	 * 	@return nom le nom de l'état
-	 */
-	public String toString() 
-	{
-		return this.getClass().getName();
 	}
 
+	/**
+	 * 	Permet de rechaerger la caisse du distributeur
+	 */
 	public void rechargerCaisse()
 	{
 		Controleur.getInstance().getCoeurAStockage().rechargerCaisse();
 	}
 	
+	/**
+	 * 	Permet de vider la caisse du distributeur
+	 */
 	public void viderCaisse()
 	{
 		Controleur.getInstance().getCoeurAStockage().viderCaisse();
 	}
 
+	/**
+	 * 	Permet de recharger le stock d'encre et de papier du distibuteur
+	 */
 	public void rechargerEncreEtPapier()
 	{
 		Controleur.getInstance().getCoeurAStockage().rechargerEncreEtPapier();
 		
 	}
 
+	/**
+	 * 	Permet de vider le stock d'encre et de papier du distributeur
+	 */
 	public void viderEncreEtPapier()
 	{
 		Controleur.getInstance().getCoeurAStockage().viderEncreEtPapier();
 	}
 
+	/**
+	 * 	Permet d'actualiser l'etat de blocage de la carte dans le distributeur
+	 */
 	public void bloquerCarte()
 	{
 		if(Controleur.getInstance().getCoeurAStockage().carteInseree())
@@ -304,6 +308,9 @@ abstract class ControleurEtat
 		}
 	}
 	
+	/**
+	 * 	Permet d'actualiser la mise en panne le lecteur de carte du distributeur
+	 */
 	public void lecteurPanne() 
 	{
 		actualiserPanne(Composant.LECTEURCARTE);
@@ -319,7 +326,15 @@ abstract class ControleurEtat
 			}
 		}
 	}
+
+	/**
+	 * 	Permet de mettre a jour le distributeur lorqu'on retire les fentes
+	 */
+	public void retirerFentes() {}
 	
+	/**
+	 * 	Permet d'actualiser la mise en panne la fente a billet du distributeur
+	 */
 	public void fenteBilletPanne() 
 	{
 		actualiserPanne(Composant.FENTEBILLET);
@@ -336,6 +351,9 @@ abstract class ControleurEtat
 		}
 	}
 	
+	/**
+	 * 	Permet d'actualiser la mise en panne la fente a piece du distributeur
+	 */
 	public void fentePiecePanne() 
 	{
 		actualiserPanne(Composant.FENTEPIECE);
@@ -352,6 +370,9 @@ abstract class ControleurEtat
 		}
 	}
 	
+	/**
+	 * 	Permet d'actualiser la mise en panne le scanneur du distributeur
+	 */
 	public void scanneurPanne()
 	{
 		actualiserPanne(Composant.SCANNEUR);
@@ -365,6 +386,9 @@ abstract class ControleurEtat
 		}
 	}
 	
+	/**
+	 * 	Permet d'actualiser la mise en panne l'imprimante du distributeur
+	 */
 	public void imprimantePanne()
 	{
 		actualiserPanne(Composant.IMPRIMANTE);
@@ -376,5 +400,14 @@ abstract class ControleurEtat
 		{
 			Controleur.getInstance().getCoeurAGraphique().imprimantePasEnPanne();
 		}
+	}
+	
+	/**
+	 * 	Permet d'ecrire le nom de l'etat
+	 * 	@return nom le nom de l'etat
+	 */
+	public String toString() 
+	{
+		return this.getClass().getName();
 	}
 }

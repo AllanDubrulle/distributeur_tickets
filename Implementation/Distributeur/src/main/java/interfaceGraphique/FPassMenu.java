@@ -8,6 +8,11 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.layout.*;
 
+/**
+ * Classe FPassMenu
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
 class FPassMenu extends Ecran 
 {
     public FPassMenu(double hauteur, double largeur) 

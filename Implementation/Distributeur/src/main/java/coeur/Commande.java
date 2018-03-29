@@ -1,7 +1,7 @@
 package coeur;
 
 /**
- * Enumération Commande (différentes commandes disponibles dans l'application)
+ * Enumeration Commande (differentes commandes disponibles dans l'application)
  * @author TheoDaix, AllanDubrulle, VictorVerhoye
  * @version 1.0
  */

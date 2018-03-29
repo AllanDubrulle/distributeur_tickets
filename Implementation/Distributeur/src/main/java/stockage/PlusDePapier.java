@@ -1,7 +1,7 @@
 package stockage;
 
 /**
- * Classe PlusDePapier (exception générée s'il n'y a plus de papier)
+ * Classe PlusDePapier (exception generee s'il n'y a plus de papier)
  * @author TheoDaix, AllanDubrulle, VictorVerhoye
  * @version 1.0
  */

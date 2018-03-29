@@ -13,7 +13,7 @@ public class Carte
 	
 	/**
 	 * 	Constructeur de Carte qui initialise les variables id, codePIN, solde
-	 * 	@param id un numéro de carte bancaire
+	 * 	@param id un numero de carte bancaire
 	 * 	@param codePIN un code PIN
 	 * 	@param solde un solde
 	 */
@@ -25,7 +25,7 @@ public class Carte
 	}
 	
 	/**
-	 * 	Vérifie si le solde de la carte est supérieur ou égal au montant
+	 * 	Verifie si le solde de la carte est superieur ou egal au montant
 	 * 	@param montant un montant
 	 * 	@return verif vrai si montant <= solde, faux sinon
 	 */
@@ -35,8 +35,8 @@ public class Carte
 	}
 	
 	/**
-	 * 	Vérifie si le code PIN est correct
-	 * 	@param code code PIN à vérifier
+	 * 	Verifie si le code PIN est correct
+	 * 	@param code code PIN a verifier
 	 * 	@return verif vrai si code = codePIN, faux sinon
 	 */
 	public boolean verifCodePIN(int code)
@@ -45,7 +45,7 @@ public class Carte
 	}
 	
 	/**
-	 * 	Permet de récuperer le solde sur la carte
+	 * 	Permet de recuperer le solde sur la carte
 	 * 	@return solde le solde de la carte
 	 */
 	public int getSolde()
@@ -54,8 +54,8 @@ public class Carte
 	}
 	
 	/**
-	 * 	Permet d'obtenir le numéro de carte bancaire en cours d'utilisation
-	 * 	@return id le numéro de la carte bancaire
+	 * 	Permet d'obtenir le numero de carte bancaire en cours d'utilisation
+	 * 	@return id le numero de la carte bancaire
 	 */
 	public String getID()
 	{

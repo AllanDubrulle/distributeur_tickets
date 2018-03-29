@@ -7,8 +7,24 @@ import javafx.scene.text.*;
 import javafx.scene.layout.*;
 import javafx.scene.shape.Rectangle;
 
+/**
+ * Classe AfficherBillet (permet d'afficher le billet achete)
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
 class AfficherBillet extends Pane 
 {
+	/**
+	 * 	Constructeur de AfficherBillet
+	 * 	@param gareDepart la gare de depart du billet
+	 * 	@param gareArrivee la gare d'arrivee du billet
+	 * 	@param allerRetour un booleen vrai s'il s'agit d'un aller-retour, faux sinon
+	 * 	@param classe une classe
+	 * 	@param type le type du billet
+	 * 	@param reduc la reduction du billet
+	 * 	@param date la date de depart
+	 * 	@param prix le prix
+	 */
     public AfficherBillet(String gareDepart, String gareArrivee, boolean allerRetour, int classe, String type, String reduc, Date date, double prix) 
     {
         VBox boxVer = new VBox();

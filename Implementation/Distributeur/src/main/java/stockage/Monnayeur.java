@@ -17,7 +17,7 @@ public class Monnayeur
 	private HashMap<BilletMonnaie,Integer> StockBilletPaiement;
 	
 	/**
-	 * 	Constructeur de Monnayeur qui initialise le stock de pièce et le stock de billets
+	 * 	Constructeur de Monnayeur qui initialise le stock de piece et le stock de billets
 	 */
 	public Monnayeur()
 	{
@@ -38,8 +38,8 @@ public class Monnayeur
 	}
 	
 	/**
-	 * 	Permet de stocker des pièces en plus dans les stocks de pièces
-	 * 	@param piece une piece à stocker
+	 * 	Permet de stocker des pieces en plus dans les stocks de pieces
+	 * 	@param piece une piece a stocker
 	 */
 	public void stockerPiece(Piece piece)
 	{
@@ -49,7 +49,7 @@ public class Monnayeur
 	
 	/**
 	 * 	Permet de stocker des billet en plus dans les stocks de billets
-	 * 	@param piece un billet à stocker
+	 * 	@param piece un billet a stocker
 	 */
 	public void stockerBillet(BilletMonnaie billet)
 	{
@@ -58,9 +58,9 @@ public class Monnayeur
 	}
 	
 	/**
-	 * 	Permet de rendre un montant avec le moins de pièces et/ou de billet possible
-	 * 	@param montant un montant (en cents) à rendre
-	 * 	@return	rendu un rendu avec le détail de ce qui a été donné
+	 * 	Permet de rendre un montant avec le moins de pieces et/ou de billet possible
+	 * 	@param montant un montant (en cents) a rendre
+	 * 	@return	rendu un rendu avec le detail de ce qui a ete donne
 	 * 	@throws PasAssezDeMonnaie (s'il n'y a pas assez de monnaie pour rendre)
 	 */
 	public Rendu calculerRenduArgent(int montant) throws PasAssezDeMonnaie
@@ -105,8 +105,9 @@ public class Monnayeur
 	}
 	
 	/**
-	 * 	A voir avec Allan
-	 * 	@return rendu un rendu avec le détail de ce qui a été rendu
+	 * 	Permet de rendre la monnaie introduite suite a un probleme technique (imprimante en panne,
+	 * 	probleme de monnayeur,...)
+	 * 	@return rendu un rendu avec le detail de ce qui a ete rendu
 	 */
 	public Rendu rendreMontantEncours()
 	{
@@ -125,7 +126,7 @@ public class Monnayeur
 	}
 	
 	/**
-	 * 	A voir avec Allan
+	 * 	Permet de vider la "memoire" de ce qui a ete insere
 	 */
 	private void viderPaiementEnCours()
 	{
@@ -141,7 +142,7 @@ public class Monnayeur
 	}
 
 	/**
-	 * 	Permet de vider la caisse (si l'utilisateur déclanche la panne "Vider caisse" par
+	 * 	Permet de vider la caisse (si l'utilisateur declanche la panne "Vider caisse" par
 	 * 	exemple)
 	 */
 	public void vider()
@@ -157,6 +158,10 @@ public class Monnayeur
 		}
 	}
 
+	/**
+	 * 	Pemet de recherger la caisse (si l'utilisateur declanche "Recharger caisse" dans le
+	 * 	menu panne)
+	 */
 	public void rechargerCaisse()
 	{
 		for (Piece piece : Piece.values())
@@ -169,11 +174,19 @@ public class Monnayeur
 		}
 	}
 	
+	/**
+	 * 	Permet de recuperer le detail des pieces de ce qui ont deja ete introduites
+	 * 	@return stockPiece le stock de pieces introduites
+	 */
 	public HashMap<Piece,Integer> getStockPiece()
 	{
 		return StockPiece;
 	}
 	
+	/**
+	 * 	Permet de recuperer le detail des billets de ce qui ont deja ete introduits
+	 * 	@return stockBillet le stock de billets introduits
+	 */
 	public HashMap<BilletMonnaie, Integer> getStockBillet()
 	{
 		return StockBillet;

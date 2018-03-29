@@ -14,6 +14,11 @@ import javafx.scene.shape.*;
 import javafx.scene.text.*;
 import stockage.ErreurDEncodage;
 
+/**
+ * Classe FBillet
+ * @author TheoDaix, AllanDubrulle, VictorVerhoye
+ * @version 1.0
+ */
 class FBillet extends Ecran 
 {
 	private TextField zoneTexte, zoneTexte0, zoneTexte1, zoneTexte2, zoneTexte3, zoneTexte4;
@@ -599,6 +604,10 @@ class FBillet extends Ecran
     	}
 	}
 	
+	/**
+	 * 	Permet de retourner la classe choisie
+	 * 	@return classe 1 s'il s'agit de la 1e classe, 2 s'il s'agit de la seconde
+	 */
 	private int getClasse()
 	{
 		if (choixBouton1.isSelected())
