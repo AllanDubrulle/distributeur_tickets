@@ -262,7 +262,10 @@ class LecteurCarte extends Pane
             	{
             		graphAC.choixLecteurOK(Integer.parseInt(zoneDeMDP.getText()));
             	}
-            	catch(NumberFormatException e) {}  // catch vide ??
+            	catch(NumberFormatException e) 
+            	{
+            		e.printStackTrace();
+            	}
             }
         });
 
