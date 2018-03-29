@@ -2,6 +2,11 @@ package stockage.imprimable;
 
 import stockage.Valeur;
 
+/**
+ *  Enumeration Reduction (reductions possibles d'un titre de transport)
+ *  @author TheoDaix, AllanDubrulle, VictorVerhoye
+ *  @version 1.0
+ */
 public enum Reduction implements Valeur
 {
 	AUCUNE( "Aucune")
@@ -21,15 +26,20 @@ public enum Reduction implements Valeur
 		{ return 30; }
 	}; 
 	
-	private String name = "";
+	private String nom = "";
 	   
-	Reduction (String name)
+	Reduction (String nom)
 	{
-		this.name = name;
+		this.nom = nom;
 	}
+	
+	/**
+	 *  Permet de recuperer le nom d'une reduction
+	 *  @return nom le nom d'une reduction
+	 */
 	public String toString()
 	{
-		return name;
+		return nom;
 	}
 
 }

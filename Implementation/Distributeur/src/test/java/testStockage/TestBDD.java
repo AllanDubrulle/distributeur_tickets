@@ -105,20 +105,5 @@ public class TestBDD
 		assertEquals(instance.rechercherPrix(coeur.Commande.ACHATABO, "tournai", "mons"), 51, delta);
 		assertEquals(instance.rechercherPrix(stockage.imprimable.TypePass.PASS10TRAJETS), 77, delta);
 		assertEquals(instance.rechercherPrix(stockage.imprimable.TypePass.PASSILLIMITE), 18, delta);
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	}	
 }

@@ -2,7 +2,12 @@ package stockage.imprimable;
 
 import stockage.Valeur;
 
-public enum Classe implements Valeur // changer les valeurs
+/**
+ *  Enumeration Classe (classes d'un titre de transport)
+ *  @author TheoDaix, AllanDubrulle, VictorVerhoye
+ *	@version 1.0
+ */
+public enum Classe implements Valeur
 {
 	C1	{ public int valeur()
 		{ return 1; }

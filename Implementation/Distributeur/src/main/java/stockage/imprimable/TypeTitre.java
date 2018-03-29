@@ -2,6 +2,11 @@ package stockage.imprimable;
 
 import stockage.Valeur;
 
+/**
+ *  Enumeration TypePass (types de pass possibles pour un pass)
+ *  @author TheoDaix, AllanDubrulle, VictorVerhoye
+ *  @version 1.0
+ */
 public enum TypeTitre implements Valeur // changer les valeurs
 {
 	STANDARD("Standard"){ public int valeur()
@@ -27,14 +32,19 @@ public enum TypeTitre implements Valeur // changer les valeurs
 		{ return -10; }
 	};
 	
-	private String name = "";
+	private String nom = "";
 	   
-	TypeTitre (String name)
+	TypeTitre (String nom)
 	{
-		this.name = name;
+		this.nom = nom;
 	}
+	
+	/**
+	 * 	Permet de recuperer le nom d'un type de titre
+	 *  @return nom le nom d'un type de titre
+	 */
 	public String toString()
 	{
-		return name;
+		return nom;
 	}
 }
