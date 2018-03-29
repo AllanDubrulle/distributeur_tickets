@@ -292,13 +292,13 @@ public interface CoeurAStockage
 	 * 	@return depasse un booleen vrai si l'utilisateur a depasse le prix a payer, faux
 	 * 	sinon
 	 */
-	public boolean depassementPrix();
+	public boolean depassementMontantAPayer();
 	
 	/**
 	 * 	Permet de recuperer le prix affichable (en euros)
-	 * 	@return prix le prix de la commande
+	 * 	@return montantAPayer le prix de la commande (en euros)
 	 */
-	public double prixAffichable();
+	public double montantAPayerAffichable();
 	
 	/**
 	 * 	Permet de recuperer le prix d'un titre de transport commande (s'il y en a plusieurs)
@@ -314,7 +314,7 @@ public interface CoeurAStockage
 	
 	/**
 	 * 	Permet de recuperer le montant introduit (en euros)
-	 * 	@return
+	 * 	@return introduit le montant introduit (en euros)
 	 */
 	public double montantRecuAffichable();
 	
