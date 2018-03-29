@@ -42,7 +42,7 @@ class GestionBaseDeDonnees
 	    {
 	        try
 	        {
-	            connexion = DriverManager.getConnection("jdbc:sqlite:resource::src/main/resources/BDDDistributeur.db");
+	            connexion = DriverManager.getConnection("jdbc:sqlite::resource:src/main/resources/BDDDistributeur.db");
 	            requete = connexion.createStatement();
 	            return true;
 	        }

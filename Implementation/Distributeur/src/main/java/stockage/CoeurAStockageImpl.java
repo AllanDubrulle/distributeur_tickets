@@ -354,11 +354,6 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		return monnayeur.rendreMontantEncours();
 	}
 
-	/*public int getMontantRecu()
-	{
-		return montantRecu;
-	}*/
-
 	public void reinitialisation()
 	{
 		setMontantRecu(0);
@@ -468,8 +463,7 @@ public class CoeurAStockageImpl implements CoeurAStockage
 			if(Reduction.values()[i].toString().equals(reduction))	
 			{	
 				return Reduction.values()[i];	
-			}	
-			System.out.println(Reduction.values()[i].toString());
+			}
 		}
 		throw new ErreurDEncodage("Reduction inexistante");
 	}
