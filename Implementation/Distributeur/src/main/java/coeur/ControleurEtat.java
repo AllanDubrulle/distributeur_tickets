@@ -314,7 +314,7 @@ abstract class ControleurEtat
 	public void lecteurPanne() 
 	{
 		actualiserPanne(Composant.LECTEURCARTE);
-		if(Controleur.getInstance().getModePaiement().equals(EtatParCarte.getInstance()))
+		if(EtatParCarte.getInstance().equals(Controleur.getInstance().getModePaiement()))
 		{
 			if(!Controleur.getInstance().getCoeurAStockage().estEnMarche(Composant.LECTEURCARTE))
 			{
@@ -338,7 +338,7 @@ abstract class ControleurEtat
 	public void fenteBilletPanne() 
 	{
 		actualiserPanne(Composant.FENTEBILLET);
-		if(Controleur.getInstance().getModePaiement().equals(EtatPaiementLiquide.getInstance()))
+		if(EtatPaiementLiquide.getInstance().equals(Controleur.getInstance().getModePaiement()))
 		{
 			if(!Controleur.getInstance().getCoeurAStockage().estEnMarche(Composant.FENTEBILLET))
 			{
@@ -357,7 +357,7 @@ abstract class ControleurEtat
 	public void fentePiecePanne() 
 	{
 		actualiserPanne(Composant.FENTEPIECE);
-		if(Controleur.getInstance().getModePaiement().equals(EtatPaiementLiquide.getInstance()))
+		if(EtatPaiementLiquide.getInstance().equals(Controleur.getInstance().getModePaiement()))
 		{
 			if(!Controleur.getInstance().getCoeurAStockage().estEnMarche(Composant.FENTEPIECE))
 			{
