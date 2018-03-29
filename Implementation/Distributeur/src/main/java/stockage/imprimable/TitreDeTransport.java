@@ -169,7 +169,7 @@ public abstract class TitreDeTransport
 	/**
 	 *  Permet de recuperer le nombre de jours de validite d'un titre de transport 
 	 *  (ne concerne que le pass illimite)
-	 *  @return
+	 *  @return nbrJours
 	 */
 	public int getNbrJours() 
 	{

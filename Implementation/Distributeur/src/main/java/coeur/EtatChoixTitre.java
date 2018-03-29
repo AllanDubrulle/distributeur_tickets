@@ -18,7 +18,7 @@ abstract class EtatChoixTitre extends EtatAnnulable
 	{
 		Controleur.getInstance().getCoeurAGraphique().afficherRecapCommande(Controleur.getInstance().getCommande(),
 				Controleur.getInstance().getCoeurAStockage().getTitre(),
-				Controleur.getInstance().getCoeurAStockage().prixAffichable(),
+				Controleur.getInstance().getCoeurAStockage().montantAPayerAffichable(),
 				Controleur.getInstance().getCoeurAStockage().getNbrTitre());
 	}
 	
