@@ -33,6 +33,9 @@ public class CoeurAStockageImpl implements CoeurAStockage
 	private static CoeurAStockageImpl instance;
 	private String[] horaire;
 	
+	/**
+	 * 	Constructeur de CoeurAStockageImpl (qui instancie les composant)
+	 */
 	private CoeurAStockageImpl()
 	{
 		monnayeur = new Monnayeur();
@@ -44,42 +47,17 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		}
 	}
 	
-	public String[] getHoraire()
+	/**
+	 *	Permet de recupererer l'instance unique de CoeurAStockageImpl (Singleton Design Pattern)
+	 *	@return instance l'instance de CoeurAStockageImpl
+	 */
+	public static CoeurAStockage getInstance() 
 	{
-		return horaire;
+		if(instance == null)
+			instance = new CoeurAStockageImpl();
+		return instance;
 	}
 	
-	public int getPrix()
-	{
-		return prix;
-	}
-
-	public void setPrix(int prix) 
-	{
-		this.prix = prix;
-	}
-	
-	public void insertionAbonnement()
-	{	
-		Abonnement abo = (Abonnement) achat;
-		String annee = Integer.toString(abo.getDateExp().getYear());
-		String mois = Integer.toString(abo.getDateExp().getMonth());
-		String jour = Integer.toString(abo.getDateExp().getDay());
-		BDDTitre bTitre = new BDDTitre();
-		bTitre.connexion();
-		bTitre.ajouterAbonnement(abo.getCodeBarre(), abo.getNom(), abo.getRegNat(), abo.getGareDepart(), abo.getGareArrivee(), annee, mois, jour,abo.getType().toString(), abo.getReduction().toString(), Integer.toString(abo.getClasse().valeur()));
-		bTitre.deconnexion();
-	}
-	
-	public void miseAJourValiditeAbonnement()
-	{
-		Abonnement abo = (Abonnement) achat;
-		BDDTitre bTitre = new BDDTitre();
-		bTitre.connexion();
-		bTitre.actualiserDateAbo(Integer.toString(abo.getCodeBarre()), abo.getValidite());
-		bTitre.deconnexion();
-	}
-
 	public void creerCarte(String id) 
 	{
 		BDDBanque bBanque = new BDDBanque();
@@ -88,48 +66,6 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		bBanque.deconnexion();
 		carte = new Carte(id, Integer.parseInt(infoCarte[1]), Integer.parseInt(infoCarte[2]));
 		essai = 0;
-	}
-	
-	public boolean existenceCarte(String numero)
-	{
-		BDDBanque bBanque = new BDDBanque();
-		bBanque.connexion();
-		boolean res = bBanque.existenceCarte(numero);
-		bBanque.deconnexion();
-		return res;
-	}
-	
-	public Carte getCarte()
-	{
-		return carte;
-	}
-	
-	private void setNbrTitre(int nbrTitre)
-	{
-		this.nbrTitre = nbrTitre;
-	}
-
-
-	
-	public String[] getListeReduction()
-	{
-		Reduction[] reducs = Reduction.values();
-		String[] res = new String[reducs.length];
-		for (int i =0; i <reducs.length;i++) 
-		{
-			res[i] = reducs[i].toString();
-		}
-		return res;
-	}
-	public String[] getListeType()
-	{
-		TypeTitre[] types = TypeTitre.values();
-		String[] res = new String[types.length];
-		for (int i =0; i <types.length;i++) 
-		{
-			res[i] = types[i].toString();
-		}
-		return res;
 	}
 	
 	public void creerBillet(Date dateValidite ,int nbrBillet, int classe, String gareDepart,
@@ -181,7 +117,17 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		setAchat(new Abonnement(Integer.parseInt(numAbo), dateValid, dateExp, infos[2], infos[3], classeAbo, reduc, typeAbo, infos[0], infos[1]));		
 	}
 	
-	public void creerPassIllimite(String nom, int classe, String reduction, String type, int nbrJours, String typePassStr) throws ErreurDEncodage
+	public boolean existenceAbo(String numAbo)
+	{
+		BDDTitre titre = new BDDTitre();
+		titre.connexion();
+		boolean res = titre.existenceAbonnement(numAbo);
+		titre.deconnexion();
+		return res;
+	}
+	
+	public void creerPassIllimite(String nom, int classe, String reduction, String type, int nbrJours, 
+			String typePassStr) throws ErreurDEncodage
 	{
 		Reduction reduc = conversionReduction(reduction);
 		Classe classePass = conversionClasse(classe);
@@ -191,7 +137,8 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		setAchat(new Pass(nom, nbrJours, classePass, typeTitre, reduc, typePass));
 	}
 	
-	public void creerPass10Trajets(String nom, int classe, String reduction, String type, String typePassStr) throws ErreurDEncodage
+	public void creerPass10Trajets(String nom, int classe, String reduction, String type, String typePassStr) 
+			throws ErreurDEncodage
 	{
 		Reduction reduc = conversionReduction(reduction);
 		Classe classePass = conversionClasse(classe);
@@ -201,7 +148,8 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		setAchat(new Pass(nom, classePass, typeTitre, reduc, typePass));
 	}
 	
-	public void creerPass10Trajets2Gares(String nom, String gareDepart, String gareArrivee, int classe, String reduction, String type, String typePassStr) throws ErreurDEncodage
+	public void creerPass10Trajets2Gares(String nom, String gareDepart, String gareArrivee, int classe, 
+			String reduction, String type, String typePassStr) throws ErreurDEncodage
 	{
 		Reduction reduc = conversionReduction(reduction);
 		Classe classePass = conversionClasse(classe);
@@ -211,10 +159,112 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		setAchat(new Pass(nom, gareDepart, gareArrivee, classePass, typeTitre, reduc, typePass));
 	}
 	
-
-	private void setAchat(TitreDeTransport billet)
+	public double rechercherPrix(Commande commande ,String gareDepart, String gareArrivee)
 	{
-		this.achat = billet;
+		BDDTitre db = new BDDTitre();
+		db.connexion();
+		double res;
+		switch(commande)
+		{
+		case BILLET:
+			res = db.calculerPrixBillet(gareDepart, gareArrivee);
+			break;
+		case PASS10TRAJETS2GARES:
+			res = db.calculerPrixBillet(gareDepart, gareArrivee)*8;
+			break;
+		default:
+			res = db.calculerPrixAbo(gareDepart, gareArrivee);
+			break;
+		
+		}
+		db.deconnexion();
+		return res;
+	}
+
+	public double rechercherPrix(TypePass typePass)
+	{
+		BDDTitre db = new BDDTitre();
+		db.connexion();
+		double res;
+		switch(typePass)
+		{
+		case PASSILLIMITE:
+			res = db.calculerPrixPass("SansRestriction");
+			break;
+		default:
+			res = db.calculerPrixPass("10Trajets");
+			break;
+		}
+		db.deconnexion();
+		return res;
+	}
+	
+	public TypePass conversionTypePass(String typePassStr) throws ErreurDEncodage
+	{
+		for (int i = 0; i < TypePass.values().length; i++)
+		{
+			if(TypePass.values()[i].toString().equals(typePassStr))
+			{
+				return TypePass.values()[i];
+			}
+		}
+		throw new ErreurDEncodage("Type de pass inexistant");
+	}
+	
+	public TypeTitre conversionType(String type ) throws ErreurDEncodage
+	{
+		for (int i = 0 ; i < TypeTitre.values().length; i++)	
+		{	
+			if(TypeTitre.values()[i].toString().equals(type))	
+			{	
+				return TypeTitre.values()[i];	
+			}	
+		}
+		throw new ErreurDEncodage("Type inexistant");
+	}
+	
+	public Classe conversionClasse(int classe) throws ErreurDEncodage
+	{
+		if (classe == 1)	
+			return Classe.C1;	
+		if (classe == 2)	
+			return Classe.C2;
+		throw new ErreurDEncodage("Classe inexistante");
+		
+	}
+	
+	public Reduction conversionReduction(String reduction ) throws ErreurDEncodage
+	{
+		for (int i = 0 ; i < Reduction.values().length; i++)	
+		{	
+			if(Reduction.values()[i].toString().equals(reduction))	
+			{	
+				return Reduction.values()[i];	
+			}
+		}
+		throw new ErreurDEncodage("Reduction inexistante");
+	}
+	
+	public String[] getListeReduction()
+	{
+		Reduction[] reducs = Reduction.values();
+		String[] res = new String[reducs.length];
+		for (int i =0; i <reducs.length;i++) 
+		{
+			res[i] = reducs[i].toString();
+		}
+		return res;
+	}
+	
+	public String[] getListeType()
+	{
+		TypeTitre[] types = TypeTitre.values();
+		String[] res = new String[types.length];
+		for (int i =0; i <types.length;i++) 
+		{
+			res[i] = types[i].toString();
+		}
+		return res;
 	}
 
 	public boolean existenceTrajet(String gareDepart, String gareArrivee)
@@ -235,26 +285,70 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		return res;
 	}
 	
-	public boolean existenceAbo(String numAbo)
+	public String[] rechercherHoraireDepart(String gareDepart, int heure, int minute) throws SQLException
 	{
-		BDDTitre titre = new BDDTitre();
-		titre.connexion();
-		boolean res = titre.existenceAbonnement(numAbo);
-		titre.deconnexion();
-		return res;
+		HoraireTrains hTrains = new HoraireTrains();
+		hTrains.connexion();
+		ResultSet res = hTrains.calculToutesLesGaresArrivee(gareDepart, heure, minute);
+		String[] tab = hTrains.conversionRequeteEnTableau(res);
+		this.horaire = tab;
+		return tab;
 	}
-
+	
+	public String[] rechercherHoraireItineraire(String gareDepart, String gareArrivee, int heure, int minute) throws SQLException
+	{
+		HoraireTrains hTrains = new HoraireTrains();
+		hTrains.connexion();
+		ResultSet res = hTrains.calculItineraire(gareDepart, gareArrivee, heure, minute);
+		String[] tab = hTrains.conversionRequeteEnTableau(res);
+		this.horaire = tab;
+		return tab;
+	}
+	
+	public String[] rechercherHoraireArrivee(String gareArrivee, int heure, int minute) throws SQLException
+	{
+		HoraireTrains hTrains = new HoraireTrains();
+		hTrains.connexion();
+		ResultSet res = hTrains.calculToutesLesGaresDepart(gareArrivee, heure, minute);
+		String[] tab = hTrains.conversionRequeteEnTableauArriv(res);
+		this.horaire = tab;
+		return tab;
+	}
+	
+	public String[] getHoraire()
+	{
+		return horaire;
+	}
+	
 	public TitreDeTransport getTitre()
 	{
 		return achat;
 	}
-
+	
+	private void setAchat(TitreDeTransport titre)
+	{
+		this.achat = titre;
+	}
 	
 	public int getNbrTitre()
 	{
 		return nbrTitre;
 	}
+	
+	private void setNbrTitre(int nbrTitre)
+	{
+		this.nbrTitre = nbrTitre;
+	}
+	
+	public int getPrix()
+	{
+		return prix;
+	}
 
+	public void setPrix(int prix) 
+	{
+		this.prix = prix;
+	}
 	
 	public void ajoutMonnaie(int i) throws ComposantHorsService
 	{
@@ -305,49 +399,15 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		}
 	}
 	
-	public String[] rechercherHoraireDepart(String gareDepart, int heure, int minute) throws SQLException
-	{
-		HoraireTrains hTrains = new HoraireTrains();
-		hTrains.connexion();
-		ResultSet res = hTrains.calculToutesLesGaresArrivee(gareDepart, heure, minute);
-		String[] tab = hTrains.conversionRequeteEnTableau(res);
-		this.horaire = tab;
-		return tab;
-	}
-	
-	public String[] rechercherHoraireItineraire(String gareDepart, String gareArrivee, int heure, int minute) throws SQLException
-	{
-		HoraireTrains hTrains = new HoraireTrains();
-		hTrains.connexion();
-		ResultSet res = hTrains.calculItineraire(gareDepart, gareArrivee, heure, minute);
-		String[] tab = hTrains.conversionRequeteEnTableau(res);
-		this.horaire = tab;
-		return tab;
-	}
-	
-	public String[] rechercherHoraireArrivee(String gareArrivee, int heure, int minute) throws SQLException
-	{
-		HoraireTrains hTrains = new HoraireTrains();
-		hTrains.connexion();
-		ResultSet res = hTrains.calculToutesLesGaresDepart(gareArrivee, heure, minute);
-		String[] tab = hTrains.conversionRequeteEnTableauArriv(res);
-		this.horaire = tab;
-		return tab;
-	}
-	
-	public ArrayList<String> getListeAbonnement()
-	{
-		BDDTitre bTitre = new BDDTitre();
-		bTitre.connexion();
-		ArrayList<String> res = bTitre.listeDesAbonnements();
-		return res;
-	}
-	
 	public Rendu rendreMonnaie() throws PasAssezDeMonnaie
 	{
 		return monnayeur.calculerRenduArgent(montantRecu-prix);
 	}
-
+	
+	private void setMontantRecu(int montantRecu)
+	{
+		this.montantRecu = montantRecu;
+	}
 	
 	public Rendu rendreMontantRecu()
 	{
@@ -359,44 +419,35 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		setMontantRecu(0);
 	}
 
-	private void setMontantRecu(int montantRecu)
+	public ArrayList<String> getListeAbonnement()
 	{
-		this.montantRecu = montantRecu;
-	}
-
-	public void viderCaisse()
-	{
-		monnayeur.vider();
-	}
-
-	public boolean estEnMarche(Composant composant)
-	{
-		return composantEnMarche.get(composant);
-	}
-
-	public void impression() throws ComposantHorsService, PlusDePapier
-	{
-		imprimante.imprimer();
+		BDDTitre bTitre = new BDDTitre();
+		bTitre.connexion();
+		ArrayList<String> res = bTitre.listeDesAbonnements();
+		return res;
 	}
 	
-	public void scanne() throws ComposantHorsService
+	public void miseAJourValiditeAbonnement()
 	{
-		if (!estEnMarche(Composant.SCANNEUR))
-			throw new ComposantHorsService("Scanneur de code hors service");
+		Abonnement abo = (Abonnement) achat;
+		BDDTitre bTitre = new BDDTitre();
+		bTitre.connexion();
+		bTitre.actualiserDateAbo(Integer.toString(abo.getCodeBarre()), abo.getValidite());
+		bTitre.deconnexion();
 	}
 	
-	public void lireCarte() throws ComposantHorsService
-	{
-		if (!estEnMarche(Composant.LECTEURCARTE))
-			throw new ComposantHorsService("Lecteur de carte hors service");
+	public void insertionAbonnement()
+	{	
+		Abonnement abo = (Abonnement) achat;
+		String annee = Integer.toString(abo.getDateExp().getYear());
+		String mois = Integer.toString(abo.getDateExp().getMonth());
+		String jour = Integer.toString(abo.getDateExp().getDay());
+		BDDTitre bTitre = new BDDTitre();
+		bTitre.connexion();
+		bTitre.ajouterAbonnement(abo.getCodeBarre(), abo.getNom(), abo.getRegNat(), abo.getGareDepart(), abo.getGareArrivee(), annee, mois, jour,abo.getType().toString(), abo.getReduction().toString(), Integer.toString(abo.getClasse().valeur()));
+		bTitre.deconnexion();
 	}
 	
-
-	public void actualiserPanne(Composant composant)
-	{
-		composantEnMarche.put(composant,!composantEnMarche.get(composant));
-	}
-
 	public boolean depassementPrix()
 	{
 		return prix<=montantRecu;
@@ -405,6 +456,11 @@ public class CoeurAStockageImpl implements CoeurAStockage
 	public double prixAffichable()
 	{
 		return (double) prix /100;
+	}
+	
+	public double prixTicketAffichable()
+	{
+		return (double)prix / (nbrTitre*100);
 	}
 
 	public double renduAffichable()
@@ -415,8 +471,22 @@ public class CoeurAStockageImpl implements CoeurAStockage
 	public double montantRecuAffichable()
 	{
 		return (double) montantRecu /100;
-	}
+	}	
 
+	public boolean existenceCarte(String numero)
+	{
+		BDDBanque bBanque = new BDDBanque();
+		bBanque.connexion();
+		boolean res = bBanque.existenceCarte(numero);
+		bBanque.deconnexion();
+		return res;
+	}
+	
+	public Carte getCarte()
+	{
+		return carte;
+	}
+	
 	public boolean verifSolde() 
 	{
 		return carte.soldeSuffisant(prix);
@@ -448,104 +518,28 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		bBanque.deconnexion();
 		montantRecu = prix;
 	}
-
-	public static CoeurAStockage getInstance() 
-	{
-		if(instance == null)
-			instance = new CoeurAStockageImpl();
-		return instance;
-	}
 	
-	public Reduction conversionReduction(String reduction ) throws ErreurDEncodage
+	public boolean estEnMarche(Composant composant)
 	{
-		for (int i = 0 ; i < Reduction.values().length; i++)	
-		{	
-			if(Reduction.values()[i].toString().equals(reduction))	
-			{	
-				return Reduction.values()[i];	
-			}
-		}
-		throw new ErreurDEncodage("Reduction inexistante");
-	}
-	public Classe conversionClasse(int classe) throws ErreurDEncodage
-	{
-		if (classe == 1)	
-			return Classe.C1;	
-		if (classe == 2)	
-			return Classe.C2;
-		throw new ErreurDEncodage("Classe inexistante");
-		
-	}
-	public TypeTitre conversionType(String type ) throws ErreurDEncodage
-	{
-		for (int i = 0 ; i < TypeTitre.values().length; i++)	
-		{	
-			if(TypeTitre.values()[i].toString().equals(type))	
-			{	
-				return TypeTitre.values()[i];	
-			}	
-		}
-		throw new ErreurDEncodage("Type inexistant");
-	}
-	
-	public TypePass conversionTypePass(String typePassStr) throws ErreurDEncodage
-	{
-		for (int i = 0; i < TypePass.values().length; i++)
-		{
-			if(TypePass.values()[i].toString().equals(typePassStr))
-			{
-				return TypePass.values()[i];
-			}
-		}
-		throw new ErreurDEncodage("Type de pass inexistant");
+		return composantEnMarche.get(composant);
 	}
 
-	public double rechercherPrix(Commande commande ,String gareDepart, String gareArrivee)
+	public void actualiserPanne(Composant composant)
 	{
-		BDDTitre db = new BDDTitre();
-		db.connexion();
-		double res;
-		switch(commande)
-		{
-		case BILLET:
-			res = db.calculerPrixBillet(gareDepart, gareArrivee);
-			break;
-		case PASS10TRAJETS2GARES:
-			res = db.calculerPrixBillet(gareDepart, gareArrivee)*8;
-			break;
-		default:
-			res = db.calculerPrixAbo(gareDepart, gareArrivee);
-			break;
-		
-		}
-		db.deconnexion();
-		return res;
-	}
-
-	public double rechercherPrix(TypePass typePass)
-	{
-		BDDTitre db = new BDDTitre();
-		db.connexion();
-		double res;
-		switch(typePass)
-		{
-		case PASSILLIMITE:
-			res = db.calculerPrixPass("SansRestriction");
-			break;
-		default:
-			res = db.calculerPrixPass("10Trajets");
-			break;
-		}
-		db.deconnexion();
-		return res;
+		composantEnMarche.put(composant,!composantEnMarche.get(composant));
 	}
 	
+	public void viderCaisse()
+	{
+		monnayeur.vider();
+	}
+
 	public void rechargerCaisse()
 	{
 		monnayeur.rechargerCaisse();
 		
 	}
-	
+
 	public void rechargerEncreEtPapier()
 	{
 		imprimante.setNbrImpressions(50);
@@ -567,9 +561,21 @@ public class CoeurAStockageImpl implements CoeurAStockage
 	{
 		return carte != null;
 	}
-
-	public double prixTicketAffichable()
+	
+	public void impression() throws ComposantHorsService, PlusDePapier
 	{
-		return (double)prix / (nbrTitre*100);
+		imprimante.imprimer();
 	}
+	
+	public void scanne() throws ComposantHorsService
+	{
+		if (!estEnMarche(Composant.SCANNEUR))
+			throw new ComposantHorsService("Scanneur de code hors service");
+	}
+	
+	public void lireCarte() throws ComposantHorsService
+	{
+		if (!estEnMarche(Composant.LECTEURCARTE))
+			throw new ComposantHorsService("Lecteur de carte hors service");
+	}	
 }
