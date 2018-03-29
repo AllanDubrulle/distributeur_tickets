@@ -37,7 +37,6 @@ C:\Users\utilisateur\Desktop\distributeur_tickets\Implementation\Distributeur\sr
 C:\Users\utilisateur\Desktop\distributeur_tickets\Implementation\Distributeur\src\main\java\coeur\EtatImpressionHoraire.java
 C:\Users\utilisateur\Desktop\distributeur_tickets\Implementation\Distributeur\src\main\java\interfaceGraphique\FPassIllimite.java
 C:\Users\utilisateur\Desktop\distributeur_tickets\Implementation\Distributeur\src\main\java\coeur\EtatImpressionRecu.java
-C:\Users\utilisateur\Desktop\distributeur_tickets\Implementation\Distributeur\src\main\java\coeur\StockageACoeurImpl.java
 C:\Users\utilisateur\Desktop\distributeur_tickets\Implementation\Distributeur\src\main\java\coeur\EtatChoixBillet.java
 C:\Users\utilisateur\Desktop\distributeur_tickets\Implementation\Distributeur\src\main\java\interfaceGraphique\AfficherPass10Trajets.java
 C:\Users\utilisateur\Desktop\distributeur_tickets\Implementation\Distributeur\src\main\java\stockage\BDDBanque.java
@@ -107,4 +106,3 @@ C:\Users\utilisateur\Desktop\distributeur_tickets\Implementation\Distributeur\sr
 C:\Users\utilisateur\Desktop\distributeur_tickets\Implementation\Distributeur\src\main\java\stockage\Valeur.java
 C:\Users\utilisateur\Desktop\distributeur_tickets\Implementation\Distributeur\src\main\java\stockage\imprimable\Reduction.java
 C:\Users\utilisateur\Desktop\distributeur_tickets\Implementation\Distributeur\src\main\java\stockage\Imprimante.java
-C:\Users\utilisateur\Desktop\distributeur_tickets\Implementation\Distributeur\src\main\java\coeur\StockageACoeur.java

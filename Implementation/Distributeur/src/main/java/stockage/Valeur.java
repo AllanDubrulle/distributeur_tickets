@@ -1,7 +1,7 @@
 package stockage;
 
 /**
- * Interface Valeur (permet de récuperer la valeur des pieces et des billets)
+ * Interface Valeur (permet de recuperer la valeur des pieces et des billets)
  * @author TheoDaix, AllanDubrulle, VictorVerhoye
  * @version 1.0
  */

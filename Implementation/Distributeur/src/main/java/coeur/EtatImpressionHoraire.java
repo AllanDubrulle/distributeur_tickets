@@ -25,7 +25,7 @@ class EtatImpressionHoraire extends ControleurEtat
 		catch(PlusDePapier e)
 		{
 			Controleur.getInstance().getCoeurAStockage().actualiserPanne(Composant.IMPRIMANTE);
-			Controleur.getInstance().getCoeurAGraphique().imprimanteEnPanne(); // peut être a supprimer 
+			Controleur.getInstance().getCoeurAGraphique().imprimanteEnPanne(); 
 			Controleur.getInstance().getCoeurAGraphique().afficherPanne(e.getMessage());
 		} 
 		catch (ComposantHorsService e)
@@ -37,7 +37,7 @@ class EtatImpressionHoraire extends ControleurEtat
 	{
 		Controleur.getInstance().getCoeurAGraphique().afficherViderBacRecep();
 	}
-																						//c'était l'inverse ici xD
+																						
 	public void apres5secOk()
 	{
 		Controleur.getInstance().modifEtat(EtatFin.getInstance());

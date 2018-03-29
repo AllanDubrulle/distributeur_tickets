@@ -18,7 +18,7 @@ abstract class ControleurEtat
 	protected ControleurEtat() {}
 	
 	/**
-	 *	Permet de valider les choix selectionnes dans la fenêtre de configuration
+	 *	Permet de valider les choix selectionnes dans la fenetre de configuration
 	 */
 	public void valideConfig() {}
 	
@@ -34,7 +34,7 @@ abstract class ControleurEtat
 	
 	/**
 	 * 	Action d'entree de chaque etat, comportement different selon l'etat mais en general 
-	 * 	permet d'afficher la bonne fenêtre
+	 * 	permet d'afficher la bonne fenetre
 	 */
 	public void entree() {}
 	
@@ -51,7 +51,7 @@ abstract class ControleurEtat
 	public void retourTitre() {}
 	
 	/**
-	 * 	Permet de revenir sur la fenêtre precedente, en eliminant le dernier etat dans la 
+	 * 	Permet de revenir sur la fenetre precedente, en eliminant le dernier etat dans la 
 	 * 	pile d'etats
 	 */
 	public void retour() {}
@@ -64,101 +64,101 @@ abstract class ControleurEtat
 	
 	/**
 	 *	Permet de valider les informations entrees lors d'un achat d'un Titre de transport,
-	 *	en general permet de passer de la fenêtre du Titre vers le recapitulatif 
+	 *	en general permet de passer de la fenetre du Titre vers le recapitulatif 
 	 *	OU 
 	 *	Permet de valider le numero de la carte bancaire entre lors du paiement par carte
 	 */
 	public void valider() {}
 	
 	/**
-	 * 	Permet de passer de menu vers la fenêtre de billet
+	 * 	Permet de passer de menu vers la fenetre de billet
 	 */
 	public void choixBillet() {}
 	
 	/**
-	 * 	Permet de passer de menu vers la fenêtre d'achat d'un abonnement
+	 * 	Permet de passer de menu vers la fenetre d'achat d'un abonnement
 	 */
 	public void choixAchatAbo() {}
 	
 	/**
-	 * 	Permet de passer de menu vers la fenêtre de renouvellement d'un abonnement
+	 * 	Permet de passer de menu vers la fenetre de renouvellement d'un abonnement
 	 */
 	public void choixRenouvAbo() {}
 	
 	/**
-	 * 	Permet de passer de menu vers la fenêtre de menu des Pass qui permet de choisir le
+	 * 	Permet de passer de menu vers la fenetre de menu des Pass qui permet de choisir le
 	 * 	type de pass voulu
 	 */
 	public void choixPass() {}
 	
 	/**
-	 * 	Permet de passer de menu des Pass vers la fenêtre de pass illimite
+	 * 	Permet de passer de menu des Pass vers la fenetre de pass illimite
 	 */
 	public void choixPassIllimite() {}
 
 	/**
-	 * 	Permet de passer de menu des Pass vers la fenêtre de pass 10 trajets
+	 * 	Permet de passer de menu des Pass vers la fenetre de pass 10 trajets
 	 */
 	public void choixPass10Trajets() {}
 
 	/**
-	 * 	Permet de passer de menu des Pass vers la fenêtre de pass 10 trajets 2 gares (10 trajets 
+	 * 	Permet de passer de menu des Pass vers la fenetre de pass 10 trajets 2 gares (10 trajets 
 	 * 	entre deux gares)
 	 */
 	public void choixPass10Trajets2Gares() {}
 	
 	/**
-	 * 	Permet de passer de menu vers la fenêtre de menu des horaires qui permet de choisir 
+	 * 	Permet de passer de menu vers la fenetre de menu des horaires qui permet de choisir 
 	 * 	le type de recherche voulu
 	 */
 	public void choixHoraire() {}
 
 	/**
-	 * 	Permet de passer de menu d'horaire vers la fenêtre de recherche de l'heure d'un 
+	 * 	Permet de passer de menu d'horaire vers la fenetre de recherche de l'heure d'un 
 	 * 	itineraire
 	 */
 	public void choixItineraire() {}
 	
 	/**
-	 * 	Permet de passer de menu d'horaire vers la fenêtre de recherche de l'heure des
+	 * 	Permet de passer de menu d'horaire vers la fenetre de recherche de l'heure des
 	 * 	arrivees
 	 */
 	public void choixArrivees() {}
 	
 	/**
-	 * 	Permet de passer de menu d'horaire vers la fenêtre de recherche de l'heure des
+	 * 	Permet de passer de menu d'horaire vers la fenetre de recherche de l'heure des
 	 * 	departs
 	 */
 	public void choixDeparts() {}
 	
 	/**
-	 * 	Permet de passer de la fenêtre des recherches des horaires d'itineraires vers la 
-	 * 	fenêtre des resultats
+	 * 	Permet de passer de la fenetre des recherches des horaires d'itineraires vers la 
+	 * 	fenetre des resultats
 	 * 	@param gareDepart une gare de depart
 	 * 	@param gareArrivee une gare d'arrivee
 	 * 	@param heure l'heure de l'heure du depart
 	 * 	@param minute la minute de l'heure du depart
-	 * 	@throws SQLException (peut generer une exception lors de l'envoi de la requête) 
+	 * 	@throws SQLException (peut generer une exception lors de l'envoi de la requete) 
 	 */
 	public void valideRechercheItineraire(String gareDepart, String gareArrivee, int heure, int minute) throws SQLException {}
 	
 	/**
-	 * 	Permet de passer de la fenêtre des recherches des horaires des departs vers la 
-	 * 	fenêtre des resultats
+	 * 	Permet de passer de la fenetre des recherches des horaires des departs vers la 
+	 * 	fenetre des resultats
 	 * 	@param gareDepart une gare de depart
 	 * 	@param heure l'heure de l'heure du depart
 	 * 	@param minute la minute de l'heure du depart
-	 * 	@throws SQLException (peut generer une exception lors de l'envoi de la requête)
+	 * 	@throws SQLException (peut generer une exception lors de l'envoi de la requete)
 	 */
 	public void valideRechercheGA(String gareDepart, int heure, int minute) throws SQLException {}
 	
 	/**
-	 * 	Permet de passer de la fenêtre des recherches des horaires des arrivees vers la 
-	 * 	fenêtre des resultats
+	 * 	Permet de passer de la fenetre des recherches des horaires des arrivees vers la 
+	 * 	fenetre des resultats
 	 * 	@param gareArrivee une gare d'arrivee
 	 * 	@param heure l'heure de l'heure d'arrivee
 	 * 	@param minute la minute de l'heure d'arrivee
-	 * 	@throws SQLException (peut generer une exception lors de l'envoi de la requête) 
+	 * 	@throws SQLException (peut generer une exception lors de l'envoi de la requete) 
 	 */
 	public void valideRechercheGD(String gareArrivee, int heure, int minute) throws SQLException {}
 	
@@ -179,14 +179,14 @@ abstract class ControleurEtat
 	public void validePIN(int codePIN) {}
 	
 	/**
-	 *	Permet de scanner le code d'un numero d'abonnement (afficher une fenêtre de choix de 
+	 *	Permet de scanner le code d'un numero d'abonnement (afficher une fenetre de choix de 
 	 *	numero d'abonnement)
 	 */
 	public void scanneCode() {}
 	
 	/**
-	 * 	Permet de passer de la fenêtre paiement vers la fenêtre du paiement par carte 
-	 * 	(affiche la fenêtre permettant de choisir le numero de la carte)
+	 * 	Permet de passer de la fenetre paiement vers la fenetre du paiement par carte 
+	 * 	(affiche la fenetre permettant de choisir le numero de la carte)
 	 */
 	public void choixParCarte() {}
 	
@@ -196,47 +196,47 @@ abstract class ControleurEtat
 	public void choixInsererRetirerCarte() {}
 	
 	/**
-	 * 	Permet de passer de la fenêtre paiement vers la fenêtre du paiement liquide
+	 * 	Permet de passer de la fenetre paiement vers la fenetre du paiement liquide
 	 */
 	public void choixEnLiquide() {}
 	
 	/**
-	 * Permet d'inserer un montant i (met à jour le montant à payer et le montant introduit)
+	 * Permet d'inserer un montant i (met a jour le montant a payer et le montant introduit)
 	 * 	@param i un montant (en cents)
 	 */
 	public void inserer(int i) {}
 	
 	/**
-	 * 	Permet de demander l'impression d'un reçu
+	 * 	Permet de demander l'impression d'un recu
 	 */
 	public void choixOui() {}
 	
 	/**
-	 * 	Permet de ne pas demander l'impression d'un reçu et donc de passer à la fenêtre de
+	 * 	Permet de ne pas demander l'impression d'un recu et donc de passer a la fenetre de
 	 * 	fin
 	 */
 	public void choixNon() {}
 	
 	/**
-	 * 	Permet de recuperer les documents imprimes par la machine (et de les afficher à 
+	 * 	Permet de recuperer les documents imprimes par la machine (et de les afficher a 
 	 * 	l'ecran)
 	 */
 	public void choixOk() {}
 	
 	/**
-	 * 	Permet d'effectuer une action après un certain temps (ici, 5 secondes) ; le temps 
+	 * 	Permet d'effectuer une action apres un certain temps (ici, 5 secondes) ; le temps 
 	 * 	d'affichage d'une erreur OU pour inserer le code PIN
 	 */
 	public void apres5sec() {}
 	
 	/**
-	 * 	Permet d'effectuer une action après un certain temps (ici, 15 secondes) ; le temps
-	 * 	d'attente maximum à la fin pour revenir à la page d'accueil
+	 * 	Permet d'effectuer une action apres un certain temps (ici, 15 secondes) ; le temps
+	 * 	d'attente maximum a la fin pour revenir a la page d'accueil
 	 */
 	public void apres15sec() {}
 	
 	/**
-	 * 	Permet d'effectuer une action après un certain temps (ici, 5 secondes) ; le temps 
+	 * 	Permet d'effectuer une action apres un certain temps (ici, 5 secondes) ; le temps 
 	 * 	d'affichage d'une impression OU de l'ejection de la carte OU de la validation du
 	 * 	paiement par carte
 	 */
@@ -244,7 +244,7 @@ abstract class ControleurEtat
 	
 	/**
 	 * 	Permet de mettre en panne un composant (lecteur, imprimante, ...)
-	 * 	@param composant un Composant à mettre en panne
+	 * 	@param composant un Composant a mettre en panne
 	 */
 	public void actualiserPanne(Composant composant)
 	{

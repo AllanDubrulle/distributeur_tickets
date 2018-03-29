@@ -67,7 +67,7 @@ class HoraireTrains extends GestionBaseDeDonnees
     }
     
     /**
-     * 	Va regarder dans la base de donnees si un couple de gares apparaît bien
+     * 	Va regarder dans la base de donnees si un couple de gares apparait bien
      *	@param gare1 une gare
      *	@param gare2 une autre gare
      *	@return res vrai si il existe un trajet entre les deux gares, faux sinon
@@ -305,7 +305,7 @@ class HoraireTrains extends GestionBaseDeDonnees
     /**
      * 	Permet de prendre les 5 dernieres lignes d'un resultat d'une requete SQL et de les 
      * 	rassembler dans un tableau afin de l'utiliser dans le reste de l'application. C'est 
-     * 	ici pour le cas particulier où on ne doit pas prendre les heures apres une certaine 
+     * 	ici pour le cas particulier ou on ne doit pas prendre les heures apres une certaine 
      * 	heure mais les heures avant une certaine heure (typiquement pour les arrivees dans 
      * 	une gare)
      * 	@param res un resultat d'une requete de type SQL

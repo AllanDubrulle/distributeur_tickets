@@ -48,12 +48,12 @@ public interface GraphiqueACoeur
 	public void choixOk();
 	
 	/**
-	 * 	Communique le fait que le reçu a ete demande
+	 * 	Communique le fait que le recu a ete demande
 	 */
 	public void choixOui();
 	
 	/**
-	 * 	Communique le fait que le reçu n'a pas ete demande
+	 * 	Communique le fait que le recu n'a pas ete demande
 	 */
 	public void choixNon();
 	

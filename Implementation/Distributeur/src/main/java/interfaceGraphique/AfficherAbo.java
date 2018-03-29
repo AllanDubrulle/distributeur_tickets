@@ -72,7 +72,7 @@ class AfficherAbo extends Pane
 
         texte1.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         texte1.setStrokeWidth(0.0);
-        texte1.setText("ABONNEMENT N°" + numero);
+        texte1.setText("ABONNEMENT NUMERO " + numero);
         texte1.setWrappingWidth(250.0);
         texte1.setFont(new Font("System Bold Italic", 18.0));
 

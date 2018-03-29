@@ -469,6 +469,7 @@ public class CoeurAStockageImpl implements CoeurAStockage
 			{	
 				return Reduction.values()[i];	
 			}	
+			System.out.println(Reduction.values()[i].toString());
 		}
 		throw new ErreurDEncodage("Reduction inexistante");
 	}

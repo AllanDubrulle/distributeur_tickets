@@ -46,7 +46,7 @@ public class EtatImpressionRecu extends ControleurEtat
 	
 	public void apres5secOk()
 	{
-		Controleur.getInstance().modifEtat(EtatFin.getInstance());							//manquait le cas ou l'imprimante était mise en panne après l'impression des billets
+		Controleur.getInstance().modifEtat(EtatFin.getInstance());
 	}
 	
 	public void choixOk()

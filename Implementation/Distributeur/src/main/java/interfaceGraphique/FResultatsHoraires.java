@@ -343,7 +343,7 @@ class FResultatsHoraires extends Ecran
         bouton0.setMnemonicParsing(false);
         bouton0.setPrefHeight(31.0*hauteur);
         bouton0.setPrefWidth(200.0*largeur);
-        bouton0.setText("Retour a l'ecran principal");
+        bouton0.setText("Retour a l'ecran principal");
         bouton0.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         bouton0.setOnAction(new EventHandler<ActionEvent>() 
         {

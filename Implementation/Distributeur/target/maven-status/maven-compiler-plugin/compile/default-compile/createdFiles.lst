@@ -242,7 +242,6 @@ coeur\EtatAnnulable.class
 stockage\imprimable\TypePass.class
 interfaceGraphique\Clavier$8.class
 Main\Main.class
-coeur\StockageACoeur.class
 interfaceGraphique\FHoraireDepart$2.class
 interfaceGraphique\FPass10Trajets$2.class
 coeur\GraphiqueACoeur.class
@@ -281,7 +280,6 @@ stockage\imprimable\TypeTitre$1.class
 interfaceGraphique\FChoixPaiement$3.class
 stockage\Piece$6.class
 interfaceGraphique\Clavier$41.class
-coeur\StockageACoeurImpl.class
 interfaceGraphique\Clavier$36.class
 interfaceGraphique\FenteBillet$1.class
 interfaceGraphique\FSimulationAcceuil$1.class

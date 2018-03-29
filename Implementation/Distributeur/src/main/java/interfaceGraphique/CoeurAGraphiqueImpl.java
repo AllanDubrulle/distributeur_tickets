@@ -195,7 +195,7 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 		root2.getChildren().add(fen);
 		pStage.setResizable(false);
 		pStage.setScene(sc);
-		pStage.setTitle("Choix du numéro d'abonnement");
+		pStage.setTitle("Choix du numero d'abonnement");
 		pStage.show();
 	}
 
@@ -219,7 +219,7 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 		root2.getChildren().add(fen);
 		pStage.setResizable(false);
 		pStage.setScene(sc);
-		pStage.setTitle("Choix du numéro de carte");
+		pStage.setTitle("Choix du numero de carte");
 		pStage.show();
 	}
 	
@@ -230,7 +230,7 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 	
 	public void afficherRetraitCarte()
 	{
-		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Carte ejectee.", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
+		FenetreSimulation.getInstance().afficher(new FAfficherMessage("Carte ejectee", FenetreSimulation.getInstance().getRapportHaut(), FenetreSimulation.getInstance().getRapportLarg()));
 	}
 	
 	public void afficherAttentePIN() 

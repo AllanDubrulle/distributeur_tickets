@@ -58,7 +58,7 @@ public class Controleur
 	}
 
 	/**
-	 *	Permet de récupérer cette instance de CoeurAStockageImpl
+	 *	Permet de recuperer cette instance de CoeurAStockageImpl
 	 *	@return coeurAStockage l'instance de coeurAStockageImpl
 	 */
 	public CoeurAStockage getCoeurAStockage() 
@@ -76,8 +76,8 @@ public class Controleur
 	}
 	
 	/**
-	 *	Permet de modifier les etats au fur et a mesure de l'execution (ajout à la pile
-	 *	et mise à jour de etatActuel)
+	 *	Permet de modifier les etats au fur et a mesure de l'execution (ajout a la pile
+	 *	et mise a jour de etatActuel)
 	 *	@param etat un etat de type ControleurEtat
 	 */
 	public void modifEtat(ControleurEtat etat) 
@@ -219,11 +219,11 @@ public class Controleur
 	
 	/**
 	 * 	Permet de calculer le prix d'un pass dix trajets entre deux gares a partir d'une gare
-	 *	de départ, d'une gare d'arrivée, d'une classe, d'une réduction et d'un type
-	 * 	@param gareDepart une gare de départ
-	 * 	@param gareArrivee une gare d'arrivée
+	 *	de depart, d'une gare d'arrivee, d'une classe, d'une reduction et d'un type
+	 * 	@param gareDepart une gare de depart
+	 * 	@param gareArrivee une gare d'arrivee
 	 * 	@param classe une classe (Classe)
-	 * 	@param reduction une réduction (Reduction)
+	 * 	@param reduction une reduction (Reduction)
 	 * 	@param type un type de pass (TypeTitre)
 	 * 	@return le prix du pass
 	 */
@@ -237,11 +237,11 @@ public class Controleur
 	/**
 	 * 	Permet de calculer le prix d'un titre de transport en fonction des donnees entrees
 	 *	(le prix de base du titre, la reduction, le type et la classe)
-	 * 	@param prix un prix à ajuster (en euros)
-	 * 	@param reduc une réduction (Reduction)
+	 * 	@param prix un prix a ajuster (en euros)
+	 * 	@param reduc une reduction (Reduction)
 	 * 	@param type un type de titre (TypeTitre)
 	 * 	@param classe une classe (Classe)
-	 * 	@return le prix (en cents) du titre calculé en fonction des données introduites
+	 * 	@return le prix (en cents) du titre calcule en fonction des donnees introduites
 	 */
 	private int ajusterPrix(double prix ,Reduction reduc, TypeTitre type, Classe classe)
 	{

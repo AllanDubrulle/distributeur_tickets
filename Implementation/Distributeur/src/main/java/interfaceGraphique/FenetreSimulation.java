@@ -111,7 +111,7 @@ class FenetreSimulation extends BorderPane
         });
 
         menuACocher0.setMnemonicParsing(false);
-        menuACocher0.setText("Fente a billet");
+        menuACocher0.setText("Fente a billet");
         menuACocher0.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) 
             {	
@@ -120,7 +120,7 @@ class FenetreSimulation extends BorderPane
         });
 
         menuACocher1.setMnemonicParsing(false);
-        menuACocher1.setText("Fente a  piece");
+        menuACocher1.setText("Fente a piece");
         menuACocher1.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
             	fenetre.graphAC.fentePieceEnPanne();
@@ -206,7 +206,7 @@ class FenetreSimulation extends BorderPane
         menu3.setText("Fentes");
 
         menuACocher6.setMnemonicParsing(false);
-        menuACocher6.setText("Fentes a piece et a billet");
+        menuACocher6.setText("Fentes a piece et a billet");
         menuACocher6.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
             	mAJComposants();

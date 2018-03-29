@@ -43,9 +43,9 @@ class EtatAttentePIN extends ControleurEtat
 	}
 	
 	/**
-	 * 	Permet de d'afficher la fenêtre de code PIN incorrect et de controler si
-	 * 	l'utilisateur n'as déjà pas entré trois fois un mauvais code PIN. Si c'est
-	 *  le cas, il est redirigé vers le choix de paiement et sa carte est ejectée
+	 * 	Permet de d'afficher la fenetre de code PIN incorrect et de controler si
+	 * 	l'utilisateur n'as deja pas entre trois fois un mauvais code PIN. Si c'est
+	 *  le cas, il est redirige vers le choix de paiement et sa carte est ejectee
 	 */
 	
 	private void infosIncorrectes()
@@ -63,7 +63,7 @@ class EtatAttentePIN extends ControleurEtat
 	}
 	
 	/**
-	 * 	Permet d'afficher la fenêtre de solde insuffisant et de rediriger l'utilisateur
+	 * 	Permet d'afficher la fenetre de solde insuffisant et de rediriger l'utilisateur
 	 * 	vers le choix de paiement
 	 */
 	
@@ -73,8 +73,8 @@ class EtatAttentePIN extends ControleurEtat
 	}
 	
 	/**
-	 * 	Permet d'afficher la fenêtre de validation de paiement, de lancer l'actualisation
-	 * 	du solde de la carte et d'ensuite afficher l'éjection de la carte
+	 * 	Permet d'afficher la fenetre de validation de paiement, de lancer l'actualisation
+	 * 	du solde de la carte et d'ensuite afficher l'ejection de la carte
 	 */
 	private void infosCorrectes()
 	{

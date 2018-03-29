@@ -2,7 +2,7 @@ package stockage.imprimable;
 
 import stockage.Valeur;
 
-public enum Reduction implements Valeur // changer les valeurs 
+public enum Reduction implements Valeur
 {
 	AUCUNE( "Aucune")
 	{ public int valeur()
@@ -12,11 +12,11 @@ public enum Reduction implements Valeur // changer les valeurs
 	{ public int valeur()
 		{ return 50; }
 	},
-	PMR("Personne à mobilité réduite")
+	PMR("Personne a mobilite reduite")
 	{ public int valeur()
 		{ return 40; }
 	}, 
-	PARENTEMPLOYE("Parent employé")
+	PARENTEMPLOYE("Parent employe")
 	{ public int valeur()
 		{ return 30; }
 	}; 
