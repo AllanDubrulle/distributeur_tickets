@@ -445,31 +445,6 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 		return controleur.fentePresente();
 	}	
 	
-	public void lecteurEnPanne()
-	{
-		Controleur.getInstance().getEtatActuel().lecteurPanne();
-	}
-	
-	public void fentePieceEnPanne()
-	{
-		Controleur.getInstance().getEtatActuel().fentePiecePanne();
-	}
-	
-	public void fenteBilletEnPanne()
-	{
-		Controleur.getInstance().getEtatActuel().fenteBilletPanne();
-	}
-	
-	public void scanneurEnPanne()
-	{
-		Controleur.getInstance().getEtatActuel().scanneurPanne();
-	}
-	
-	public void imprimanteEnPanne()
-	{
-		Controleur.getInstance().getEtatActuel().imprimantePanne();
-	}
-	
 	public void paiement()
 	{
 		Controleur.getInstance().modifEtat(EtatPaiement.getInstance());

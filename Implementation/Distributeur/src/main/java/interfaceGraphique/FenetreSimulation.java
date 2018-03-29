@@ -12,6 +12,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
+import stockage.Composant;
 import javafx.event.EventHandler;
 
 /**
@@ -106,7 +107,7 @@ class FenetreSimulation extends BorderPane
         menuACocher.setText("Lecteur de carte");
         menuACocher.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
-            	fenetre.graphAC.lecteurEnPanne();
+            	fenetre.graphAC.actualiserPanne(Composant.LECTEURCARTE);
             }
         });
 
@@ -115,7 +116,7 @@ class FenetreSimulation extends BorderPane
         menuACocher0.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) 
             {	
-            	fenetre.graphAC.fenteBilletEnPanne();
+            	fenetre.graphAC.actualiserPanne(Composant.FENTEBILLET);
             }
         });
 
@@ -123,7 +124,7 @@ class FenetreSimulation extends BorderPane
         menuACocher1.setText("Fente a piece");
         menuACocher1.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
-            	fenetre.graphAC.fentePieceEnPanne();
+            	fenetre.graphAC.actualiserPanne(Composant.FENTEPIECE);
             }
         });
 
@@ -131,7 +132,7 @@ class FenetreSimulation extends BorderPane
         menuACocher2.setText("Scanneur de code");
         menuACocher2.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
-            	fenetre.graphAC.scanneurEnPanne();
+            	fenetre.graphAC.actualiserPanne(Composant.SCANNEUR);
             }
         });
 
@@ -147,7 +148,7 @@ class FenetreSimulation extends BorderPane
         menuACocher4.setText("Imprimante");
         menuACocher4.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
-            	fenetre.graphAC.imprimanteEnPanne();
+            	fenetre.graphAC.actualiserPanne(Composant.LECTEURCARTE);
             }
         });
 

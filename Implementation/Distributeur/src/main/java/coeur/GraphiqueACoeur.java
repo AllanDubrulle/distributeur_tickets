@@ -475,31 +475,6 @@ public interface GraphiqueACoeur
 	/**
 	 * 	Communique le fait que l'utilisateur souhaite mettre a jour la panne du lecteur de carte
 	 */
-	public void lecteurEnPanne();
-	
-	/**
-	 * 	Communique le fait que l'utilisateur souhaite mettre a jour la panne de la fente a piece
-	 */
-	public void fentePieceEnPanne();
-	
-	/**
-	 * 	Communique le fait que l'utilisateur souhaite mettre a jour la panne de la fente a billet
-	 */
-	public void fenteBilletEnPanne();
-	
-	/**
-	 * 	Communique le fait que l'utilisateur souhaite mettre a jour la panne du scanneur de code
-	 */
-	public void scanneurEnPanne();
-	
-	/**
-	 * 	Communique le fait que l'utilisateur souhaite mettre a jour la panne de l'imprimante
-	 */
-	public void imprimanteEnPanne();
-	
-	/**
-	 * 	Communique une action a effectuer lorsque nous somme dans le paiement (typiquement, revenir 
-	 * 	sur la fenetre de choix de paiement)
-	 */
+
 	public void paiement();
 }

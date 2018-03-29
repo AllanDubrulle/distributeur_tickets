@@ -221,50 +221,5 @@ public interface CoeurAGraphique
 	/**
 	 * 	Permet au coeur de dire a l'interface graphique que l'imprimante est en panne
 	 */
-	public void imprimanteEnPanne();
-	
-	/**
-	 * 	Permet au coeur de dire a l'interface graphique que l'imprimante n'est pas en panne
-	 */
-	public void imprimantePasEnPanne();
-	
-	/**
-	 * 	Permet au coeur de dire a l'interface graphique que le scanneur est en panne
-	 */
-	public void scanneurEnPanne();
-	
-	/**
-	 * 	Permet au coeur de dire a l'interface graphique que le scanneur n'est pas en panne
-	 */
-	public void scanneurPasEnPanne();
-	
-	/**
-	 * 	Permet au coeur de dire a l'interface graphique que le lecteur est en panne
-	 */
-	public void lecteurEnPanne();
-	
-	/**
-	 * 	Permet au coeur de dire a l'interface graphique que le lecteur n'est pas en panne
-	 */
-	public void lecteurPasEnPanne();
-	
-	/**
-	 * 	Permet au coeur de dire a l'interface graphique que la fente a billet est en panne
-	 */
-	public void fenteBilletEnPanne();
-	
-	/**
-	 * 	Permet au coeur de dire a l'interface graphique que la fente a billet n'est pas en panne
-	 */
-	public void fenteBilletPasEnPanne();
-	
-	/**
-	 * 	Permet au coeur de dire a l'interface graphique que la fente a piece est en panne
-	 */
-	public void fentePieceEnPanne();
-	
-	/**
-	 * 	Permet au coeur de dire a l'interface graphique que la fente a piece n'est pas en panne
-	 */
-	public void fentePiecePasEnPanne();
+
 }

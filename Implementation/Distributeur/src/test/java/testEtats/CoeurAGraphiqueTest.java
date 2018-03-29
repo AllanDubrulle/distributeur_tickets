@@ -82,25 +82,8 @@ public class CoeurAGraphiqueTest implements CoeurAGraphique
 	
 	public void afficherPanne(String message) {}
 	
-	public void imprimanteEnPanne() {}
 	
 	public void actualiserMontant(double restant, double introduit) {}
 
-	public void imprimantePasEnPanne() {}
-	
-	public void scanneurEnPanne() {}
-	
-	public void scanneurPasEnPanne() {}
-	
-	public void lecteurEnPanne() {}
-	
-	public void lecteurPasEnPanne() {}
-	
-	public void fenteBilletEnPanne() {}
-	
-	public void fenteBilletPasEnPanne() {}
-	
-	public void fentePieceEnPanne() {}
-	
-	public void fentePiecePasEnPanne() {}
+
 }
