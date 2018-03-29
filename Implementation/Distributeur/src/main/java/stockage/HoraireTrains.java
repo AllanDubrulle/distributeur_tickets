@@ -281,6 +281,7 @@ class HoraireTrains extends GestionBaseDeDonnees
      * 	les rassembler dans un tableau afin de l'utiliser dans le reste de l'application
      * 	@param res un resultat d'une requete SQL
      * 	@return tab un tableau contenant les 5 premieres lignes d'un resultat de type SQL
+     * 	@throws SQLException (peut generer une exception SQL)
      */
     public String[] conversionRequeteEnTableau(ResultSet res) throws SQLException
     {
@@ -310,6 +311,7 @@ class HoraireTrains extends GestionBaseDeDonnees
      * 	une gare)
      * 	@param res un resultat d'une requete de type SQL
      * 	@return un tableau contenant les 5 dernieres lignes d'un resultat de type SQL
+     * 	@throws SQLException (peut generer une exception SQL)
      */
     public String[] conversionRequeteEnTableauArriv(ResultSet res) throws SQLException
     {

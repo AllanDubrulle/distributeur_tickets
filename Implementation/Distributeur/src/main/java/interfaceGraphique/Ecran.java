@@ -57,6 +57,7 @@ abstract class Ecran extends Pane
 	
 	/**
 	 * 	Action effectuee lorque l'on appuie sur un numero du lecteur de carte
+	 * 	@param a le numero sur lequel on a appuye (sur le lecteur de carte)
 	 */
 	public void actionLecteur(int a) {}
 	
@@ -72,6 +73,7 @@ abstract class Ecran extends Pane
 	
 	/**
 	 * 	Permet de verifier si le nom en parametre ne possede pas de chiffre
+	 * 	@param nom le nom a verifier
 	 * 	@return verif vrai si le nom ne comporte pas de numero, faux sinon
 	 */
 	public boolean verifierNom(String nom) 
@@ -88,6 +90,9 @@ abstract class Ecran extends Pane
 	/**
 	 * 	Permet de verifier si la date rentree est bien une date et ulterieure ou egale a celle du
 	 * 	jour de l'achat
+	 * 	@param jour le jour de la date a verifier
+	 * 	@param mois le mois de la date a verifer
+	 * 	@param annee l'annee de la date a verifier
 	 * 	@return verif vrai si la date est conforme, faux sinon
 	 */
 	public boolean verifierDate(int jour, int mois, int annee) 

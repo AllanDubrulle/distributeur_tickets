@@ -27,7 +27,7 @@ public class Carte
 	/**
 	 * 	Verifie si le solde de la carte est superieur ou egal au montant
 	 * 	@param montant un montant
-	 * 	@return verif vrai si montant <= solde, faux sinon
+	 * 	@return verif vrai si montant est inferieur ou egal au solde, faux sinon
 	 */
 	public boolean soldeSuffisant(double montant)
 	{

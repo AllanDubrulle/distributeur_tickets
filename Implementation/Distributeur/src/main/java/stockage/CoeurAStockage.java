@@ -205,7 +205,7 @@ public interface CoeurAStockage
 	
 	/**
 	 * 	Permet de rechercher un horaire d'arrivees d'une gare
-	 *	@param gareDepart une gare d'arrivee
+	 *	@param gareArrivee une gare d'arrivee
 	 *	@param heure l'heure de l'arrivee
 	 * 	@param minute la minute de l'heure de l'arrivee
 	 * 	@return horaire un tableau contenant les cinq premiers horaires des arrivees dans une gare
@@ -411,14 +411,15 @@ public interface CoeurAStockage
 	 * 	Permet de decrementer le nombre de papier pour l'impression
 	 * 	@throws ComposantHorsService (peut generer une exception si l'imprimante 
 	 * est en panne)
-	 * 	@throws PlusDePapier
+	 * 	@throws PlusDePapier (peut generer une exception s'il n'y a plus de papier)
 	 */
 	public void impression() throws ComposantHorsService, PlusDePapier;
 	
 	/**
 	 * 	Permet de scanneur le code barre d'un abonnement (afficher la fenetre des 
 	 * 	abonnements existants)
-	 * 	@throws ComposantHorsService
+	 * 	@throws ComposantHorsService (peut generer une exception si le scanneur est 
+	 * 	en panne)
 	 */
 	public void scanne() throws ComposantHorsService;
 	

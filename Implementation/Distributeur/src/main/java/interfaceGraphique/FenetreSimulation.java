@@ -425,7 +425,7 @@ class FenetreSimulation extends BorderPane
     
     /**
      * 	Permet de recuper l'ecran en cours d'affichage
-     * 	@return
+     * 	@return fenetre la fenetre en cours d'affichage
      */
     public Ecran getEcran()
     {
@@ -452,7 +452,7 @@ class FenetreSimulation extends BorderPane
     
     /**
      * 	Permet de recuperer le l'instance de LecteurCarte de la fenetre de simulation
-     * @return
+     * 	@return lecteur le lecteur de carte du distributeur
      */
     public LecteurCarte getLecteur()
     {

@@ -205,7 +205,6 @@ interfaceGraphique\FChoixParCarte$1.class
 interfaceGraphique\FAboAchat$1.class
 interfaceGraphique\FHoraireArrivee$2.class
 interfaceGraphique\FAfficherMessage.class
-stockage\TestBDD.class
 interfaceGraphique\Clavier$21.class
 interfaceGraphique\FPass10Trajets.class
 stockage\BilletMonnaie$1.class

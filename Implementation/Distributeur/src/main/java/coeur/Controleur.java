@@ -151,13 +151,9 @@ public class Controleur
 
 	/**
 	 *	Permet de calculer le prix d'un billet a partir d'une gare de depart, d'une gare
-	 *	d'arrivee, d'une reduction, d'un type et d'une classe
-	 * 	@param gareDepart une gare de depart
-	 * 	@param gareArrivee une gare d'arrivee
-	 * 	@param reduc une reduction (Reduction)
-	 * 	@param type un type de billet (TypeTitre)
-	 * 	@param classe une classe (Classe)
-	 * 	@return le prix du billet
+	 *	d'arrivee, d'une reduction, d'un type et d'une classe et mettre a jour le prix 
+	 *	de la commande
+	 * 	@param billet un billet
 	 */
 	public void calculerPrix(Billet billet)
 	{
@@ -168,31 +164,22 @@ public class Controleur
 	
 	/**
 	 * 	Permet de calculer le prix d'un abonnement a partir d'une gare de depart, d'une gare
-	 *	d'arrivee, d'une reduction, d'un type, d'une classe et d'une validite
-	 * 	@param gareDepart une gare de depart
-	 * 	@param gareArrivee une gare d'arrivee
-	 * 	@param reduc une reduction (Reduction)
-	 * 	@param type un type d'abonnement (TypeTitre)
-	 * 	@param classe une classe (Classe)
-	 * 	@param validite une validite (1, 3, 6 ou 12 mois)
-	 * 	@return le prix de l'abonnement
+	 *	d'arrivee, d'une reduction, d'un type, d'une classe et d'une validite et mettre a jour 
+	 *	le prix de la commande
+	 * 	@param abonnement un abonnement
 	 */
-	public void calculerPrix(Abonnement abo)
+	public void calculerPrix(Abonnement abonnement)
 	{	
-		double calculPrix = getCoeurAStockage().rechercherPrix(commande,abo.getGareDepart(), abo.getGareArrivee());	
-		int res = ajusterPrix(calculPrix ,abo.getReduction(), abo.getType(), abo.getClasse());
-		res *= abo.getValidite();	
+		double calculPrix = getCoeurAStockage().rechercherPrix(commande,abonnement.getGareDepart(), abonnement.getGareArrivee());	
+		int res = ajusterPrix(calculPrix ,abonnement.getReduction(), abonnement.getType(), abonnement.getClasse());
+		res *= abonnement.getValidite();	
 		getCoeurAStockage().setPrix(res);
 	}
 	
 	/**
 	 *  Permet de calculer le prix d'un pass illimite a partir d'une classe, d'une reduction,
-	 *	d'un type et un nombre de jours
-	 * 	@param classe une classe (Classe)
-	 * 	@param reduction une reduction (Reduction)
-	 * 	@param type un type de titre (TypeTitre)
-	 * 	@param nbrJours le nombre de jour de validite
-	 * 	@return le prix du pass
+	 *	d'un type et un nombre de jours et mettre a jour le prix de la commande
+	 * 	@param pass un pass illimite
 	 */
 	public void calculerPrixIllimite(Pass pass)
 	{
@@ -204,11 +191,9 @@ public class Controleur
 
 	/**
 	 * 	Permet de calculer le prix d'un pass dix trajets a partir d'une classe, d'une reduction
+	 * 	et mettre a jour le prix de la commande
 	 *	et d'un type
-	 * 	@param classe une classe (Classe)
-	 * 	@param reduction une reduction (Reduction)
-	 * 	@param type un type de titre (TypeTitre)
-	 * 	@return le prix du pass
+	 * 	@param pass un pass dix trajets
 	 */
 	public void calculerPrixPass10trajet(Pass pass)
 	{
@@ -219,13 +204,9 @@ public class Controleur
 	
 	/**
 	 * 	Permet de calculer le prix d'un pass dix trajets entre deux gares a partir d'une gare
-	 *	de depart, d'une gare d'arrivee, d'une classe, d'une reduction et d'un type
-	 * 	@param gareDepart une gare de depart
-	 * 	@param gareArrivee une gare d'arrivee
-	 * 	@param classe une classe (Classe)
-	 * 	@param reduction une reduction (Reduction)
-	 * 	@param type un type de pass (TypeTitre)
-	 * 	@return le prix du pass
+	 *	de depart, d'une gare d'arrivee, d'une classe, d'une reduction et d'un type et mettre 
+	 *	a jour le prix de la commande
+	 * 	@param pass un pass dix trajets entre deux gares
 	 */
 	public void calculerPrixPass10Trajets2Gares(Pass pass)
 	{	
@@ -241,7 +222,7 @@ public class Controleur
 	 * 	@param reduc une reduction (Reduction)
 	 * 	@param type un type de titre (TypeTitre)
 	 * 	@param classe une classe (Classe)
-	 * 	@return le prix (en cents) du titre calcule en fonction des donnees introduites
+	 * 	@return prix le prix (en cents) du titre calcule en fonction des donnees introduites
 	 */
 	private int ajusterPrix(double prix ,Reduction reduc, TypeTitre type, Classe classe)
 	{

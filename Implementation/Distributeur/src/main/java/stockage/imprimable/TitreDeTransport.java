@@ -20,13 +20,13 @@ public abstract class TitreDeTransport
 	
 	/**
 	 *  Constructeur de TitreDeTransport (pour l'abonnement)
-	 *  @param dateValidite
-	 *  @param dateExp
-	 *  @param gareDepart
-	 *  @param gareArrivee
-	 *  @param classe
-	 *  @param type
-	 *  @param reduction
+	 *  @param dateValidite la date de debut de validite du titre
+	 *  @param dateExp la date d'expiration du titre
+	 *  @param gareDepart une gare de depart du titre
+	 *  @param gareArrivee une gare d'arrivee du titre
+	 *  @param classe la classe du titre de transport (Classe)
+	 *  @param type le type du titre de transport (TypeTitre)
+	 *  @param reduction une reduction (Reduction)
 	 */
 	public TitreDeTransport(Date dateValidite, Date dateExp, String gareDepart, String gareArrivee, Classe classe, TypeTitre type, Reduction reduction)
 	{
@@ -41,12 +41,12 @@ public abstract class TitreDeTransport
 	
 	/**
 	 *  Constructeur de TitreDeTransport (pour le billet)
-	 *  @param dateValidite
-	 *  @param gareDepart
-	 *  @param gareArrivee
-	 *  @param classe
-	 *  @param type
-	 *  @param reduction
+	 *  @param dateValidite la date de depart du titre
+	 *  @param gareDepart une gare de depart du titre
+	 *  @param gareArrivee une gare d'arrivee du titre
+	 *  @param classe la classe du titre de transport (Classe)
+	 *  @param type le type du titre de transport (TypeTitre)
+	 *  @param reduction une reduction (Reduction)
 	 */
 	public TitreDeTransport(Date dateValidite, String gareDepart, String gareArrivee, Classe classe, TypeTitre type, Reduction reduction)
 	{
@@ -60,10 +60,10 @@ public abstract class TitreDeTransport
 	
 	/**
 	 *  Constructeur de TitreDeTransport (pour le pass illimite)
-	 *  @param nbrJours
-	 *  @param classe
-	 *  @param type
-	 *  @param reduction
+	 *  @param nbrJours le nombre de jours de la validite
+	 *  @param classe la classe du titre de transport (Classe)
+	 *  @param type le type du titre de transport (TypeTitre)
+	 *  @param reduction une reduction (Reduction)
 	 */
 	public TitreDeTransport(int nbrJours, Classe classe, TypeTitre type, Reduction reduction)
 	{
@@ -75,9 +75,9 @@ public abstract class TitreDeTransport
 	
 	/**
 	 *  Constructeur de TitreDeTransport (pour le pass dix trajets)
-	 *  @param classe
-	 *  @param type
-	 *  @param reduction
+	 *  @param classe la classe du titre de transport (Classe)
+	 *  @param type le type du titre de transport (TypeTitre)
+	 *  @param reduction une reduction (Reduction)
 	 */
 	public TitreDeTransport(Classe classe, TypeTitre type, Reduction reduction)
 	{
@@ -88,11 +88,11 @@ public abstract class TitreDeTransport
 	
 	/**
 	 *  Constructeur de TitreDeTransport (pour le pass dix trajets deux gares)
-	 *  @param gareDepart
-	 *  @param gareArrivee
-	 *  @param classe
-	 *  @param type
-	 *  @param reduction
+	 *  @param gareDepart une gare de depart du titre
+	 *  @param gareArrivee une gare d'arrivee du titre
+	 *  @param classe la classe du titre de transport (Classe)
+	 *  @param type le type du titre de transport (TypeTitre)
+	 *  @param reduction une reduction (Reduction)
 	 */
 	public TitreDeTransport(String gareDepart, String gareArrivee, Classe classe, TypeTitre type, Reduction reduction)
 	{
@@ -169,7 +169,7 @@ public abstract class TitreDeTransport
 	/**
 	 *  Permet de recuperer le nombre de jours de validite d'un titre de transport 
 	 *  (ne concerne que le pass illimite)
-	 *  @return nbrJours
+	 *  @return nbrJours le nombre de jours de la validite
 	 */
 	public int getNbrJours() 
 	{

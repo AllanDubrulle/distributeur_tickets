@@ -82,7 +82,7 @@ public interface CoeurAGraphique
 	
 	/**
 	 * 	Permet d'afficher l'horaire que l'on a imprime
-	 * 	@param tab
+	 * 	@param tab un tableau contenant l'horaire a imprimer
 	 */
 	public void afficherImpressionHoraire(String[] tab);
 	

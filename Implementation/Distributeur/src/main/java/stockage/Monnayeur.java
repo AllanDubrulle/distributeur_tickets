@@ -49,7 +49,7 @@ public class Monnayeur
 	
 	/**
 	 * 	Permet de stocker des billet en plus dans les stocks de billets
-	 * 	@param piece un billet a stocker
+	 * 	@param billet un billet a stocker
 	 */
 	public void stockerBillet(BilletMonnaie billet)
 	{
