@@ -8,6 +8,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.sql.SQLException;
 
+import org.junit.After;
 import org.junit.Test;
 
 import stockage.CoeurAStockage;
@@ -195,5 +196,18 @@ private double delta = 0.000000000001;
 	{
 		instance.actualiserPanne(Composant.FENTEBILLET);
 		instance.ajoutMonnaie(5);
+	}
+	
+	@After
+	public void reinitialisationComposant()
+	{
+		if(!CoeurAStockageImpl.getInstance().estEnMarche(Composant.FENTEBILLET))
+		{
+			CoeurAStockageImpl.getInstance().actualiserPanne(Composant.FENTEBILLET);
+		}
+		if(!CoeurAStockageImpl.getInstance().estEnMarche(Composant.LECTEURCARTE))
+		{
+			CoeurAStockageImpl.getInstance().actualiserPanne(Composant.LECTEURCARTE);
+		}
 	}
 }
