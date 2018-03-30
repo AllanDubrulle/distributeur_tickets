@@ -244,7 +244,7 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 		}
 		else
 		{
-			throw new ErreurDEncodage("Carte innexistante");
+			throw new ErreurDEncodage("Carte inexistante");
 		}
 	}
 	

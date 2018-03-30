@@ -19,15 +19,18 @@ class EtatPaiement extends EtatAnnulable
 	
 	public void choixParCarte() 
 	{
-		Controleur.getInstance().modifEtat(EtatParCarte.getInstance());
+		if (Controleur.getInstance().getCoeurAStockage().estEnMarche(Composant.LECTEURCARTE))
+		{
+			Controleur.getInstance().modifEtat(EtatParCarte.getInstance());
+		}
 	}
+	
 	public void choixEnLiquide() 
 	{
-		if(Controleur.getInstance().getCoeurAStockage().estEnMarche(Composant.LECTEURCARTE))
+		if (Controleur.getInstance().getCoeurAStockage().estEnMarche(Composant.FENTEBILLET) && Controleur.getInstance().getCoeurAStockage().estEnMarche(Composant.FENTEPIECE))
 		{
 			Controleur.getInstance().modifEtat(EtatPaiementLiquide.getInstance());
 		}
-		
 	}
 	
 	public void entree() 
