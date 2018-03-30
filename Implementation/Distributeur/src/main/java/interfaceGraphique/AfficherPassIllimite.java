@@ -2,6 +2,8 @@ package interfaceGraphique;
 
 import javafx.scene.shape.*;
 
+import java.time.LocalDateTime;
+
 import javafx.geometry.*;
 import javafx.scene.text.*;
 import javafx.scene.layout.*;
@@ -64,13 +66,11 @@ class AfficherPassIllimite extends Pane
         texte1.setWrappingWidth(200.0);
         texte1.setFont(new Font("System Bold Italic", 18.0));
         
-        String format = "dd/MM/yy   HH:mm:ss"; 
-        java.text.SimpleDateFormat formater = new java.text.SimpleDateFormat(format); 
-        java.util.Date date = new java.util.Date(); 
+        LocalDateTime date = LocalDateTime.now(); 
         
         texte2.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         texte2.setStrokeWidth(0.0);
-        texte2.setText(formater.format(date));
+        texte2.setText(date.getDayOfMonth() + "/" + date.getMonthValue() + "/" + date.getYear() + "     "  + date.getHour() + ":" + date.getMinute());
         texte2.setTextAlignment(javafx.scene.text.TextAlignment.RIGHT);
         texte2.setWrappingWidth(150.0);
         HBox.setMargin(texte2, new Insets(0.0, 0.0, 0.0, 180.0));
@@ -117,10 +117,10 @@ class AfficherPassIllimite extends Pane
 
         texte7.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         texte7.setStrokeWidth(0.0);
-        if(date.getMonth() == 9 || date.getMonth() == 10 || date.getMonth() == 11)
-        	texte7.setText(date.getDate() + "/" + (date.getMonth()+1) + "/" + (date.getYear()+1900));
+        if(date.getMonthValue() == 10 || date.getMonthValue() == 11 || date.getMonthValue() == 12)
+        	texte7.setText(date.getDayOfMonth() + "/" + (date.getMonthValue()) + "/" + (date.getYear()));
         else
-        	texte7.setText(date.getDate() + "/0" + (date.getMonth()+1) + "/" + (date.getYear()+1900));
+        	texte7.setText(date.getDayOfMonth() + "/0" + (date.getMonthValue()) + "/" + (date.getYear()));
         texte7.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         texte7.setWrappingWidth(100.0);
         HBox.setMargin(texte7, new Insets(0.0, 0.0, 0.0, 50.0));
@@ -131,13 +131,13 @@ class AfficherPassIllimite extends Pane
         texte8.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         texte8.setWrappingWidth(50.0);
 
-        date.setDate(date.getDate()+nbrJours);
+        date = date.withDayOfMonth(date.getDayOfMonth()+nbrJours);
         texte9.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         texte9.setStrokeWidth(0.0);
-        if(date.getMonth() == 9 || date.getMonth() == 10 || date.getMonth() == 11)
-        	texte9.setText(date.getDate() + "/" + (date.getMonth()+1) + "/" + (date.getYear()+1900));
+        if(date.getMonthValue() == 10 || date.getMonthValue() == 11 || date.getMonthValue() == 12)
+        	texte9.setText(date.getDayOfMonth() + "/" + (date.getMonthValue()) + "/" + (date.getYear()));
         else
-        	texte9.setText(date.getDate() + "/0" + (date.getMonth()+1) + "/" + (date.getYear()+1900));
+        	texte9.setText(date.getDayOfMonth() + "/0" + (date.getMonthValue()+1) + "/" + (date.getYear()));
         texte9.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         texte9.setWrappingWidth(100.0);
         boxHor4.setOpaqueInsets(new Insets(0.0));

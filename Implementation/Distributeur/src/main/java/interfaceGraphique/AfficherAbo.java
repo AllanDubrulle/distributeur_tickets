@@ -2,7 +2,8 @@ package interfaceGraphique;
 
 import javafx.scene.shape.*;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import javafx.geometry.*;
 import javafx.scene.text.*;
@@ -28,7 +29,7 @@ class AfficherAbo extends Pane
 	 * 	@param type le type de l'abonnement
 	 * 	@param prix le prix de l'abonnement
 	 */
-	public AfficherAbo(int numero, String nom, int classe, String gareDepart, String gareArrivee, Date dateVal, Date dateExp, String reduction, String type, double prix) 
+	public AfficherAbo(int numero, String nom, int classe, String gareDepart, String gareArrivee, LocalDate dateVal, LocalDate dateExp, String reduction, String type, double prix) 
 	{
         VBox boxVer = new VBox();
         HBox boxHor1 = new HBox();
@@ -76,13 +77,11 @@ class AfficherAbo extends Pane
         texte1.setWrappingWidth(250.0);
         texte1.setFont(new Font("System Bold Italic", 18.0));
 
-        String format = "dd/MM/yy   HH:mm:ss"; 
-        java.text.SimpleDateFormat formater = new java.text.SimpleDateFormat(format); 
-        java.util.Date date = new java.util.Date(); 
+        LocalDateTime date = LocalDateTime.now();
         
         texte2.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         texte2.setStrokeWidth(0.0);
-        texte2.setText(formater.format(date));
+        texte2.setText(date.getDayOfMonth() + "/" + date.getMonthValue() + "/" + date.getYear() + "     "  + date.getHour() + ":" + date.getMinute());
         texte2.setTextAlignment(javafx.scene.text.TextAlignment.RIGHT);
         texte2.setWrappingWidth(150.0);
         HBox.setMargin(texte2, new Insets(0.0, 0.0, 0.0, 130.0));
@@ -161,10 +160,10 @@ class AfficherAbo extends Pane
 
         texte11.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         texte11.setStrokeWidth(0.0);
-        if(dateVal.getMonth() == 9 || dateVal.getMonth() == 10 || dateVal.getMonth() == 11)
-        	texte11.setText(dateVal.getDate() + "/" + String.valueOf(dateVal.getMonth()+1) + "/" + String.valueOf(dateVal.getYear()+1900));
+        if(dateVal.getMonthValue() == 10 || dateVal.getMonthValue() == 11 || dateVal.getMonthValue() == 12)
+        	texte11.setText(dateVal.getDayOfMonth() + "/" + String.valueOf(dateVal.getMonthValue()) + "/" + String.valueOf(dateVal.getYear()));
         else
-        	texte11.setText(dateVal.getDate() + "/0" + String.valueOf(dateVal.getMonth()+1) + "/" + String.valueOf(dateVal.getYear()+1900));
+        	texte11.setText(dateVal.getDayOfMonth() + "/0" + String.valueOf(dateVal.getMonthValue()) + "/" + String.valueOf(dateVal.getYear()));
         texte11.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         texte11.setWrappingWidth(100.0);
         HBox.setMargin(texte11, new Insets(0.0, 0.0, 0.0, 50.0));
@@ -177,10 +176,10 @@ class AfficherAbo extends Pane
 
         texte13.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         texte13.setStrokeWidth(0.0);
-        if(dateExp.getMonth() == 9 || dateExp.getMonth() == 10 || dateExp.getMonth() == 11)
-        	texte13.setText(dateExp.getDate() + "/" + String.valueOf(dateExp.getMonth()+1) + "/" + String.valueOf(dateExp.getYear()+1900));
+        if(dateExp.getMonthValue() == 10 || dateExp.getMonthValue() == 11 || dateExp.getMonthValue() == 12)
+        	texte13.setText(dateExp.getDayOfMonth() + "/" + String.valueOf(dateExp.getMonthValue()) + "/" + String.valueOf(dateExp.getYear()));
         else
-        	texte13.setText(dateExp.getDate() + "/0" + String.valueOf(dateExp.getMonth()+1) + "/" + String.valueOf(dateExp.getYear()+1900));
+        	texte13.setText(dateExp.getDayOfMonth() + "/0" + String.valueOf(dateExp.getMonthValue()) + "/" + String.valueOf(dateExp.getYear()));
         texte13.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         texte13.setWrappingWidth(100.0);
         boxHor6.setOpaqueInsets(new Insets(0.0));

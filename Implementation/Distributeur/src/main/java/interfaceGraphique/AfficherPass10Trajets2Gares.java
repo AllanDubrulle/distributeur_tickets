@@ -1,6 +1,9 @@
 package interfaceGraphique;
 
 import javafx.scene.shape.*;
+
+import java.time.LocalDateTime;
+
 import javafx.geometry.*;
 import javafx.scene.text.*;
 import javafx.scene.layout.*;
@@ -89,12 +92,14 @@ class AfficherPass10Trajets2Gares extends Pane
         setMaxWidth(USE_PREF_SIZE);
         setMinHeight(USE_PREF_SIZE);
         setMinWidth(USE_PREF_SIZE);
-        setPrefHeight(350.0);
-        setPrefWidth(580.0);
+        setPrefHeight(500.0);
+        setPrefWidth(700.0);
 
         boxVer.setAlignment(javafx.geometry.Pos.TOP_CENTER);
         boxVer.setPrefHeight(265.0);
         boxVer.setPrefWidth(580.0);
+        
+        boxVer.setLayoutY(20.0);
 
         boxHor1.setPrefHeight(0.0);
         boxHor1.setPrefWidth(580.0);
@@ -105,13 +110,11 @@ class AfficherPass10Trajets2Gares extends Pane
         texte1.setWrappingWidth(250.0);
         texte1.setFont(new Font("System Bold Italic", 18.0));
         
-        String format = "dd/MM/yy   HH:mm:ss"; 
-        java.text.SimpleDateFormat formater = new java.text.SimpleDateFormat(format); 
-        java.util.Date date = new java.util.Date(); 
+        LocalDateTime date = LocalDateTime.now();
 
         texte2.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         texte2.setStrokeWidth(0.0);
-        texte2.setText(formater.format(date));
+        texte2.setText(date.getDayOfMonth() + "/" + date.getMonthValue() + "/" + date.getYear() + "     "  + date.getHour() + ":" + date.getMinute());
         texte2.setTextAlignment(javafx.scene.text.TextAlignment.RIGHT);
         texte2.setWrappingWidth(150.0);
         HBox.setMargin(texte2, new Insets(0.0, 0.0, 0.0, 130.0));
@@ -470,12 +473,12 @@ class AfficherPass10Trajets2Gares extends Pane
         rectangle.setArcHeight(5.0);
         rectangle.setArcWidth(5.0);
         rectangle.setFill(javafx.scene.paint.Color.valueOf("#ffffff00"));
-        rectangle.setHeight(330.0);
+        rectangle.setHeight(480.0);
         rectangle.setLayoutX(10.0);
         rectangle.setLayoutY(10.0);
         rectangle.setStroke(javafx.scene.paint.Color.BLACK);
         rectangle.setStrokeType(javafx.scene.shape.StrokeType.INSIDE);
-        rectangle.setWidth(560.0);
+        rectangle.setWidth(680.0);
 
         ligne1.setEndY(150.0);
         ligne1.setLayoutX(195.0);

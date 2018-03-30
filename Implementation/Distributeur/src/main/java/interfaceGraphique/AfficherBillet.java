@@ -1,6 +1,7 @@
 package interfaceGraphique;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import javafx.geometry.*;
 import javafx.scene.text.*;
@@ -25,7 +26,7 @@ class AfficherBillet extends Pane
 	 * 	@param date la date de depart
 	 * 	@param prix le prix
 	 */
-    public AfficherBillet(String gareDepart, String gareArrivee, boolean allerRetour, int classe, String type, String reduc, Date date, double prix) 
+    public AfficherBillet(String gareDepart, String gareArrivee, boolean allerRetour, int classe, String type, String reduc, LocalDate date, double prix) 
     {
         VBox boxVer = new VBox();
         HBox boxHor1 = new HBox();
@@ -71,13 +72,11 @@ class AfficherBillet extends Pane
         texte1.setWrappingWidth(200.0);
         texte1.setFont(new Font("System Bold Italic", 18.0));
 
-        String format = "dd/MM/yy   HH:mm:ss"; 
-        java.text.SimpleDateFormat formater = new java.text.SimpleDateFormat(format); 
-        java.util.Date dateAchat = new java.util.Date(); 
+        LocalDateTime date2 = LocalDateTime.now();
         
         texte2.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         texte2.setStrokeWidth(0.0);
-        texte2.setText(formater.format(dateAchat));
+        texte2.setText(date2.getDayOfMonth() + "/" + date2.getMonthValue() + "/" + date2.getYear() + "     "  + date2.getHour() + ":" + date2.getMinute());
         texte2.setTextAlignment(javafx.scene.text.TextAlignment.RIGHT);
         texte2.setWrappingWidth(150.0);
         HBox.setMargin(texte2, new Insets(0.0, 0.0, 0.0, 180.0));
@@ -163,10 +162,10 @@ class AfficherBillet extends Pane
 
         texte11.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         texte11.setStrokeWidth(0.0);
-        if(date.getMonth() == 9 || date.getMonth() == 10 || date.getMonth() == 11)
-        	texte11.setText(date.getDate() + "/" + String.valueOf(date.getMonth()+1) + "/" + String.valueOf(date.getYear()+1900));
+        if(date.getMonthValue() == 10 || date.getMonthValue() == 11 || date.getMonthValue() == 12)
+        	texte11.setText(date.getDayOfMonth() + "/" + String.valueOf(date.getMonthValue()) + "/" + String.valueOf(date.getYear()));
         else
-        	texte11.setText(date.getDate() + "/0" + String.valueOf(date.getMonth()+1) + "/" + String.valueOf(date.getYear()+1900));
+        	texte11.setText(date.getDayOfMonth() + "/0" + String.valueOf(date.getMonthValue()) + "/" + String.valueOf(date.getYear()));
         texte11.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         HBox.setMargin(texte11, new Insets(0.0, 0.0, 0.0, 50.0));
         boxHor6.setOpaqueInsets(new Insets(0.0));

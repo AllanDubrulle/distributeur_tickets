@@ -1,8 +1,8 @@
 package coeur;
 
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import stockage.Composant;
 import stockage.ErreurDEncodage;
 import stockage.imprimable.TypePass;
@@ -263,7 +263,7 @@ public class GraphiqueACoeurImpl implements GraphiqueACoeur
 		controleur.getEtatActuel().choixEnLiquide();
 	}
 	
-	public void infoBillet(Date dateValidite, int nbrBillet, int classe, String gareDepart,String gareArrivee,String typeBillet,
+	public void infoBillet(LocalDate dateValidite, int nbrBillet, int classe, String gareDepart,String gareArrivee,String typeBillet,
 			String reduction, boolean allerRetour) throws ErreurDEncodage
 	{
 		if(Controleur.getInstance().getCoeurAStockage().existenceTrajet(gareDepart, gareArrivee))

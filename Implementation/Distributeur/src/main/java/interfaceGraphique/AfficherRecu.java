@@ -3,6 +3,7 @@ package interfaceGraphique;
 import javafx.scene.shape.*;
 
 import java.text.NumberFormat;
+import java.time.LocalDateTime;
 
 import javafx.geometry.*;
 import javafx.scene.text.*;
@@ -69,13 +70,11 @@ class AfficherRecu extends Pane
         boxHor2.setPrefHeight(0.0);
         boxHor2.setPrefWidth(300.0);
 
-        String format = "dd/MM/yy   HH:mm:ss"; 
-        java.text.SimpleDateFormat formater = new java.text.SimpleDateFormat(format); 
-        java.util.Date date = new java.util.Date(); 
+        LocalDateTime date = LocalDateTime.now();
         
         texte2.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         texte2.setStrokeWidth(0.0);
-        texte2.setText(formater.format(date));
+        texte2.setText(date.getDayOfMonth() + "/" + date.getMonthValue() + "/" + date.getYear() + "     "  + date.getHour() + ":" + date.getMinute());
         texte2.setWrappingWidth(150.0);
         HBox.setMargin(texte2, new Insets(0.0));
         VBox.setMargin(boxHor2, new Insets(0.0, 0.0, 10.0, 0.0));

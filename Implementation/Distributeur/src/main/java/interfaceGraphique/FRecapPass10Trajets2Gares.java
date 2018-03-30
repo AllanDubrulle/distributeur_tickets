@@ -60,13 +60,13 @@ class FRecapPass10Trajets2Gares extends Ecran
         rectangle.setWidth(800.0*largeur);
 
         texte.setFontSmoothingType(javafx.scene.text.FontSmoothingType.LCD);
-        texte.setLayoutX(24.0*largeur);
+        texte.setLayoutX(20.0*largeur);
         texte.setLayoutY(64.0*hauteur);
         texte.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         texte.setStrokeWidth(0.0);
         texte.setText("Achat d'un pass dix trajets entre deux gares predefinies (recapitulatif de commande)");
         texte.setUnderline(true);
-        texte.setFont(new Font("System Bold", 20.0*hauteur));
+        texte.setFont(new Font("System Bold", 18.0*hauteur));
 
         vBox.setLayoutX(53.0*largeur);
         vBox.setLayoutY(109.0*hauteur);

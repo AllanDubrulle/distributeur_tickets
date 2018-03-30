@@ -4,9 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
-
 import coeur.Commande;
 import coeur.Controleur;
 import stockage.imprimable.Abonnement;
@@ -71,7 +69,7 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		essai = 0;
 	}
 	
-	public void creerBillet(Date dateValidite ,int nbrBillet, int classe, String gareDepart,
+	public void creerBillet(LocalDate dateValidite ,int nbrBillet, int classe, String gareDepart,
 			String gareArrivee, String typeBillet, String reduction, boolean allerRetour) throws ErreurDEncodage
 	{
 		Reduction reduc = conversionReduction(reduction);
@@ -87,8 +85,6 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		
 		LocalDate dateValidite = LocalDate.now();
 		LocalDate dateExpiration = dateValidite.plusMonths(validite);
-		Date dateExp = java.sql.Date.valueOf(dateExpiration);
-		Date dateValid = java.sql.Date.valueOf(dateValidite);
 		Reduction reduc = conversionReduction(reduction);
 		Classe classeAbo = conversionClasse(classe);
 		TypeTitre typeAbo = conversionType(type);
@@ -97,7 +93,7 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		int num = bTitre.numeroAbonnementSuivant();
 		bTitre.deconnexion();
 		setNbrTitre(1);
-		setAchat(new Abonnement(num, dateValid, dateExp, gareDepart, gareArrivee,  classeAbo, reduc, typeAbo, nom, registreNational));	
+		setAchat(new Abonnement(num, dateValidite, dateExpiration, gareDepart, gareArrivee,  classeAbo, reduc, typeAbo, nom, registreNational));	
 	}
 
 	public void modifierAbo(int validite, String numAbo) throws ErreurDEncodage
@@ -108,8 +104,6 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		bTitre.deconnexion();
 		LocalDate dateValidite = LocalDate.now();
 		LocalDate dateExpiration = dateValidite.plusMonths(validite);
-		Date dateExp = java.sql.Date.valueOf(dateExpiration);
-		Date dateValid = java.sql.Date.valueOf(dateValidite);
 		int classe = Integer.parseInt(infos[9]);
 		String reduction = infos[8];
 		String type = infos[7];
@@ -117,7 +111,7 @@ public class CoeurAStockageImpl implements CoeurAStockage
 		Classe classeAbo = conversionClasse(classe);
 		TypeTitre typeAbo = conversionType(type);
 		setNbrTitre(1);
-		setAchat(new Abonnement(Integer.parseInt(numAbo), dateValid, dateExp, infos[2], infos[3], classeAbo, reduc, typeAbo, infos[0], infos[1]));		
+		setAchat(new Abonnement(Integer.parseInt(numAbo), dateValidite, dateExpiration, infos[2], infos[3], classeAbo, reduc, typeAbo, infos[0], infos[1]));		
 	}
 	
 	public boolean existenceAbo(String numAbo)
@@ -443,8 +437,8 @@ public class CoeurAStockageImpl implements CoeurAStockage
 	{	
 		Abonnement abo = (Abonnement) achat;
 		String annee = Integer.toString(abo.getDateExp().getYear());
-		String mois = Integer.toString(abo.getDateExp().getMonth());
-		String jour = Integer.toString(abo.getDateExp().getDay());
+		String mois = Integer.toString(abo.getDateExp().getMonthValue());
+		String jour = Integer.toString(abo.getDateExp().getDayOfMonth());
 		BDDTitre bTitre = new BDDTitre();
 		bTitre.connexion();
 		bTitre.ajouterAbonnement(abo.getCodeBarre(), abo.getNom(), abo.getRegNat(), abo.getGareDepart(), abo.getGareArrivee(), annee, mois, jour,abo.getType().toString(), abo.getReduction().toString(), Integer.toString(abo.getClasse().valeur()));

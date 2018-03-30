@@ -62,7 +62,7 @@ class FentePiece extends Pane
 
         bouton.setLayoutX(15.0*largeur);
         bouton.setLayoutY(25.0*hauteur);
-        bouton.setFont(new Font(14.5*hauteur));
+        bouton.setFont(new Font(14.0*hauteur));
         bouton.setMnemonicParsing(false);
         bouton.setPrefHeight(31.0*hauteur);
         bouton.setPrefWidth(55.0*largeur);
@@ -78,7 +78,7 @@ class FentePiece extends Pane
 
         bouton0.setLayoutX(85.0*largeur);
         bouton0.setLayoutY(5.0*hauteur);
-        bouton0.setFont(new Font(14.5*hauteur));
+        bouton0.setFont(new Font(14.0*hauteur));
         bouton0.setMnemonicParsing(false);
         bouton0.setPrefHeight(31.0*hauteur);
         bouton0.setPrefWidth(55.0*largeur);
@@ -94,7 +94,7 @@ class FentePiece extends Pane
 
         bouton1.setLayoutX(155.0*largeur);
         bouton1.setLayoutY(25.0*hauteur);
-        bouton1.setFont(new Font(14.5*hauteur));
+        bouton1.setFont(new Font(14.0*hauteur));
         bouton1.setMnemonicParsing(false);
         bouton1.setPrefHeight(31.0*hauteur);
         bouton1.setPrefWidth(55.0*largeur);
@@ -110,7 +110,7 @@ class FentePiece extends Pane
         
         bouton2.setLayoutX(5.0*largeur);
         bouton2.setLayoutY(69.5*hauteur);
-        bouton2.setFont(new Font(14.5*hauteur));
+        bouton2.setFont(new Font(14.0*hauteur));
         bouton2.setMnemonicParsing(false);
         bouton2.setPrefHeight(31.0*hauteur);
         bouton2.setPrefWidth(55.0*largeur);
@@ -126,7 +126,7 @@ class FentePiece extends Pane
 
         bouton3.setLayoutX(165.0*largeur);
         bouton3.setLayoutY(69.5*hauteur);
-        bouton3.setFont(new Font(14.5*hauteur));
+        bouton3.setFont(new Font(14.0*hauteur));
         bouton3.setMnemonicParsing(false);
         bouton3.setPrefHeight(31.0*hauteur);
         bouton3.setPrefWidth(55.0*largeur);
@@ -142,7 +142,7 @@ class FentePiece extends Pane
 
         bouton4.setLayoutX(15.0*largeur);
         bouton4.setLayoutY(114.0*hauteur);
-        bouton4.setFont(new Font(14.5*hauteur));
+        bouton4.setFont(new Font(14.0*hauteur));
         bouton4.setMnemonicParsing(false);
         bouton4.setPrefHeight(31.0*hauteur);
         bouton4.setPrefWidth(55.0*largeur);
@@ -158,7 +158,7 @@ class FentePiece extends Pane
 
         bouton5.setLayoutX(85.0*largeur);
         bouton5.setLayoutY(134.0*hauteur);
-        bouton5.setFont(new Font(14.5*hauteur));
+        bouton5.setFont(new Font(14.0*hauteur));
         bouton5.setMnemonicParsing(false);
         bouton5.setPrefHeight(31.0*hauteur);
         bouton5.setPrefWidth(55.0*largeur);
@@ -174,7 +174,7 @@ class FentePiece extends Pane
 
         bouton6.setLayoutX(155.0*largeur);
         bouton6.setLayoutY(114.0*hauteur);
-        bouton6.setFont(new Font(14.5*hauteur));
+        bouton6.setFont(new Font(14.0*hauteur));
         bouton6.setMnemonicParsing(false);
         bouton6.setPrefHeight(31.0*hauteur);
         bouton6.setPrefWidth(55.0*largeur);

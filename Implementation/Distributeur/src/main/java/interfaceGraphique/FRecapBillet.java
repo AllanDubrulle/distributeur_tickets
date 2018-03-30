@@ -1,7 +1,6 @@
 package interfaceGraphique;
 
-import java.util.Date;
-
+import java.time.LocalDate;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.*;
@@ -17,7 +16,7 @@ import javafx.scene.text.*;
  */
 class FRecapBillet extends Ecran 
 {    
-    public FRecapBillet(String gareDepart, String gareArrivee, boolean allerRetour, int classe, String type, String reduction, int nombre, Date date, double prix, double hauteur, double largeur) 
+    public FRecapBillet(String gareDepart, String gareArrivee, boolean allerRetour, int classe, String type, String reduction, int nombre, LocalDate date, double prix, double hauteur, double largeur) 
     {
         Rectangle rectangle = new Rectangle();
         VBox vBox = new VBox();
@@ -209,13 +208,13 @@ class FRecapBillet extends Ecran
         texte13.setWrappingWidth(130*largeur);
         texte13.setFont(new Font(15.0*hauteur));
         HBox.setMargin(texte13, new Insets(0.0, 35.0*largeur, 0.0, 0.0));
-
+        
         texte14.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         texte14.setStrokeWidth(0.0);
-        if(date.getMonth() == 9 || date.getMonth() == 10 || date.getMonth() == 11)
-        	texte14.setText(date.getDate() + "/" + String.valueOf(date.getMonth()+1) + "/" + String.valueOf(date.getYear()+1900));
+        if(date.getMonthValue() == 10 || date.getMonthValue() == 11 || date.getMonthValue() == 12)
+        	texte14.setText(date.getDayOfMonth() + "/" + String.valueOf(date.getMonthValue()) + "/" + String.valueOf(date.getYear()));
         else
-        	texte14.setText(date.getDate() + "/0" + String.valueOf(date.getMonth()+1) + "/" + String.valueOf(date.getYear()+1900));
+        	texte14.setText(date.getDayOfMonth() + "/0" + String.valueOf(date.getMonthValue()) + "/" + String.valueOf(date.getYear()));
         texte14.setWrappingWidth(200.0*largeur);
         texte14.setFont(new Font("System Bold Italic", 15.0*hauteur));
         VBox.setMargin(hBox7, new Insets(0.0, 0.0, 10.0*hauteur, 0.0));

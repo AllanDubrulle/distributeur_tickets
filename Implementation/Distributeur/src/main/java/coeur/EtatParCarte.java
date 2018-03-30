@@ -20,14 +20,21 @@ class EtatParCarte extends EtatAnnulable
 	
 	public void valider() 
 	{
-		if(Controleur.getInstance().getCoeurAStockage().getPrix()<=500 && Controleur.getInstance().getCoeurAStockage().verifSolde())
+		if (Controleur.getInstance().getCoeurAStockage().estEnMarche(Composant.LECTEURCARTE))
 		{
-			Controleur.getInstance().getCoeurAStockage().actualiserSolde();
-			Controleur.getInstance().modifEtat(EtatAttenteRepriseCarte.getInstance());
+			if(Controleur.getInstance().getCoeurAStockage().getPrix()<=500 && Controleur.getInstance().getCoeurAStockage().verifSolde())
+			{
+				Controleur.getInstance().getCoeurAStockage().actualiserSolde();
+				Controleur.getInstance().modifEtat(EtatAttenteRepriseCarte.getInstance());
+			}
+			else
+			{
+				Controleur.getInstance().modifEtat(EtatAttentePIN.getInstance());
+			}
 		}
 		else
 		{
-			Controleur.getInstance().modifEtat(EtatAttentePIN.getInstance());
+			Controleur.getInstance().getCoeurAGraphique().afficherMessageDErreur();
 		}
 		
 	}
@@ -48,7 +55,7 @@ class EtatParCarte extends EtatAnnulable
 			}
 			else
 			{
-				throw new ComposantHorsService("Scanneur de code hors service");
+				throw new ComposantHorsService("Lecteur de carte hors service");
 			}
 		}
 		catch (ComposantHorsService e)

@@ -72,7 +72,7 @@ class FRecapAboRenouveler extends Ecran
         texte.setLayoutY(60.0*hauteur);
         texte.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         texte.setStrokeWidth(0.0);
-        texte.setText("Renouvelement d'un abonnement (recapitulatif de commande)");
+        texte.setText("Renouvellement d'un abonnement (recapitulatif de commande)");
         texte.setUnderline(true);
         texte.setFont(new Font("System Bold", 22.0*hauteur));
 
@@ -85,7 +85,7 @@ class FRecapAboRenouveler extends Ecran
         hBox.setPrefWidth(711.0*largeur);
         
         texte18.setText("Numero de l'abonnement :");
-        texte18.setWrappingWidth(180.0*largeur);
+        texte18.setWrappingWidth(190.0*largeur);
         texte18.setFont(new Font(15.0*hauteur));
         
         texte19.setText(numero);
@@ -99,7 +99,7 @@ class FRecapAboRenouveler extends Ecran
         texte0.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         texte0.setStrokeWidth(0.0);
         texte0.setText("Nom : ");
-        texte0.setWrappingWidth(180.0*largeur);
+        texte0.setWrappingWidth(190.0*largeur);
         texte0.setFont(new Font(15.0*hauteur));
         HBox.setMargin(texte0, new Insets(0.0));
 
@@ -117,7 +117,7 @@ class FRecapAboRenouveler extends Ecran
         texte2.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         texte2.setStrokeWidth(0.0);
         texte2.setText("Numero de registre national : ");
-        texte2.setWrappingWidth(180.0*largeur);
+        texte2.setWrappingWidth(190.0*largeur);
         texte2.setFont(new Font(15.0*hauteur));
         HBox.setMargin(texte2, new Insets(0.0));
 
@@ -135,7 +135,7 @@ class FRecapAboRenouveler extends Ecran
         texte4.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         texte4.setStrokeWidth(0.0);
         texte4.setText("Gares :");
-        texte4.setWrappingWidth(180.0*largeur);
+        texte4.setWrappingWidth(190.0*largeur);
         texte4.setFont(new Font(15.0*hauteur));
         HBox.setMargin(texte4, new Insets(0.0, 20.0*largeur, 0.0, 0.0));
 
@@ -163,7 +163,7 @@ class FRecapAboRenouveler extends Ecran
         texte8.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         texte8.setStrokeWidth(0.0);
         texte8.setText("Validite de l'abonnement :");
-        texte8.setWrappingWidth(180.0*largeur);
+        texte8.setWrappingWidth(190.0*largeur);
         texte8.setFont(new Font(15.0*hauteur));
         HBox.setMargin(texte8, new Insets(0.0, 20.0*largeur, 0.0, 0.0));
 
@@ -180,7 +180,7 @@ class FRecapAboRenouveler extends Ecran
         texte10.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         texte10.setStrokeWidth(0.0);
         texte10.setText("Classe :");
-        texte10.setWrappingWidth(180.0*largeur);
+        texte10.setWrappingWidth(190.0*largeur);
         texte10.setFont(new Font(15.0*hauteur));
         HBox.setMargin(texte10, new Insets(0.0, 20.0*largeur, 0.0, 0.0));
 
@@ -197,7 +197,7 @@ class FRecapAboRenouveler extends Ecran
         texte12.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         texte12.setStrokeWidth(0.0);
         texte12.setText("Reduction :");
-        texte12.setWrappingWidth(180.0*largeur);
+        texte12.setWrappingWidth(190.0*largeur);
         texte12.setFont(new Font(15.0*hauteur));
         HBox.setMargin(texte12, new Insets(0.0));
 
@@ -212,7 +212,7 @@ class FRecapAboRenouveler extends Ecran
         texte16.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);	
         texte16.setStrokeWidth(0.0);	
         texte16.setText("Type d'abonnement :");	
-        texte16.setWrappingWidth(180.0*largeur);	
+        texte16.setWrappingWidth(190.0*largeur);	
         texte16.setFont(new Font(15.0*hauteur));	
         HBox.setMargin(texte16, new Insets(0.0));	
         
@@ -230,7 +230,7 @@ class FRecapAboRenouveler extends Ecran
         texte14.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         texte14.setStrokeWidth(0.0);
         texte14.setText("Prix :");
-        texte14.setWrappingWidth(180.0*largeur);
+        texte14.setWrappingWidth(190.0*largeur);
         texte14.setFont(new Font(15.0*hauteur));
         HBox.setMargin(texte14, new Insets(0.0));
 

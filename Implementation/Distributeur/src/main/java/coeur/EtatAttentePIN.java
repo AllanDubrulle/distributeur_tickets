@@ -1,5 +1,7 @@
 package coeur;
 
+import stockage.Composant;
+
 /**
  * Classe EtatAttentePIN
  * @author TheoDaix, AllanDubrulle, VictorVerhoye
@@ -25,21 +27,25 @@ class EtatAttentePIN extends ControleurEtat
 	
 	public void validePIN(int codePIN) 
 	{
-		boolean code = Controleur.getInstance().getCoeurAStockage().verifCode(codePIN);
-		boolean solde = Controleur.getInstance().getCoeurAStockage().verifSolde();
-		
-		if (!code)
+		if(Controleur.getInstance().getCoeurAStockage().estEnMarche(Composant.LECTEURCARTE))
 		{
-			infosIncorrectes();
-		}
-		else if (!solde)
-		{
-			soldeInsuffisant();
+			boolean code = Controleur.getInstance().getCoeurAStockage().verifCode(codePIN);
+			boolean solde = Controleur.getInstance().getCoeurAStockage().verifSolde();
+			if (!code)
+			{
+				infosIncorrectes();
+			}
+			else if (!solde)
+			{
+				soldeInsuffisant();
+			}
+			else
+			{
+				infosCorrectes();
+			}
 		}
 		else
-		{
-			infosCorrectes();
-		}
+			Controleur.getInstance().getCoeurAGraphique().afficherMessageDErreur();
 	}
 	
 	/**

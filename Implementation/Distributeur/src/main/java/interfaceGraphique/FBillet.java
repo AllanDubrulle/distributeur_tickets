@@ -1,8 +1,6 @@
 package interfaceGraphique;
 
-import java.sql.Date;
 import java.time.LocalDate;
-
 import coeur.GraphiqueACoeurImpl;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
@@ -313,10 +311,10 @@ class FBillet extends Ecran
             				throw new ErreurDEncodage("Nombre de billet invalide");
             			if (verifierDate(jour, mois, annee))
             			{
-            				Date date = new Date(0,0,0);
-            				date.setYear(annee-1900);
-            				date.setDate(jour);
-            				date.setMonth(mois-1);
+            				LocalDate date = LocalDate.now();
+            				date = date.withDayOfMonth(jour);
+            				date = date.withMonth(mois);
+            				date = date.withYear(annee);
             				graphAC.infoBillet(date,nbrBillet, getClasse(),zoneTexte3.getText().trim(),zoneTexte4.getText().trim(),
             						menuDeroulant0.getValue(), menuDeroulant.getValue() ,choixBouton1.isSelected());
             				graphAC.choixValider();
@@ -584,10 +582,10 @@ class FBillet extends Ecran
     		int jour = Integer.parseInt(zoneTexte0.getText());
     		int mois = Integer.parseInt(zoneTexte1.getText());
     		int annee = Integer.parseInt(zoneTexte2.getText());
-            Date date = new Date(0,0,0);
-            date.setYear(annee-1900);
-            date.setDate(jour);
-            date.setMonth(mois-1);
+    		LocalDate date = LocalDate.now();
+			date = date.withDayOfMonth(jour);
+			date = date.withMonth(mois);
+			date = date.withYear(annee);
             if (verifierDate(jour, mois, annee))
             {
             	graphAC.infoBillet(date,nbrBillet, getClasse(),zoneTexte3.getText().trim(),zoneTexte4.getText().trim(),menuDeroulant0.getValue(), menuDeroulant.getValue() ,choixBouton1.isSelected());

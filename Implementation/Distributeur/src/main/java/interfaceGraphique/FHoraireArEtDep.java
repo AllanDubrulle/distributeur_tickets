@@ -1,16 +1,17 @@
 package interfaceGraphique;
 
 import java.sql.SQLException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.time.LocalDateTime;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.geometry.*;
-import javafx.scene.control.*;
-import javafx.scene.text.*;
-import javafx.scene.shape.*;
-import javafx.scene.layout.*;
+import javafx.geometry.Insets;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
 
 /**
  * Classe FHoraireArEtDep
@@ -182,20 +183,10 @@ class FHoraireArEtDep extends Ecran
         	public void handle(ActionEvent event) 
         	{
         		if(graphAC.estTactile())
-        		{	
-        			DateFormat format = new SimpleDateFormat("yyyy/MM/dd  HH:mm");
-        			Date date = new Date();
-        			format.format(date);
-        			int heure = date.getHours();
-        			int minute = date.getMinutes();
-        			if(Integer.toString(heure).length() == 1)
-        				zoneTexte1.setText("0" + heure);
-        			else
-        				zoneTexte1.setText(Integer.toString(heure));
-        			if(Integer.toString(minute).length() == 1)
-        				zoneTexte2.setText("0" + minute);
-        			else
-        				zoneTexte2.setText(Integer.toString(minute));
+        		{
+        			LocalDateTime date = LocalDateTime.now();
+        			zoneTexte1.setText(Integer.toString(date.getHour()));
+        			zoneTexte2.setText(Integer.toString(date.getMinute()));
         		}
         	}
         });
@@ -313,19 +304,9 @@ class FHoraireArEtDep extends Ecran
     		zoneTexte0.setText(zoneTexte0.getText() + " ");
     	else if (pos == 4)
     	{
-    		DateFormat format = new SimpleDateFormat("yyyy/MM/dd  HH:mm");
-    		Date date = new Date();
-    		format.format(date);
-    		int heure = date.getHours();
-    		int minute = date.getMinutes();
-    		if(Integer.toString(heure).length() == 1)
-    			zoneTexte1.setText("0" + heure);
-    		else
-    			zoneTexte1.setText(Integer.toString(heure));
-    		if(Integer.toString(minute).length() == 1)
-    			zoneTexte2.setText("0" + minute);
-    		else
-    			zoneTexte2.setText(Integer.toString(minute));
+    		LocalDateTime date = LocalDateTime.now();
+    		zoneTexte1.setText(Integer.toString(date.getHour()));
+    		zoneTexte2.setText(Integer.toString(date.getMinute()));
     	}
     }
 

@@ -30,13 +30,13 @@ class EtatChoixRenouvAbo extends EtatChoixTitre
 	{
 		try 
 		{
-			if(!Controleur.getInstance().getCoeurAStockage().estEnMarche(Composant.SCANNEUR))
+			if(Controleur.getInstance().getCoeurAStockage().estEnMarche(Composant.SCANNEUR))
 			{
 				Controleur.getInstance().getCoeurAGraphique().afficherNumAbo();
 			}
 			else
 			{
-				throw new ComposantHorsService("Lecteur de carte hors service");
+				throw new ComposantHorsService("Scanneur de code hors service");
 			}
 			
 		} 

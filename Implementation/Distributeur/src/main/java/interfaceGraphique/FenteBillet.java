@@ -50,7 +50,7 @@ class FenteBillet extends Pane
 
         bouton.setLayoutX(5.0*largeur);
         bouton.setLayoutY(24.0*hauteur);
-        bouton.setFont(new Font(14.5*hauteur));
+        bouton.setFont(new Font(14.0*hauteur));
         bouton.setMnemonicParsing(false);
         bouton.setPrefHeight(31.0*hauteur);
         bouton.setPrefWidth(55.0*largeur);
@@ -66,7 +66,7 @@ class FenteBillet extends Pane
 
         bouton0.setLayoutX(67.5*largeur);
         bouton0.setLayoutY(24.0*hauteur);
-        bouton0.setFont(new Font(14.5*hauteur));
+        bouton0.setFont(new Font(14.0*hauteur));
         bouton0.setMnemonicParsing(false);
         bouton0.setPrefHeight(31.0*hauteur);
         bouton0.setPrefWidth(55.0*largeur);
@@ -82,7 +82,7 @@ class FenteBillet extends Pane
 
         bouton1.setLayoutX(192.5*largeur);
         bouton1.setLayoutY(24.0*hauteur);
-        bouton1.setFont(new Font(14.5*hauteur));
+        bouton1.setFont(new Font(14.0*hauteur));
         bouton1.setMnemonicParsing(false);
         bouton1.setPrefHeight(31.0*hauteur);
         bouton1.setPrefWidth(55.0*largeur);
@@ -98,7 +98,7 @@ class FenteBillet extends Pane
 
         bouton2.setLayoutX(130.0*largeur);
         bouton2.setLayoutY(24.0*hauteur);
-        bouton2.setFont(new Font(14.5*hauteur));
+        bouton2.setFont(new Font(14.0*hauteur));
         bouton2.setMnemonicParsing(false);
         bouton2.setPrefHeight(31.0*hauteur);
         bouton2.setPrefWidth(55.0*largeur);

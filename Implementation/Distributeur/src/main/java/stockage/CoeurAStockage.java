@@ -1,8 +1,8 @@
 package stockage;
 
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 
 import coeur.Commande;
 import stockage.imprimable.Classe;
@@ -33,7 +33,7 @@ public interface CoeurAStockage
 	 * 	ou d'un aller retour (vrai)
 	 * 	@throws ErreurDEncodage (peut generer une exception s'il y a une erreur d'encodage)
 	 */
-	public void creerBillet(Date dateValidite, int nbrBillet, int classe, String gareDepart, 
+	public void creerBillet(LocalDate dateValidite, int nbrBillet, int classe, String gareDepart, 
 			String gareArrivee, String typeBillet, String reduction, boolean allerRetour) throws ErreurDEncodage;
 	
 	/**
@@ -240,7 +240,7 @@ public interface CoeurAStockage
 	
 	/**
 	 * 	Permet d'initialiser le prix d'un titre de transport
-	 * 	@param prix le prix du titre de transport
+	 * 	@param prix le prix du titre de transport (en cents)
 	 */
 	public void setPrix(int prix);
 	

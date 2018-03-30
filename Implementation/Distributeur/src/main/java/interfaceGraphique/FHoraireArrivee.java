@@ -1,10 +1,7 @@
 package interfaceGraphique;
 
 import java.sql.SQLException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
+import java.time.LocalDateTime;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.*;
@@ -169,19 +166,9 @@ class FHoraireArrivee extends Ecran
         	{
         		if(graphAC.estTactile())
         		{
-        			DateFormat format = new SimpleDateFormat("yyyy/MM/dd  HH:mm");
-        			Date date = new Date();
-        			format.format(date);
-        			int heure = date.getHours();
-        			int minute = date.getMinutes();
-        			if(Integer.toString(heure).length() == 1)
-        				zoneTexte0.setText("0" + heure);
-        			else
-        				zoneTexte0.setText(Integer.toString(heure));
-        			if(Integer.toString(minute).length() == 1)
-        				zoneTexte1.setText("0" + minute);
-        			else
-        				zoneTexte1.setText(Integer.toString(minute));
+        			LocalDateTime date = LocalDateTime.now();
+        			zoneTexte0.setText(Integer.toString(date.getHour()));
+        			zoneTexte1.setText(Integer.toString(date.getMinute()));
         		}
         	}
         });
@@ -291,19 +278,9 @@ class FHoraireArrivee extends Ecran
     		zoneTexte.setText(zoneTexte.getText() + " ");
     	else if (pos == 3)
     	{
-    		DateFormat format = new SimpleDateFormat("yyyy/MM/dd  HH:mm");
-    		Date date = new Date();
-    		format.format(date);
-    		int heure = date.getHours();
-    		int minute = date.getMinutes();
-    		if(Integer.toString(heure).length() == 1)
-    			zoneTexte0.setText("0" + heure);
-    		else
-    			zoneTexte0.setText(Integer.toString(heure));
-    		if(Integer.toString(minute).length() == 1)
-    			zoneTexte1.setText("0" + minute);
-    		else
-    			zoneTexte1.setText(Integer.toString(minute));
+    		LocalDateTime date = LocalDateTime.now();
+    		zoneTexte0.setText(Integer.toString(date.getHour()));
+    		zoneTexte1.setText(Integer.toString(date.getMinute()));
     	}
     }
 

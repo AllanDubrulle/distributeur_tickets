@@ -1,6 +1,6 @@
 package stockage.imprimable;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 /**
  *  Classe abstraite TitreDeTransport
@@ -9,8 +9,8 @@ import java.util.Date;
  */
 public abstract class TitreDeTransport
 {
-	protected Date dateValidite ;
-	protected Date dateExp;
+	protected LocalDate dateValidite ;
+	protected LocalDate dateExp;
 	protected String gareDepart;
 	protected String gareArrivee;
 	protected Classe classe;
@@ -28,7 +28,7 @@ public abstract class TitreDeTransport
 	 *  @param type le type du titre de transport (TypeTitre)
 	 *  @param reduction une reduction (Reduction)
 	 */
-	public TitreDeTransport(Date dateValidite, Date dateExp, String gareDepart, String gareArrivee, Classe classe, TypeTitre type, Reduction reduction)
+	public TitreDeTransport(LocalDate dateValidite, LocalDate dateExp, String gareDepart, String gareArrivee, Classe classe, TypeTitre type, Reduction reduction)
 	{
 		this.dateValidite = dateValidite;
 		this.dateExp = dateExp;
@@ -48,7 +48,7 @@ public abstract class TitreDeTransport
 	 *  @param type le type du titre de transport (TypeTitre)
 	 *  @param reduction une reduction (Reduction)
 	 */
-	public TitreDeTransport(Date dateValidite, String gareDepart, String gareArrivee, Classe classe, TypeTitre type, Reduction reduction)
+	public TitreDeTransport(LocalDate dateValidite, String gareDepart, String gareArrivee, Classe classe, TypeTitre type, Reduction reduction)
 	{
 		this.dateValidite = dateValidite;
 		this.gareDepart = gareDepart;
@@ -107,7 +107,7 @@ public abstract class TitreDeTransport
 	 *  Permet de recuperer la date de validite d'un titre de transport
 	 *  @return dateValidite la date de validite d'un titre de transport
 	 */
-	public Date getDateValidite()
+	public LocalDate getDateValidite()
 	{
 		return dateValidite;
 	}
@@ -116,7 +116,7 @@ public abstract class TitreDeTransport
 	 *  Permet de recuperer la date d'expiration d'un titre de transport 
 	 *  @return dateExp la date d'expiration d'un titre de transport
 	 */
-	public Date getDateExp()
+	public LocalDate getDateExp()
 	{
 		return dateExp;
 	}

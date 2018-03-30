@@ -372,7 +372,7 @@ public class CoeurAGraphiqueImpl implements CoeurAGraphique
 			StackPane root4 = new StackPane();
 			AfficherPass10Trajets2Gares pass10Trajets2Gares = new AfficherPass10Trajets2Gares(pass2.getNom(), pass2.getGareDepart(), pass2.getGareArrivee(), pass2.getClasse().valeur(), pass2.getReduction().toString(), pass2.getType().toString(), prix);
 			Stage stage4 = new Stage();
-			Scene scene4 = new Scene(root4, 580,350);
+			Scene scene4 = new Scene(root4, 700, 500);
 			root4.getChildren().add(pass10Trajets2Gares);
 			stage4.setResizable(false);
 			stage4.setScene(scene4);

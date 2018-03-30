@@ -1,6 +1,6 @@
 package stockage.imprimable;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 /**
  * Classe Abonnement
@@ -26,7 +26,7 @@ public class Abonnement extends TitreDeTransport
 	 * 	@param nom le nom auquel sera enregistre l'abonnement
 	 * 	@param registreNational le registre national de l'utilisateur
 	 */
-	public Abonnement(int codeBarre, Date dateValidite, Date dateExp, String gareDepart, String gareArrivee, Classe classe,
+	public Abonnement(int codeBarre, LocalDate dateValidite, LocalDate dateExp, String gareDepart, String gareArrivee, Classe classe,
 			Reduction reduction, TypeTitre type, String nom,String registreNational)
 	{
 		super(dateValidite, dateExp, gareDepart, gareArrivee, classe, type, reduction);
@@ -59,7 +59,7 @@ public class Abonnement extends TitreDeTransport
 	 */
 	public int getValidite()
 	{
-		int val = dateExp.getMonth() - dateValidite.getMonth();
+		int val = dateExp.getMonthValue() - dateValidite.getMonthValue();
 		if (val == 4)
 			val = 3;
 		else if (val == 7)

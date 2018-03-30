@@ -125,29 +125,22 @@ private double delta = 0.000000000001;
 	}	
 	
 	@Test
-	public void CreerCarte()
+	public void creerCarte()
 	{
 		instance.creerCarte(idCarte);
 		assertNotNull(instance.getCarte());
 		instance.carteEnlevee();
 		assertNull(instance.getCarte());
 	}
-	/*
-	public void TestCreerAbonnement() throws ErreurDEncodage
-	{
-//int validite, String gareDepart, String gareArrivee, int classe, String reduction, String type, String nom, String registreNational
-		instance.creerAbonnement(validite, "mons", "ath", 1, "Aucune", "Standard" , "allan", registreNational);
-	}
-	*/
 	
 	@Test
-	public void TestConversionType() throws ErreurDEncodage
+	public void testConversionType() throws ErreurDEncodage
 	{
 		assertEquals(TypeTitre.STANDARD,instance.conversionType("Standard"));
 	}
 	
 	@Test
-	public void TestConversionClasse() throws ErreurDEncodage
+	public void testConversionClasse() throws ErreurDEncodage
 	{
 		assertEquals(Classe.C1,instance.conversionClasse(1));
 	}
@@ -156,13 +149,6 @@ private double delta = 0.000000000001;
 	public void testConversionReduction() throws ErreurDEncodage
 	{
 		assertEquals(Reduction.AUCUNE,instance.conversionReduction("Aucune"));
-	}
-	
-	@Test (expected=ComposantHorsService.class)
-	public void testInsertionMonnaie() throws ComposantHorsService
-	{
-		instance.actualiserPanne(Composant.FENTEBILLET);
-		instance.ajoutMonnaie(5);
 	}
 	
 	@Test
@@ -201,5 +187,13 @@ private double delta = 0.000000000001;
 		instance.setPrix(1);
 		instance.ajoutMonnaie(5);
 		assertTrue(instance.depassementMontantAPayer());
+	}
+	
+
+	@Test (expected=ComposantHorsService.class)
+	public void testInsertionMonnaie() throws ComposantHorsService
+	{
+		instance.actualiserPanne(Composant.FENTEBILLET);
+		instance.ajoutMonnaie(5);
 	}
 }

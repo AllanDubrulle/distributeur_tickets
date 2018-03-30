@@ -1,6 +1,6 @@
 package stockage.imprimable;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 /**
  * Classe Billet
@@ -21,7 +21,7 @@ public class Billet extends TitreDeTransport
 	 * 	@param reduction la reduction du billet (Reduction)
 	 * 	@param retour un booleen vrai s'il s'agit d'un aller-retour, faux sinon
 	 */
-	public Billet(Date dateValidite, String gareDepart, String gareArrivee, Classe classe, TypeTitre type,
+	public Billet(LocalDate dateValidite, String gareDepart, String gareArrivee, Classe classe, TypeTitre type,
 			Reduction reduction, boolean retour)
 	{
 		super(dateValidite, gareDepart, gareArrivee, classe, type, reduction);
