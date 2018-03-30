@@ -148,7 +148,7 @@ class FenetreSimulation extends BorderPane
         menuACocher4.setText("Imprimante");
         menuACocher4.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
-            	fenetre.graphAC.actualiserPanne(Composant.LECTEURCARTE);
+            	fenetre.graphAC.actualiserPanne(Composant.IMPRIMANTE);
             }
         });
 
