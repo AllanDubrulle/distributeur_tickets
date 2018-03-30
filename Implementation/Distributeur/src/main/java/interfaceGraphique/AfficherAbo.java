@@ -56,6 +56,7 @@ class AfficherAbo extends Pane
         Text texte15 = new Text();
         Text texte16 = new Text();
         Rectangle rectangle = new Rectangle();
+        String heureAffiche, dateAffiche;
 
         setMaxHeight(USE_PREF_SIZE);
         setMaxWidth(USE_PREF_SIZE);
@@ -79,9 +80,18 @@ class AfficherAbo extends Pane
 
         LocalDateTime date = LocalDateTime.now();
         
+        if(date.getMinute() < 10)
+        	heureAffiche = Integer.toString(date.getHour()) + ":0" + Integer.toString(date.getMinute());
+        else
+        	heureAffiche = Integer.toString(date.getHour()) + ":" + Integer.toString(date.getMinute());
+        if (date.getMonthValue() < 10)
+        	dateAffiche = Integer.toString(date.getDayOfMonth()) + "/0" + Integer.toString(date.getMonthValue()) + "/" + Integer.toString(date.getYear());
+        else
+        	dateAffiche = Integer.toString(date.getDayOfMonth()) + "/0" + Integer.toString(date.getMonthValue()) + "/" + Integer.toString(date.getYear());
+        
         texte2.setStrokeType(javafx.scene.shape.StrokeType.OUTSIDE);
         texte2.setStrokeWidth(0.0);
-        texte2.setText(date.getDayOfMonth() + "/" + date.getMonthValue() + "/" + date.getYear() + "     "  + date.getHour() + ":" + date.getMinute());
+        texte2.setText(dateAffiche + "     " + heureAffiche);
         texte2.setTextAlignment(javafx.scene.text.TextAlignment.RIGHT);
         texte2.setWrappingWidth(150.0);
         HBox.setMargin(texte2, new Insets(0.0, 0.0, 0.0, 130.0));

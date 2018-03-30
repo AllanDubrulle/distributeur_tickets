@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="18" failures="0" name="testStockage.TestCoeurAStockage" time="0.061" errors="0" skipped="0">
+<testsuite tests="18" failures="0" name="testStockage.TestCoeurAStockage" time="0" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files (x86)\Java\jdk1.8.0_152\jre\bin"/>
@@ -65,22 +65,22 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86"/>
   </properties>
-  <testcase classname="testStockage.TestCoeurAStockage" name="testVerifCode" time="0.002"/>
-  <testcase classname="testStockage.TestCoeurAStockage" name="testCarteEnlevee" time="0.003"/>
-  <testcase classname="testStockage.TestCoeurAStockage" name="testExistenceAbo" time="0.008"/>
-  <testcase classname="testStockage.TestCoeurAStockage" name="testCarteInseree" time="0.002"/>
-  <testcase classname="testStockage.TestCoeurAStockage" name="creerCarte" time="0.002"/>
-  <testcase classname="testStockage.TestCoeurAStockage" name="testRechercherHoraireArrivee" time="0.005"/>
-  <testcase classname="testStockage.TestCoeurAStockage" name="testRechercherHoraireDepart" time="0.001"/>
-  <testcase classname="testStockage.TestCoeurAStockage" name="testRechercherHoraireItineraire" time="0.001"/>
+  <testcase classname="testStockage.TestCoeurAStockage" name="creerCarte" time="0"/>
+  <testcase classname="testStockage.TestCoeurAStockage" name="testCarteInseree" time="0"/>
+  <testcase classname="testStockage.TestCoeurAStockage" name="testCarteEnlevee" time="0"/>
+  <testcase classname="testStockage.TestCoeurAStockage" name="testVerifCode" time="0"/>
+  <testcase classname="testStockage.TestCoeurAStockage" name="testExistenceAbo" time="0"/>
   <testcase classname="testStockage.TestCoeurAStockage" name="testDepassementMontantAPayer" time="0"/>
-  <testcase classname="testStockage.TestCoeurAStockage" name="testExistenceGare" time="0.005"/>
-  <testcase classname="testStockage.TestCoeurAStockage" name="testExistenceTrajet" time="0.006"/>
+  <testcase classname="testStockage.TestCoeurAStockage" name="testRechercherHoraireDepart" time="0"/>
+  <testcase classname="testStockage.TestCoeurAStockage" name="testRechercherHoraireArrivee" time="0"/>
+  <testcase classname="testStockage.TestCoeurAStockage" name="testRechercherHoraireItineraire" time="0"/>
+  <testcase classname="testStockage.TestCoeurAStockage" name="testConversionClasse" time="0"/>
   <testcase classname="testStockage.TestCoeurAStockage" name="testInsertionMonnaie" time="0"/>
-  <testcase classname="testStockage.TestCoeurAStockage" name="testRechercherPrix" time="0.009"/>
-  <testcase classname="testStockage.TestCoeurAStockage" name="testExistenceCarte" time="0.003"/>
-  <testcase classname="testStockage.TestCoeurAStockage" name="testConversionReduction" time="0.005"/>
-  <testcase classname="testStockage.TestCoeurAStockage" name="testConversionType" time="0.007"/>
+  <testcase classname="testStockage.TestCoeurAStockage" name="testConversionReduction" time="0"/>
+  <testcase classname="testStockage.TestCoeurAStockage" name="testExistenceGare" time="0"/>
+  <testcase classname="testStockage.TestCoeurAStockage" name="testExistenceCarte" time="0"/>
+  <testcase classname="testStockage.TestCoeurAStockage" name="testExistenceTrajet" time="0"/>
   <testcase classname="testStockage.TestCoeurAStockage" name="testActualiserPanne" time="0"/>
-  <testcase classname="testStockage.TestCoeurAStockage" name="testConversionClasse" time="0.002"/>
+  <testcase classname="testStockage.TestCoeurAStockage" name="testConversionType" time="0"/>
+  <testcase classname="testStockage.TestCoeurAStockage" name="testRechercherPrix" time="0"/>
 </testsuite>

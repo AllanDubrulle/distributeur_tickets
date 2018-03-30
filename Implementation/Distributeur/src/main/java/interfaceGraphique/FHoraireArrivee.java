@@ -168,7 +168,10 @@ class FHoraireArrivee extends Ecran
         		{
         			LocalDateTime date = LocalDateTime.now();
         			zoneTexte0.setText(Integer.toString(date.getHour()));
-        			zoneTexte1.setText(Integer.toString(date.getMinute()));
+        			if(date.getMinute() < 10)
+        				zoneTexte1.setText("0"+ date.getMinute());
+        			else
+        				zoneTexte1.setText(Integer.toString(date.getMinute()));
         		}
         	}
         });
@@ -280,7 +283,10 @@ class FHoraireArrivee extends Ecran
     	{
     		LocalDateTime date = LocalDateTime.now();
     		zoneTexte0.setText(Integer.toString(date.getHour()));
-    		zoneTexte1.setText(Integer.toString(date.getMinute()));
+			if(date.getMinute() < 10)
+				zoneTexte1.setText("0"+ date.getMinute());
+			else
+				zoneTexte1.setText(Integer.toString(date.getMinute()));
     	}
     }
 

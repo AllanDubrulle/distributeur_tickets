@@ -186,7 +186,10 @@ class FHoraireArEtDep extends Ecran
         		{
         			LocalDateTime date = LocalDateTime.now();
         			zoneTexte1.setText(Integer.toString(date.getHour()));
-        			zoneTexte2.setText(Integer.toString(date.getMinute()));
+        			if(date.getMinute() < 10)
+        				zoneTexte2.setText("0"+ date.getMinute());
+        			else
+        				zoneTexte2.setText(Integer.toString(date.getMinute()));
         		}
         	}
         });
@@ -306,7 +309,10 @@ class FHoraireArEtDep extends Ecran
     	{
     		LocalDateTime date = LocalDateTime.now();
     		zoneTexte1.setText(Integer.toString(date.getHour()));
-    		zoneTexte2.setText(Integer.toString(date.getMinute()));
+			if(date.getMinute() < 10)
+				zoneTexte2.setText("0"+ date.getMinute());
+			else
+				zoneTexte2.setText(Integer.toString(date.getMinute()));
     	}
     }
 

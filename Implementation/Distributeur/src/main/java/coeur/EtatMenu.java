@@ -51,6 +51,4 @@ public class EtatMenu extends ControleurEtat
 		Controleur.getInstance().getEtatsPrecedents().clear();
 		Controleur.getInstance().reinitialisationCommande();
 	}
-
-
 }
